@@ -1,32 +1,3 @@
-.. _getting-started:
-
-################
-Getting started
-################
-
- This chapter covers the following topics:
-
- * :ref:`Glossary`
-Terms which are commonly used in eXo Platform applications.  
- * :ref:`Welcome to eXo Platform` 
-Introduction to what you need to do for the first startup of eXo Platform. 
- * :ref:`Social Intranet Homepage` 
-Introduction to the Social Intranet homepage, the Social Intranet applications and how to change your language. 
- * :ref:`Signing in/Signing out Social Intranet` 
-How to sign in and sign out Social Intranet. 
- * :ref:`Changing your account settings`
-How to change your account profile and password. 
- * :ref:`Forgot Password`
-How to request a link to reset your password. 
- * :ref:`Using the Activity Stream`
-How to post status updates, share links and documents, delete activities/comments, comment on activities, or like/unlike activities. 
- 
-**Note**
-
-    According to your roles, not all features described in this guide
-    are available to you. Check with your administrator to assure which
-    features are for your account or ask for more appropriate rights.
-
 .. _Glossary:
 
 Glossary
@@ -201,37 +172,3 @@ next to its icon.
 
 .. |image0| image:: images/platform/top_navigation_bar.png
    :width: 150mm
-   
-.. _Welcome to eXo Platform:
-
-Welcome to eXo Platform
-~~~~~~~~~
-
-eXo Platform is a full-featured application for users to have many experiences in building and deploying transactional websites, authoring web and social content, creating gadgets and dashboards with reliable capabilities of collaboration and knowledge. When you initialize eXo Platform for the first time, the **Terms and Conditions Agreement** screen is displayed as follows:
-|image1|
-
-    **Note**
-
-    The **Terms and Conditions Agreement** screen appears in the
-    Commercial editions only. In the Community edition, the `Account
-    Setup`_ form appears for the first time.
-
-This agreement contains all terms and conditions that you need to read
-carefully before deciding to use eXo Platform. By ticking the checkbox at the
-screen bottom, you totally agree with the eXo Platform's terms and
-conditions. Next, click Continue to move to the ``Account Setup`` form.
-
-This agreement contains all terms and conditions that you need to read
-carefully before deciding to use eXo Platform. By ticking the checkbox at the
-screen bottom, you totally agree with the eXo Platform's terms and
-conditions. Next, click Continue to move to the ``Account Setup`` form.
-
-|image2|
-
-.. |image2| image:: images/platform/Unlock-ACCOUNTSETUP.jpg
-   :width: 100mm
-
-.. _Account Setup: #AccountSetUpForm
-
-.. |image1| image:: images/platform/Unlock-termsentskin.jpg
-   :width: 90mm
