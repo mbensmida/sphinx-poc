@@ -1,3 +1,6 @@
+.. _Adding-Related-Page:
+
+=====================
 Adding a related page
 =====================
 

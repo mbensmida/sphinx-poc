@@ -29,8 +29,10 @@ spaces under MY SPACES on the left pane of the page.
 
 The Space navigation includes the following tabs:
 
--  **All Spaces**: All spaces, including your spaces, `visible
-   spaces <#VisibleSpace>`__, and `hidden spaces <#HiddenSpace>`__ where
+.. _All-spaces-access:
+
+-  **All Spaces**: All spaces, including your spaces, :ref:`visible
+   spaces <About-space-visibility>`, and :ref:`hidden spaces <About-space-visibility>` where
    you are invited to become members.
 
 -  **My Spaces**: Spaces where you are a member or manager.
@@ -62,9 +64,7 @@ not its member yet, you will receive various instructions as follows:
    |image7|
 
 -  For a Hidden or Not existing space, click Find Spaces to open the
-   `All
-   Spaces <#PLFUserGuide.WorkingWithSpaces.AccessingSpace.AllSpaces>`__
-   page.
+   :ref:`All Spaces <All-spaces-access>` page.
 
    |image8|
 

@@ -1,3 +1,6 @@
+.. _ManagingContentChanges:
+
+=====================
 Managing page changes
 =====================
 

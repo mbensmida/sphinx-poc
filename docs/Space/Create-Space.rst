@@ -85,7 +85,7 @@ Sapce banner and avatar
 
    More details about how to redefine space banner and profile :ref:`here <Space-banner>`.
 
-Sapce applications
+Space applications
 -------------------
 
    By default, the space is featured with some default applications
@@ -93,9 +93,8 @@ Sapce applications
    use its functions. See :ref:`Managing space navigation bar <Manage-space-navbar>` for more details.
 
    -  **Activity Stream**: Displays changes on the space information and all
-      the activities of space members. See `Using the Activity
-      Stream <#PLFUserGuide.GettingStarted.ActivitiesInActivityStream>`__
-      for more details.
+      the activities of space members. See :ref:`Using the Activity
+      Stream <Managing-Activities>` for more details.
 
    -  **Forums**: Allows space members to exchange their opinions on a
       subject. See `Building Your
@@ -117,9 +116,7 @@ Sapce applications
 
    -  **Space Settings**: Allows the space manager only to edit the space.
       This application is invisible to space members, except the space
-      manager. See `Managing space
-      settings <#PLFUserGuide.WorkingWithSpaces.ManagingSpaceSettings>`__
-      to know how to edit a space.
+      manager. See :ref:`Managing space settings <Manage-Space-Settings>` to know how to edit a space.
 
    -  **Members**: Displays the list of space members.
 

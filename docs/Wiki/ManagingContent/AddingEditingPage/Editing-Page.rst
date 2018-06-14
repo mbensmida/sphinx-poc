@@ -1,3 +1,6 @@
+.. _Editing-Page:
+
+==============
 Editing a page
 ==============
 

@@ -1,3 +1,6 @@
+.. _Working-With-Attachments:
+
+========================
 Working with attachments
 ========================
 

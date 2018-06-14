@@ -1,3 +1,6 @@
+.. _Managing-Page-Drafts:
+
+===============
 Managing drafts
 ===============
 

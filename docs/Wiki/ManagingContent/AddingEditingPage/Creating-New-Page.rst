@@ -1,3 +1,6 @@
+.. _Creating-New-Page:
+
+===============
 Creating a page
 ===============
 

@@ -1,3 +1,6 @@
+.. _Organizing-Content:
+
+=======================
 Organizing your content
 =======================
 

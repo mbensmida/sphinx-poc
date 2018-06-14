@@ -1,3 +1,7 @@
+.. _Managing-Templates:
+
+
+========================
 Managing a page template
 ========================
 

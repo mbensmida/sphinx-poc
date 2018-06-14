@@ -1,22 +1,23 @@
+.. _AdvancedSettings:
+
+
+=================
 Advanced settings
 =================
 
 The section consists of the following topics:
 
--  **`Managing a page
-   template <#PLFUserGuide.WorkingWithWikis.AdvancedSettings.ManagingPageTemplate>`__**
+:ref:`Managing a page template <Managing-Templates>`
 
    Instructions on how to create/edit/delete a Wiki page template. Also,
    you will know how to quickly search for your desired template.
 
--  **`Managing
-   permissions <#PLFUserGuide.WorkingWithWikis.AdvancedSettings.ManagingPermissions>`__**
+:ref:`Managing permissions <Managing-Permissions>`
 
    Instructions on how to manage the permissions of specific users,
    groups and memberships on a Wiki or a page.
 
--  **`WebDAV support in
-   Wiki <#PLFUserGuide.WorkingWithWikis.AdvancedSettings.WebDAV>`__**
+:ref:`WebDAV support in Wiki <Using-WebDAV>`
 
    Instructions on how to use WebDAV to access your workspace and edit a
    Wiki page.

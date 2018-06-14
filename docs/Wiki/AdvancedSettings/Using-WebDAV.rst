@@ -1,3 +1,6 @@
+.. _Using-WebDAV:
+
+======================
 WebDAV support in Wiki
 ======================
 

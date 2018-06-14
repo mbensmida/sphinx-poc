@@ -1,5 +1,8 @@
+.. _Search:
+
+###########################
 Searching In eXo Platform
-==========================
+###########################
 
     In this chapter, you will learn about the search feature in eXo Platform.
     You can search for content via various ways:

@@ -144,9 +144,7 @@ You can invite other users to join your spaces as follows:
       3. Click Invite to invite your selected group.
 
 After that, you will see the list of invited users. The invitees will
-see your invitations in the `Invitations
-application <#PLFUserGuide.GettingStarted.SocialIntranetHomepage.IntranetApplications.InvitationsApplication>`__
-at the right panel of their homepage.
+see your invitations in the :ref:`Invitations application <InvitationsApp>` at the right panel of their homepage.
 
 Revoking your invitations
 ---------------------------

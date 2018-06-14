@@ -9,7 +9,7 @@ Joining/Leaving a space
 Joining a space
 ~~~~~~~~~~~~~~~~~~
 
-:ref:`Go to the Spaces page <_note-access-spaces-page>` and you will see All Spaces tab which displays all your spaces and ones
+:ref:`Go to the Spaces page <note-access-spaces-page>` and you will see All Spaces tab which displays all your spaces and ones
 whose :ref:`Visibility <About-space-visibility>` is set to "Visible".
 
 There are two cases to join a space:
