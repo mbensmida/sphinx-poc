@@ -449,6 +449,348 @@ Quickly perform key actions through the following applications:
 
 -  *Who's Online?*: See who are online or send your connection request to them. See :ref:`Who's Online? application <WhoIsOnlineApp>` for more details.
 
+
+.. _Creating-content:
+
+Creating content quickly
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In eXo Pltaform, you easily create your preferred content without navigating
+to its relevant application. Simply click |image33| to open the drop-down
+menu.
+
+|image34|
+
+Here, you can do the following actions quickly:
+
+ * :ref:`Creating a task`
+ * :ref:`Creating an event`
+ * :ref:`Creating a poll`
+ * :ref:`Creating a topic` 
+ * :ref:`Uploading a document`
+ * :ref:`Creating a Wiki`
+
+
+.. _Creating a task:
+
+Creating a task
+---------------
+
+1. Simply select Task from the drop-down menu. The menu will be updated into the Create a new task form.
+
+|image35|
+
+2. Fill in the Title field, and then hit the button Add.
+
+After saving, a pop up link appears |image36| which points to the
+created task.
+
+.. _Creating an event:
+
+Creating an event
+-------------------
+
+1. Simply select Event from the drop-down menu. The menu will be updated
+into the Add event form.
+
+|image37|
+
+2. Give details for your event, including: Title, From and To dates, time.
+For more details, see `Creating a new event <#PLFUserGuide.ManagingYourCalendars.SchedulingEvent.CreatingNewEvent>`__.
+
+3. Select the calendar where your event will be created from the Select Calendar drop-down menu.
+
+4. Click Save to add your event.
+
+A pop up |image38| appears indicating in which calendar the event was added.
+
+    .. note:: Click Cancel at any time to dismiss the Add event form.
+    
+.. _Creating a poll:    
+
+Creating a poll
+----------------
+
+1. Click Poll from the drop-down menu. This menu will be updated into the
+form as below:
+
+|image39|
+
+    .. note:: If there is no forum available in Intranet and the user has no space
+				forum yet, the following warning is displayed: "Sorry, no forum is
+				available yet to create a poll. Start by creating your own space."
+
+2. Select the location where your poll is created from the In Location
+menu. If you have at least one public forum, the "intranet" location is
+selected by default.
+
+3. Click Next to open the Poll form, or Cancel to dismiss the form.
+
+-  If you select a space forum, you will be redirected to the **Forums**
+   application of the selected space after clicking Next.
+
+-  If you select "intranet" which has more than 1 forum and then click
+   Next, another new selection menu will be opened. The Next button now
+   becomes disabled until you have selected one forum from the And Forum
+   menu.
+
+   |image40|
+
+4. Fill in the Poll form. See `Creating a
+poll <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.CreatingPoll>`__
+for more details.
+
+.. _Creating a topic: 
+ 
+Creating a topic
+-----------------
+
+
+1. Click Topic from the drop-down menu.
+
+    .. note:: If there is no forum available in Intranet and the user has no space forum yet, the following warning is displayed: "Sorry, no forum is available yet to create a topic. Start by creating your own space."
+
+2. Select the location where your topic is created from the In Location
+drop-down menu. The "intranet" is selected by default.
+
+3. Click Next to open the New Topic form.
+
+-  If you select a space forum, you will be redirected to the **Forums**
+   application of the selected space after clicking Next.
+
+-  After clicking Next, if you select "intranet" which has more than 1
+   forum, one new selection will be opened that requires you to select
+   your desired forum as below. The Next button becomes disabled until
+   you have selected one forum.
+
+   |image41|
+
+4. Fill in the New Topic form. See `Creating a
+topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.CreatingTopic>`__
+for more details.
+
+.. _Uploading a document: 
+
+Uploading a file
+-----------------
+
+Simply select Upload a File from the drop-down menu. See :ref:`Sharing a File <Sharing-Link-and-File>` for more details.
+
+.. _Creating a Wiki: 
+
+Creating a Wiki page
+---------------------
+
+1. Click Wiki Page from the drop-down menu.
+
+|image42|
+
+2. Select the location where your Wiki page is created from the In Location
+drop-down menu. The "Intranet" space is selected by default.
+
+3. Click Next to be redirected to the Wiki application of your selected
+location. Here, you can `navigate across
+spaces <#PLFUserGuide.BuildWiki.Overview.NavigatingAcrossAspaces>`__.
+
+4. Enter the content of your Wiki page. See `Creating a
+page <#PLFUserGuide.WorkingWithWikis.ManagingContent.AddingAndEditingPages.CreatingPage>`__
+for more details.
+
+.. _Intranet-Gadgets:
+
+Social Intranet applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Intranet applications are ones which come with the Social Intranet
+homepage, including:
+
+ * :ref:`Getting Started`
+ * :ref:`CalendarApp`
+ * :ref:`InvitationsApp`
+ * :ref:`SuggestionsApp`
+ * :ref:`WhoIsOnlineApp`
+
+.. _Getting Started:
+
+Getting Started
+------------------
+
+The Getting Started application is displayed first in the list of the
+Intranet homepage applications on the top right. This application helps
+you start exploring the Social Intranet by suggesting you where to go
+and what you should do first via the following links:
+
+-  `Add a profile picture <#PLFUserGuide.ManagingYourPersonalApplications.ManagingYourProfile.Edit.Avatar>`__
+
+-  `Connect to coworkers <#PLFUserGuide.ManagingYourPersonalApplications.ManagingYourConnections.SendingConnectionRequests>`__
+
+-  `Join a space <#PLFUserGuide.WorkingWithSpaces.JoiningSpace>`__
+
+-  :ref:`Post anactivity <Share-AS>`
+
+-  `Upload a document <#PLFUserGuide.ManagingYourDocuments.WorkingWithBasicActions.UploadingFiles>`__
+
+|image43|
+
+Clicking each link will direct you to the related page to do the action.
+
+After each action is performed, it will be remarked as completed with a
+strike-through even though it is not performed via this application.
+Also, the completion percentage is updated on the percentage bar.
+
+When all the actions are performed, the completion percentage will be
+100%. You can remove this application from the homepage by clicking
+Close or by hovering your cursor over the application header, and click |image44|.
+
+|image45|
+
+    .. note:: - You cannot get the Getting Started application back when it is removed. 
+			  - The "Upload a document" action is considered as completed only when a document has been uploaded in your Personal Documents drive.
+    
+    
+.. _CalendarApp:
+
+Calendar
+---------
+
+The Calendar application displays some calendars and all of their events
+and tasks scheduled in the Calendar applications of Intranet and spaces.
+When going to the homepage, you will see events with their start and end
+date and tasks of Today. You can also see the events and tasks of the
+previous/next day by clicking the previous/next arrow respectively.
+
+|image46|
+
+-  To view details of an event/task directly in the Calendar
+   application, click your desired event/task.
+
+-  To configure and set which calendars to be displayed in the Calendar
+   application, hover your cursor over the application, then click
+   |image47| at the right bottom of the application.
+
+   -  To remove a calendar from the list of Displayed Calendars, click |image47|.
+
+      This removed calendar will appear in the list of Display
+      Additional Calendar.
+
+   -  To add one of removed calendars again to the list of Displayed
+      Calendars, simply hover your cursor over the desired calendar,
+      then click |image48|. You can use the Search box to filter
+      calendars quickly.
+
+   -  Click **OK** to accept your settings.
+
+    .. note:: When a task is completed, it will be remarked with a strike-through.
+
+.. _InvitationsApp:
+
+Invitations
+-------------
+
+The Invitations application shows a list of spaces and users who have
+sent you connection requests. You can see the number of requests
+displayed next to the application name.
+
+|image49|
+
+-  For a user's connection request, you will see his avatar, name and
+   title (if defined).
+
+-  For a space's connection request, you will see its avatar, name, the
+   number of members and know if it is public or private.
+
+You can accept/refuse an invitation by hovering your cursor over a
+user/space's name, then clicking Accept or |image50| respectively.
+
+When the invitation is accepted or refused, it will permanently removed
+from the list.
+
+    .. note:: The Invitations application is not displayed when there is no invitation.
+
+.. _SuggestionsApp:
+
+Suggestions
+------------
+
+The Suggestions application suggests you to connect with other users or
+to join spaces. Usually, it suggests two people having the most common
+connections with you, and two spaces having the most members who are
+your connections. Otherwise, it will suggest the newest users or the
+latest created space in the portal.
+
+|image51|
+
+-  To accept the people/space suggestion, hover your cursor over their
+   names and click Connect or Request respectively.
+
+-  To refuse the suggestion, hover your cursor over the people/space
+   names and click |image52|.
+
+When the suggestion is accepted or refused, it will permanently removed
+from the list.
+
+    .. note:: -  You can click a person's name suggested in the list to see his profile.
+			  -  If there is no suggestion, the Suggestions application is not displayed.
+       
+       
+.. _WhoIsOnlineApp:
+
+Who's Online?
+--------------
+
+The Who's Online? application shows all users who are already logged in
+the portal.
+
+|image53|
+
+Hover your cursor over the avatar of an online user, a pop-up will show
+you some information about him, such as name, avatar, current position
+(if defined), and the last activity message of status activity, file or
+link sharing activity (if any).
+
+You can also see your connection status with an online user via the
+corresponding button at the pop-up bottom:
+
+-  If you are not connected with him yet, the Connect button is to send
+   connection invitation to him.
+
+-  If you have sent a connection request, the Cancel Request button is
+   to revoke your connection request.
+
+-  If you are invited to connect, the Confirm button is to accept his
+   connection request.
+
+-  If you are already connected with him, the Remove Connection button
+   is to delete connection between you and him.
+
+    .. note:: From the pop-up, you can click his avatar or display name to jump to his activity stream page.
+
+
+.. _Change-Language:
+
+Changing the UI language
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To change the language of eXo Platform, do as follows:
+
+1. Click your display name on the top navigation bar, then select Change
+Language from the drop-down menu.
+
+|image55|
+
+2. In the Interface Language Setting form, you will see 23 languages that
+eXo Platform supports. Select your preferred language to display, for
+instance *English*:
+
+|image56|
+
+3. Click Apply to commit your changes.
+
+    .. note:: In eXo Platform, the priority order of the display language is as the following:
+			  *User's language --> Cookies' language --> Browser's language --> Site's language*
+			  It means the language set by the user will be at the highest level, and the site's language at the lowest level.
+			  Accordingly, you should pay attention to this order when selecting your preferred display language.
+
 .. _Signing-in-and-Signing-out:
 
 =========================================
@@ -666,6 +1008,621 @@ You will be then directed to your **Activity Stream** page.
 
     .. note:: In **Activity Stream**, the order of activities is based on the last date when you create a publication action, or post a new comment. This means the last publication or comment will be auto-updated and pushed up to the top of the **Activity Stream** so that you will not miss any recent activities.
 
+.. _Share-AS:
+
+Sharing in the activity stream
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using the acivity stream, you are able to share with your connections or
+other space members (in the space's activity stream):
+
+-  A text Message to ask for help or to inform something.
+
+-  A link.
+
+-  A single file or many files.
+
+|image57|
+
+.. _text-message:
+
+Posting a text message in the activity stream
+--------------------------------------------------
+
+To share a text message with your connections or to other space's members, follow these steps:
+
+1. Click on *Message* tab form the activity composer, an area for message
+composing appears with a formatting toolbar.
+
+|image58|
+
+2. Type your message, you can format it using the buttons of the formatting toolbar:
+
+|image59|
+
+-  |image60|: Selecting a text then clicking on that button makes it in
+   bold format.
+
+-  |image61|: Selecting a text then clicking on that button makes it in
+   italic format.
+
+-  |image62|: Selecting a formatted text then clicking on that button
+   eliminates the formatting on it.
+
+-  |image63|: Allows to add/remove a numbered list.
+
+-  |image64|: Allows to add/remove a bulleted list.
+
+-  |image65|: Allow to quote a text.
+
+-  |image66|: Allows to insert a link in the text message.
+
+-  |image67|: Allows to attach an image to the text message.
+
+Click on |image68| button to share the message in the activity stream.
+
+|image69|
+
+.. _files-in-AS:
+
+Posting files in the activity stream
+--------------------------------------
+
+You can share a file or many files with your connections or in a space's
+activity stream by following this procedure:
+
+Click on File tab form the activity composer, an area allowing to upload
+file appears:
+
+|image70|
+
+Select the desired file or files. More details in `Share multiple
+documents in activity
+stream <#PLFUserGuide.ManagingYourDocuments.SharingYourDocuments.MultiUpload>`__ \ section.
+
+You can add a text message or not and then click on |image71| button to
+share the file(s) in the activity stream.
+
+|image72|
+
+.. _Link-post-in-AS:
+
+Posting link in the activity stream
+------------------------------------
+
+In additions to posting messages and files in activity stream, you can
+also share link by making these steps:
+
+Click on Link tab form the activity composer, two areas appears:
+
+-  Composer: allowing to add or not a text message with the link.
+
+-  Link area: allowing to attach a link in the activity stream.
+
+|image73|
+
+Add the link in the corresponding area and then click on |image74|.
+
+The link is attached and a thumbnail appears with a brief text from the
+corresponding page to the link:
+
+|image75|
+
+You can check No thumbnail to remove the thumbnail display.
+
+Add or not a text message and then click on |image76| button to share
+the link.
+
+|image77|
+
+    .. note:: If the activity composer is empty, the |image78| button still grey and unclickable until adding something (a text message, a link or a file) in the activity composer area.
+
+.. _Formatting-toolbar:
+
+The formatting toolbar in activity messages and comments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The formatting toolbar (or the microblog component) is present at every
+place where you can add text message. It allows you to:
+
+-  format your text: bold, italic, numbered list, bullet list
+
+-  quote a previous message.
+
+-  insert a link in your status message/comment
+
+-  insert an image in your status message/comment.
+
+|toolbar|
+
+Text formatting in the microblog
+-----------------------------------
+
+You can format your text to make it richer and more readable by using
+different effects.
+
+Select the text you want to format. Then click on one of the buttons
+from the formatting toolbar to apply its effect:
+
+-  |image80| The first button formats the text as bold.
+
+-  |image81| The second button formats the text as italic.
+
+-  |image82| The third button clears the existing format.
+
+-  |image83| Writing a text then clicking on the fourth button adds the
+   text to a numbered list. Clicking on Enter button of the keyboard
+   adds a new line with the following number.
+   When the listing is finished, to exit from the numbered list, you should click twice on Enter button of the keyboard.
+
+-  |image84| Typing a text then clicking on that button adds a bullet
+   list. When you finish your listing, you need to double click on Enter
+   button of the keyboard.
+
+Quote text in the microblog
+----------------------------
+
+The formatting toolbar allows you to quote a previous text message. To
+do this, click on the Quote button |image85| and then copy and paste the
+text you want to quote.
+
+Double click on the Enter button on your keyboard to leave the quote
+area.
+
+|image86|
+
+Insert link in the microblog
+------------------------------
+
+To insert a link in your text message/comment, click on the link button
+|image87| to bring up a Link form . Type the text and link into this
+form.
+
+The text you type will appear in your message/comment and will redirect
+users to the inserted link.
+
+|image88|
+
+You can also link to text that has already been typed. Select the text,
+then click on the Link button |image89|.
+
+The Link form will appear with the Text field already completed. To
+finish, type the link.
+
+|image90|
+
+
+    .. note:: It is also possible to add a link by right-clicking in the text area then selecting Link.
+				|image91|
+
+Insert image in the microblog
+--------------------------------
+
+The last button of the formatting toolbar in the microblog is the Insert
+Image button allowing you to insert an image in your message/comment.
+
+To insert an image in your text message/comment, follow these steps:
+
+1. Click on the Insert Image button |image92| to open the Select image form.
+
+|image93|
+
+You have four options:
+
+-  **Drop an image**: drag and drop an image from your computer. A progress
+   bar will appear to indicate the upload progress.
+
+   |image94|
+
+   When the upload has ended, the image will appear in the dedicated
+   area.
+
+   |image95|
+
+-  **Upload an image from your desktop**: It allows you to select an image
+   from your computer. Browse for the image and double-click on it to
+   select. A progress bar will appear to indicate the upload progress.
+
+   When the upload has ended, the image will appear in the dedicated
+   area.
+
+-  **Select on server**: select an image already on the server from your
+   drives. Clicking on the link opens the Select files form.
+
+   |image96|
+
+   Navigate through your drives and then select an image. This will be
+   directly displayed in the dedicated area.
+
+-  **Pick an image online**: insert an image using its URL. Paste the image
+   link into the Image URL field. An upload time will appear and the OK
+   button will be greyed.
+
+   |image97|
+
+   When the upload has ended, the image will appear in the dedicated
+   area and the OK button will become clickable.
+
+
+    .. note:: Click on the Cancel button to return to the screen showing the options. When picking an image online, click on the Back button. This button will disappear when the image is fully uploaded.
+
+2. To choose the alignement you want, click on one of the three buttons.
+
+|image98|
+
+3. Click on the OK button. The image will appear in the comment/message
+area.
+
+|image99|
+
+4. To resize, hover over the image to bring up a black frame. Manipulate the frame to the size you want.
+
+|image100|
+
+5. When you right click on the image, a contextual menu appears:
+
+|image101|
+
+-  Click on Copy followed by Paste to duplicate the image in the editor.
+
+-  lick on Cut followed by Paste to move the image to another location
+   in the editor.
+
+-  Click on Change Image to open the Insert Image form prefilled with:
+
+   -  the image preview.
+
+   -  the image alignment as previously selected.
+
+   -  the Remove Image link allowing you to remove the image and start
+      again.
+
+-  Click on Link to open the Link form allowing you to insert an image
+   using its URL.
+
+    .. note:: After you’ve finished resizing the image and posted it in the activity stream, the image will appear with the exact size you defined. Otherwise it appears in its default size.
+
+.. _Mentioning-People:
+
+Mentioning someone
+~~~~~~~~~~~~~~~~~~~~~~
+
+Mention is a way to refer to people so that they are informed of who and
+what you are talking about. Mentioning someone is possible in activity
+stream composer, activities comments and also document comments. To
+mention someone, do as follows:
+
+1. Type the "@" symbol into the activity/comment composer, then type the
+person name you want to mention.
+
+A suggestion list that contains matching characters will appear.
+
+Only one person can be selected at one time.
+
+
+	.. note:: When mentionning a user with "@", it displays **in first positions** contacts in your connections, **then** other people
+
+|image102|
+
+2. Go through the suggestion list with the "Up" and "Down" arrow keys or by
+moving your cursor over it, then click or hit the "Enter" key to
+validate your selected person.
+
+
+    .. note:: Only one person can be selected at one time.
+    
+
+After being validated, "@" and following characters will be replaced
+with First name and Last name which are wrapped in a label. You can
+click [x] in the label to dismiss it.
+
+|image103|
+
+
+In the Activity Stream, the mention is displayed as a link to the mentioned user's profile page.
+
+|image104|
+
+
+    .. note:: -  You can do the same steps above to mention someone in your comments (document comments and activity comments).
+			  -  The person you mention also sees the post in his/her Activity Stream.
+			  -  Document comments appears also in the Activity Stream.
+
+
+.. _Deleting-Activities-Comments:
+
+Deleting activities/comments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You are allowed to delete your activities/comments that you created, and
+those in your activity stream and in the space where your are the
+manager.
+
+1. Change the activity filter to **All Activities** or **My spaces** to view all of your activities.
+
+|image105|
+
+2. Hover your cursor over the activity you want to delete, then click
+|image106| that appears.
+
+|image107|
+
+3. Click **OK** in the confirmation message to accept your deletion.
+
+    .. note:: As an eXo Platform user, you can only delete your own activities. If you are manager of a space, you can delete any activities related to this space.
+
+.. _Commenting-Activities:
+
+Commenting on activities
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This action allows you to get ideas, answers, and any additional
+information when your collaborators respond to your status updates.
+Besides, you can comment by yourself about any activities as follows:
+
+1. Click |image108| on the the activity you want to comment.
+
+|image109|
+
+2. Enter your comment into the Comment box and press the **Comment** button.
+Your comment will be displayed right after the activity.
+
+
+    .. note:: A formatting toolbar appears once you click in the comment composer. It allows you to change the formatting of your message, attaching images and links and preview how it will look once posted. (like what we have for :ref:`the activity stream composer <share-as>`)
+
+When there are more than two comments on activity, 2 latest comments
+will be displayed below the activity. You can click "View all XX
+comments" (XX is the total number of comments) to view 10 more comments.
+If some comments left are not displayed yet, click View previous
+comments on the top of the comment part to view more.
+
+You can mention people in your comment by "@" symbol into your activity
+composer, then type the person name you want to mention. See :ref:`Mentioning
+someone <mentioning-people>` for more details.
+
+.. _Liking-Activities:
+
+Liking activities
+~~~~~~~~~~~~~~~~~~
+
+You can "Like" an activity to show your interest and support to that
+activity.
+
+.. _like-activity:
+
+Liking an activity
+---------------------
+
+Click |image110| under the activity you like, a tooltip appears |image111|.
+When you like an activity, the "Like" button will be highlighted to show
+that you already click "Like" on that activity. The activity displays
+the information of like numbers or people who also like the activity
+right below it. If many people have liked the activity, you can click
+|image112| to expand the view to see other "likers".
+
+|image115|
+
+.. _unlike-activity:
+
+Unliking an activity
+---------------------
+
+To unlike a "Liked" activity, simply click |image113|.
+
+When disliking, a tooltip dislike appears. |image114|
+
+.. _Liking-comments:
+
+Liking comments
+~~~~~~~~~~~~~~~~~
+
+With eXo Platform 5, it is possible to express emotion on a user's comment to
+a status or any other activity by liking the comment.
+
+Under the comment text, a like icon is displayed |image116| which has 2
+statuses:
+
+-  The active status: When a user clicks on the like button, it turns to
+   blue color.
+
+-  The inactive status: The button is greyed when it is unclicked or
+   clicked twice i.e first for liking and the second for removing like.
+
+Clicking on the like button adds a number between brackets which
+indicates the number of users who already liked the comment. If the like
+button is already clicked and the user reclicks on it, it becomes
+inactive and the number is decreased by 1.
+
+-  Mousing over the number between brackets shows a popover which
+   indicates the persons who liked the comment.
+
+   |image117|
+
+-  If the number of likers is more than 10, the pop over shows 9
+   usernames and "X-9 more". To view the full list of usernames, you
+   should click on the number between brackets.
+
+   |image118|
+
+-  Clicking on the number between brackets displays a popup named
+   *People who liked* which lists the users who clicked the comment. The
+   pop up contains:
+
+   -  The user avatar.
+
+   -  The user name.
+
+   -  And one of these three buttons ahead each liker name:
+
+      -  *Remove connection* to delete a user from your connections.
+
+      -  *Cancel Request* to cancel a user invitation.
+
+      -  *Connect* to send an invitation to a user or accept his
+         invitation.
+
+   |image119|
+
+Liking comments on documents preview
+-----------------------------------------
+
+
+The like on comments feature is available for the `documents
+preview <#PLFUserGuide.ManagingYourDocuments.DocumentViewer>`__.
+
+It behaves the same as in the activity stream:
+
+-  Mousing over the number between brackets displays a pop up with the
+   names of the likers in a list.
+
+-  To display the whole list when the number of likers exeeds 10, you
+   should click on the number between brackets which displays the form
+   People who liked.
+
+|image120|
+
+.. _Replying-comments:
+
+Replying to comments
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to :ref:`Liking comments <Liking-comments>` feature in eXo Platform, it is possible to reply to a comment.
+
+Under each comment, a Reply button appears allowing you to reply to that
+comment:
+
+|image121|
+
+When you click on the Reply link, a comment composer appears with your
+avatar just below the last reply if it exists:
+
+|image122|
+
+When you click on the comment composer to type your message, a rich text
+editor toolbar appears allowing you to format your text:
+
+|image123|
+
+When more than two replies are posted to a comment, the replies are
+collapsed and a link to View all X replies (X is the total number of
+replies) is displayed allowing to view the whole replies.
+
+|image124|
+
+
+    .. note:: Some other details about the reply to comment feature:
+			-  There is only one level of replies, it is the reply to comment. There is not a reply to a reply.
+			-  Deleting a comment with replies induces the replies deletion.
+			-  In addition to activity stream comments, the reply to comment feature is available for activities of these applications: Documents preview, forum and tasks.
+			-  Same as for comments, it is possible to like replies except in tasks application.
+
+Reply to comment for Forum application
+------------------------------------------
+
+As mentioned above, the reply to comment is also available for forum
+posts activities:
+
+-  When you reply to a comment in the activity related to a forum, the
+   reply will appear as comment in the forum application which quotes
+   the original comment.
+
+   |image125|
+
+-  When you post a reply to forum topic and quote the previous post, it
+   will appear as a reply to the first comment of level 1 in the
+   corresponding activity.
+
+
+    .. note:: When you use the quote option |image126| of the CKeditor toolbar in the reply to comment, it will be considered as a simple quote.
+				|image127|
+
+Reply to comment notifications
+----------------------------------
+
+When someone replies to your comment, you receive an onsite notification
+which contains:
+
+-  The avatar of the user who replied to your comment.
+
+-  A label: "UserA has replied on one of your comments".
+
+-  The reply timestamping.
+
+-  The comment to which the user replied and if the comment is too long,
+   an ellipsis of it.
+
+|image128|
+
+All the watchers of the activity i.e it's likers and the space's members
+if it is a space activity receive a simple comment notification.
+
+When a user replies to an another user's comment to your activity:
+
+-  The user who commented your activity receives a reply to comment
+   notification.
+
+-  You receive a simple comment notification.
+
+If the email notification is enabled, you will receive an email when
+someone replies to your comment which contains:
+
+-  The label "User X has replied to one of your comments. See below:"
+
+-  Your comment content.
+
+-  The source link i.e the platform link.
+
+-  The user name who replied followed by his reply.
+
+|image129|
+
+A new line in `my
+notifications <#PLFUserGuide.ManagingYourPersonalApplications.NotificationSettings>`__
+settings is added to manage reply to comment notifications:
+
+|image130|
+
+Default values are:
+
+-  Send me an email right away: checked.
+
+-  Send me a digest email: Daily.
+
+-  See on site: checked.
+
+
+.. _Getting-Permalinks:
+
+Getting permalinks of activities/comments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can easily get the link of any activity or comment from the activity
+stream to share with others. With this feature, you can bring the
+attention of other users to an activity/comment without the need to :ref:`mention them <Mentioning-People>`.
+
+Getting permalinks of an activity
+-----------------------------------
+
+Hover your cursor over the activity you want to get the permalink, then
+click on the link icon |image131| that appears.
+
+|image132|
+
+This permalink will then take you to the activity with all comments
+expanded.
+
+Getting permalinks of a comment
+-------------------------------------
+
+Hover your cursor over the comment you want to get the permalink, then
+click on the link icon |image133| that appears.
+
+|image134|
+
+This permalink will then take you to the activity in which the comment
+is highlighted.
+
+
 
 
 
@@ -703,4 +1660,105 @@ You will be then directed to your **Activity Stream** page.
 .. |image30| image:: images/common/2.png
 .. |image31| image:: images/common/3.png
 .. |image32| image:: images/common/4.png
-
+.. |image33| image:: images/common/create_navigation.png
+.. |image34| image:: images/platform/create_menu.png
+.. |image35| image:: images/platform/add-task-quickly.png
+.. |image36| image:: images/common/task-quick-link.png
+.. |image37| image:: images/platform/create_event.png
+.. |image38| image:: images/platform/event-added-quick.png
+.. |image39| image:: images/platform/create_poll.png
+.. |image40| image:: images/platform/poll_select_forum.png
+.. |image41| image:: images/platform/topic_select_forum.png
+.. |image42| image:: images/platform/create_wiki_page.png
+.. |image43| image:: images/gatein/getting_started_gadget.png
+.. |image44| image:: images/common/close_icon.png
+.. |image45| image:: images/gatein/close_getting_started_gadget.png
+.. |image46| image:: images/gatein/calendar_gadget.png
+.. |image47| image:: images/common/settings_icon.png
+.. |image48| image:: images/common/close_icon.png
+.. |image49| image:: images/gatein/plus_icon.png
+.. |image50| image:: images/gatein/invitations_gadget.png
+.. |image51| image:: images/common/close_icon.png
+.. |image52| image:: images/gatein/suggestions_gadget.png
+.. |image53| image:: images/common/close_icon.png
+.. |image54| image:: images/gatein/who_online_gadget.png
+.. |image55| image:: images/platform/language_setting.png
+.. |image56| image:: images/platform/language_setting.png
+.. |image57| image:: images/platform/activity_composer.png
+.. |image58| image:: images/platform/formatting_toolbar.png
+.. |image59| image:: images/platform/formatting_toolbar_actions.png
+.. |image60| image:: images/common/1.png
+.. |image61| image:: images/common/2.png
+.. |image62| image:: images/common/3.png
+.. |image63| image:: images/common/4.png
+.. |image64| image:: images/common/5.png
+.. |image65| image:: images/common/6.png
+.. |image66| image:: images/common/7.png
+.. |image67| image:: images/common/8.png
+.. |image68| image:: images/platform/post_button.png
+.. |image69| image:: images/platform/post_message.png
+.. |image70| image:: images/platform/post_file.png
+.. |image71| image:: images/platform/post_button.png
+.. |image72| image:: images/platform/posted_files.png
+.. |image73| image:: images/platform/link_area.png
+.. |image74| image:: images/platform/attach_button.png
+.. |image75| image:: images/platform/attached_link.png
+.. |image76| image:: images/platform/post_button.png
+.. |image77| image:: images/platform/attached_link_toAS.png
+.. |image78| image:: images/platform/post_button.png
+.. |toolbar| image:: images/platform/formatting_toolbar_actions.png
+.. |image79| image:: images/common/1.png
+.. |image80| image:: images/common/2.png
+.. |image81| image:: images/common/3.png
+.. |image82| image:: images/common/4.png
+.. |image83| image:: images/common/5.png
+.. |image84| image:: images/platform/quote_microblog.png
+.. |image85| image:: images/platform/quoted_message.png
+.. |image86| image:: images/platform/link_insert_button.png
+.. |image87| image:: images/platform/Link_form.png
+.. |image88| image:: images/platform/link_insert_button.png
+.. |image90| image:: images/platform/Link_form_text.png
+.. |image91| image:: images/platform/Link_right_click.png
+.. |image92| image:: images/platform/image_insert_button.png
+.. |image93| image:: images/platform/select_image_form.png
+.. |image94| image:: images/platform/drop_image.png
+.. |image95| image:: images/platform/drop_image_end.png
+.. |image96| image:: images/platform/select_from_drive.png
+.. |image97| image:: images/platform/image_url.png
+.. |image98| image:: images/platform/alignement.png
+.. |image99| image:: images/platform/image_added_in_area.png
+.. |image100| image:: images/platform/resize_image.png
+.. |image101| image:: images/platform/contextual_menu.png
+.. |image102| image:: images/platform/people_suggestion_list.png
+.. |image103| image:: images/platform/mention_people.png
+.. |image104| image:: images/platform/click_mentioned_user.png
+.. |image105| image:: images/platform/change_activity_filter.png
+.. |image106| image:: images/platform/remove_attachment_icon.png
+.. |image107| image:: images/platform/delete_activity.png
+.. |image108| image:: images/platform/comment_icon.png
+.. |image109| image:: images/platform/comment_activity.png
+.. |image110| image:: images/platform/like_icon.png
+.. |image111| image:: images/platform/like-tooltip.png
+.. |image112| image:: images/platform/show_more_likers.png
+.. |image113| image:: images/platform/unlike_icon.png
+.. |image114| image:: images/platform/disliketooltip.png
+.. |image115| image:: images/platform/like_info.png
+.. |image116| image:: images/platform/comment_like_icon.png
+.. |image117| image:: images/platform/Who_liked_popover.png
+.. |image118| image:: images/platform/many_likers.png
+.. |image119| image:: images/platform/Who_liked.png
+.. |image120| image:: images/platform/people_who_liked_doc.png
+.. |image121| image:: images/platform/reply_comment.png
+.. |image122| image:: images/platform/reply_comment_area.png
+.. |image123| image:: images/platform/reply_comment_area_CKeditor.png
+.. |image124| image:: images/platform/more_replies.png
+.. |image125| image:: images/platform/forum_replies.png
+.. |image126| image:: images/platform/quote.png
+.. |image127| image:: images/platform/simple_quote.png
+.. |image128| image:: images/platform/notification.png
+.. |image129| image:: images/platform/email_notif.png
+.. |image130| image:: images/platform/notification_line.png
+.. |image131| image:: images/platform/share_link_icon.png
+.. |image132| image:: images/platform/getting_permalink_activity.png
+.. |image133| image:: images/platform/share_link_icon.png
+.. |image134| image:: images/platform/getting_permalink_comment.png
