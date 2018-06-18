@@ -1,8 +1,7 @@
 .. _Creating-New-Page:
 
-===============
 Creating a page
-===============
+------------------
 
 **Creating a blank page**
 
@@ -32,7 +31,7 @@ A list of available templates will appear.
 
 You can:
 
-**i.** Click |image0| corresponding to the template you want to see. The
+**i.** Click |image8| corresponding to the template you want to see. The
 template preview appears.
 
 **ii.** Tick the checkbox corresponding to the template you want to
@@ -51,12 +50,8 @@ Click Preview if you want to see how your page looks like.
 
 Click Save to finish.
 
-    **Note**
-
-    These templates can be created, edited and deleted by administrator.
-    See the `Managing a page
-    template <#PLFUserGuide.WorkingWithWikis.AdvancedSettings.ManagingPageTemplate>`__
-    section for more details.
+.. note:: These templates can be created, edited and deleted by administrator.
+			See the `Managing a page template <#PLFUserGuide.WorkingWithWikis.AdvancedSettings.ManagingPageTemplate>` section for more details.
 
 **Adding an undefined link for creating a page later**
 
@@ -87,4 +82,4 @@ Follow the steps stated
 `above <#PLFUserGuide.BuildWiki.WorkWithWikiPages.ManagingContent.AddingAndEditingPages.CreatingPage.FirstWay>`__
 to enter the page title, content and save the page.
 
-.. |image0| image:: images/wiki/preview_template_icon.png
+

@@ -13,49 +13,52 @@ To edit the whole page content, click Edit in the Page Control area.
 Your page will be switched to the **Edit** mode which allows you to
 rename the page and edit the page content.
 
-The toolbar in the **Edit** mode will be changed to activate the
-following actions.
+|image13|
+
+The toolbar in the **Edit** mode will be changed to activate the following actions.
+
+|image14|
 
 **Details:**
 
 +--------------------+--------------------------------------------------------+
 | Item               | Description                                            |
 +====================+========================================================+
-|                    | Switches to the **Rich Text (WYSIWYG)** editor.        |
+||image15|           | Switches to the **Rich Text (WYSIWYG)** editor.        |
 +--------------------+--------------------------------------------------------+
 |                    | Displays the preview mode of the currently edited      |
-|                    | content. Previewing a page helps you verify the result |
+||image16|           | content. Previewing a page helps you verify the result |
 |                    | of rendering the markup you just entered without       |
 |                    | saving.                                                |
 +--------------------+--------------------------------------------------------+
-|                    | Opens the Wiki syntax help panel.                      |
+||image17|           | Opens the Wiki syntax help panel.                      |
 +--------------------+--------------------------------------------------------+
-|                    | Shows more syntax help.                                |
+||image18|           | Shows more syntax help.                                |
 +--------------------+--------------------------------------------------------+
-|                    | Ticks the Publish Activity checkbox to publish your    |
+||image19|           | Ticks the Publish Activity checkbox to publish your    |
 |                    | content modification on Activity Stream after saving   |
 |                    | your changes                                           |
 +--------------------+--------------------------------------------------------+
-|                    | Inputs the edit reason if necessary.                   |
+||image20|           | Inputs the edit reason if necessary.                   |
 +--------------------+--------------------------------------------------------+
 |                    | Saves the current page and go back to the view mode.   |
 |                    | Changes will be sent to watchers via mail              |
-|                    | notification.                                          |
+||image21|           | notification.                                          |
 +--------------------+--------------------------------------------------------+
 |                    | Discards the current changes and go back to the        |
-|                    | **View** mode.                                         |
+||image22|           | **View** mode.                                         |
 +--------------------+--------------------------------------------------------+
 
 **Editing a page section**
 
 To edit only a section in the whole page content, hover your cursor over
-the title of the section you want to edit, then click |image0|.
+the title of the section you want to edit, then click |image12|.
+
+|image23|
 
 The selected section will be switched to the **Edit** mode.
 
-    **Tip**
 
-    In the **View** mode, you can quickly edit the page title by
-    double-clicking it, then press **Enter** when finishing.
+.. tip::    In the **View** mode, you can quickly edit the page title by double-clicking it, then press **Enter** when finishing.
 
-.. |image0| image:: images/common/edit_icon.png
+
