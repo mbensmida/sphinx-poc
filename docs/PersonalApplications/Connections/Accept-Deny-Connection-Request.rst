@@ -13,7 +13,7 @@ Use the Invitations application on the Social Intranet homepage. See :ref:`here 
 
 1. Select the Requests Received tab in the My Connections page.
 
-|image0|
+|image27|
 
 2. Click Confirm/ Ignore under the contact name to accept/deny the request respectively.
 
@@ -24,7 +24,7 @@ Use the Invitations application on the Social Intranet homepage. See :ref:`here 
 
 :ref:`Access the profile page of the contact <View-Profile-Contacts>` who sent you a connection request, then click Accept Request or Deny button.
 
-|image1|
+|image28|
 
 -  At the first time when you connect to a user in the network, a new
    activity will be created on the activity stream. This activity always
@@ -34,15 +34,8 @@ Use the Invitations application on the Social Intranet homepage. See :ref:`here 
    later connection will also create a new comment added to the
    activity.
 
-   |image2|
+   |image29|
 
 -  If you :ref:`remove your connection <Disconnect-Contact>` with a user, the number of your connections will be updated to the activity.
 
-.. |image0| image:: images/social/confirm_request.png
-
-
-.. |image1| image:: images/social/deny_connect_request.png
-
-
-.. |image2| image:: images/social/connection_activity.png
 

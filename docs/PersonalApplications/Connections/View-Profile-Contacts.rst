@@ -2,12 +2,12 @@
 
 
 Viewing profile of other contacts
-=================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To view all information of a contact, simply click his/her name. You
 will be redirected to his/her profile page.
 
-|image0|
+|image25|
 
 You can also see his/her recent activities, connections, Wiki pages,
 connection status with you and current status.
@@ -27,4 +27,4 @@ connection status with you and current status.
 
     .. note:: Regardless of being an administrator, you do not have right to edit profiles of other contacts.
 
-.. |image0| image:: images/social/contact_profile.png
+

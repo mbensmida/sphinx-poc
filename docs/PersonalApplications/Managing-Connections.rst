@@ -21,7 +21,7 @@ To build your connections, you first need to click your display name on
 the top navigation bar and select My Connections from the drop-down
 menu.
 
-|image0|
+|image24|
 
 The **My Connections** page appears.
 
@@ -43,5 +43,5 @@ This page consists of the following tabs:
     .. note:: You can also view your connections by clicking People on the left pane to open the People Directory page which lists all users registered in the portal. 
 				However, when the number of users in the network is bigger and bigger, you should select the relevant tabs (My Connections, Requests Received, and Requests Pending) to do actions more quickly and conveniently.
 
-.. |image0| image:: images/social/select_my_connections.png
+
 

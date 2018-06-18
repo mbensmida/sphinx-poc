@@ -10,11 +10,10 @@ below:
 the top navigation bar. You will be redirected to the Notifications
 Settings page.
 
-|image0|
+|image54|
 
 
-:note:: The **My Tasks** settings are available only if the `Task
-		Management <#PLFUserGuide.WorkingWithTasks>`__ add-on is installed by the administrator.
+:note:: The **My Tasks** settings are available only if the :ref:`Task Management <Manage-Task>` add-on is installed by the administrator.
 
 2. Select notification options as desired. In particular:
 
@@ -47,4 +46,4 @@ Settings page.
 Or, click Reset button at the bottom to reset to default values for all your
 notification settings.
 
-.. |image0| image:: images/social/notification_settings.png
+

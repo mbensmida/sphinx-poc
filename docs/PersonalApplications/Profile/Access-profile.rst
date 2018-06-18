@@ -6,7 +6,7 @@ Access your profile
 To access the My Profile page, simply click your display name on the top
 right corner, and select My Profile from the drop-down menu.
 
-|image0|
+|image1|
 
 By default, your profile is just initialized with the basic account
 information as below:
@@ -42,8 +42,8 @@ This layout enables you to view:
 
     .. note:: When you change the information of your profile at the first time, an activity will be created on the activity stream. Also, a comment informing your change is added to the activity. Your later changes will automatically create comments updated to the activity.
 
-				|image1|
+				|image2|
 
-.. |image0| image:: images/social/select_my_profile.png
-.. |image1| image:: images/social/profile_changes_activities.png
+.. |image1| image:: images/social/select_my_profile.png
+.. |image2| image:: images/social/profile_changes_activities.png
 

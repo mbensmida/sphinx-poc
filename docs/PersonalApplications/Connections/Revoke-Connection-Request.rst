@@ -1,7 +1,7 @@
 .. _Revoke-Connection-Request:
 
 Revoking a connection request
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After sending connection requests to other users and they are not
 accepted yet, you still can remove the requests by doing one of the

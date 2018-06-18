@@ -1,14 +1,14 @@
 .. _Edit-Your-Profile:
 
 Edit your profile
-=================
+~~~~~~~~~~~~~~~~~~~
 
-To build a profile as expected, click |image0| to jump to the **Edit
+To build a profile as expected, click |image3| to jump to the **Edit
 Profile** page:
 
-|image1|
+|image4|
 
-    .. note:: In the Contact Information and Experience sections, click |image2| corresponding to one field which you want to add more or click |image3| to delete your input information. 
+    .. note:: In the Contact Information and Experience sections, click |image5| corresponding to one field which you want to add more or click |image6| to delete your input information. 
 				After making changes, click **Save** or **Cancel** to respectively save or ignore them.
 
 The followings are changeable information in each section.
@@ -16,7 +16,7 @@ The followings are changeable information in each section.
 .. _Profile-banner:
 
 Profile banner
-~~~~~~~~~~~~~~~~~~
+---------------
 
 When accessing to your profile, a banner is displayed in the top of the
 page. By default it is grey. You can change it and select a profile
@@ -24,30 +24,30 @@ image.
 
 To change the profile banner:
 
-1. Mouse over the top right of the grey banner, an icon will appearn |image4| and a tooltip indicating that the banner should have 130 pixels height.
+1. Mouse over the top right of the grey banner, an icon will appearn |image7| and a tooltip indicating that the banner should have 130 pixels height.
 
-|image5|
+|image8|
 
-2. Click on the icon |image6|, a drive from your hard disk will open.
+2. Click on the icon |image9|, a drive from your hard disk will open.
 
 3. Select the desired profile banner image and double click on it.
 
 4. The profile banner image will be automatically loaded.
 
-|image7|
+|image10|
 
 To reset the profile banner, you just need to hover the right corner
 again and this time, you will have two butons:
 
--  |image8| to change the profile banner.
+-  |image11| to change the profile banner.
 
--  |image9| to restore the default banner.
+-  |image12| to restore the default banner.
 
 When scrolling down on your profile page and if you exceed the cover
 section limit, the profile banner will be replaced by a new navigation
 bar:
 
-|image10|
+|image13|
 
 This new navigation bar contains:
 
@@ -55,24 +55,24 @@ This new navigation bar contains:
 
 -  Your display name and your chat status.
 
--  The edit button |image11| allowing you to edit your profile.
+-  The edit button |image14| allowing you to edit your profile.
 
 -  Your applications navigation bar.
 
--  The *More* button |image12| which appears when applications display
+-  The *More* button |image15| which appears when applications display
    exceed the navigation bar limit.
 
-   |image13|
+   |image16|
 
 In mobile devices, when scrolling down your profile page, the
 applications navigation bar is scrollable left and right.
 
-|image14|
+|image17|
 
 .. _About-me:
 
 About Me
-~~~~~~~~~
+-----------
 
 A brief introduction of yourself with 1500 characters in maximum,
 telling people who you are and what you do. If this section is empty, it
@@ -81,7 +81,7 @@ will not be displayed on your profile page.
 .. _Contact-info:
 
 Contact Information
-~~~~~~~~~~~~~~~~~~~~
+
 
 +----------------------+-----------------------------------------------------+
 | Field                | Description                                         |
@@ -131,9 +131,9 @@ Contact Information
 
 *The first way:*
 
-1. Click on |image15| button then on Change Avatar from the section **Contact Information** to open the Upload an Avatar form.
+1. Click on |image18| button then on Change Avatar from the section **Contact Information** to open the Upload an Avatar form.
 
-|image16|
+|image19|
 
 2. Click Select File to pick up an image from your local device.
 
@@ -144,15 +144,15 @@ Contact Information
 4. Click Confirm to open the Avatar Preview form to see some related
 information, such as file name, file type, and image size.
 
-|image17|
+|image20|
 
 5. Click Save to accept your changes.
 
 *The second way:*
 
-1. Mouse over your profile avatar, an icon |image18| will appear.
+1. Mouse over your profile avatar, an icon |image21| will appear.
 
-2. Click on the icon |image19|. This will prompt you to pick a file from your computer.
+2. Click on the icon |image22|. This will prompt you to pick a file from your computer.
 
 3. Double click on the desired image.
 
@@ -192,39 +192,4 @@ Experience
     .. note:: The information entered in the Skill Used field will be retrieved
 				when you `search for contacts <#PLFUserGuide.SearchingIneXoPlatform.RefiningYourSearch.SearchingForContact>`__.
 
-.. |image0| image:: images/social/edit_profile_button.png
 
-.. |image1| image:: images/social/edit_profile.png
-
-.. |image2| image:: images/common/plus_icon.png
-.. |image3| image:: images/common/remove_icon.png
-.. |image4| image:: images/social/update_image_icon.png
-
-.. |image5| image:: images/social/banner_tooltip.png
-.. |image6| image:: images/social/update_image_icon.png
-
-.. |image7| image:: images/social/update_profile_banner.png
-
-.. |image8| image:: images/social/update_image_icon.png
-.. |image9| image:: images/social/delete_banner_icon.png
-
-.. |image10| image:: images/social/new_profile_banner.png
-
-
-.. |image11| image:: images/social/edit_icon.png
-.. |image12| image:: images/social/more_button.png
-
-.. |image13| image:: images/social/navBar_with_more_user.png
-
-
-.. |image14| image:: images/social/mobile_profile_banner.png
-
-
-.. |image15| image:: images/social/edit_profile_button.png
-
-.. |image16| image:: images/social/upload_avatar.png
-
-.. |image17| image:: images/social/avatar_preview.png
-.. |image18| image:: images/social/update_image_icon.png
-
-.. |image19| image:: images/social/update_image_icon.png

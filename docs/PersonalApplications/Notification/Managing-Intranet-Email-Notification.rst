@@ -1,7 +1,7 @@
 .. _Managing-Intranet-Email-Notification:
 
 Managing notification streams
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 eXo Platform provides you various notification streams which help you to keep
 track of all activities and events within your organization. You now can
@@ -30,14 +30,14 @@ up or is added to your network.
 
 -  By email:
 
-   |image0|
+   |image55|
 
    Click Connect now. You will be taken to her/his profile page where
    you can cancel your connection request by clicking Revoke.
 
 -  Or directly on-site:
 
-   |image1|
+   |image56|
 
    If you wish to connect with this user, click on this notification
    stream to go to her/his profile page.
@@ -52,7 +52,7 @@ user wants to connect with you.
 
 -  By email:
 
-   |image2|
+   |image57|
 
    Click Accept to approve the connection. You will be taken to the
    activity stream of your new connection.
@@ -62,7 +62,7 @@ user wants to connect with you.
 
 -  Or directly on-site:
 
-   |image3|
+   |image58|
    
 .. _SpaceInvitation:   
 
@@ -74,7 +74,7 @@ invited to join a space.
 
 -  By email:
 
-   |image4|
+   |image59|
 
    Click Accept to approve the invitation. You will become a member of
    the space and be taken to the activity stream of the space.
@@ -84,7 +84,7 @@ invited to join a space.
 
 -  Or directly on-site:
 
-   |image5|
+   |image60|
 
 
 .. _SpaceJoinRequest:
@@ -97,14 +97,14 @@ someone requests to join a space where you are the manager.
 
 -  By email:
 
-   |image6|
+   |image61|
 
    Click Validate or Refuse to accept or deny the request respectively.
    You will be taken to the Members tab of Space Settings of that space.
 
 -  Or directly on-site:
 
-   |image7|
+   |image62|
 
    Click Accept or Refuse to accept or deny the request respectively.
 
@@ -119,7 +119,7 @@ mentions (@) you in the activity stream.
 
 -  By email:
 
-   |image8|
+   |image63|
 
    Click Reply. You will be taken to the activity with the comment box
    that is ready for your reply. If the mention is made in a comment,
@@ -131,7 +131,7 @@ mentions (@) you in the activity stream.
 
 -  Or directly on-site:
 
-   |image9|
+   |image64|
 
    By clicking on this notification stream, you will be redirected to
    the full discussion.
@@ -148,7 +148,7 @@ commented or liked.
 
 -  By email:
 
-   |image10|
+   |image65|
 
    Click Reply. You will be taken to the activity with all comments
    expanded and the comment box opened that is ready for your reply. The
@@ -160,7 +160,7 @@ commented or liked.
 
 -  Or directly on-site:
 
-   |image11|
+   |image66|
 
    By clicking on this notification stream, you will be redirected to
    the full discussion.
@@ -176,7 +176,7 @@ when someone likes your activity.
 
 -  By email:
 
-   |image12|
+   |image67|
 
    Click Reply. You will be taken to the activity with the comment box
    opened that is ready for your reply.
@@ -186,7 +186,7 @@ when someone likes your activity.
 
 -  Or directly on-site:
 
-   |image13|
+   |image68|
 
    Click on the notification stream, you will be taken to the activity
    with all comments expanded.
@@ -202,7 +202,7 @@ when someone posts on your activity stream.
 
 -  By email:
 
-   |image14|
+   |image69|
 
    Click Reply. You will be taken to the activity with the comment box
    opened that is ready for your reply.
@@ -212,7 +212,7 @@ when someone posts on your activity stream.
 
 -  Or directly on-site:
 
-   |image15|
+   |image70|
 
    Click on the notification stream, you will be taken to the activity
    with all comments expanded.
@@ -228,7 +228,7 @@ someone posts on the activity streams of your spaces:
 
 -  By Email:
 
-   |image16|
+   |image71|
 
    Click Reply. You will be taken to the activity with the comment box
    opened that is ready for your reply.
@@ -238,23 +238,21 @@ someone posts on the activity streams of your spaces:
 
 -  On-site:
 
-   |image17|
+   |image72|
 
    Click on the notification stream, you will be taken to the activity
    with all comments expanded.
 
 -  On All Notifications page:
 
-   |image18|
+   |image73|
 
    Click on View All on the notification stream, you will be taken to
    the All Notifications page.
 
-       **Note**
+       
 
-       If the comment is longer than on line in the All notifications
-       screen, an ellipsis (...) is used on the line end. To display all
-       the comment, click on Read More.
+ .. note:	If the comment is longer than on line in the All notifications screen, an ellipsis (...) is used on the line end. To display all the comment, click on Read More.
 
    Clicking on the notification, you will be taken to the activity with
    all comments expanded.
@@ -276,14 +274,14 @@ a task to you.
 
 -  By email:
 
-   |image19|
+   |image74|
 
    Click Open Task. You will be taken to the detailed task pane in the
    Task Management application.
 
 -  Or directly on-site:
 
-   |image20|
+   |image75|
 
    Click on the notification stream, you will be taken to the detailed
    task pane in the Task Management application.
@@ -296,14 +294,14 @@ a coworker of a task.
 
 -  By email:
 
-   |image21|
+   |image76|
 
    Click Open Task. You will be taken to the detailed task pane in the
    Task Management application.
 
 -  Or directly on-site:
 
-   |image22|
+   |image77|
 
    Click on the notification stream, you will be taken to the detailed
    task pane in the Task Management application.
@@ -316,14 +314,14 @@ the due date of your tasks.
 
 -  By email:
 
-   |image23|
+   |image78|
 
    Click Open Task. You will be taken to the detailed task pane in the
    Task Management application.
 
 -  Or directly on-site:
 
-   |image24|
+   |image79|
 
    Click on the notification stream, you will be taken to the detailed
    task pane in the Task Management application.
@@ -337,43 +335,16 @@ your tasks as completed.
 
 -  By email:
 
-   |image25|
+   |image80|
 
    Click Open Task. You will be taken to the detailed task pane in the
    Task Management application.
 
 -  Or directly on-site:
 
-   |image26|
+   |image81|
 
    Click on the notification stream, you will be taken to the detailed
    task pane in the Task Management application.
 
-.. |image0| image:: images/social/newuser_notification.png
-.. |image1| image:: images/social/newuser_notification_intra.png
-.. |image2| image:: images/social/connection_request_notification.png
-.. |image3| image:: images/social/connection_request_notification_intra.png
-.. |image4| image:: images/social/space_invitation_notification.png
-.. |image5| image:: images/social/space_invitation_notification_intra.png
-.. |image6| image:: images/social/space_join_request_notification.png
-.. |image7| image:: images/social/space_join_request_notification_intra.png
-.. |image8| image:: images/social/mention_notification.png
-.. |image9| image:: images/social/mention_notification_intra.png
-.. |image10| image:: images/social/comment_notification.png
-.. |image11| image:: images/social/comment_notification_intra.png
-.. |image12| image:: images/social/like_notification.png
-.. |image13| image:: images/social/like_notification_intra.png
-.. |image14| image:: images/social/post_notification.png
-.. |image15| image:: images/social/post_notification_intra.png
-.. |image16| image:: images/social/post_space_notification.png
-.. |image17| image:: images/social/post_space_notification_intra.png
-.. |image18| image:: images/social/all_notifications_view.png
-.. |image19| image:: images/social/email_notif_assigned_task.png
-.. |image20| image:: images/social/onsite_notif_assigned_task.png
-.. |image21| image:: images/social/email_notif_coworker.png
-.. |image22| image:: images/social/onsite_notif_coworker.png
-.. |image23| image:: images/social/email_notif_task_due_date.png
-.. |image24| image:: images/social/onsite_notif_task_due_date.png
-.. |image25| image:: images/social/email_notif_completed_task.png
-.. |image26| image:: images/social/onsite_notif_completed_task.png
 

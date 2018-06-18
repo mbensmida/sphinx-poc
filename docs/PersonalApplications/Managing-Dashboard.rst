@@ -25,11 +25,11 @@ Using the dashboard workspace
 1- Click your display name on the top
 navigation bar, then click **My Dashboard** from the drop-down menu to
 access the **My Dashboard** portlet. 
-|image0|
+|image32|
 
 2- Click **Add Gadgets** to open the Dashboard
 Workspace window which lists all available gadgets. 
-|image1|
+|image33|
 
 3- Select a gadget in the **Dashboard Workspace** window and drag and drop it into the **My Dashboard** page.
 
@@ -50,20 +50,9 @@ example, *http://bejeweledg.googlecode.com/svn/trunk/bejeweled.xml.
 2- Open the :ref:`Dashboard Workspace <use-dashboard-workspace>` window. 
 
 3- Paste the URL in Step 1 into the textbox. 
-|image2|
+|image34|
 
-4- Click |image3| to add the new gadget to the page.
-
-.. |image0| image:: images/gatein/my_dashboard_page.png
-
-
-.. |image1| image:: images/gatein/dashboard_workspace.png
-
-
-.. |image2| image:: images/gatein/add_external_gadget.png
-
-
-.. |image3| image:: images/common/plus_icon1.png
+4- Click |image35| to add the new gadget to the page.
 
 
 

@@ -13,7 +13,7 @@ Login History
 The Login History gadget records users' login history and provides
 statistics.
 
-|image0|
+|image36|
 
 There are three tabs in this gadget:
 
@@ -38,7 +38,7 @@ execution time of all templates in the portal, therefore administrators
 and developers will know how fast templates are and which ones should be
 optimized.
 
-|image1|
+|image37|
 
 The gadget consists of two tabs:
 
@@ -73,7 +73,7 @@ Each template provides you with the following information:
 Featured Poll
 ~~~~~~~~~~~~~
 
-|image2|
+|image38|
 
 The Featured Poll gadget displays the latest created poll in the Forum
 that you have permission to vote. You can directly vote and see results
@@ -82,7 +82,7 @@ topic in the Forum.
 
 -  **Vote for a specific poll:** Normally, the latest poll will be
    displayed on this gadget. However, you can indicate another poll to
-   vote by clicking |image3|, then select one from the drop-down list.
+   vote by clicking |image39|, then select one from the drop-down list.
 
    Tick your selection, then click Vote.
 
@@ -100,17 +100,17 @@ The Bookmarks gadget is a simple link management one which displays your
 bookmarked links in the portal and allows you to quickly access them by
 clicking them. You can add, edit or remove any bookmarks.
 
--  To add a new bookmark, click |image4| on the title bar of the gadget.
+-  To add a new bookmark, click |image40| on the title bar of the gadget.
 
-   |image5|
+   |image41|
 
    Add the Title and URL into the input text fields, then click Add to
    accept creating the bookmark.
 
 -  To edit a bookmark, hover your cursor over your desired bookmark,
-   then click |image6| corresponding to it.
+   then click |image42| corresponding to it.
 
-   |image7|
+   |image43|
 
    Edit the title and URL and click **OK** to accept your changes.
 
@@ -123,37 +123,14 @@ clicking them. You can add, edit or remove any bookmarks.
 Favorite Documents
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image8|
+|image44|
 
 The Favorite Documents gadget lists all of your documents which are
 `added to favorites <#PLFUserGuide.ManagingYourDocuments.OrganizingYourContent.AddingToFavorites>`__, so you can quickly access them.
 
-You can go the Favorites folder in the Personal Documents drive by clicking |image9|.
+You can go the Favorites folder in the Personal Documents drive by clicking |image45|.
 
 
    .. note:: The Login History and Template Statistics gadgets are for the
 				administrators to manage and improve the portal better.
 
-.. |image0| image:: images/gatein/login_history_gadget.png
-
-
-.. |image1| image:: images/gatein/template_statistics_gadget.png
-
-
-.. |image2| image:: images/gatein/featured_poll_gadget.png
-
-
-.. |image3| image:: images/gatein/setting_icon.png
-.. |image4| image:: images/common/plus_icon.png
-
-.. |image5| image:: images/gatein/bookmarks_gadget.png
-
-
-.. |image6| image:: images/common/edit_icon.png
-
-.. |image7| image:: images/gatein/edit_bookmark_gadget.png
-
-
-.. |image8| image:: images/gatein/favorite_documents_gadget.png
-
-.. |image9| image:: images/common/go_to_folder_icon.png

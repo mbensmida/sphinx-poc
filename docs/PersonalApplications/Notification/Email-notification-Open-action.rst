@@ -61,6 +61,4 @@ such as:
    Contents <#PLFUserGuide.ManagingYourWebsites.ContributingContent>`__:
    Open actions opens the content in the Sites Explorer.
 
-.. |image0| image:: images/social/email_actions.png
 
-.. |image1| image:: images/social/space_invitations.png
