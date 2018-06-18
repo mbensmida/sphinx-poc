@@ -1246,18 +1246,18 @@ such as:
    For this kind of notification, Open button opens the file in
    Documents application.
 
--  `Calendar events <#PLFUserGuide.ManagingYourCalendars>`__: Open
+-  :ref:`Calendar events <Calendar>`: Open
    action opens the event in the Calendar application. If the event
    belongs to a space, the space's calendar is opened.
 
--  `Tasks <#PLFUserGuide.WorkingWithTasks>`__: Open action opens the
+-  :ref:`Tasks <Manage-Task>`: Open action opens the
    task in the Tasks application.
 
--  `Wiki pages <#PLFUserGuide.WorkingWithWikis>`__: Open action opens
+-  :ref:`Wiki pages <Wiki>`: Open action opens
    the corresponding wiki page in the Wiki application. If the wiki page
    belongs to a space, the space's wiki is opened.
 
--  `Forums and Polls <#PLFUserGuide.BuildingYourForum>`__: Open action
+-  :ref:`Forums and Polls <Forum>`: Open action
    opens the corresponding topic in the Forum application with an anchor
    set at the corresponding reply. In case of a space discussion, the
    space's forum is opened.
@@ -1266,30 +1266,10 @@ such as:
    corresponding topic in the Answers application with an anchor set at
    the corresponding question or answer.
 
--  `Web
-   Contents <#PLFUserGuide.ManagingYourWebsites.ContributingContent>`__:
+-  :ref:`Web Contents <Manage-Sites>`:
    Open actions opens the content in the Sites Explorer.
 
 
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 .. |image0| image:: images/platform/personal_applications_menu.png
 .. |image1| image:: images/social/select_my_profile.png
 .. |image2| image:: images/social/profile_changes_activities.png
