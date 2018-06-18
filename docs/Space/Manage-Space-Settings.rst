@@ -22,7 +22,7 @@ of 2 ways:
 
    -  :ref:`Access your desired space <Access-Space>`, then select Space Settings on the space navigation bar.
 
-      |image0|
+      |image33|
 
 -  **The second way**
 
@@ -30,7 +30,7 @@ of 2 ways:
 
    -  Click Edit under the space name which you want to edit.
 
-      |image1|
+      |image34|
 
 .. _ChangingInfoVisibility:
 
@@ -44,7 +44,7 @@ This function allows you to edit the basic information of a space.
 
 1. Select the Settings tab in the **Space Settings** page.
 
-|image2|
+|image35|
 
 2. Change information in the Name, Description fields and the space avatar.
 
@@ -69,7 +69,7 @@ Managing members
 
 Select the Members tab in **Space Settings** page.
 
-|image25|
+|image58|
 
 Here, you can do many actions on members as follows:
 
@@ -90,9 +90,9 @@ You can invite other users to join your spaces as follows:
 
    -  **The second way**
 
-      1. Click |image3| to open the Select Users form.
+      1. Click |image36| to open the Select Users form.
 
-      |image4|
+      |image37|
 
       2. Select your desired users by ticking their corresponding checkboxes, and click Add.
 
@@ -102,17 +102,17 @@ You can invite other users to join your spaces as follows:
 
       -  **ii.** Select a criterion you want to find in the combo box next to the Search box.
 
-      -  **iii.** Click |image5| or press **Enter** to perform searching.
+      -  **iii.** Click |image38| or press **Enter** to perform searching.
 
       3. Click Invite to invite your selected users.
 
    -  **The third way**
 
-      |image6|
+      |image39|
 
-      1. |image7| Go to Members application of the space.
+      1. |image40| Go to Members application of the space.
 
-      2. |image8| Enter the username of the person you wish to invite to
+      2. |image41| Enter the username of the person you wish to invite to
       the space. You can just type in the first letters and a list of
       suggestions should appear. This list contains persons having those
       letters in their username, First name or Last name. Press Enter on
@@ -120,24 +120,24 @@ You can invite other users to join your spaces as follows:
 
       If you entered a wrong username (i.e it doesn't exist), it gets underlined in red:
       
-      |image26|
+      |image42|
 
-      3. |image9| Choose one or more persons to invite from the list. You
+      3. |image43| Choose one or more persons to invite from the list. You
       can remove some persons by just clicking on |image10| in front of
       the displayed named.
 
-      4. |image11| Click on Invite to send invitations to the chosen
+      4. |image44| Click on Invite to send invitations to the chosen
       persons.
 
       If you press on Enter to confirm a wrong username and then click
       on Invite, an error pop up appears indicating that the selected
       username is not valid.
       
-      |image27|
+      |image60|
 
    -  **Inviting users from a group**
 
-      1. Click |image12| to open the Select a Group form.
+      1. Click |image45| to open the Select a Group form.
 
       2. Select a group on the left pane, then select its sub-group on the right pane.
 
@@ -150,7 +150,7 @@ Revoking your invitations
 ---------------------------
 
 If the invited users have not accepted your requests yet, you can revoke
-your invitations by clicking |image13| corresponding to the users' name.
+your invitations by clicking |image46| corresponding to the users' name.
 The users will be removed from the Invited list.
 
 Validating/Declining request
@@ -159,20 +159,20 @@ Validating/Declining request
 As a manager or creator of a space, you can validate other users'
 requests for joining your space.
 
--  To accept a user's request for joining your space, click |image14| in
+-  To accept a user's request for joining your space, click |image47| in
    the Action column.
 
--  To decline a user's request for joining your space, click |image15|
+-  To decline a user's request for joining your space, click |image48|
    in the Action column.
 
 Promoting/Demoting a member
 ----------------------------
 
--  To promote a member to the manager position, click |image16| in the
+-  To promote a member to the manager position, click |image49| in the
    Manager column. The user will be automatically promoted as a manager
    in the current space.
 
--  To demote a member, click |image17|.
+-  To demote a member, click |image50|.
 
 .. note:: Be careful not to remove the rights for yourself; otherwise, you
 			will not be able to change your space's settings anymore. Besides,
@@ -182,11 +182,11 @@ Promoting/Demoting a member
 Removing a member
 ------------------
 
-Click |image18| corresponding to the member you want to delete in the
+Click |image51| corresponding to the member you want to delete in the
 **Members** list. In case this member is the only manager of the space,
 there will be a warning like this:
 
-|image19|
+|image52|
 
 That is, you should promote another member to the manager position
 before you can delete that member.
@@ -208,7 +208,7 @@ Adding a new space application
 
 1. Click Add Application to open the Space Application Installer form.
 
-|image20|
+|image53|
 
 2. Click a category on the left panel to show its applications on the right
 panel, then select the application you want to add by clicking Add
@@ -220,7 +220,7 @@ gain the access right.
 Deleting an application
 --------------------------
 
-To remove an application, click |image21| corresponding to the
+To remove an application, click |image54| corresponding to the
 application name.
 
  .. note::You cannot delete the Space Settings application because it is configured as a mandatory space application.
@@ -234,7 +234,7 @@ Each space is featured with some "pages" on the space navigation bar.
 These pages may contain applications or any content. By clicking on each
 page, you will be redirected to it.
 
-|image22|
+|image55|
 
 Also, you can easily manage these pages on the space navigation bar
 through actions on the relevant navigation nodes. To do so, in Space
@@ -243,7 +243,7 @@ navigation node. See `Managing navigation
 nodes <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations>`__
 for more details.
 
-|image23|
+|image56|
 
 Creating a space page
 -----------------------
@@ -254,7 +254,7 @@ Selector tab. See `Adding a new
 node <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations.AddingNewNode>`__
 for more details.
 
-|image24|
+|image57|
 
 Also, you can create a space page using:
 
@@ -291,31 +291,4 @@ be removed from the space navigation bar, but its page still exists. To
 actually delete this page, see `Deleting a
 page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.DeletingPage>`__.
 
-.. |image0| image:: images/social/space_settings_on_navigation_bar.png
-.. |image1| image:: images/social/edit_space.png
-.. |image2| image:: images/social/space_configuration_settings_tab.png
-.. |image3| image:: images/common/select_users_icon.png
-.. |image4| image:: images/platform/select_users_form.png
-.. |image5| image:: images/common/search_icon.png
-.. |image6| image:: images/social/invite_members_app.png
-.. |image7| image:: images/common/1.png
-.. |image8| image:: images/common/2.png
-.. |image9| image:: images/common/3.png
-.. |image10| image:: images/common/remove_icon.png
-.. |image11| image:: images/common/4.png
-.. |image12| image:: images/common/select_everyone_icon.png
-.. |image13| image:: images/common/delete_icon.png
-.. |image14| image:: images/social/validate_icon.png
-.. |image15| image:: images/social/decline_icon.png
-.. |image16| image:: images/social/promote_space_manager_button.png
-.. |image17| image:: images/social/demote_space_manager_button.png
-.. |image18| image:: images/common/delete_icon.png
-.. |image19| image:: images/social/remove_space_manager_warning.png
-.. |image20| image:: images/social/space_application_installer_form.png
-.. |image21| image:: images/common/remove_icon.png
-.. |image22| image:: images/social/space_navigation_bar.png
-.. |image23| image:: images/social/space_configuration_navigations_tab.png
-.. |image24| image:: images/social/space_page_creation.png
-.. |image25| image:: images/social/member_tab_space.png
-.. |image26| image:: images/social/wrong_name.png
-.. |image27| image:: images/social/wrong_username-popup.png
+

@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'sphix-poc'
-copyright = u'2017, eXoPlatform'
+copyright = u'2018, eXoPlatform'
 author = u'eXoPlatform'
 
 # The version info for the project you're documenting, acts as replacement for

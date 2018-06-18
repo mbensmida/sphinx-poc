@@ -15,8 +15,8 @@ application in the right pane of the Intranet homepage.
 
    1. Open the Invitations Received tab in the Spaces page.
 
-   |image0|
+   |image63|
 
    2. Click Accept/ Ignore corresponding to your desired space to accept/deny joining the space respectively.
 
-.. |image0| image:: images/social/invitations_received_tab.png
+

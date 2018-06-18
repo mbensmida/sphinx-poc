@@ -13,23 +13,23 @@ member first. Then follow these steps:
 
 3. Compose your text message or upload documents or attach a link in the activity composer. It is same as :ref:`Sharing in activity stream <Share-AS>`.
 
-|image0|
+|image64|
 
 4. Finally click on Post to share the status.
 
-|image1|
+|image65|
 
 When you mouse over the space name from the post, a popover is displayed
 with the space name, the space avatar and the space description.
 
-|image2|
+|image66|
 
 If you are a member in the space and not an administrator or creator, in
 addition to the previously cited components, a Leave button is displayed
 in the popover allowing you to leave the space and Chat button allowing
 you to start a discussion with the space members.
 
-|image3|
+|image67|
 
 Once you leave the space, you will not be able to see any activity, nor
 receiving notifications of your former publications on this space
@@ -39,7 +39,4 @@ activities by clicking on the delete (1) icon in the corner. All
 notifications related to that deleted activity in the space are also
 deleted.
 
-.. |image0| image:: images/social/Space_status.png
-.. |image1| image:: images/social/status_shared_space.png
-.. |image2| image:: images/social/space_popover.png
-.. |image3| image:: images/social/space_popover_member.png
+
