@@ -1,5 +1,6 @@
 .. _Manage-view:
 
+==============
 Managing views
 ==============
 
@@ -17,7 +18,7 @@ list View
 By default, when you access any item on the left pane, the corresponding
 tasks in the central pane will be displayed in a simple list like this:
 
-|image0|
+|image73|
 
 In which:
 
@@ -34,7 +35,7 @@ Marking a task as completed:
 Hover cursor over the task that you want to mark it as completed and
 click the tick icon that appears:
 
-|image1|
+|image74|
 
 The task will disappear from the List view unless
 :ref:`Filter <Filtering>` is set to show completed tasks.
@@ -47,7 +48,7 @@ Sorting/Grouping tasks
 At the top right corner of the central pane, there are two options under
 the top filter that help you to sort and group tasks in categories.
 
-|image2|
+|image75|
 
 You can arrange these tasks by the following options:
 
@@ -91,7 +92,7 @@ This view is designed only for projects, therefore you need to go to a
 specific project to see this view. In this view, you can manage tasks as
 well as the project workflow:
 
-|image3|
+|image76|
 
 In which:
 
@@ -111,7 +112,7 @@ In addition to creating new tasks by :ref:`this way <CreateTask>`, you can quick
 1. Hover cursor over the last task of a column (or grouping), an editable
 field will appear:
 
-|image4|
+|image77|
 
 2. Type the task title in this field, then press Enter key. Your new task
 will be created immediately in the corresponding column.
@@ -119,7 +120,7 @@ will be created immediately in the corresponding column.
 Sorting/Grouping tasks:
 ------------------------
 
-|image5|
+|image78|
 
 You can sort these tasks by the *Due Date, Priority* and *Rank* options
 as well as group them by the *Assignee, Label* and *None* options as in
@@ -133,15 +134,15 @@ statuses.
 
 -  Between statuses:
 
-   |image6|
+   |image79|
 
 -  Between assignees:
 
-   |image7|
+   |image80|
 
 -  Between labels:
 
-   |image8|
+   |image81|
 
 Managing project workflow
 --------------------------
@@ -153,14 +154,14 @@ it on your own.
 -  To modify a status, double-click the status name in the Board view,
    and type the new name in the editable field that appears:
 
-   |image9|
+   |image82|
 
    Press Enter key to finish updating.
 
 -  To delete a status, hover cursor over the status name in the Board
    view, and select the delete icon that appears:
 
-   |image10|
+   |image83|
 
 
 .. note:: -  All tasks assigned to the deleted status are affected to the
@@ -170,14 +171,4 @@ it on your own.
           (the next column on the right in the Board view).
 		  -  The last status cannot be deleted.
 
-.. |image0| image:: images/taskmanagement/list_view.png
-.. |image1| image:: images/taskmanagement/mark_completed.png
-.. |image2| image:: images/taskmanagement/group_sort_option.png
-.. |image3| image:: images/taskmanagement/board_view.png
-.. |image4| image:: images/taskmanagement/create_task_board.png
-.. |image5| image:: images/taskmanagement/board_group_sort.png
-.. |image6| image:: images/taskmanagement/between_statuses.png
-.. |image7| image:: images/taskmanagement/between_assignees.png
-.. |image8| image:: images/taskmanagement/between_labels.png
-.. |image9| image:: images/taskmanagement/edit_status.png
-.. |image10| image:: images/taskmanagement/delete_status.png
+

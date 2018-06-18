@@ -29,7 +29,7 @@ Via Tasks management overview
 
 2. Enter the task title into the single line text box under the New Task button:
 
-|image0|
+|image2|
 
 3. Hit **Enter** key to create this task.
 
@@ -66,16 +66,16 @@ application by using the following syntaxes on the Activity stream:
 
 See this example:
 
-|image1|
+|image3|
 
 Or via comment:
 -------------------
 
-|image2|
+|image4|
 
 You will see that there are two new tasks created as below:
 
-|image3|
+|image5|
 
     .. note:: - Anyone that has access permission to a task can do anything on the task.
 			  -  By default, tasks inherit permissions from the project they are
@@ -95,11 +95,11 @@ task directly (if you create the new task via the overview interface) or
 you can choose any other task from the central pane. The details of a
 task are as follows:
 
-|image4|
+|image6|
 
 In which:
 
--  |image5|: the name of the project that the task belongs to. In case
+-  |image7|: the name of the project that the task belongs to. In case
    the task is not assigned to any project, this field says "*No
    Project*\ ".
 
@@ -114,38 +114,38 @@ In which:
           matches in the new project workflow, the status is set to the
           first one in the new project workflow.
 
--  |image6|: the labels that are assigned to the task.
+-  |image8|: the labels that are assigned to the task.
 
--  |image7|: the title of the task which should be from 1 to 250
+-  |image9|: the title of the task which should be from 1 to 250
    characters.
 
--  |image8|: the due date of the task. You can choose among 4 options,
+-  |image10|: the due date of the task. You can choose among 4 options,
    including *None, Today, Tomorrow* and *Next Week* or specify any
    other due date.
 
--  |image9|: the assignee and co-workers that are assigned to the task.
+-  |image11|: the assignee and co-workers that are assigned to the task.
    Only one assignee is accepted, while you can add multiple co-workers.
 
--  |image10|: the status of the task in the project workflow. Note that
+-  |image12|: the status of the task in the project workflow. Note that
    this information is available only for the tasks that are assigned to
    a specific project.
 
--  |image11|: the task description.
+-  |image13|: the task description.
 
--  |image12|: the schedule of the task. If no schedule is specified,
+-  |image14|: the schedule of the task. If no schedule is specified,
    this field says "*Unscheduled*\ ". To remove the current schedule,
    hover cursor over it and select the deletion icon that appears.
 
--  |image13|: the task priority. You can choose between 4 values,
+-  |image15|: the task priority. You can choose between 4 values,
    including *High, Normal, Low* and *None*.
 
--  |image14|: the **Comments** tab allows people to discuss about the
+-  |image16|: the **Comments** tab allows people to discuss about the
    task, while the **Changes** tab shows all changes history of the
    task.
 
-   |image15|
+   |image17|
 
--  |image16|: the *Mark as completed* feature, clicking this icon will
+-  |image18|: the *Mark as completed* feature, clicking this icon will
    mark the task as completed and it will disappear from the List and
    Board views unless
    `Filter <#PLFUserGuide.WorkingWithTasks.ManageTask.Filtering>`__ is
@@ -170,17 +170,17 @@ Scheduling a task
 After creating a task or being assigned one, you can schedule it by
 following these steps:
 
-|image17|
+|image19|
 
--  |image18|: Select the list of tasks by clicking on All Tasks.
+-  |image20|: Select the list of tasks by clicking on All Tasks.
 
--  |image19|: Select one of the assigned/created tasks.
+-  |image21|: Select one of the assigned/created tasks.
 
--  |image20|: Click on Unscheduled.
+-  |image22|: Click on Unscheduled.
 
 Two calendars appear to select From and To dates.
 
-|image21|
+|image23|
 
 After saving the selected dates, a message is displayed under the task's
 description indicating the time interval chosen with a note about the
@@ -190,19 +190,19 @@ schedule:
    warn that you may miss the deadline because you planned the work too
    late.
 
-   |image22|
+   |image24|
 
 -  If the To date is chosen before the due date, the message that
    appears indicates that the work is planned between the chosen dates.
 
-   |image23|
+   |image245|
 
     .. note:: -  When the today's date is the task's due date, a blue exclamation
-				mark |image24| precedes the task's name in the list/board view.
+				mark |image26| precedes the task's name in the list/board view.
 				-  When the task's due date has already expired, i.e. today's date
 				is after the due date and the task is not yet finished, it is
-				preceded with a red exclamation mark: |image25|
-				|image26|
+				preceded with a red exclamation mark: |image27|
+				|image28|
     
 .. _GetPermalink:
 
@@ -211,7 +211,7 @@ Getting permalink of a task
 
 Click the link icon at the top right corner of the task pane:
 
-|image27|
+|image29|
 
 You will get the permalink to share the task.
 
@@ -224,7 +224,7 @@ Cloning a task
 1. Click the down arrow at the top right corner of the task pane, a
 drop-down menu will appear as follows:
 
-|image28|
+|image30|
 
 2. Select Clone to clone the task. The cloned task will have the same name
 with the original task and be prefixed by "*Copy of*\ ".
@@ -237,11 +237,11 @@ Deleting a task
 
 1. Select Delete from the dropdown menu:
 
-|image29|
+|image31|
 
 2. Click OK in the confirmation message to delete the task.
 
-|image30|
+|image32|
 
     .. note:: This action is available to the task creator and the project manager only.
 
@@ -257,12 +257,12 @@ you if there are too many tasks available. The Tasks management
 application offers you a useful tool to narrow these tasks by specific
 information.
 
-|image31|
+|image33|
 
-1. |image32| Click the filter icon |image33|\ at the top right corner of
+1. |image34| Click the filter icon |image35| at the top right corner of
 the central pane.
 
-2. |image34| The Filter form will be shown on the right pane.
+2. |image36| The Filter form will be shown on the right pane.
 
 In which:
 
@@ -284,52 +284,14 @@ In which:
 2. Change any information above. The central panel will reflect instantly
 to list only the matched tasks.
 
-3. A Close icon |image35| on top-right corner of the filter panel closes
+3. A Close icon |image37| on top-right corner of the filter panel closes
 it. But the values are remembered and filter remains active.
 
 The filter icon has two statuses:
 
--  It turns blue |image36| when it is activated which means that the
+-  It turns blue |image38| when it is activated which means that the
    central panel is filtered.
 
--  It is grey |image37| when it is inactive which means that the central
+-  It is grey |image39| when it is inactive which means that the central
    panel is not filtered.
 
-.. |image0| image:: images/taskmanagement/new_task.png
-.. |image1| image:: images/taskmanagement/capture_task_activity_stream.png
-.. |image2| image:: images/taskmanagement/capture_task_comment.png
-.. |image3| image:: images/taskmanagement/capture_example.png
-.. |image4| image:: images/taskmanagement/task_sample.png
-.. |image5| image:: images/common/1.png
-.. |image6| image:: images/common/2.png
-.. |image7| image:: images/common/3.png
-.. |image8| image:: images/common/4.png
-.. |image9| image:: images/common/5.png
-.. |image10| image:: images/common/6.png
-.. |image11| image:: images/common/7.png
-.. |image12| image:: images/common/8.png
-.. |image13| image:: images/common/9.png
-.. |image14| image:: images/common/10.png
-.. |image15| image:: images/taskmanagement/changes_history.png
-.. |image16| image:: images/common/12.png
-.. |image17| image:: images/taskmanagement/schedule_task_steps.png
-.. |image18| image:: images/common/1.png
-.. |image19| image:: images/common/2.png
-.. |image20| image:: images/common/3.png
-.. |image21| image:: images/taskmanagement/schedule_task_calendar.png
-.. |image22| image:: images/taskmanagement/task_delayed.png
-.. |image23| image:: images/taskmanagement/task_scheduled.png
-.. |image24| image:: images/taskmanagement/blue_mark.png
-.. |image25| image:: images/taskmanagement/red_mark.png
-.. |image26| image:: images/taskmanagement/due_date.png
-.. |image27| image:: images/taskmanagement/permalink.png
-.. |image28| image:: images/taskmanagement/clone_task.png
-.. |image29| image:: images/taskmanagement/delete_task.png
-.. |image30| image:: images/taskmanagement/confirm_delete_task.png
-.. |image31| image:: images/taskmanagement/filter_task.png
-.. |image32| image:: images/common/1.png
-.. |image33| image:: images/taskmanagement/filter_icon_grey.png
-.. |image34| image:: images/common/2.png
-.. |image35| image:: images/common/close_icon.png
-.. |image36| image:: images/taskmanagement/filter_icon_blue.png
-.. |image37| image:: images/taskmanagement/filter_icon_grey.png
