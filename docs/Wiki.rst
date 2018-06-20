@@ -145,7 +145,7 @@ The section consists of the following topics:
 
    Instructions on how to manage versions of a Wiki page and watch a Wiki page.
 
-:ref: `Organizing your content <Organizing-Content>`
+:ref:`Organizing your content <Organizing-Content>`
 
    Instructions on how to move/delete a Wiki page.
    
@@ -184,10 +184,7 @@ Creating a page
 
 3. Enter the title for your page. The page title must be unique.
 
-4. Enter the content of your page by using **`Wiki Markup <#PLFUserGuide.WorkingWithWikis.ManagingContent.AddingAndEditingPages.UsingTheRichTextEditor.UsingSourceEditor.SyntaxHelp>`**
-or the
-**`WYSIWYG <#PLFUserGuide.WorkingWithWikis.WorkingWithWikis.ManagingContent.AddingAndEditingPages.UsingTheRichTextEditor.UsingWYSIWYGEditor>`**
-editor.
+4. Enter the content of your page by using :ref:`Wiki Markup <Syntax-help>` or the :ref:`WYSIWYG <Editors>` editor.
 
 5. Click Preview if you want to see how your page looks like.
 
@@ -214,27 +211,22 @@ template preview appears.
 
 3. Enter the title for your page. The page title must be unique.
 
-4. Enter the content of your page by using **`Wiki
-Markup <#PLFUserGuide.WorkingWithWikis.ManagingContent.AddingAndEditingPages.UsingTheRichTextEditor.UsingSourceEditor.SyntaxHelp>`**
-or the
-**`WYSIWYG <#PLFUserGuide.WorkingWithWikis.WorkingWithWikis.ManagingContent.AddingAndEditingPages.UsingTheRichTextEditor.UsingWYSIWYGEditor>`**
-editor.
+4. Enter the content of your page by using :ref:`Wiki Markup <Syntax-help>` or the
+:ref:`WYSIWYG <Editors>` editor.
 
 5. Click Preview if you want to see how your page looks like.
 
 6. Click Save to finish.
 
 .. note:: These templates can be created, edited and deleted by administrator.
-			See the `Managing a page template <#PLFUserGuide.WorkingWithWikis.AdvancedSettings.ManagingPageTemplate>` section for more details.
+			See the :ref:`Managing a page template <Managing-Templates>` section for more details.
 
 **Adding an undefined link for creating a page later**
 
 In the **Wiki** application of eXo Platform, you can add a link pointing to a
 page which you are going to create later. Such links are called
 undefined links which are often used to remind other **Wiki** users to
-create the page. You must use the `Source
-editor <#PLFUserGuide.WorkingWithWikis.ManagingContent.AddingAndEditingPages.UsingTheRichTextEditor.UsingSourceEditor>`
-to create the undefined links.
+create the page. You must use the :ref:`Source editor <Syntax-help>` to create the undefined links.
 
 1. Add a link by typing the page title between square brackets '[[...]]'
 into your page body.
@@ -244,7 +236,7 @@ For example:
 +----------------------+----------------+
 | What you type        | What you get   |
 +======================+================+
-| [[eXo User Guide]]   |                |
+| [[eXo User Guide]]   ||WYSIWYG|       |
 +----------------------+----------------+
 
 2. Click Save to save the page containing the link. The undefined link is
@@ -252,7 +244,7 @@ underlined.
 
 3. Click this link to open the Add Page form.
 
-4. Follow the steps stated `above <#PLFUserGuide.BuildWiki.WorkWithWikiPages.ManagingContent.AddingAndEditingPages.CreatingPage.FirstWay>`
+4. Follow the steps stated :ref:`above <Creating-New-Page>`
 to enter the page title, content and save the page.
 
 .. _Editing-Page:
@@ -370,9 +362,8 @@ You can insert an attached image or an external image by clicking
 
 1. Select **Attached Image...** from the drop-down menu.
 
-2. Follow the steps in the `Adding an attachment to a
-page <#PLFUserGuide.WorkingWithWikis.WorkingWithWikis.ManagingContent.AddingAndEditingPages.WorkingWithAttachments.InsertingFilesImages>`__
-section.
+2. Follow the steps in the :ref:`Adding an attachment to a
+page <add-an-attachment>` section.
 
 -  **Inserting an external image**
 
@@ -393,10 +384,7 @@ page or click Change Image to select another image.
 
 *Attaching files*
 
-To attach files to a page, follow the steps in the `Adding an attachment
-to a
-page <#PLFUserGuide.WorkingWithWikis.ManagingContent.AddingAndEditingPages.WorkingWithAttachments.AddingAttachment>`__
-section.
+To attach files to a page, follow the steps in the :ref:`Adding an attachment to a page <add-an-attachment>` section.
 
 .. _work-with-macros:
 
@@ -484,7 +472,7 @@ BrowseMy drafts.
 
 Here, you can:
 
--  :ref: `Viewing drafts <view-drafts>`
+-  :ref:`Viewing drafts <view-drafts>`
 
 -  :ref:`Resuming drafts <resume-drafts>`
 
@@ -522,9 +510,7 @@ Adding a related page
 Viewing page information is accessible to users who have the View
 permission on that page. The page information provides all the details
 about the related pages of the current page, the hierarchy structure of
-the current page, `the page
-history <#PLFUserGuide.WorkingWithWikis.ManagingContent.ManagingContentChanges.WorkingWithPageVersions.ViewingPageHistory>`__,
-and more.
+the current page, :ref:`the page history <ViewingPageHistory>`, and more.
 
 1. Select the page you want to view the information.
 
@@ -613,7 +599,7 @@ Attached File... from the drop-down menu.
 
 The Link form is displayed as below.
 
-|image48|
+|image48b|
 
 5. Select a file to upload. Now you can upload a new file or select one
 file from existing files.
@@ -715,8 +701,7 @@ status of the Wiki page and the link to share.
 **Managing the View and Editing permissions**
 
 You can set the View and Edit permission to given users by clicking
-Manage Permissions in the Permalink form. See the `Page
-Permissions <#PLFUserGuide.WorkingWithWikis.AdvancedSettings.ManagingPermissions.PagePermissions>`__
+Manage Permissions in the Permalink form. See the :ref:`Page Permissions <PagePermissions>`
 section for more details.
 
 
@@ -1223,12 +1208,6 @@ use the wiki syntax to format content as normal.
 .. note:: -  You can copy/move/delete a page by copying/moving/deleting the corresponding folder.
 
 
-
-
-
-
-
-
 .. |image0| image:: images/common/1.png
 .. |image1| image:: images/common/2.png
 .. |image2| image:: images/common/3.png
@@ -1277,7 +1256,8 @@ use the wiki syntax to format content as normal.
 .. |image45| image:: images/wiki/wysiwyg_btn.png
 .. |image46| image:: images/wiki/link_btn.png
 .. |image47| image:: images/wiki/wysiwyg_attach_file.png
-.. |image48| image:: images/wiki/wysiwyg_upload_image.png
+.. |image48| image:: images/common/delete_icon.png
+.. |image48b| image:: images/wiki/wysiwyg_upload_image.png
 .. |image49| image:: images/wiki/wysiwyg_edit_link.png
 .. |image50| image:: images/wiki/public_page_information.png
 .. |image51| image:: images/common/revision_icon.png
@@ -1320,3 +1300,4 @@ use the wiki syntax to format content as normal.
 .. |image89| image:: images/common/select_permission_icon.png
 .. |image90| image:: images/common/delete_icon.png
 .. |image91| image:: images/wiki/webdav_folders.png
+.. |WYSIWYG| image:: images/wiki/undefined_link.png
