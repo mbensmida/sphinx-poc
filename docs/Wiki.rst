@@ -971,7 +971,7 @@ management form.
 
 Here, you can perform the followings:
 
--  :ref:`Searching for a template <SearchingTemplate>`|image79|
+-  :ref:`Searching for a template <SearchingTemplate>` |image79|
 
 -  :ref:`Creating a new template <CreatingTemplate>` |image80|
 
