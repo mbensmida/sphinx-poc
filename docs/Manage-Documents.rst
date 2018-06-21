@@ -488,7 +488,7 @@ Linux
 -------
 
 On Firefox, to open/edit one file, you need to install **davfs2** that
-allows mounting a WebDav server as a disk drive:
+allows mounting a WebDav server as a disk drive::
 
    $ sudo apt-get install davfs2
 
@@ -496,16 +496,16 @@ To open a document using untrusted SSL, you should export your server
 certification and then register and trust it on davfs2 by following
 these steps:
 
-1. To export the server certification, use this command:
+1. To export the server certification, use this command::
 
    $ openssl s_client -connect ${REMHOST}:${REMPORT} | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > myserver.pem
 
-2. Register the certification on davfs by copiying it to ``davfs2/certs/``:
+2. Register the certification on davfs by copiying it to ``davfs2/certs/``::
 
 
    $ sudo cp myserver.pem /etc/davfs2/certs/
 
-3. Trust the certication on davfs2 by editing the file ``/etc/davfs2/davfs2.conf`` and adding this content:
+3. Trust the certication on davfs2 by editing the file ``/etc/davfs2/davfs2.conf`` and adding this content::
 
 
    $ trust_server_cert /etc/davfs2/certs/myserver.pem
@@ -515,7 +515,7 @@ these steps:
 MAC
 ----
 
--  Enable **BasicAuth None SSL** with the command:
+-  Enable **BasicAuth None SSL** with the command::
 
    $ defaults -currentHost write com.microsoft.registrationDB hkey_current_user\\hkey_local_machine\\software\\microsoft\\office\\14.0\\common\\internet\\basicauthlevel -int 2
 
@@ -562,9 +562,12 @@ clarify the following points:
 
 -  See the comparison table as below to have an overview of actions:
 
+.. table:: overview of actions
+   :widths: auto
+   
    +----------------------------------------------------------------------+-----------------------------+--------------------------------------+
    | **Actions**                                                          |       **Icons view**   		|           **List view**      		   |
-   +======================================================================+=============+===============+===============+======================+          										
+   +----------------------------------------------------------------------+-------------+---------------+---------------+----------------------+          										
    |																	  |	Right click |  double click	| Tick checkbox | Click title directly |		
    +----------------------------------------------------------------------+-------------+---------------+---------------+----------------------+
    | Adding to favorites                                                  |    |yes|    |     |no|      |    |yes|      |        |no|          |
