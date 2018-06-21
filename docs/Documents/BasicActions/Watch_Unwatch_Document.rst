@@ -1,3 +1,5 @@
+.. _WatchingUnwatchingDocument:
+
 Watching/Unwatching a document
 ==============================
 

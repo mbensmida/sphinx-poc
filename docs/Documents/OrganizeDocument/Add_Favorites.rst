@@ -1,3 +1,5 @@
+.. _AddingToFavorites:
+
 Adding to favorites
 ===================
 

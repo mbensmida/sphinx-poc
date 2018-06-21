@@ -1,3 +1,5 @@
+.. _TaggingDocument:
+
 Tagging a document
 ==================
 

@@ -1,3 +1,5 @@
+.. _ManagingPermissions:
+
 Managing permissions
 ====================
 

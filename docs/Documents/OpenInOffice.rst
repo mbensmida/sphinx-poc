@@ -1,3 +1,6 @@
+.. _Open-in-office:
+
+==============
 Open in Office
 ==============
 
@@ -15,56 +18,50 @@ Depending on the file type, a new contextual action appears as below:
 -  **Open in Word** for file types: ``.docx``, ``.doc``, ``.docm``,
    ``.dot``, ``.dotm``, ``.dotx``.
 
-   |image0|
+   |image24|
 
 -  **Open in Excel** for file types: ``.xltx``, ``.xltm``, ``.xlt``,
    ``.xlsx``, ``.xlsm``, ``.xlsb``, ``.xls``, ``.xll``, ``.xlam``,
    ``.xla``.
 
-   |image1|
+   |image25|
 
 -  **Open in Powerpoint** for file types: ``.pptx``, ``.pptm``,
    ``.ppt``, ``.ppsx``, ``.ppsm``, ``.pps``, ``.ppam``, ``.ppa``,
    ``.potx``, ``.potm``, ``.pot``.
 
-   |image2|
+   |image26|
 
 -  **Open on Desktop** for Non-MS Office files that are different from
    Word, Excel or Powerpoint files.
 
-   |image3|
+   |image27|
 
-    **Note**
 
-    The labels used for these buttons can be set by an administrator.
-    See
-    `how-to <#PLFAdminGuide.Configuration.OpenInOfficeConfiguration>`__
-    in Administrator Guide.
+.. note:: The labels used for these buttons can be set by an administrator.
+		  See :ref:`how-to <#PLFAdminGuide.Configuration.OpenInOfficeConfiguration>` in Administrator Guide.
 
 This feature can be used not only in the Activity Stream (like above),
 but also in many places:
 
 -  Admin and List views (directly on the Action bar):
 
-   |image4|
+   |image28|
 
 -  Categories, Icons and Web views (on the right-click menu)
 
-   |image5|
+   |image29|
 
 -  File Preview
 
    By default, in some views (including Admin, Icons and List view),
    these buttons will be displayed as an action on the Actions bar.
    These buttons can be configured in any views (Categories, Web) like
-   any other actions by your administrator (Administration
-   ContentContent AdministrationExplorerView\ |image6|\ Action
-   tab\ |image7| Remote Edit checkbox).
+   any other actions by your administrator 
+   (Administration --> Content -->Content Administration --> Explorer --> View--> |image30| --> Action tab --> |image31| --> Remote Edit checkbox).
 
-    **Note**
 
-    These buttons will not be displayed in case multiple files are
-    selected.
+.. note:: These buttons will not be displayed in case multiple files are selected.
 
 **How to use?**
 
@@ -74,48 +71,50 @@ version of the document will be automatically created when it is saved
 within the Office application.
 
 -  When one document is currently opened by one user, the Lock icon will
-   appear next to that file: |image8|. If you still wants to open this
-   file, one message saying that you can open it in the Read-only format
-   will appear.
+   appear next to that file: |image32|. If you still want to open this
+   file, one message saying that you can open it in the Read-only format will appear.
 
-   |image9|
+   |image33|
 
 -  In case there is no application registered for one file type, one
    message appears, saying that you have no application registered to
    open that file.
 
-    **Note**
 
-    To make this feature work well, you need to learn about
-    `Compatibility <#PLFUserGuide.ManagingYourDocuments.OpenInOffice.Compatibility>`__
-    as well as `Client
-    requirements <#PLFUserGuide.ManagingYourDocuments.OpenInOffice.ClientRequirements>`__.
+.. note:: To make this feature work well, you need to learn about :ref:`Compatibility <Compatibility>`
+			as well as :ref:`Client requirements <ClientRequirements>`.
+
+.. _Compatibility:
 
 Compatibility
--------------
+~~~~~~~~~~~~~~
 
-**Basic compatibility**
+.. _Basic-compatibility:
 
-PRODUCT core has a basic compatibility for Microsoft environments. So,
+Basic compatibility
+---------------------
+
+eXo Platform core has a basic compatibility for Microsoft environments. So,
 if you are using Windows (7, 8 or 10) with Microsoft Office 2016
 installed, you can work with Word, Excel and Powerpoint files in many
 browsers: IE11, Firefox, Google Chrome and Edge.
 
-    **Note**
+.. note::To make Open in Office work well on IE11, you need to enable ActiveX
+			by selecting Internet OptionsSecurity tabCustom levelInitialize and
+			script ActiveX controls not marked as safe for scripting, and
+			ticking the **Enable (not secure)** checkbox.
 
-    To make Open in Office work well on IE11, you need to enable ActiveX
-    by selecting Internet OptionsSecurity tabCustom levelInitialize and
-    script ActiveX controls not marked as safe for scripting, and
-    ticking the **Enable (not secure)** checkbox.
+.. _Enhanced-compatibility:
 
-**Enhanced compatibility**
+Enhanced compatibility
+-----------------------
 
 For editing more file types and in various platforms, it is required
-your administrator install the Remote Edit add-on on the PRODUTC server
+your administrator install the Remote Edit add-on on eXo Platform server
 (by the command: ``addon install exo-remote-edit``). With this
 installation, you can start using Open in Office in more various
 environments. Here are the client environments that are currently
-supported in PRODUCT:
+supported in eXo Platform:
 
 +--------------------+----------------------------+----------------------------+
 | OS                 | Browsers                   | Office suites              |
@@ -135,35 +134,35 @@ supported in PRODUCT:
 |                    |                            | 4.1 (Compatible)           |
 +--------------------+----------------------------+----------------------------+
 
-    **Note**
 
-    -  It is recommended to use the latest versions of Firefox and
-       Chrome.
+.. note::	-  It is recommended to use the latest versions of Firefox and Chrome.
 
-    -  Google chrome browser is incompatible for Ubuntu OS.
+			-  Google chrome browser is incompatible for Ubuntu OS.
 
-    -  For Chrome in Windows and MAC OS, you need to enable NPAPI, as
-       said
-       `here <https://java.com/en/download/faq/chrome.xml#npapichrome>`__.
+			-  For Chrome in Windows and MAC OS, you need to enable NPAPI, as said `here <https://java.com/en/download/faq/chrome.xml#npapichrome>`__.
+
+.. _ClientRequirements:
 
 Client requirements
--------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In client side, you need to pay attention to the following environment
 requirements before using this feature.
 
-    **Note**
 
-    For all OSs/browsers, it is recommended you install and make sure
-    Java Applet enabled. This is required for opening Non-MS Office
-    files. You can visit http://javatester.org/ to make sure Java Plugin
-    already installed on your browser.
+.. note:: For all OSs/browsers, it is recommended you install and make sure
+			Java Applet enabled. This is required for opening Non-MS Office
+			files. You can visit http://javatester.org/ to make sure Java Plugin
+			already installed on your browser.
 
-**Windows**
+.. _Windows:
+
+Windows
+---------
 
 **Note 1. Allowing to open and edit MS Office file types.**
 
-Configure WebDAV Redirector on the client.
+1. Configure WebDAV Redirector on the client.
 
 -  On Windows 7, click **Start**, type *regedit* in the Start Search
    box, and then press Enter. If you are in Windows 8, hold the Windows
@@ -181,7 +180,7 @@ Configure WebDAV Redirector on the client.
 
 -  In the Value data box, type *2*, and click OK.
 
-Update the Registry on the client.
+2. Update the Registry on the client.
 
 -  Locate to the following:
    ``HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Common\Internet``
@@ -193,7 +192,7 @@ Update the Registry on the client.
    `Configure WebDAV Redirector on the
    client <#ConfiguringWebDAVRedirector>`__.
 
-Exit **Registry Editor**, and restart your client.
+3. Exit **Registry Editor**, and restart your client.
 
 **Note 2. On Chrome browser**
 
@@ -203,50 +202,46 @@ Microsoft Office as default application for office files.
 **Note 3. For Non-MS Office files**
 
 When you open/edit a Non-MS Office file, one NPE exception is thrown on
-the PRODUCT server and even when the file is opened successfully, the
-client gets very slow. See
-`here <http://stackoverflow.com/questions/27416798/it-hit-webdav-open-non-office-files>`__
+eXo Platform server and even when the file is opened successfully, the
+client gets very slow. See `here <http://stackoverflow.com/questions/27416798/it-hit-webdav-open-non-office-files>`__
 for understanding the problem.
 
-**Linux**
+.. _Linux:
+
+Linux
+-------
 
 On Firefox, to open/edit one file, you need to install **davfs2** that
 allows mounting a WebDav server as a disk drive:
 
-::
-
-    sudo apt-get install davfs2
+   $ sudo apt-get install davfs2
 
 To open a document using untrusted SSL, you should export your server
 certification and then register and trust it on davfs2 by following
 these steps:
 
-To export the server certification, use this command:
+1. To export the server certification, use this command:
 
-::
+   $ openssl s_client -connect ${REMHOST}:${REMPORT} | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > myserver.pem
 
-    openssl s_client -connect ${REMHOST}:${REMPORT} | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > myserver.pem
+2. Register the certification on davfs by copiying it to ``davfs2/certs/``:
 
-Register the certification on davfs by copiying it to ``davfs2/certs/``:
 
-::
+   $ sudo cp myserver.pem /etc/davfs2/certs/
 
-    sudo cp myserver.pem /etc/davfs2/certs/
+3. Trust the certication on davfs2 by editing the file ``/etc/davfs2/davfs2.conf`` and adding this content:
 
-Trust the certication on davfs2 by editing the file
-``/etc/davfs2/davfs2.conf`` and adding this content:
 
-::
+   $ trust_server_cert /etc/davfs2/certs/myserver.pem
 
-    trust_server_cert /etc/davfs2/certs/myserver.pem
+.. _MAC:
 
-**MAC**
+MAC
+----
 
 -  Enable **BasicAuth None SSL** with the command:
 
-   ::
-
-       defaults -currentHost write com.microsoft.registrationDB hkey_current_user\\hkey_local_machine\\software\\microsoft\\office\\14.0\\common\\internet\\basicauthlevel -int 2
+   $ defaults -currentHost write com.microsoft.registrationDB hkey_current_user\\hkey_local_machine\\software\\microsoft\\office\\14.0\\common\\internet\\basicauthlevel -int 2
 
 -  In case you cannot open Microsoft Office files, you should close or
    force closing Microsoft Office Application, then re-open it.
@@ -254,13 +249,3 @@ Trust the certication on davfs2 by editing the file
 -  In MAC OS 10.9, to edit a text file, it is recommended you use
    TextWrangler (not default TextEditor) to edit it.
 
-.. |image0| image:: images/ecms/OpenInOffice/openinword.png
-.. |image1| image:: images/ecms/OpenInOffice/openinexcel.png
-.. |image2| image:: images/ecms/OpenInOffice/openinpowerpoint.png
-.. |image3| image:: images/ecms/OpenInOffice/openondesktop.png
-.. |image4| image:: images/ecms/OpenInOffice/admin_view_openinoffice.png
-.. |image5| image:: images/ecms/OpenInOffice/icon_view_openinoffice.png
-.. |image6| image:: images/ecms/edit_portlet_icon.png
-.. |image7| image:: images/ecms/edit_portlet_icon.png
-.. |image8| image:: images/ecms/OpenInOffice/lock_file.png
-.. |image9| image:: images/ecms/OpenInOffice/open_read_only.png

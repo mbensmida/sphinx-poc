@@ -1,3 +1,5 @@
+.. _Renaming:
+
 Renaming
 ========
 

@@ -1,3 +1,5 @@
+.. _CreatingSymlink:
+
 Creating a symlink
 ==================
 

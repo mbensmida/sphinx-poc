@@ -1,3 +1,5 @@
+.. _CommentingDocument
+
 Commenting on a document
 ========================
 

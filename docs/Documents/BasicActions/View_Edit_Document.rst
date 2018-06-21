@@ -1,3 +1,7 @@
+.. _ViewingEditingDocument:
+
+.. _ViewingDocument:
+
 Viewing a document/Editing document properties
 ==============================================
 
@@ -18,7 +22,10 @@ Viewing a document/Editing document properties
    -  Here, you can also save your opened document as a PDF file or
       download it to your local device.
 
-**Editing document properties**
+.. _EditingDocument:
+
+Editing document properties
+----------------------------
 
 Select **Edit Document Properties** from the Action bar to open the File
 form.

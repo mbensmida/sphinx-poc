@@ -1,3 +1,5 @@
+.. _VotingDocument:
+
 Voting for a document
 =====================
 

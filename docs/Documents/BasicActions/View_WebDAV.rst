@@ -1,3 +1,5 @@
+.. _ViewingWebDAV:
+
 Viewing WebDAV
 ==============
 

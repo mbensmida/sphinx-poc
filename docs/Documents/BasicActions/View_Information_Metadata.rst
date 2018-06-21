@@ -1,3 +1,7 @@
+.. _ViewingDocumentInformation:
+
+_ViewDocproperties:
+
 Viewing document information & metadata
 =======================================
 
@@ -11,6 +15,8 @@ on the Action bar.
 
 The View Information form appears as below.
 
+.. _ViewDocMetadata:
+
 **Viewing document metadata**
 
 This function allows you to view metadata attached to the uploaded file
@@ -19,6 +25,8 @@ This function allows you to view metadata attached to the uploaded file
 Open the document (**nt:file**).
 
 Click |image1| on the Action bar to open the View Metadata form.
+
+.. _AddEditMetadata:
 
 **Adding/Editing metadata**
 

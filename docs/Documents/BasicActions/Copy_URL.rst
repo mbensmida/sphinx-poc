@@ -1,3 +1,5 @@
+.. _CopyingURLToClipboard:
+
 Copying URL to clipboard
 ========================
 

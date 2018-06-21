@@ -1,8 +1,10 @@
+.. _DocumentsInterface:
+
+===================
 Documents Interface
 ===================
 
-After logging into the **`Social Intranet
-homepage <#PLFUserGuide.GettingStarted.SocialIntranetHomepage>`__**
+After logging into the :ref:`Social Intranet homepage <PLFHomepage>`
 successfully, you simply click **Documents** on the left panel to be
 redirected to the **Documents** interface. As a normal user, you can
 switch between **Icons** and **List** views by clicking |image0| or
@@ -15,11 +17,8 @@ view.
 
 |image3|
 
-    **Note**
-
-    Refer to
-    `Views <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithExplorer.Views>`__
-    to learn about differences between views.
+.. note::Refer to :ref:`Views <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithExplorer.Views>`
+			to learn about differences between views.
 
 The way to do actions on content is different between **Icons** and
 **List** views as follows:

@@ -1,3 +1,5 @@
+.. _OverloadingThumbnail:
+
 Adding a thumbnail
 ==================
 

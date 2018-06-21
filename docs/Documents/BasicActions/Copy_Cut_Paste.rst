@@ -1,3 +1,5 @@
+.. _CopyingCuttingPasting:
+
 Copying/Cutting & Pasting
 =========================
 
