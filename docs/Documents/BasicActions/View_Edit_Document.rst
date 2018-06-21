@@ -1,13 +1,13 @@
 .. _ViewingEditingDocument:
 
+Viewing a document/Editing document properties
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. _ViewingDocument:
 
-Viewing a document/Editing document properties
-==============================================
+Viewing a document
+-------------------
 
-**Viewing a document**
-
--  Define the document, then select |image0| from the Right-click menu
+-  Define the document, then select |image44| from the Right-click menu
    or on the Action bar.
 
    Your selected document is opened in another tab with the link
@@ -17,7 +17,7 @@ Viewing a document/Editing document properties
    document title in the **List** view. Your document will be opened
    directly in the main panel with its path at the address bar.
 
-   |image1|
+   |image45|
 
    -  Here, you can also save your opened document as a PDF file or
       download it to your local device.
@@ -27,27 +27,18 @@ Viewing a document/Editing document properties
 Editing document properties
 ----------------------------
 
-Select **Edit Document Properties** from the Action bar to open the File
+1. Select **Edit Document Properties** from the Action bar to open the File
 form.
 
-|image2|
+|image46|
 
-Change information for your document, except the Name field.
+2. Change information for your document, except the Name field.
 
-    **Note**
+.. note:: You can edit the Categories field only by clicking |image47|.
 
-    You can edit the Categories field only by clicking |image3|.
-
-Click Save to commit your changes, or Save & Close to save and close the
+3. Click Save to commit your changes, or Save & Close to save and close the
 form, or Close to cancel your changes.
 
-    **Note**
+.. note::Saving changes of the properties of a :ref:`versioned document <ActivatingDocumentVersion>` does not create a new version.
 
-    Saving changes of the properties of a `versioned
-    document <#PLFUserGuide.ManagingYourDocuments.WorkingWithBasicActions.ActivatingDocumentVersion>`__
-    does not create a new version.
 
-.. |image0| image:: images/ecms//view_document_button.png
-.. |image1| image:: images/ecms/view_document.png
-.. |image2| image:: images/ecms/edit_document_form.png
-.. |image3| image:: images/common/plus_icon.png

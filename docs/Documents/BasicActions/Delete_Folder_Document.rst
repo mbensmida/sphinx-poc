@@ -1,31 +1,33 @@
 .. _DeletingContent:
 
 Deleting
-========
+~~~~~~~~~
 
-    **Note**
+ .. note:: -  You can only take the **Delete** action if you have the
+			permission on that drive.
 
-    -  You can only take the **Delete** action if you have the
-       permission on that drive.
+		   -  You can delete multiple content at the same time by holding the
+			Ctrl (on Windows) or Command (on Mac) key and clicking the desired files and folders.
 
-    -  You can delete multiple content at the same time by holding the
-       Ctrl (on Windows) or Command (on Mac) key and clicking the
-       desired files and folders.
+		   -  If any folder is deleted, it means its child folders and
+			references (if any) will be deleted accordingly.
 
-    -  If any folder is deleted, it means its child folders and
-       references (if any) will be deleted accordingly.
+.._Delete-content:
 
-**Deleting content**
+Deleting content
+----------------
 
-Select |image0| from the Right-click menu or on the Action bar.
+1. Select |image0| from the Right-click menu or on the Action bar.
 
-Click Delete in the confirmation message.
+2. Click Delete in the confirmation message.
 
-    **Note**
 
-    If the deleted content has a symlink, this will be also deleted.
+.. note:: If the deleted content has a symlink, this will be also deleted.
 
-**Restoring content**
+.. _Restore-content:
+
+Restoring content
+------------------
 
 -  Once you have deleted the content, you will see a message at the top,
    indicating that your deletion is completed successfully. If you want
@@ -35,12 +37,8 @@ Click Delete in the confirmation message.
    this drive and selecting Restore From Trash, you can restore your
    deleted content.
 
-    **Note**
+.. note:: -  Currently, only administrators have the right to access the **Trash** drive.
 
-    -  Currently, only administrators have the right to access the
-       **Trash** drive.
+		  -  Deleting any content from the **Trash** drive will remove them permanently.
 
-    -  Deleting any content from the **Trash** drive will remove them
-       permanently.
 
-.. |image0| image:: images/common/delete_button.png

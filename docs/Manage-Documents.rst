@@ -609,6 +609,410 @@ clarify the following points:
    | Commenting on a document                                             |    |no|     |     |yes|     |    |no|       |        |yes|         |
    +----------------------------------------------------------------------+-------------+---------------+---------------+----------------------+
 
+.. _Uploading-files:
+
+Uploading files
+~~~~~~~~~~~~~~~~
+
+Uploading files from your local devices is a fast and efficient method
+to create and store your documents in **Documents**.
+
+.. note:: You now can upload multiple files from your local devices by holding
+			Ctrl (on Windows) or Command (on Mac) to select them at the same time.
+
+There are 2 available ways to upload:
+
+-  :ref:`Using the Upload button <UsingUploadButton>`.
+
+-  :ref:`Dragging and dropping <DraggingDropping>`.
+
+When you start your upload, you will see the **Upload Status** window at
+the bottom. In this window, the progress bar will appear next to the
+files which are being uploaded.
+
+|image39|
+
+-  Abort all uploads by clicking Abort all.
+
+-  See necessary information of upload by clicking |image36|.
+
+-  After your uploads are finished, you can click |image37| at the right
+   top corner of the dropzone to close it.
+
+-  Cancel your progressing upload by clicking |image38| next to the
+   progress bar.
+
+
+.. note:: -  The upload size depends on the size limit that your administrator
+				set up in the 'Edit' mode of **Sites Explorer**. If your file
+				size exceeds the limit, the alert message will appear.
+
+		  -  If the name of your uploaded file is the same as that of an
+				existing file in the same location into which you are going to
+				upload, you will receive one warning in the dropzone that your
+				file is already in use. Here you can decide to keep both (your
+				uploaded file and the existing file), replace the existing file
+				with your uploaded file or cancel your file upload.
+
+.. _UsingUploadButton:
+
+Using the Upload button
+-------------------------
+
+1. Define the folder where your files will be
+stored. Click Upload on the Action bar to open the **File Upload**
+window. Browse and select your desired document, then click Open to
+start uploading your selected files.
+
+.. _DraggingDropping:
+
+Dragging and dropping
+----------------------
+
+-  Simply drag and drop files from your local device to your desired
+   folder.
+
+-  Or, drag and drop files to the dropzone which appears when there are
+   files ready to be dropped at the bottom.
+
+.. _Create-folder:
+
+Creating a folder
+~~~~~~~~~~~~~~~~~~~~
+
+To make your content management neat and easy to find, you should create
+appropriate folders to store them.
+
+1. Go to the location that your want to create a folder.
+
+2. Select |image40| to open the New Folder form.
+
+|image41|
+
+If you create a new folder in a drive which allows creating more than
+one folder type, you will see the Use a custom type of folder checkbox.
+For example, in the **Collaboration** drive:
+
+|image42|
+
+-  By default, if you do not select the Use a custom type of folder
+   checkbox, a Document Folder type will be created. Tick this checkbox,
+   then select another folder type from the drop-down menu.
+
+3. Enter a folder name, then click Create Folder to finish.
+
+.. note:: -  The name of a folder may be the same as that of the existing
+			ones. In this case, an index will be added to your newly created
+			folder that can be seen on the address bar.
+
+			|image43|
+
+		  -  The list of available folder types which can be created in each
+			drive is different depending on the drive configuration.
+		  -  Child folders will have the same folder type as that of their
+			parent folders.
+
+
+.. _ViewingEditingDocument:
+
+Viewing a document/Editing document properties
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _ViewingDocument:
+
+Viewing a document
+-------------------
+
+-  Define the document, then select |image44| from the Right-click menu
+   or on the Action bar.
+
+   Your selected document is opened in another tab with the link
+   containing the document path.
+
+-  Simply double-click the document in the **Icons** view, or click the
+   document title in the **List** view. Your document will be opened
+   directly in the main panel with its path at the address bar.
+
+   |image45|
+
+   -  Here, you can also save your opened document as a PDF file or
+      download it to your local device.
+
+.. _EditingDocument:
+
+Editing document properties
+----------------------------
+
+1. Select **Edit Document Properties** from the Action bar to open the File
+form.
+
+|image46|
+
+2. Change information for your document, except the Name field.
+
+.. note:: You can edit the Categories field only by clicking |image47|.
+
+3. Click Save to commit your changes, or Save & Close to save and close the
+form, or Close to cancel your changes.
+
+.. note::Saving changes of the properties of a :ref:`versioned document <ActivatingDocumentVersion>` does not create a new version.
+
+.. _CopyingCuttingPasting:
+
+Copying/Cutting & Pasting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These functions are used to make a content copy (including its children
+and references) to other places.
+
+There are 2 ways to cut/copy & paste content:
+
+**The first way**
+
+1. Select |image48| or |image49| from the Right-click menu or on the Action bar.
+
+2. Select the destination where the copied/cut content is stored, then select |image50| from the Right-click menu or on the Action bar.
+
+.. note:: The Paste function is enabled only after the Copy/Cut action is selected.
+
+The copied/cut content (and its children) will be pasted into the new
+selected path.
+
+**The second way**
+
+.. note:: To do this way, you have to enable the **Show Sidebar** checkbox.
+
+1. Select |image51| or |image52| from the Right-click menu or on the Action bar.
+
+2. Select the destination that you want to be the parent of the content which is copied/cut.
+
+3. Select |image53| on the Filter bar to open the Clipboard window.
+
+|image54|
+
+4. Click |image55| in the Clipboard window to paste the copied/cut content
+into the selected destination.
+
+-  You can click |image56| to delete the specific content from Clipboard.
+
+-  You can also click the Clear All link to delete all from the list.
+
+
+.. note:: -  You only can take the Copy action if you have this right on the
+			source content.
+
+		  -  You only can take the Paste action if you have the right on the
+			destination.
+
+		  -  If the destination has the same name with the copied content,
+			after being pasted, an index will be added to the name of the
+			pasted destination, for example *Live* and *Live[2]*.
+
+		  -  You cannot copy a "content" folder into a "document" folder.
+
+		  -  After taking the Copy action, you can take the Paste action on
+			the different destinations before taking another Copy action.
+
+.. _DeletingContent:
+
+Deleting
+~~~~~~~~~
+
+ .. note:: -  You can only take the **Delete** action if you have the
+			permission on that drive.
+
+		   -  You can delete multiple content at the same time by holding the
+			Ctrl (on Windows) or Command (on Mac) key and clicking the desired files and folders.
+
+		   -  If any folder is deleted, it means its child folders and
+			references (if any) will be deleted accordingly.
+
+.._Delete-content:
+
+Deleting content
+----------------
+
+1. Select |image0| from the Right-click menu or on the Action bar.
+
+2. Click Delete in the confirmation message.
+
+
+.. note:: If the deleted content has a symlink, this will be also deleted.
+
+.. _Restore-content:
+
+Restoring content
+------------------
+
+-  Once you have deleted the content, you will see a message at the top,
+   indicating that your deletion is completed successfully. If you want
+   to restore your deleted content immediately, click the Undo link.
+
+-  The deleted content is stored in the **Trash** drive. By going to
+   this drive and selecting Restore From Trash, you can restore your
+   deleted content.
+
+.. note:: -  Currently, only administrators have the right to access the **Trash** drive.
+
+		  -  Deleting any content from the **Trash** drive will remove them permanently.
+
+.. _VotingDocument:
+
+Voting for a document
+~~~~~~~~~~~~~~~~~~~~~~
+
+The Vote feature is used to assign a rating to a document. In eXo Platform,
+you can vote for a document via the 5-star rating. The more stars you
+select, the higher rating you evaluate.
+
+1. Open the document for which you want to vote, then select |image58| on
+the Action bar.
+
+The Vote Document form appears.
+
+|image59|
+
+2. Rate the document by clicking the appropriate star level.
+
+After a vote has been added, the rating will appear at the bottom of the
+document:
+
+|image60|
+
+-  **Avg. Rating:** The average value of all votes assigned to the
+   document.
+
+-  **Votes:** The number of votes assigned to the document.
+
+
+.. note::You can change your rating for a specific document by selecting the
+			star level again and the rating system automatically updates and calculates your last rating.
+
+
+.. _TaggingDocument:
+
+Tagging a document
+~~~~~~~~~~~~~~~~~~~
+
+A tag is a keyword or term associated with or assigned to a piece of
+information (picture, geographic map, blog entry, clip, and more). Each
+tag describes one item that enables the keyword-based classification and
+search.
+
+.. note:: All tags are in public. This means all users can view them. However,
+			to edit or delete them, you need to have the appropriate right granted by your administrators.
+
+.. _add-tag:
+
+Adding a new tag
+-----------------
+
+1. Open the document for which you want to tag, then select |image61| on the
+Action bar to open the Tag Manager form.
+
+|image62|
+
+**Details:**
+
++----------------------+-----------------------------------------------------+
+| Field                | Description                                         |
++======================+=====================================================+
+| Tag Names            | The tag names you want to add to your documents.    |
++----------------------+-----------------------------------------------------+
+| Linked Tags          | List of all tags added to your documents.           |
++----------------------+-----------------------------------------------------+
+
+2. Input a value into the Tag Names field. You can add many tags to one document at one time by separating with commas.
+
+3. Click Add to accept, or Close to quit.
+
+ .. note:: -  To view the whole list of tags, you just need to click on |image63| from the sidebar.
+
+		   -  In case many tags are added to the documents, the tags cloud is paginated:
+			
+				|image64|
+
+.. _remove-tag:
+
+Removing a tag
+---------------
+
+1. Open the document for which you want to tag, then select |image65| on the
+Action bar.
+
+2. Click |image66| to delete an added tag.
+
+3. Click **OK** in the confirmation message to delete the tag.
+
+.. _OverloadingThumbnail:
+
+Adding a thumbnail
+==================
+
+If you do not want to represent a content with an existing but boring
+icon, you can change this by adding your desired thumbnail to your
+content.
+
+.. note::This function is currently set in the **Icons** view only and you should have the appropriate permissions on the content.
+
+1. Select content to which you want to add a thumbnail.
+
+2. Select |image67| on the Action bar to open the Add Thumbnail Image form.
+
+|image68|
+
+3. Click Choose Thumbnail Image to select the image which will be used as
+the display icon for your selected content.
+
+4. Click Save to accept your changes.
+
+For example, you have the folder with a default icon in the **Icons**
+view as below:
+
+|image69|
+
+After you have overloaded your desired thumbnail, the folder will be
+displayed:
+
+|image70|
+
+.. _WatchingUnwatchingDocument:
+
+Watching/Unwatching a document
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By using this function, you can follow all changes made on the document.
+
+.. _watch-doc:
+
+Watching a document
+---------------------
+
+1. Open the document you want to watch and click |image71| on the Action bar to open the Watch Document form.
+
+|image72|
+
+2. Select the Email checkbox to receive the notification message via your email, then click Watch to finish.
+
+One message of successful watching will display as below.
+
+|image73|
+
+
+.. note:: A notification message will be sent to your email address which is set in :ref:`your profile <Edit-Your-Profile>`.
+			However, if your account :ref:`is suspended <#PLFUserGuide.AdministeringeXoPlatform.ManagingYourOrganization.ManagingUsers.DisablingUser>`,
+			the function will stop working.
+
+.. _unwatch-doc:
+
+Unwatching a document
+----------------------
+
+Simply open the watched document, then click Unwatch in the Watch
+Document form.
+
+One message of successful unwatching will display: |image74|
+
+
 
 
 
@@ -652,3 +1056,42 @@ clarify the following points:
 .. |image35| image:: images/ecms/checkbox_actions.png
 .. |yes| image:: images/common/yes.png
 .. |no| image:: images/common/no.png
+.. |image36| image:: images/common/help_icon.png 
+.. |image37| image:: images/common/abort_icon.png
+.. |image38| image:: images/common/abort_icon.png
+.. |image39| image:: images/ecms/upload_progress_bar.png
+.. |image40| image:: images/ecms/new_folder_button.png
+.. |image41| image:: images/ecms/new_folder_form.png
+.. |image42| image:: images/ecms/custom_folder_type.png
+.. |image43| image:: images/ecms/folder_index.png
+.. |image44| image:: images/ecms//view_document_button.png
+.. |image45| image:: images/ecms/view_document.png
+.. |image46| image:: images/ecms/edit_document_form.png
+.. |image47| image:: images/common/plus_icon.png
+.. |image48| image:: images/common/copy_button.png
+.. |image49| image:: images/common/cut_button.png
+.. |image50| image:: images/common/paste_button.png
+.. |image51| image:: images/common/copy_button.png
+.. |image52| image:: images/common/cut_button.png
+.. |image53| image:: images/ecms/clipboard_icon.png
+.. |image54| image:: images/ecms/clipboard_window.png
+.. |image55| image:: images/common/paste_icon.png
+.. |image56| image:: images/common/delete_icon.png
+.. |image57| image:: images/common/delete_button.png
+.. |image58| image:: images/common/vote_button.png
+.. |image59| image:: images/ecms/vote_document_form.png
+.. |image60| image:: images/ecms/vote_information.png
+.. |image61| image:: images/common/tag_button.png
+.. |image62| image:: images/ecms/tag_manager_form.png
+.. |image63| image:: images/search/tag_cloud_btn.png
+.. |image64| image:: images/search/tag_cloud_pages.png
+.. |image65| image:: images/common/tag_button.png
+.. |image66| image:: images/common/close_icon.png
+.. |image67| image:: images/ecms/overload_thumbnail_button.png
+.. |image68| image:: images/ecms/add_thumbnail_form.png
+.. |image69| image:: images/ecms/folder_default_icon.png
+.. |image70| image:: images/ecms/folder_thumbnail_icon.png
+.. |image71| image:: images/ecms/watch_unwatch_button.png
+.. |image72| image:: images/ecms/watch_document_form.png
+.. |image73| image:: images/ecms/successful_watching_message.png
+.. |image74| image:: images/ecms/successful_unwatching_message.png
