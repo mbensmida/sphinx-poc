@@ -4,6 +4,8 @@ Private messages
 Private messages will not be moderated and only viewable for recipients.
 Only logged-in users can do the following actions on private messages:
 
+.. _Send-Private-message:
+
 **Sending a private message**
 
 **1.** Click the username or avatar of the user you want to send

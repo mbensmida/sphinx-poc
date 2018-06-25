@@ -1,3 +1,5 @@
+.. _SubscribingRSSFeeds:
+
 Subscribing to RSS feeds
 ========================
 

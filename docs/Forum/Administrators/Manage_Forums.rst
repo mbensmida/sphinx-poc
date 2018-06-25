@@ -3,6 +3,8 @@ Managing forums
 
 Forums management can be performed through the following actions:
 
+.. _Adding-forum:
+
 **Adding a new forum**
 
 Open the Forum form by following either of two ways below:
@@ -101,6 +103,8 @@ step <#PLFUserGuide.BuildingYourForum.Administrator.ManagingCategories.AddingCat
        the selected group, this permission will be granted to all users
        of that group, regardless of their membership role.
 
+.. _Delete-forum:
+
 **Deleting a forum**
 
 Only administrators can perform this action. When a forum is removed,
@@ -112,6 +116,8 @@ Click |image5| on the Action bar, then select Delete from the drop-down
 menu.
 
 Click **OK** in the confirmation message to accept your deletion.
+
+.. _Move-forum:
 
 **Moving a forum**
 

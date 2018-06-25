@@ -28,6 +28,8 @@ The administrative tasks include the following actions:
 -  `Backing up a
    category/forum <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BackingupCategoryForum>`__
 
+.. _Sort-settings:
+
 Configuring Sort Settings
 -------------------------
 
@@ -46,6 +48,8 @@ can set properties for how forums and topics are sorted in **Forums**.
 
 -  Direction: Sort topics in the Ascending or Descending order.
 
+.. _Administrating-Censor:
+
 Defining censored keywords
 --------------------------
 
@@ -59,6 +63,8 @@ Keywords from the drop-down menu. The Censor Keyword form appears: Enter
 censored keywords in the Censored Keywords field. The keywords are
 separated by commas. Click Save to complete defining the censored
 keywords.
+
+.. _Customize-email-notifs:
 
 Customizing an email notification template
 ------------------------------------------
@@ -153,6 +159,8 @@ should not edit them. In case the template is changed unexpectedly, you
 can go back to the default template by clicking |image4| . You can use
 the text editor to format the template as you wish.
 
+.. _Customize-BBCodes:
+
 Customizing BBCodes
 -------------------
 
@@ -232,6 +240,8 @@ Any BBCode can be activated/deactivated.
 -  To deactivate an existing BBCode tag, simply deselect the relevant
    checkbox. The entered BBCode will be displayed as the plain text.
 
+.. _auto-pruning:
+
 Setting up auto-pruning
 -----------------------
 
@@ -308,6 +318,8 @@ Backing up a category & forum includes the following actions:
 -  `Importing a
    forum <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BackingupCategoryForum.ImportingForum>`__
 
+.. _Export-category:
+
 Exporting a category
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -333,6 +345,8 @@ Click Export from the drop-down menu to open the Export Categories form.
 Select categories and enter the file name into the File Name field.
 
 Click Save.
+
+.. _Export-forum:
 
 Exporting a forum
 ~~~~~~~~~~~~~~~~~
@@ -368,6 +382,8 @@ in the .zip format.
 
 Click Save to get and store the exported file in your local device.
 
+.. _Import-category:
+
 Importing a category
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -377,6 +393,8 @@ the drop-down menu to open the Import Category form.
 Click Select File to browse and select the file to import.
 
 Click Save.
+
+.. _Importing a forum:
 
 Importing a forum
 ~~~~~~~~~~~~~~~~~

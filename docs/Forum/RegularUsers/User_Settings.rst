@@ -1,3 +1,5 @@
+.. _User-settings:
+
 User settings
 =============
 
@@ -39,6 +41,8 @@ Here, you can:
 Go to the Forum Settings tab in the Settings form. You can change
 preferences, such as time zone, date and time formats, and other display
 options.
+
+.. _Edit-subscription:
 
 **Editing your subscription**
 

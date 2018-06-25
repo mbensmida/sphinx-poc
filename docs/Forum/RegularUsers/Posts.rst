@@ -1,3 +1,5 @@
+.. _Posts:
+
 Posting a reply
 ===============
 
@@ -112,6 +114,8 @@ section.
     Private posts will not be checked for approval when they are posted
     in a topic that has the 'Posts moderation' enabled. Private posts
     are displayed with the 'Post Private!' label.
+
+.. _Edit-delete-post:
 
 Editing/Deleting your post
 --------------------------

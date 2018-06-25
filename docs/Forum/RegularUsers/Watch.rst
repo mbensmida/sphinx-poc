@@ -1,3 +1,5 @@
+.. _Watch:
+
 Watching
 ========
 

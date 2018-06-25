@@ -19,6 +19,8 @@ Moderating forums includes the following actions:
 
 -  `Exporting a forum <#ExportingForumTheFirstWay>`__
 
+.. _Edit-forum:
+
 Editing a forum
 ---------------
 
@@ -32,6 +34,8 @@ forums <#PLFUserGuide.BuildingYourForum.Administrator.ManagingForums>`__
 for more details.
 
 Click Save to save all the changes.
+
+.. _Lock-unlock-forum:
 
 Locking/Unlocking a forum
 -------------------------
@@ -51,6 +55,8 @@ drop-down menu.
     You can also lock/unlock a forum while `editing the
     forum <#PLFUserGuide.BuildingYourForum.Moderator.ModeratingForums.EditingForum>`__
     by selecting the Locked/Unlocked status.
+
+.. _Close-open-forum:
 
 Closing/Opening a forum
 -----------------------

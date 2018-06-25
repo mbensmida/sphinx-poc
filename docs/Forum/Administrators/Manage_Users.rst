@@ -1,3 +1,5 @@
+.. _Manage-users:
+
 Managing users
 ==============
 
@@ -61,6 +63,8 @@ the Settings tab in the Manage Community form.
 
 For the detailed descriptions in the User Settings form, see `User
 settings <#PLFUserGuide.BuildingYourForum.RegularUser.UserSettings>`__.
+
+.. _Banning-users:
 
 Banning users
 -------------

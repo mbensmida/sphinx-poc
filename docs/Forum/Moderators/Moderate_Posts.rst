@@ -83,6 +83,8 @@ posts inside the forum that he manages. Therefore, at the destination
 topics list, only the topics which the Moderator has the "move"
 permission, are listed.
 
+.. _Show-hide-post:
+
 Hiding/Showing a post
 ---------------------
 
@@ -118,6 +120,8 @@ menu.
 Select hidden posts by ticking their checkboxes.
 
 Click Show.
+
+.. _Uncensor-post:
 
 Uncensoring a post
 ------------------

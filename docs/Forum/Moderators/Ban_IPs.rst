@@ -1,3 +1,5 @@
+.. _Banning-IPs:
+
 Banning IPs
 ===========
 

@@ -7,6 +7,8 @@ structure using categories. So, a category is a set of forums containing
 all discussions about the same subject. See the following diagram to
 learn about the typical structure of a forum.
 
+.. _Add-category:
+
 Adding a new category
 ---------------------
 
@@ -117,6 +119,8 @@ Click Save to finish.
     and there is only one forum per space. You cannot therefore create
     new categories within each space forum.
 
+.. _Edit category:
+
 Editing a category
 ------------------
 
@@ -128,6 +132,8 @@ Click Edit from the drop-down menu.
 Make changes on the category properties.
 
 Click Save to save your changes.
+
+.. _Delete-category:
 
 Deleting a category
 -------------------

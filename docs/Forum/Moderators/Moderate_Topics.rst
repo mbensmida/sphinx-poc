@@ -30,6 +30,8 @@ Moderating topics includes the following actions:
 -  `Splitting a
    topic <#PLFUserGuide.BuildingYourForum.Moderator.ModeratingTopics.SplittingTopic>`__
 
+.. _Approve-topic:
+
 Approving a topic
 -----------------
 
@@ -113,6 +115,8 @@ Click Close or Open from the drop-down menu.
     by ticking/unticking the Close the topic checkbox in the Options
     tab.
 
+.. _Moving-topic:
+
 Moving a topic
 --------------
 
@@ -143,6 +147,8 @@ Click a destination forum to move.
     Therefore, only the forums to which the moderator can move topics
     are shown in the list of destination forums.
 
+.. _Deleting-topic:
+
 Deleting a topic
 ----------------
 
@@ -154,6 +160,8 @@ Or, click |image9| on the Action bar if you are already in a topic.
 Click Delete from the drop-down menu.
 
 Click **OK** in the confirmation message to accept your deletion.
+
+.. _Lock-unlock-topics:
 
 Locking/Unlocking a topic
 -------------------------
@@ -174,6 +182,8 @@ Click Lock or Unlock from the drop-down menu.
     You can also lock/unlock a topic while `editing the
     topic <#PLFUserGuide.BuildingYourForum.Moderator.ModeratingTopics.EditingTopic>`__
     by ticking/unticking the Lock the topic checkbox in the Options tab.
+
+.. _Stick-unstick:
 
 Sticking/Unsticking a topic
 ---------------------------
@@ -203,6 +213,8 @@ tab <#StartTopicOptionsTab>`__.
     by ticking/unticking the Stick the topic checkbox in the Options
     tab.
 
+.. _Merge-topics:
+
 Merging topics
 --------------
 
@@ -228,6 +240,8 @@ Click Save to accept.
 
 After being merged, selected topics will be joined into one topic. All
 posts of the other topics are displayed as posts below the main entry.
+
+.. _Split-topic:
 
 Splitting a topic
 -----------------

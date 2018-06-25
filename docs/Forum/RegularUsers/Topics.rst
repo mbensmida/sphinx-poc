@@ -19,6 +19,8 @@ user can perform, including:
 -  `Tagging a
    topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.TaggingUntaggingTopic>`__
 
+.. _Create-topic:
+
 Creating a topic
 ----------------
 
@@ -29,6 +31,8 @@ Click |image0|.
 Enter the topic title and its content. The title must be less than 100
 characters (special characters are accepted). You may set `other
 optional properties <#TopicProperties>`__ if you want.
+
+.. _AttachingFiles:
 
 -  Click Attach files to attach files to your message. The Attach File
    form is displayed.
@@ -151,6 +155,8 @@ See
 `here <#PLFUserGuide.BuildingYourForum.Administrator.ManagingCategories.AddingCategories.SettingCategoryPermission>`__
 for more details.
 
+.. _Editing-topic:
+
 Editing a topic
 ---------------
 
@@ -167,6 +173,8 @@ Make changes to your desires. Also, leave the reason in the Reason field
 if needed.
 
 Click Submit to finish.
+
+.. _Create-poll:
 
 Creating a poll
 ---------------
@@ -207,6 +215,8 @@ To perform further actions on this poll, simply left-click More Actions
 on the Poll panel to open the drop-down menu. Here, you can edit,
 close/reopen or remove the poll by clicking the relevant button.
 
+.. _Rate-topics:
+
 Rating a topic
 --------------
 
@@ -229,6 +239,8 @@ Click Close to quit the form.
 
     Each user can only vote for a topic once. The function is disabled
     in closed topics and with banned users.
+
+.. _Tagging-topic:
 
 Tagging a topic
 ---------------

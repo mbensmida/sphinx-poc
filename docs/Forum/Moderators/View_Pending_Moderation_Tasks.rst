@@ -1,3 +1,5 @@
+.. _Manage-pending-tasks:
+
 Viewing all pending moderation tasks
 ====================================
 
