@@ -141,14 +141,13 @@ content in various ways, for example:
 
 -  Browse your content from the left sidebar in the **Icons** view. In
    the **List** and **Admin** views, the sidebar is disabled by default.
-   To browse in this way, refer to `Hide explorer panel in
-   sidebar <#HidingExplorerPanelInSidebar>`__.
+   To browse in this way, refer to :ref:`Hide explorer panel in sidebar <HidingExplorerPanelInSidebar>`.
 
 -  Switch to another drive by clicking |image10| on the Action bar. A
    list of drives which are accessible to you will be shown.
 
 .. note:: Depending on your role and permission, you will see various drives. See
-			:ref:`Drives <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithExplorer.Drives>` for more details.
+			:ref:`Drives <Drives>` for more details.
 
 
 .. _Document-viewer:
@@ -797,36 +796,23 @@ into the selected destination.
 -  You can also click the Clear All link to delete all from the list.
 
 
-.. note:: -  You only can take the Copy action if you have this right on the
-			source content.
-
-		  -  You only can take the Paste action if you have the right on the
-			destination.
-
-		  -  If the destination has the same name with the copied content,
-			after being pasted, an index will be added to the name of the
+.. note:: -  You only can take the Copy action if you have this right on the source content.
+		  -  You only can take the Paste action if you have the right on the destination.
+		  -  If the destination has the same name with the copied content, after being pasted, an index will be added to the name of the
 			pasted destination, for example *Live* and *Live[2]*.
-
 		  -  You cannot copy a "content" folder into a "document" folder.
-
-		  -  After taking the Copy action, you can take the Paste action on
-			the different destinations before taking another Copy action.
+		  -  After taking the Copy action, you can take the Paste action on the different destinations before taking another Copy action.
 
 .. _DeletingContent:
 
 Deleting
 ~~~~~~~~~
 
- .. note:: -  You can only take the **Delete** action if you have the
-			permission on that drive.
+ .. note:: -  You can only take the **Delete** action if you have the permission on that drive.
+		   -  You can delete multiple content at the same time by holding theCtrl (on Windows) or Command (on Mac) key and clicking the desired files and folders.
+		   -  If any folder is deleted, it means its child folders and references (if any) will be deleted accordingly.
 
-		   -  You can delete multiple content at the same time by holding the
-			Ctrl (on Windows) or Command (on Mac) key and clicking the desired files and folders.
-
-		   -  If any folder is deleted, it means its child folders and
-			references (if any) will be deleted accordingly.
-
-.._Delete-content:
+.. _Delete-content:
 
 Deleting content
 ----------------
@@ -1321,9 +1307,7 @@ The comments are shown at the bottom of the document.
 			what we have for :ref:`the activity stream composer <Managing-Activities>`)
  
 
-.. note:: -  You can mention people in your comment by first typing "@" symbol then selecting the person name you want to mention. See
-			:ref:`Mentioning someone <Mentioning-People>` for more details.
-
+.. note:: -  You can mention people in your comment by first typing "@" symbol then selecting the person name you want to mention. See :ref:`Mentioning someone <Mentioning-People>` for more details.
 		  -  Document comments are displayed exactly like in the activity stream.
 
 .. _ManagingPermissions:
@@ -1342,9 +1326,9 @@ Here, you can perform the following actions:
 
 -  :ref:`Adding permissions <AddingPermissions>`
 
--  `Editing permissions <EditingPermissions>`
+-  :ref:`Editing permissions <EditingPermissions>`
 
--  `Deleting permissions <DeletingPermissions>`
+-  :ref:`Deleting permissions <DeletingPermissions>`
    
 .. _AddingPermissions:
 
@@ -1393,12 +1377,10 @@ Deleting permissions
 
 .. _ViewingDocumentInformation:
 
-
-
 Viewing document information & metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-_ViewDocproperties:
+.. _ViewDocproperties:
 
 Viewing document information
 ------------------------------

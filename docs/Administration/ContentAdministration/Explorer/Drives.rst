@@ -1,3 +1,5 @@
+.. _Drives:
+
 Drives
 ======
 
@@ -69,9 +71,8 @@ Edit the properties as required.
 
 Click Save to commit your changes.
 
-    **Note**
 
-    The drive name cannot be edited in this form.
+.. note:: The drive name cannot be edited in this form.
 
 **Deleting a drive**
 

@@ -1,12 +1,12 @@
 Views
 =====
 
-PRODUCT provides various drives for you to store and manage your content
+eXo Platform provides various drives for you to store and manage your content
 efficiently. Each drive has some views that enable you to view data in
 the drive in a particular way. Each view has some action tabs and each
 action tab contains some functions.
 
-PRODUCT supports you some ways to view nodes in a specific folder and
+eXo Platform supports you some ways to view nodes in a specific folder and
 show actions of corresponding tab on the Action bar.
 
 The number of view types depends on which drive you are browsing. In
@@ -14,7 +14,7 @@ Explorer, select Views to open the Views panel.
 
 |image0|
 
-Views in PRODUCT
+Views in eXo Platform
 ----------------
 
 All PRODUCT views are in the Views tab. Here, you can view, edit,
@@ -106,6 +106,8 @@ Edit the view properties.
    allows rolling back a given version.
 
    |image5|
+
+.. _HidingExplorerPanelInSidebar:
 
 -  By default, the Hide explorer panel in side bar checkbox is only
    selected for the **Admin** and **List** views. This means you can use
