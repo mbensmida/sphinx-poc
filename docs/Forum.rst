@@ -61,6 +61,10 @@ based on your role.
 To have an overall look of actions which users of each role can do in
 the **Forums** application, see the following table:
 
+.. _table-form-app:
+
+Forum roles table:
+
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-------------+----------+-------------+--------+
 | Features                                            |	Description   																											 |Administrator|Moderator |Regular user |Guest   |
 |             	   				                      |																															 |             |          |             |		 |
