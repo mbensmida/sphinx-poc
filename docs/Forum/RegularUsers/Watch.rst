@@ -1,7 +1,7 @@
-.. _Watch:
+.. _Regularusers-Watching:
 
 Watching
-========
+~~~~~~~~~
 
 This function is for all logged-in users to keep track of changes in
 categories, forums or topics via email notifications. Whenever there are

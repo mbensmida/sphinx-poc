@@ -1,3 +1,5 @@
+.. _Regularusers-GettingPermanentLinks:
+
 Getting permalinks
 ==================
 

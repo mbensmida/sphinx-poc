@@ -1,23 +1,24 @@
+.. _Regularusers-Topics:
+
 Topics
-======
+~~~~~~~
 
 This section represents all actions related to topics that a regular
 user can perform, including:
 
--  `Creating a
-   topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.CreatingTopic>`__
+-  :ref:`Creating a topic <Create-topic>`
 
--  `Editing a
-   topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.EditingTopic>`__
+-  :ref:`Editing a
+   topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.EditingTopic>`
 
--  `Creating a
-   poll <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.CreatingPoll>`__
+-  :ref:`Creating a
+   poll <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.CreatingPoll>`
 
--  `Rating a
-   topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.RatingTopic>`__
+-  :ref:`Rating a
+   topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.RatingTopic>`
 
--  `Tagging a
-   topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.TaggingUntaggingTopic>`__
+-  :ref:`Tagging a
+   topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.TaggingUntaggingTopic>`
 
 .. _Create-topic:
 

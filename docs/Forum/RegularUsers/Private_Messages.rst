@@ -1,3 +1,5 @@
+.. _Regularusers-PrivateMessages:
+
 Private messages
 ================
 

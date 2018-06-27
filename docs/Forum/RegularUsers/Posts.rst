@@ -1,4 +1,4 @@
-.. _Posts:
+.. _Regularusers-Posts:
 
 Posting a reply
 ===============

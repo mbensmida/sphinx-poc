@@ -1,3 +1,5 @@
+.. _Regularusers-UsingBBCodes:
+
 Using BBCodes
 =============
 

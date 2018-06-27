@@ -69,9 +69,9 @@ the **Forums** application, see the following table:
 ------------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
 :ref:Attaching a file <AttachingFiles>                  Uploads an attachment to a topic/post, previews and downloads it. 														       |OK|         |OK|	     |OK|       |OK|
 ------------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Bookmarks <Bookmarks>                              Bookmarks a category, forum, topic.																						       |OK|         |OK|	     |OK|       |NOK|
+:ref:Bookmarks <Regularusers-Bookmarks>                 Bookmarks a category, forum, topic.																						       |OK|         |OK|	     |OK|       |NOK|
 ------------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Creating a post <Posts>                            Posts a reply, quote, private post, quick reply.																			   |OK|         |OK|	     |OK|       |NOK|
+:ref:Creating a post <Regularusers-Posts>               Posts a reply, quote, private post, quick reply.																			   |OK|         |OK|	     |OK|       |NOK|
 ------------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
 :ref:Editing your post <Edit-delete-post>               Edits a post, quote and private post.																					       |OK|         |OK|	     |OK|       |NOK|
 ------------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
@@ -164,6 +164,56 @@ the **Forums** application, see the following table:
 ====================================================== =========================================================================================================================  =============  ========== ============ =========
 
 .. note:: **(\*):** Regular users can only edit/delete their own posts/topics.
+
+.. _Regular-users:
+
+============
+Regular user
+============
+
+This section describes actions that a regular user can perform in the
+**Forums** application of eXo Platform, including:
+
+-  :ref:`Topics <Regularusers-Topics>`
+
+   Steps to create, edit, rate and tag/untag a topic, and how to create
+   a poll.
+
+-  :ref:`Posts <Regularusers-Posts>`
+
+   Steps to post a quick/advanced/private reply, to reply with a quote,
+   to edit/delete a post.
+
+-  :ref:`Using BBCodes <Regularusers-UsingBBCodes>`
+
+   Details about BBCodes and how to use them.
+
+-  :ref:`Private messages <Regularusers-PrivateMessages>`
+
+   Steps to send and receive a private message.
+
+-  :ref:`Bookmarks <Regularusers-Bookmarks>`
+
+   Steps to add/view and delete a bookmark.
+
+-  :ref:`Subscribing to RSS feeds <SubscribingRSSFeeds>`
+
+   The ways to get an RSS feed.
+
+-  :ref:`Watching <Regularusers-Watching>`
+
+   How to watch your desired category/forum or topic.
+
+-  :ref:`Getting
+   permalinks <Regularusers-GettingPermanentLinks>`
+
+   Steps to get permalinks of a specific forum/topic/category and share
+   it with others
+
+-  :ref:`User settings <Regularusers-UserSettings>`
+
+   Details about editing your profile, changing forum settings and
+   editing your subscription.
 
 
 .. |image0| image:: images/forum/forum_user_actions.png

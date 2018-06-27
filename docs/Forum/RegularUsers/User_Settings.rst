@@ -1,4 +1,4 @@
-.. _User-settings:
+.. _Regularusers-UserSettings:
 
 User settings
 =============

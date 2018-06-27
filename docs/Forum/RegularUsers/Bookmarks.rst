@@ -1,7 +1,7 @@
-.. _Bookmarks:
+.. _Regularusers-Bookmarks:
 
 Bookmarks
-=========
+~~~~~~~~~~~~
 
 In the **Forums** application, the **Bookmark** function is to collect
 links to a category, forum or topic you have visited, so that you can
