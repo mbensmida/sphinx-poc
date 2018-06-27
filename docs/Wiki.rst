@@ -15,21 +15,33 @@ Working With Wikis
     experiences on collaboration activities and build valuable knowledge
     center for clients.
     
-.. tip:: When accessing wiki application, a welcome page is displayed indicating in which wiki you are in.
+.. tip:: When accessing wiki application, a welcome page is displayed 
+		 indicating in which wiki you are in.
 
-			-  If you are in a user's wiki application, the welcome page will display the message **Welcome to $FirstName $LastName Wiki**, 
-			where FirstName and LastName are the first and the last name of the user.
+			-  If you are in a user's wiki application, the welcome page
+			 will display the message **Welcome to $FirstName $LastName Wiki**, where FirstName and LastName are the first and the last name of the user.
+			
 			|image95|
 			
-			-  If you are in a space's wiki application, the welcome page will display the message **Welcome to Space $SpaceName Wiki**, 
-			where SpaceName is the space name.
+			-  If you are in a space's wiki application, the welcome 
+			page will display the message **Welcome to Space $SpaceName 
+			Wiki**, where SpaceName is the space name.
+			
 			|image96|
 
 
-.. note:: The message of the welcome page in Wiki application, either for users profiles or spaces is a static message. 
-		  It tooks the first set parameters i.e. the first **$FirstName** and **$LastName** set by the user and the first **$SpaceName** set by the space's creator.
-		  For example, in the case below, the first space name chosen by its creator was "PM Team" then changed to "Product Management Team" 
-		  but the wiki welcome page contains always **Welcome to Space PM Team Wiki**.
+.. note:: The message of the welcome page in Wiki application, either 
+		  for users profiles or spaces is a static message. 
+		  
+		  It tooks the first set parameters i.e. the first 
+		  **$FirstName** and **$LastName** set by the user and the first
+		  **$SpaceName** set by the space's creator.
+		 
+		  For example, in the case below, the first space name chosen by
+		  its creator was "PM Team" then changed to "Product Management 
+		  Team" but the wiki welcome page contains always **Welcome to 
+		  Space PM Team Wiki**.
+						
 						|image97|
 
 
