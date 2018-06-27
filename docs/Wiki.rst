@@ -14,6 +14,21 @@ Working With Wikis
     will complete the ideal combination that helps users enhance their
     experiences on collaboration activities and build valuable knowledge
     center for clients.
+    
+.. tip:: When accessing wiki application, a welcome page is displayed indicating in which wiki you are in.
+			- If you are in a user's wiki application, the welcome page will display the message **Welcome to $FirstName $LastName Wiki**, 
+			where FirstName and LastName are the first and the last name of the user.
+			|image95|
+			- If you are in a space's wiki application, the welcome page will display the message **Welcome to Space $SpaceName Wiki**, 
+			where SpaceName is the space name.
+			|image96|
+
+
+.. note:: The message of the welcome page in Wiki application, either for users profiles or spaces is a static message. It tooks the first set parameters
+			i.e. the first **$FirstName** and **$LastName** set by the user and the first **$SpaceName** set by the space's creator.
+			For example, in the case below, the first space name chosen by its creator was "PM Team" then changed to "Product Management Team" 
+			but the wiki welcome page contains always **Welcome to Space PM Team Wiki**.
+						|image97|
 
     This chapter covers the following topics:
 
@@ -71,11 +86,15 @@ another space right in the breadcrumb of the current Wiki navigation. To
 quickly switch to another space, simply click the currently browsed
 space name:
 
+|image92|
+
 Type your desired space name in the search box to filter the space and
 click your space name from the search results. Then you will be
 redirected to the Wiki home of the selected space. The "**My Wiki**\ "
 and "**Intranet**\ " are displayed by default, which will direct you to
 the homepage of your personal Wiki and Intranet Wiki accordingly.
+
+|image93|
 
 
 .. note::Only spaces where you are their member are displayed in the search result.
@@ -112,6 +131,8 @@ a space works as a group wiki for that space. The group wiki can be
 accessed by members of that group.
 
 For example:
+
+|image94|
 
 -  **User wiki**: The wiki of an individual user.
 
@@ -1301,3 +1322,9 @@ use the wiki syntax to format content as normal.
 .. |image90| image:: images/common/delete_icon.png
 .. |image91| image:: images/wiki/webdav_folders.png
 .. |WYSIWYG| image:: images/wiki/undefined_link.png
+.. |image92| image:: images/wiki/wiki_navigation.png
+.. |image93| image:: images/wiki/wiki_navigation_filter.png
+.. |image94| image:: images/wiki/group_wiki.png
+.. |image95| image:: images/wiki/usersWiki.png
+.. |image96| image:: images/wiki/spaceWiki.png
+.. |image97| image:: images/wiki/changed-name.png
