@@ -16,9 +16,11 @@ Working With Wikis
     center for clients.
     
 .. tip:: When accessing wiki application, a welcome page is displayed indicating in which wiki you are in.
+
 			-  If you are in a user's wiki application, the welcome page will display the message **Welcome to $FirstName $LastName Wiki**, 
 			where FirstName and LastName are the first and the last name of the user.
 			|image95|
+			
 			-  If you are in a space's wiki application, the welcome page will display the message **Welcome to Space $SpaceName Wiki**, 
 			where SpaceName is the space name.
 			|image96|
