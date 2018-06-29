@@ -384,6 +384,42 @@ options:
    By clicking the wiki page link, you will be redirected to Wiki Home
    where the wiki page containing the notes is displayed as a child
    page.
+   
+.. _Leave-chat-room:
+
+================
+Leave Chat room 
+================
+
+When you are no more interested on a chat room discussion where you were
+invited by the room creator, you can leave the room by following these
+simple steps:
+
+1. Open the chat room you want to leave.
+
+2. Click on the dropdown button |image113| to display the list of choices.
+
+3. Click on Leave room button |image114|, a popup is displayed:
+
+|image115|
+
+4. Confirm the chat room leave by clicking on **Yes** button.
+
+If you click on **No** button, nothing happens and you still being a 
+member in the chat room.
+
+.. note:: - The room create does not have the **Leave room** button to
+			prevent having orphan rooms.
+		  - The **Leave room** button is not available on spaces chat
+		    rooms. To leave a space's chat room, you should leave the
+		    space itself.
+		    
+Leaving a chat room deletes it from your chat rooms list and you will no
+longer have access to the discussion.
+
+If the chat room creator send you again an invitation to join the room,
+you will be able again to see old discussions.
+ 
 
 .. _CollaborativeActions:
 
@@ -843,3 +879,7 @@ appears, select the desired status and the it is updated.
 .. |image110| image:: images/chat/preferences_chat_mobile.png
 .. |image111| image:: images/chat/preferences_chat_responsive.png
 .. |image112| image:: images/chat/status_change_mobile.png
+.. |image113| image:: images/chat/scroll-list-chat.png
+.. |image114| image:: images/chat/Leave-room-button.png
+.. |image115| image:: images/chat/Leave-room-popup.png
+
