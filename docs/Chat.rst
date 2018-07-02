@@ -128,15 +128,21 @@ When you click on the message, the mini chat window appears:
 
 
 
- .. note::* The mini chat window could also be opened by:
-			- Clicking on chat button |image20| on the user profile.
-			- Clicking on chat button on user and spaces popovers:
-              |image21|
+ .. note:: * The mini chat window could also be opened by:
+				- Clicking on chat button |image20| on the user profile.
+				- Clicking on chat button on user and spaces popovers:
+				
+				|image21|
               
-		  * The mini chat window behaves on mobile devices the same as for web:
-			|image22|
+		   * The mini chat window behaves on mobile devices the same as
+		     for web:
+		     
+				|image22|
 			
-		  * When your mini chat window is collapsed and you receive an instant message, the number of unread messages appears in both the chat icon and the mini chat window:
+		   * When your mini chat window is collapsed and you receive an 
+		     instant message, the number of unread messages appears in 
+		     both the chat icon and the mini chat window:
+			
 			|image23|
 
 .. _CreatingEditingGroupChat:
@@ -203,9 +209,10 @@ An edit chat room form appears in which you can make these actions:
 
 -  Remove members by clicking the corresponding |image35|.
 
- .. note::The list that appears after clicking on |image36| contains the list
-			of actions that you can make on the chat room. Only the chat room
-			creator is able to edit the room.
+ .. note:: The list that appears after clicking on |image36| contains 
+			the list of actions that you can make on the chat room. 
+			
+			Only the chat room creator is able to edit the room.
 			
 .. _Chat-room-user-list:			
 
@@ -408,13 +415,12 @@ simple steps:
 If you click on **No** button, nothing happens and you still being a 
 member in the chat room.
 
-.. note::* The room creator does not have the Leave room button to
-			prevent having orphan rooms.
+.. note:: * The room creator does not have the Leave room button to prevent having orphan rooms.
 			
-		 * The **Leave room** button is not available on spaces chat
-		    rooms. To leave a space's chat room, you should leave the
-		    space itself.
+		  * The **Leave room** button is not available on spaces chat rooms. 
+			To leave a space's chat room, you should leave the space itself.
 		    
+
 * Leaving a chat room deletes it from your chat rooms list and you will 
   no longer have access to the discussion.
 
