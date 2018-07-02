@@ -411,20 +411,21 @@ member in the chat room.
 .. note:: 
 		  - The room creator does not have the **Leave room** button to
 			prevent having orphan rooms.
+			
 		  - The **Leave room** button is not available on spaces chat
 		    rooms. To leave a space's chat room, you should leave the
 		    space itself.
 		    
-- Leaving a chat room deletes it from your chat rooms list and you will 
-no longer have access to the discussion.
+* Leaving a chat room deletes it from your chat rooms list and you will 
+  no longer have access to the discussion.
 
-- When you leave a chat room, a message "$First Last Name left the room"
-will appear to all the chat room members:
+* When you leave a chat room, a message "$First Last Name left the room"
+  will appear to all the chat room members:
 
 |image116|
 
-- If the chat room creator send you again an invitation to join the 
-room, you will be able again to see old discussions.
+* If the chat room creator send you again an invitation to join the 
+  room, you will be able again to see old discussions.
  
 
 .. _CollaborativeActions:
