@@ -408,17 +408,23 @@ simple steps:
 If you click on **No** button, nothing happens and you still being a 
 member in the chat room.
 
-.. note:: - The room create does not have the **Leave room** button to
+.. note:: 
+		  - The room creator does not have the **Leave room** button to
 			prevent having orphan rooms.
 		  - The **Leave room** button is not available on spaces chat
 		    rooms. To leave a space's chat room, you should leave the
 		    space itself.
 		    
-Leaving a chat room deletes it from your chat rooms list and you will no
-longer have access to the discussion.
+- Leaving a chat room deletes it from your chat rooms list and you will 
+no longer have access to the discussion.
 
-If the chat room creator send you again an invitation to join the room,
-you will be able again to see old discussions.
+- When you leave a chat room, a message "$First Last Name left the room"
+will appear to all the chat room members:
+
+|image116|
+
+- If the chat room creator send you again an invitation to join the 
+room, you will be able again to see old discussions.
  
 
 .. _CollaborativeActions:
@@ -882,4 +888,5 @@ appears, select the desired status and the it is updated.
 .. |image113| image:: images/chat/scroll-list-chat.png
 .. |image114| image:: images/chat/Leave-room-button.png
 .. |image115| image:: images/chat/Leave-room-popup.png
+.. |image116| image:: images/chat/user-left-room.png
 
