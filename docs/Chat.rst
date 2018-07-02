@@ -408,11 +408,10 @@ simple steps:
 If you click on **No** button, nothing happens and you still being a 
 member in the chat room.
 
-.. note:: 
-		  * The room creator does not have the Leave room button to
+.. note::* The room creator does not have the Leave room button to
 			prevent having orphan rooms.
 			
-		  * The **Leave room** button is not available on spaces chat
+		 * The **Leave room** button is not available on spaces chat
 		    rooms. To leave a space's chat room, you should leave the
 		    space itself.
 		    
