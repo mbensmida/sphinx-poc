@@ -296,8 +296,7 @@ updated and a comment is added to the activity.
 
 .. note:: - In a forum that :ref:`enables moderation <SettingForumPermissions>`, new topics will need reviewing and approving by moderators before being published.
 
-		  - You may not have right to start topics if the administrators/moderators set the Starting topic permission on the :ref:`category <SettingCategoryPermission>`
-			and/or the :ref:`forum <SettingForumPermissions>` for specific users/roles/groups only.
+		  - You may not have right to start topics if the administrators/moderators set the Starting topic permission on the :ref:`category <SettingCategoryPermission>` and/or the :ref:`forum <SettingForumPermissions>` for specific users/roles/groups only.
 
 When creating a topic, you can also add extra properties to this topic:
 
@@ -515,11 +514,9 @@ viewing the topic, there are many ways to reply:
 
 |image35|
 
--  |image36| :ref:`Clicking the Post Reply button that is at the top 
-      or bottom of the topic <Posts.PostingReplyWithRichTextEditor>`.
+-  |image36| :ref:`Clicking the Post Reply button that is at the top or bottom of the topic <Posts.PostingReplyWithRichTextEditor>`.
 
--  |image37| :ref:`Typing a message in the Quick Reply box at the bottom
-		of the topic <Posts.PostingQuickReply>`.
+-  |image37| :ref:`Typing a message in the Quick Reply box at the bottom of the topic <Posts.PostingQuickReply>`.
 
 -  |image38| :ref:`Replying with a quote <Posts.ReplyingWithQuote>`.
 
@@ -2088,7 +2085,7 @@ The administrative tasks include the following actions:
 
 - :ref:`Customizing BBCodes <Customize-BBCodes>`
 
-- :ref:`Setting up auto-pruningauto-pruning>`
+- :ref:`Setting up auto-pruning <auto-pruning>`
 
 - :ref:`Banning IPs <AdministrativeTasks.BanningIPs>`
 
@@ -2719,6 +2716,6 @@ displayed properly in the **Forums** homepage.
 .. |image205| image:: images/forum/manage_category_btn.png
 .. |image206| image:: images/forum/more_actions_button.png
 .. |image207| image:: images/forum/administration_btn.png
-.. |image208| image:: forum/admin_forum_import_cat.png
+.. |image208| image:: images/forum/admin_forum_import_cat.png
 .. |image209| image:: images/forum/manage_category_btn.png
 .. |topic| image:: images/forum/start_topic.png
