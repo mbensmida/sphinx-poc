@@ -226,11 +226,11 @@ user can perform, including:
 
 -  :ref:`Editing a topic <EditingTopic>`
 
--  :ref:`Creating a poll <CreatingPoll>`
+-  :ref:`Creating a poll <Create-poll>`
 
--  :ref:`Rating a topic <RatingTopic>`
+-  :ref:`Rating a topic <Rate-topics>`
 
--  :ref:`Tagging a topic <TaggingUntaggingTopic>`
+-  :ref:`Tagging a topic <Tagging-topic>`
 
 .. _Create-topic:
 
@@ -240,6 +240,8 @@ Creating a topic
 1. Go into the forum where you want to start a new topic.
 
 2. Click |image3|.
+
+|topic|
 
 3. Enter the topic title and its content. The title must be less than 100
 characters (special characters are accepted). You may set :ref:`other
@@ -2508,12 +2510,6 @@ Importing a forum
 After being imported successfully, the forum and topic data will be
 displayed properly in the **Forums** homepage.
 
-
-
-
-
-
-
 .. |image0| image:: images/forum/forum_user_actions.png
 .. |image1| image:: images/forum/mod_action_bar.png
 .. |image2| image:: images/forum/forum_home.png
@@ -2725,3 +2721,4 @@ displayed properly in the **Forums** homepage.
 .. |image207| image:: images/forum/administration_btn.png
 .. |image208| image:: forum/admin_forum_import_cat.png
 .. |image209| image:: images/forum/manage_category_btn.png
+.. |topic| image:: images/forum/start_topic.png
