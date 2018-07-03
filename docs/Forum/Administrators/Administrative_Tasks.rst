@@ -1,41 +1,40 @@
+.. _Administrator.AdministrativeTasks:
+
 Administrative tasks
-====================
+~~~~~~~~~~~~~~~~~~~~~
 
 All of administrative tasks can be reached via the menu that appears
-after clicking |image0| on the Forums Administration bar. You can select
+after clicking |image169| on the Forums Administration bar. You can select
 a desired action from the following drop-down menu.
+
+|image170|
 
 The administrative tasks include the following actions:
 
--  `Configuring Sort
-   Settings <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.ConfiguringSortSettings>`__
+- :ref:`Configuring Sort Settings <Sort-settings>`
 
--  `Defining censored
-   keywords <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.DefiningCensoredKeywords>`__
+- :ref:`Defining censored keywords <Administrating-Censor>`
 
--  `Customizing an email notification
-   template <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.CustomizingEmailTemplate>`__
+- :ref:`Customizing an email notificationtemplate <Customize-email-notifs>`
 
--  `Customizing
-   BBCodes <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.CustomizingBBcodes>`__
+- :ref:`Customizing BBCodes <Customize-BBCodes>`
 
--  `Setting up
-   auto-pruning <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.SettingupAutoPrune>`__
+- :ref:`Setting up auto-pruningauto-pruning>`
 
--  `Banning
-   IPs <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BanningIPs>`__
+- :ref:`Banning IPs <AdministrativeTasks.BanningIPs>`
 
--  `Backing up a
-   category/forum <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BackingupCategoryForum>`__
+- :ref:`Backing up a category/forum <BackingupCategoryForum>`
 
 .. _Sort-settings:
 
 Configuring Sort Settings
 -------------------------
 
-Click |image1| on the Forums Administration bar, then click Sort
+Click |image171| on the Forums Administration bar, then click Sort
 Settings from the drop-down menu. The Sort Settings form opens. Now, you
 can set properties for how forums and topics are sorted in **Forums**.
+
+|image172|
 
 -  Sort Forums by: Sort forums by several criteria: name, order, lock
    status, creation date, modification date, topic count and post count.
@@ -58,11 +57,15 @@ Censored keywords are those which are specified as inappropriate in the
 keywords, they will be hidden until being verified by Administrators or
 Moderators. The Censor Keyword form will be displayed.
 
-Click |image2| on the Forums Administration bar, then click Censor
-Keywords from the drop-down menu. The Censor Keyword form appears: Enter
-censored keywords in the Censored Keywords field. The keywords are
-separated by commas. Click Save to complete defining the censored
-keywords.
+1. Click |image173| on the Forums Administration bar, then click Censor
+Keywords from the drop-down menu. The Censor Keyword form appears: 
+
+|image174|
+
+2. Entercensored keywords in the Censored Keywords field. 
+The keywords are separated by commas. 
+
+3. Click Save to complete defining the censored keywords.
 
 .. _Customize-email-notifs:
 
@@ -72,11 +75,15 @@ Customizing an email notification template
 If there are new posts in the category, forum or topic that a user has
 watched, the user will receive the email notification like this.
 
+|image175|
+
 This section will describe how to create and edit the email templates
 that can be used to send email notifications to users.
 
-Click |image3| on the Forums Administration bar and click Notifications
+Click |image176| on the Forums Administration bar and click Notifications
 from the drop-down menu to open the Notifications form.
+
+|image177|
 
 The Notifications form consists of two tabs:
 
@@ -156,7 +163,7 @@ The followings are variables which can be used in the template:
 
 These variables are used to load the content dynamically. Thus, you
 should not edit them. In case the template is changed unexpectedly, you
-can go back to the default template by clicking |image4| . You can use
+can go back to the default template by clicking |image178| . You can use
 the text editor to format the template as you wish.
 
 .. _Customize-BBCodes:
@@ -171,69 +178,80 @@ plugins: "[B]", "[I]", "[U]", "[FONT]", "[HIGHLIGHT]", "[IMG]", "[CSS]",
 "[LIST]", "[WIKI], "[SLIDESHARE]". You can add, edit or delete the
 BBCode tags.
 
-Click |image5| on the Forums Administration bar, then select BBCodes
+Click |image179| on the Forums Administration bar, then select BBCodes
 from the drop-down menu to open the BBCode Manager form.
+
+|image180|
 
 Here, you can do the following actions:
 
--  `Adding a new
-   BBCode <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.CustomizingBBcodes.AddingNewBBCode>`__
+-  :ref:`Adding a new BBCode <CustomizingBBcodes.AddingNewBBCode>`
 
--  `Editing/Deleting a
-   BBCode <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.CustomizingBBcodes.EditingDeletingBBCode>`__
+-  :ref:`Editing/Deleting a BBCode <CustomizingBBcodes.EditingDeletingBBCode>`
 
--  `Activating/Deactivating a
-   BBCode <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.CustomizingBBcodes.ActivatingDeactivatingBBCode>`__
+-  :ref:`Activating/Deactivating a BBCode <CustomizingBBcodes.ActivatingDeactivatingBBCode>`
+
+.. _CustomizingBBcodes.AddingNewBBCode:
 
 Adding a new BBCode
-~~~~~~~~~~~~~~~~~~~
+````````````````````
 
-Click Add BBCode in the BBCode Manager form to open the Add BBCode form.
+1. Click Add BBCode in the BBCode Manager form to open the Add BBCode form.
 
-Input values into the Add BBCode form.
+2. Input values into the Add BBCode form.
+
+|image181|
 
 **Details:**
 
-|image6| **Tag**: This is the text for BBCode, which goes inside the
+|image182| **Tag**: This is the text for BBCode, which goes inside the
 square bracket.
 
-|image7| **Replacement**: The HTML codes that replace the user-entered
+|image183| **Replacement**: The HTML codes that replace the user-entered
 BBCode.
 
-|image8| **Description**: The brief description about this BBCode tag.
+|image184| **Description**: The brief description about this BBCode tag.
 
-|image9| **Example**: The sample of the BBCode in use.
+|image185| **Example**: The sample of the BBCode in use.
 
-|image10| **Use {option}**: Allows BBCode tag to have option or not.
+|image186| **Use {option}**: Allows BBCode tag to have option or not.
 
-|image11|: Clicks this icon to preview your rendered BBCode.
+|image187|: Clicks this icon to preview your rendered BBCode.
 
-|image12|: Clicks this icon to see descriptions of each field.
+|image188|: Clicks this icon to see descriptions of each field.
 
-Click Save to finish or Reset to clear all input fields.
+3. Click Save to finish or Reset to clear all input fields.
+
+.. _CustomizingBBcodes.EditingDeletingBBCode:
 
 Editing/Deleting a BBCode
-~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````
 
 **Editing a BBCode**
 
-Click |image13| corresponding to the relevant BBCode tag in the BBCode
-Manager form.
+1. Click |image189| corresponding to the relevant BBCode tag in the 
+BBCode Manager form.
 
-Make changes on the BBCode tag.
+|image190|
 
-Click Save to finish your changes.
+2. Make changes on the BBCode tag.
+
+2. Click Save to finish your changes.
 
 **Deleting a BBCode**
 
-Simply click |image14| corresponding to the BBCode you want to delete in
+Simply click |image191| corresponding to the BBCode you want to delete in
 the BBCode Manager form, then select **OK** in the confirmation message
 to accept your deletion.
 
+.. _CustomizingBBcodes.ActivatingDeactivatingBBCode:
+
 Activating/Deactivating a BBCode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````````
 
 Any BBCode can be activated/deactivated.
+
+|image192|
 
 -  To activate an existing BBCode tag, tick the relevant checkbox.
 
@@ -248,21 +266,27 @@ Setting up auto-pruning
 The pruning allows you to clean a large amount of obsolete and inactive
 topics based on criteria.
 
-Click |image15| on the Forums Administration bar and click Pruning from
+1. Click |image193| on the Forums Administration bar and click Pruning from
 the drop-down menu to open the Auto Prune form.
 
-Click |image16| corresponding to the forum you want to set the prune
+|image194|
+
+2. Click |image195| corresponding to the forum you want to set the prune
 settings.
 
-Specify the criteria.
+|image196|
 
-Click |image17| to check how many topics will be pruned.
+3. Specify the criteria.
 
-Click Save to accept settings.
+4. Click |image197| to check how many topics will be pruned.
+
+5. Click Save to accept settings.
 
 After setting the prune successfully, the auto-prune will be run
 automatically on the forum that has been set to check for the inactivate
 topics.
+
+.. _AdministrativeTasks.BanningIPs:
 
 Banning IPs
 -----------
@@ -273,26 +297,30 @@ be used to add posts to all forums in the **Forums** application. Any
 users who use banned IPs to add post, will be recognized as the banned
 user. As the result, the banned user can only view in **Forums**.
 
-Click |image18| on the Forums Administration bar, then click Banned IPs
+Click |image198| on the Forums Administration bar, then click Banned IPs
 from the drop-down menu. The Banned IPs form appears.
+
+|image199|
 
 -  To ban an IP, simply enter the IP address into the IP textboxes and
    click Add. All banned IPs will be listed in the banned IPs table. You
    can view all posts which are posted from the specific banned IP or
    delete them from the banned IPs list.
 
--  To view all posts submitted from a specific IP, click |image19| of
+-  To view all posts submitted from a specific IP, click |image200| of
    the respective IP. These posts can be viewed and deleted by the
    administrator.
 
--  To remove banned IPs from the banned IPs list, click |image20| of the
-   respective IP.
+-  To remove banned IPs from the banned IPs list, click |image201| of 
+   the respective IP.
 
 Besides, you can also filter the banned IPs if there are so many banned
 IPs.
 
 To filter banned IPs, enter a part of the IPs address into filter
 textbox, all IPs matching with the filter term will be displayed.
+
+.. _BackingupCategoryForum:
 
 Backing up a category & forum
 -----------------------------
@@ -306,28 +334,27 @@ into the **Forums** application.
 
 Backing up a category & forum includes the following actions:
 
--  `Exporting a
-   category <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BackingupCategoryForum.ExportingCategory>`__
+-  :ref:`Exporting a category <Export-category>`
 
--  `Exporting a
-   forum <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BackingupCategoryForum.ExportingForum>`__
+-  :ref:`Exporting a forum <Export-forum>`
 
--  `Importing a
-   category <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BackingupCategoryForum.ImportingCategory>`__
+-  :ref:`Importing a category <Import-category>`
 
--  `Importing a
-   forum <#PLFUserGuide.BuildingYourForum.Administrator.AdministrativeTasks.BackingupCategoryForum.ImportingForum>`__
+-  :ref:`Importing a forum <Importing-a-forum>`
 
 .. _Export-category:
 
 Exporting a category
-~~~~~~~~~~~~~~~~~~~~
+`````````````````````
 
-Click |image21| on the Forums Administration bar.
+1. Click |image202| on the Forums Administration bar.
 
-Click Export from the drop-down menu to open the Export Categories form.
+2. Click Export from the drop-down menu to open the Export Categories 
+form.
 
-**Details:**
+|image203|
+
+*Details:*
 
 +---------------------+------------------------------------------------------+
 | Field               | Description                                          |
@@ -342,97 +369,76 @@ Click Export from the drop-down menu to open the Export Categories form.
 |                     | only.                                                |
 +---------------------+------------------------------------------------------+
 
-Select categories and enter the file name into the File Name field.
+3. Select categories and enter the file name into the File Name field.
 
-Click Save.
+4. Click Save.
 
 .. _Export-forum:
 
 Exporting a forum
-~~~~~~~~~~~~~~~~~
+`````````````````````
 
 This function is used to export forums and all topics inside the
 **Forums** application into the .xml or .zip file.
 
 **The first way**
 
-Go into a forum you want to export and click |image22| on the Action
+1. Go into a forum you want to export and click |image206| on the Action
 bar.
 
-Click Export Forum from the drop-down menu to open the Export Forums
+2. Click Export Forum from the drop-down menu to open the Export Forums
 form.
 
-Input the file name.
+|image204|
 
-Tick the Compress checkbox to export the file into the .zip file or
+3. Input the file name.
+
+4. Tick the Compress checkbox to export the file into the .zip file or
 leave it blank to export into .xml file.
 
-Click Save to get and store the exported file in your local device.
+5. Click Save to get and store the exported file in your local device.
 
 **The second way**
 
-Go into a category containing the forum you want to export.
+1. Go into a category containing the forum you want to export.
 
-Click |image23| on the Action bar, then click Export Forum from the
+2. Click |image205| on the Action bar, then click Export Forum from the
 drop-down menu.
 
-Select a forum you want to export by ticking the relevant checkbox. The
-Compress checkbox is checked by default that means the file is exported
-in the .zip format.
+3. Select a forum you want to export by ticking the relevant checkbox. 
+The Compress checkbox is checked by default that means the file is 
+exported in the .zip format.
 
-Click Save to get and store the exported file in your local device.
+4. Click Save to get and store the exported file in your local device.
 
 .. _Import-category:
 
 Importing a category
-~~~~~~~~~~~~~~~~~~~~
+`````````````````````
 
-Click |image24| on the Forums Administration bar, then click Import from
-the drop-down menu to open the Import Category form.
+1. Click |image207| on the Forums Administration bar, then click Import 
+from the drop-down menu to open the Import Category form.
 
-Click Select File to browse and select the file to import.
+|image208|
 
-Click Save.
+2. Click Select File to browse and select the file to import.
 
-.. _Importing a forum:
+3. Click Save.
+
+.. _Importing-a-forum:
 
 Importing a forum
-~~~~~~~~~~~~~~~~~
+``````````````````
 
-Go into one category, then click |image25| on the Action bar.
+1. Go into one category, then click |image209| on the Action bar.
 
-Click Import Forum from the drop-down menu.
+2. Click Import Forum from the drop-down menu.
 
-Browse and upload the selected file in the Import Forum form.
+3. Browse and upload the selected file in the Import Forum form.
 
-Click Save to accept importing.
+4. Click Save to accept importing.
 
 After being imported successfully, the forum and topic data will be
 displayed properly in the **Forums** homepage.
 
-.. |image0| image:: images/forum/administration_btn.png
-.. |image1| image:: images/forum/administration_btn.png
-.. |image2| image:: images/forum/administration_btn.png
-.. |image3| image:: images/forum/administration_btn.png
-.. |image4| image:: images/forum/back_to_default_btn.png
-.. |image5| image:: images/forum/administration_btn.png
-.. |image6| image:: images/common/1.png
-.. |image7| image:: images/common/2.png
-.. |image8| image:: images/common/3.png
-.. |image9| image:: images/common/4.png
-.. |image10| image:: images/common/5.png
-.. |image11| image:: images/forum/preview_icon.png
-.. |image12| image:: images/forum/help_icon.png
-.. |image13| image:: images/common/edit_icon.png
-.. |image14| image:: images/common/delete_icon.png
-.. |image15| image:: images/forum/administration_btn.png
-.. |image16| image:: images/forum/prune_settings_icon.png
-.. |image17| image:: images/forum/dry_run_button.png
-.. |image18| image:: images/forum/administration_btn.png
-.. |image19| image:: images/forum/view_post.png
-.. |image20| image:: images/common/delete_icon.png
-.. |image21| image:: images/forum/administration_btn.png
-.. |image22| image:: images/forum/more_actions_button.png
-.. |image23| image:: images/forum/manage_category_btn.png
-.. |image24| image:: images/forum/administration_btn.png
-.. |image25| image:: images/forum/manage_category_btn.png
+

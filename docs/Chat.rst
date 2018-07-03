@@ -417,8 +417,7 @@ member in the chat room.
 
 .. note:: * The room creator does not have the Leave room button to prevent having orphan rooms.
 			
-		  * The **Leave room** button is not available on spaces chat rooms. 
-			To leave a space's chat room, you should leave the space itself.
+		  * The Leave room button is not available on spaces chat rooms. To leave a space's chat room, you should leave the space itself.
 		    
 
 * Leaving a chat room deletes it from your chat rooms list and you will 

@@ -1,44 +1,46 @@
+.. _Administrator.ManagingForums:
+
 Managing forums
-===============
+~~~~~~~~~~~~~~~~
 
 Forums management can be performed through the following actions:
 
 .. _Adding-forum:
 
-**Adding a new forum**
+Adding a new forum
+---------------------
 
-Open the Forum form by following either of two ways below:
+1. Open the Forum form by following either of two ways below:
 
 **The first way**
 
--  Click |image0| on the Forums Administration bar.
+-  Click |image148| on the Forums Administration bar.
+
+.. _ManageCategorymenu:
 
 **The second way**
 
 -  Go into the category to which you want to add a new forum.
 
--  Click |image1| on the Forums Administration bar;
+-  Click |image149| on the Forums Administration bar;
 
-   Or, click |image2| on the Action bar and select Add Forum.
+   Or, click |image150| on the Action bar and select Add Forum.
 
-   |image3|
+   |image151|
 
 The Forum form will be displayed:
 
-|image4|
+|image152|
 
-Enter the forum title which is required. Its length must be less than 50
-characters, including spaces.
+2., Enter the forum title which is required. Its length must be less 
+than 50 characters, including spaces.
 
 Optionally, you can:
 
 -  Select the category to which you want to add your forum by clicking
    Add Forum to Category and selecting one from the categories list.
 
-       **Note**
-
-       If you follow `this way <#ManageCategorymenu>`__, you cannot
-       change the pre-selected category.
+.. note:: If you follow :ref:`this way <ManageCategorymenu>`, you cannot change the pre-selected category.
 
 -  Enter the order for your forum that must be in the positive integer
    format.
@@ -49,21 +51,28 @@ Optionally, you can:
 
 -  Give brief description for your forum.
 
-Click Save to finish.
+3. Click Save to finish.
 
 The administrators and moderators of a forum may want to get updated of
 what is new in forums under their management. This can be done when
 creating a new forum.
 
-**Configuring the moderation settings**
+.. _Configure-moderation-settings:
+
+Configuring the moderation settings
+-------------------------------------
 
 When creating a forum, you can set moderation-related options.
 
-Select the Moderation Options tab in the Forum form.
+1. Select the Moderation Options tab in the Forum form.
 
-Do actions in the relevant fields.
+2. Do actions in the relevant fields.
+
+|image153|
 
 **Details:**
+
+.. _AdminModerateTopics:
 
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Field                                                 | Description                                                                                                                                                                                  |
@@ -77,64 +86,52 @@ Do actions in the relevant fields.
 | Moderate Topics                                       | By default, new topics must be always approved and visible to everyone. If this option is selected, new topics will be pending for approval before being viewable.                           |
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**Setting forum permissions**
+.. _SettingForumPermissions:
+
+Setting forum permissions
+--------------------------
 
 While creating a new forum, you can assign the **moderator** role or
 rights to start topics, add and view posts in the forum to specific
 users/roles/groups. To do this, select the Permissions tab in the Forum
-form and follow `this
-step <#PLFUserGuide.BuildingYourForum.Administrator.ManagingCategories.AddingCategories.SettingCategoryPermission>`__.
+form and follow :ref:`this step <SettingCategoryPermission>`.
 
-    **Note**
+.. note:: -  When granting the "moderator" role to a specific user/role/group, to allow other users to start topics, add/view posts, you should uncheck these rights. The moderator of a forum only has right to manage the forum.
 
-    -  When granting the "moderator" role to a specific user/role/group,
-       to allow other users to start topics, add/view posts, you should
-       uncheck these rights. The moderator of a forum only has right to
-       manage the forum.
+		  -  If you do not set the starting topics, posting, and viewing posts permissions for any users/roles/groups, and the category which includes the forum is not :ref:`set permissions <SettingCategoryPermission>`, it means all users can do these actions.
 
-    -  If you do not set the starting topics, posting, and viewing posts
-       permissions for any users/roles/groups, and the category which
-       includes the forum is not `set
-       permissions <#PLFUserGuide.BuildingYourForum.Administrator.ManagingCategories.AddingCategories.SettingCategoryPermission>`__,
-       it means all users can do these actions.
-
-    -  When granting any permissions above (moderate, start topics, post
-       or only view posts in a forum), if you set the \* membership for
-       the selected group, this permission will be granted to all users
-       of that group, regardless of their membership role.
+		  -  When granting any permissions above (moderate, start topics, post or only view posts in a forum), if you set the \* membership for the selected group, this permission will be granted to all users of that group, regardless of their membership role.
 
 .. _Delete-forum:
 
-**Deleting a forum**
+Deleting a forum
+-----------------
 
 Only administrators can perform this action. When a forum is removed,
 all of its topics will then be deleted.
 
-Go into the forum you want to remove.
+1. Go into the forum you want to remove.
 
-Click |image5| on the Action bar, then select Delete from the drop-down
-menu.
+2. Click |image154| on the Action bar, then select Delete from the 
+drop-down menu.
 
-Click **OK** in the confirmation message to accept your deletion.
+3. Click **OK** in the confirmation message to accept your deletion.
 
 .. _Move-forum:
 
-**Moving a forum**
+Moving a forum
+---------------
 
 You can move a forum to another category as follows:
 
-Go into the forum you want to move.
+1. Go into the forum you want to move.
 
-Click |image6| on the Action bar, then select Move from the drop-down
-menu.
+2. Click |image155| on the Action bar, then select Move from the 
+drop-down menu.
 
 A list of existing categories will appear. Select a destination category
 to which your selected forum will be moved.
 
-.. |image0| image:: images/forum/add_forum_btn.png
-.. |image1| image:: images/forum/add_forum_btn.png
-.. |image2| image:: images/forum/manage_category_btn.png
-.. |image3| image:: images/forum/admin_add_forum.png
-.. |image4| image:: images/forum/admin_add_forum_tab.png
-.. |image5| image:: images/forum/more_actions_button.png
-.. |image6| image:: images/forum/more_actions_button.png
+|image156|
+
+

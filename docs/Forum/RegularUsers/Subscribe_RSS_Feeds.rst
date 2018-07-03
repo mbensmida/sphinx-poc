@@ -1,21 +1,27 @@
 .. _SubscribingRSSFeeds:
 
 Subscribing to RSS feeds
-========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function is for all users to subscribe to a specific category,
 forum, topic. If there are any changes, the feed of the subscribed
 category, forum or topic will be updated. To get the RSS feed, click
-|image0| on the Action bar.
+|image68| on the Action bar.
 
 Or right-click the item you want to subscribe to and click RSS from the
 drop-down menu.
+
+|image69|
 
 Depending on which browser you are using, the next step may be
 different. The browser used in this example is Firefox 19, which use the
 Firefox Live Bookmark.
 
+|image70|
+
 The RSS feed on Firefox will look like:
+
+|image71|
 
 -  Category feeds contain all posts from all topics in all forums in a
    category. The category feeds shows the title (title of the category),
@@ -32,4 +38,4 @@ The RSS feed on Firefox will look like:
    post), link (permalink to the topic), pubdate (the creation date of
    the topic).
 
-.. |image0| image:: images/forum/forum_rss_btn.png
+
