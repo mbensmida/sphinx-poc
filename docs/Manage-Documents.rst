@@ -116,7 +116,7 @@ Here's what you can do in the **List** view:
 -  Doing basic actions on your content.
 
 
-.. _Navigate-through-document:
+.. _NavigatingThroughDocuments:
 
 ============================
 Navigating through Documents
@@ -150,7 +150,7 @@ content in various ways, for example:
 			:ref:`Drives <Drives>` for more details.
 
 
-.. _Document-viewer:
+.. _DocumentViewer:
 
 ===============
 Document Viewer
@@ -273,7 +273,7 @@ templates.
 
 |image23|
 
-.. _Open-in-office:
+.. _OpenInOffice:
 
 ==============
 Open in Office
@@ -524,7 +524,7 @@ MAC
 -  In MAC OS 10.9, to edit a text file, it is recommended you use
    TextWrangler (not default TextEditor) to edit it.
 
-.. _Basic-actions:
+.. _WorkingWithBasicActions:
 
 ==========================
 Working with basic actions
@@ -1507,6 +1507,1165 @@ Select the content which has been locked, then click |image116| from the
 Right-click menu or on the Action bar. The content will then be unlocked
 and other users can take actions on it.
 
+.. _ViewingWebDAV:
+
+Viewing WebDAV
+~~~~~~~~~~~~~~
+
+WebDAV enables users to access, then read/write the content over the web
+browser. Thanks to its benefits of easy, quick and flexible
+manipulations and time-saving, WebDAV is often used to view the content.
+
+1. Select the content you want to view WebDAV.
+
+2. Click |image117| from the Right-click menu or on the Action bar.
+
+With each type of content, the form to view in WebDAV will be different.
+For example:
+
+-  For *folder*: The list of children under the current folder will be
+   displayed in WebDAV.
+
+   |image118|
+
+-  For *nt:file*: The content of the document will be shown.
+
+In addition to web browser, you can access the content through another
+WebDAV clients. See :ref:`WebDAV <#PLFUserGuide.AdministeringeXoPlatform.WebDAV>` for more details.
+
+.. _OrganizingYourContent:
+
+=======================
+Organizing your content
+=======================
+
+One of the simplest ways of making your content management professional
+and efficient is keeping them well-organized. In eXo Platform, you can
+practice various ways to keep your content neat, accessible and easy to
+search thanks to:
+
+- :ref:`Sorting/Paginating <SortingPaginating>`
+
+- :ref:`Adding to favorites <AddingToFavorites>`
+
+- :ref:`Creating a symlink <CreatingSymlink>`
+
+- :ref:`Customizing your preferences <CustomizingYourPreferences>`
+
+- :ref:`Filtering <Filtering>`
+
+.. _SortingPaginating:
+
+Sorting/Paginating
+~~~~~~~~~~~~~~~~~~~~
+
+.. _sort-content:
+
+Sorting your content
+---------------------
+
+In the **List** view, your content can be found easily and quickly by
+using the **Sort** option. You can arrange your content by sorting them
+to Name, Date and Size in ascending or descending order.
+
+|image119|
+
+
+.. note:: If you select each Sort option again, the order type will be changed. This means "ascending" is changed into "descending" and vice versa.
+
+.. _paginate:
+
+Paginating
+-----------
+
+Instead of scrolling all your content in the long list, you can use
+Paginator to organize them into separate pages.
+
+|image120|
+
+The Paginator value is set to "20" by default. This means the Paginator
+button will be visible if the content number exceeds 20.
+
+To change the Paginator value, simply click |image121| and pick another
+one from the Nodes Per Page drop-down list.
+
+.. _AddingToFavorites:
+
+Adding to favorites
+~~~~~~~~~~~~~~~~~~~
+
+By using the Add to favorite feature, you can easily find your preferred
+documents easily in the **Favorites** folder. This is an efficient way
+to manage your documents.
+
+1. Define the document you want to add as favorite.
+
+2. Select |image122| from the Right-click menu or on the Action bar.
+
+A symlink of your favorite document will be created in the **Favorites**
+folder.
+
+Removing from favorites
+-------------------------
+
+1. Define the document which has been added to the **Favorites** folder.
+
+2. Select |image123| from the Right-click menu or on the Action bar.
+
+
+.. note:: You can go directly to the **Favorites** folder, then remove the document from it.
+
+.. _CreatingSymlink:
+
+Creating a symlink
+~~~~~~~~~~~~~~~~~~~
+
+A symlink is a special type of document that points to one file or
+folder.
+
+To add a symlink, simply select |image124| from the Right-click menu or on
+the Action bar. The symlink will be added to the selected document
+immediately that is marked with |image125|.
+
+.. note:: -  When you perform an action on a symlink, the action is also performed on the content to which the symlink points.
+
+		  -  When you delete a symlink, you delete the link's content, not the content to which the symlink points.
+
+.. _CustomizingYourPreferences:
+
+Customizing your preferences
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function is used to set up your browsing preferences.
+
+1. Click |image126| on the right side of the Action bar.
+
+The **Preferences** window will appear.
+
+|image127|
+
+.. _EnableSideBar:
+
+*Details:*
+
++------------------------+---------------------------------------------------+
+| Field                  | Description                                       |
++========================+===================================================+
+| Sort by                | Sorts content in the list by Alphabetic, Type,    |
+|                        | Created Date, or Modified Date that is associated |
+|                        | with the Ascending or Descending order.           |
++------------------------+---------------------------------------------------+
+| Show Sidebar           | Displays/Hides the sidebar.                       |
++------------------------+---------------------------------------------------+
+| Enable Drag & Drop     | Enables/Disables the "drag and drop" action.      |
++------------------------+---------------------------------------------------+
+| Nodes Per Page         | Defines the number of content displayed per page. |
++------------------------+---------------------------------------------------+
+| Show Non-document      | Displays/Hides items that are non–document.       |
+| Nodes                  |                                                   |
++------------------------+---------------------------------------------------+
+| Show Referenced        | Displays/Hides referenced documents.              |
+| Documents              |                                                   |
++------------------------+---------------------------------------------------+
+| Show Hidden Nodes      | Displays/Hides hidden documents.                  |
++------------------------+---------------------------------------------------+
+| Enable DMS Structure   | Displays/Hides documents in the tree structure.   |
++------------------------+---------------------------------------------------+
+| Query Type             | The query type.                                   |
++------------------------+---------------------------------------------------+
+
+2. Configure the preferences to your desires and click Save to set them;
+
+Or, click Close to quit without submitting changes.
+
+
+.. _Filtering:
+
+Filtering
+~~~~~~~~~~
+
+You can organize your content effectively based on the existing filters
+on the sidebar in the main view. Thus, to filter your content, you need
+to :ref:`enable the sidebar <EnableSideBar>` first.
+
+|image128|
+
+Next, find out your content quickly by selecting:
+
+-  Owned by me to show your own ones.
+
+-  Favorites to show ones added to favorites.
+
+-  Hidden to show hidden ones.
+
+-  Filter By Type to show ones by various types, including: Content,
+   Document, Image, Music and Video.
+
+
+.. note:: You can combine more than one filter at one time to find out your desired content.
+
+
+.. _SharingYourDocuments:
+
+======================
+Sharing your documents
+======================
+
+The section provides you with the information related to sharing your
+documents via the following topics:
+
+- :ref:`Sharing directly in the Documents application <SharingDirectly>`
+
+   Instructions on how to share your documents in your spaces using the
+   **Share** feature of the **Documents** application.
+
+- :ref:`Sharing via Activity Composer <SharingViaActivity>`
+
+   Explanations on the automatic creation of a new activity on the
+   Activity Stream when you finish uploading or sharing a file and
+   information related to the update of the activity when you do some
+   changes on the document.
+
+.. _SharingDirectly:
+
+Sharing directly in the Documents application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To share a document in the **Documents** application, do as follows:
+
+1. Click **Documents** on the left panel, you will be redirected to the
+**Documents** interface.
+
+2. Select any document that you would like to share. If you are in the
+**List** view, a Share button will appear in the Actions bar:
+
+|image129|
+
+In case you are in the **Icons** view, right-click on the document to
+see the Share button in the drop-down menu:
+
+|image130|
+
+.. note:: Only one file can be shared at a time, so you will not see the Share button if you choose more than one file simultaneously.
+
+3. Click on the Share button, you will see a sharing dialog.
+
+|image131|
+
+4. Type the first letter from the username/space to which you wish to 
+share the document. A drop-down list with the names of users and spaces 
+having that letter appears.
+
+|image132|
+
+5. Select the users/spaces to which you want to share the document.
+
+6. Select the permission, you can choose either can view, either can 
+edit:
+
+-  *Can View*: space members can only read the file.
+
+-  *Can Edit*: space members can read and modify the file.
+
+By default, the *Can View* permission will be applied.
+
+
+.. note:: If you do not have the *Can Edit* permission on this document, only the *Can View* right is available for setting permissions.
+
+7. Cick on add button |image133| to add the access right to the section 
+*Who has access*.
+
+.. _Who-has-access:
+
+Who has access section
+-----------------------
+
+The *Who has access* section contains the list of spaces/users with whom
+the document is shared and the persmission they have on it.
+
+This list is sorted as follows:
+
+|image134|
+
+-  The first entry of the list is the owner of the document, it cannot
+   be removed.
+
+-  When the document's owner validates to add new users/spaces with the
+   corresponding permission, these contacts will be added in the bottom
+   of the *Who has access* list, and the list view will be pointing to
+   the last contact added.
+
+-  Other entries are displayed in a scrollable area. Each entry contains
+   : share target (user or space), permission (can edit or can view) and
+   a delete icon.
+
+
+.. note:: If the user enters a username that is not valid, the add button |image135| is not highlited and the user could not been added to the who has access list.
+
+8. Add some comments or descriptions about the shared document into the
+succeeding text box.
+
+9. Click Apply to finish sharing this document with the selected spaces or
+Cancel to skip sharing.
+
+.. note:: - After a document is shared successfully, a :ref:`symlink <CreatingSymlink>` will be created in the destination spaces and put into a folder named **Shared** in the **Documents** folder (if the folder does not exist in these spaces, it will be automatically generated while sharing a file). 
+			Therefore, the document could be shared again by any member of these spaces.
+
+		  - This sharing activity will be automatically updated on the **Activity Stream**. Refer to :ref:`Sharing via Activity Composer <SharingViaActivity>` for more details.
+
+		  - If the original file is deleted, all its associated symlinks in all spaces will be removed.
+
+
+.. _SharingViaActivity:
+
+Sharing via Activity Composer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+eXo Platform continuously improves the pleasure and value in engaging with
+the users' community by integrating the **Auto-share** feature into the
+Documents application. This integration fundamentally complies with
+privacy rules; that is what made in folders (except Public) of the
+Personal Documents drive will not be shared on Activity Stream.
+Therefore, **Auto-share** is only featured in spaces, and you are
+required to be owner or member of the space to see activities updated in
+the space's Activity Stream. At the same time, these activities are also
+updated in the **Social Intranet** homepage.
+
+Assume that you have created a space or are a member of a space named
+**PRODUCT TEAM**, then start doing certain actions in the **Documents**
+application of this space.
+
+|image136|
+
+Many of the actions (for example, uploading, editing or sharing a
+document) will be automatically shared on **Activity Stream** although
+you do not take direct actions to share them. As a result, another
+members can see what you are doing on your content via **Activity
+Stream**.
+
+.. _CreateNewActivity:
+
+Creating a new activity
+-----------------------
+
+Once you have finished uploading or sharing a file to the **Documents**
+application of the **PRODUCT TEAM** space, one new activity will be
+created on **Activity Stream**.
+
+|image137|
+
+Here, you can see the following main information of the uploaded file:
+
+-  The file name |image138| or title |image139|, if any.
+
+-  The file description |image140|, if any.
+
+-  The file version |image141| and size |image142|, if any.
+
+.. note:: - If the uploaded file is an image, the preview image will be displayed on the activity content as a filetype icon.
+
+		  - If the uploaded file is of PDF or Office, the preview image will be its first page.
+
+		  - If the activity is a document sharing action, a label "*shared a document*\ " will be attached to the activity content.
+
+From **Activity Stream**, you can:
+
+-  Click |image143| to view the document in a larger window.
+
+-  Click |image144| to download the document.
+
+-  Click |image145| to go directly into the **Documents** application and
+   edit this document.
+
+-  Click |image146| to give your idea.
+
+-  Click |image147| to show your liking to the uploaded document.
+
+.. _MultiUpload:
+
+Share multiple documents in activity stream
+-------------------------------------------
+
+With eXo Platform, it is possible to share activities with multiple
+documents. In addition, the upload pop up is improved in order to make
+easier and ergonomic the upload process.
+
+.. _MultipleFiles:
+
+Share multiple files in the activity stream
+````````````````````````````````````````````
+
+To publish an activity with multiple documents, follow these steps:
+
+1. In the microblog, select File tab. The activity composer will suggest
+you either to drop files from your computer using the mouse, to upload
+manually from desktop or mobile or to select from existing uploads in
+eXo Platform.
+
+|image148|
+
+-  Drag and Drop: Allows you to drag and drop files from your hard disc.
+
+   |image149|
+
+   When droping the file, the area dedicated to the files upload is
+   greyed.
+
+-  upload manually: Allows you to select documents from your hard disc.
+
+   |image150|
+
+   Cliking on upload manually opens a window showing a drive from your
+   hard disk (it opens files drive for mobile devices) and allows you to
+   select one or many files.
+
+-  select from existing uploads: Allows you to select documents from
+   your eXo Platform drives.
+
+   |image151|
+
+   You can select documents from Personal Documents drive, it is opened
+   by default when clicking on select from existing uploads, or you can
+   change to any drive you want.
+
+   If the activity is in a space, the select from existing uploads
+   action will open by default the space's drive. It is also possible to
+   change the drive.
+
+   |image152|
+
+
+.. note:: - When you choose to upload manually or drag and drop files to the activity composer, these files will be added to the the folder ``/Public/Activity Stream Documents`` under the Personal Documents drive.
+
+		  - If the activity is posted in a space's activity stream, the files will be added to the folder ``/Activity Stream Documents`` under the space's drive.
+
+2. Choose the manner with which you will upload your files then select 
+one or more files.
+
+An information box appears under the activity composer, it indicates
+information about the file upload progress and displays the file size.
+
+.. note:: By default, it is allowed to attach up to 20 files per activity and each file's size should not exceed 200 MB. These parameters are configurable in :ref:`exo.properties <ConfigurationOverview>` file. More details :ref:`here <CustomizeMultiupload>`.
+
+|image153|
+
+You can cancel the upload of a file by clicking on |image154| or remove 
+a fully uploaded file by clicking on |image155|.
+
+3. Click on Post to publish documents in the activity stream.
+
+.. note:: - When a user posts an activity in an another user's profile, this user receives an email notification.
+
+		  - When a user posts an activity in a space, all the space members will receive an email notification.
+
+			This email notification will contain all the shared files on a list with the file icon type, the file name and the file size. Clicking on a file name in the email notifications opens it in the Documents application.
+
+.. _MultipleFilesPreview:
+
+Multiple files preview in the activity stream
+``````````````````````````````````````````````
+
+While published, an activity appears displaying the attached files
+ordred by selection order on the files list.
+
+|image156|
+
+Up to three files are previewed in the activity and a link containing
+the number of the other files. Clicking on it opens the following file
+from the list of uploaded files.
+
+-  When the user uploads only one file, the file’s container will take
+   100% of the file activity area.
+
+-  When two files are displyed in the activity, the file’s container
+   splitting will be 50% for File1 and 50% for File2.
+
+-  When three files are added in an activity post, the file’s container
+   splitting will be 50% for File1, 25% for File2 and 25% for File3.
+
+-  When the user displays more than three files, the file’s container
+   splitting will be 50% for File 1, 25% for File2 and 25% to display
+   (+X-2 more) link where X is the total number of files added.
+
+.. note:: If the file uploaded has a preview (such as pdf, images, docx...), a part of it is displayed. If the file has not a preview (such as html, zip, war..), a thumbnail of its extension is dispalyed and a breadcrumb containing infomation about it.
+
+			|image157|
+
+When the user hovers over the file's container, information about the
+attached file is displayed. We will have:
+
+|image158|
+
+-  The filename.
+
+-  The file's version (if it is different from the initial version).
+
+-  The file location as a breadcrumb (each element is clickable).
+
+-  The last update timestamp (including the creation date).
+
+-  The last user who made the latest update.
+
+-  The file size.
+
+Each segment of the breadcrumb is clickable and clicking on one of them
+opens the documents application in the corresponding location:
+
+-  Clicking on the filename of the breadcrumb opens the file in
+   Documents application.
+
+-  Clicking on the file's version opens the version history of the file.
+
+-  Clicking on a segment of the file's location opens the corresponding
+   drive/folder.
+
+-  Clicking on other details (update timestamp, User or size) opens the
+   file's preview in activity stream.
+
+For mobile devices, the breadcrumb also appears for shared files. When
+any of the breadcrumb's details exceeds the screen size, it is either
+preceeded or followed by an ellipsis.
+
+The breadcrumb behaves same as for web, its segments are clickable and
+it redirects to the correcsponding location as described above.
+
+|image159|
+
+.. note:: A Download all button appears under the activity allowing to download all the files of the activity. It will generate a zip file named **Activity\_ID\_Date**.
+
+		  Date can be in Frensh format if the user is using the Frensh language and in English format if the user is using English or any other language except Frensh.
+
+You can navigate through the list of files by clicking on previous
+|image160| and next |image161| buttons. For mobile devices, you should
+scroll the screen left for next and right for previous. You can also
+close the file preview by clicking on close button.
+
+|image162|
+
+Clicking on a file opens it to be previewed similar as :ref:`Document viewer <DocumentViewer>`.
+
+The breadcrumb appears also in the file's preview but only the file's
+location is clickable.
+
+.. note:: When an activity contains some files with permissions (i.e a UserA is not allowed to view some or all documents in the activity), this/these file(s) will not be displayed in the activity stream of users who don't have the permission to view.
+
+Deleting all files of an activity leads to the whole activity deletion
+and deleting one or more files from the activity eliminates these files
+from the display.
+
+.. _MultiUploadConditions:
+
+Multiple file sharing conditions
+`````````````````````````````````
+
+-  If you attach more than the allowed number of files, a warning
+   appears indicating that you can attach only 20 files.
+
+   |image163|
+
+-  When selecting more than 20 files form existing uploads, a warning
+   appears in the drive indicating that only 20 files are allowed to be
+   attached.
+
+   |image164|
+
+-  If you attach a file or many files exceeding 200MB, a warning appears
+   to remember you the maximum size allowed.
+
+   |image165|
+
+-  When trying to attach the same file twice, a warning appears to
+   indicate you that the file is already attached.
+
+   |image166|
+
+-  If you have, in the same drive, two files having the same name and
+   you try to attach both of them, a warning appears indicating that the
+   file is already attached.
+
+   |image167|
+
+.. _ActivityForDocChanges:
+
+Updating activity for document changes
+--------------------------------------
+
+.. _DocEdit:
+
+Editing a document
+````````````````````
+
+Once you have made the following changes in the **Edit** form, new
+comments will be auto-generated on the document activity.
+
+-  Adding/Removing a category |image168|
+
+-  Changing the document's language |image169|
+
+-  Adding/Removing the file source |image170|
+
+-  Adding/Removing the document description |image171|
+
+-  Adding/Removing the document title\ |image172|
+
+-  Adding/Removing the document creator\ |image173|
+
+For example:
+
+|image174|
+
+.. note:: For changes on the Content field, you need to pay attention to the followings:
+
+			-  If you remove the document content, there will be no comment on the document activity. However, in case your document is of image, PDF, Office Document, the preview image will be disappeared from **Activity Stream**.
+
+			-  If you upload a new content for this document, the activity content will be updated with a new comment.
+
+.. _MetadataUpdate:
+
+Updating Metadata
+``````````````````
+
+Once you have made any changes on the document metadata, there will be a
+new comment on the document activity. For example:
+
+|image175|
+
+.. _DocRename:
+
+Renaming a document
+````````````````````
+
+Once you have renamed a document, the new name will be updated on the
+document activity with a new comment informing about that.
+
+|image176|
+
+.. _DocChecking:
+
+Checking in a document
+```````````````````````
+
+Checking in a document does not result in any new comment on the
+document activity. However, a version number will be updated on the
+document activity.
+
+|image177|
+
+.. _TagAddRemove:
+
+Adding/Removing a tag
+``````````````````````
+
+Once you have added or removed a tag from the document, there will be a
+new comment on the activity for such changes.
+
+|image178|
+
+.. _DocComment:
+
+Commenting on a document
+`````````````````````````
+
+Once you have commented on a document, there will a new comment on the
+document activity for such change.
+
+|image179|
+
+However, there will be no comment or no update on the document activity
+if you edit or remove the comment from the document.
+
+.. _DocMove:
+
+Moving a document
+``````````````````
+
+When you move a document to another folder, there will be a new comment
+on the document activity for such change.
+
+|image180|
+
+.. _DocDeletion
+
+Deleting a document
+````````````````````
+
+If you delete any document from the **Documents** application, all
+activities related to this document on **Activity Stream** will be
+deleted without any comment or notification.
+
+.. _ExtendingYourActions:
+
+======================
+Extending your actions
+======================
+
+In addition to basic actions stated above, eXo Platform provides a list 
+of additional features for managing your content. Some of extended 
+features are set in the **Admin** view by default, or your administrator
+can enable them for any specific views.
+
+.. note:: This part is mostly for administrators who have right to access the :ref:`Content Administration <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration>` page where extended actions can be activated.
+
+The followings are additional actions which are not accessible in the
+**List** and **Icons** views, but are set by default in the **Admin**
+view:
+
+- :ref:`Managing actions <ManagingActions>`
+
+- :ref:`Activating document audit <ActivatingDocumentAudit>`
+
+- :ref:`Viewing/Adding document properties <ViewingAddingDocumentProperties>`
+
+- :ref:`Managing document relations <ManagingDocumentRelations>`
+
+Besides, administrators can add more actions to any views. The
+followings are recommended features you may discover.
+
+- :ref:`Exporting <Exporting>`
+
+- :ref:`Importing <Importing>`
+
+- :ref:`Showing/Hiding document structure <ShowingHidingDocumentStructure>`
+
+- :ref:`Viewing document types <ViewingDocumentTypes>`
+
+- :ref:`Hiding/Showing content <HidingShowing>`
+
+.. note:: In this section, assume that additional actions have been set in the **List** view by your administrator. Therefore, you will see them in the Action bar.
+
+.. _ManagingActions:
+
+Managing actions
+~~~~~~~~~~~~~~~~~~
+
+To manage actions, you first need to select the content, then click
+|image181| on the Action bar to open the Manage Actions form.
+
+.. _AddAction:
+
+Adding an action
+------------------
+
+1. Select the Add Action tab.
+
+|image182|
+
+2. Select one type for your action from the Create Action of Type 
+drop-down menu, including:
+
++-----------------------+----------------------------------------------------+
+| Type                  | Description                                        |
++=======================+====================================================+
+| exo:AddMetadataAction | Adds metadata.                                     |
++-----------------------+----------------------------------------------------+
+| exo:autoVersioning    | Adds a version automatically.                      |
++-----------------------+----------------------------------------------------+
+| exo:enableVersioning  | Enables versioning.                                |
++-----------------------+----------------------------------------------------+
+| exo:taxonomyAction    | Creates categories.                                |
++-----------------------+----------------------------------------------------+
+
+3. Complete all the fields in the Add/Edit Action form. The Name and
+Lifecycle fields are required.
+
+*Details:*
+
++-----------------------+----------------------------------------------------+
+| Field                 | Description                                        |
++=======================+====================================================+
+| Name                  | Name of the action. This name is internal to the   |
+|                       | JCR explorer.                                      |
++-----------------------+----------------------------------------------------+
+| Lifecycle             | Selects the lifecycle for this action. The action  |
+|                       | will be executed, depending on the lifecycle:      |
+|                       |                                                    |
+|                       | -  'User Action': The action is executed when you  |
+|                       |    right-click the folder and then select the      |
+|                       |    action.                                         |
+|                       |                                                    |
+|                       | -  'Content Addition': The action will be executed |
+|                       |    on a new document, but not on a subfolder when  |
+|                       |    the document or the subfolder is created in the |
+|                       |    folder to which an action has been added. It is |
+|                       |    also applied to a new document in the subfolder |
+|                       |    of the folder.                                  |
+|                       |                                                    |
+|                       | -  'Property Addition': The action will be         |
+|                       |    executed on a document when a property is added |
+|                       |    to the document.                                |
+|                       |                                                    |
+|                       | -  'Property Removal': The action will be executed |
+|                       |    on a document when a property is removed from   |
+|                       |    the document.                                   |
+|                       |                                                    |
+|                       | -  'Property Modification': The action will be     |
+|                       |    executed on a document when a property of the   |
+|                       |    document is modified.                           |
+|                       |                                                    |                                                                           
++-----------------------+----------------------------------------------------+
+
+4. Click Save to commit the action.
+
+All actions of the content are listed in the Available Actions tab.
+
+Once an action is added to the content, it is auto-added to any children
+of the selected content.
+
+If an action is added with the lifecycle named 'User Action', it will be
+applied to the current content. If an action is added with other
+lifecycles, it will be applied to the child content.
+
+.. note:: Not all actions are listed in a Right-click menu of the content. Some actions can be performed immediately when that action is added.
+
+.. _ViewAction:
+
+Viewing an action
+-------------------
+
+1. Select the Available Actions tab.
+
+2. Click |image183| that corresponds to the action you want to view.
+
+The details will be displayed in the Action Info tab.
+
+.. _EditAction:
+
+Editing an action
+------------------
+
+1. Select the Available Actions tab.
+
+2. Click |image184| that corresponds to the action you want to modify.
+
+3. Edit properties in the Action Form.
+
+4. Click Save to accept your changes.
+
+.. _DeleteAction:
+
+Deleting an action
+-------------------
+
+1. Select the Available Actions tab.
+
+2. Click |image185| corresponding to the action you want to delete, 
+then click **OK** in the confirmation message.
+
+
+.. _ActivatingDocumentAudit:
+
+Activating document audit
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function logs property changes in documents.
+
+1. Select the document, then click |image186| on the Action bar. 
+The Activate Auditing message appears.
+
+|image187|
+
+2. Click Activate to enable auditing on the selected document.
+
+.. _ViewAuditInfo:
+
+Viewing audit information
+--------------------------
+
+Select the document which has enabled auditing, then click |image188| to
+view the audit information of the selected document.
+
+-  If the document has no audit information, the form will appear as
+   below.
+
+   |image189|
+
+-  If any, the Auditing Information list appears.
+
+   |image190|
+
+.. _ViewingAddingDocumentProperties:
+
+Viewing/Adding document properties
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function allows users to review all the properties and values of a
+document. It can also be used to add values to a document.
+
+.. _ViewDocProperies:
+
+Viewing document properties
+----------------------------
+
+1. Select the document you want to review or add values to.
+
+2. Click |image191| on the Action bar (or from the More drop-down menu 
+on the Action bar).
+
+The Properties Management form opens with 2 tabs:
+
+*Properties*
+
+    This tab displays all properties and values for the selected
+    document.
+
+    |image192|
+
+*Add New Property*
+
+    This tab contains fields to add new properties to the selected
+    document.
+
+    |image193|
+
+.. _AddDocProperties:
+
+Adding document properties
+----------------------------
+
+1. Select the Add New Property tab to add new properties to the selected
+document.
+
+2. Select the property type from the Add new Property drop-down menu.
+
+3. Enter a value for the property in the Value field.
+
+4. Click Save to accept your new values, or Reset to clear added values.
+
+After you have made changes on a new property, you will be returned to
+the Properties tab. The newly added values will be displayed.
+
+In this form, you can edit a property by clicking |image194|, or delete 
+it by clicking |image195|.
+
+
+.. _ManagingDocumentRelations:
+
+Managing document relations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _AddRelation:
+
+Adding a relation
+------------------
+
+You can use this function to create relations between documents.
+
+1. Select the document to which you want to add a relation, then click
+|image196| on the Action bar. The Add Relation form appears.
+
+2. Select the Select Relation tab to see a list of other documents.
+
+|image197|
+
+3. Click |image198| that corresponds to the documents related to the 
+document selected in the **Step 1.**
+
+Documents linked to the original via a relation will be listed in the
+Relation List tab.
+
+.. note:: - Relations can only be added to document types.
+
+		  - A document cannot have a relation to itself.
+
+.. _DeleteAction:
+
+Deleting a relation
+--------------------
+
+1. Select the document that has links to related documents, then click
+|image199| on the Action bar.
+
+2. Select the Relation List tab to view relations of the selected 
+document.
+
+|image200|
+
+3. Click |image201| corresponding to the relation you want to remove.
+
+4. Click **OK** in the confirmation message to accept your deletion.
+
+The related document will be removed from the list.
+
+.. _ViewRelation:
+
+Viewing a relation
+-------------------
+
+.. note:: You need to :ref:`enable the sidebar <EnableSideBar>` first.
+
+1. Select a document that has links to related documents.
+
+2. Click |image202| on the Filter bar.
+
+   All documents related to the selected document will be displayed in 
+   the Relations list in the left panel.
+
+3. Click the name of the related document to view the linked document.
+
+
+.. _Exporting:
+
+Exporting
+~~~~~~~~~~
+
+Content can be exported into either *.xml* or *.zip* file types.
+
+1. Select the content that you want to export.
+
+2. Click |image203| on the Action bar to show the Export form.
+
+|image204|
+
+*Details:*
+
++-----------------------+----------------------------------------------------+
+| Fields                | Description                                        |
++=======================+====================================================+
+| Path to Export        | The path of content being exported. This field     |
+|                       | will be pre-populated.                             |
++-----------------------+----------------------------------------------------+
+| Format                | The format of the original content.                |
+|                       |                                                    |
+|                       | -  System View                                     |
+|                       |                                                    |
+|                       |    Each content and its property are included in a |
+|                       |    different tag.                                  |
+|                       |                                                    |
+|                       | -  Document View                                   |
+|                       |                                                    |
+|                       |    Each content is a tag and its properties are    |
+|                       |    considered to be elements of that tag.          |
+|                       |                                                    |                                                                           
++-----------------------+----------------------------------------------------+
+| Zip                   | If this field is checked, the content will be      |
+|                       | exported as a *.zip* file.                         |
++-----------------------+----------------------------------------------------+
+
+3. Click Export and select a location to save the exported file.
+
+.. note:: The Export form can contain Export Version History if the exported content or any of its children is versioned.
+
+		  This action exports all of the content's version history.
+
+.. _Importing:
+
+Importing
+~~~~~~~~~~
+
+Content which is in the ``.xml`` file format can be imported into the
+JCR Explorer system.
+
+1. Select the location where you want to import the new content.
+
+2. Click |image205| on the Action bar to open the Import form.
+
+|image206|
+
+3. Select the file in the Upload File field and navigate to the file you
+want to import.
+
+4. Select one value from the UUID Behaviour drop-down menu. In case 
+there is UUID conflict - the situation when an imported node has the 
+same UUID as an existing node, the behavior will be applied for those 
+two nodes, as follows:
+
+*Create New*
+
+    New UUID will be generated and assigned to the imported node. There
+    is no impact to the existing one.
+
+*Remove Existing*
+
+    The already existing node (and its subtree) is removed from wherever
+    it may be in the workspace before the incoming node is added.
+
+*Replace Existing*
+
+    The already existing node is replaced by the incoming node in the
+    same path as the existing node. This behavior may result in the
+    incoming subtree being disaggregated to different locations in the
+    workspace.
+
+*Throw Exception*
+
+    The node is not imported. No impact to the existing one.
+
+5. Select the file for the Version History field.
+
+6. Click Import to import the file's selected version.
+
+.. _ShowingHidingDocumentStructure:
+
+Showing/Hiding document structure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function allows you to view documents in a tree structure.
+
+.. _Show:
+
+Showing the document structure
+--------------------------------
+
+1. Open a document.
+
+2. Click |image207| on the Action bar (or from the More drop-down menu).
+
+.. _Hide:
+
+Hiding the document Structure
+------------------------------
+
+1. Select a document which is showing the content structure.
+
+2. Click |image208| on the Action bar (or from the More drop-down menu).
+
+.. |image207| image:: images/ecms/show_hide_structure_button.png
+.. |image208| image:: images/ecms/show_hide_structure_button.png
+
+
+.. _HidingShowing:
+
+Hiding/Showing content
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Content can be hidden or shown easily.
+
+.. _HideContent:
+
+Hiding content
+----------------
+
+1. Select the content you want to hide.
+
+2. Click |image209| on the Action bar to hide the document.
+
+A confirmation message, which notifies that the document has been
+hidden, will appear.
+
+.. _ShowHiddenContent:
+
+Showing hidden content
+-----------------------
+
+To show a hidden content, simply click |image210| again.
+
+.. _ViewingDocumentTypes:
+
+Viewing document types
+~~~~~~~~~~~~~~~~~~~~~~~
+
+This function allows you to view the detailed information of a document.
+
+1. Select a document that you want to view its detailed information.
+
+2. Click |image211| on the Action bar (or from the More drop-down menu 
+on the Action bar).
+
+3. Click the tabs at the top of the form to view categorized 
+information.
+
+|image212|
+
 
 .. |image0| image:: images/ecms/icons_view_icon.png
 .. |image1| image:: images/ecms/list_view_icon.png
@@ -1629,3 +2788,97 @@ and other users can take actions on it.
 .. |image116| image:: images/common/unlock_button.png
 .. |image117| image:: images/ecms/view_webdav_button.png
 .. |image118| image:: images/ecms/folder_webdav.png
+.. |image119| image:: images/ecms/sort_options.png
+.. |image120| image:: images/ecms/paginator.png
+.. |image121| image:: images/ecms/document_preferences_icon.png
+.. |image122| image:: images/common/add_to_favorite_button.png
+.. |image123| image:: images/common/remove_favorite_button.png
+.. |image124| image:: images/ecms/add_symlink_button.png
+.. |image125| image:: images/ecms/symlink_icon.png
+.. |image126| image:: images/ecms/document_preferences_icon.png
+.. |image127| image:: images/ecms/full_preferences_form.png
+.. |image128| image:: images/ecms/filter_sidebar.png
+.. |image129| image:: images/ecms/share_document_btn.png
+.. |image130| image:: images/ecms/share_btn_dropdown.png
+.. |image131| image:: images/ecms/sharing_dialog2.png
+.. |image132| image:: images/ecms/sharing_dialog3.png
+.. |image133| image:: images/ecms/add-button.png
+.. |image134| image:: images/ecms/sharing_dialog5.png
+.. |image135| image:: images/ecms/sharing_dialog4.png
+.. |image136| image:: images/ecms/space_documents.png
+.. |image137| image:: images/ecms/share_upload.png
+.. |image138| image:: images/common/1.png
+.. |image139| image:: images/common/2.png
+.. |image140| image:: images/common/3.png
+.. |image141| image:: images/common/4.png
+.. |image142| image:: images/common/5.png
+.. |image143| image:: images/common/eye_view_button.png
+.. |image144| image:: images/common/download_button.png
+.. |image145| image:: images/common/edit_button.png
+.. |image146| image:: images/common/comment_icon.png
+.. |image147| image:: images/common/like_icon.png
+.. |image148| image:: images/ecms/MultiUpload_step1.png
+.. |image149| image:: images/ecms/Multiupload_drop.png
+.. |image150| image:: images/ecms/Multiupload_manualSelect.png
+.. |image151| image:: images/ecms/Multiupload_driveSelect.png
+.. |image152| image:: images/ecms/Multiupload_driveChange.png
+.. |image153| image:: images/ecms/Multiupload_cancel-delete.png
+.. |image154| image:: images/ecms/cancel.png
+.. |image155| image:: images/ecms/delete.png
+.. |image156| image:: images/ecms/Multiupload_display.png
+.. |image157| image:: images/ecms/preview_no_preview.png
+.. |image158| image:: images/ecms/Multiupload_mouse_hover.png
+.. |image159| image:: images/ecms/Mobile_breadcrumb.png
+.. |image160| image:: images/ecms/previous.png
+.. |image161| image:: images/ecms/next.png
+.. |image162| image:: images/ecms/previous_next.png
+.. |image163| image:: images/ecms/Multiupload_Error2.png
+.. |image164| image:: images/ecms/Multiupload_Error2_2.png
+.. |image165| image:: images/ecms/Multiupload_Error.png
+.. |image166| image:: images/ecms/Multiupload_Error3.png
+.. |image167| image:: images/ecms/Multiupload_Error3_2.png
+.. |image168| image:: images/common/1.png
+.. |image169| image:: images/common/2.png
+.. |image170| image:: images/common/3.png
+.. |image171| image:: images/common/4.png
+.. |image172| image:: images/common/5.png
+.. |image173| image:: images/common/6.png
+.. |image174| image:: images/ecms/share_document_changes.png
+.. |image175| image:: images/ecms/share_updated_metadata.png
+.. |image176| image:: images/ecms/comment_rename_document.png
+.. |image177| image:: images/ecms/share_version_document.png
+.. |image178| image:: images/ecms/share_add_remove_tag.png
+.. |image179| image:: images/ecms/share_comment.png
+.. |image180| image:: images/ecms/share_move_document.png
+.. |image181| image:: images/ecms/actions_button.png
+.. |image182| image:: images/ecms/add_action_form.png
+.. |image183| image:: images/common/view_icon.png
+.. |image184| image:: images/common/edit_icon.png
+.. |image185| image:: images/common/delete_icon.png
+.. |image186| image:: images/ecms/audit_button.png
+.. |image187| image:: images/ecms/activate_audit.png
+.. |image188| image:: images/ecms/audit_button.png
+.. |image189| image:: images/ecms/no_audit_inform.png
+.. |image190| image:: images/ecms/audit_information.png
+.. |image191| image:: images/ecms/properties_button.png
+.. |image192| image:: images/ecms/view_properties.png
+.. |image193| image:: images/ecms/add_property.png
+.. |image194| image:: images/common/edit_icon.png
+.. |image195| image:: images/common/delete_icon.png
+.. |image196| image:: images/ecms/relations_button.png
+.. |image197| image:: images/ecms/select_relation.png
+.. |image198| image:: images/common/select_icon.png
+.. |image199| image:: images/ecms/relations_button.png
+.. |image200| image:: images/ecms/relation_list.png
+.. |image201| image:: images/common/delete_icon.png
+.. |image202| image:: images/ecms/relation_icon.png
+.. |image203| image:: images/common/export_button.png
+.. |image204| image:: images/ecms/export_form.png
+.. |image205| image:: images/common/import_button.png
+.. |image206| image:: images/ecms/import_form.png
+.. |image207| image:: images/ecms/show_hide_structure_button.png
+.. |image208| image:: images/ecms/show_hide_structure_button.png
+.. |image209| image:: images/ecms/show_hide_content_button.png
+.. |image210| image:: images/ecms/show_hide_content_button.png
+.. |image211| image:: images/ecms/types_button.png
+.. |image212| image:: images/ecms/document_type_form.png

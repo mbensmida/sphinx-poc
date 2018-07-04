@@ -1013,7 +1013,6 @@ Moderating forums includes the following actions:
 
 -  :ref:`Closing/Opening a forum <Close-open-forum>`
 
--  :ref:`Exporting a forum <ExportingForumTheFirstWay>`
 
 .. _Edit-forum:
 
