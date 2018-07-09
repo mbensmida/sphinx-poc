@@ -1,3 +1,6 @@
+.. _Interface:
+
+==================
 Calendar interface
 ==================
 
@@ -26,15 +29,7 @@ In which:
 
    -  Shared Calendars: Calendars which others share with you.
 
-       **Note**
-
-       If the `Task Management
-       application <#PLFUserGuide.WorkingWithTasks>`__ is installed by
-       your administrator, you will see another Calendar group named
-       "*Task Calendars*\ " below your *Group Calendars*. Each project
-       from this application will have an individual calendar here but
-       for view purpose only. Under the group, there will be also a
-       *Tasks* calendar that displays all tasks assigned to you.
+.. note:: If the :ref:`Task Management application <Manage-Task>` is installed by your administrator, you will see another Calendar group named "*Task Calendars*\ " below your *Group Calendars*. Each project from this application will have an individual calendar here but for view purpose only. Under the group, there will be also a *Tasks* calendar that displays all tasks assigned to you.
 
 .. |image0| image:: images/common/1.png
 .. |image1| image:: images/common/2.png

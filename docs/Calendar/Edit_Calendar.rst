@@ -1,56 +1,52 @@
+.. _EditingCalendar:
+
+==================
 Editing a calendar
 ==================
 
-    **Note**
+.. note:: -  You can ONLY edit personal calendars and group calendars that you created.
 
-    -  You can ONLY edit personal calendars and group calendars that you
-       created.
+		  -  For group calendars which are created by another users, you can ONLY edit them if you are granted the **Edit** permission. Meanwhile, for shared calendars, you cannot edit them. If you are granted the **Edit** permission on them by the calendar creators, you can ONLY have the right on their tasks or events (for example, adding/modifying/deleting, exporting/importing).
 
-    -  For group calendars which are created by another users, you can
-       ONLY edit them if you are granted the **Edit** permission.
-       Meanwhile, for shared calendars, you cannot edit them. If you are
-       granted the **Edit** permission on them by the calendar creators,
-       you can ONLY have the right on their tasks or events (for
-       example, adding/modifying/deleting, exporting/importing).
+1. Hover your cursor over the calendar which you want to edit, then 
+click |image26| that appears.
 
-Hover your cursor over the calendar which you want to edit, then click
-|image0| that appears.
+2. Click Edit from the drop-down menu. The form to edit the calendar 
+will be different, depending on your selected calendar type. 
+For example, if you select a personal calendar, the form only contains 
+the Details tab.
 
-Click Edit from the drop-down menu. The form to edit the calendar will
-be different, depending on your selected calendar type. For example, if
-you select a personal calendar, the form only contains the Details tab.
+3. Make changes on the calendar, then click Save to accept your changes.
 
-Make changes on the calendar, then click Save to accept your changes.
+.. _CalendarColor:
 
-**Setting the calendar color**
+Setting the calendar color
+---------------------------
 
 The **Calendar** application allows you to select different colors for
 all types of calendars to recognize them easily.
 
-Hover your cursor over the calendar which you want to set the color,
-then click |image1| that appears.
+1. Hover your cursor over the calendar which you want to set the color,
+then click |image27| that appears.
 
-Select one color from the available 24-color palette.
+2. Select one color from the available 24-color palette.
 
-|image2|
+|image28|
 
-**Deleting a calendar**
+.. _DeleteCalendar:
+
+Deleting a calendar
+----------------------
 
 This function allows you to remove any calendars and all their events.
 
-    **Note**
+.. note:: You cannot delete group calendars created by another users if you are not granted the **Edit** permission.
 
-    You cannot delete group calendars created by another users if you
-    are not granted the **Edit** permission.
+1. Hover your cursor over the calendar which you want to delete, then 
+click |image29| that appears.
 
-Hover your cursor over the calendar which you want to delete, then click
-|image3| that appears.
+2. Select Remove from the drop-down menu.
 
-Select Remove from the drop-down menu.
+3. Click Yes in the confirmation message.
 
-Click Yes in the confirmation message.
 
-.. |image0| image:: images/calendar/calendar_setting_icon.png
-.. |image1| image:: images/calendar/calendar_setting_icon.png
-.. |image2| image:: images/calendar/calendar-color.png
-.. |image3| image:: images/calendar/calendar_setting_icon.png

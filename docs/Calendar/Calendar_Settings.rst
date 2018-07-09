@@ -17,6 +17,8 @@ Change your desired preferences.
 **i.** In the Settings tab, you can change the Calendar general
 settings:
 
+.. _TimeZone:
+
 +------------------------+---------------------------------------------------+
 | Field                  | Description                                       |
 +========================+===================================================+

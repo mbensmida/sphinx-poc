@@ -5,54 +5,45 @@
     of all important events/tasks and collaborate with other people, all
     in one place. This chapter is divided into the following topics:
 
-    -  `**Calendar
-       interface** <#PLFUserGuide.ManagingYourCalendars.Interface>`__
+    - :ref:`Calendar interface <Interface>`
 
        Introduction to the Calendar interface and its main components.
 
-    -  `**Creating a
-       calendar** <#PLFUserGuide.ManagingYourCalendars.CreatingCalendar>`__
+    - :ref:`Creating a calendar <CreatingCalendar>`
 
        How to create a personal calendar, group calendar or remote
        calendars.
 
-    -  `**Editing a
-       calendar** <#PLFUserGuide.ManagingYourCalendars.EditingCalendar>`__
+    - :ref:`Editing a calendar <EditingCalendar>`
 
        Steps to edit details and properties of a calendar, to set the
        calendar color, and to delete a calendar.
 
-    -  `**Exporting/Importing a
-       calendar** <#PLFUserGuide.ManagingYourCalendars.ExportingImportingCalendar>`__
+    - :ref:`Exporting/Importing a calendar <ExportingImportingCalendar>`
 
        How to import calendars or export calendars to a calendar
        application that supports the iCalendar format.
 
-    -  `**Sharing a personal
-       calendar** <#PLFUserGuide.ManagingYourCalendars.SharingPersonalCalendar>`__
+    - :ref:`Sharing a personal calendar <SharingPersonalCalendar>`
 
        Information about setting permissions on your shared calendar and
        how to share your personal calendar with other users so that they
        can participate in all activities of the calendar.
 
-    -  `**Scheduling an
-       event** <#PLFUserGuide.ManagingYourCalendars.SchedulingEvent>`__
+    - :ref:`Scheduling an event <SchedulingEvent>`
 
        How to to perform common actions with events in Calendar:
        creating, editing, deleting, importing and exporting events.
 
-    -  `**Editing Calendar
-       settings** <#PLFUserGuide.ManagingYourCalendars.EditingCalendarSettings>`__
+    - :ref:`Editing Calendar settings <EditingCalendarSettings>`
 
        Steps to change the Calendar preferences.
 
-    -  `**Generating
-       RSS** <#PLFUserGuide.ManagingYourCalendars.GeneratingRSS>`__
+    - :ref:`Generating RSS <GeneratingRSS>`
 
        Steps to publish your calendar as an RSS feed.
 
-    -  `**Managing
-       categories** <#PLFUserGuide.ManagingYourCalendars.ManagingCategories>`__
+    - :ref:`Managing categories <ManagingCategories>`
 
        Steps to add, edit and delete categories which are used to
        classify events and tasks.

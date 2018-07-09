@@ -383,13 +383,24 @@ connection status with you and current status.
    bar.
 
 -  To see his/her Wiki pages, click Wiki on the navigation bar. However,
-   you can only access this Wiki if it has been `made
-   public <#PLFUserGuide.WorkingWithWikis.ManagingContent.SpreadingContent.SharingLink.MakingPublic>`__
+   you can only access this Wiki if it has been :ref:`made public <MakingPublic>`
    by the owner or when you are granted as an administrator.
 
 -  To return his/her profile page, click Profile on the navigation bar.
 
     .. note:: Regardless of being an administrator, you do not have right to edit profiles of other contacts.
+    
+If you are not yet connected to the user, you will see in his profile page the connect button in his profile banner:
+
+|image84|
+
+Clicking on that button sends him a connection request, and the button changes to **Cancel request**.
+
+|image85|
+
+When you access a user's profile who sent you a connection request, a dropdown appears in his profile banner allowing either to accept or to deny his request:
+
+|image86|
 
 
 .. _Send-Connection-Request:
@@ -397,23 +408,25 @@ connection status with you and current status.
 Sending connection requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After `specifying your desired
-contact <#PLFUserGuide.SearchingIneXoPlatform.RefiningYourSearch.SearchingForContact>`__,
+After :ref:`specifying your desired contact <SearchingForContact>`,
 you can send a connection request via one of two ways.
 
 **The first way**
 
 Click Connect under the contact name to send your connection request, or
-hover your cursor over the contact name and click Connect.
+hover your cursor over the contact name and click Connect button.
 
 |image26|
 
 **The second way**
 
-:ref:`Access the profile page of the contact <View-Profile-Contacts>` to whom you want to send a connection request, then click Connect button.
+:ref:`Access the profile page of the contact <View-Profile-Contacts>` to whom you want to send a connection request, then click Connect button on their profile banner.
 
+|image87|
 
     .. note:: The Connect button will become **Cancel Request**.
+    
+				|image88|
 
 .. _Revoke-Connection-Request:
 
@@ -433,6 +446,8 @@ following ways:
 **The second way**
 
 :ref:`Access the profile page of the contact <View-Profile-Contacts>` to whom you sent a connection request, then click **Cancel Request**.
+
+|image89|
 
 .. _Accept-Deny-Connection-Request:
 
@@ -458,9 +473,14 @@ Use the Invitations application on the Social Intranet homepage. See :ref:`here 
 
 **The third way**
 
-:ref:`Access the profile page of the contact <View-Profile-Contacts>` who sent you a connection request, then click Accept Request or Deny button.
+:ref:`Access the profile page of the contact <View-Profile-Contacts>` who sent you a connection request, then click the dropdown button which contains:
+
+- Accept button as first choice
+- Deny button as second choice
 
 |image28|
+
+To revoke the connection request, click on Deny button.
 
 -  At the first time when you connect to a user in the network, a new
    activity will be created on the activity stream. This activity always
@@ -484,7 +504,6 @@ In the My Connections or Everyone tab, you can remove the connections
 between you and the users who are your contacts via one of two following
 ways.
 
-**The first way**
 
 Click **Remove Connection** under the contact name; or hover your cursor
 over the contact name and click Remove Connection to remove your
@@ -492,9 +511,6 @@ established connection.
 
 |image30|
 
-**The second way**
-
-:ref:`Access the profile page of the contact <View-Profile-Contacts>` who is your connection, then hover over the **Connected** button to select **Disconnect**.
 
 
 .. _Working-Wiki:
@@ -1354,3 +1370,9 @@ such as:
 .. |image81| image:: images/social/onsite_notif_completed_task.png
 .. |image82| image:: images/social/email_actions.png
 .. |image83| image:: images/social/space_invitations.png
+.. |image84| image:: images/social/connect-button.png
+.. |image85| image:: images/social/Cancel-request-button.png
+.. |image86| image:: images/social/dropdownbutton.png
+.. |image87| image:: images/social/send-connection-request.png
+.. |image88| image:: images/social/cancel-request.png
+.. |image89| image:: images/social/cancel-request.png

@@ -1,4 +1,4 @@
-.. _Search-Contacts:
+.. _SearchingForContact:
 
 ======================
 Searching for contacts

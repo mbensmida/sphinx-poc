@@ -722,6 +722,8 @@ status of the Wiki page and the link to share.
 
 |image55|
 
+.. _MakingPublic:
+
 -  If the page is public, click Restrict to restrict the access. The
    form will show that the page is changed into the restricted status
    and just the authorized users can view and edit it.

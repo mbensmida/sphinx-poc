@@ -1808,8 +1808,7 @@ succeeding text box.
 9. Click Apply to finish sharing this document with the selected spaces or
 Cancel to skip sharing.
 
-.. note:: - After a document is shared successfully, a :ref:`symlink <CreatingSymlink>` will be created in the destination spaces and put into a folder named **Shared** in the **Documents** folder (if the folder does not exist in these spaces, it will be automatically generated while sharing a file). 
-			Therefore, the document could be shared again by any member of these spaces.
+.. note:: - After a document is shared successfully, a :ref:`symlink <CreatingSymlink>` will be created in the destination spaces and put into a folder named **Shared** in the **Documents** folder (if the folder does not exist in these spaces, it will be automatically generated while sharing a file). Therefore, the document could be shared again by any member of these spaces.
 
 		  - This sharing activity will be automatically updated on the **Activity Stream**. Refer to :ref:`Sharing via Activity Composer <SharingViaActivity>` for more details.
 
@@ -1958,7 +1957,7 @@ a fully uploaded file by clicking on |image155|.
 
 		  - When a user posts an activity in a space, all the space members will receive an email notification.
 
-			This email notification will contain all the shared files on a list with the file icon type, the file name and the file size. Clicking on a file name in the email notifications opens it in the Documents application.
+		 This email notification will contain all the shared files on a list with the file icon type, the file name and the file size. Clicking on a file name in the email notifications opens it in the Documents application.
 
 .. _MultipleFilesPreview:
 
