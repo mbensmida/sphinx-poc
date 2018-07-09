@@ -4,8 +4,8 @@
 Discussing in Chat
 #########################
 
-    eXo Char is an instant messaging application that allows users to
-    sync up and take action quickly. Tightly integrated with eXo Platform 4,
+    eXo Chat is an instant messaging application that allows users to
+    sync up and take action quickly. Tightly integrated since eXo Platform 4,
     eXo Chat empowers the real-time collaboration among teams and
     individuals.
 
@@ -398,8 +398,8 @@ options:
 Leave Chat room 
 ================
 
-When you are no more interested on a chat room discussion where you were
-invited by the room creator, you can leave the room by following these
+When you are no more interested in a chat room discussion where you were
+invited by the room creator, you can leave this room by following these
 simple steps:
 
 1. Open the chat room you want to leave.
