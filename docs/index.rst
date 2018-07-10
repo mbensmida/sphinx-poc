@@ -26,7 +26,7 @@ The main guides in eXo Platform documentation:
    introduction
    GettingStarted
    PersonalApplications
-   Manage-Task
+   ManageTasks
    Chat
    webconferencing
    Manage-Space

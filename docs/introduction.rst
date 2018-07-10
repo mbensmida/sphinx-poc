@@ -24,7 +24,7 @@ Introduction
        Learn how to deal with your personal applications such as your profile, activity stream, connections,
        dashboards and email notifications.
 
-:ref:`Working With Tasks <Manage-Task>`
+:ref:`Working With Tasks <ManageTasks>`
 
        Work efficiently eXo Tasks. This guide tells you how to capture work tasks and organize your projects
        effectively.
