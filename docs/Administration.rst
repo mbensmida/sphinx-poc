@@ -1,6 +1,9 @@
+.. _Administration:
 
+
+############################
 Administering eXo Platform
-===========================
+############################
 
     This chapter is for administrators only who have the highest right
     to administer PRODUCT via the following topics:
