@@ -46,7 +46,7 @@ some terms that you should be aware of:
 
 .. note:: Changing the default workflow for new projects is done only by
 			the administrator, see `this
-			section <#PLFAdminGuide.Configuration.TaskManagement>`__ for more details.
+			section <#PLFAdminGuide.Configuration.TaskManagement>` for more details.
 
 -  **Sub-project**: A project can have any number of sub-projects and a
    sub-project can also have an unlimited number of smaller
@@ -79,9 +79,7 @@ This pane includes three sections:
 
    -  *Incoming*: filters tasks that are not yet assigned to a project.
       This filter also excludes completed tasks by default, but you can
-      change this by using the top
-      `Filter <#PLFUserGuide.WorkingWithTasks.ManageTask.Filtering>`__
-      feature.
+      change this by using the top :ref:`Filter <Filtering>` feature.
 
    -  *All Tasks*: shows unfiltered list of all tasks assigned to the
       current user.
@@ -105,10 +103,9 @@ This pane includes three sections:
 **The central pane**
 
 
-This pane is used to display tasks filtered via the left pane and `top
-Filter <#PLFUserGuide.WorkingWithTasks.ManageTask.Filtering>`__. In case
-you are in a project, a *Board* view is provided so that you can manage
-the project's tasks more easily.
+This pane is used to display tasks filtered via the left pane and 
+:ref:`top Filter <Filtering>`. In case you are in a project, a *Board* 
+view is provided so that you can manage the project's tasks more easily.
 
 .. _Right-pane:
 
@@ -173,8 +170,8 @@ you just need to follow one of the following ways.
 **Via Activity stream**
 
 
-You can even create a task outside the BRAND\_TASK\_MANAGEMENT
-application by using the following syntaxes on the Activity stream:
+You can even create a task outside the Tasks Management application by 
+using the following syntaxes on the Activity stream:
 
 -  Creating a task: ++\ *task\_title*.
 
@@ -274,9 +271,8 @@ In which:
 
 -  |image18|: the *Mark as completed* feature, clicking this icon will
    mark the task as completed and it will disappear from the List and
-   Board views unless
-   `Filter <#PLFUserGuide.WorkingWithTasks.ManageTask.Filtering>`__ is
-   set to show completed tasks.
+   Board views unless :ref:`Filter <Filtering>` is set to show completed
+   tasks.
 
     .. note:: A formatting toolbar appears once you click in the comment composer.
 				It allows you to change the formatting of your message, attaching
@@ -322,7 +318,7 @@ schedule:
 -  If the To date is chosen before the due date, the message that
    appears indicates that the work is planned between the chosen dates.
 
-   |image245|
+   |image25|
 
     .. note:: -  When the today's date is the task's due date, a blue exclamation
 				mark |image26| precedes the task's name in the list/board view.
@@ -376,7 +372,7 @@ Deleting a task
 .. _Filtering:
 
 Filtering tasks
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 The central pane by default will list all the tasks depending on which
 task filter, project or label is selected. This could be difficult for
@@ -471,12 +467,11 @@ field:
 |image44|
 
 If you wish this project and its tasks to be displayed and synchronized
-in the `Calendar <#PLFUserGuide.ManagingYourCalendars.Interface>`__
-application, check the box that says "*Enable Calendar Integration*\ ".
+in the :ref:`Calendar <Interface>` application, check the box that says 
+"*Enable Calendar Integration*\ ".
 
 .. note:: -  The length of project name should be less than 100 characters.
-		  -  Sub-projects DO NOT inherit the task calendar from their parent.
-			Instead, they come with their own calendar if the Calendar integration is enabled.
+		  -  Sub-projects DO NOT inherit the task calendar from their parent. Instead, they come with their own calendar if the Calendar integration is enabled.
 
 6. Click Save to finish creating your project.
 

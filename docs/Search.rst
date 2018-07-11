@@ -260,27 +260,21 @@ This section instructs you how to search in specific applications of
 eXo Platform, including:
 
 -  :ref:`Searching for spaces <Search-Space>`
-
    Steps to search for spaces by name/description or by alphabets.
 
 -  :ref:`Searching for contacts <SearchingForContact>`
-
    Steps to search by name, position and skills, or by alphabets.
 
 -  :ref:`Searching for documents <Search-Documents>`
-
    Steps to do quick and advanced searches for your document.
 
 -  :ref:`Searching for posts and topics <Search-Forum>`
-
    Steps to do quick and advanced searches for posts and topics in **Forums**.
 
 -  :ref:`Searching for Wiki pages <Search-For-Content>`
-
    Steps to search for Wiki pages.
 
 -  :ref:`Searching for events/tasks <Search-Events>`
-
    Steps to perform quick and advanced searches for events in Calendar.
 
 .. _Search-Space:
@@ -348,6 +342,8 @@ Here, you can see all users who are active in eXo Platform.
    select.
 
    |image22|
+   
+   
 
 -  **Search by Position** |image23|: Enter the position of the contacts
    you want to search by.
@@ -747,7 +743,7 @@ Do the followings to perform a search with saved queries:
 4. Click |image65| to view the file or click |image66| to go to the file location.
 
 
-.. _Search-Forum.rst:
+.. _Search-Forum:
 
 Searching for posts and topics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
