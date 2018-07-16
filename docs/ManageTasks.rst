@@ -120,11 +120,14 @@ pane where you can modify any information of the task.
 			will be no *Incoming* filter on the left menu and clicking on a
 			label will display only the tasks with the selected labels in the
 			spaces' projects.
-			
+		
+.. _tasks-permissions:
 
 **Tasks permissions**
 
+
 Task Management application comes with different roles and permissions allowing users to better manage their tasks and projects:
+
 	- *The reporter*: is the task's creator, able to add edit and comment any of his tasks.
 	- *The project participant*: he maybe the task's assignee or coworker, able to comment, edit add and delete tasks on the        	   project. He can not delete tasks he not the creator.
 	- *The project manager*: he could be the project creator, the space manager or the platform manager (i.e the super user root or  	    from platform/adminstrators group). Users having this role have the same permissions as a project participants and they are 	   also able to edit the workflow, create subprojects and also delete any task in the project.
