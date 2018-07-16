@@ -41,8 +41,14 @@ some terms that you should be aware of:
    can take. By default, a new project will have the following workflow:
    *To Do, In Progress, Waiting On* and *Done*. Alternatively, you can
    change the project workflow later in the Board view.
-
-       
+   	
+	- To Do: tasks which will be done in the future.
+	
+	- In Progress: tasks being handled at that time.
+	
+	- Waiting on: tasks waiting a decision or a validation i.e. awaiting a third party.
+	
+	- Done: tasks on which work is ended.
 
 .. note:: Changing the default workflow for new projects is done only by
 			the administrator, see `this
@@ -128,10 +134,10 @@ pane where you can modify any information of the task.
 
 Task Management application comes with different roles and permissions allowing users to better manage their tasks and projects:
 
-	- *The reporter*: is the task's creator, able to add edit and comment any of his tasks.
-	- *The project participant*: he maybe the task's assignee or coworker, able to comment, edit add and delete tasks on the        	   project. He can not delete tasks he not the creator.
-	- *The project manager*: he could be the project creator, the space manager or the platform manager (i.e the super user root or  	    from platform/adminstrators group). Users having this role have the same permissions as a project participants and they are 	   also able to edit the workflow, create subprojects and also delete any task in the project.
-	- *The observer*: is a user who have been nmentioned in the task and is not a participant, is just able to view the task.
+	- **The reporter**: is the task's creator, able to **add**, **edit** and **comment** any of his tasks.
+	- **The project participant**: he maybe the task's assignee or coworker, able to **comment**, **edit** add and **delete** tasks 	   on the project. He **can not delete** tasks he not the creator.
+	- **The project manager**: he could be the project creator, the space manager or the platform manager (i.e the super user root 		  or from platform/adminstrators group). Users having this role have the **same permissions as a project participants** and 	       they are also able to **edit the workflow**, **create subprojects** and also **delete** any task in the project.
+	- **The observer**: is a user who have been mentioned in the task and is not a participant, is just **able to view the task**.
 	
 	
 .. note:: In tasks application under a space, all space members get automatically the participant role.
