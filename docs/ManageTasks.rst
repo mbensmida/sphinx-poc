@@ -120,7 +120,19 @@ pane where you can modify any information of the task.
 			will be no *Incoming* filter on the left menu and clicking on a
 			label will display only the tasks with the selected labels in the
 			spaces' projects.
+			
 
+**Tasks permissions**
+
+Task Management application comes with different roles and permissions allowing users to better manage their tasks and projects:
+	- *The reporter*: is the task's creator, able to add edit and comment any of his tasks.
+	- *The project participant*: he maybe the task's assignee or coworker, able to comment, edit add and delete tasks on the        	   project. He can not delete tasks he not the creator.
+	- *The project manager*: he could be the project creator, the space manager or the platform manager (i.e the super user root or  	    from platform/adminstrators group). Users having this role have the same permissions as a project participants and they are 	   also able to edit the workflow, create subprojects and also delete any task in the project.
+	- *The observer*: is a user who have been nmentioned in the task and is not a participant, is just able to view the task.
+	
+.. note:: In tasks application under a space, all space members get automatically the participant role.
+	
+	
 .. _Manage-task:
 
 ==============
@@ -142,6 +154,8 @@ This part introduces you how to:
 
 Creating a task
 ~~~~~~~~~~~~~~~~~~~
+
+.. note:: Anyone can create personal tasks. In project's frame, managers and participants are able to create tasks under their 		   projects.
 
 Creating a task in eXo Platform is designed as an effortless operation, so
 you just need to follow one of the following ways.
@@ -213,6 +227,16 @@ You will see that there are two new tasks created as below:
 
 Editing a task
 ~~~~~~~~~~~~~~~~~~~~~
+
+.. note:: Task's edit permission is granted to:
+	  - The task's creator
+	  - The project manager
+	  - The space manager (for space's tasks application)
+	  - The platform manager (super user and platform/administrators members)
+	  - The project participants
+	  - The task's assignee
+	  - The task's assignee cowroker
+
 
 After creating a task, the right pane will be opened for you to edit the
 task directly (if you create the new task via the overview interface) or
@@ -357,6 +381,11 @@ with the original task and be prefixed by "*Copy of*\ ".
 
 Deleting a task
 ~~~~~~~~~~~~~~~~~~~~
+
+.. note:: You can delete a task only if you have one of these roles:
+	   - The task's creator
+	   - The project manager or the space manager (for tasks application under a space)
+	   - The platform manager (the super userand platform/administrators members)
 
 1. Select Delete from the dropdown menu:
 
