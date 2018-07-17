@@ -202,11 +202,8 @@ You will see that there are two new tasks created as below:
 |image5|
 
     .. note:: - Anyone that has access permission to a task can do anything on the task.
-			  -  By default, tasks inherit permissions from the project they are
-				in. Therefore, all members and managers of the project are able
-				to access these tasks. In case they are not assigned to any
-				project, only the creator, assignee and coworkers are granted the
-				access permission.
+			  -  By default, tasks inherit permissions from the project they are in. Therefore, all members and managers of the project are able to access these tasks. 
+			     In case they are not assigned to any project, only the creator, assignee and coworkers are granted the access permission.
 
 
 .. _EditTask:
@@ -320,12 +317,10 @@ schedule:
 
    |image25|
 
-    .. note:: -  When the today's date is the task's due date, a blue exclamation
-				mark |image26| precedes the task's name in the list/board view.
-				-  When the task's due date has already expired, i.e. today's date
-				is after the due date and the task is not yet finished, it is
-				preceded with a red exclamation mark: |image27|
-				|image28|
+    .. note:: -  When the today's date is the task's due date, a blue exclamation mark |image26| precedes the task's name in the list/board view.
+			  -  When the task's due date has already expired, i.e. today's date is after the due date and the task is not yet finished, it is preceded with a red exclamation mark: |image27|
+				 
+				 |image28|
     
 .. _GetPermalink:
 
@@ -524,9 +519,7 @@ and *Participant* permissions.
 
  .. note:: -  Space members automatically get *Participant* permission to space projects.
 		   -  Space managers automatically get *Manager* permission to space projects.
-		   -  In case a user has share permission on a sub-project but does not
-			have permission on the parent, the parent is still visible in the
-			project list on the left pane but it is impossible to see in details.
+		   -  In case a user has share permission on a sub-project but does not have permission on the parent, the parent is still visible in the project list on the left pane but it is impossible to see in details.
 
 3. Click Close button to close the pop-up.
 
@@ -921,18 +914,9 @@ it on your own.
    |image83|
 
 
-.. note:: -  All tasks assigned to the deleted status are affected to the
-			previous status (the column on the left in the Board view).
-		  -  If the status is the first of the list (the first column in
-          the Board view), the tasks will be assigned to the next status
-          (the next column on the right in the Board view).
+.. note:: -  All tasks assigned to the deleted status are affected to the previous status (the column on the left in the Board view).
+		  -  If the status is the first of the list (the first column in the Board view), the tasks will be assigned to the next status (the next column on the right in the Board view).
 		  -  The last status cannot be deleted.
-
-
-
-
-
-
 
 
 .. |image0| image:: images/taskmanagement/overview.png

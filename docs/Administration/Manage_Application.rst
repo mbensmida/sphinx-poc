@@ -1,2 +1,5 @@
+.. _ManagingApplications:
+
+=====================
 Managing applications
 =====================

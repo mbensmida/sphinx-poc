@@ -1,3 +1,7 @@
+
+.. _BuildingOnlineCommunity:
+
+============================
 Building an online community
 ============================
 

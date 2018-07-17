@@ -1,3 +1,6 @@
+.. _ManagingNavigations:
+
+====================
 Managing navigations
 ====================
 

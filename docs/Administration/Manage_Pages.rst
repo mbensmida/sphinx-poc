@@ -1,3 +1,6 @@
+.. _ManagingPages:
+
+==============
 Managing pages
 ==============
 
@@ -35,6 +38,8 @@ Before diving into how to add a new page, you need to clarify the
 relationship between navigation node and page. Node and page are two
 entities that are totally different and a node can be referenced to a
 page. A page can only be accessed by users via a node.
+
+.. _PageCreationWizard:
 
 **Using Page Creation Wizard**
 
@@ -135,6 +140,8 @@ see more templates and select one.
 
 Click Next or number '3' of the wizard steps to go to the `last
 step. <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.PageCreationWizard.RearrangingPageLayout>`__
+
+.. _RearrangingPageLayout:
 
 **Step 3: Arranging the page layout**
 

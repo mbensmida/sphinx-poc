@@ -1,55 +1,56 @@
-Editing PRODUCT
-===============
+.. _Editing:
+
+=====================
+Editing eXo Platform
+=====================
 
 If you belong to members of editor or administrator groups, you will see
-|image0| on the top navigation bar. By clicking this button, you will
+|image12| on the top navigation bar. By clicking this button, you will
 see a drop-down menu that allows you to edit content, pages and site
 quickly.
 
-|image1|
+|image13|
 
-**Editing a website's content**
+.. _EditWebsiteContent:
 
-    **Note**
+Editing a website's content
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    You can do this function only when the ACME add-on is already
-    installed by your administrator. See
-    `here <#PLFAdminGuide.AddonsManagement.Installing>`__ for how-to.
+.. note:: You can do this function only when the ACME add-on is already installed by your administrator. See :ref:`here <#PLFAdminGuide.AddonsManagement.Installing>` for how-to.
 
 Simply click Content from the drop-down menu. The Edit mode will be
-turned on. For more details, see `Edit
-mode <#PLFUserGuide.ManagingYourWebsites.ContributingContent.EditMode>`__.
+turned on. For more details, see :ref:`Edit mode <EditMode>`.
 
-**Editing a page**
+.. _EditingPage:
+
+Editing a page
+~~~~~~~~~~~~~~~
 
 Hover your cursor over Page, then click:
 
 -  Edit Layout if you want to edit the page's layout as stated in
-   `Arranging the page
-   layout <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.PageCreationWizard.RearrangingPageLayout>`__.
+   :ref:`Arranging the page layout <RearrangingPageLayout>`.
 
--  SEO if you want to manage SEO. See `Managing
-   SEO <#PLFUserGuide.ManagingYourWebsites.ManagingSEO>`__ for details.
-
--  Add Page if you want to add a new page. See `Using Page Creation
-   Wizard <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.AddingNewPage.PageCreationWizard>`__
+-  SEO if you want to manage SEO. See :ref:`Managing SEO <ManagingSEO>`
    for details.
 
-**Editing a site**
+-  Add Page if you want to add a new page. See :ref:`Using Page Creation Wizard <PageCreationWizard>`
+   for details.
+
+.. _EditingSite:
+
+Editing a site
+~~~~~~~~~~~~~~
 
 Hover your cursor over Site, then click:
 
--  Layout to edit the site's layout. See `Editing
-   layout <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`__
+-  Layout to edit the site's layout. See :ref:`Editing layout <EditingLayout>`
    for details.
 
--  Click Navigation to manage navigation. See `Managing
-   navigations <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations>`__
+-  Click Navigation to manage navigation. See :ref:`Managing navigations <ManagingNavigations>`
    for details.
 
--  Click Add Site to add a new site. See `Creating a new
-   site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.CreatingNewSite>`__
+-  Click Add Site to add a new site. See :ref:`Creating a new site <CreatingNewSite>`
    for details.
 
-.. |image0| image:: images/common/edit_navigation.png
-.. |image1| image:: images/platform/edit_menu.png
+

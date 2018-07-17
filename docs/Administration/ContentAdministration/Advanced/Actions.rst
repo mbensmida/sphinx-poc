@@ -1,66 +1,52 @@
 Actions
-=======
+--------
 
-This function allows you to manage all action nodes in PRODUCT. In
+This function allows you to manage all action nodes in eXo Platform. In
 Advanced, select Actions to open the **Actions** panel.
 
-|image0|
+|image140|
 
 Here, you can do certain actions as follows:
 
--  `Editing an
-   action <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithAdvancedConfiguration.Actions.EditingAction>`__
-   |image1|
+-  :ref:Editing an action <Actions.EditingAction>` |image141|
 
--  `Deleting an
-   action <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithAdvancedConfiguration.Actions.DeletingAction>`__
-   |image2|
+-  :ref:Deleting an action <Actions.DeletingAction>` |image142|
 
--  `Adding an action
-   type <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithAdvancedConfiguration.Actions.AddingActionType>`__
-   |image3|
+-  :ref:Adding an action type <Actions.AddingActionType>` |image143|
 
-Editing/Deleting an action
---------------------------
+Editing an action
+```````````````````
 
-**Editing an action**
+1. Click |image144| in the Action column to open the Add Action Type 
+   form.
 
-Click |image4| in the Action column to open the Add Action Type form.
+2. Edit the properties in this form.
 
-Edit the properties in this form.
+3. Click Save to save all changes.
 
-Click Save to save all changes.
+Deleting an action
+```````````````````
 
-**Deleting an action**
-
-Simply click |image5| in the Action column, then select **OK** in the
+Simply click |image145| in the Action column, then select **OK** in the
 confirmation message.
 
 Adding an action type
----------------------
+``````````````````````
 
-Click Add Action Type to open the Add Action Type form.
+1. Click Add Action Type to open the Add Action Type form.
 
-|image6|
+|image146|
 
-Input a name for the action.
+2. Input a name for the action.
 
-Select the script type.
+3. Select the script type.
 
-Enter the value for the Variables field.
+4. Enter the value for the Variables field.
 
--  Click |image7| to add more values for the action.
+-  Click |image147| to add more values for the action.
 
--  Click |image8| to delete one value.
+-  Click |image148| to delete one value.
 
-Click Save to accept adding a new action type.
+5. Click Save to accept adding a new action type.
 
-.. |image0| image:: images/ecms/actions_panel.png
-.. |image1| image:: images/common/1.png
-.. |image2| image:: images/common/2.png
-.. |image3| image:: images/common/3.png
-.. |image4| image:: images/common/edit_icon.png
-.. |image5| image:: images/common/delete_icon.png
-.. |image6| image:: images/ecms/add_action_type.png
-.. |image7| image:: images/common/plus_icon.png
-.. |image8| image:: images/common/delete_icon.png
+

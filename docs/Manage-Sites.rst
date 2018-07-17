@@ -193,7 +193,7 @@ details.
 
 |image7|
 
-.. note:: The folder, where a document is saved, is the path you have selected in the `Managing preferences <ManagingPreferences>` section.
+.. note:: The folder, where a document is saved, is the path you have selected in the :ref:`Managing preferences <ManagingPreferences>` section.
 
 .. _EditContentIncontext:
 
@@ -239,7 +239,7 @@ menu.
 
 **Adding content in the CLV**
 
-1. Turn on the `Edit Mode <TurningOnTheEditMode>`.
+1. Turn on the :ref`Edit Mode <TurningOnTheEditMode>`.
 
 2. Hover your cursor over the CLV to which you want to add new content 
    on the homepage, and clicck |image13|.
@@ -1855,7 +1855,7 @@ Users can easily print any content in a site by following these steps:
 .. |image79| image:: images/common/4.png
 .. |image80| image:: images/common/5.png
 .. |image81| image:: images/ecms/comments_on_activity_stream_content.png
-.. |image86| image:: images/common/6.png
+.. |image82| image:: images/common/6.png
 .. |image83| image:: images/common/7.png
 .. |image84| image:: images/common/8.png
 .. |Edit Document| image:: images/ecms/edit_button.png

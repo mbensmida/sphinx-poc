@@ -1,10 +1,10 @@
 Scripts
-=======
+--------
 
 In Advanced, select Scripts. You will be directed to the **Scripts**
 panel as below:
 
-|image0|
+|image133|
 
 The Scripts panel has 3 tabs:
 
@@ -16,54 +16,47 @@ The Scripts panel has 3 tabs:
 
 Here, you can do certain actions on the scripts as follows:
 
--  `Editing a
-   script <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithAdvancedConfiguration.Scripts.EditingScript>`__
-   |image1|
+-  :ref:`Editing a script <Scripts.EditingScript>` |image134|
 
--  `Deleting a
-   script <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithAdvancedConfiguration.Scripts.DeletingScript>`__
-   |image2|
+-  :ref:`Deleting a script <Scripts.DeletingScript>` |image135|
 
--  `Adding a new
-   script <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithAdvancedConfiguration.Scripts.AddingNewScript>`__
-   |image3|
+-  :ref:`Adding a new script <Scripts.AddingNewScript>` |image136|
 
-Editing/Deleting a script
--------------------------
+.. _Scripts.EditingScript:
+
+Editing a script
+`````````````````
 
 **Editing a script**
 
-Click |image4| in the Action column to open the Add/Edit Script form.
+1. Click |image137| in the Action column to open the Add/Edit Script 
+   form.
 
-|image5|
+|image138|
 
-Edit the properties in this form.
+2. Edit the properties in this form.
 
-Click Save to save all changes.
+3. Click Save to save all changes.
 
-**Deleting a script**
+.. _Scripts.DeletingScript:
 
-Simply click |image6| in the Action column, then click **OK** in the
+Deleting a script
+``````````````````
+
+Simply click |image139| in the Action column, then click **OK** in the
 confirmation message.
 
+.. _Scripts.AddingNewScript:
+
 Adding a new script
--------------------
+````````````````````
 
-Click Add Script to open the Add/Edit Script form.
+1. Click Add Script to open the Add/Edit Script form.
 
-Enter values for the Content, Name and Script fields.
+2. Enter values for the Content, Name and Script fields.
 
-    **Note**
+.. note:: The value for the Script field must be unique and not contain special characters, such as ``!,#,$,&,\*,(,)``.
 
-    The value for the Script field must be unique and not contain
-    special characters, such as !,#,$,&,\*,(,).
+3. Click Save to accept adding your new script.
 
-Click Save to accept adding your new script.
 
-.. |image0| image:: images/ecms/scripts_panel.png
-.. |image1| image:: images/common/1.png
-.. |image2| image:: images/common/2.png
-.. |image3| image:: images/common/3.png
-.. |image4| image:: images/common/edit_icon.png
-.. |image5| image:: images/ecms/add_edit_script_form.png
-.. |image6| image:: images/common/delete_icon.png

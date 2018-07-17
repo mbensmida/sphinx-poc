@@ -1,3 +1,6 @@
+.. _ManagingSites:
+
+==============
 Managing sites
 ==============
 
@@ -14,6 +17,8 @@ Managing sites include the following actions:
 
 -  `Deleting a
    site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.DeletingSite>`__
+
+.. _CreatingNewSite:
 
 Creating a new site
 -------------------
@@ -129,6 +134,8 @@ Specify your desired site, and do the following actions:
 -  `Editing the site's
    configurations <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingConfigurations>`__
    by clicking Edit Site Configuration.
+
+.. _EditingLayout:
 
 **Editing layout**
 
