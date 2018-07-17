@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'sphix-poc'
+project = u'eXo Platform Documentation'
 copyright = u'2018, eXoPlatform'
 author = u'eXoPlatform'
 
