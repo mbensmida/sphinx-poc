@@ -1,25 +1,24 @@
+.. _ManagingApplications.ManagingPortletsAndGadgets:
+
 Managing portlets and gadgets
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Managing portlets and gadgets includes the following actions:
 
--  `Adding a portlet/gadget to the Application
-   list <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingPortletsAndGadgets.AddingPortletGadgetToApplicationList>`__
+-  :ref:`Adding a portlet/gadget to the Application list <ManagingPortletsAndGadgets.AddingPortletGadgetToApplicationList>`
 
--  `Activating the Import Applications
-   function <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingPortletsAndGadgets.ActivatingImportApplicationsFunction>`__
+-  :ref:`Activating the Import Applications function <ManagingPortletsAndGadgets.ActivatingImportApplicationsFunction>`
 
--  `Viewing/Editing detailed information of a
-   portlet/gadget <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingPortletsAndGadgets.ViewingEditingDetailedInformation>`__
+-  :ref:`Viewing/Editing detailed information of a portlet/gadget <ManagingPortletsAndGadgets.ViewingEditingDetailedInformation>`
 
--  `Editing a specific
-   portlet <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingPortletsAndGadgets.EditingSpecificPortlet>`__
+-  :ref:`Editing a specific portlet <EditingSpecificPortlet>`
 
--  `Adding a
-   gadget <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingPortletsAndGadgets.AddingGadget>`__
+-  :ref:`Adding a gadget <ManagingPortletsAndGadgets.AddingGadget>`
 
--  `Editing a
-   gadget <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingPortletsAndGadgets.EditingGadget>`__
+-  :ref:`Editing a gadget <ManagingPortletsAndGadgets.EditingGadget>`
+
+
+.. _ManagingPortletsAndGadgets.AddingPortletGadgetToApplicationList:
 
 Adding a portlet/gadget to the Applications list
 ------------------------------------------------
@@ -27,40 +26,40 @@ Adding a portlet/gadget to the Applications list
 This section shows you how to add a portlet/gadget to the Applications
 list on the left panel of the Manage Applications page.
 
-Click Portlet/Gadget on the Tab bar to open a list of portlets/gadgets
-respectively.
+1. Click Portlet/Gadget on the Tab bar to open a list of portlets/gadgets  
+   respectively.
 
-|image0|
+|image261|
 
 **Details**:
 
--  Left panel |image1|: The list of portlets/gadget.
+-  Left panel |image262|: The list of portlets/gadget.
 
--  Right panel |image2|: The information of the portlet/gadget.
+-  Right panel |image263|: The information of the portlet/gadget.
 
--  Breadcrumb bar |image3|: The path of the portlet/gadget.
+-  Breadcrumb bar |image264|: The path of the portlet/gadget.
 
-Click the portlet/gadget which you want to add to the Applications list.
+2. Click the portlet/gadget which you want to add to the Applications 
+   list.
 
 The information of the portlet/gadget is displayed.
 
-Click the Click here to add into categories link to open a form which
-allows you to select categories for the portlet.
+3. Click the Click here to add into categories link to open a form which
+   allows you to select categories for the portlet.
 
-|image4|
+|image265|
 
-Select your desired categories and click Save to accept adding the
-portlet/gadget to the Applications list.
+4. Select your desired categories and click Save to accept adding the
+   portlet/gadget to the Applications list.
 
 Then, you will see the list of categories to which the portlet/gadget is
 added.
 
-|image5|
+|image266|
 
-    **Note**
+.. note:: In case the portlet/gadget was already added to the Applications list, there is no the Click here to add into categories link.
 
-    In case the portlet/gadget was already added to the Applications
-    list, there is no the Click here to add into categories link.
+.. _ManagingPortletsAndGadgets.ActivatingImportApplicationsFunction:
 
 Activating the Import Applications function
 -------------------------------------------
@@ -70,19 +69,21 @@ available in the system to the categories on the left panel. However, to
 avoid importing unnecessary applications, this function is hidden on the
 action bar by default. To show it on the action bar, do as follows:
 
-Go to the `Manage Applications page <#GoToManageApplicationsPage>`__
-Edit Page Edit Layout on the Administration bar.
+1. Go to the :ref:`Manage Applications page <GoToManageApplicationsPage>`
+--> Edit --> Page --> Edit Layout on the Administration bar.
 
-Hover your cursor over the Application Registry portlet, then click
-|image6| at the upper left corner of that portlet.
+2. Hover your cursor over the Application Registry portlet, then click
+   |image267| at the upper left corner of that portlet.
 
 The Edit Mode will be displayed.
 
-Tick the Show "Import Applications" button checkbox, then click Save to
-accept the changes.
+|image268|
 
-Click Close to close the Edit Mode form, then click |image7| to quit the
-Page Editor page.
+3. Tick the Show "Import Applications" button checkbox, then click Save 
+   to accept the changes.
+
+4. Click Close to close the Edit Mode form, then click |image269| to quit 
+   the Page Editor page.
 
 The Import Applications button is now shown on the Manage Applications
 page.
@@ -92,10 +93,10 @@ page.
 Now you can import default portlets and gadgets into different
 categories as follows:
 
-Click |image8| at the right corner on the Action bar.
+1. Click |image270| at the right corner on the Action bar.
 
-Click **OK** in the confirmation message to accept importing portlets
-and gadgets automatically.
+2. Click **OK** in the confirmation message to accept importing portlets
+   and gadgets automatically.
 
 All portlets and gadgets of all categories will be imported and listed
 on the left panel.
@@ -109,27 +110,32 @@ To view details of a portlet/gadget, simply select one portlet/gadget in
 the left panel. The details of that portlet/gadget will be shown on the
 right panel.
 
-|image9|
+|image271|
 
-**Left panel** |image10|
+**Left panel** |image272|
     All portlets and gadgets grouped by categories.
 
-**Breadcrumb bar** |image11|
+**Breadcrumb bar** |image273|
     The path of the portlet/gadget.
 
-**Right panel** |image12|
+**Right panel** |image274|
     Details of the portlet: Name, Display Name, Description, and
     information on the Access permission.
 
-**Editing a portlet**
+Editing a portlet
+``````````````````
 
-Click |image13| on the top corner of the right panel.
+1. Click |image275| on the top corner of the right panel.
 
 The Edit Application Information form will appear.
 
-Make changes on the fields in the form, except Application Name.
+|image276|
 
-Click Save to commit your changes.
+2. Make changes on the fields in the form, except Application Name.
+
+3. Click Save to commit your changes.
+
+.. _EditingSpecificPortlet:
 
 Editing a specific portlet
 --------------------------
@@ -137,17 +143,17 @@ Editing a specific portlet
 This section tells you how to access the Edit mode of a portlet and edit
 it.
 
-Define your desired portlet to check if this portlet has been existing
-in the portal or page. If not, drag and drop it from **Edit Inline
-Composer** to the main portal body while `editing the portal's
-layout, <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`__
-or `editing a
-page. <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.EditingPage>`__
+1. Define your desired portlet to check if this portlet has been existing
+   in the portal or page. If not, drag and drop it from **Edit Inline
+   Composer** to the main portal body while :ref:`editing the portal's layout <EditingLayout>`
+   or :ref:`editing a page. <ManagingPages.EditingPage>`
 
-Hover your cursor over your desired portlet, then click |image14| at the
-upper left corner of that portlet.
+2. Hover your cursor over your desired portlet, then click |image277| 
+   at the upper left corner of that portlet.
 
-The Edit form will be displayed.
+   The Edit form will be displayed.
+   
+   |image278|
 
 Normally, a portlet has four tabs: Portlet Setting, Select Icon,
 Decoration Themes and Access Permission. However, some portlets may also
@@ -155,7 +161,7 @@ have Edit Mode and Preferences tabs. For example, IFrame and Dashboard
 portlets have the Edit Mode tab where administrators can define the
 interface details.
 
-Make changes on fields in the various tabs.
+4. Make changes on fields in the various tabs.
 
 -  The Portlet Setting tab allows you to change values related to
    settings of your selected portlet.
@@ -204,17 +210,13 @@ Make changes on fields in the various tabs.
    the portlet. The portlet can be made public to everyone or restricted
    to specific groups.
 
-       **Note**
+.. note:: If you set the \* permission to a group, all users of that group will have the right to view this portlet, regardless of their membership role. 
+	      See the :REF:`Setting Access permission on a portlet <ManagingPermissions.SettingAccessPermissionOnPortlet>` section for details on how to assign the access permission on a portlet.
 
-       If you set the \* permission to a group, all users of that group
-       will have the right to view this portlet, regardless of their
-       membership role. See the `Setting Access permission on a
-       portlet <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingAccessPermissionOnPortlet>`__
-       section for details on how to assign the access permission on a
-       portlet.
+4. Click Save And Close to accept your changes, then click |image279| to
+   quit the Edit Inline Composer/ Page Editor page.
 
-Click Save And Close to accept your changes, then click |image15| to
-quit the Edit Inline Composer/ Page Editor page.
+.. _ManagingPortletsAndGadgets.AddingGadget:
 
 Adding a gadget
 ---------------
@@ -222,90 +224,67 @@ Adding a gadget
 To add a gadget, you first need to access the **Gadget** page by
 selecting Gadget on the **Tab** bar of the **Manage Applications** page.
 
-|image16|
+|image280|
 
 You can add a remote gadget using its URL or create a new gadget into
 the list.
 
-**Adding a remote gadget**
+Adding a remote gadget
+```````````````````````
 
-Click the Add a remote gadget link.
+1. Click the Add a remote gadget link.
 
-Enter the link of your desired gadget which is in the *.xml* format in
-the URL field.
+2. Enter the link of your desired gadget which is in the *.xml* format 
+   in the URL field.
 
-|image17|
+|image281|
 
-Click Add to accept your inputted URL.
+3. Click Add to accept your inputted URL.
 
 The selected gadget will be added to the gadgets list in the left panel
 with its details in the right panel.
 
-**Creating a new gadget**
+Creating a new gadget
+``````````````````````
 
-Click the Create a new gadget link.
+1. Click the Create a new gadget link.
 
-Enter values in the form.
+2. Enter values in the form.
 
 For example:
 
-Click Save to accept creating your new gadget.
+|image282|
 
-    **Note**
+3. Click Save to accept creating your new gadget.
 
-    To add the newly added remote gadget to a specific category, simply
-    click the "Click here to add into categories" link at the bottom of
-    the right panel. The table listing all categories will appear and
-    allow you to select your desired category.
+.. note:: To add the newly added remote gadget to a specific category, simply click the "Click here to add into categories" link at the bottom of the right panel. The table listing all categories will appear and allow you to select your desired category.
 
-    To update information of the added gadget, simply click |image18| to
-    refresh information.
+		  To update information of the added gadget, simply click |image283| to refresh information.
 
--  You can delete a local gadget using |image19| corresponding to each
+-  You can delete a local gadget using |image284| corresponding to each
    gadget in the left gadgets list.
 
-**Adding a new gadget from Dashboard**
+Adding a new gadget from Dashboard
+``````````````````````````````````
 
-See the `Adding more external gadgets from
-Dashboard <#PLFUserGuide.ManagingYourPersonalApplications.ManagingYourDashboard.AddingMoreExternalGadgetsFromDashboard>`__
+See the :ref:`Adding more external gadgets from Dashboard <add-more-external-gadgets>`
 section for instructions on how to add new gadgets from the dashboard.
+
+.. _ManagingPortletsAndGadgets.EditingGadget:
 
 Editing a gadget
 ----------------
 
-Select your desired gadget in the left panel, for example Group
-Navigations, then click |image20| located at the header of the **Gadget
-Details** page to display the following window.
+1. Select your desired gadget in the left panel, for example Group
+   Navigations, then click |image285| located at the header of the 
+   **Gadget Details** page to display the following window.
 
-|image21|
+|image286|
 
-Makes changes in the XML Source Code.
+2. Makes changes in the XML Source Code.
 
-Click Save to commit your changes.
+3. Click Save to commit your changes.
 
-    **Note**
+.. note:: You cannot change the Name field.
 
-    You cannot change the Name field.
 
-.. |image0| image:: images/gatein/portlet_list.png
-.. |image1| image:: images/common/1.png
-.. |image2| image:: images/common/2.png
-.. |image3| image:: images/common/3.png
-.. |image4| image:: images/gatein/add_portlet_to_categories.png
-.. |image5| image:: images/gatein/categories_of_portlet.png
-.. |image6| image:: images/common/edit_portlet_icon.png
-.. |image7| image:: images/common/save_icon.png
-.. |image8| image:: images/gatein/import_applications_button.png
-.. |image9| image:: images/gatein/application_details.png
-.. |image10| image:: images/common/1.png
-.. |image11| image:: images/common/2.png
-.. |image12| image:: images/common/3.png
-.. |image13| image:: images/common/edit_icon.png
-.. |image14| image:: images/common/edit_portlet_icon.png
-.. |image15| image:: images/Finish_icon.png
-.. |image16| image:: images/gatein/gadget_page.png
-.. |image17| image:: images/gatein/add_remote_gadget.png
-.. |image18| image:: images/gatein/refresh_icon.png
-.. |image19| image:: images/common/delete_icon.png
-.. |image20| image:: images/common/edit_icon.png
-.. |image21| image:: images/gatein/edit_gadget.png

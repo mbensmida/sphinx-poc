@@ -1,12 +1,19 @@
+.. _ManagingApplications.ManagemenentAndMonitoringGadgets:
+
 Management and Monitoring Gadgets
-=================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **Management** and **Monitoring** gadgets include gadgets designed
 for providing the overall vision of the system. These gadgets monitor
 the system and provide the current system performance statistics which
 are especially useful for the system administrators and developers.
 
-PRODUCT provides 3 types of the Monitoring gadget:
+.. _MonitoringGadgets:
+
+Monitoring gadgets
+-------------------
+
+eXo Platform provides 3 types of the Monitoring gadget:
 
 -  Memory
 
@@ -15,16 +22,19 @@ PRODUCT provides 3 types of the Monitoring gadget:
 -  Application Statistics
 
 You can use these gadgets from the Dashboard Workspace. However, you can
-quickly use them via the Monitoring page by clicking Administration
-Administration Monitoring on the top navigation bar.
+quickly use them via the Monitoring page by clicking Administration -->
+Administration --> Monitoring on the top navigation bar.
 
-|image0|
+|image287|
 
-**Memory**
+Memory
+```````
 
 The Memory gadget provides the statistics of heap and non-heap memory
 via charts which show the part of used memory and remaining memory
 during runtime.
+
+|image288|
 
 In the table next to the chart, you can see:
 
@@ -34,7 +44,8 @@ In the table next to the chart, you can see:
 
 -  Total: The total memory.
 
-**Caches level**
+Caches level
+`````````````
 
 The Caches level gadget displays the eXo cache levels and settings.
 Based on these statistics, the administrators can configure the cache
@@ -50,14 +61,20 @@ settings properly to get better performance:
 
 -  If the cache is empty, it should be configured differently, for
    example, increasing its lifetime.
+   
+   |image289|
 
 -  The Consumption tab shows the overall cache consumption in the
    system.
 
 -  The Hit ratio tab shows the ratio between requested data fetched from
    cache and data fetched from database.
+   
+   |image290|
 
 The Details tab shows the cache level and the current cache settings.
+
+|image291|
 
 In which:
 
@@ -69,14 +86,15 @@ In which:
 -  Hit/Missed: The percentage of data fetched from cache versus the
    percentage of data fetched from database.
 
-**Application Statistics**
+Application Statistics
+```````````````````````
 
 The Application Statistics gadget lists all information related to the
 execution time of all applications in the portal, therefore
 administrators and developers will know how fast applications are and
 which ones should be optimized.
 
-|image1|
+|image292|
 
 The gadget consists of two tabs:
 
@@ -108,14 +126,23 @@ Each application provides you with the following information:
 
 -  max: The maximum execution time of the application.
 
+
+.. _ServiceManagement:
+
+Service Management
+-------------------
+
 The Service Management gadget provides an interface to interact with
 manageable services via REST management API.
 
 You can use these gadgets from the Dashboard Workspace. However, you can
 quickly use them via the Service Management page by clicking
-Administration Administration Management on the top navigation bar.
+Administration --> Administration --> Management on the top navigation 
+bar.
 
 The Service Management page is displayed.
+
+|image293|
 
 -  Select the service from the **Services** drop-down list. For each
    selected service, its respective methods and properties are shown.
@@ -124,5 +151,4 @@ The Service Management page is displayed.
    to it. After invoking it successfully, you will see the result
    returned if any.
 
-.. |image0| image:: images/gatein/go_to_monitoring_gadget.png
-.. |image1| image:: images/gatein/application_statistics_gadget.png
+

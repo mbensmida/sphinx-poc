@@ -6,33 +6,16 @@ Managing pages
 
 Managing pages includes the following actions:
 
--  `Adding a new
-   page. <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.AddingNewPage>`__
+-  :ref:`Adding a new page. <ManagingPages.AddingNewPage>`
 
--  `Editing the page properties and
-   layout. <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.EditingPage>`__
+-  :ref:`Editing the page properties and layout. <ManagingPages.EditingPage>`
 
--  `Deleting a
-   page. <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.DeletingPage>`__
+-  :ref:`Deleting a page. <ManagingPages.DeletingPage>`
 
-``
-      
-    ``
-
--  `Managing
-   permissions <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions>`__
-
--  `Managing
-   sites <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites>`__
-
--  `Managing
-   navigations <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations>`__
-
--  `Managing
-   applications <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications>`__
+.. _ManagingPages.AddingNewPage:
 
 Adding a new page
------------------
+~~~~~~~~~~~~~~~~~~~
 
 Before diving into how to add a new page, you need to clarify the
 relationship between navigation node and page. Node and page are two
@@ -41,7 +24,8 @@ page. A page can only be accessed by users via a node.
 
 .. _PageCreationWizard:
 
-**Using Page Creation Wizard**
+Using Page Creation Wizard
+----------------------------
 
 The **Page Creation Wizard** is available to the portal's administrators
 and facilitates them to create and publish portal pages quickly and
@@ -57,11 +41,13 @@ In the first step, you have to set Node Name and Display Name of your
 page. You are also able to decide the pages visibility and the
 publication period of the page.
 
-Open the site to which you want to add a new page. You will be switched
-to your selected site only after a few seconds.
+1. Open the site to which you want to add a new page. You will be 
+   switched to your selected site only after a few seconds.
 
-Click |image0| on the top navigation bar, then select Page Add Page from
-the drop-down menu to open the Page Creation Wizard form.
+2. Click |image193| on the top navigation bar, then select Page Add Page 
+   from the drop-down menu to open the Page Creation Wizard form.
+   
+   |image194|
 
 The wizard is divided into two sections.
 
@@ -122,24 +108,20 @@ The wizard is divided into two sections.
 | End Publication Date     | The end date and time to publish the page.       |
 +--------------------------+--------------------------------------------------+
 
-    **Note**
+.. note:: If a node is not visible (the "Visible" option is unchecked or the current time is not within publication period), it does not appear in any navigation or site map, but is still accessible via its URL.
 
-    If a node is not visible (the "Visible" option is unchecked or the
-    current time is not within publication period), it does not appear
-    in any navigation or site map, but is still accessible via its URL.
+3. Click Next or number '2' of the wizard steps to go to :ref:`Step 2. <SelectingPageLayoutTemplate>`
 
-Click Next or number '2' of the wizard steps to go to `Step
-2. <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.PageCreationWizard.SelectingPageLayoutTemplate>`__
+.. _SelectingPageLayoutTemplate:
 
 **Step 2: Selecting a page layout template**
 
-|image1|
+|image195|
 
-Select Empty Layout or click the down-arrow icon in the left panel to
-see more templates and select one.
+1. Select Empty Layout or click the down-arrow icon in the left panel to
+   see more templates and select one.
 
-Click Next or number '3' of the wizard steps to go to the `last
-step. <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.PageCreationWizard.RearrangingPageLayout>`__
+2. Click Next or number '3' of the wizard steps to go to the :ref:`last step. <RearrangingPageLayout>`
 
 .. _RearrangingPageLayout:
 
@@ -150,7 +132,7 @@ In this step, you can arrange the page's layout by:
 -  Adding your desired applications, containers or gadgets by dragging
    and dropping them from Page Editor to the main page body.
 
-   |image2|
+   |image196|
 
    **In which:**
 
@@ -193,39 +175,37 @@ In this step, you can arrange the page's layout by:
    |                      | -  You cannot drag and drop a child container to    |
    |                      |    change its location, but can drag it outside its |
    |                      |    parent container.                                |
-   |                      |                                                     |
-                                                                               
+   |                      |                                                     |                                                                             
    +----------------------+-----------------------------------------------------+
 
 -  Rearranging elements in the page body by dragging and dropping them
    into your desired positions. Also, you can edit or remove any element
-   by hovering your cursor over it and selecting |image3| , or |image4|
-   respectively.
+   by hovering your cursor over it and selecting |image197| , or 
+   |image198| respectively.
 
 -  Viewing page properties by clicking View Page Properties at the
    bottom of the Page Editor window.
 
 -  Previewing your changes by clicking Switch View Mode.
 
-    **Note**
+.. note:: Click |image199| in the Page Editor window to save all changes, or |image200| to close without saving your changes.
 
-    Click |image5| in the Page Editor window to save all changes, or
-    |image6| to close without saving your changes.
+.. _PagesManagement:
 
-**Using Pages Management**
+Using Pages Management
+-----------------------
 
 In this way, the page only will be created. Thus, to make this page
 accessible, you need to create a node that links to this page (in the
-Page Selector tab). See `Adding a new
-node <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations.AddingNewNode>`__
+Page Selector tab). See :ref:`Adding a new node <ManagingNavigations.AddingNewNode>`
 for more details.
 
-`Access the Pages Management page <#AccessingPagesManagementPage>`__.
+1. :ref:`Access the Pages Management page <AccessingPagesManagementPage>`.
 
-Select Add New Page at the bottom. The form with the Page Settings tab
-opened will display as below.
+2. Select Add New Page at the bottom. The form with the Page Settings 
+   tab opened will display as below.
 
-|image7|
+|image201|
 
 **In which:**
 
@@ -244,8 +224,7 @@ opened will display as below.
 |                        |    created for a group. Therefore, only users who |
 |                        |    are the *manager* of that group can create     |
 |                        |    this page type.                                |
-|                        |                                                   |
-                                                                            
+|                        |                                                   |                                                                           
 +------------------------+---------------------------------------------------+
 | Owner Id               | The identification name of the page's owner which |
 |                        | will be automatically created after you have      |
@@ -259,8 +238,7 @@ opened will display as below.
 |                        |    automatically selected for Owner Id, ensuring  |
 |                        |    the *Edit* permission is assigned to users who |
 |                        |    can edit the current portal.                   |
-|                        |                                                   |
-                                                                            
+|                        |                                                   |                                                                          
 +------------------------+---------------------------------------------------+
 | Page Name              | The page name which is required, unique and       |
 |                        | starts with a letter. Only alphabetical,          |
@@ -274,75 +252,72 @@ opened will display as below.
 |                        | maximum size or not.                              |
 +------------------------+---------------------------------------------------+
 
-Define the page layout in the Page Layout tab.
+3. Define the page layout in the Page Layout tab.
 
-Define permissions in the Permissions tab. This tab consists of four
-sub-tabs named Access, Edit, Move Apps and Move Containers.
+4. Define permissions in the Permissions tab. This tab consists of four
+   sub-tabs named Access, Edit, Move Apps and Move Containers.
 
--  The Access tab shows all users who can access the page:
+   -  The Access tab shows all users who can access the page:
 
-   -  If the value of the Owner Type field is "*Portal*\ ", the name of
-      the current portal is automatically selected for the Owner Id
-      field, so that the *Access* permission is assigned to all users
-      who can access the current portal.
+      -  If the value of the Owner Type field is "*Portal*\ ", the name of
+         the current portal is automatically selected for the Owner Id
+         field, so that the *Access* permission is assigned to all users
+         who can access the current portal.
 
-   -  If the value of the Owner Type field is "*Group*\ ", the *Access*
-      permission is assigned to all users who are the members of the
-      group that is selected in the Owner Id field of the Page Settings
-      tab.
+      -  If the value of the Owner Type field is "*Group*\ ", the *Access*
+         permission is assigned to all users who are the members of the
+         group that is selected in the Owner Id field of the Page Settings
+         tab.
 
    To reassign the *Access* permission for the page, see details in the
-   `Access
-   permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.AccessPermission>`__
+   :ref:`Access permission <SettingPortalPermissions.AccessPermission>`
    section.
 
--  The Edit shows all users who have the *Edit* permission on the page.
+   -  The Edit shows all users who have the *Edit* permission on the page.
 
-   -  If the value of the Owner Type field is "*Portal*\ ", the *Edit*
-      permission is assigned to users who can edit the current portal.
+      -  If the value of the Owner Type field is "*Portal*\ ", the *Edit*
+         permission is assigned to users who can edit the current portal.
 
-   -  If the value of the Owner Type field is "*Group*\ ", the *Edit*
-      permission is assigned to all users who are the members of the
-      group that is selected in the Owner Id field of the Page Settings
-      tab.
+      -  If the value of the Owner Type field is "*Group*\ ", the *Edit*
+         permission is assigned to all users who are the members of the
+         group that is selected in the Owner Id field of the Page Settings
+         tab.
 
    To reassign the *Edit* permission for the page, see details in the
-   `Edit
-   Permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.EditPermission>`__
+   :ref:`Edit Permission <SettingPortalPermissions.EditPermission>`
    section.
 
-Click Save to accept creating a new page.
+5. Click Save to accept creating a new page.
+
+.. _ManagingPages.EditingPage:
 
 Editing a page
---------------
+~~~~~~~~~~~~~~~
 
-Open the **Page Properties** page by following one of the two ways:
+1. Open the **Page Properties** page by following one of the two ways:
 
 **The first way**
 
 **i.** Open the Navigation Management form by doing the steps in the
-`Editing
-navigation <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingNavigation>`__
-section.
+:ref:`Editing navigation <EditingNavigation>` section.
 
 **ii.** Right-click your desired node and select Edit Node's Page from
 the drop-down menu.
 
 **The second way**
 
-**i.** `Access the Pages Management
-page <#AccessingPagesManagementPage>`__.
+**i.** :ref:`Access the Pages Management page <AccessingPagesManagementPage>`.
 
-**ii.** Click |image8| corresponding to the page you want to edit.
+**ii.** Click |image202| corresponding to the page you want to edit.
 
 The Edit Page form will be displayed in the Page Properties window.
 
-|image9|
+|image203|
 
-Click View Page Properties in the Page Editor window to edit the page
-properties.
+2. Click View Page Properties in the Page Editor window to edit the page
+   properties.
 
-|image10|
+|image204|
 
 **i.** In the Page Settings tab, you cannot change values in Page Id,
 Owner Type, Owner Id and Page Name.
@@ -352,38 +327,22 @@ Owner Type, Owner Id and Page Name.
 supported for pages of a *group* or a *portal.* Because the user's page
 is private, no one can access or edit it, except the creator.
 
-    **Note**
+.. note:: For more details on how to assign permissions on a page, refer to the :ref:`Setting permissions on a page <ManagingPermissions.SettingPagePermissions>` section.
 
-    For more details on how to assign permissions on a page, refer to
-    the `Setting permissions on a
-    page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPagePermissions>`__
-    section.
+3. Click Save, then select |image205| in Page Editor for all changes to 
+   take effect, or |image206| to abort.
 
-Click Save, then select |image11| in Page Editor for all changes to take
-effect, or |image12| to abort.
+.. ManagingPages.DeletingPage:
 
 Deleting a page
----------------
+~~~~~~~~~~~~~~~~
 
-`Access the Pages Management page <#AccessingPagesManagementPage>`__.
+1. :ref:`Access the Pages Management page <AccessingPagesManagementPage>`.
 
 You will see a list of all existing pages.
 
-Click |image13| in the row of the page you want to delete.
+2. Click |image207| in the row of the page you want to delete.
 
-Click **OK** in the confirmation message.
+3. Click **OK** in the confirmation message.
 
-.. |image0| image:: images/common/edit_navigation.png
-.. |image1| image:: images/gatein/wizard_page_layout.png
-.. |image2| image:: images/gatein/wizard_arrange_page.png
-.. |image3| image:: images/common/edit_portlet_icon.png
-.. |image4| image:: images/common/delete_portlet_icon.png
-.. |image5| image:: images/common/save_icon.png
-.. |image6| image:: images/common/discharge_icon.png
-.. |image7| image:: images/gatein/page_settings_tab.png
-.. |image8| image:: images/common/edit_icon.png 
-.. |image9| image:: images/gatein/view_page_properties.png
-.. |image10| image:: images/gatein/page_settings_tab_edit_page_form.png
-.. |image11| image:: images/common/save_icon.png
-.. |image12| image:: images/common/remove_icon.png
-.. |image13| image:: images/common/delete_icon.png
+

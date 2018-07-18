@@ -1,12 +1,14 @@
-Adding a user
-=============
+.. _ManagingYourOrganization.AddingUser:
 
-Click |image0| on the top navigation bar, then select Community Add
-Users from the drop-down menu.
+Adding a user
+~~~~~~~~~~~~~~
+
+1. Click |image157| on the top navigation bar, then select Community Add
+   Users from the drop-down menu.
 
 A window with the Account Setting and User Profile tabs will open.
 
-|image1|
+|image158|
 
 **Details:**
 
@@ -26,8 +28,7 @@ A window with the Account Setting and User Profile tabs will open.
 |                       | -  Lowercase for its first character.              |
 |                       |                                                    |
 |                       | -  Lowercase or digit for its last character.      |
-|                       |                                                    |
-                                                                            
+|                       |                                                    |                                                                          
 +-----------------------+----------------------------------------------------+
 | Password              | The authentication string which must be between 6  |
 |                       | and 30 characters, including spaces.               |
@@ -65,17 +66,15 @@ A window with the Account Setting and User Profile tabs will open.
 |                       |    and the first and last characters of this part  |
 |                       |    must be lowercase or digit ones. Note that the  |
 |                       |    dot (.) character is required.                  |
-|                       |                                                    |
-                                                                            
+|                       |                                                    |                                                                          
 +-----------------------+----------------------------------------------------+
 
-Fill all fields in the Account Setting tab which must be completed.
+2. Fill all fields in the Account Setting tab which must be completed.
 
-Further information about the user, such as nickname, or birthday, can
-be added in the User Profile tab that is not required.
+   Further information about the user, such as nickname, or birthday, 
+   can be added in the User Profile tab that is not required.
 
-Click Save to accept your new account. If you want to refresh the input
-information, simply click Reset.
+3. Click Save to accept your new account. If you want to refresh the 
+   input information, simply click Reset.
 
-.. |image0| image:: images/common/administration_navigation.png
-.. |image1| image:: images/gatein/add_new_user_form.png
+

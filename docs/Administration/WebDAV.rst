@@ -8,12 +8,7 @@ WebDAV enables you to use the third party tools to communicate with
 hierarchical content servers via HTTP. It is possible to add and remove
 documents or a set of documents from a path on the server.
 
-    **Note**
-
-    If you add some documents (by uploading) via WebDAV, you should
-    check carefully its version history. See `Document
-    Versioning <#PLFUserGuide.ManagingYourDocuments.WorkingWithBasicActions.ActivatingVersion.AddingVersion.ViaWebDAV>`__
-    for more details.
+.. note:: If you add some documents (by uploading) via WebDAV, you should check carefully its version history. See :ref:`Document Versioning <via-webdav>` for more details.
 
 **What is WebDAV?**
 
@@ -24,15 +19,15 @@ a website.
 
 WebDAV provides the following features:
 
-Locking
+*Locking*
     This feature prevents two or more collaborators from overwriting
     shared content.
 
-Site Manipulation
+*Site Manipulation*
     WebDAV supports the "copy" and "move" actions and the creation of
     *collections* (file system directories).
 
-Name Space Management
+*Name Space Management*
     This function enables copying and moving webpages within a server's
     namespace.
 
@@ -48,13 +43,15 @@ actions:
    without accessing it directly via web browsers. Content can be
    accessed from anywhere and is stored in local directories.
 
--  Easily and quickly uploading content to PRODUCT simply by copying it
+-  Easily and quickly uploading content to eXo Platform simply by copying it
    into the appropriate directory.
+   
+.. _ConnectToWebDav:   
 
 Connecting to WebDAV
---------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
-In PRODUCT, there are 2 modes of WebDAV:
+In eXo Platform, there are 2 modes of WebDAV:
 
 -  **Public**: Login is not required, and users can view all the public
    items. The URL to access will be:
@@ -90,52 +87,48 @@ Simply enter
 into the address bar of your browser. The selected content will be shown
 in WebDAV as below:
 
-|image0|
+|image149|
 
 **Nautilus (Linux):**
 
-Open Nautilus - the file manager (GNOME Files), then open the address
-bar (by using the hot key: Ctrl + L).
+1. Open Nautilus - the file manager (GNOME Files), then open the address
+   bar (by using the hot key: Ctrl + L).
 
-Enter
-``dav://mycompany.com:8080/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome``
-into the address bar.
+2. Enter
+   ``dav://mycompany.com:8080/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome``
+   into the address bar.
 
-Enter your username and password in the login form.
+3. Enter your username and password in the login form.
 
-|image1|
+|image150|
 
-Click **Connect**. You will be redirected to the Wiki Home window as
-below:
+4. Click **Connect**. You will be redirected to the Wiki Home window as
+   below:
 
-|image2|
+|image151|
 
 **Windows Explorer (Windows 7):**
 
-Open the Computer window, then click **Map network drive**.
+1. Open the Computer window, then click **Map network drive**.
 
-|image3|
+|image152|
 
-Select any available letter for the drive in the Drive list.
+2. Select any available letter for the drive in the Drive list.
 
-Enter
-``http://mycompany.com:8080/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome``
-into the **Folder** field.
+3. Enter
+   ``http://mycompany.com:8080/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome``
+   into the **Folder** field.
 
-|image4|
+|image153|
 
 Select the Reconnect at logon checkbox to connect every time you log
 onto your computer.
 
-Click **Finish**, then enter your username and password into the
-**Windows Security** pop-up, and click **OK** to connect. You will be
-redirected to the Wiki Home window.
+4. Click **Finish**, then enter your username and password into the
+   **Windows Security** pop-up, and click **OK** to connect. You will be
+   redirected to the Wiki Home window.
 
-    **Note**
-
-    If you still do not connect successfully, check if you have followed
-    instructions in `WebDAV
-    restrictions <#PLFUserGuide.AdministeringeXoPlatform.WebDAV.Restrictions>`__.
+.. note:: If you still do not connect successfully, check if you have followed instructions in :ref:`WebDAV restrictions <WebDAV.Restrictions>`.
 
 **Windows Explorer (Windows 8):**
 
@@ -144,75 +137,69 @@ through My Computer in Windows 8 is quite similar to that in Windows 7.
 Note that you need to point to the down pointer at the upper-right
 corner of the Computer windows to show **Map network drive**.
 
-    **Note**
-
-    If you still do not connect successfully, check if you have followed
-    instructions in `WebDAV
-    restrictions <#PLFUserGuide.AdministeringeXoPlatform.WebDAV.Restrictions>`__.
+.. note:: If you still do not connect successfully, check if you have followed instructions in :ref:`WebDAV restrictions <WebDAV.Restrictions>`.
 
 **Windows Explorer (Windows XP):**
 
-Navigate to the **My Network Places**.
+1. Navigate to the **My Network Places**.
 
-Click the Add a network place link on the left to open the **Add Network
-Place Wizard**.
+2. Click the Add a network place link on the left to open the 
+   **Add Network Place Wizard**.
 
-|image5|
+|image154|
 
-Click **Next** to select a network location.
+3. Click **Next** to select a network location.
 
-Select Choose another network location to create a shortcut, then click
-**Next**.
+4. Select Choose another network location to create a shortcut, then 
+   click **Next**.
 
-|image6|
+|image155|
 
-Enter
-http://mycompany.com:8080/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome
-into the Internet or network address field, then click **Next**.
+5. Enter `http://mycompany.com:8080/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome <http://mycompany.com:8080/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome>`__
+   into the Internet or network address field, then click **Next**.
 
-Enter your usename and password into the login form.
+6. Enter your usename and password into the login form.
 
-Type name for your network place, then click Next.
+7. Type name for your network place, then click Next.
 
-Select the Open this network place when I click Finish option, then
-click Finish.
+8. Select the Open this network place when I click Finish option, then
+   click Finish.
 
-Enter your usename and password again to access your selected folder.
-You will be redirected to the selected folder as below:
+9. Enter your usename and password again to access your selected folder.
+   You will be redirected to the selected folder as below:
 
-|image7|
+|image156|
 
 **"net use" command**
 
 In addition, for Windows, you can use the "net use" command to connect a
-drive in your computer with the shared resource of PRODUCT. The command
+drive in your computer with the shared resource of eXo Platform. The command
 format will be:
 ``net use X: http://mycompany.com:port/rest/private/jcr/{RepositoryName}/{WorkspaceName}/{Path}``
 where X: is the drive letter you want to assign to the shared resource.
 
-Open the cmd screen.
+1. Open the cmd screen.
 
-Type the "net use" command, for example:
+2. Type the "net use" command, for example:
+
 ``net use E: http://mycompany.com:port/rest/private/jcr/repository/collaboration/Groups/spaces/support_team/ApplicationData/eXoWiki/WikiHome``,
-then hit Enter.
+   
+   then hit Enter.
 
-Enter username and password as requested in the screen. If your
+3. Enter username and password as requested in the screen. If your
 connection is successful, you will get a message like: "The command
 completed successfully". If not successful, check if you have followed
-steps in `WebDAV
-Restrictions <#PLFUserGuide.AdministeringeXoPlatform.WebDAV.Restrictions>`__.
+steps in :ref:`WebDAV Restrictions <WebDAV.Restrictions>`.
 
-Open the Computer window, then select the **E:** drive. Here you will
-see the Wiki content of the Support Team space.
+4. Open the Computer window, then select the **E:** drive. Here you will
+   see the Wiki content of the Support Team space.
 
-    **Note**
+.. note:: If you still do not connect successfully, check if you have followed instructions in :ref:`WebDAV restrictions <WebDAV.Restrictions>`.
 
-    If you still do not connect successfully, check if you have followed
-    instructions in `WebDAV
-    restrictions <#PLFUserGuide.AdministeringeXoPlatform.WebDAV.Restrictions>`__.
+.. _WebDAV.Restrictions:
 
 WebDAV restrictions
--------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 There are some restrictions for WebDAV in different OSs.
 
@@ -228,29 +215,29 @@ follows:
 
 **Windows 7**
 
-Click Start, type **regedit** in the Start Search box, then hit Enter to
-open the Windows Registry Editor.
+1. Click Start, type **regedit** in the Start Search box, then hit Enter 
+   to open the Windows Registry Editor.
 
-Find the key:
+2. Find the key:
 ``HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlset\services\WebClient\Parameters``.
 
-Select ``BasicAuthLevel`` and change its value to 2. If this does not
-exist, create it as a ``REG_DWORD`` key.
+3. Select ``BasicAuthLevel`` and change its value to 2. If this does not
+   exist, create it as a ``REG_DWORD`` key.
 
-Reboot your OS.
+4. Reboot your OS.
 
 **Windows 8**
 
-Go to Windows Registry Editor, then find the key:
+1. Go to Windows Registry Editor, then find the key:
 ``HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlset\services\WebClient\Parameters``.
 
-Select ``UseBasicAuth`` and change its value to 1. If this does not
-exist, create it as a ``REG_DWORD`` key.
+2. Select ``UseBasicAuth`` and change its value to 1. If this does not
+   exist, create it as a ``REG_DWORD`` key.
 
-Select ``BasicAuthLevel`` and change its value to 2. If this does not
-exist, create it as a ``REG_DWORD`` key.
+3. Select ``BasicAuthLevel`` and change its value to 2. If this does not
+   exist, create it as a ``REG_DWORD`` key.
 
-Reboot your OS.
+4. Reboot your OS.
 
 **Microsoft Office 2010**
 
@@ -273,26 +260,19 @@ to download the file, you may see the following problems:
 To fix these errors, enable the Basic authentication on the client
 computer as follows:
 
-Click Start, type **regedit** in the Start Search box, then hit Enter.
+1. Click Start, type **regedit** in the Start Search box, then hit Enter.
 
-Locate and then click the following registry subkey:
+2. Locate and then click the following registry subkey:
 ``HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Common\Internet``.
 
-On the Edit menu, point to **New**, then click **DWORD Value**.
+3. On the Edit menu, point to **New**, then click **DWORD Value**.
 
-Type ``BasicAuthLevel``, then hit Enter.
+4. Type ``BasicAuthLevel``, then hit Enter.
 
-Right-click ``BasicAuthLevel``, then click **Modify**.
+5. Right-click ``BasicAuthLevel``, then click **Modify**.
 
-In the Value data box, type **2**, then click **OK**.
+6. In the Value data box, type **2**, then click **OK**.
 
-Reboot your OS.
+7. Reboot your OS.
 
-.. |image0| image:: images/webdav/webdav_browser_view.png
-.. |image1| image:: images/webdav/webdav_login.png
-.. |image2| image:: images/webdav/webdav_window_linux.png
-.. |image3| image:: images/webdav/computer_window.png
-.. |image4| image:: images/webdav/map_network_drive.png
-.. |image5| image:: images/webdav/network_place_wizard.png
-.. |image6| image:: images/webdav/network_place_location.png
-.. |image7| image:: images/webdav/webdav_window_xp.png
+

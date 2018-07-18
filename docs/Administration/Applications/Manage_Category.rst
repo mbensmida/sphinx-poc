@@ -1,23 +1,24 @@
+.. _ManagingApplications.ManageCategory:
+
 Managing categories
-===================
+~~~~~~~~~~~~~~~~~~~~
 
 Managing categories includes the following actions:
 
--  `Adding a new
-   category <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingCategories.AddingNewCategory>`__
+-  :ref:`Adding a new category <ManagingCategories.AddingNewCategory>`
 
--  `Editing/Deleting a
-   category <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingCategories.EditingDeletingCategory>`__
+-  :ref:`Editing/Deleting a category <ManagingCategories.EditingDeletingCategory>`
 
--  `Adding Portlets/Gadgets to a
-   category <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingCategories.AddingPorletGadgets>`__
+-  :ref:`Adding Portlets/Gadgets to a category <ManagingCategories.AddingPorletGadgets>`
+
+.. _ManagingCategories.AddingNewCategory:
 
 Adding a new category
 ---------------------
 
-Click |image0| on the Action bar to open the form below.
+1. Click |image254| on the Action bar to open the form below.
 
-|image1|
+|image255|
 
 **In which:**
 
@@ -36,44 +37,45 @@ Description
     A brief description of the category. Any length from 0 to 255
     characters is allowed.
 
-Enter values in the Category Setting tab.
+2. Enter values in the Category Setting tab.
 
-Select the Permission Setting tab to set the *Access* permission for
-your category. It is required. Accordingly, other users can only view
-and use portlets in your category to which they have access.
+3. Select the Permission Setting tab to set the *Access* permission for
+   your category. It is required. Accordingly, other users can only view
+   and use portlets in your category to which they have access.
 
 For example, set the *Access* permission for all the members of the
 /platform/web-contributors group:
 
-|image2|
+|image256|
 
 For more details about how to set the *Access* permission, refer to
-`Access
-Permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.AccessPermission>`__.
+:ref:`Access Permission <SettingPortalPermissions.AccessPermission>`.
 
-Click Save to accept adding a new category to the categories list in the
-left pane.
+4. Click Save to accept adding a new category to the categories list in 
+   the left pane.
+
+.. _ManagingCategories.EditDeleteCategory:
 
 Editing/Deleting a category
 ---------------------------
 
 **Editing a category**
 
-Click your desired category, then click |image3| on the title bar.
+1. Click your desired category, then click |image257| on the title bar.
 
-Update the category information.
+2. Update the category information.
 
-Click Save to apply changes.
+2. Click Save to apply changes.
 
-    **Note**
-
-    You cannot change the category name.
+.. note:: You cannot change the category name.
 
 **Deleting a category**
 
-Select your desired category and click |image4| on the title bar.
+1. Select your desired category and click |image258| on the title bar.
 
-Click **OK** in the confirmation message.
+2. Click **OK** in the confirmation message.
+
+.. _ManagingCategories.AddPortletToCategory:
 
 Adding a portlet/gadget to a category
 -------------------------------------
@@ -81,10 +83,10 @@ Adding a portlet/gadget to a category
 This function helps you add a portlet/gadget to a specific category
 easily as follows:
 
-Click |image5| located on the title bar of the category to which you
-want to add portlets/gadgets.
+1. Click |image259| located on the title bar of the category to which 
+   you want to add portlets/gadgets.
 
-|image6|
+  |image260|
 
 Display name
     The display name of a portlet/gadget.
@@ -92,16 +94,11 @@ Display name
 Application Type
     Either Portlet or Gadget.
 
-Enter the display name and select an application type.
+2. Enter the display name and select an application type.
 
-Select a portlet/gadget by checking the radio button.
+3. Select a portlet/gadget by checking the radio button.
 
-Click Add to accept adding the selected portlet/gadget to the category.
+4. Click Add to accept adding the selected portlet/gadget to the 
+   category.
 
-.. |image0| image:: images/gatein/add_category_button.png
-.. |image1| image:: images/gatein/add_category_form.png
-.. |image2| image:: images/gatein/permission_setting_tab.png
-.. |image3| image:: images/common/edit_icon.png
-.. |image4| image:: images/common/delete_icon.png
-.. |image5| image:: images/common/plus_icon.png
-.. |image6| image:: images/gatein/add_portlet_form.png
+

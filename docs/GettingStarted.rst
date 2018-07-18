@@ -996,6 +996,8 @@ You can filter what you want to see on the homepage:
 -  |image30| **My Spaces**: only shows activities created in spaces where
    you are member.
 
+.. _ConnectionsFilter:
+
 -  |image31| **Connections**: shows activities created by your
    connections.
 

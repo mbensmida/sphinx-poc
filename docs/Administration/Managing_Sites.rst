@@ -6,46 +6,42 @@ Managing sites
 
 Managing sites include the following actions:
 
--  `Creating a new
-   site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.CreatingNewSite>`__
+-  :ref:`Creating a newsite <CreatingNewSite>`
 
--  `Editing a
-   site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite>`__
+-  :ref:`Editing asite <ManagingSites.EditingSite>`
 
--  `Selecting the site's
-   skin <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.SelectSkin>`__
+-  :ref:`Selecting the site's skin <ManagingSites.SelectSkin>`
 
--  `Deleting a
-   site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.DeletingSite>`__
+-  :ref:`Deleting a site <ManagingSites.DeletingSite>`
 
 .. _CreatingNewSite:
 
 Creating a new site
--------------------
+~~~~~~~~~~~~~~~~~~~~
 
-    **Note**
+.. note:: You can perform this action only when you are a member of the ``/platform/administrators`` group.
 
-    You can perform this action only when you are a member of the
-    */platform/administrators* group.
+1. Click |image181| Portal Sites on the top navigation bar, then click 
+   Add New Site in the Manage Sites page;
 
-Click |image0| Portal Sites on the top navigation bar, then click Add
-New Site in the Manage Sites page;
-
-Or, click EditSiteAdd Site.
+   Or, click EditSiteAdd Site.
 
 By default, the window to create a new site, which contains the Portal
 Settings tab, will open.
 
-Fill in the Portal Name field. The field is required, unique and must
-start with a letter. Only alphabetical, numerical, dash and underscore
-characters are allowed for this field with the length from 3 to 30
-characters.
+|image182|
 
-Select the default display language for the site from the Locale field.
+2. Fill in the Portal Name field. The field is required, unique and must
+   start with a letter. Only alphabetical, numerical, dash and 
+   underscore characters are allowed for this field with the length from
+   3 to 30 characters.
 
-Click the Properties tab to set the properties of a site.
+3. Select the default display language for the site from the Locale 
+   field.
 
-|image1|
+4. Click the Properties tab to set the properties of a site.
+
+|image183|
 
 **Details:**
 
@@ -85,86 +81,72 @@ Click the Properties tab to set the properties of a site.
 |                    | bar.                                                   |
 +--------------------+--------------------------------------------------------+
 
-Click the Permissions tab to set permissions on the site.
+5. Click the Permissions tab to set permissions on the site.
 
 The list of *Access* permissions for the portal is empty by default. You
 have to select at least one or tick the Everyone checkbox to assign the
 *Access* permission to everyone.
 
-    **Note**
+.. note:: For more details on how to grant permissions on the site, see :ref:`Setting permissions on a site <ManagingPermissions.SettingPortalPermissions>`.
 
-    For more details on how to grant permissions on the site, see
-    `Setting permissions on a
-    site <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions>`__.
+6. Click the Portal Templates tab to select the template for your site.
 
-Click the Portal Templates tab to select the template for your site.
+7. Click Save to accept creating your new site.
 
-Click Save to accept creating your new site.
+.. note:: After creating a new site, you can access it via the URL format: ``http://{domain-name}/portal/[name-site]``. For example, accessing the Agital site: ``http://mycompany.com:8080/portal/Agital``.
 
-    **Note**
-
-    After creating a new site, you can access it via the URL format:
-    ``http://{domain-name}/portal/[name-site]``. For example, accessing
-    the ACME site: ``http://mycompany.com:8080/portal/acme``.
+.. _ManagingSites.EditingSite:
 
 Editing a site
---------------
+~~~~~~~~~~~~~~~~
 
-    **Note**
-
-    The function allows you to edit layouts, navigations and properties
-    of a site. To do this, you must have the *Edit* permission on sites
-    by contacting your administrator.
+.. note:: The function allows you to edit layouts, navigations and properties of a site. To do this, you must have the *Edit* permission on sites by contacting your administrator.
 
 **When you have the *Edit* permission, access the relevant form that
 allows you to do actions related to editing a portal.**
 
-`Access the Manage Sites panel <#OpeningSitesManagementPage>`__.
+1. :ref:`Access the Manage Sites panel <CreatingNewSite>`.
 
-Specify your desired site, and do the following actions:
+2. Specify your desired site, and do the following actions:
 
--  `Editing the site's
-   layout <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`__
-   by clicking Edit Layout.
+-  :ref:`Editing the site's layout <EditingLayout>` by clicking Edit 
+    Layout.
 
--  `Changing the site's
-   navigation <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingNavigation>`__
-   by clicking Edit Navigation.
+-  :ref:`Changing the site's navigation <EditingNavigation>` by clicking
+    Edit Navigation.
 
--  `Editing the site's
-   configurations <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingConfigurations>`__
-   by clicking Edit Site Configuration.
+-  :ref:`Editing the site's configurations <EditingConfigurations>` by 
+   clicking Edit Site Configuration.
 
 .. _EditingLayout:
 
-**Editing layout**
+Editing layout
+--------------
 
-Click Edit Layout corresponding to your desired site on the Manage Sites
-panel;
+1. Click Edit Layout corresponding to your desired site on the Manage 
+   Sites panel;
 
-Or, click EditSiteLayout on the top navigation bar.
+   Or, click EditSiteLayout on the top navigation bar.
 
-The Edit Layout form will display.
+   The Edit Layout form will display.
 
-|image2|
+|image184|
 
-To add a new application/container to the site, drag and drop it from
-the Edit Inline Composer window to the main site body.
+2. To add a new application/container to the site, drag and drop it from
+   the Edit Inline Composer window to the main site body.
 
-To rearrange elements in the site body, drag and drop them into your
-desired positions.
+   To rearrange elements in the site body, drag and drop them into your
+   desired positions.
 
-To edit or remove any element, hover your cursor over it, then select
-|image3| or |image4| respectively.
+   To edit or remove any element, hover your cursor over it, then select
+   |image185| or |image186| respectively.
 
-    **Note**
+.. note:: For more details on how to edit elements, see the :ref:`Editing a specific portlet <EditingSpecificPortlet>` section.
 
-    For more details on how to edit elements, see the `Editing a
-    specific
-    portlet <#PLFUserGuide.AdministeringeXoPlatform.ManagingApplications.ManagingPortletsAndGadgets.EditingSpecificPortlet>`__
-    section.
+.. _EditingNavigation:
 
-**Editing navigation**
+Editing navigation
+-------------------
 
 Click Edit Navigation corresponding to your desired site on Manage Sites
 form;
@@ -173,16 +155,14 @@ Or, click EditSiteNavigation on the top navigation bar.
 
 The Navigation Management form appears.
 
-|image5|
+|image187|
 
-    **Note**
+.. note:: For more information about actions, which can be done in the Navigation Management form, see the `Managing navigations <ManagingNavigations>` section.
 
-    For more information about actions, which can be done in the
-    Navigation Management form, see the `Managing
-    navigations <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations>`__
-    section.
+.. _EditingConfigurations:
 
-**Editing configurations**
+Editing configurations
+------------------------
 
 The configurations of a site include settings, properties and
 permissions that can be set by clicking Edit Site Configuration in the
@@ -190,81 +170,58 @@ Manage Sites panel.
 
 The Edit window with the **Portal Settings** tab appears.
 
-|image6|
+|image188|
 
 In this window, you can make changes on fields in the various tabs,
 except the Portal Name field in the Portal Settings tab.
 
-    **Note**
+.. note:: For more details on these fields, refer to the `Creating a new site <CreatingNewSite>` section.
 
-    For more details on these fields, refer to the `Creating a new
-    site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.CreatingNewSite>`__
-    section.
+.. _ManagingSites.SelectSkin:
 
 Selecting the site's skin
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    **Warning**
 
-    This section is written while the enterprise skin add-on is still in
-    an unstable version. Some datas and information may change later.
-
-With PRODUCT PLF\_VERSION a new ready skin is available as an add-on for
+With eXo Platform 5.0 a new ready skin is available as an add-on for
 enterprise packages.
 
-You can install it by using this command in a PLF\_VERSION PRODUCT
-package versions:
-
-::
+You can install it by using this command in a 5.0 eXo Platform
+package versions: ::
 
     addon install exo-enterprise-skin
 
 Having the add-on installed in your package and being an administrator,
 you can apply it easily by following these steps:
 
-Click |image7| Portal Sites on the top navigation bar.
+1. Click |image189| Portal Sites on the top navigation bar.
 
-Click on the button Edit Site Configuration, a pop up appears to
-configure the site.
+2. Click on the button Edit Site Configuration, a pop up appears to
+   configure the site.
 
-Select the skin: either the default one or the Enterprise one
+3. Select the skin: either the default one or the Enterprise one
 
-|image8|
+|image190|
 
-and then click on save.
+and then click on save button.
 
 Going back to the site's homepage, the selected skin is applied:
 
-|image9|
+|image191|
 
-In the previous screenshot, the enterprise skin is selected.
+.. _ManagingSites.DeletingSite:
 
 Deleting a site
----------------
+~~~~~~~~~~~~~~~~
 
-    **Note**
+.. note:: To delete a site, you must be in the group that has the **Edit Permission** on that portal.
 
-    To delete a site, you must be in the group that has the **Edit
-    Permission** on that portal.
+1. `Access the Manage Sites panel <CreatingNewSite>`.
 
-`Access the Manage Sites panel <#OpeningSitesManagementPage>`__.
+2. Click |image192| corresponding to the site you want to delete.
 
-Click |image10| corresponding to the site you want to delete.
+3. Click **OK** in the confirmation message.
 
-Click **OK** in the confirmation message.
+.. note:: You cannot delete the Intranet site.
 
-    **Note**
 
-    You cannot delete the Intranet site.
-
-.. |image0| image:: images/common/administration_navigation.png
-.. |image1| image:: images/gatein/properties_tab.png
-.. |image2| image:: images/gatein/edit_layout_form.png
-.. |image3| image:: images/common/edit_portlet_icon.png
-.. |image4| image:: images/common/delete_icon.png
-.. |image5| image:: images/gatein/navigation_management_form.png
-.. |image6| image:: images/gatein/portal_settings_tab.png
-.. |image7| image:: images/common/administration_navigation.png
-.. |image8| image:: images/platform/select-skin.png
-.. |image9| image:: images/platform/skin-enterprise.png
-.. |image10| image:: images/common/delete_icon.png

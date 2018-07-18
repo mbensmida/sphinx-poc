@@ -346,6 +346,8 @@ The **My Connections** page appears.
 
     .. note:: If there are so many connections, the Show More bar will appear at the page bottom. Click Show More to see more connections.
 
+.. _MyConnectionPage.Tabs:
+
 This page consists of the following tabs:
 
 -  *Everyone*: lists users who have registered in the eXo Platform system.

@@ -5,11 +5,11 @@ Managing permissions
 ====================
 
 Permissions play an important role in accessing and performing actions
-in PRODUCT. Depending on the permissions assigned by administrators,
+in eXo Platform. Depending on the permissions assigned by administrators,
 users can gain the Access and/or Edit permissions to sites, pages and
 various components of the sites.
 
-In PRODUCT, **permission types** define what a user can do within a
+In eXo Platform, **permission types** define what a user can do within a
 site, including:
 
 -  **Access permission** enables users to access sites, pages or
@@ -76,16 +76,14 @@ that page. To be clearer, see the below example.
 
 **Making guests accessible to the Register form of Intranet**
 
-    **Tip**
 
-    To make handy for checking permissions at all levels, it is
-    recommended you use the root account to have the highest rights.
+.. tip:: To make handy for checking permissions at all levels, it is recommended you use the root account to have the highest rights.
 
 For the Intranet site, the Register form is already featured by the
 Register application and put into the Register page (node) (by selecting
-|image0| Portal Sites Edit Navigation next to **intranet**).
+|image208| --> Portal --> Sites Edit Navigation next to **intranet**).
 
-|image1|
+|image209|
 
 By default, the Register node is already linked to the Register page and
 this page already contains the Register application.
@@ -102,14 +100,14 @@ form. This may be because the Access permission is not granted to the
 application itself or its outer layers. To make it accessible to the
 **platform/guests** group, do as follows:
 
-Log in as root, then use
-`http://mycompany.com:port/portal/intranet/Register <http://mycompany.com:port/portal/intranet/Register>`__
-to go to the Register page.
+1. Log in as root, then use
+   `http://mycompany.com:port/portal/intranet/Register <http://mycompany.com:port/portal/intranet/Register>`__
+   to go to the Register page.
 
-Check the Access permission at the Register page level by clicking
-|image2| Page Edit Layout.
+2. Check the Access permission at the Register page level by clicking
+   |image210| --> Page --> Edit Layout.
 
-|image3|
+|image211|
 
 -  i. At the application, the Access permission is already granted to
    the **/platform/guests** group by default.
@@ -118,23 +116,19 @@ Check the Access permission at the Register page level by clicking
    Editor**), the Access permission is already granted to the
    **platform/guests** group. Repeat this step for each container.
 
-       **Note**
-
-       Setting the \* membership for a group means that all its users
-       are granted permissions to view the container block, regardless
-       of their membership role.
+ .. note:: Setting the \* membership for a group means that all its users are granted permissions to view the container block, regardless of their membership role.
 
 -  iii. At the page (by selecting View Page properties at the **Page
    Editor** bottom), the Access permission is already granted to the
    **platform/guests** group.
 
-    **Note**
+.. note:: Remember to click |image212| to make your changes affect, if any.
 
-    Remember to click |image4| to make your changes affect, if any.
-
-Go to
-`http://mycompany.com:port/portal/intranet <http://mycompany.com:port/portal/intranet>`__
-to be at the site level, then select |image5| Site Layout.
+3. Go to
+   `http://mycompany.com:port/portal/intranet <http://mycompany.com:port/portal/intranet>`__
+    to be at the site level, then select |image213| --> Site --> Layout.
+    
+    |image214|
 
 -  i. At the site container(s) containing the Register page, the Access
    permission is made public by default, meaning that all (including
@@ -148,65 +142,52 @@ to be at the site level, then select |image5| Site Layout.
    in the group pane, and **\*** in the membership pane. Alternatively,
    tick the Everyone checkbox.
 
-    **Note**
+.. note:: Remember to click |image214| to make your changes affect, if any.
 
-    Remember to click |image6| to make your changes affect, if any.
+4. Log out, then try using the
+   `http://mycompany.com:port/portal/intranet/Register <http://mycompany.com:port/portal/intranet/Register>`__
+   link. Now, as a guest, you still can view the Register form, not the
+   Login form.
 
-Log out, then try using the
-`http://mycompany.com:port/portal/intranet/Register <http://mycompany.com:port/portal/intranet/Register>`__
-link. Now, as a guest, you still can view the Register form, not the
-Login form.
+5. Optionally, if you want guests to be redirected to the Register form
+   when they only enter
+   `http://mycompany.com:port/portal/intranet <http://mycompany.com:port/portal/intranet>`__,
+   simply move gradually the Register node to the top in the Navigation
+   Management (by right-clicking **Register** and selecting Move Up - 
+   you need to repeat this step until the Register node is at the top).
 
-Optionally, if you want guests to be redirected to the Register form
-when they only enter
-`http://mycompany.com:port/portal/intranet <http://mycompany.com:port/portal/intranet>`__,
-simply move gradually the Register node to the top in the Navigation
-Management (by right-clicking **Register** and selecting Move Up - you
-need to repeat this step until the Register node is at the top).
-
-|image7|
+|image215|
 
 Log out, then use the link:
 `http://mycompany.com:port/portal/intranet <http://mycompany.com:port/portal/intranet>`__.
 Now, you will be redirected to the Register form without entering the
 exact URL of the Register page.
 
-|image8|
+|image216|
 
-    **Note**
+.. note:: -  In this section, some examples and screenshots use :ref:`default groups and memberships <#PLFAdminGuide.Configuration.PredefinedUserGroupMembership>`
+             that are ready-made by configuration. To create groups and memberships as you want, see :ref:`Managing your organization <ManagingYourOrganization>`.
 
-    -  In this section, some examples and screenshots use `default
-       groups and
-       memberships <#PLFAdminGuide.Configuration.PredefinedUserGroupMembership>`__
-       that are ready-made by configuration. To create groups and
-       memberships as you want, see `Managing your
-       organization <#PLFUserGuide.AdministeringeXoPlatform.ManagingYourOrganization>`__.
-
-    -  Do not misunderstand that labels of predefined membership types,
-       such as "manager" or "publisher", represent their permissions.
-       This means, those labels do not define any permissions. If you
-       create a page, you are the person who decides if a "manager" has
-       access to your page or not.
+		  -  Do not misunderstand that labels of predefined membership types, such as "manager" or "publisher", represent their permissions.
+             This means, those labels do not define any permissions. If you create a page, you are the person who decides if a "manager" has access to your page or not.
 
 Permissions in this section are divided into:
 
--  `Setting permissions on a
-   site <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions>`__
+-  :ref:`Setting permissions on a site <ManagingPermissions.SettingPortalPermissions>`
 
--  `Setting permissions on a
-   page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPagePermissions>`__
+-  `Setting permissions on a page <ManagingPermissions.SettingPagePermissions>`
 
--  `Setting permissions on a
-   container <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingContainerPermissions>`__
+-  `Setting permissions on a container <ManagingPermissions.SettingContainerPermissions>`
 
--  `Access permission on a
-   category <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingAccessPermissionOnCategory>`__
+-  `Access permission on a category <ManagingPermissions.SettingAccessPermissionOnCategory>`
 
--  `Access permission on a
-   portlet <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingAccessPermissionOnPortlet>`__
+-  `Access permission on a portlet <ManagingPermissions.SettingAccessPermissionOnPortlet>`
+
+
+.. _ManagingPermissions.SettingPortalPermissions:
 
 Setting permissions on a site
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set the site permissions (**Access, Edit, Move Apps** and **Move
 Containers**) for a specific group via the Permissions tab if your user
@@ -215,362 +196,306 @@ account belongs to the */platform/administrators* group.
 The Permissions tab can be opened in some various ways, depending on the
 following approaches.
 
-Click |image9| Portal Sites on the top navigation bar.
+1. Click |image217| Portal Sites on the top navigation bar.
 
 The **Manage Sites** page appears.
 
-|image10|
+|image218|
 
-**For new sites:**
+2. **For new sites:**
 
--  Select Add New Site to open the Create New Portal form.
+   -  Select Add New Site to open the Create New Portal form.
 
--  Click the Permissions tab.
+   -  Click the Permissions tab.
 
-**For existing portals:**
+   **For existing portals:**
 
--  Select Edit Site Configuration Permissions tab:
+   -  Select Edit Site Configuration Permissions tab:
 
-   |image11|
+   |image219|
 
-**Access permission**
+.. _SettingPortalPermissions.AccessPermission:
 
-    **Note**
+Access permission
+------------------
 
-    To access a site, you must belong to one of the groups that have the
-    *Access* permission to that site.
+.. note:: To access a site, you must belong to one of the groups that have the *Access* permission to that site.
 
 Select the Access sub-tab to set the Access permission on the site.
+
+|image220|
 
 -  If you want to assign the *Access* permission to users in the public
    mode (without signing in), simply select the Everyone checkbox.
 
 -  If you do not want everyone to access the portal, first deselect the
-   Everyone checkbox, and do the followings: Click |image12| to open the
-   Select Permission form. Select one group in the left panel, and one
-   membership type in the right panel. In the list of membership types,
-   if you select the asterisk (\*), all users of the selected group will
-   have the right to access this site, regardless of their membership
-   role. Click Save to finish your settings.
+   Everyone checkbox, and do the followings: 
+   
+   1. Click |image221| to open the Select Permission form. 
+   
+   |image222|
+   
+   2. Select one group in the left panel, and one membership type in the 
+      right panel. 
+   
+   
+ .. note:: In the list of membership types, if you select the asterisk (\*), all users of the selected group will have the right to access this site, regardless of their membership role. 
+   
+   3. Click Save to finish your settings.
 
 -  After you have selected a membership type, the selected permission is
    displayed in the *Access* permission list.
 
 -  You can only select one group with one membership type at each time.
-   If you want to add more, click |image13| and select again.
+   If you want to add more, click |image223| and select again.
 
-**Edit permission**
+.. _SettingPortalPermissions.EditPermission:
 
-Select the Edit sub-tab of the Permissions tab to set the Edit
-permission on a site and do the followings:
+Edit permission
+----------------
 
-|image14|
+1. Select the Edit sub-tab of the Permissions tab to set the Edit
+   permission on a site and do the followings:
 
-Click Select Permission to open the Permission Selector form.
+|image224|
 
-|image15|
+2. Click Select Permission to open the Permission Selector form.
 
-Select one group in the left pane and one membership type in the right
-pane.
+|image225|
 
-    **Note**
+3. Select one group in the left pane and one membership type in the right
+   pane.
 
-    In the list of membership types, if you select the asterisk (\*),
-    all users of the selected group will have the right to edit this
-    site, regardless of their membership role.
+.. note:: In the list of membership types, if you select the asterisk (\*), all users of the selected group will have the right to edit this site, regardless of their membership role.
 
-Click Save to finish your settings.
+4. Click Save to finish your settings.
 
-**Move Apps permission**
+.. _SettingPortalPermissions.MoveAppsPermission:
 
-Select the Move Apps sub-tab of the Permissions tab to set the **Move
-Apps permission** on a site and do the followings:
+Move Apps permission
+----------------------
 
-|image16|
+1. Select the Move Apps sub-tab of the Permissions tab to set the **Move
+   Apps permission** on a site and do the followings:
 
-Click on Add Permission to select groups and add their membership types.
-You can add several memberships to a group as in `adding **Access
-permission** <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.AccessPermission>`__.
+|image226|
 
-    **Note**
+2. Click on Add Permission to select groups and add their membership 
+   types.
+   You can add several memberships to a group as in :ref:`adding Access permission <SettingPortalPermissions.AccessPermission>`.
 
-    Unless a more restrictive permission is defined for a container (See
-    `Setting Permissions on a
-    Container <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingContainerPermissions>`__),
-    users who are granted the **Move Apps** permission on a site are
-    able to do the followings when `editing the site
-    layout <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`__:
+.. note:: Unless a more restrictive permission is defined for a container (See :ref:`Setting Permissions on a Container <ManagingPermissions.SettingContainerPermissions>`), users who are granted the **Move Apps** permission on a site are able to do the followings when 
+          :ref:`editing the site layout <EditingLayout>`:
 
-    -  Add new applications from the **Edit Inline Composer** to the
-       site layout via drag and drop.
+			-  Add new applications from the **Edit Inline Composer** to the site layout via drag and drop.
 
-    -  Move applications contained in the site layout via drag and drop.
+			-  Move applications contained in the site layout via drag and drop.
 
-    Users who are not granted the **Move Apps** permission on a site are
-    unable to see the *Remove Portlet* icon on applications as well as
-    drag or drop these applications on the site layout.
+		  Users who are not granted the **Move Apps** permission on a site are unable to see the *Remove Portlet* icon on applications as well as drag or drop these applications on the site layout.
 
-**Move Containers permission**
+.. _SettingPortalPermissions.MoveContainersPermission:
 
-Select the Move Containers sub-tab of the Permissions tab to set the
-**Move Containers permission** on a site and do the followings:
+Move Containers permission
+----------------------------
 
-|image17|
+1. Select the Move Containers sub-tab of the Permissions tab to set the
+   **Move Containers permission** on a site and do the followings:
 
-Click on Add Permission to select groups and add their membership types.
-You can add several memberships to a group as in `adding **Access
-permission** <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.AccessPermission>`__.
+|image227|
 
-    **Note**
+2. Click on Add Permission to select groups and add their membership 
+   types.
+   You can add several memberships to a group as in :ref:`adding Access permission <SettingPortalPermissions.AccessPermission>`.
 
-    Unless a more restrictive permission is defined for a container (See
-    `Setting Permissions on a
-    Container <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingContainerPermissions>`__),
-    users who are granted the **Move Containers** permission on a site
-    are able to do the followings when `editing the site
-    layout <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`__:
+.. note:: Unless a more restrictive permission is defined for a container (See :ref:`Setting Permissions on a Container <ManagingPermissions.SettingContainerPermissions>`),
+		  users who are granted the **Move Containers** permission on a site are able to do the followings when :ref:`editing the site layout <EditingLayout>`:
 
-    -  Add new containers from the **Edit Inline Composer** to the site
-       layout via drag and drop.
+			-  Add new containers from the **Edit Inline Composer** to the site layout via drag and drop.
 
-    -  Move containers contained in the site layout via drag and drop.
+			-  Move containers contained in the site layout via drag and drop.
 
-    Users who are not granted the **Move Containers** permission on a
-    site are unable to see the *Delete Container* icon on containers as
-    well as drag or drop these containers on the site layout.
+		  Users who are not granted the **Move Containers** permission on a site are unable to see the *Delete Container* icon on containers as well as drag or drop these containers on the site layout.
 
-    **Note**
+.. note:: If you do not specify which groups or users for the **Move Containers** or **Move Apps** permissions, those who are granted the :ref:`Edit permission <SettingPortalPermissions.EditPermission>` will have these permissions.
 
-    If you do not specify which groups or users for the **Move
-    Containers** or **Move Apps** permissions, those who are granted the
-    `Edit
-    permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.EditPermission>`__
-    will have these permissions.
+.. _ManagingPermissions.SettingPagePermissions:
 
 Setting permissions on a page
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your user account belongs to the */platform/administrators* group,
 you are able to set permissions on a page. You first need to go to the
 Permissions tab via one of two following ways:
 
-**Via Edit Page:**
+.. _ViaEditPage:
 
-Open the page which you want to set permissions.
+Via Edit Page:
+---------------
 
-Click Edit Page Edit Layout.
+1. Open the page which you want to set permissions.
 
-|image18|
+2. Click Edit --> Page --> Edit Layout.
+
+|image228|
 
 You will be directed to the Page Editor window.
 
-Click View Page Properties in the Page Editor window.
+3. Click View Page Properties in the Page Editor window.
 
-Select the Permissions tab.
+4. Select the Permissions tab.
 
-**Via Pages Management:**
+.. _AccessingPagesManagementPage:
 
-Select |image19| Portal Pages on the top navigation bar to open the
-Pages Management page.
+Via Pages Management:
+----------------------
 
-Locate the page you want to edit using the Page Id column, then click
-|image20| corresponding to the page in the Action column. You will be
-directed to the Page Editor window.
+1. Select |image229| --> Portal --> Pages on the top navigation bar to 
+   open the Pages Management page.
 
-Click View Page Properties in the Page Editor window.
+2. Locate the page you want to edit using the Page Id column, then click
+  |image230| corresponding to the page in the Action column. You will be
+   directed to the Page Editor window.
 
-Select the Permissions tab.
+3. Click View Page Properties in the Page Editor window.
 
-|image21|
+4. Select the Permissions tab.
 
-**Access permission**
+|image231|
 
-    **Note**
+.. _SettingPagePermissions.AccessPermission
 
-    To be able to access a page, you have to be in one of the groups
-    that have the *Access* permission to that page.
+Access permission
+------------------
+
+.. note:: To be able to access a page, you have to be in one of the groups that have the *Access* permission to that page.
 
 To assign the *Access* permission on a page, simply follow steps as
-stated in the `Access
-permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.AccessPermission>`__
+stated in the :ref:`Access permission <SettingPortalPermissions.AccessPermission>`
 section.
 
-**Edit permission**
+.. _SettingPagePermissions.EditPermission:
 
-    **Note**
+Edit permission
+----------------
 
-    Only users under the page's editors group can edit it. The Access
-    permission can be set for several groups but the *Edit* permission
-    only can be set for one group.
+.. note:: Only users under the page's editors group can edit it. The Access permission can be set for several groups but the *Edit* permission only can be set for one group.
 
 To give users the *Edit* permission, you must add them to the editors
 group of that page via **Permission Setting** and follow steps as stated
-in the `Edit
-permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.EditPermission>`__
-section.
+in the :ref:`Edit
+permission <SettingPortalPermissions.EditPermission>` section.
 
-**Move Apps permission**
+.. _SettingPagePermissions.MoveAppsPermission:
+
+Move Apps permission
+---------------------
 
 To assign the *Move Apps* permission on a page, simply follow steps as
-stated in `this
-section <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.MoveAppsPermission>`__.
+stated in :ref:`this section <SettingPortalPermissions.MoveAppsPermission>`.
 
-    **Note**
+.. note:: Unless a more restrictive permission is defined for a container (see :ref:`Setting Permissions on a Container <ManagingPermissions.SettingContainerPermissions>`),
+          users who are granted the **Move Apps** permission on a page are able to do the followings via Edit Page Edit Layout:
 
-    Unless a more restrictive permission is defined for a container (see
-    `Setting Permissions on a
-    Container <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingContainerPermissions>`__),
-    users who are granted the **Move Apps** permission on a page are
-    able to do the followings via Edit Page Edit Layout:
+			-  Add new applications from the **Page Editor** to the page layoutvia drag and drop.
 
-    -  Add new applications from the **Page Editor** to the page layout
-       via drag and drop.
+			-  Move applications contained in the page layout via drag and drop.
 
-    -  Move applications contained in the page layout via drag and drop.
+		  Users who are not granted the **Move Apps** permission on a page are unable to see the *Delete Portlet* icon on applications as well as drop these applications on the page layout.
 
-    Users who are not granted the **Move Apps** permission on a page are
-    unable to see the *Delete Portlet* icon on applications as well as
-    drop these applications on the page layout.
+.. _.. _SettingPagePermissions.MoveContainersPermission:
 
-**Move Containers permission**
+Move Containers permission
+---------------------------
 
 To assign the *Move Containers* permission on a page, simply follow
-steps as stated in `this
-section <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.MoveContainersPermission>`__.
+steps as stated in :ref:`this section <SettingPortalPermissions.MoveContainersPermission>`.
 
-    **Note**
+.. note:: Unless a more restrictive permission is defined for a container (see :ref:`Setting Permissions on a Container <ManagingPermissions.SettingContainerPermissions>`),
+		  users who are granted the **Move Containers** permission on a page are able to do the followings via Edit Page Edit Layout:
 
-    Unless a more restrictive permission is defined for a container (see
-    `Setting Permissions on a
-    Container <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingContainerPermissions>`__),
-    users who are granted the **Move Containers** permission on a page
-    are able to do the followings via Edit Page Edit Layout:
+			-  Add new containers from the **Page Editor** to the page layout via drag and drop.
 
-    -  Add new containers from the **Page Editor** to the page layout
-       via drag and drop.
+			-  Move containers contained in the page layout via drag and drop.
 
-    -  Move containers contained in the page layout via drag and drop.
+		  Users who are not granted the **Move Containers** permission on a page are unable to see the *Delete Container* icon on containers laid directly on the page layout.
 
-    Users who are not granted the **Move Containers** permission on a
-    page are unable to see the *Delete Container* icon on containers
-    laid directly on the page layout.
 
-    **Note**
 
-    If you choose the \* membership for the selected group when setting
-    Access, Edit, Move Apps and Move Containers permissions, all users
-    of the group regardless of their membership role will be granted the
-    *Access, Edit, Move Apps* and *Move Containers* permissions
-    respectively.
+.. note:: If you choose the \* membership for the selected group when setting Access, Edit, Move Apps and Move Containers permissions, all users of the group regardless of their membership role will be granted the *Access, Edit, Move Apps* and *Move Containers* permissions respectively.
+
+.. _ManagingPermissions.SettingContainerPermissions:
 
 Setting permissions on a container
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your user account belongs to the */platform/administrators* group,
 you can set the *Access, Move Apps* and *Move Containers* permissions on
-a specific container of a page (via Edit Page Edit Layout Page Editor)
-or a site (via Edit Site Layout Edit Inline Composer).
+a specific container of a page (via Edit --> Page --> Edit Layout --> 
+Page Editor) or a site (via Edit --> Site --> Layout --> Edit Inline 
+Composer).
 
-Select the **Containers** tab, then hover your cursor over the container
-that you want to edit and click on |image22|.
+1. Select the **Containers** tab, then hover your cursor over the 
+   container that you want to edit and click on |image232|.
 
-Select the **Permissions** tab.
+2. Select the **Permissions** tab.
 
-|image23|
+|image233|
 
-Click on the Add Permission button in the *Access, Move Apps* and *Move
-Containers* tabs to add the corresponding permissions to specific
-groups.
+3. Click on the Add Permission button in the *Access, Move Apps* and 
+   *Move Containers* tabs to add the corresponding permissions to 
+   specific groups.
 
-    **Note**
+.. note:: 	-  Users who are not granted the *Move Apps* permission on a container do not see the *Delete Portlet* icon laid directly on applications contained in the container in edit mode.
 
-    -  Users who are not granted the *Move Apps* permission on a
-       container do not see the *Delete Portlet* icon laid directly on
-       applications contained in the container in edit mode.
+			-  Users who are not granted the *Move Containers* permission on a container do not see the *Delete Container* icon in edit mode.
 
-    -  Users who are not granted the *Move Containers* permission on a
-       container do not see the *Delete Container* icon in edit mode.
+			-  Users who are granted the *Move Apps* or *Move Containers* permissions on a container can add new applications or containers from the composer to this container via drag and drop. Besides, they can move the applications or containers contained in this container via drag and drop.
 
-    -  Users who are granted the *Move Apps* or *Move Containers*
-       permissions on a container can add new applications or containers
-       from the composer to this container via drag and drop. Besides,
-       they can move the applications or containers contained in this
-       container via drag and drop.
+.. _ManagingPermissions.SettingAccessPermissionOnCategory:
 
 Setting Access permission on a category
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _AccessingManageApplicationsPage:
 
 Setting the *Access* permission on categories allows these categories to
 be listed when a page is edited to add portlets or widgets.
 
-Click |image24| Applications on the top navigation bar to open the
-**Manage Applications** page.
+1. Click |image234| Applications on the top navigation bar to open the
+   **Manage Applications** page.
 
-|image25|
+|image235|
 
-Select one category from the list of available categories in the left
-panel, then click |image26|.
+2. Select one category from the list of available categories in the left
+   panel, then click |image236|.
 
-Select the Permission Setting tab.
+3. Select the Permission Setting tab.
 
-Set the *Access* permission on a category that is similar to the `Access
-permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.AccessPermission>`__
-section.
+4. Set the *Access* permission on a category that is similar to the 
+   :ref:`Access permission <SettingPortalPermissions.AccessPermission>`
+   section.
 
-    **Note**
 
-    If you set the \* membership for a group, all users of the group
-    will have the right to view this category when `editing
-    layout <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`__.
+.. note:: If you set the \* membership for a group, all users of the group will have the right to view this category when :ref:`editing layout <EditingLayout>`.
+
+.. _ManagingPermissions.SettingAccessPermissionOnPortlet:
 
 Setting Access permission on a portlet
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Go to the Manage Applications
-page <#AccessingManageApplicationsPage>`__.
+1. :ref:`Go to the Manage Applications page <AccessingManageApplicationsPage>`.
 
-Select the category containing the portlet you want to set the *Access*
-permission, then click the relevant portlet under your selected
-category.
+2. Select the category containing the portlet you want to set the 
+   *Access* permission, then click the relevant portlet under your 
+   selected category.
 
-The selected portlet will be highlighted in grey in the left panel with
-its detailed information in the right pane.
+   The selected portlet will be highlighted in grey in the left panel 
+   with its detailed information in the right pane.
 
-Follow steps stated in the `Access
-permission <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions.SettingPortalPermissions.AccessPermission>`__
-section to assign the Access permission on your selected portlet in the
-Default Permission Settings form.
+3. Follow steps stated in the :ref:`Access permission <SettingPortalPermissions.AccessPermission>`
+   section to assign the Access permission on your selected portlet in 
+   the Default Permission Settings form.
 
-    **Note**
+.. note:: If you set the \* membership for a group, all users of the group will have the right to view this application when :ref:`editing layout <EditingLayout>`.
 
-    If you set the \* membership for a group, all users of the group
-    will have the right to view this application when `editing
-    layout <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`__.
 
-.. |image0| image:: images/common/administration_navigation.png
-.. |image1| image:: images/platform/register_node.png
-.. |image2| image:: images/common/edit_navigation.png
-.. |image3| image:: images/platform/register_page_layout.png
-.. |image4| image:: images/common/save_icon.png
-.. |image5| image:: images/common/edit_navigation.png
-.. |image6| image:: images/common/save_icon.png
-.. |image7| image:: images/platform/register_top_navigation.png
-.. |image8| image:: images/platform/register_form_public.png
-.. |image9| image:: images/common/administration_navigation.png
-.. |image10| image:: images/gatein/manage_sites.png
-.. |image11| image:: images/gatein/select_edit_portal_config.png
-.. |image12| image:: images/gatein/add_permission_button.png
-.. |image13| image:: images/gatein/add_permission_button.png
-.. |image14| image:: images/gatein/edit_permission_settings_subtab.png
-.. |image15| image:: images/gatein/permission_selector_form_edit.png
-.. |image16| image:: images/gatein/moveapps_permission_settings_subtab.png
-.. |image17| image:: images/gatein/movecontainers_permission_settings_subtab.png
-.. |image18| image:: images/gatein/access_edit_page_layout.png
-.. |image19| image:: images/common/administration_navigation.png
-.. |image20| image:: images/common/edit_icon.png
-.. |image21| image:: images/gatein/permission_settings_tab_of_page.png
-.. |image22| image:: images/common/edit_icon.png
-.. |image23| image:: images/gatein/setting_container_permission.png
-.. |image24| image:: images/common/administration_navigation.png
-.. |image25| image:: images/gatein/access_applications_page.png
-.. |image26| image:: images/common/edit_icon.png

@@ -321,6 +321,8 @@ One of the two following cases occurs when you select this tab.
       This application is invisible to space members, except the space
       manager. See :ref:`Managing space settings <Manage-Space-Settings>` to know how to edit a space.
 
+.. _MembersListOfSpace:
+
    -  **Members**: Displays the list of space members.
 
 .. note:: When accessing the Members application of the space, you will
@@ -429,6 +431,8 @@ Select the Members tab in **Space Settings** page.
 
 Here, you can do many actions on members as follows:
 
+.. _InvitingMembers:
+
 Inviting new members
 ---------------------
 
@@ -521,6 +525,8 @@ requests for joining your space.
 -  To decline a user's request for joining your space, click |image48|
    in the Action column.
 
+.. _PromotingDemotingMember:
+
 Promoting/Demoting a member
 ----------------------------
 
@@ -534,6 +540,8 @@ Promoting/Demoting a member
 			will not be able to change your space's settings anymore. Besides,
 			there should be at least one manager in a space, so the last manager
 			of the space is not permitted to be demoted.
+
+.. _RemovingMember:
 
 Removing a member
 ------------------
