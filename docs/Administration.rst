@@ -266,7 +266,7 @@ follows:
 
    |image11|
 
-.. _Editing:
+.. _EditingeXoPlatform:
 
 =====================
 Editing eXo Platform
@@ -2434,7 +2434,7 @@ Managing sites
 
 Managing sites include the following actions:
 
--  :ref:`Creating a newsite <CreatingNewSite>`
+-  :ref:`Creating a new site <CreatingNewSite>`
 
 -  :ref:`Editing asite <ManagingSites.EditingSite>`
 
@@ -2665,7 +2665,7 @@ Managing pages includes the following actions:
 
 -  :ref:`Editing the page properties and layout. <ManagingPages.EditingPage>`
 
--  :ref:`Deleting a page. <ManagingPages.DeletingPage>`
+-  :ref:`Deleting a page <ManagingPages.DeletingPage>`
 
 .. _ManagingPages.AddingNewPage:
 
@@ -2987,7 +2987,7 @@ is private, no one can access or edit it, except the creator.
 3. Click Save, then select |image205| in Page Editor for all changes to 
    take effect, or |image206| to abort.
 
-.. ManagingPages.DeletingPage:
+.. _ManagingPages.DeletingPage:
 
 Deleting a page
 ~~~~~~~~~~~~~~~~
@@ -3000,7 +3000,7 @@ You will see a list of all existing pages.
 
 3. Click **OK** in the confirmation message.
 
-.. _ManagingPermissions:
+.. _Administrayion.ManagingPermissions:
 
 ====================
 Managing permissions
