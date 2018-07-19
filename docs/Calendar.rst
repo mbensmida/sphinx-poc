@@ -397,7 +397,7 @@ You can set permissions on your shared calendar based on 2 levels:
    shared calendar. However, you cannot edit detailed information of a
    shared calendar, such as its display name.
 
-.. note:: If other users share their calendars with you, you will see them in the **Shared Calendars** category even after the users :ref:`are suspended <#PLFUserGuide.AdministeringeXoPlatform.ManagingYourOrganization.ManagingUsers.DisablingUser>`.
+.. note:: If other users share their calendars with you, you will see them in the **Shared Calendars** category even after the users :ref:`are suspended <ManagingUsers.DisablingUser>`.
 
 .. _SharePersonalCalendar:
 

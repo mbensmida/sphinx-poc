@@ -171,7 +171,7 @@ Permission
 
 **Permission** settings control actions of a user within the site and
 are set by the administrators. See `Managing
-permissions <#PLFUserGuide.AdministeringeXoPlatform.ManagingPermissions>`__
+permissions <Administration.ManagingPermissions>`
 for more details.
 
 Repository
@@ -275,9 +275,8 @@ Setting up your account
 
 -  It is required to fill all fields, except the Username field of the
    Admin Password form, which is pre-filled with "root" and disabled.
-   See `Adding a
-   user <#PLFUserGuide.AdministeringeXoPlatform.ManagingYourOrganization.AddingUser>`__
-   for more details.
+   See :ref:`Adding auser <ManagingYourOrganization.AddingUser>` for 
+   more details.
 
 -  Values entered in both Password and Confirm fields must be the same.
 
@@ -349,15 +348,12 @@ There are 3 main divisions in the **Social Intranet** homepage:
       your display name, for example: John Smith.
 
    -  **Notification**: Clicking |image8| will show all on-site
-      notifications. See `Managing your
-      notifications <#PLFUserGuide.ManagingYourPersonalApplications.ManagingNotification>`__
+      notifications. See :ref:`Managing your notifications <Managing-Notification>`
       for more details.
 
    -  **Search**: Search for any types in eXo Platform, such as people,
       spaces, files, events, tasks, activities, by clicking |image9|.
-      See `Searching In
-      eXo Platform <#PLFUserGuide.SearchingIneXoPlatform>`__ for more
-      details.
+      See :ref:`Searching In eXo Platform <Search>` for more details.
 
    -  **Create**: Quickly create content (Wiki pages, topics, polls,
       events/tasks, files) from any places by clicking |image10|. See
@@ -371,8 +367,7 @@ There are 3 main divisions in the **Social Intranet** homepage:
 
    -  **Edit**: Manage certain aspects of eXo Platform, including content,
       pages and sites by clicking |image12|. This menu is only visible to
-      members of editor and administrator groups. See `Customizing
-      eXo Platform <#PLFUserGuide.AdministeringeXoPlatform.Customizing>`__
+      members of editor and administrator groups. See :ref:`Customizing eXo Platform <CustomizingLookAndFeel>`
       for details.
 
        .. note:: The number of menus which are displayed on the top navigation may vary, depending on your role. For example the administration menu appears only for members of the group */platform/administrators*.
@@ -491,12 +486,12 @@ Creating an event
 -------------------
 
 1. Simply select Event from the drop-down menu. The menu will be updated
-into the Add event form.
+   into the Add event form.
 
 |image37|
 
 2. Give details for your event, including: Title, From and To dates, time.
-For more details, see `Creating a new event <#PLFUserGuide.ManagingYourCalendars.SchedulingEvent.CreatingNewEvent>`__.
+   For more details, see :ref:`Creating a new event <CreatingNewEvent>`.
 
 3. Select the calendar where your event will be created from the Select Calendar drop-down menu.
 
@@ -511,8 +506,8 @@ A pop up |image38| appears indicating in which calendar the event was added.
 Creating a poll
 ----------------
 
-1. Click Poll from the drop-down menu. This menu will be updated into the
-form as below:
+1. Click Poll from the drop-down menu. This menu will be updated into 
+   the form as below:
 
 |image39|
 
@@ -521,8 +516,8 @@ form as below:
 				available yet to create a poll. Start by creating your own space."
 
 2. Select the location where your poll is created from the In Location
-menu. If you have at least one public forum, the "intranet" location is
-selected by default.
+   menu. If you have at least one public forum, the "intranet" location 
+   is selected by default.
 
 3. Click Next to open the Poll form, or Cancel to dismiss the form.
 
@@ -536,9 +531,8 @@ selected by default.
 
    |image40|
 
-4. Fill in the Poll form. See `Creating a
-poll <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.CreatingPoll>`__
-for more details.
+4. Fill in the Poll form. See :ref:`Creating a poll <Create-poll>` for 
+   more details.
 
 .. _Creating a topic: 
  
@@ -565,9 +559,8 @@ drop-down menu. The "intranet" is selected by default.
 
    |image41|
 
-4. Fill in the New Topic form. See `Creating a
-topic <#PLFUserGuide.BuildingYourForum.RegularUser.Topics.CreatingTopic>`__
-for more details.
+4. Fill in the New Topic form. See :ref:`Creating a topic <Create-topic>`
+   for more details.
 
 .. _Uploading a document: 
 
@@ -585,16 +578,14 @@ Creating a Wiki page
 
 |image42|
 
-2. Select the location where your Wiki page is created from the In Location
-drop-down menu. The "Intranet" space is selected by default.
+2. Select the location where your Wiki page is created from the In 
+   Location drop-down menu. The "Intranet" space is selected by default.
 
 3. Click Next to be redirected to the Wiki application of your selected
-location. Here, you can `navigate across
-spaces <#PLFUserGuide.BuildWiki.Overview.NavigatingAcrossAspaces>`__.
+   location. Here, you can :ref:`navigate across spaces <Navigate-across-spaces>`.
 
-4. Enter the content of your Wiki page. See `Creating a
-page <#PLFUserGuide.WorkingWithWikis.ManagingContent.AddingAndEditingPages.CreatingPage>`__
-for more details.
+4. Enter the content of your Wiki page. See :ref:`Creating a page <Creating-New-Page>`
+   for more details.
 
 .. _Intranet-Gadgets:
 
@@ -620,15 +611,15 @@ Intranet homepage applications on the top right. This application helps
 you start exploring the Social Intranet by suggesting you where to go
 and what you should do first via the following links:
 
--  `Add a profile picture <#PLFUserGuide.ManagingYourPersonalApplications.ManagingYourProfile.Edit.Avatar>`__
+-  `Add a profile picture <Change-your-avatar>`
 
--  `Connect to coworkers <#PLFUserGuide.ManagingYourPersonalApplications.ManagingYourConnections.SendingConnectionRequests>`__
+-  `Connect to coworkers <Send-Connection-Request>`
 
--  `Join a space <#PLFUserGuide.WorkingWithSpaces.JoiningSpace>`__
+-  `Join a space <Join-space>`
 
 -  :ref:`Post anactivity <Share-AS>`
 
--  `Upload a document <#PLFUserGuide.ManagingYourDocuments.WorkingWithBasicActions.UploadingFiles>`__
+-  `Upload a document <Uploading-files>`
 
 |image43|
 
@@ -803,7 +794,7 @@ Signing in Social Intranet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     .. note:: To sign in Social Intranet, you must have an account. Your account is created by the Administrators and you can :ref:`change your profile <Profile-info>` and :ref:`password <Change-password>` later.
-				See how to add a new user in the `Adding a user <#PLFUserGuide.AdministeringeXoPlatform.ManagingYourOrganization.AddingUser>`__ section.
+				See how to add a new user in the :ref:`Adding a user <ManagingYourOrganization.AddingUser>` section.
 
 You can sign in Social Intranet by doing as follows:
 |image19|
@@ -937,8 +928,7 @@ like this:
 |image28|
 
 The link expires as soon as you successfully reset the password, or
-after 1 day by default. The system administrators can `configure the
-expiration time <#PLFAdminGuide.Configuration.ForgotPassword>`__.
+after 1 day by default. The system administrators can :ref:`configure the expiration time <#PLFAdminGuide.Configuration.ForgotPassword>`.
 
 
 .. _Managing-Activities:
@@ -1078,9 +1068,8 @@ file appears:
 
 |image70|
 
-Select the desired file or files. More details in `Share multiple
-documents in activity
-stream <#PLFUserGuide.ManagingYourDocuments.SharingYourDocuments.MultiUpload>`__ \ section.
+Select the desired file or files. More details in `Share multiple documents in activitystream <MultiUpload>` 
+section.
 
 You can add a text message or not and then click on |image71| button to
 share the file(s) in the activity stream.
@@ -1469,8 +1458,7 @@ Liking comments on documents preview
 -----------------------------------------
 
 
-The like on comments feature is available for the `documents
-preview <#PLFUserGuide.ManagingYourDocuments.DocumentViewer>`__.
+The like on comments feature is available for the :ref:`documents preview <DocumentViewer>`.
 
 It behaves the same as in the activity stream:
 
@@ -1578,9 +1566,8 @@ someone replies to your comment which contains:
 
 |image129|
 
-A new line in `my
-notifications <#PLFUserGuide.ManagingYourPersonalApplications.NotificationSettings>`__
-settings is added to manage reply to comment notifications:
+A new line in :ref:`my notifications <Notification-Settings>` settings 
+is added to manage reply to comment notifications:
 
 |image130|
 

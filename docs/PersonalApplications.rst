@@ -91,9 +91,7 @@ This layout enables you to view:
    made. From the scratch, if you do not have anyone in your network, a
    message saying "*You do not have connections yet.*\ " will be
    displayed. By clicking **Find connections**, you will be redirected
-   to the `Search for
-   contacts <#PLFUserGuide.SearchingIneXoPlatform.RefiningYourSearch.SearchingForContact>`__
-   page.
+   to the :ref:`Search for contacts <SearchingForContact>` page.
 
     .. note:: When you change the information of your profile at the first time, an activity will be created on the activity stream. Also, a comment informing your change is added to the activity. Your later changes will automatically create comments updated to the activity.
 
@@ -198,7 +196,7 @@ Contact Information
 | Email                | The email address that should be in a valid format, |
 |                      | for example, johnsmith@exoplatform.com (see more    |
 |                      | details about the **Email Address** format          |
-|                      | `here <#CreateNewAccountFormDetails>`__.)           |
+|                      | :ref:`here <CreateNewAccountFormDetails>`.)         |
 +----------------------+-----------------------------------------------------+
 
     .. note:: You can also change the above information in the Account Profiles
@@ -211,9 +209,8 @@ Contact Information
 |                      | defined, the default avatar is used.                |
 +----------------------+-----------------------------------------------------+
 | Job Title            | The job position. Note that the information entered |
-|                      | in the field will be retrieved when you `search for |
-|                      | contacts <#PLFUserGuide.SearchingIneXoPlatform.Refi |
-|                      | ningYourSearch.SearchingForContact>`__.             |
+|                      | in the field will be retrieved when you             |
+|					   |  :ref:`search for contacts <SearchingForContact>    | 
 +----------------------+-----------------------------------------------------+
 | Gender               | The gender of user. Select your gender from the     |
 |                      | select box, either male or female.                  |
@@ -529,8 +526,7 @@ your own Wiki page. See the :ref:`Working With Wikis <Wiki>` chapter for the ful
 |image31|
 
     .. note:: Your wiki page is private by default. This means only you and your administrator can access this via the link (``.../wiki/user/[username]``). 
-				However, if you have `made public <#PLFUserGuide.WorkingWithWikis.ManagingContent.SpreadingContent.SharingLink.MakingPublic>`__
-				for your own wiki, anyone can access, read and edit it via the link.
+				However, if you have :ref:`made public <MakingPublic>` for your own wiki, anyone can access, read and edit it via the link.
 
 
 
@@ -723,7 +719,8 @@ Favorite Documents
 |image44|
 
 The Favorite Documents gadget lists all of your documents which are
-`added to favorites <#PLFUserGuide.ManagingYourDocuments.OrganizingYourContent.AddingToFavorites>`__, so you can quickly access them.
+:ref:`added to favorites <AddingToFavorites>`, so you can quickly access
+them.
 
 You can go the Favorites folder in the Personal Documents drive by clicking |image45|.
 
@@ -812,9 +809,7 @@ When this function is enabled, you will receive emails in 2 ways:
 
    |image53|
 
-    .. note:: To receive notification and digest emails as well as on-site
-				notifications, your administrator must enable notification plugins
-				first. See `Notification administration <#PLFUserGuide.AdministeringeXoPlatform.NotificationAdministration>`__ for details.
+    .. note:: To receive notification and digest emails as well as on-site notifications, your administrator must enable notification plugins first. See :ref:`Notification administration <NotificationAdministration>` for details.
 
 This section shows you how to manage your notifications via the
 following topics:
@@ -1280,7 +1275,7 @@ such as:
    set at the corresponding reply. In case of a space discussion, the
    space's forum is opened.
 
--  `Answers <#eXoAddonsGuide.Answers>`__: Open action opens the
+-  :ref:`Answers <#eXoAddonsGuide.Answers>`: Open action opens the
    corresponding topic in the Answers application with an anchor set at
    the corresponding question or answer.
 

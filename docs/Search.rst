@@ -204,7 +204,7 @@ Changing settings for Search textbox
 to the main page body.
 
 
- .. note:: If you do not see the **Quick Search** portlet in the Page Editor, you need to import it as described in `Importing portlets and gadgets <#ImportingPortletGadgets>`.
+ .. note:: If you do not see the **Quick Search** portlet in the Page Editor, you need to import it as described in :ref:`Importing portlets and gadgets <ImportingPortletGadgets>`.
 
 2. Hover your cursor over the **Quick Search** portlet and select 
    |image11| to see the Quick Search settings in the Edit Mode mode.

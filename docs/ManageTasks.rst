@@ -51,8 +51,8 @@ some terms that you should be aware of:
 	- Done: tasks on which work is ended.
 
 .. note:: Changing the default workflow for new projects is done only by
-			the administrator, see `this
-			section <#PLFAdminGuide.Configuration.TaskManagement>` for more details.
+			the administrator, see :ref:`this section <#PLFAdminGuide.Configuration.TaskManagement>` 
+			for more details.
 
 -  **Sub-project**: A project can have any number of sub-projects and a
    sub-project can also have an unlimited number of smaller

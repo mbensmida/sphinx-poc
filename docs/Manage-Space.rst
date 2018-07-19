@@ -555,7 +555,7 @@ there will be a warning like this:
 That is, you should promote another member to the manager position
 before you can delete that member.
 
- .. note::You cannot invite, promote, demote or remove users who are `suspended by an administrator <#PLFUserGuide.AdministeringeXoPlatform.ManagingYourOrganization.ManagingUsers.DisablingUser>`__.
+ .. note::You cannot invite, promote, demote or remove users who are :ref:`suspended by an administrator <ManagingUsers.DisablingUser>`.
     
 .. _ManagingSpaceApplication:    
 
@@ -603,8 +603,7 @@ page, you will be redirected to it.
 Also, you can easily manage these pages on the space navigation bar
 through actions on the relevant navigation nodes. To do so, in Space
 Settings, select the Navigations bar, then right-click the relevant
-navigation node. See `Managing navigation
-nodes <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations>`__
+navigation node. See :ref:`Managing navigation nodes <ManagingNavigations>`
 for more details.
 
 |image56|
@@ -614,20 +613,17 @@ Creating a space page
 
 To create a page that is accessible on the space navigation bar, simply
 add a navigation node that links to your desired page in the Page
-Selector tab. See `Adding a new
-node <#PLFUserGuide.AdministeringeXoPlatform.ManagingNavigations.AddingNewNode>`__
+Selector tab. See :ref:`Adding a new node <ManagingNavigations.AddingNewNode>` 
 for more details.
 
 |image57|
 
 Also, you can create a space page using:
 
--  `Page Creation
-   Wizard <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.AddingNewPage.PageCreationWizard>`__;
+-  :ref:`Page Creation Wizard <PageCreationWizard>`;
    Or
 
--  `Pages
-   Management <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.AddingNewPage.PagesManagement>`__.
+-  :ref:`Pages Management <PagesManagement>`.
    In this case, Owner Type should be **group**, and Owner Id should be
    **/spaces/[space\_node\_name]**. For example, if you want to add a
    page to the space named PLF team, the Owner Id should be
@@ -642,9 +638,7 @@ Editing a space page
 To edit this space page, simply right-click the navigation node
 containing the page and select Edit Node's Page from the context menu.
 The **Edit Page** window will be displayed in the Page Properties view.
-See `Editing a
-page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.EditingPage>`__
-for more details.
+See :ref:`Editing a page <ManagingPages.EditingPage>` for more details.
 
 Removing a space page
 ----------------------
@@ -652,8 +646,7 @@ Removing a space page
 If you right-click the node containing the page and select Delete Node
 from the context menu, only the navigation node linking to the page will
 be removed from the space navigation bar, but its page still exists. To
-actually delete this page, see `Deleting a
-page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.DeletingPage>`__.
+actually delete this page, see :ref:`Deleting a page <ManagingPages.DeletingPage>`.
 
 
 .. _Join-Leave-Space:

@@ -2078,6 +2078,8 @@ Removing a user
 In the Users tab, simply click |image164| in the Action column, then 
 click **OK** in the confirmation message.
 
+.. _ManagingUsers.DisablingUser:
+
 Activating/Suspending a user
 ----------------------------
 
@@ -3000,7 +3002,7 @@ You will see a list of all existing pages.
 
 3. Click **OK** in the confirmation message.
 
-.. _Administrayion.ManagingPermissions:
+.. _Administration.ManagingPermissions:
 
 ====================
 Managing permissions
@@ -4021,6 +4023,8 @@ The Edit Mode will be displayed.
 
 The Import Applications button is now shown on the Manage Applications
 page.
+
+.. _ImportingPortletGadgets:
 
 **Importing portlets and gadgets**
 

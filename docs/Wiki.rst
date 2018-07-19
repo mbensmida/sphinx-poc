@@ -1204,7 +1204,7 @@ WebDAV support in Wiki
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To make easy for Wiki resources management, you can access these
-resources using WebDAV. Besides the way stated :ref:`here <#PLFUserGuide.AdministeringeXoPlatform.WebDAV>`, you can use the following URL format to access the Wiki resources:
+resources using WebDAV. Besides the way stated :ref:`here <WebDAV>`, you can use the following URL format to access the Wiki resources:
 
 -  `http://mycompany.com:port/rest/private/jcrwiki/{RepositoryName}/{WorkspaceName}/{Path} <http://mycompany.com:port/rest/jcrwiki/{RepositoryName}/{WorkspaceName}/{Path}>`__
 

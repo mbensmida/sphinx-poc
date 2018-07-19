@@ -722,7 +722,7 @@ chat window, a loading icon |image0| appears the time to load up to 200
 old message. When the loading icon |image1| disapears this means that
 the 200 messages was loaded and you can read them.
 
-   .. note:: The number of loaded chat messages is set by default to 200, it could be configurable in `exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__.
+   .. note:: The number of loaded chat messages is set by default to 200, it could be configurable in :ref:`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`.
 
 .. _ResponsiveDesign:
 

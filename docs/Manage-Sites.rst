@@ -763,13 +763,9 @@ portlet to a specific page as follows:
 
 1. Drag and drop the **Content By Query** portlet from the 
    **Page Editor** --> **Applications** --> **Content**
-   to the main pane. This can be done while :ref:`creating
-a new
-page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.AddingNewPage>`
-or `editing an existing
-page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.EditingPage>`
-or `editing the layout of a
-site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`.
+   to the main pane. This can be done while :ref:`creating a new page <ManagingPages.AddingNewPage>`
+   or :ref:`editing an existing page <ManagingPages.EditingPage>`
+   or :ref:`editing the layout of a site <EditingLayout>`.
 
 |image52|
 
@@ -808,8 +804,7 @@ Action bar.
 
 By default, these buttons are available in the Categories and Web views.
 To know which drives have these views, see
-:ref:`here <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithExplorer.Drives>`
-for more details.
+:ref:`here <WorkingWithExplorer.Drives>` for more details.
 
 .. _CreateNewCat:
 
@@ -881,7 +876,7 @@ different actions in the right-click menu.
 
 |image59|
 
-.. note:: To know which drives contain categories, see :ref:`Categories <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithAdvancedConfiguration.Categories>` in Content Administration.
+.. note:: To know which drives contain categories, see :ref:`Categories <WorkingWithAdvancedConfiguration.Categories>` in Content Administration.
 		   When copying and pasting content in the category tree, a reference to the original content will be created. This reference is a symlink rather than a copy. This feature is used to preserve the disk space.
 
 .. _RemoveCatFromContent:
@@ -1120,7 +1115,7 @@ existing site.
 5. Complete editing the selected web content by clicking Save or Save &
    Close.
 
-.. note:: When you click |Edit Document1|, the web content will be auto-locked for your editing. After finishing, the content is back to the unlock status. You can manage "Locks" in the :ref:`Unlocking a node <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithRepository.Locks.LockingNode>` section.
+.. note:: When you click |Edit Document1|, the web content will be auto-locked for your editing. After finishing, the content is back to the unlock status. You can manage "Locks" in the :ref:`Unlocking a node <WorkingWithRepository.Locks>` section.
 
 .. _PublishWebContent:
 
@@ -1199,8 +1194,7 @@ To manage site content using WebDAV, follow either of two ways:
 **The first way**
 
 You need to connect to your WebDAV clients. See
-:ref:`WebDAV <#PLFUserGuide.AdministeringeXoPlatform.WebDAV>` for more
-details.
+:ref:`WebDAV <WebDAV>` for more details.
 
 It is assumed that you want to access the ACME site using WebDAV, simply
 use the URL:
@@ -1286,12 +1280,9 @@ of time when creating a new document.
 To use the **Fast Content Creator** portlet, you need to add it to a
 specific page first by dragging and dropping the Fast Content Creator
 portlet from **Page Editor** --> **Applications** --> Forms to the main 
-pane. This can be done when :ref:`creating a new
-page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.AddingNewPage>`
-or :ref:`editing an existing
-page <#PLFUserGuide.AdministeringeXoPlatform.ManagingPages.EditingPage>`
-or :ref:`editing the layout of a
-site <#PLFUserGuide.AdministeringeXoPlatform.ManagingSites.EditingSite.EditingLayout>`.
+pane. This can be done when :ref:`creating a new page <ManagingPages.AddingNewPage>`
+or :ref:`editing an existing page <ManagingPages.EditingPage>`
+or :ref:`editing the layout of a site <EditingLayout>`.
 
 |image95|
 

@@ -77,8 +77,7 @@ view.
 
 |image3|
 
-.. note::Refer to :ref:`Views <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration.WorkingWithExplorer.Views>`
-			to learn about differences between views.
+.. note::Refer to :ref:`Views <WorkingWithExplorer.Views>` to learn about differences between views.
 
 The way to do actions on content is different between **Icons** and
 **List** views as follows:
@@ -437,6 +436,8 @@ Windows
 
 **Note 1. Allowing to open and edit MS Office file types.**
 
+.. _ConfiguringWebDAVRedirector:
+
 1. Configure WebDAV Redirector on the client.
 
 -  On Windows 7, click **Start**, type *regedit* in the Start Search
@@ -464,8 +465,7 @@ Windows
    (for MS Office 2013).
 
 -  On the Edit menu, create *BasicAuthLevel* with the same value as in
-   `Configure WebDAV Redirector on the
-   client <#ConfiguringWebDAVRedirector>`__.
+   :ref:`Configure WebDAV Redirector on the client <ConfiguringWebDAVRedirector>`.
 
 3. Exit **Registry Editor**, and restart your client.
 
@@ -985,7 +985,7 @@ One message of successful watching will display as below.
 
 
 .. note:: A notification message will be sent to your email address which is set in :ref:`your profile <Edit-Your-Profile>`.
-			However, if your account :ref:`is suspended <#PLFUserGuide.AdministeringeXoPlatform.ManagingYourOrganization.ManagingUsers.DisablingUser>`,
+			However, if your account :ref:`is suspended <ManagingUsers.DisablingUser>`,
 			the function will stop working.
 
 .. _unwatch-doc:
@@ -1451,7 +1451,7 @@ Copying URL to clipboard
 
 The **Copy URL To Clipboard** feature enables you to copy the WebDAV URL
 of content. You then can view it using the WebDAV client as stated in
-:ref:`WebDAV <#PLFUserGuide.AdministeringeXoPlatform.WebDAV>`.
+:ref:`WebDAV <WebDAV>`.
 
 1. Select the content you want to copy its URL, then click |image112| from
 the Right-click menu or on the Action bar.
@@ -1531,7 +1531,7 @@ For example:
 -  For *nt:file*: The content of the document will be shown.
 
 In addition to web browser, you can access the content through another
-WebDAV clients. See :ref:`WebDAV <#PLFUserGuide.AdministeringeXoPlatform.WebDAV>` for more details.
+WebDAV clients. See :ref:`WebDAV <WebDAV>` for more details.
 
 .. _OrganizingYourContent:
 
@@ -2203,7 +2203,7 @@ of additional features for managing your content. Some of extended
 features are set in the **Admin** view by default, or your administrator
 can enable them for any specific views.
 
-.. note:: This part is mostly for administrators who have right to access the :ref:`Content Administration <#PLFUserGuide.AdministeringeXoPlatform.ContentAdministration>` page where extended actions can be activated.
+.. note:: This part is mostly for administrators who have right to access the :ref:`Content Administration <ContentAdministration>` page where extended actions can be activated.
 
 The followings are additional actions which are not accessible in the
 **List** and **Icons** views, but are set by default in the **Admin**
