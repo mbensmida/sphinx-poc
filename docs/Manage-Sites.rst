@@ -1805,7 +1805,7 @@ Users can easily print any content in a site by following these steps:
 .. |image48| image:: images/ecms/approve_content_button.png
 .. |image49| image:: images/ecms/publish_button.png
 .. |Manage Publications| image:: images/ecms/publications_button.png
-.. |image5| image:: images/ecms/manage_publication_form.png
+.. |image50| image:: images/ecms/manage_publication_form.png
 .. |magnifying glass2| image:: images/ecms/preview_content_icon.png
 .. |Restore Version| image:: images/ecms/restore_icon.png
 .. |image51| image:: images/ecms/scheduled_tab.png

@@ -611,15 +611,15 @@ Intranet homepage applications on the top right. This application helps
 you start exploring the Social Intranet by suggesting you where to go
 and what you should do first via the following links:
 
--  `Add a profile picture <Change-your-avatar>`
+-  :ref:`Add a profile picture <Change-your-avatar>`
 
--  `Connect to coworkers <Send-Connection-Request>`
+-  :ref:`Connect to coworkers <Send-Connection-Request>`
 
--  `Join a space <Join-space>`
+-  :ref:`Join a space <Join-space>`
 
 -  :ref:`Post anactivity <Share-AS>`
 
--  `Upload a document <Uploading-files>`
+-  :ref:`Upload a document <Uploading-files>`
 
 |image43|
 
@@ -1068,7 +1068,7 @@ file appears:
 
 |image70|
 
-Select the desired file or files. More details in `Share multiple documents in activitystream <MultiUpload>` 
+Select the desired file or files. More details in :ref:`Share multiple documents in activity stream <MultiUpload>` 
 section.
 
 You can add a text message or not and then click on |image71| button to
@@ -1135,18 +1135,18 @@ different effects.
 Select the text you want to format. Then click on one of the buttons
 from the formatting toolbar to apply its effect:
 
--  |image80| The first button formats the text as bold.
+-  |image79| The first button formats the text as bold.
 
--  |image81| The second button formats the text as italic.
+-  |image80| The second button formats the text as italic.
 
--  |image82| The third button clears the existing format.
+-  |image81| The third button clears the existing format.
 
--  |image83| Writing a text then clicking on the fourth button adds the
+-  |image82| Writing a text then clicking on the fourth button adds the
    text to a numbered list. Clicking on Enter button of the keyboard
    adds a new line with the following number.
    When the listing is finished, to exit from the numbered list, you should click twice on Enter button of the keyboard.
 
--  |image84| Typing a text then clicking on that button adds a bullet
+-  |image83| Typing a text then clicking on that button adds a bullet
    list. When you finish your listing, you need to double click on Enter
    button of the keyboard.
 
@@ -1154,28 +1154,28 @@ Quote text in the microblog
 ----------------------------
 
 The formatting toolbar allows you to quote a previous text message. To
-do this, click on the Quote button |image85| and then copy and paste the
+do this, click on the Quote button |image84| and then copy and paste the
 text you want to quote.
 
 Double click on the Enter button on your keyboard to leave the quote
 area.
 
-|image86|
+|image85|
 
 Insert link in the microblog
 ------------------------------
 
 To insert a link in your text message/comment, click on the link button
-|image87| to bring up a Link form . Type the text and link into this
+|image86| to bring up a Link form . Type the text and link into this
 form.
 
 The text you type will appear in your message/comment and will redirect
 users to the inserted link.
 
-|image88|
+|image87|
 
 You can also link to text that has already been typed. Select the text,
-then click on the Link button |image89|.
+then click on the Link button |image88|.
 
 The Link form will appear with the Text field already completed. To
 finish, type the link.
@@ -1366,6 +1366,8 @@ will be displayed below the activity. You can click "View all XX
 comments" (XX is the total number of comments) to view 10 more comments.
 If some comments left are not displayed yet, click View previous
 comments on the top of the comment part to view more.
+
+|viewmore|
 
 You can mention people in your comment by "@" symbol into your activity
 composer, then type the person name you want to mention. See :ref:`Mentioning
@@ -1640,7 +1642,7 @@ is highlighted.
 .. |image22| image:: images/platform/account_settings_form.png
 .. |image23| image:: images/platform/change_password_form.png
 .. |image24| image:: images/platform/social_networks_form.png
-.. |image24| image:: images/platform/login_form.png
+.. |image24| image:: images/platform/social_networks_form.png
 .. |image25| image:: images/platform/forgot_password_1.png
 .. |image26| image:: images/platform/forgot_password_2.png
 .. |image27| image:: images/platform/forgot_password_3.png
@@ -1665,13 +1667,13 @@ is highlighted.
 .. |image46| image:: images/gatein/calendar_gadget.png
 .. |image47| image:: images/common/settings_icon.png
 .. |image48| image:: images/common/close_icon.png
-.. |image49| image:: images/gatein/plus_icon.png
-.. |image50| image:: images/gatein/invitations_gadget.png
-.. |image51| image:: images/common/close_icon.png
-.. |image52| image:: images/gatein/suggestions_gadget.png
-.. |image53| image:: images/common/close_icon.png
-.. |image54| image:: images/gatein/who_online_gadget.png
-.. |image55| image:: images/platform/language_setting.png
+.. |image49| image:: images/gatein/invitations_gadget.png
+.. |image50| image:: images/common/close_icon.png
+.. |image51| image:: images/gatein/suggestions_gadget.png
+.. |image52| image:: images/common/close_icon.png
+.. |image53| image:: images/gatein/who_online_gadget.png
+
+.. |image55| image:: images/platform/change_language.png
 .. |image56| image:: images/platform/language_setting.png
 .. |image57| image:: images/platform/activity_composer.png
 .. |image58| image:: images/platform/formatting_toolbar.png
@@ -1751,3 +1753,5 @@ is highlighted.
 .. |image132| image:: images/platform/getting_permalink_activity.png
 .. |image133| image:: images/platform/share_link_icon.png
 .. |image134| image:: images/platform/getting_permalink_comment.png
+.. |viewmore| image:: images/platform/more_comments.png
+

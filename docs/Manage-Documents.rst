@@ -642,16 +642,10 @@ files which are being uploaded.
    progress bar.
 
 
-.. note:: -  The upload size depends on the size limit that your administrator
-				set up in the 'Edit' mode of **Sites Explorer**. If your file
-				size exceeds the limit, the alert message will appear.
+.. note:: -  The upload size depends on the size limit that your administrator set up in the 'Edit' mode of **Sites Explorer**. If your file size exceeds the limit, the alert message will appear.
 
-		  -  If the name of your uploaded file is the same as that of an
-				existing file in the same location into which you are going to
-				upload, you will receive one warning in the dropzone that your
-				file is already in use. Here you can decide to keep both (your
-				uploaded file and the existing file), replace the existing file
-				with your uploaded file or cancel your file upload.
+		  -  If the name of your uploaded file is the same as that of an existing file in the same location into which you are going to upload, you will receive one warning in the dropzone that your file is already in use. 
+		     Here you can decide to keep both (your uploaded file and the existing file), replace the existing file with your uploaded file or cancel your file upload.
 
 .. _UsingUploadButton:
 
@@ -700,16 +694,12 @@ For example, in the **Collaboration** drive:
 
 3. Enter a folder name, then click Create Folder to finish.
 
-.. note:: -  The name of a folder may be the same as that of the existing
-			ones. In this case, an index will be added to your newly created
-			folder that can be seen on the address bar.
+.. note:: -  The name of a folder may be the same as that of the existing ones. In this case, an index will be added to your newly created folder that can be seen on the address bar.
 
-			|image43|
-
-		  -  The list of available folder types which can be created in each
-			drive is different depending on the drive configuration.
-		  -  Child folders will have the same folder type as that of their
-			parent folders.
+				|image43|
+		  -  The list of available folder types which can be created in each drive is different depending on the drive configuration.
+		  
+		  -  Child folders will have the same folder type as that of their parent folders.
 
 
 .. _ViewingEditingDocument:
@@ -798,8 +788,7 @@ into the selected destination.
 
 .. note:: -  You only can take the Copy action if you have this right on the source content.
 		  -  You only can take the Paste action if you have the right on the destination.
-		  -  If the destination has the same name with the copied content, after being pasted, an index will be added to the name of the
-			pasted destination, for example *Live* and *Live[2]*.
+		  -  If the destination has the same name with the copied content, after being pasted, an index will be added to the name of the pasted destination, for example *Live* and *Live[2]*.
 		  -  You cannot copy a "content" folder into a "document" folder.
 		  -  After taking the Copy action, you can take the Paste action on the different destinations before taking another Copy action.
 

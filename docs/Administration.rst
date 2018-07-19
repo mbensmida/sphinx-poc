@@ -19,7 +19,7 @@ Administering eXo Platform
        Instructions on how to create and apply a global stylesheet into
        a site.
 
-    -  :ref:`Editing eXo Platform <Editing>`
+    -  :ref:`Editing eXo Platform <EditingeXoPlatform>`
        Instructions on how to edit certain aspects of eXo Platform, including
        website content, pages and sites.
 
@@ -3887,7 +3887,7 @@ For more details about how to set the *Access* permission, refer to
 4. Click Save to accept adding a new category to the categories list in 
    the left pane.
 
-.. _ManagingCategories.EditDeleteCategory:
+.. _ManagingCategories.EditingDeletingCategory:
 
 Editing/Deleting a category
 ---------------------------
@@ -3908,7 +3908,7 @@ Editing/Deleting a category
 
 2. Click **OK** in the confirmation message.
 
-.. _ManagingCategories.AddPortletToCategory:
+.. _ManagingCategories.AddingPorletGadgets:
 
 Adding a portlet/gadget to a category
 -------------------------------------
@@ -4038,6 +4038,8 @@ categories as follows:
 
 All portlets and gadgets of all categories will be imported and listed
 on the left panel.
+
+.. _ManagingPortletsAndGadgets.ViewingEditingDetailedInformation:
 
 Viewing/Editing detailed information of a portlet/gadget
 --------------------------------------------------------
