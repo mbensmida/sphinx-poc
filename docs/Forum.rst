@@ -60,107 +60,508 @@ based on your role.
 To have an overall look of actions which users of each role can do in
 the **Forums** application, see the following table:
 
-====================================================== =========================================================================================================================  =============  ========== ============ =========
- Features                                            	Description   																											  Administrator   Moderator Regular user  Guest   
-             	   				                      																														 
-====================================================== =========================================================================================================================  =============  ========== ============ =========
-:ref:Subscribing to RSS feeds <SubscribingRSSFeeds>     Gets a link to a forum for easy sharing.																					   |OK|         |OK|	     |OK|       |OK|  
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Attaching a file <AttachingFiles>                  Uploads an attachment to a topic/post, previews and downloads it. 														       |OK|         |OK|	     |OK|       |OK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Bookmarks <Regularusers-Bookmarks>                 Bookmarks a category, forum, topic.																						       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Creating a post <Regularusers-Posts>               Posts a reply, quote, private post, quick reply.																			   |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Editing your post <Edit-delete-post>               Edits a post, quote and private post.																					       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Deleting your post <Edit-delete-post>              Deletes a post inside a specific topic. 																					   |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Creating a topic <Create-topic>                    Starts a new topic.																										       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Editing a topic <Editing-topic>                    Edits a topic in a specific forum.																						       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Deleting a topic <Deleting-topic>                  Deletes a topic inside a specific forum.																					   |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Locking/Unlocking a topic <Lock-unlock-topics>     Locks/Unlocks a topic inside a specific forum.																			       |OK|         |OK|	     |NOK|      |NOK|  
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Adding a poll <Create-poll>                        Adds a poll to a topic.																									       |OK|         |OK|	     |OK|       |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Rating a topic <Rate-topics>                       Evaluates a topic by rating stars.																						       |OK|         |OK|	     |OK|       |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Adding a tag <Tagging-topic>                       Creates a new tag and tags a topic.																						       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Sending private messages <Send-Private-message>    Sends or receives private messages.																						       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Watching <Watch>                                   Subscribes to a category, forum, topic to receive email notifications of new posts or topics.							       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:User settings <User-settings>                      Changes profile settings, personal forum settings.																		       |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Sticking/Unsticking a topic <Stick-unstick>        Sticks/Unsticks a topic inside a specific forum.																			   |OK|         |OK|	     |OK|       |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Locking/Unlocking a topic <Lock-unlock-topics>     Closes/Opens a topic inside a specific forum																				   |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Splitting a topic <Split-topic>                    Divides one topic into two separate topics.																				       |OK|         |OK|	     |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Merging topics <Merge-topics>                      Combines two or more topics into one.																					       |OK|         |OK|	     |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Managing a poll <Create-poll>                      Creates, edits, deletes, closes and reopens a poll.																		       |OK|         |OK|	     |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Moving a topic/post <Moving-topic>                 Moves one topic/post from a forum/topic to the other forum/topic.														       |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Approving a topic/post <Approve-topic>             Changes a new topic/post from pending status to normal status so that guests and normal users can view.					       |OK|         |OK|	     |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Uncensoring a post <Uncensor-post>                 Allows a topic which has censored content to be displayed.																       |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Showing/ Hiding a post <Show-hide-post>            Allows a post to be shown/hidden.																						       |OK|         |OK|	     |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Managing pending tasks <Manage-pending-tasks>      Manages all topics/posts waiting for moderation in one place.															       |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Managing a watch <Edit-subscription>               Manages the subscription (watch), edits and deletes a subscribed email.													       |OK|         |OK|	     |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Banning users <Banning-users>                      Bans users from accessing specific forums or categories.																	   |OK|         |NOK|        |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Adding a forum <Adding-forum>                      Adds a new forum to a specific category.																					   |OK|         |NOK|        |NOK|      |NOK| 
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Editing a forum <Edit-forum>                       Changes the title, description, moderator, permissions of a forum. However, moderators cannot set moderators for a forum.      |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Deleting a forum <Delete-forum>                    Deletes a forum from a specific category.																				       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Locking/Unlocking a forum <Lock-unlock-forum>      Locks a forum so that it can be viewed only.																				   |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Closing/Opening a forum <Close-open-forum>         Closes/Opens a forum. The closed forums are still manageable by administrators and moderators.							       |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Moving a forum <Move-forum>                        Moves a forum from one category to the other.																			       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Exporting a forum <Export-forum>                   Exports a forum in the format of a ``.zip`` or ``.xml`` file.															       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Importing a forum <Import-forum>                   Imports a forum from a ``.zip``/``.xml`` file into the Forums application.												       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Adding a category <Add-category>                   Adds a new category. 																									       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Editing a category <Edit category>                 Edits a category and changes its properties.																				   |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Exporting a category <Export-category>             Exports categories in the format of a ``.zip`` or ``.xml`` file.															   |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Importing a category <Import-category>             Imports a category from a ``.zip``/``.xml`` file into the Forums application.											       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Deleting a category <Delete-category>              Deletes a category and all forums, topics, posts inside it.																       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Administrating Sorting <Sort-settings>             Sorts forums, topics according to specific conditions.																	       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Administrating Censor <Administrating-Censor>      Defines keywords that will be censored in a forum.																		       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Customizing an email notification template         Defines content of the email notifications.																				       |OK|         |NOK|        |NOK|      |NOK|
-<Customize-email-notifs>                             																															 	
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Customizing BBCodes <Customize-BBCodes>            Adds, edits and deletes the BBCode tags used in writing posts/topics.													       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Setting up auto-pruning <auto-pruning>             Sets up auto-pruning to clean a large amount of obsolete and inactive topics based on criteria.							       |OK|         |NOK|        |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Banning IPs <Banning-IPs>                          Bans IPs in the whole Forums application (only administrators) and in specific forums only(administrators and moderators).     |OK|         |OK|	     |NOK|      |NOK|
------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------  -------------  ---------- ------------ ---------
-:ref:Managing users <Manage-users>                      Manages user's profile, promotes users, bans users, views a topic and post of a specific user.                                 |OK|         |NOK|        |NOK|      |NOK|
-====================================================== =========================================================================================================================  =============  ========== ============ =========
++--------------+-------------------+------------+------------+------------+------------+
+| Features     | Description       | Administra | Moderator  | Regular    | Guest      |
+|              |                   | tor        |            | user       |            |
++==============+===================+============+============+============+============+
+| `Subscribing | Gets a link to a  |            |            |            |            |
+| to RSS       | forum for easy    |            |            |            |            |
+| feeds <#PLFU | sharing.          |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.RegularUs |                   |            |            |            |            |
+| er.Subscribi |                   |            |            |            |            |
+| ngRSSFeeds>` |                   |            |            |            |            |
+| __           |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Attaching a | Uploads an        |            |            |            |            |
+| file <#PLFUs | attachment to a   |            |            |            |            |
+| erGuide.Buil | topic/post,       |            |            |            |            |
+| dingYourForu | previews and      |            |            |            |            |
+| m.RegularUse | downloads it.     |            |            |            |            |
+| r.Topics.Cre |                   |            |            |            |            |
+| atingTopic.A |                   |            |            |            |            |
+| ttachingFile |                   |            |            |            |            |
+| s>`__        |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Bookmarks < | Bookmarks a       |            |            |            |            |
+| #PLFUserGuid | category, forum,  |            |            |            |            |
+| e.BuildingYo | topic.            |            |            |            |            |
+| urForum.Regu |                   |            |            |            |            |
+| larUser.Book |                   |            |            |            |            |
+| marks>`__    |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Creating a  | Posts a reply,    |            |            |            |            |
+| post <#PLFUs | quote, private    |            |            |            |            |
+| erGuide.Buil | post, quick       |            |            |            |            |
+| dingYourForu | reply.            |            |            |            |            |
+| m.RegularUse |                   |            |            |            |            |
+| r.Posts>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Editing     | Edits a post,     |            |            |            |            |
+| your         | quote and private |            |            |            |            |
+| post <#PLFUs | post.             |            |            |            |            |
+| erGuide.Buil |                   |            |            |            |            |
+| dingYourForu |                   |            |            |            |            |
+| m.RegularUse |                   |            |            |            |            |
+| r.Post.Editi |                   |            |            |            |            |
+| ngPost>`__   |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Deleting    | Deletes a post    |            |            |            |            |
+| your         | inside a specific |            |            |            |            |
+| post <#PLFUs | topic.            |            |            |            |            |
+| erGuide.Buil |                   |            |            |            |            |
+| dingYourForu |                   |            |            |            |            |
+| m.RegularUse |                   |            |            |            |            |
+| r.Post.Delet |                   |            |            |            |            |
+| ingPost>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Creating a  | Starts a new      |            |            |            |            |
+| topic <#PLFU | topic.            |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.RegularUs |                   |            |            |            |            |
+| er.Topics.Cr |                   |            |            |            |            |
+| eatingTopic> |                   |            |            |            |            |
+| `__          |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Editing a   | Edits a topic in  |            |            |            |            |
+| topic <#PLFU | a specific forum. |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.RegularUs |                   |            |            |            |            |
+| er.Topics.Ed |                   |            |            |            |            |
+| itingTopic>` |                   |            |            |            |            |
+| __           |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Deleting a  | Deletes a topic   |            |            |            |            |
+| topic <#PLFU | inside a specific |            |            |            |            |
+| serGuide.Bui | forum.            |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ModeratingT |                   |            |            |            |            |
+| opics.Deleti |                   |            |            |            |            |
+| ngTopic>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Locking/Unl | Locks/Unlocks a   |            |            |            |            |
+| ocking       | topic inside a    |            |            |            |            |
+| a            | specific forum.   |            |            |            |            |
+| topic <#PLFU |                   |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ModeratingT |                   |            |            |            |            |
+| opics.Lockin |                   |            |            |            |            |
+| gUnlockingTo |                   |            |            |            |            |
+| pic>`__      |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Adding a    | Adds a poll to a  |            |            |            |            |
+| poll <#PLFUs | topic.            |            |            |            |            |
+| erGuide.Buil |                   |            |            |            |            |
+| dingYourForu |                   |            |            |            |            |
+| m.RegularUse |                   |            |            |            |            |
+| r.Topics.Cre |                   |            |            |            |            |
+| atingPoll>`_ |                   |            |            |            |            |
+| _            |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Rating a    | Evaluates a topic |            |            |            |            |
+| topic <#PLFU | by rating stars.  |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.RegularUs |                   |            |            |            |            |
+| er.Topics.Ra |                   |            |            |            |            |
+| tingTopic>`_ |                   |            |            |            |            |
+| _            |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Adding a    | Creates a new tag |            |            |            |            |
+| tag <#PLFUse | and tags a topic. |            |            |            |            |
+| rGuide.Build |                   |            |            |            |            |
+| ingYourForum |                   |            |            |            |            |
+| .RegularUser |                   |            |            |            |            |
+| .Topics.Tagg |                   |            |            |            |            |
+| ingUntagging |                   |            |            |            |            |
+| Topic>`__    |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Sending     | Sends or receives |            |            |            |            |
+| private      | private messages. |            |            |            |            |
+| messages <#P |                   |            |            |            |            |
+| LFUserGuide. |                   |            |            |            |            |
+| BuildingYour |                   |            |            |            |            |
+| Forum.Regula |                   |            |            |            |            |
+| rUser.Privat |                   |            |            |            |            |
+| eMessage.Sen |                   |            |            |            |            |
+| dingPrivateM |                   |            |            |            |            |
+| essage>`__   |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Watching <# | Subscribes to a   |            |            |            |            |
+| PLFUserGuide | category, forum,  |            |            |            |            |
+| .BuildingYou | topic to receive  |            |            |            |            |
+| rForum.Regul | email             |            |            |            |            |
+| arUser.Watch | notifications of  |            |            |            |            |
+| ing>`__      | new posts or      |            |            |            |            |
+|              | topics.           |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `User        | Changes profile   |            |            |            |            |
+| settings <#P | settings,         |            |            |            |            |
+| LFUserGuide. | personal forum    |            |            |            |            |
+| BuildingYour | settings.         |            |            |            |            |
+| Forum.Regula |                   |            |            |            |            |
+| rUser.UserSe |                   |            |            |            |            |
+| ttings>`__   |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Sticking/Un | Sticks/Unsticks a |            |            |            |            |
+| sticking     | topic inside a    |            |            |            |            |
+| a            | specific forum.   |            |            |            |            |
+| topic <#PLFU |                   |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ModeratingT |                   |            |            |            |            |
+| opics.Sticki |                   |            |            |            |            |
+| ngUnsticking |                   |            |            |            |            |
+| Topic>`__    |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Locking/Unl | Closes/Opens a    |            |            |            |            |
+| ocking       | topic inside a    |            |            |            |            |
+| a            | specific forum.   |            |            |            |            |
+| topic <#PLFU |                   |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ModeratingT |                   |            |            |            |            |
+| opics.Lockin |                   |            |            |            |            |
+| gUnlockingTo |                   |            |            |            |            |
+| pic>`__      |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Splitting a | Divides one topic |            |            |            |            |
+| topic <#PLFU | into two separate |            |            |            |            |
+| serGuide.Bui | topics.           |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ModeratingT |                   |            |            |            |            |
+| opics.Splitt |                   |            |            |            |            |
+| ingTopic>`__ |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Merging     | Combines two or   |            |            |            |            |
+| topics <#PLF | more topics into  |            |            |            |            |
+| UserGuide.Bu | one.              |            |            |            |            |
+| ildingYourFo |                   |            |            |            |            |
+| rum.Moderato |                   |            |            |            |            |
+| r.Moderating |                   |            |            |            |            |
+| Topics.Mergi |                   |            |            |            |            |
+| ngTopics>`__ |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Managing a  | Creates, edits,   |            |            |            |            |
+| poll <#PLFUs | deletes, closes   |            |            |            |            |
+| erGuide.Buil | and reopens a     |            |            |            |            |
+| dingYourForu | poll.             |            |            |            |            |
+| m.RegularUse |                   |            |            |            |            |
+| r.Topics.Cre |                   |            |            |            |            |
+| atingPoll>`_ |                   |            |            |            |            |
+| _            |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Moving a    | Moves one         |            |            |            |            |
+| topic <#PLFU | topic/post from a |            |            |            |            |
+| serGuide.Bui | forum/topic to    |            |            |            |            |
+| ldingYourFor | the other         |            |            |            |            |
+| um.Moderator | forum/topic.      |            |            |            |            |
+| .ModeratingT |                   |            |            |            |            |
+| opics.Moving |                   |            |            |            |            |
+| Topic>`__/`p |                   |            |            |            |            |
+| ost <#PLFUse |                   |            |            |            |            |
+| rGuide.Build |                   |            |            |            |            |
+| ingYourForum |                   |            |            |            |            |
+| .Moderator.M |                   |            |            |            |            |
+| oderatingPos |                   |            |            |            |            |
+| ts.MovingPos |                   |            |            |            |            |
+| t>`__        |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Approving a | Changes a new     |            |            |            |            |
+| topic <#PLFU | topic/post from   |            |            |            |            |
+| serGuide.Bui | pending status to |            |            |            |            |
+| ldingYourFor | normal status so  |            |            |            |            |
+| um.Moderator | that guests and   |            |            |            |            |
+| .ModeratingT | normal users can  |            |            |            |            |
+| opics.Approv | view.             |            |            |            |            |
+| ingTopic>`__ |                   |            |            |            |            |
+| /`post <#PLF |                   |            |            |            |            |
+| UserGuide.Bu |                   |            |            |            |            |
+| ildingYourFo |                   |            |            |            |            |
+| rum.Moderato |                   |            |            |            |            |
+| r.Moderating |                   |            |            |            |            |
+| Posts.Approv |                   |            |            |            |            |
+| ingPost>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Uncensoring | Allows a topic    |            |            |            |            |
+| a            | which has         |            |            |            |            |
+| post <#PLFUs | censored content  |            |            |            |            |
+| erGuide.Buil | to be displayed.  |            |            |            |            |
+| dingYourForu |                   |            |            |            |            |
+| m.Moderator. |                   |            |            |            |            |
+| ModeratingPo |                   |            |            |            |            |
+| sts.Uncensor |                   |            |            |            |            |
+| ingPost>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Showing <#P | Allows a post to  |            |            |            |            |
+| LFUserGuide. | be shown/hidden.  |            |            |            |            |
+| BuildingYour |                   |            |            |            |            |
+| Forum.Modera |                   |            |            |            |            |
+| tor.Moderati |                   |            |            |            |            |
+| ngPosts.Show |                   |            |            |            |            |
+| ingPost>`__/ |                   |            |            |            |            |
+| `Hiding a    |                   |            |            |            |            |
+| post <#PLFUs |                   |            |            |            |            |
+| erGuide.Buil |                   |            |            |            |            |
+| dingYourForu |                   |            |            |            |            |
+| m.Moderator. |                   |            |            |            |            |
+| ModeratingPo |                   |            |            |            |            |
+| sts.HidingPo |                   |            |            |            |            |
+| st>`__       |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Managing    | Manages all       |            |            |            |            |
+| pending      | topics/posts      |            |            |            |            |
+| tasks <#PLFU | waiting for       |            |            |            |            |
+| serGuide.Bui | moderation in one |            |            |            |            |
+| ldingYourFor | place.            |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ViewPending |                   |            |            |            |            |
+| Tasks>`__    |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Managing a  | Manages the       |            |            |            |            |
+| watch <#PLFU | subscription      |            |            |            |            |
+| serGuide.Bui | (watch), edits    |            |            |            |            |
+| ldingYourFor | and deletes a     |            |            |            |            |
+| um.RegularUs | subscribed email. |            |            |            |            |
+| er.UserSetti |                   |            |            |            |            |
+| ngs.EditingS |                   |            |            |            |            |
+| ubscriptions |                   |            |            |            |            |
+| >`__         |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Banning     | Bans users from   |            |            |            |            |
+| users <#PLFU | accessing         |            |            |            |            |
+| serGuide.Bui | specific forums   |            |            |            |            |
+| ldingYourFor | or categories.    |            |            |            |            |
+| um.Administr |                   |            |            |            |            |
+| ator.Managin |                   |            |            |            |            |
+| gUsers.Banni |                   |            |            |            |            |
+| ngUsers>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Adding a    | Adds a new forum  |            |            |            |            |
+| forum <#PLFU | to a specific     |            |            |            |            |
+| serGuide.Bui | category.         |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Administr |                   |            |            |            |            |
+| ator.Managin |                   |            |            |            |            |
+| gForums.Addi |                   |            |            |            |            |
+| ngForum>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Editing a   | Changes the       |            |            |            |            |
+| forum <#PLFU | title,            |            |            |            |            |
+| serGuide.Bui | description,      |            |            |            |            |
+| ldingYourFor | moderator,        |            |            |            |            |
+| um.Moderator | permissions of a  |            |            |            |            |
+| .ModeratingF | forum. However,   |            |            |            |            |
+| orums.Editin | moderators cannot |            |            |            |            |
+| gForum>`__   | set moderators    |            |            |            |            |
+|              | for a forum.      |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Deleting a  | Deletes a forum   |            |            |            |            |
+| forum <#PLFU | from a specific   |            |            |            |            |
+| serGuide.Bui | category.         |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Administr |                   |            |            |            |            |
+| ator.Managin |                   |            |            |            |            |
+| gForums.Dele |                   |            |            |            |            |
+| tingForum>`_ |                   |            |            |            |            |
+| _            |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Locking/Unl | Locks a forum so  |            |            |            |            |
+| ocking       | that it can be    |            |            |            |            |
+| a            | viewed only.      |            |            |            |            |
+| forum <#PLFU |                   |            |            |            |            |
+| serGuide.Bui |                   |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ModeratingF |                   |            |            |            |            |
+| orums.Lockin |                   |            |            |            |            |
+| gUnlockingFo |                   |            |            |            |            |
+| rum>`__      |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Closing/Ope | Closes/Opens a    |            |            |            |            |
+| ning         | forum. The closed |            |            |            |            |
+| a            | forums are still  |            |            |            |            |
+| forum <#PLFU | manageable by     |            |            |            |            |
+| serGuide.Bui | administrators    |            |            |            |            |
+| ldingYourFor | and moderators.   |            |            |            |            |
+| um.Moderator |                   |            |            |            |            |
+| .ModeratingF |                   |            |            |            |            |
+| orums.Closin |                   |            |            |            |            |
+| gOpeningForu |                   |            |            |            |            |
+| m>`__        |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Moving a    | Moves a forum     |            |            |            |            |
+| forum <#PLFU | from one category |            |            |            |            |
+| serGuide.Bui | to the other.     |            |            |            |            |
+| ldingYourFor |                   |            |            |            |            |
+| um.Administr |                   |            |            |            |            |
+| ator.Managin |                   |            |            |            |            |
+| gForums.Movi |                   |            |            |            |            |
+| ngForum>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Exporting a | Exports a forum   |            |            |            |            |
+| forum <#PLFU | in the format of  |            |            |            |            |
+| serGuide.Bui | a ``.zip`` or     |            |            |            |            |
+| ldingYourFor | ``.xml`` file.    |            |            |            |            |
+| um.Administr |                   |            |            |            |            |
+| ator.Adminis |                   |            |            |            |            |
+| trativeTasks |                   |            |            |            |            |
+| .BackingupCa |                   |            |            |            |            |
+| tegoryForum. |                   |            |            |            |            |
+| ExportingFor |                   |            |            |            |            |
+| um>`__       |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Importing a | Imports a forum   |            |            |            |            |
+| forum <#PLFU | from a            |            |            |            |            |
+| serGuide.Bui | ``.zip``/``.xml`` |            |            |            |            |
+| ldingYourFor | file into the     |            |            |            |            |
+| um.Administr | **Forums**        |            |            |            |            |
+| ator.Adminis | application.      |            |            |            |            |
+| trativeTasks |                   |            |            |            |            |
+| .BackingupCa |                   |            |            |            |            |
+| tegoryForum. |                   |            |            |            |            |
+| ImportingFor |                   |            |            |            |            |
+| um>`__       |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Adding a    | Adds a new        |            |            |            |            |
+| category <#P | category.         |            |            |            |            |
+| LFUserGuide. |                   |            |            |            |            |
+| BuildingYour |                   |            |            |            |            |
+| Forum.Admini |                   |            |            |            |            |
+| strator.Mana |                   |            |            |            |            |
+| gingCategori |                   |            |            |            |            |
+| es.AddingCat |                   |            |            |            |            |
+| egory>`__    |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Editing a   | Edits a category  |            |            |            |            |
+| category <#P | and changes its   |            |            |            |            |
+| LFUserGuide. | properties.       |            |            |            |            |
+| BuildingYour |                   |            |            |            |            |
+| Forum.Admini |                   |            |            |            |            |
+| strator.Mana |                   |            |            |            |            |
+| gingCategori |                   |            |            |            |            |
+| es.EditingCa |                   |            |            |            |            |
+| tegory>`__   |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Exporting a | Exports           |            |            |            |            |
+| category <#P | categories in the |            |            |            |            |
+| LFUserGuide. | format of a       |            |            |            |            |
+| BuildingYour | ``.zip`` or       |            |            |            |            |
+| Forum.Admini | ``.xml`` file.    |            |            |            |            |
+| strator.Admi |                   |            |            |            |            |
+| nistrativeTa |                   |            |            |            |            |
+| sks.Backingu |                   |            |            |            |            |
+| pCategoryFor |                   |            |            |            |            |
+| um.Exporting |                   |            |            |            |            |
+| Category>`__ |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Importing a | Imports a         |            |            |            |            |
+| category <#P | category from a   |            |            |            |            |
+| LFUserGuide. | ``.zip``/``.xml`` |            |            |            |            |
+| BuildingYour | file into the     |            |            |            |            |
+| Forum.Admini | **Forums**        |            |            |            |            |
+| strator.Admi | application.      |            |            |            |            |
+| nistrativeTa |                   |            |            |            |            |
+| sks.Backingu |                   |            |            |            |            |
+| pCategoryFor |                   |            |            |            |            |
+| um.Importing |                   |            |            |            |            |
+| Category>`__ |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Deleting a  | Deletes a         |            |            |            |            |
+| category <#P | category and all  |            |            |            |            |
+| LFUserGuide. | forums, topics,   |            |            |            |            |
+| BuildingYour | posts inside it.  |            |            |            |            |
+| Forum.Admini |                   |            |            |            |            |
+| strator.Mana |                   |            |            |            |            |
+| gingCategori |                   |            |            |            |            |
+| es.DeletingC |                   |            |            |            |            |
+| ategory>`__  |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Administrat | Sorts forums,     |            |            |            |            |
+| ing          | topics according  |            |            |            |            |
+| Sorting <#PL | to specific       |            |            |            |            |
+| FUserGuide.B | conditions.       |            |            |            |            |
+| uildingYourF |                   |            |            |            |            |
+| orum.Adminis |                   |            |            |            |            |
+| trator.Admin |                   |            |            |            |            |
+| istrativeTas |                   |            |            |            |            |
+| ks.Configuri |                   |            |            |            |            |
+| ngSortSettin |                   |            |            |            |            |
+| gs>`__       |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Administrat | Defines keywords  |            |            |            |            |
+| ing          | that will be      |            |            |            |            |
+| Censor <#PLF | censored in a     |            |            |            |            |
+| UserGuide.Bu | forum.            |            |            |            |            |
+| ildingYourFo |                   |            |            |            |            |
+| rum.Administ |                   |            |            |            |            |
+| rator.Admini |                   |            |            |            |            |
+| strativeTask |                   |            |            |            |            |
+| s.DefiningCe |                   |            |            |            |            |
+| nsoredKeywor |                   |            |            |            |            |
+| ds>`__       |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Customizing | Defines content   |            |            |            |            |
+| an email     | of the email      |            |            |            |            |
+| notification | notifications.    |            |            |            |            |
+| template <#P |                   |            |            |            |            |
+| LFUserGuide. |                   |            |            |            |            |
+| BuildingYour |                   |            |            |            |            |
+| Forum.Admini |                   |            |            |            |            |
+| strator.Admi |                   |            |            |            |            |
+| nistrativeTa |                   |            |            |            |            |
+| sks.Customiz |                   |            |            |            |            |
+| ingEmailTemp |                   |            |            |            |            |
+| late>`__     |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Customizing | Adds, edits and   |            |            |            |            |
+| BBCodes <#PL | deletes the       |            |            |            |            |
+| FUserGuide.B | BBCode tags used  |            |            |            |            |
+| uildingYourF | in writing        |            |            |            |            |
+| orum.Adminis | posts/topics.     |            |            |            |            |
+| trator.Admin |                   |            |            |            |            |
+| istrativeTas |                   |            |            |            |            |
+| ks.Customizi |                   |            |            |            |            |
+| ngBBcodes>`_ |                   |            |            |            |            |
+| _            |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Setting up  | Sets up           |            |            |            |            |
+| auto-pruning | auto-pruning to   |            |            |            |            |
+|  <#PLFUserGu | clean a large     |            |            |            |            |
+| ide.Building | amount of         |            |            |            |            |
+| YourForum.Ad | obsolete and      |            |            |            |            |
+| ministrator. | inactive topics   |            |            |            |            |
+| Administrati | based on          |            |            |            |            |
+| veTasks.Sett | criteria.         |            |            |            |            |
+| ingupAutoPru |                   |            |            |            |            |
+| ne>`__       |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Banning     | Bans IPs in the   |            |            |            |            |
+| IPs <#PLFUse | whole **Forums**  |            |            |            |            |
+| rGuide.Build | application (only |            |            |            |            |
+| ingYourForum | administrators)   |            |            |            |            |
+| .Moderator.B | and in specific   |            |            |            |            |
+| anningIPs>`_ | forums only       |            |            |            |            |
+| _            | (administrators   |            |            |            |            |
+|              | and moderators).  |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
+| `Managing    | Manages user's    |            |            |            |            |
+| users <#PLFU | profile, promotes |            |            |            |            |
+| serGuide.Bui | users, bans       |            |            |            |            |
+| ldingYourFor | users, views a    |            |            |            |            |
+| um.Administr | topic and post of |            |            |            |            |
+| ator.Managin | a specific user.  |            |            |            |            |
+| gUsers>`__   |                   |            |            |            |            |
++--------------+-------------------+------------+------------+------------+------------+
 
 .. note:: **(\*):** Regular users can only edit/delete their own posts/topics.
 
