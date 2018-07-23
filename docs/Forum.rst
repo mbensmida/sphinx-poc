@@ -64,9 +64,9 @@ the **Forums** application, see the following table:
 | Features                                    | Description       | Administra | Moderator  | Regular    | Guest      |
 |                                             |                   | tor        |            | user       |            |
 +=============================================+===================+============+============+============+============+
-| :ref:`Subscribing                           | Gets a link to a  |            |            |            |            |
-| to RSS                                      | forum for easy    |            |            |            |            |
-| feeds <SubscribingRSSFeeds>                 | sharing.          |            |            |            |            |
+| :ref:`Subscribing to RSS feeds              | Gets a link to a  |            |            |            |            |
+|  <SubscribingRSSFeeds>                      | forum for easy    |            |            |            |            |
+|                 							  | sharing.          |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
 | :ref`Attaching a file <AttachingFiles>      | Uploads an        |            |            |            |            |
 |                                             | attachment to a   |            |            |            |            |
@@ -169,8 +169,8 @@ the **Forums** application, see the following table:
 |											  | censored content  |            |            |            |            |
 |  											  | to be displayed.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Showing/Hiding a post <Show-hide-post>| Allows a post to  |            |            |            |            |
-| 											  | be shown/hidden.  |            |            |            |            |
+| :ref:`Showing/Hiding a post			      | Allows a post to  |            |            |            |            |
+| <Show-hide-post>							  | be shown/hidden.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
 | :ref:`Managing pending tasks  			  | Manages all       |            |            |            |            |
 | <Manage-pending-tasks>   					  | topics/posts      |            |            |            |            |
@@ -241,14 +241,14 @@ the **Forums** application, see the following table:
 |  											  | and changes its   |            |            |            |            |
 | 											  | properties.       |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Exporting a category <Export-category>| Exports           |            |            |            |            |
-|  											  | categories in the |            |            |            |            |
+| :ref:`Exporting a category 				  | Exports           |            |            |            |            |
+| <Export-category>							  | categories in the |            |            |            |            |
 | 											  | format of a       |            |            |            |            |
 | 											  | ``.zip`` or       |            |            |            |            |
 | 											  | ``.xml`` file.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Importing a category <Import-category>| Imports a         |            |            |            |            |
-| 											  | category from a   |            |            |            |            |
+| :ref:`Importing a category 				  | Imports a         |            |            |            |            |
+| <Import-category>							  | category from a   |            |            |            |            |
 |											  | ``.zip``/``.xml`` |            |            |            |            |
 | 											  | file into the     |            |            |            |            |
 | 											  | **Forums**        |            |            |            |            |
@@ -259,8 +259,8 @@ the **Forums** application, see the following table:
 | 											  | forums, topics,   |            |            |            |            |
 | 											  | posts inside it.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Administrating Sorting <Sort-settings>| Sorts forums,     |            |            |            |            |
-| 									          | topics according  |            |            |            |            |
+| :ref:`Administrating Sorting 				  | Sorts forums,     |            |            |            |            |
+| <Sort-settings>					          | topics according  |            |            |            |            |
 |  											  | to specific       |            |            |            |            |
 | 											  | conditions.       |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
@@ -279,8 +279,8 @@ the **Forums** application, see the following table:
 | 											  | in writing        |            |            |            |            |
 | 											  | posts/topics.     |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Setting up auto-pruning <auto-pruning>| Sets up           |            |            |            |            |
-| 											  | auto-pruning to   |            |            |            |            |
+| :ref:`Setting up auto-pruning 			  | Sets up           |            |            |            |            |
+| <auto-pruning>							  | auto-pruning to   |            |            |            |            |
 |  											  | clean a large     |            |            |            |            |
 | 											  | amount of         |            |            |            |            |
 | 											  | obsolete and      |            |            |            |            |

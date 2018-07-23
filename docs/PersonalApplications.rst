@@ -759,8 +759,8 @@ Managing your notifications
 ===========================
 
 eXo Platform provides you a complete notification function which helps you to
-avoid missing anything in your organization. As from eXo Platform 4.2, there
-are 2 notification types that you can use.
+avoid missing anything in your organization. As from eXo Platform 5.1, there
+are 3 notification types that you can use.
 
 .. _On-site:
 
@@ -783,6 +783,21 @@ corresponding activity stream or you can select **View All** to see all
 notifications. Besides, the **Mark all as read** function allows you to
 change all messages on this menu into the read status. Finally, to
 remove any notification item, simply click the corresponding |image51|.
+
+.. _mobilePushNotifs:
+
+**Mobile push notifications**
+
+A push notification is a real-time notification that pops up on a mobile
+device (iOS and Android). It is pushed instantly when the action is 
+done.
+
+The push notification displays the same content as the on-site 
+notification. It also displays the eXo Mobile application logo, the 
+site's name (eXo community for example) and the receipt time. 
+Clicking on it opens directly the concerned activity.
+
+|pushNotif|
 
 .. _Via-emails:
 
@@ -843,29 +858,36 @@ Settings page.
 
 2. Select notification options as desired. In particular:
 
--  Notify me by email: If you choose No option, the functions concerning
-   email notification will be hidden.
+-  **Notify me by email**: If you choose No option, the functions 
+   concerning email notification will be hidden.
 
--  Notify me on-site: If you choose No option, the functions concerning
-   on-site notification will be hidden.
+-  **Notify me on-site**: If you choose No option, the functions 
+   concerning on-site notification will be hidden.
 
--  Send me an email right away: Indicates whether you want to receive
-   email notifications instantly or not.
+-  **Notify me on mobile**: If you choose No option, the functions
+   concerning mobile notifications will be hidden.   
 
--  Send me a digest email: Specifies whether notifications of selected
-   types are included in the digest emails or not.
+	-  Send me an email right away: Indicates whether you want to 
+	   receive email notifications instantly or not.
 
-   -  Never: Not include notifications of the selected types in any
-      digest email.
+	-  Send me a digest email: Specifies whether notifications of 
+	   selected types are included in the digest emails or not.
 
-   -  Daily: Includes notifications of the selected types in the daily
-      digest email.
+		-  Never: Not include notifications of the selected types in any
+           digest email.
 
-   -  Weekly: Includes notifications of the selected types in the weekly
-      digest email.
+		-  Daily: Includes notifications of the selected types in the 
+		   daily digest email.
 
--  See on site: Indicates whether you want to receive notifications
-   on-site or not.
+		-  Weekly: Includes notifications of the selected types in the 
+		   weekly digest email.
+
+	-  See on site: Indicates whether you want to receive notifications
+	   on-site or not.
+	   
+	- See on mobile: Indicates whether you want to receive push 
+	  notifications on your mobile or not.
+	   
 
 3. Click Save button to save your new notification settings.
 
@@ -1373,3 +1395,4 @@ such as:
 .. |image87| image:: images/social/send-connection-request.png
 .. |image88| image:: images/social/cancel-request.png
 .. |image89| image:: images/social/cancel-request.png
+.. |pushNotif| image:: images/social/pushNotif.jpg
