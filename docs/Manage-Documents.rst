@@ -1723,10 +1723,10 @@ Sharing directly in the Documents application
 To share a document in the **Documents** application, do as follows:
 
 1. Click **Documents** on the left panel, you will be redirected to the
-**Documents** interface.
+   **Documents** interface.
 
 2. Select any document that you would like to share. If you are in the
-**List** view, a Share button will appear in the Actions bar:
+   **List** view, a Share button will appear in the Actions bar:
 
 |image129|
 
@@ -1749,25 +1749,27 @@ having that letter appears.
 
 5. Select the users/spaces to which you want to share the document.
 
-6. Select the permission, you can choose either can view, either can 
-edit:
+.. tip:: After selecting at least one user, the share button becomes clickable even without precising a permission.
 
--  *Can View*: space members can only read the file.
+6. Select the permission: you can choose either can view |view| or can 
+   edit |edit|:
 
--  *Can Edit*: space members can read and modify the file.
+-  *Can View* |view1|: space members can only read the file.
 
-By default, the *Can View* permission will be applied.
+-  *Can Edit* |edit1|: space members can read and modify the file.
+
+By default, the *Can View* permission is applied.
 
 
 .. note:: If you do not have the *Can Edit* permission on this document, only the *Can View* right is available for setting permissions.
 
-7. Cick on add button |image133| to add the access right to the section 
-*Who has access*.
 
 .. _Who-has-access:
 
 Who has access section
 -----------------------
+
+.. note:: The **who has access** section of the sharing dialog is alimented after the share action i.e. after clicking on Share button.
 
 The *Who has access* section contains the list of spaces/users with whom
 the document is shared and the persmission they have on it.
@@ -1779,23 +1781,24 @@ This list is sorted as follows:
 -  The first entry of the list is the owner of the document, it cannot
    be removed.
 
--  When the document's owner validates to add new users/spaces with the
-   corresponding permission, these contacts will be added in the bottom
-   of the *Who has access* list, and the list view will be pointing to
-   the last contact added.
-
+-  After the document's owner clicks on Share button, new entries 
+   (users/spaces with the corresponding permission) will be added in the 
+   bottom of the *Who has access* list.
+   
 -  Other entries are displayed in a scrollable area. Each entry contains
    : share target (user or space), permission (can edit or can view) and
    a delete icon.
 
 
-.. note:: If the user enters a username that is not valid, the add button |image135| is not highlited and the user could not been added to the who has access list.
+.. note:: If the user enters a username that is not valid, the share button becomes clickable but when clicking on it a warning appears indicating that the username is not valid.
+			|warning|
+
 
 8. Add some comments or descriptions about the shared document into the
-succeeding text box.
+   succeeding text box. This step is not mandatory.
 
-9. Click Apply to finish sharing this document with the selected spaces or
-Cancel to skip sharing.
+9. Click Share to finish sharing this document with the selected users/
+   spaces or Cancel to skip sharing.
 
 .. note:: - After a document is shared successfully, a :ref:`symlink <CreatingSymlink>` will be created in the destination spaces and put into a folder named **Shared** in the **Documents** folder (if the folder does not exist in these spaces, it will be automatically generated while sharing a file). Therefore, the document could be shared again by any member of these spaces.
 
@@ -2870,3 +2873,8 @@ information.
 .. |image210| image:: images/ecms/show_hide_content_button.png
 .. |image211| image:: images/ecms/types_button.png
 .. |image212| image:: images/ecms/document_type_form.png
+.. |view| image:: images/ecms/view.png
+.. |view1| image:: images/ecms/view.png
+.. |edit| image:: images/ecms/edit.png
+.. |edit1| image:: images/ecms/edit.png
+.. |warning| image:: images/ecms/warning.png
