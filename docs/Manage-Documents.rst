@@ -1749,7 +1749,7 @@ having that letter appears.
 
 5. Select the users/spaces to which you want to share the document.
 
-.. tip:: After selecting at least one user, the share button becomes clickable even without precising a permission.
+.. tip:: After selecting at least one user, the share button becomes enabled even without precising a permission.
 
 6. Select the permission: you can choose either can view |view| or can 
    edit |edit|:
@@ -1790,7 +1790,8 @@ This list is sorted as follows:
    a delete icon.
 
 
-.. note:: If the user enters a username that is not valid, the share button becomes clickable but when clicking on it a warning appears indicating that the username is not valid.
+.. note:: If the user enters a username that is not valid, the share button becomes enabled but when clicking on it a warning appears indicating that the username is not valid.
+			
 			|warning|
 
 
