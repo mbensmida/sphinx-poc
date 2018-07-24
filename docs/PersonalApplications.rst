@@ -858,8 +858,7 @@ Settings page.
 
 2. Select notification options as desired. In particular:
 
-|1|: Allows to enable or disable one or namy notifications channels by 
-     switching the button between Yes and No:
+|1|: Allows to enable or disable one or namy notifications channels by switching the button between Yes and No:
 
 -  **Notify me by email**: If you choose No option, the functions 
    concerning email notification will be hidden.
