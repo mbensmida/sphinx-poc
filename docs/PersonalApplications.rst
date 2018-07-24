@@ -858,7 +858,8 @@ Settings page.
 
 2. Select notification options as desired. In particular:
 
-|1|:
+|1|: Allows to enable or disable one or namy notifications channels by 
+     switching the button between Yes and No:
 
 -  **Notify me by email**: If you choose No option, the functions 
    concerning email notification will be hidden.
@@ -869,13 +870,9 @@ Settings page.
 -  **Notify me on mobile**: If you choose No option, the functions
    concerning mobile notifications will be hidden.   
 
+-  |2|: **Send me an email right away**: Indicates whether you want to receive email notifications instantly or not.
 
--  |2|: **Send me an email right away**: Indicates whether you want to 
-        receive email notifications instantly or not.
-
--  |3|: **Send me a digest email**: Specifies whether notifications of 
-	    selected types are included in the digest emails or not. Three 
-	    frequencies exist:
+-  |3|: **Send me a digest email**: Specifies whether notifications of  selected types are included in the digest emails or not. Three frequencies exist:
 
 		-  *Never*: Not include notifications of the selected types in any digest email.
 
@@ -885,11 +882,9 @@ Settings page.
 		-  *Weekly*: Includes notifications of the selected types in the 
 		   weekly digest email.
 
--  |4|: **See on mobile**: Indicates whether you want to receive push 
-	    notifications on your mobile or not.		   
+-  |4|: **See on mobile**: Indicates whether you want to receive push notifications on your mobile or not.		   
 
--  |5|: **See on site**: Indicates whether you want to receive 
-        notifications on-site or not.
+-  |5|: **See on site**: Indicates whether you want to receive notifications on-site or not.
 	   
 
 
@@ -1400,7 +1395,7 @@ such as:
 .. |image88| image:: images/social/cancel-request.png
 .. |image89| image:: images/social/cancel-request.png
 .. |pushNotif| image:: images/social/pushNotif.jpg
-.. |pushNotif1| image:: images/social/pushNotif1.jpg
+.. |pushNotif1| image:: images/social/pushNotif1.png
 .. |1| image:: images/common/1.png
 .. |2| image:: images/common/2.png
 .. |3| image:: images/common/3.png
