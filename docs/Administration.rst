@@ -123,19 +123,28 @@ below:
 
 |image4|
 
--  Notification types: Enables or disables notification types globally.
+-  **Notification types**: Enables or disables notification types 
+   globally.
 
    -  Notification: Name and categories of the notifications.
 
    -  Title: Title of the notification that will be shown in the email.
 
-   -  Enable: Enables or disables sending the email notifications for
-      each corresponding notification type.
+   -  Enable: Enables or disables sending notifications types for
+      each corresponding notification type. Checking the option enables 
+      the notofications channels, unchecking it disables it:
+      
+      - *Email Notifications*: For sending emails notifications.
+      
+      - *Mobile Push notifications*: For pushing pop up notifications in
+        mobile devices.
+        
+      - *On-Site Notifications*: For sending On-site notifications.  
 
--  Name: Defines the display name of the email sender in the **From**
-   field.
+-  **Name**: Defines the display name of the email sender in the 
+   *From* field.
 
--  Address: Defines the email address of the sender in the **From**
+-  **Address**: Defines the email address of the sender in the *From*
    field. It must be in the correct form, such as username@abc.com.
 
 .. note::	 -  Once a notification type is disabled, it will disappear from the Notification Settings page of all users, and no new notification of this type is sent anymore.

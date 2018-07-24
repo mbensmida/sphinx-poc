@@ -797,7 +797,7 @@ notification. It also displays the eXo Mobile application logo, the
 site's name (eXo community for example) and the receipt time. 
 Clicking on it opens directly the concerned activity.
 
-|pushNotif|
+|pushNotif1|
 
 .. _Via-emails:
 
@@ -854,9 +854,11 @@ Settings page.
 |image54|
 
 
-:note:: The **My Tasks** settings are available only if the :ref:`Task Management <Manage-Task>` add-on is installed by the administrator.
+.. note:: The **My Tasks** settings are available only if the :ref:`Task Management <Manage-Task>` add-on is installed by the administrator.
 
 2. Select notification options as desired. In particular:
+
+|1|:
 
 -  **Notify me by email**: If you choose No option, the functions 
    concerning email notification will be hidden.
@@ -867,27 +869,29 @@ Settings page.
 -  **Notify me on mobile**: If you choose No option, the functions
    concerning mobile notifications will be hidden.   
 
-	-  Send me an email right away: Indicates whether you want to 
-	   receive email notifications instantly or not.
 
-	-  Send me a digest email: Specifies whether notifications of 
-	   selected types are included in the digest emails or not.
+-  |2|: **Send me an email right away**: Indicates whether you want to 
+        receive email notifications instantly or not.
 
-		-  Never: Not include notifications of the selected types in any
-           digest email.
+-  |3|: **Send me a digest email**: Specifies whether notifications of 
+	    selected types are included in the digest emails or not. Three 
+	    frequencies exist:
 
-		-  Daily: Includes notifications of the selected types in the 
+		-  *Never*: Not include notifications of the selected types in any digest email.
+
+		-  *Daily*: Includes notifications of the selected types in the 
 		   daily digest email.
 
-		-  Weekly: Includes notifications of the selected types in the 
+		-  *Weekly*: Includes notifications of the selected types in the 
 		   weekly digest email.
 
-	-  See on site: Indicates whether you want to receive notifications
-	   on-site or not.
+-  |4|: **See on mobile**: Indicates whether you want to receive push 
+	    notifications on your mobile or not.		   
+
+-  |5|: **See on site**: Indicates whether you want to receive 
+        notifications on-site or not.
 	   
-	- See on mobile: Indicates whether you want to receive push 
-	  notifications on your mobile or not.
-	   
+
 
 3. Click Save button to save your new notification settings.
 
@@ -1396,3 +1400,9 @@ such as:
 .. |image88| image:: images/social/cancel-request.png
 .. |image89| image:: images/social/cancel-request.png
 .. |pushNotif| image:: images/social/pushNotif.jpg
+.. |pushNotif1| image:: images/social/pushNotif1.jpg
+.. |1| image:: images/common/1.png
+.. |2| image:: images/common/2.png
+.. |3| image:: images/common/3.png
+.. |4| image:: images/common/4.png
+.. |5| image:: images/common/5.png
