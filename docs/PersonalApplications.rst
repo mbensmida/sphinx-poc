@@ -1393,8 +1393,7 @@ such as:
 .. |image87| image:: images/social/send-connection-request.png
 .. |image88| image:: images/social/cancel-request.png
 .. |image89| image:: images/social/cancel-request.png
-.. |pushNotif| image:: images/social/pushNotif.jpg
-.. |pushNotif1| image:: images/social/pushNotif1.png
+.. |pushNotif1| image:: images/social/pushNotif1.jpg
 .. |1| image:: images/common/1.png
 .. |2| image:: images/common/2.png
 .. |3| image:: images/common/3.png
