@@ -37,4 +37,26 @@ The main guides in eXo Platform documentation:
    Manage-Sites
    Search
    Administration
+   
+.. _admin-docs:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Administrator Guide
+   
+   Installation
+   eXo_addons
+   Configuration
+   database_configuration
+   Deployment
+   Management
+   Clustering
+   LDAP
+   OAuthIntegration
+   Backup
+   Upgrade
+   Security
+   Elasticsearch
+   Indexing
+ 
 
