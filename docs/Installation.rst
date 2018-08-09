@@ -1191,7 +1191,7 @@ section:
 |                                      | is "all". If you customize this     |
 |                                      | variable, refer to 				 |
 |									   | :ref`Startup profiles <eXoProfiles> |
-+--------------------------------------+----------------------------------+
++--------------------------------------+-------------------------------------+
 | ``EXO_CONF_DIR="/opt/ciagent/        | The default configuration folder    |
 | .eXo-platform/conf"``                | is ``./gatein/conf/`` (Tomcat       |
 |                                      | only).                              |
