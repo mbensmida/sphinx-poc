@@ -64,242 +64,242 @@ the **Forums** application, see the following table:
 | Features                                    | Description       | Administra | Moderator  | Regular    | Guest      |
 |                                             |                   | tor        |            | user       |            |
 +=============================================+===================+============+============+============+============+
-| :ref:`Subscribing to RSS feeds              | Gets a link to a  |            |            |            |            |
-|  <SubscribingRSSFeeds>                      | forum for easy    |            |            |            |            |
+| `Subscribing to RSS feeds                   | Gets a link to a  |            |            |            |            |
+|  <SubscribingRSSFeeds>                      | forum for easy    |   |OK1|    |  |OK2|     |   |OK3|    |  |OK4|     |
 |                 							  | sharing.          |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref`Attaching a file <AttachingFiles>      | Uploads an        |            |            |            |            |
+|  `Attaching a file <AttachingFiles>         | Uploads an        |            |            |            |            |
 |                                             | attachment to a   |            |            |            |            |
-|                                             | topic/post,       |            |            |            |            |
+|                                             | topic/post,       |   |OK5|    |  |OK6|     |   |OK7|    |  |OK8|     |
 |                                             | previews and      |            |            |            |            |
 |                                             | downloads it.     |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Bookmarks <Regularusers-Bookmarks>    | Bookmarks a       |            |            |            |            |
-|                                             | category, forum,  |            |            |            |            |
+| `Bookmarks <Regularusers-Bookmarks>         | Bookmarks a       |            |            |            |            |
+|                                             | category, forum,  |   |OK9|    |  |OK10|    |   |OK11|   |  |NOK1|    |
 |                                             | topic.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Creating a post <Regularusers-Posts>  | Posts a reply,    |            |            |            |            |
-|  								              | quote, private    |            |            |            |            |
+| `Creating a post <Regularusers-Posts>       | Posts a reply,    |            |            |            |            |
+|  								              | quote, private    |  |OK12 |   |  |OK13|    |   |OK14|   |  |NOK2|    |
 |                                             | post, quick       |            |            |            |            |
 |                                             | reply.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref`Editing your post <Edit-delete-post>   | Edits a post,     |            |            |            |            |
-| 									          | quote and private |            |            |            |            |
+| `Editing your post <Edit-delete-post>       | Edits a post,     |            |            |            |            |
+| 									          | quote and private |  |OK15 |   |  |OK16|    |   |OK17|   |  |NOK3|    |
 | 											  | post.             |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Deleting your post <Edit-delete-post> | Deletes a post    |            |            |            |            |
-|									          | inside a specific |            |            |            |            |
+| `Deleting your post <Edit-delete-post>      | Deletes a post    |            |            |            |            |
+|									          | inside a specific |  |OK18 |   |  |OK19|    |   |OK20|   |  |NOK4|    |
 |  											  | topic.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Creating a topic <Create-topic>       | Starts a new      |            |            |            |            |
+| `Creating a topic <Create-topic>            | Starts a new      | |OK21|     |  |OK22|    |   |OK23|   |  |NOK5|    |
 |											  | topic.            |            |            |            |            |         
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Editing a topic <Editing-topic>       | Edits a topic in  |            |            |            |            |
+| `Editing a topic <Editing-topic>            | Edits a topic in  |  |OK26|    |  |OK25|    |   |OK24|   |  |NOK6|    |
 |                                             | a specific forum. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Deleting a topic <Deleting-topic>     | Deletes a topic   |            |            |            |            |
+| `Deleting a topic <Deleting-topic>          | Deletes a topic   |  |OK27|    |  |OK29|    |   |OK28|   |  |NOK7|    |
 | 											  | inside a specific |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Locking/Unlocking a topic 			  | Locks/Unlocks a   |            |            |            |            |
-| <Lock-unlock-topics>       				  | topic inside a    |            |            |            |            |
+| `Locking/Unlocking a topic 			      | Locks/Unlocks a   |            |            |            |            |
+| <Lock-unlock-topics>       				  | topic inside a    |  |OK30|    |  |OK31|    |   |NOK8|   |  |NOK9|    |
 |           								  | specific forum.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Adding a poll <Create-poll>   		  | Adds a poll to a  |            |            |            |            |
+| `Adding a poll <Create-poll>   		      | Adds a poll to a  |  |OK32|    |  |OK33|    |   |OK34|   |  |NOK10|   |
 |  											  | topic.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Rating a topic <Rate-topics>          | Evaluates a topic |            |            |            |            |
+| `Rating a topic <Rate-topics>               | Evaluates a topic |  |OK35|    |  |OK36|    |   |OK37|   |  |NOK11|   |
 | 											  | by rating stars.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Adding a tag <Tagging-topic>   		  | Creates a new tag |            |            |            |            |
+| `Adding a tag <Tagging-topic>   		      | Creates a new tag |  |OK38|    |  |OK39|    |   |OK40|   |  |NOK12|   |
 | 								 			  | and tags a topic. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Sending private messages   			  | Sends or receives |            |            |            |            |
+| `Sending private messages   		    	  | Sends or receives |  |OK41|    |  |OK42|    |   |OK43|   |  |NOK13|   |
 |  <Send-Private-message>                     | private messages. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Watching <Watch>                      | Subscribes to a   |            |            |            |            |
+| `Watching <Watch>                           | Subscribes to a   |            |            |            |            |
 | 											  | category, forum,  |            |            |            |            |
 | 											  | topic to receive  |            |            |            |            |
-| 											  | email             |            |            |            |            |
+| 											  | email             |  |OK44|    |  |OK45|    |   |OK46|   |  |NOK14|   |
 |											  | notifications of  |            |            |            |            |
 |    										  | new posts or      |            |            |            |            |
 |         								      | topics.           |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`User settings <User-settings>         | Changes profile   |            |            |            |            |
-| 											  | settings,         |            |            |            |            |
+| `User settings <User-settings>              | Changes profile   |            |            |            |            |
+| 											  | settings,         |  |OK49|    |  |OK48|    |   |OK47|   |  |NOK15|   |
 |											  | personal forum    |            |            |            |            |
 | 											  | settings.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Sticking/Unsticking a topic           | Sticks/Unsticks a |            |            |            |            |
-|  <Stick-unstick>                            | topic inside a    |            |            |            |            |
+| `Sticking/Unsticking a topic                | Sticks/Unsticks a |            |            |            |            |
+|  <Stick-unstick>                            | topic inside a    |  |OK50|    |  |OK51|    |   |OK52|   |  |NOK16|   |
 |                                             | specific forum.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Locking/Unlocking a topic             | Closes/Opens a    |            |            |            |            |
-|  <Lock-unlock-topics>                       | topic inside a    |            |            |            |            |
+| `Locking/Unlocking a topic                  | Closes/Opens a    |            |            |            |            |
+|  <Lock-unlock-topics>                       | topic inside a    |  |OK53|    |  |OK54|    |   |NOK18|  |  |NOK17|   |
 |                                             | specific forum.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Splitting a topic <Split-topic>       | Divides one topic |            |            |            |            |
-|                                             | into two separate |            |            |            |            |
+| `Splitting a topic <Split-topic>            | Divides one topic |            |            |            |            |
+|                                             | into two separate |  |OK56|    |  |OK55|    |   |NOK19|  |  |NOK20|   |
 | 						                      | topics.           |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Merging topics <Merge-topics>         | Combines two or   |            |            |            |            |
-|  											  | more topics into  |            |            |            |            |
+| `Merging topics <Merge-topics>              | Combines two or   |            |            |            |            |
+|  											  | more topics into  |  |OK57|    |  |OK58|    |   |NOK22|  |  |NOK21|   |
 | 											  | one.              |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Managing a poll <Create-poll> 		  | Creates, edits,   |            |            |            |            |
-|  											  | deletes, closes   |            |            |            |            |
+| `Managing a poll <Create-poll> 		      | Creates, edits,   |            |            |            |            |
+|  											  | deletes, closes   |  |OK60|    |  |OK59|    |   |NOK23|  |  |NOK24|   |
 |  											  | and reopens a     |            |            |            |            |
 |  											  | poll.             |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Moving a topic <Moving-topic>         | Moves one         |            |            |            |            |
+| `Moving a topic <Moving-topic>              | Moves one         |            |            |            |            |
 |  											  | topic/post from a |            |            |            |            |
-| 											  | forum/topic to    |            |            |            |            |
+| 											  | forum/topic to    |  |OK61|    |  |OK62|    |   |NOK26|  |  |NOK25|   |
 |  											  | the other         |            |            |            |            |
 |  											  | forum/topic.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref`Approving a topic <Approve-topic>      | Changes a new     |            |            |            |            |
+| `Approving a topic <Approve-topic>          | Changes a new     |            |            |            |            |
 |											  | topic/post from   |            |            |            |            |
 | 											  | pending status to |            |            |            |            |
-|  											  | normal status so  |            |            |            |            |
+|  											  | normal status so  |  |OK64|    |  |OK63|    |   |NOK27|  |  |NOK28|   |
 | 											  | that guests and   |            |            |            |            |
 |  											  | normal users can  |            |            |            |            |
 | 											  | view.             |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Uncensoring a post <Uncensor-post>    | Allows a topic    |            |            |            |            |
-|           								  | which has         |            |            |            |            |
+| `Uncensoring a post <Uncensor-post>         | Allows a topic    |            |            |            |            |
+|           								  | which has         |  |OK65|    |  |OK66|    |  |NOK30|   |  |NOK29|   |
 |											  | censored content  |            |            |            |            |
 |  											  | to be displayed.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Showing/Hiding a post			      | Allows a post to  |            |            |            |            |
+| `Showing/Hiding a post			          | Allows a post to  |  |OK68|    |  |OK67|    |   |NOK31|  |  |NOK32|   |
 | <Show-hide-post>							  | be shown/hidden.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Managing pending tasks  			  | Manages all       |            |            |            |            |
+| `Managing pending tasks  			          | Manages all       |            |            |            |            |
 | <Manage-pending-tasks>   					  | topics/posts      |            |            |            |            |
-|  											  | waiting for       |            |            |            |            |
+|  											  | waiting for       |  |OK69|    |  |OK70|    |   |NOK33|  |  |NOK34|   |
 |											  | moderation in one |            |            |            |            |
 | 											  | place.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Managing a watch <Edit-subscription>  | Manages the       |            |            |            |            |
+| `Managing a watch <Edit-subscription>       | Manages the       |            |            |            |            |
 | 											  | subscription      |            |            |            |            |
-| 											  | (watch), edits    |            |            |            |            |
+| 											  | (watch), edits    |  |OK72|    |  |OK71|    |   |NOK36|  |  |NOK35|   |
 | 											  | and deletes a     |            |            |            |            |
 | 											  | subscribed email. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Banning users <Banning-users>         | Bans users from   |            |            |            |            |
-|  											  | accessing         |            |            |            |            |
+| `Banning users <Banning-users>              | Bans users from   |            |            |            |            |
+|  											  | accessing         |  |OK73|    |  |NOK37|   |   |NOK38|  |  |NOK39|   |
 | 											  | specific forums   |            |            |            |            |
 | 											  | or categories.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Adding a forum <Adding-forum>         | Adds a new forum  |            |            |            |            |
-|  											  | to a specific     |            |            |            |            |
+| `Adding a forum <Adding-forum>              | Adds a new forum  |            |            |            |            |
+|  											  | to a specific     |  |OK74|    |  |NOK40|   |   |NOK41|  |  |NOK42|   |
 | 											  | category.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Editing a forum <Edit-forum>          | Changes the       |            |            |            |            |
+| `Editing a forum <Edit-forum>               | Changes the       |            |            |            |            |
 |  											  | title,            |            |            |            |            |
 | 											  | description,      |            |            |            |            |
-| 											  | moderator,        |            |            |            |            |
+| 											  | moderator,        |  |OK75|    |  |OK76|    |   |NOK43|  |  |NOK44|   |
 | 											  | permissions of a  |            |            |            |            |
 | 											  | forum. However,   |            |            |            |            |
 | 											  | moderators cannot |            |            |            |            |
 | 										      | set moderators    |            |            |            |            |
 |           								  | for a forum.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Deleting a forum <Delete-forum> 	  | Deletes a forum   |            |            |            |            |
-|  											  | from a specific   |            |            |            |            |
+| `Deleting a forum <Delete-forum> 	          | Deletes a forum   |            |            |            |            |
+|  											  | from a specific   |  |OK77|    |  |NOK45|   |   |NOK46|  |  |NOK47|   |
 | 											  | category.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Locking/Unlocking a forum 			  | Locks a forum so  |            |            |            |            |
-|  <Lock-unlock-forum>    				      | that it can be    |            |            |            |            |
+| `Locking/Unlocking a forum 			      | Locks a forum so  |            |            |            |            |
+|  <Lock-unlock-forum>    				      | that it can be    |  |OK78|    |  |OK79|    |   |NOK48|  |  |NOK49|   |
 | 								              | viewed only.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Closing/Opening a forum  			  | Closes/Opens a    |            |            |            |            |
+| `Closing/Opening a forum  			      | Closes/Opens a    |            |            |            |            |
 |  <Close-open-forum>    				      | forum. The closed |            |            |            |            |
-| 								              | forums are still  |            |            |            |            |
+| 								              | forums are still  |  |OK81|    |  |OK80|    |   |NOK51|  |  |NOK50|   |
 |											  | manageable by     |            |            |            |            |
 | 											  | administrators    |            |            |            |            |
 | 											  | and moderators.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Moving a forum <Move-forum>   		  | Moves a forum     |            |            |            |            |
-|  											  | from one category |            |            |            |            |
+| `Moving a forum <Move-forum>   		      | Moves a forum     |            |            |            |            |
+|  											  | from one category |  |OK82|    |  |NOK52|   |   |NOK53|  |  |NOK54|   |
 | 											  | to the other.     |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Exporting a forum <Export-forum>	  | Exports a forum   |            |            |            |            |
-|  											  | in the format of  |            |            |            |            |
+| `Exporting a forum <Export-forum>	          | Exports a forum   |            |            |            |            |
+|  											  | in the format of  |  |OK83|    |  |OK84|    |   |NOK56|  |  |NOK57|   |
 | 											  | a ``.zip`` or     |            |            |            |            |
 | 											  | ``.xml`` file.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Importing a forum <Importing-a-forum> | Imports a forum   |            |            |            |            |
+| `Importing a forum <Importing-a-forum>      | Imports a forum   |            |            |            |            |
 | 											  | from a            |            |            |            |            |
-| 											  | ``.zip``/``.xml`` |            |            |            |            |
+| 											  | ``.zip``/``.xml`` |  |OK85|    |  |NOK58|   |   |NOK59|  |  |NOK60|   |
 | 											  | file into the     |            |            |            |            |
 | 											  | **Forums**        |            |            |            |            |
 | 											  | application.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Adding a category <Add-category>      | Adds a new        |            |            |            |            |
+| `Adding a category <Add-category>           | Adds a new        |  |OK86|    |  |NOK63|   |   |NOK62|  |  |NOK61|   |
 | 											  | category.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Editing a category <Edit category>    | Edits a category  |            |            |            |            |
-|  											  | and changes its   |            |            |            |            |
+| `Editing a category <Edit category>         | Edits a category  |            |            |            |            |
+|  											  | and changes its   |  |OK87|    |  |NOK64|   |   |NOK65|  |  |NOK66|   |
 | 											  | properties.       |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Exporting a category 				  | Exports           |            |            |            |            |
+| `Exporting a category 				      | Exports           |            |            |            |            |
 | <Export-category>							  | categories in the |            |            |            |            |
-| 											  | format of a       |            |            |            |            |
+| 											  | format of a       |  |OK88|    |  |NOK69|   |   |NOK68|  |  |NOK67|   |
 | 											  | ``.zip`` or       |            |            |            |            |
 | 											  | ``.xml`` file.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Importing a category 				  | Imports a         |            |            |            |            |
+| `Importing a category 				      | Imports a         |            |            |            |            |
 | <Import-category>							  | category from a   |            |            |            |            |
-|											  | ``.zip``/``.xml`` |            |            |            |            |
+|											  | ``.zip``/``.xml`` |  |OK89|    |  |NOK70|   |   |NOK71|  |  |NOK72|   |
 | 											  | file into the     |            |            |            |            |
 | 											  | **Forums**        |            |            |            |            |
 | 											  | application.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Deleting a category <Delete-category> | Deletes a         |            |            |            |            |
-|  											  | category and all  |            |            |            |            |
+| `Deleting a category <Delete-category>      | Deletes a         |            |            |            |            |
+|  											  | category and all  |  |OK90|    |  |NOK75|   |   |NOK74|  |  |NOK73|   |
 | 											  | forums, topics,   |            |            |            |            |
 | 											  | posts inside it.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Administrating Sorting 				  | Sorts forums,     |            |            |            |            |
-| <Sort-settings>					          | topics according  |            |            |            |            |
+| `Administrating Sorting 				      | Sorts forums,     |            |            |            |            |
+| <Sort-settings>					          | topics according  |  |OK91|    |  |NOK76|   |   |NOK77|  |  |NOK78|   |
 |  											  | to specific       |            |            |            |            |
 | 											  | conditions.       |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Administrating Censor 				  | Defines keywords  |            |            |            |            |
-| <Administrating-Censor>      			      | that will be      |            |            |            |            |
+| `Administrating Censor 				      | Defines keywords  |            |            |            |            |
+| <Administrating-Censor>      			      | that will be      |  |OK92|    |  |NOK81|   |   |NOK80|  |  |NOK79|   |
 | 											  | censored in a     |            |            |            |            |
 | 											  | forum.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Customizing an email notification     | Defines content   |            |            |            |            |
+| `Customizing an email notification          | Defines content   |  |OK93|    |  |NOK82|   |   |NOK83|  |  |NOK84|   |
 | <Customize-email-notifs> 				      | of the email      |            |            |            |            |
 | 											  | notifications.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Customizing BBCodes  				  | Adds, edits and   |            |            |            |            |
+| `Customizing BBCodes  				      | Adds, edits and   |            |            |            |            |
 |  <Customize-BBCodes>						  | deletes the       |            |            |            |            |
-| 											  | BBCode tags used  |            |            |            |            |
+| 											  | BBCode tags used  |  |OK94|    |  |NOK87|   |   |NOK86|  |  |NOK85|   |
 | 											  | in writing        |            |            |            |            |
 | 											  | posts/topics.     |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Setting up auto-pruning 			  | Sets up           |            |            |            |            |
+| `Setting up auto-pruning 			          | Sets up           |            |            |            |            |
 | <auto-pruning>							  | auto-pruning to   |            |            |            |            |
 |  											  | clean a large     |            |            |            |            |
-| 											  | amount of         |            |            |            |            |
+| 											  | amount of         |  |OK95|    |  |NOK88|   |   |NOK89|  |  |NOK90|   |
 | 											  | obsolete and      |            |            |            |            |
 | 											  | inactive topics   |            |            |            |            |
 | 											  | based on          |            |            |            |            |
 | 											  | criteria.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Banning IPs <Banning-IPs>             | Bans IPs in the   |            |            |            |            |
+| `Banning IPs <Banning-IPs>                  | Bans IPs in the   |            |            |            |            |
 | 											  | whole **Forums**  |            |            |            |            |
 | 											  | application (only |            |            |            |            |
-| 											  | administrators)   |            |            |            |            |
+| 											  | administrators)   | |OK96|     |  |OK97|    |   |NOK91|  |  |NOK92|   |
 | 											  | and in specific   |            |            |            |            |
 |											  | forums only       |            |            |            |            |
 | 								              | (administrators   |            |            |            |            |
 |           							      | and moderators).  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| :ref:`Managing users <Manage-users>         | Manages user's    |            |            |            |            |
+| `Managing users <Manage-users>              | Manages user's    |            |            |            |            |
 |  											  | profile, promotes |            |            |            |            |
-|											  | users, bans       |            |            |            |            |
+|											  | users, bans       |  |OK98|    |  |NOK95|   |   |NOK94|  |  |NOK93|   |
 | 											  | users, views a    |            |            |            |            |
 | 											  | topic and post of |            |            |            |            |
 | 											  | a specific user.  |            |            |            |            |
@@ -2861,3 +2861,197 @@ displayed properly in the **Forums** homepage.
 .. |image208| image:: images/forum/admin_forum_import_cat.png
 .. |image209| image:: images/forum/manage_category_btn.png
 .. |topic| image:: images/forum/start_topic.png
+.. |OK1| image:: images/common/yes.png
+.. |OK2| image:: images/common/yes.png
+.. |OK3| image:: images/common/yes.png
+.. |OK4| image:: images/common/yes.png
+.. |OK5| image:: images/common/yes.png
+.. |OK6| image:: images/common/yes.png
+.. |OK7| image:: images/common/yes.png
+.. |OK8| image:: images/common/yes.png
+.. |OK9| image:: images/common/yes.png
+.. |OK10| image:: images/common/yes.png
+.. |OK11| image:: images/common/yes.png
+.. |OK12| image:: images/common/yes.png
+.. |OK13| image:: images/common/yes.png
+.. |OK14| image:: images/common/yes.png
+.. |OK15| image:: images/common/yes.png
+.. |OK16| image:: images/common/yes.png
+.. |OK17| image:: images/common/yes.png
+.. |OK18| image:: images/common/yes.png
+.. |OK19| image:: images/common/yes.png
+.. |OK20| image:: images/common/yes.png
+.. |OK21| image:: images/common/yes.png
+.. |OK22| image:: images/common/yes.png
+.. |OK23| image:: images/common/yes.png
+.. |OK24| image:: images/common/yes.png
+.. |OK25| image:: images/common/yes.png
+.. |OK26| image:: images/common/yes.png
+.. |OK27| image:: images/common/yes.png
+.. |OK28| image:: images/common/yes.png
+.. |OK29| image:: images/common/yes.png
+.. |OK30| image:: images/common/yes.png
+.. |OK31| image:: images/common/yes.png
+.. |OK32| image:: images/common/yes.png
+.. |OK33| image:: images/common/yes.png
+.. |OK34| image:: images/common/yes.png
+.. |OK35| image:: images/common/yes.png
+.. |OK36| image:: images/common/yes.png
+.. |OK37| image:: images/common/yes.png
+.. |OK38| image:: images/common/yes.png
+.. |OK39| image:: images/common/yes.png
+.. |OK40| image:: images/common/yes.png
+.. |OK41| image:: images/common/yes.png
+.. |OK42| image:: images/common/yes.png
+.. |OK43| image:: images/common/yes.png
+.. |OK44| image:: images/common/yes.png
+.. |OK45| image:: images/common/yes.png
+.. |OK46| image:: images/common/yes.png
+.. |OK47| image:: images/common/yes.png
+.. |OK48| image:: images/common/yes.png
+.. |OK49| image:: images/common/yes.png
+.. |OK50| image:: images/common/yes.png
+.. |OK51| image:: images/common/yes.png
+.. |OK52| image:: images/common/yes.png
+.. |OK53| image:: images/common/yes.png
+.. |OK54| image:: images/common/yes.png
+.. |OK55| image:: images/common/yes.png
+.. |OK56| image:: images/common/yes.png
+.. |OK57| image:: images/common/yes.png
+.. |OK58| image:: images/common/yes.png
+.. |OK59| image:: images/common/yes.png
+.. |OK60| image:: images/common/yes.png
+.. |OK61| image:: images/common/yes.png
+.. |OK62| image:: images/common/yes.png
+.. |OK63| image:: images/common/yes.png
+.. |OK64| image:: images/common/yes.png
+.. |OK65| image:: images/common/yes.png
+.. |OK66| image:: images/common/yes.png
+.. |OK67| image:: images/common/yes.png
+.. |OK68| image:: images/common/yes.png
+.. |OK69| image:: images/common/yes.png
+.. |OK70| image:: images/common/yes.png
+.. |OK71| image:: images/common/yes.png
+.. |OK72| image:: images/common/yes.png
+.. |OK73| image:: images/common/yes.png
+.. |OK74| image:: images/common/yes.png
+.. |OK75| image:: images/common/yes.png
+.. |OK76| image:: images/common/yes.png
+.. |OK77| image:: images/common/yes.png
+.. |OK78| image:: images/common/yes.png
+.. |OK79| image:: images/common/yes.png
+.. |OK80| image:: images/common/yes.png
+.. |OK81| image:: images/common/yes.png
+.. |OK82| image:: images/common/yes.png
+.. |OK83| image:: images/common/yes.png
+.. |OK84| image:: images/common/yes.png
+.. |OK85| image:: images/common/yes.png
+.. |OK86| image:: images/common/yes.png
+.. |OK87| image:: images/common/yes.png
+.. |OK88| image:: images/common/yes.png
+.. |OK89| image:: images/common/yes.png
+.. |OK90| image:: images/common/yes.png
+.. |OK91| image:: images/common/yes.png
+.. |OK92| image:: images/common/yes.png
+.. |OK93| image:: images/common/yes.png
+.. |OK94| image:: images/common/yes.png
+.. |OK95| image:: images/common/yes.png
+.. |OK96| image:: images/common/yes.png
+.. |OK97| image:: images/common/yes.png
+.. |OK98| image:: images/common/yes.png
+.. |NOK1| image:: images/common/no.png
+.. |NOK2| image:: images/common/no.png
+.. |NOK3| image:: images/common/no.png
+.. |NOK4| image:: images/common/no.png
+.. |NOK5| image:: images/common/no.png
+.. |NOK6| image:: images/common/no.png
+.. |NOK7| image:: images/common/no.png
+.. |NOK8| image:: images/common/no.png
+.. |NOK9| image:: images/common/no.png
+.. |NOK10| image:: images/common/no.png
+.. |NOK11| image:: images/common/no.png
+.. |NOK12| image:: images/common/no.png
+.. |NOK13| image:: images/common/no.png
+.. |NOK14| image:: images/common/no.png
+.. |NOK15| image:: images/common/no.png
+.. |NOK16| image:: images/common/no.png
+.. |NOK17| image:: images/common/no.png
+.. |NOK18| image:: images/common/no.png
+.. |NOK19| image:: images/common/no.png
+.. |NOK20| image:: images/common/no.png
+.. |NOK21| image:: images/common/no.png
+.. |NOK22| image:: images/common/no.png
+.. |NOK23| image:: images/common/no.png
+.. |NOK24| image:: images/common/no.png
+.. |NOK25| image:: images/common/no.png
+.. |NOK26| image:: images/common/no.png
+.. |NOK27| image:: images/common/no.png
+.. |NOK28| image:: images/common/no.png
+.. |NOK29| image:: images/common/no.png
+.. |NOK30| image:: images/common/no.png
+.. |NOK31| image:: images/common/no.png
+.. |NOK32| image:: images/common/no.png
+.. |NOK33| image:: images/common/no.png
+.. |NOK34| image:: images/common/no.png
+.. |NOK35| image:: images/common/no.png
+.. |NOK36| image:: images/common/no.png
+.. |NOK37| image:: images/common/no.png
+.. |NOK38| image:: images/common/no.png
+.. |NOK39| image:: images/common/no.png
+.. |NOK40| image:: images/common/no.png
+.. |NOK41| image:: images/common/no.png
+.. |NOK42| image:: images/common/no.png
+.. |NOK43| image:: images/common/no.png
+.. |NOK44| image:: images/common/no.png
+.. |NOK45| image:: images/common/no.png
+.. |NOK46| image:: images/common/no.png
+.. |NOK47| image:: images/common/no.png
+.. |NOK48| image:: images/common/no.png
+.. |NOK49| image:: images/common/no.png
+.. |NOK50| image:: images/common/no.png
+.. |NOK51| image:: images/common/no.png
+.. |NOK52| image:: images/common/no.png
+.. |NOK53| image:: images/common/no.png
+.. |NOK54| image:: images/common/no.png
+.. |NOK55| image:: images/common/no.png
+.. |NOK56| image:: images/common/no.png
+.. |NOK57| image:: images/common/no.png
+.. |NOK58| image:: images/common/no.png
+.. |NOK59| image:: images/common/no.png
+.. |NOK60| image:: images/common/no.png
+.. |NOK61| image:: images/common/no.png
+.. |NOK62| image:: images/common/no.png
+.. |NOK63| image:: images/common/no.png
+.. |NOK64| image:: images/common/no.png
+.. |NOK65| image:: images/common/no.png
+.. |NOK66| image:: images/common/no.png
+.. |NOK67| image:: images/common/no.png
+.. |NOK68| image:: images/common/no.png
+.. |NOK69| image:: images/common/no.png
+.. |NOK70| image:: images/common/no.png
+.. |NOK71| image:: images/common/no.png
+.. |NOK72| image:: images/common/no.png
+.. |NOK73| image:: images/common/no.png
+.. |NOK74| image:: images/common/no.png
+.. |NOK75| image:: images/common/no.png
+.. |NOK76| image:: images/common/no.png
+.. |NOK77| image:: images/common/no.png
+.. |NOK78| image:: images/common/no.png
+.. |NOK79| image:: images/common/no.png
+.. |NOK80| image:: images/common/no.png
+.. |NOK81| image:: images/common/no.png
+.. |NOK82| image:: images/common/no.png
+.. |NOK83| image:: images/common/no.png
+.. |NOK84| image:: images/common/no.png
+.. |NOK85| image:: images/common/no.png
+.. |NOK86| image:: images/common/no.png
+.. |NOK87| image:: images/common/no.png
+.. |NOK88| image:: images/common/no.png
+.. |NOK89| image:: images/common/no.png
+.. |NOK90| image:: images/common/no.png
+.. |NOK91| image:: images/common/no.png
+.. |NOK92| image:: images/common/no.png
+.. |NOK93| image:: images/common/no.png
+.. |NOK94| image:: images/common/no.png
+.. |NOK95| image:: images/common/no.png
+
