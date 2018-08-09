@@ -76,49 +76,42 @@ add-on, only **the last stable version** is displayed.
 
 Also, add the following options:
 
-+-----------------------+----------------------------------------------------+
-| ``--snapshots``       | Displays add-ons that have stable or development   |
-|                       | versions. For each listed add-on, only the last    |
-|                       | stable and the last development versions are       |
-|                       | displayed.                                         |
-+-----------------------+----------------------------------------------------+
-| ``--unstable``        | Displays add-ons that have stable or unstable      |
-|                       | versions. For each listed add-on, only the last    |
-|                       | stable and the last unstable versions are          |
-|                       | displayed.                                         |
-+-----------------------+----------------------------------------------------+
-| ``--installed``       | Displays add-ons (including stable and development |
-|                       | versions) that are already installed in eXo 		 |
-|                       | Platform.   										 |
-+-----------------------+----------------------------------------------------+
-| ``--outdated``        | Displays stable add-ons that have newer versions   |
-|                       | than ones installed in eXo Platform - based on the |
-|                       | `aether generic version                            |
-|                       | order <http://download.eclipse.org/aether/aether-c |
-|                       | ore/0.9.0.M2/apidocs/org/eclipse/aether/util/versi |
-|                       | on/GenericVersionScheme.html>`__.                  |
-+-----------------------+----------------------------------------------------+
-| ``--no-cache``        | Displays add-ons by re-downloading the `remote     |
-|                       | catalog <http://www.exoplatform.com/addons/catalog |
-|                       | >`__.                                              |
-+-----------------------+----------------------------------------------------+
-| ``--offline``         | Displays add-ons by the cached and local catalogs  |
-|                       | (without the network access).                      |
-+-----------------------+----------------------------------------------------+
-| ``--catalog=$URL``    | Displays add-ons by a remote catalog URL where URL |
-|                       | is an alternative location for the catalog (for    |
-|                       | example, http://example.org/remote.json).          |
-+-----------------------+----------------------------------------------------+
-| ``--no-compat``       | Displays add-ons that ignores the compatibility    |
-|                       | check of application servers, editions and version |
-|                       | range (corresponding to                            |
-|                       | *supportedApplicationServers*,                     |
-|                       | *supportedDistributions* and *compatibility*       |
-|                       | respectively in each catalog entry).               |
-+-----------------------+----------------------------------------------------+
-| ``--batch-mode``      | Displays add-ons without the ASCII art logo (eXo   |
-|                       | art text displayed right after the command on the  |
-|                       | CLI).                                              |
-+-----------------------+----------------------------------------------------+
+
+ - ``--snapshots``: Displays add-ons that have stable or development   
+                    versions. For each listed add-on, only the last    
+                    stable and the last development versions are       
+                    displayed.                                         
+
+ - ``--unstable``: Displays add-ons that have stable or unstable      
+                   versions. For each listed add-on, only the last    
+                   stable and the last unstable versions are displayed.                                         
+
+ - ``--installed``: Displays add-ons (including stable and development 
+                    versions) that are already installed in eXo Platform.
+                     		 
+ - ``--outdated``: Displays stable add-ons that have newer versions   
+                   than ones installed in eXo Platform - based on the 
+                   `aether generic version order <http://download.eclipse.org/aether/aether-c ore/0.9.0.M2/apidocs/org/eclipse/aether/util/version/GenericVersionScheme.html>`__.                  
+
+ - ``--no-cache``: Displays add-ons by re-downloading the `remote     
+                   catalog <http://www.exoplatform.com/addons/catalog>`__.                                              
+
+ - ``--offline``: Displays add-ons by the cached and local catalogs  
+                  (without the network access).                      
+
+ - ``--catalog=$URL``: Displays add-ons by a remote catalog URL where URL 
+                       is an alternative location for the catalog (for    
+                       example, http://example.org/remote.json).          
+
+ - ``--no-compat``: Displays add-ons that ignores the compatibility    
+                    check of application servers, editions and version 
+                    range (corresponding to *supportedApplicationServers*,                     
+                    *supportedDistributions* and *compatibility*       
+                    respectively in each catalog entry).               
+
+ - ``--batch-mode``: Displays add-ons without the ASCII art logo (eXo   
+                     art text displayed right after the command on the  
+                     CLI).                                              
+
 
 .. |image0| image:: images/addons/list_screen.png
