@@ -1186,7 +1186,7 @@ section:
 
 +--------------------------------------+-------------------------------------+
 | Configuration                        | Description                         |
-+=========================================+==================================+
++======================================+=====================================+
 | ``EXO_PROFILES="all,myOwnProfile"``  | Tomcat only. The default profile    |
 |                                      | is "all". If you customize this     |
 |                                      | variable, refer to 				 |
@@ -1346,7 +1346,7 @@ to the ``CATALINA_OPTS`` variable, for example:
 | ``-Dcrash.ssh.port=54321``                    | deploying                  |
 |                                               | `Crash <http://www.crashub |
 |                                               | .org>`__                   |
-|                                               | into eXo Platform.              |
+|                                               | into eXo Platform.         |
 |                                               |                            |
 |                                               | **Crash** is a useful tool |
 |                                               | which provides a shell to  |
