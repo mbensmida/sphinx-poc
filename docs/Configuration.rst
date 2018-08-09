@@ -352,1065 +352,872 @@ This page is a reference to configurations exposed via
 		   search it in the whole documentation and raise a question in
 		   `Community Forum <http://community.exoplatform.com/portal/intranet/forum>`__,
 		   if necessary.
+		   
+.. _PlatformProperties:
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| **Platform**                |
-+-----------------------------+------------------+-----------------------------+
-| `exo.base.url <#PLFAdminGui | Generates links. | http://localhost:8080       |
-| de.Configuration.ServerBase |                  |                             |
-| URL>`__                     |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.accountsetup.skip <#PL | Skips "account   | false                       |
-| FAdminGuide.Configuration.A | setup" screen or |                             |
-| ccountSetup>`__             | not?             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.super.user <#PLFAdminG | The predefined   | root                        |
-| uide.Configuration.Predefin | super user's     |                             |
-| edUserGroupMembership>`__   | name.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.portal.resetpassword.e | The expiration   | 24 (hours)                  |
-| xpiretime <#PLFAdminGuide.C | time of a reset  |                             |
-| onfiguration.ForgotPassword | password link.   |                             |
-| >`__                        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **SMTP**                    |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.from <#PLFA | The "From" field | noreply@exoplatform.com     |
-| dminGuide.Configuration.Out | in outgoing      |                             |
-| goingMailService>`__        | emails.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.host <#PLFA | The external     | localhost                   |
-| dminGuide.Configuration.Out | mail server.     |                             |
-| goingMailService>`__        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.port <#PLFA | The external     | 25                          |
-| dminGuide.Configuration.Out | mail server      |                             |
-| goingMailService>`__        | port.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.starttls.en | Enable TLS or    | false                       |
-| able <#PLFAdminGuide.Config | not?             |                             |
-| uration.OutgoingMailService |                  |                             |
-| >`__                        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.auth <#PLFA | Enable SMTP      | false                       |
-| dminGuide.Configuration.Out | authentication   |                             |
-| goingMailService>`__        | or not?          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.username <# | Username to get  |                             |
-| PLFAdminGuide.Configuration | authenticated    |                             |
-| .OutgoingMailService>`__    | with the mail    |                             |
-|                             | server.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.password <# | Password to get  |                             |
-| PLFAdminGuide.Configuration | authenticated    |                             |
-| .OutgoingMailService>`__    | with the mail    |                             |
-|                             | server.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.socketFacto | Port to connect  |                             |
-| ry.port <#PLFAdminGuide.Con | to if a socket   |                             |
-| figuration.OutgoingMailServ | factory is       |                             |
-| ice>`__                     | specified.       |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.email.smtp.socketFacto | A class to       |                             |
-| ry.class <#PLFAdminGuide.Co | create SMTP      |                             |
-| nfiguration.OutgoingMailSer | sockets.         |                             |
-| vice>`__                    |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **JODConverter**            |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jodconverter.enable <# | Enable           | true                        |
-| PLFAdminGuide.Configuration | JODConverter or  |                             |
-| .JODConverter>`__           | not?             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jodconverter.portnumbe | List of ports    | 2002                        |
-| rs <#PLFAdminGuide.Configur | used to create   |                             |
-| ation.JODConverter>`__      | *soffice*        |                             |
-|                             | processes.       |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jodconverter.officehom | The home folder  | Blank (auto-detected)       |
-| e <#PLFAdminGuide.Configura | of the Office    |                             |
-| tion.JODConverter>`__       | installation.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jodconverter.taskqueue | The maximum      | 30000                       |
-| timeout <#PLFAdminGuide.Con | living time in   |                             |
-| figuration.JODConverter>`__ | milliseconds of  |                             |
-|                             | a task in the    |                             |
-|                             | conversation     |                             |
-|                             | queue.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jodconverter.taskexecu | The maximum time | 120000                      |
-| tiontimeout <#PLFAdminGuide | in milliseconds  |                             |
-| .Configuration.JODConverter | to process a     |                             |
-| >`__                        | task.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jodconverter.maxtasksp | The maximum      | 200                         |
-| erprocess <#PLFAdminGuide.C | number of tasks  |                             |
-| onfiguration.JODConverter>` | to process by an |                             |
-| __                          | office server.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jodconverter.retrytime | The interval     | 120000                      |
-| out <#PLFAdminGuide.Configu | time in          |                             |
-| ration.JODConverter>`__     | milliseconds to  |                             |
-|                             | try to restart   |                             |
-|                             | an office server |                             |
-|                             | in case it       |                             |
-|                             | unexpectedly     |                             |
-|                             | stops.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Search connector**        |
-+-----------------------------+------------------+-----------------------------+
-| `exo.[searchConnectorName]. | Turn on/off a    | true                        |
-| connector.[informationType] | specific Search  |                             |
-| .enable <#PLFAdminGuide.Con | connector for a  |                             |
-| figuration.SearchConnector> | certain          |                             |
-| `__                         | information      |                             |
-|                             | type.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Unified Search**          |
-+-----------------------------+------------------+-----------------------------+
-| `exo.unified-search.engine. | Enable fuzzy     | true                        |
-| fuzzy.enable <#PLFAdminGuid | search or not?   |                             |
-| e.Configuration.UnifiedSear |                  |                             |
-| ch>`__                      |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.unified-search.engine. | A float number   | 0.5                         |
-| fuzzy.similarity <#PLFAdmin | between 0 and 1  |                             |
-| Guide.Configuration.Unified | expressing how   |                             |
-| Search>`__                  | much a returned  |                             |
-|                             | word matches the |                             |
-|                             | keyword. 1 is    |                             |
-|                             | exact search.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.unified-search.exclude | List of          | ``.-``                      |
-| d-characters <#PLFAdminGuid | characters that  |                             |
-| e.Configuration.UnifiedSear | will not be      |                             |
-| ch>`__                      | indexed (so      |                             |
-|                             | could not be     |                             |
-|                             | searched).       |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Notification**            |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.Notificat | Cron expression  | 0 0 23 ? \* \* (11:00pm     |
-| ionDailyJob.expression <#PL | to schedule      | every day)                  |
-| FAdminGuide.Configuration.N | daily emails.    |                             |
-| otification>`__             |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.Notificat | Cron expression  | 0 0 11 ? \* SUN (11:00am    |
-| ionWeeklyJob.expression <#P | to schedule      | every Sunday)               |
-| LFAdminGuide.Configuration. | weekly emails.   |                             |
-| Notification>`__            |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.service.Q | The delay time   | 60                          |
-| ueueMessage.period <#PLFAdm | (in seconds)     |                             |
-| inGuide.Configuration.Notif | between two      |                             |
-| ication>`__                 | batches of sent  |                             |
-|                             | mails.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.service.Q | The maximum      | 30                          |
-| ueueMessage.numberOfMailPer | number of emails |                             |
-| Batch <#PLFAdminGuide.Confi | sent each batch. |                             |
-| guration.Notification>`__   |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.portalnam | The "from" field | eXo                         |
-| e <#PLFAdminGuide.Configura | in notification  |                             |
-| tion.Notification>`__       | emails.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.maxitems  | Maximum number   | 8                           |
-| <#PLFAdminGuide.Configurati | of notifications |                             |
-| on.Notification>`__         | displayed in the |                             |
-|                             | popup list.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.viewall < | Living days of   | 30                          |
-| #PLFAdminGuide.Configuratio | items displayed  |                             |
-| n.Notification>`__          | in the View All  |                             |
-|                             | page.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.WebNotifi | Cron expression  | 0 0 23 ? \* \* (11:00pm     |
-| cationCleanJob.expression < | to schedule the  | every day)                  |
-| #PLFAdminGuide.Configuratio | job that cleans  |                             |
-| n.Notification>`__          | web notification |                             |
-|                             | old items.       |                             |
-+-----------------------------+------------------+-----------------------------+
-| **JCR**                     |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.datasource.dialect | In most cases    | auto                        |
-|  <#PLFAdminGuide.Database.C | the dialect is   |                             |
-| onfiguringPLF>`__           | auto-detected.   |                             |
-|                             | Follow the link  |                             |
-|                             | to know          |                             |
-|                             | exceptions.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.storage.enabled <# | Enable file      | true                        |
-| PLFAdminGuide.Configuration | system storage   |                             |
-| .DataDirectory>`__          | for JCR values?  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **WebDav**                  |
-+-----------------------------+------------------+-----------------------------+
-| `exo.webdav.def-folder-node | Matching node    | nt:folder                   |
-| -type <#PLFAdminGuide.Confi | type of folders. |                             |
-| guration.WebDAV>`__         |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.webdav.def-file-node-t | Matching node    | nt:file                     |
-| ype <#PLFAdminGuide.Configu | type of files.   |                             |
-| ration.WebDAV>`__           |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.webdav.def-file-mimety | The mimetype to  | application/octet-stream    |
-| pe <#PLFAdminGuide.Configur | exchange file    |                             |
-| ation.WebDAV>`__            | data.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.webdav.update-policy < | The policy       | create-version              |
-| #PLFAdminGuide.Configuratio | applied when     |                             |
-| n.WebDAV>`__                | there is an      |                             |
-|                             | update via       |                             |
-|                             | WebDav.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.webdav.folder-icon-pat | The display icon | /eXoWCMResources/skin/image |
-| h <#PLFAdminGuide.Configura | of a folder.     | s/file/nt-folder.png        |
-| tion.WebDAV>`__             |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.webdav.cache-control < | The              | text/\*:max-age=3600;image/ |
-| #PLFAdminGuide.Configuratio | cache-control    | \*:max-age=1800;application |
-| n.WebDAV>`__                | header that      | /\*:max-age=1800;\*/\*:no-c |
-|                             | defines cache    | ache                        |
-|                             | and cache live   |                             |
-|                             | time.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| **ECMS**                    |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.connector.drives. | Maximum size (in | 200                         |
-| uploadLimit <#PLFAdminGuide | MB) allowed of   |                             |
-| .Configuration.FileSizeLimi | an uploaded      |                             |
-| t>`__                       | file.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.portal.uploadhandler.p | Turn on/off      | true                        |
-| ublic-restriction <#PLFAdmi | public access to |                             |
-| nGuide.Configuration.Upload | the upload       |                             |
-| Handler>`__                 | service.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.connector.drives. | The maximum      | 3                           |
-| clientLimit <#PLFUserGuide. | number of        |                             |
-| ManagingYourDocuments.Worki | concurrent       |                             |
-| ngWithBasicActions.Uploadin | uploaded files   |                             |
-| gFiles>`__                  | in client side.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.connector.drives. | The maximum      | 20                          |
-| serverLimit <#PLFUserGuide. | number of        |                             |
-| ManagingYourDocuments.Worki | concurrent       |                             |
-| ngWithBasicActions.Uploadin | uploaded files   |                             |
-| gFiles>`__                  | in server side.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.search.excluded-m | Content of these | text/css,text/javascript,ap |
-| imetypes <#PLFUserGuide.Man | mimetypes will   | plication/x-javascript,text |
-| agingYourWebsites.Searching | not be searched. | /ecmascript                 |
-| ForContentInASite.Searching |                  |                             |
-| ForContent>`__              |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.search.enableFuzz | Enable fuzzy     | true                        |
-| ySearch <#PLFUserGuide.Mana | search or not?   |                             |
-| gingYourWebsites.SearchingF |                  |                             |
-| orContentInASite.SearchingF |                  |                             |
-| orContent>`__               |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.search.fuzzySearc | A float number   | 0.8                         |
-| hIndex <#PLFUserGuide.Manag | between 0 and 1  |                             |
-| ingYourWebsites.SearchingFo | expressing how   |                             |
-| rContentInASite.SearchingFo | much a returned  |                             |
-| rContent>`__                | word matches the |                             |
-|                             | keyword. 1 is    |                             |
-|                             | exact search.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.lock.admin <#PLFU | Users or groups  | \*:/platform/administrators |
-| serGuide.AdministeringeXoPl | who can manage   |                             |
-| atform.ContentAdministratio | locks.           |                             |
-| n.WorkingWithRepository.Loc |                  |                             |
-| ks>`__                      |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.friendly.enabled  | Enable friendly  | true                        |
-| <#PLFRefGuide.Configuration | URL maker or     |                             |
-| s.ExternalComponentPlugins. | not?             |                             |
-| Content.FriendlyPlugin>`__  |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.friendly.servletN | The friendly     | content                     |
-| ame <#PLFRefGuide.Configura | name used when   |                             |
-| tions.ExternalComponentPlug | making friendly  |                             |
-| ins.Content.FriendlyPlugin> | URLs.            |                             |
-| `__                         |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **ECMS Watch Document**     |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.watchdocument.sen | The "from" field | support@exoplatform.com     |
-| der <#PLFAdminGuide.Configu | in the           |                             |
-| ration.EmailNotificationOfD | notification     |                             |
-| ocumentChanges>`__          | emails.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.watchdocument.sub | The subject of   | "Your watching document is  |
-| ject <#PLFAdminGuide.Config | the notification | changed"                    |
-| uration.EmailNotificationOf | emails.          |                             |
-| DocumentChanges>`__         |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.watchdocument.mim | Mimetype of the  | text/html                   |
-| etype <#PLFAdminGuide.Confi | message body.    |                             |
-| guration.EmailNotificationO |                  |                             |
-| fDocumentChanges>`__        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.watchdocument.con | The message      | Check it yourself in        |
-| tent <#PLFAdminGuide.Config | body.            | ``exo-sample.properties``   |
-| uration.EmailNotificationOf |                  |                             |
-| DocumentChanges>`__         |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **ECMS Document             |
-| versioning**                |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.version | The drives that  | Managed                     |
-| ing.drives <#PLFAdminGuide. | are enabled for  | Sites,Groups,Personal       |
-| Configuration.DocumentVersi | Document         | Documents                   |
-| oning>`__                   | versioning.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.version | The max number   | 0 (no limit)                |
-| s.max <#PLFAdminGuide.Confi | of versions that |                             |
-| guration.DocumentVersioning | a document can   |                             |
-| >`__                        | have.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.version | The expiration   | 0 (no limit)                |
-| s.expiration <#PLFAdminGuid | time (in days)   |                             |
-| e.Configuration.DocumentVer | of a document    |                             |
-| sioning>`__                 | version.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| **ECMS Document Viewer**    |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.pdfview | Max file size of | 10                          |
-| er.max-file-size <#PLFAdmin | documents for    |                             |
-| Guide.Configuration.Documen | preview, in MB   |                             |
-| tViewer>`__                 |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.pdfview | Max number of    | 99                          |
-| er.max-pages <#PLFAdminGuid | pages of         |                             |
-| e.Configuration.DocumentVie | documents for    |                             |
-| wer>`__                     | preview          |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Calendar**                |
-+-----------------------------+------------------+-----------------------------+
-| `exo.calendar.default.event | An integer       | 2 (equivalent to 1 hour)    |
-| .suggest <#PLFAdminGuide.Co | number n, used   |                             |
-| nfiguration.EndDateSuggesti | to               |                             |
-| on>`__                      | auto-calculate   |                             |
-|                             | and suggest the  |                             |
-|                             | end time when    |                             |
-|                             | users            |                             |
-|                             | create/edit an   |                             |
-|                             | event.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.calendar.default.task. | An integer       | 1 (equivalent to 30 mins)   |
-| suggest <#PLFAdminGuide.Con | number n, used   |                             |
-| figuration.EndDateSuggestio | to               |                             |
-| n>`__                       | auto-calculate   |                             |
-|                             | and suggest the  |                             |
-|                             | end time when    |                             |
-|                             | users            |                             |
-|                             | create/edit a    |                             |
-|                             | task.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Site metadata**           |
-+-----------------------------+------------------+-----------------------------+
-| `exo.intranet.portalConfig. | Don't change     | false                       |
-| metadata.override <#PLFDevG | this unless you  |                             |
-| uide.Site.CreateNew.Redeplo | customize the    |                             |
-| ySiteExtension>`__          | Intranet site.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.intranet.portalConfig. | Don't change     | insert                      |
-| metadata.importmode <#PLFDe | this unless you  |                             |
-| vGuide.Site.CreateNew.Redep | customize the    |                             |
-| loySiteExtension>`__        | Intranet site.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.acme.portalConfig.meta | Only affect when | false                       |
-| data.override <#eXoAddonsGu | you install the  |                             |
-| ide.ACME.Installation>`__   | ACME addon.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ide.portalConfig.metad | Only affect when | true                        |
-| ata.override <#eXoAddonsGui | you install the  |                             |
-| de.IDE>`__                  | IDE addon.       |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Datasource**              |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.datasource.name <# | JCR datasource   | java:/comp/env/exo-jcr      |
-| PLFAdminGuide.Database.JNDI | name.            |                             |
-| >`__                        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.datasource.name <# | IDM datasource   | java:/comp/env/exo-idm      |
-| PLFAdminGuide.Database.JNDI | name.            |                             |
-| >`__                        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Clustering**              |
-+-----------------------------+------------------+-----------------------------+
-| exo.cluster.partition.name  | Give a string to | DefaultPartition            |
-|                             | identify your    |                             |
-|                             | cluster, to      |                             |
-|                             | avoid conflict   |                             |
-|                             | with other       |                             |
-|                             | clusters in the  |                             |
-|                             | network.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.tc | JGroups          |                             |
-| p\* <#PLFAdminGuide.Cluster | configuration    |                             |
-| ing.JGroups.JCR.TCP>`__     | for JCR using    |                             |
-|                             | TCP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.ud | JGroups          |                             |
-| p.\* <#PLFAdminGuide.Cluste | configuration    |                             |
-| ring.JGroups.JCR.UDP>`__    | for JCR using    |                             |
-|                             | UDP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.cluster.jgroups.tc | JGroups          |                             |
-| p\* <#PLFAdminGuide.Cluster | configuration    |                             |
-| ing.JGroups.IDM.TCP>`__     | for IDM using    |                             |
-|                             | TCP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.cluster.jgroups.ud | JGroups          |                             |
-| p.\* <#PLFAdminGuide.Cluste | configuration    |                             |
-| ring.JGroups.IDM.UDP>`__    | for IDM using    |                             |
-|                             | UDP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.co | Path to your     |                             |
-| nfig <#PLFAdminGuide.Cluste | customized       |                             |
-| ring.JGroups_xml>`__        | JGroups          |                             |
-|                             | configuration    |                             |
-|                             | file, applied to |                             |
-|                             | JCR.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.co | URL to your      |                             |
-| nfig-url <#PLFAdminGuide.Cl | customized       |                             |
-| ustering.JGroups_xml>`__    | JGroups          |                             |
-|                             | configuration    |                             |
-|                             | file, applied to |                             |
-|                             | JCR.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.cluster.jgroups.co | Path to your     |                             |
-| nfig <#PLFAdminGuide.Cluste | customized       |                             |
-| ring.JGroups_xml>`__        | JGroups          |                             |
-|                             | configuration    |                             |
-|                             | file, applied to |                             |
-|                             | IDM.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Quartz Scheduler**        |
-+-----------------------------+------------------+-----------------------------+
-| Main Scheduler Properties   |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.scheduler.insta | The name of the  | ExoScheduler                |
-| nceName <#PLFAdminGuide.Con | scheduler        |                             |
-| figuration.QuartzScheduler> | instance.        |                             |
-| `__                         |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.scheduler.insta | The type of the  | AUTO                        |
-| nceId <#PLFAdminGuide.Confi | scheduler        |                             |
-| guration.QuartzScheduler>`_ | instance.        |                             |
-| _                           |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| ThreadPool configuration    |
-| Properties                  |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.threadPool.clas | Is the name of   | org.quartz.simpl.SimpleThre |
-| s <#PLFAdminGuide.Configura | the ThreadPool   | adPool                      |
-| tion.QuartzScheduler>`__    | implementation   |                             |
-|                             | used.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.threadPool.thre | It an integer    | 5 (which is the value of    |
-| adPriority <#PLFAdminGuide. | value between    | Thread.NORM\_PRIORITY)      |
-| Configuration.QuartzSchedul | Thread.MIN\_PRIO |                             |
-| er>`__                      | RITY             |                             |
-|                             | (which is 1) and |                             |
-|                             | Thread.MAX\_PRIO |                             |
-|                             | RITY             |                             |
-|                             | (which is 10).   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.threadPool.thre | It is the number | 25                          |
-| adCount <#PLFAdminGuide.Con | of threads that  |                             |
-| figuration.QuartzScheduler> | are available    |                             |
-| `__                         | for concurrent   |                             |
-|                             | execution of     |                             |
-|                             | jobs.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| JobStore configuration      |
-| Properties                  |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.misfir | The number of    | 6000                        |
-| eThreshold <#PLFAdminGuide. | milliseconds the |                             |
-| Configuration.QuartzSchedul | scheduler will   |                             |
-| er>`__                      | tolerate a       |                             |
-|                             | trigger to pass  |                             |
-|                             | its              |                             |
-|                             | next-fire-time   |                             |
-|                             | by, before being |                             |
-|                             | considered       |                             |
-|                             | misfired.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.class  | The Scheduler’s  | org.quartz.impl.jdbcjobstor |
-| <#PLFAdminGuide.Configurati | JobStore class   | e.JobStoreTX                |
-| on.QuartzScheduler>`__      | name.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.driver | The Driver       | org.quartz.impl.jdbcjobstor |
-| DelegateClass <#PLFAdminGui | delegate which   | e.StdJDBCDelegate           |
-| de.Configuration.QuartzSche | will understand  |                             |
-| duler>`__                   | the database     |                             |
-|                             | system dialect.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.usePro | The flag which   | false                       |
-| perties <#PLFAdminGuide.Con | instructs        |                             |
-| figuration.QuartzScheduler> | JDBCJobStore     |                             |
-| `__                         | that all values  |                             |
-|                             | in JobDataMaps   |                             |
-|                             | will be Strings. |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.dataSo | The name of the  | quartzDS                    |
-| urce <#PLFAdminGuide.Config | DataSources      |                             |
-| uration.QuartzScheduler>`__ | defined in the   |                             |
-|                             | configuration    |                             |
-|                             | properties file  |                             |
-|                             | for quartz.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.tableP | The prefix used  | QRTZ\_                      |
-| refix <#PLFAdminGuide.Confi | for to Quartz’s  |                             |
-| guration.QuartzScheduler>`_ | tables in the    |                             |
-| _                           | database.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.isClus | Set to "true" in | false                       |
-| tered <#PLFAdminGuide.Confi | order to turn on |                             |
-| guration.QuartzScheduler>`_ | clustering       |                             |
-| _                           | features.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.cluste | Set the          | 20000                       |
-| rCheckinInterval <#PLFAdmin | frequency (in    |                             |
-| Guide.Configuration.QuartzS | milliseconds) at |                             |
-| cheduler>`__                | which this       |                             |
-|                             | instance         |                             |
-|                             | "checks-in" with |                             |
-|                             | other instances  |                             |
-|                             | of the cluster.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.maxMis | The maximum      | 20                          |
-| firesToHandleAtATime <#PLFA | number of        |                             |
-| dminGuide.Configuration.Qua | misfired         |                             |
-| rtzScheduler>`__            | triggers the     |                             |
-|                             | jobstore will    |                             |
-|                             | handle in a      |                             |
-|                             | given pass.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.dontSe | Setting this     | false                       |
-| tAutoCommitFalse <#PLFAdmin | parameter to     |                             |
-| Guide.Configuration.QuartzS | "true" tells     |                             |
-| cheduler>`__                | Quartz not to    |                             |
-|                             | call             |                             |
-|                             | setAutoCommit(fa |                             |
-|                             | lse)             |                             |
-|                             | on connections   |                             |
-|                             | obtained from    |                             |
-|                             | the              |                             |
-|                             | DataSource(s).   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.acquir | Whether or not   | false                       |
-| eTriggersWithinLock <#PLFAd | the acquisition  |                             |
-| minGuide.Configuration.Quar | of next triggers |                             |
-| tzScheduler>`__             | to fire should   |                             |
-|                             | occur within an  |                             |
-|                             | explicit         |                             |
-|                             | database lock.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.lockHa | The class name   |                             |
-| ndler.class <#PLFAdminGuide | to be used to    |                             |
-| .Configuration.QuartzSchedu | produce an       |                             |
-| ler>`__                     | instance of a    |                             |
-|                             | "org.quartz.impl |                             |
-|                             | .jdbcjobstore".  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.driver | A pipe-delimited |                             |
-| DelegateInitString <#PLFAdm | list of          |                             |
-| inGuide.Configuration.Quart | properties (and  |                             |
-| zScheduler>`__              | their values)    |                             |
-|                             | that can be      |                             |
-|                             | passed to the    |                             |
-|                             | DriverDelegate   |                             |
-|                             | during           |                             |
-|                             | initialization   |                             |
-|                             | time.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.txIsol | A value of       | false                       |
-| ationLevelSerializable <#PL | "true" tells     |                             |
-| FAdminGuide.Configuration.Q | Quartz (when     |                             |
-| uartzScheduler>`__          | using JobStoreTX |                             |
-|                             | or CMT) to call  |                             |
-|                             | setTransactionIs |                             |
-|                             | olation(Connecti |                             |
-|                             | on.TRANSACTION\_ |                             |
-|                             | SERIALIZABLE)    |                             |
-|                             | on JDBC          |                             |
-|                             | connections.     |                             |
-|                             | This can be      |                             |
-|                             | helpful to       |                             |
-|                             | prevent lock     |                             |
-|                             | timeouts with    |                             |
-|                             | some databases   |                             |
-|                             | under high load, |                             |
-|                             | and long-lasting |                             |
-|                             | transactions.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.select | Must be a SQL    | SELECT \* FROM {0}LOCKS     |
-| WithLockSQL <#PLFAdminGuide | string that      | WHERE SCHED\_NAME = {1} AND |
-| .Configuration.QuartzSchedu | selects a row in | LOCK\_NAME = ? FOR UPDATE   |
-| ler>`__                     | the "LOCKS"      |                             |
-|                             | table and places |                             |
-|                             | a lock on the    |                             |
-|                             | row.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| Datasources configuration   |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.dataSource.quar | The JNDI URL for | java:/comp/env/exo-jpa\_por |
-| tzDS.jndiURL <#PLFAdminGuid | a DataSource     | tal                         |
-| e.Configuration.QuartzSched | that is managed  |                             |
-| uler>`__                    | by eXo Platform. |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Password Encryption**     |
-+-----------------------------+------------------+-----------------------------+
-| `exo.plidm.password.class < | The class that   | DatabaseReadingSaltEncoder  |
-| #PLFAdminGuide.Configuratio | encrypts the     |                             |
-| n.PasswordEncryption>`__    | user password    |                             |
-|                             | before it is     |                             |
-|                             | stored in the    |                             |
-|                             | database.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.plidm.password.hash <# | The encrypt      | SHA-256                     |
-| PLFAdminGuide.Configuration | algorithm.       |                             |
-| .PasswordEncryption>`__     |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Elasticsearch             |
-| Properties**                |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.version.minor <#PLF | The expected     | 5.6                         |
-| AdminGuide.Configuration.El | minor            |                             |
-| asticSearch>`__             | Elastisearch     |                             |
-|                             | version          |                             |
-|                             | compatible with  |                             |
-|                             | eXo Platform.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.embedded.enabled <# | Allows to run an | true                        |
-| PLFAdminGuide.Configuration | Elasticsearch    |                             |
-| .ElasticSearch.ESClientProp | server embedded  |                             |
-| erties>`__                  | in eXo Platform  |                             |
-|                             | (not recommended |                             |
-|                             | for production). |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.cluster.name <#PLFAdmin | Cluster name     | exoplatform-es              |
-| Guide.Configuration.Elastic | identifies your  |                             |
-| Search.ESEmbeddedNodeProper | Elasticsearch    |                             |
-| ties>`__                    | cluster for      |                             |
-|                             | auto-discovery.  |                             |
-|                             | If you’re        |                             |
-|                             | running multiple |                             |
-|                             | clusters on the  |                             |
-|                             | same network,    |                             |
-|                             | make sure you’re |                             |
-|                             | using unique     |                             |
-|                             | names.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.node.name <#PLFAdminGui | Name of the mode | exoplatform-es-embedded     |
-| de.Configuration.ElasticSea | for the embedded |                             |
-| rch.ESEmbeddedNodePropertie | mode. If not     |                             |
-| s>`__                       | specified, a     |                             |
-|                             | name is          |                             |
-|                             | generated        |                             |
-|                             | dynamically at   |                             |
-|                             | startup.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.network.host <#PLFAdmin | Sets both        | "127.0.0.1"                 |
-| Guide.Configuration.Elastic | 'bind\_host' and |                             |
-| Search.ESEmbeddedNodeProper | 'publish\_host'  |                             |
-| ties>`__                    | params. More     |                             |
-|                             | details          |                             |
-|                             | `here <https://w |                             |
-|                             | ww.elastic.co/gu |                             |
-|                             | ide/en/elasticse |                             |
-|                             | arch/reference/c |                             |
-|                             | urrent/modules-n |                             |
-|                             | etwork.html#adva |                             |
-|                             | nced-network-set |                             |
-|                             | tings>`__        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.discovery.zen.ping.unic | In Unicast       | ["127.0.0.1"]               |
-| ast.hosts <#PLFAdminGuide.C | dicovery mode,   |                             |
-| onfiguration.ElasticSearch. | this parameter   |                             |
-| ESEmbeddedNodeProperties>`_ | lets you set a   |                             |
-| _                           | list of master   |                             |
-|                             | nodes in the     |                             |
-|                             | cluster to       |                             |
-|                             | perform          |                             |
-|                             | discovery when   |                             |
-|                             | new nodes        |                             |
-|                             | (master or data) |                             |
-|                             | are started.     |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.http.port <#PLFAdminGui | TCP Port of the  | 9200                        |
-| de.Configuration.ElasticSea | embedded ES      |                             |
-| rch.ESEmbeddedNodePropertie | node.            |                             |
-| s>`__                       |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.path.data <#PLFAdminGui | Local path to    | gatein/data                 |
-| de.Configuration.ElasticSea | the directory    |                             |
-| rch.ESEmbeddedNodePropertie | where to         |                             |
-| s>`__                       | Elasticsearch    |                             |
-|                             | will store index |                             |
-|                             | data allocated   |                             |
-|                             | for this node.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Elasticsearch Client**    |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.search.server.url < | URL of the node  | "http://127.0.0.1:9200"     |
-| #PLFAdminGuide.Configuratio | used for         |                             |
-| n.ElasticSearch.ESClientPro | searching.       |                             |
-| perties>`__                 | Required and     |                             |
-|                             | exo.es.embedded. |                             |
-|                             | enabled=false    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.search.server.usern | Username used    |                             |
-| ame <#PLFAdminGuide.Configu | for the BASIC    |                             |
-| ration.ElasticSearch.ESClie | authentication   |                             |
-| ntProperties>`__            | on the           |                             |
-|                             | Elasticsearch    |                             |
-|                             | node used for    |                             |
-|                             | searching.       |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.search.server.passw | Password used    |                             |
-| ord <#PLFAdminGuide.Configu | for the BASIC    |                             |
-| ration.ElasticSearch.ESClie | authentication   |                             |
-| ntProperties>`__            | on the           |                             |
-|                             | Elasticsearch    |                             |
-|                             | node used for    |                             |
-|                             | searching.       |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.index.server.url <# | URL of the node  | "http://127.0.0.1:9200"     |
-| PLFAdminGuide.Configuration | used for         |                             |
-| .ElasticSearch.ESClientProp | indexing.        |                             |
-| erties>`__                  |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.index.server.userna | Username used    |                             |
-| me <#PLFAdminGuide.Configur | for the BASIC    |                             |
-| ation.ElasticSearch.ESClien | authentication   |                             |
-| tProperties>`__             | on the           |                             |
-|                             | Elasticsearch    |                             |
-|                             | node used for    |                             |
-|                             | indexing.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.index.server.passwo | Password used    |                             |
-| rd <#PLFAdminGuide.Configur | for the BASIC    |                             |
-| ation.ElasticSearch.ESClien | authentication   |                             |
-| tProperties>`__             | on the           |                             |
-|                             | Elasticsearch    |                             |
-|                             | node used for    |                             |
-|                             | indexing.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Elasticsearch Indexing    |
-| properties**                |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.indexing.batch.numb | Maximum number   | 1000                        |
-| er <#PLFAdminGuide.Configur | of documents     |                             |
-| ation.ElasticSearch.Indexin | that can be sent |                             |
-| gProperties>`__             | to Elasticsearch |                             |
-|                             | in one bulk      |                             |
-|                             | request.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.indexing.request.si | Maximum size (in | 10485760 (= 10Mb)           |
-| ze.limit <#PLFAdminGuide.Co | bytes) of an     |                             |
-| nfiguration.ElasticSearch.I | Elasticsearch    |                             |
-| ndexingProperties>`__       | bulk request.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.reindex.batch.size  | Size of the      | 100                         |
-| <#PLFAdminGuide.Configurati | chunks of the    |                             |
-| on.ElasticSearch.IndexingPr | reindexing       |                             |
-| operties>`__                | batch.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.indexing.replica.nu | Number of        | 1                           |
-| mber.default <#PLFAdminGuid | replicas of the  |                             |
-| e.Configuration.ElasticSear | index.           |                             |
-| ch.IndexingProperties>`__   |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.indexing.shard.numb | Number of shards | 5                           |
-| er.default <#PLFAdminGuide. | of the index.    |                             |
-| Configuration.ElasticSearch |                  |                             |
-| .IndexingProperties>`__     |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Enable/Disable activity   |
-| type**                      |
-+-----------------------------+------------------+-----------------------------+
-| `exo.activity-type.activity | The property     | true                        |
-| -type-key.enabled <#PLFAdmi | that allows to   |                             |
-| nGuide.Configuration.Activi | enable or        |                             |
-| tyType>`__                  | disable an       |                             |
-|                             | activity having  |                             |
-|                             | the type key     |                             |
-|                             | `` activity-type |                             |
-|                             | -key ``          |                             |
-|                             | from posting in  |                             |
-|                             | the streams.     |                             |
-+-----------------------------+------------------+-----------------------------+
-| **File storage              |
-| configuration**             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.files.binaries.storage | Allows to define | fs                          |
-| .type <#PLFAdminGuide.Confi | the file storage |                             |
-| guration.fileStorageconfig> | way: File system |                             |
-| `__                         | (type=fs) or     |                             |
-|                             | RDBMS            |                             |
-|                             | (type=rdbms).    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.commons.FileStorageCle | Enables/disables | true                        |
-| anJob.enabled <#PLFAdminGui | the job that     |                             |
-| de.Configuration.fileStorag | cleans unused    |                             |
-| econfig>`__                 | files.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.commons.FileStorageCle | The retention    | 30 days                     |
-| anJob.retention-time <#PLFA | time of unused   |                             |
-| dminGuide.Configuration.fil | files            |                             |
-| eStorageconfig>`__          |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.commons.FileStorageCle | The cron job     | 0 0 11 ? \* SUN             |
-| anJob.expression <#PLFAdmin | expression for   |                             |
-| Guide.Configuration.fileSto | scheduling the   |                             |
-| rageconfig>`__              | file cleaner job |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.files.storage.dir <#PL | The location     | {exo.data.dir}/files        |
-| FAdminGuide.Configuration.f | where to store   |                             |
-| ileStorageconfig>`__        | binary files in  |                             |
-|                             | case of file     |                             |
-|                             | system storage.  |                             |
-|                             | In cluster mode, |                             |
-|                             | this location    |                             |
-|                             | (folder) should  |                             |
-|                             | be shared.       |                             |
-+-----------------------------+------------------+-----------------------------+
-| **MongoDB configuration**:  |
-| Database for eXo Chat: all  |
-| the below parameters could  |
-| be configured in            |
-| `chat.properties            |
-| file <#PLFAdminGuide.Config |
-| uration.ChatConfiguration>` |
-| __                          |
-+-----------------------------+------------------+-----------------------------+
-| `dbServerType <#PLFAdminGui | Allows to define | mongo                       |
-| de.Database.ChatDatabase>`_ | MongoDB type:    |                             |
-| _                           | either Mongo or  |                             |
-|                             | embed. Embed     |                             |
-|                             | value is used    |                             |
-|                             | for unit tests.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `dbServerHost <#PLFAdminGui | The host name or | localhost                   |
-| de.Database.ChatDatabase>`_ | IP of MongoDB.   |                             |
-| _                           |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `dbServerPort <#PLFAdminGui | The port number  | 27017                       |
-| de.Database.ChatDatabase>`_ | to connect to    |                             |
-| _                           | MongoDB host.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `dbServerHosts <#PLFAdminGu | The MongoDB      | localhost:27017             |
-| ide.Database.ChatDatabase>` | nodes to connect |                             |
-| __                          | to, as a         |                             |
-|                             | comma-separated  |                             |
-|                             | list of          |                             |
-|                             | <host:port>      |                             |
-|                             | values.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `dbName <#PLFAdminGuide.Dat | Name of the      | chat                        |
-| abase.ChatDatabase>`__      | Mongo database   |                             |
-|                             | name.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `dbAuthentication <#PLFAdmi | Enables or       | false                       |
-| nGuide.Database.ChatDatabas | disables         |                             |
-| e>`__                       | authentication   |                             |
-|                             | to access        |                             |
-|                             | MongoDB. When    |                             |
-|                             | set to true this |                             |
-|                             | means that       |                             |
-|                             | authentication   |                             |
-|                             | is required.     |                             |
-+-----------------------------+------------------+-----------------------------+
-| `dbUser <#PLFAdminGuide.Dat | Provide the      | EMPTY                       |
-| abase.ChatDatabase>`__      | username to      |                             |
-|                             | access the       |                             |
-|                             | database if      |                             |
-|                             | authentication   |                             |
-|                             | needed.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `dbPassword <#PLFAdminGuide | Provide the      | EMPTY                       |
-| .Database.ChatDatabase>`__  | password to      |                             |
-|                             | access the       |                             |
-|                             | database if      |                             |
-|                             | authentication   |                             |
-|                             | needed.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatPassPhrase <#PLFAdminG | The password to  | chat                        |
-| uide.ChatAdministration.Con | access REST      |                             |
-| figuration.ChatServer>`__   | service on the   |                             |
-|                             | BRAND\_CHAT      |                             |
-|                             | server.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatCronNotifCleanup <#PLF | The frequency of | 0 0/60 \* \* \* ?           |
-| AdminGuide.ChatAdministrati | cleaning eXo     |                             |
-| on.Configuration.ChatServer | Chat             |                             |
-| >`__                        | notifications.Th |                             |
-|                             | ey               |                             |
-|                             | are cleaned up   |                             |
-|                             | every one hour   |                             |
-|                             | by default.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `teamAdminGroup <#PLFAdminG | The eXo group    | /platform/administrators    |
-| uide.ChatAdministration.Con | who can create   |                             |
-| figuration.ChatServer>`__   | teams.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatReadDays <#PLFAdminGui | Number of days   | 30 (days)                   |
-| de.ChatAdministration.Confi | to display the   |                             |
-| guration.ChatServer>`__     | corresponding    |                             |
-|                             | chat messages.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatReadTotalJson <#PLFAdm | The number of    | 200                         |
-| inGuide.ChatAdministration. | messages that    |                             |
-| Configuration.ChatServer>`_ | you can get in   |                             |
-| _                           | the Chat room.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalChat <#PLFAdmi | Time interval to | 5000                        |
-| nGuide.ChatAdministration.C | refresh messages |                             |
-| onfiguration.ChatClientUpda | in a chat.       |                             |
-| tes>`__                     |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalSession <#PLFA | Time interval to | 60000                       |
-| dminGuide.ChatAdministratio | keep a chat      |                             |
-| n.Configuration.ChatClientU | session alive in |                             |
-| pdates>`__                  | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalStatus <#PLFAd | Time interval to | 60000                       |
-| minGuide.ChatAdministration | refresh user     |                             |
-| .Configuration.ChatClientUp | status in        |                             |
-| dates>`__                   | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalNotif <#PLFAdm | Time interval to | 5000                        |
-| inGuide.ChatAdministration. | refresh          |                             |
-| Configuration.ChatClientUpd | Notifications in |                             |
-| ates>`__                    | the main menu in |                             |
-|                             | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalUsers <#PLFAdm | Time interval to | 60000                       |
-| inGuide.ChatAdministration. | refresh Users    |                             |
-| Configuration.ChatClientUpd | list in          |                             |
-| ates>`__                    | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatTokenValidity <#PLFAdm | Time after which | 60000                       |
-| inGuide.ChatAdministration. | a token will be  |                             |
-| Configuration.ChatClientUpd | invalid. The use |                             |
-| ates>`__                    | will then be     |                             |
-|                             | considered       |                             |
-|                             | offline.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.statistics.groovy.temp | Enables/disables | true                        |
-| late.enabled <#PLFAdminGuid | Groovy Templates |                             |
-| e.Configuration.statisticsP | statistics that  |                             |
-| arameter>`__                | is collected     |                             |
-|                             | asynchronously.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **CometD configuration**    |
-+-----------------------------+------------------+-----------------------------+
-| `exo.cometd.oort.url <#PLFA | The CometD Oort  | "http://localhost:8080/come |
-| dminGuide.Clustering.Settin | URL used in      | td/cometd",                 |
-| gUpCluster>`__              | clustering mode. | localhost should be         |
-|                             |                  | replaced by the hostname or |
-|                             |                  | the IP of the cluster node. |
-+-----------------------------+------------------+-----------------------------+
-| `exo.cometd.oort.configType | The CometD       | multicast                   |
-|  <#PLFAdminGuide.Clustering | configuration    |                             |
-| .SettingUpCluster>`__       | type which could |                             |
-|                             | be either        |                             |
-|                             | "static" or      |                             |
-|                             | "multicast".     |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.cometd.oort.cloud <#PL | A                |                             |
-| FAdminGuide.Clustering.Sett | comma-separated  |                             |
-| ingUpCluster>`__            | list of URLs of  |                             |
-|                             | other Oort       |                             |
-|                             | comets to        |                             |
-|                             | connect to at    |                             |
-|                             | startup.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Update of last login      |
-| time**                      |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.user.updateLastLog | Enables/disables | true                        |
-| inTime <#PLFAdminGuide.Conf | the update of    |                             |
-| iguration.lastlogintime>`__ | last login time  |                             |
-|                             | each time the    |                             |
-|                             | user login.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Define spaces             |
-| administrators group**      |
-+-----------------------------+------------------+-----------------------------+
-| `exo.social.spaces.administ | Defines the list |                             |
-| rators <#PLFAdminGuide.Conf | of spaces        |                             |
-| iguration.SpacesAdministrat | administrators   |                             |
-| ion>`__                     | groups.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Assets versions used in   |
-| static resources URLs**     |
-+-----------------------------+------------------+-----------------------------+
-| `exo.assets.version <#PLFAd | Defines the      | It is set to PRODUCT binary |
-| minGuide.Configuration.Asse | assets version.  | version.                    |
-| tsVersionConf>`__           |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Username case sensitive** |
-+-----------------------------+------------------+-----------------------------+
-| `exo.auth.case.insensitive  | Defines if       | false.                      |
-| <#PLFAdminGuide.Configurati | usernames in     |                             |
-| on.CaseSensitiveUsername>`_ | PRODUCT are case |                             |
-| _                           | sensitive or     |                             |
-|                             | not.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| **User inactivity delay**   |
-+-----------------------------+------------------+-----------------------------+
-| `exo.user.status.offline.de | Defines the time | 240000                      |
-| lay <#PLFAdminGuide.Configu | laps which makes |                             |
-| ration.UserInactivityDelay> | the user in      |                             |
-| `__                         | offline status.  |                             |
-|                             | Its value is     |                             |
-|                             | expressed in     |                             |
-|                             | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Notifications channels**  |
-+-----------------------------+------------------+-----------------------------+
-| `exo.notification.channels  | Defines the      | WEB\_CHANNEL, MAIL\_CHANNEL |
-| <#PLFAdminGuide.Configurati | activated        |                             |
-| on.Notification>`__         | notification     |                             |
-|                             | channels.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Wiki application base     |
-| URI**                       |
-+-----------------------------+------------------+-----------------------------+
-| `wiki.permalink.appuri <#PL | Defines the base | wiki                        |
-| FAdminGuide.Configuration.W | URI for the wiki |                             |
-| ikiBaseURI>`__              | application      |                             |
-|                             | permalinks.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| **Files upload limit**      |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.connector.drives. | Maximum size (in | 200                         |
-| uploadLimit <#PLFAdminGuide | MB) allowed of   |                             |
-| .Configuration.FileSizeLimi | an uploaded      |                             |
-| t>`__                       | file.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.social.activity.upload | Maximum size (in | 200                         |
-| Limit <#PLFAdminGuide.Confi | MB) allowed of   |                             |
-| guration.FileSizeLimit>`__  | an uploaded      |                             |
-|                             | image through    |                             |
-|                             | the CKEditor.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.wiki.attachment.upload | Maximum size (in | 200                         |
-| Limit <#PLFAdminGuide.Confi | MB) allowed of   |                             |
-| guration.FileSizeLimit>`__  | an uploaded file |                             |
-|                             | in Wiki          |                             |
-|                             | application.     |                             |
-+-----------------------------+------------------+-----------------------------+
+Platform
+~~~~~~~~~                
+
+- :ref:`exo.base.url <Configuration.ServerBaseURL>: Generates links, default to **http://localhost:8080**.       
+- :ref:`exo.accountsetup.skip <Configuration.ccountSetup>: Skips "accounts etup" screen or not, default to **false**.                       
+- :ref:`exo.super.user <Configuration.PredefinedUserGroupMembership> : The predefined super user's name, default to **root**.                                
+- :ref:exo.portal.resetpassword.expiretime <Configuration.ForgotPassword> : The expiration time of a reset password link, default fo **24 (hours)**                                                                                                            
+
+.. _SMTP:
+
+SMTP
+~~~~~                    
+
+- :ref:`exo.email.smtp.from <Configuration.OutgoingMailService>: The "From" field in outgoing emails, default to **noreply@exoplatform.com**.                                         
+- :ref:`exo.email.smtp.host <Configuration.OutgoingMailService>: The external mail server, default to **localhost**.                   
+- :ref:`exo.email.smtp.port <Configuration.OutgoingMailService>: The external port, default to **25**.                          
+- :ref: `exo.email.smtp.starttls.enable <Configuration.OutgoingMailService>: Enable TLS or not, default to **false**.                                                                                              
+- :ref: `exo.email.smtp.auth <Configuration.OutgoingMailService>: Enable SMTP authentication or not, default to **false**.                                                                                                                                   
+- :ref: `exo.email.smtp.username <Configuration.OutgoingMailService>: Username to get authenticated with the mail server.                                                                                                                                                                         
+- :ref: `exo.email.smtp.password <Configuration.OutgoingMailService>: Password to get authenticated with the mail server.                                                                                                                                                                                                               
+- :ref: `exo.email.smtp.socketFactory.port <Configuration.OutgoingMailService>: Port to connect to if a socket factory is specified.  
+-:ref:exo.email.smtp.socketFactory.class <Configuration.OutgoingMailService>: A class to create SMTP sockets.                                                                                                                                                                                                             
+          
+.. _JODConverter:                                                                                                   
+
+JODConverter
+~~~~~~~~~~~~~
+- :ref:exo.jodconverter.enable <Configuration.JODConverter>: Enable JODConverter or not, default to **true**.            
+- :ref:exo.jodconverter.portnumbers <Configuration.JODConverter>: List of ports used to create soffice processes, default to **2002**.            
+- :ref:exo.jodconverter.officehome <Configuration.JODConverter>: The home folder of the Office installation, default set to blank (auto-detected).            
+- :ref:exo.jodconverter.taskqueuetimeout <Configuration.JODConverter>: The maximum living time in milliseconds of a task in the conversation queue, default set to **30000**.            
+- :ref:exo.jodconverter.taskexecutiontimeout <Configuration.JODConverter>: The maximum time in milliseconds to process a task, default set to **120000**.            
+- :ref:exo.jodconverter.maxtasksperprocess <Configuration.JODConverter>: The maximum number of tasks to process by an office server, default set to **200**.            
+- :ref:exo.jodconverter.retrytimeout <Configuration.JODConverter>: The interval time in milliseconds to try to restart an office server in case it unexpectedly stops., default set to **120000**.            
+
+.. _SearchConnector:
+
+Search connector
+~~~~~~~~~~~~~~~~~
+
+- :ref:exo.[searchConnectorName].connector.[informationType].enable <Configuration.SearchConnector>: Turn on/off a specific Search connector for a certain information type, default to **true**.        
+
+.. UnifiedSearch:
+
+Unified Search
+~~~~~~~~~~~~~~~          
+
+- :ref:exo.unified-search.engine.fuzzy.enable <Configuration.UnifiedSearch>: Enable fuzzy search or not, default to **true**.
+- :ref:exo.unified-search.engine.fuzzy.similarity <Configuration.UnifiedSearch>: A float number between 0 and 1 expressing how much a returned word matches the keyword. 1 is exact search, default to **0.5**.
+- :ref:exo.unified-search.excluded-characters <Configuration.UnifiedSearch>: List of characters that will not be indexed (so could not be searched)., default to ``.-``.
+
+.. _Notification:
+                                
+Notification
+~~~~~~~~~~~~~            
+
+- :ref:`exo.notification.NotificationDailyJob.expression <Configuration.Notification>: Cron expression to schedule daily emails, default to **0 0 23 ? \* \* (11:00pm every day)** .    
+- :ref:`exo.notification.NotificationWeeklyJob.expression <Configuration.Notification>: Cron expression to schedule weekly emails, default to *0 0 11 ? * SUN (11:00am every Sunday)** .    
+- :ref:`exo.notification.service.QueueMessage.period <Configuration.Notification>: The delay time (in seconds) between two batches of sent mails, default to **60** .    
+- :ref:`exo.notification.service.QueueMessage.numberOfMailPerBatch <Configuration.Notification>: The maximum number of emails sent each batch, default to **30** .    
+- :ref:`exo.notification.portalname <Configuration.Notification>: The "from" field in notification emails, default to **eXo** .    
+- :ref:`exo.notification.maxitems <Configuration.Notification>: Maximum number of notifications displayed in the popup list, default to **8** .    
+- :ref:`exo.notification.viewall <Configuration.Notification>: Living days of items displayed in the View All page., default to **30** .    
+- :ref:`exo.notification.WebNotificationCleanJob.expression <Configuration.Notification>: Cron expression to schedule the job that cleans web notification old items., default to **0 0 23 ? * * (11:00pm every day)** .    
+
+.. _JCR:                                                                                           
+
+JCR
+~~~~   
+
+- :ref:exo.jcr.datasource.dialect <Database.ConfiguringPLF>: In most cases the dialect is auto-detected. Follow the link to know exceptions, default to **auto**.                
+- :ref:exo.jcr.storage.enabled <Database.DataDirectory>: Enable file system storage for JCR values?, default to **true**.                
+                                                                
+.. _Webdav:
+
+WebDav
+~~~~~~~
+
+- :ref:exo.webdav.def-folder-node-type <Configuration.WebDAV>: Matching node type of folders, default to **nt:folder**.                  
+- :ref:exo.webdav.def-file-node-type <Configuration.WebDAV>: Matching node type of files., default to **nt:file**.                  
+- :ref:exo.webdav.def-file-mimetype <Configuration.WebDAV>: The mimetype to exchange file data, default to **application/octet-stream**.                  
+- :ref:exo.webdav.update-policy <Configuration.WebDAV>: The policy applied when there is an update via WebDav, default to **create-version**.                  
+- :ref:exo.webdav.folder-icon-path <Configuration.WebDAV>: The display icon of a folder., default to **/eXoWCMResources/skin/images/file/nt-folder.png**.                  
+- :ref:exo.webdav.cache-control <Configuration.WebDAV>: The cache-control header that defines cache and cache live time, default to **text/\*:max-age=3600;image/\*:max-age=1800;application/\*:max-age=1800;\*/\*:no-cache**.                  
+
+.. _ECMS:                                  
+
+ECMS                    
+~~~~~~
+
+- :ref:exo.ecms.connector.drives.uploadLimit <Configuration.FileSizeLimit>: Maximum size (in MB) allowed of an uploaded file, defalut to **200**.
+- :ref:exo.portal.uploadhandler.public-restriction <Configuration.UploadHandler>: Turn on/off public access to the upload service, defalut to **true**.
+- :ref:exo.ecms.connector.drives.clientLimit <Uploading-files>: The maximum number of concurrent uploaded files in client side, defalut to **3**.
+- :ref:exo.ecms.connector.drives.serverLimit <Uploading-files>: The maximum number of concurrent uploaded files in server side, defalut to **20**.
+- :ref:exo.ecms.search.excluded-mimetypes <SearchingForContent>: Content of these mimetypes will not be searched, defalut to **text/css,text/javascript,application/x-javascript,text/ecmascript**.
+- :ref:exo.ecms.search.enableFuzzySearch <SearchingForContent>: Enable fuzzy search or not?, defalut to **true**.
+- :ref:exo.ecms.search.fuzzySearchIndex <SearchingForContentt>: A float number between 0 and 1 expressing how much a returned word matches the keyword. 1 is exact search, defalut to **0.8**.
+- :ref:exo.ecms.lock.admin <WorkingWithRepository.Locks>: Users or groups who can manage locks, default to **\*:/platform/administrators**.                                         
+- :ref:exo.ecms.friendly.enabled <#PLFRefGuide.Configurations.ExternalComponentPlugins.Content.FriendlyPlugin>: Enable friendly URL maker or not?, default to **true**.                                         
+- :ref:exo.ecms.friendly.servletName <#PLFRefGuide.Configurations.ExternalComponentPlugins.Content.FriendlyPlugin>: The friendly name used when making friendly URLs, default to **content**.                                         
+
+.. _ECMSWatchDocument:
+
+ECMS Watch Document
+~~~~~~~~~~~~~~~~~~~~     
+- :ref:exo.ecms.watchdocument.sender <Configuration.EmailNotificationOfDocumentChanges>: The "from" field in the notification emails, defalut to **support@exoplatform.com**.
+- :ref:exo.ecms.watchdocument.subject <Configuration.EmailNotificationOfDocumentChanges>: The subject of the notification emails, defalut to **"Your watching document is changed"**.
+- :ref:exo.ecms.watchdocument.mimetype <Configuration.EmailNotificationOfDocumentChanges>: Mimetype of the message body, defalut to **text/html**.
+- :ref:exo.ecms.watchdocument.content <Configuration.EmailNotificationOfDocumentChanges>: The message body, Check it yourself in ``exo-sample.properties`` file.                                                       
+
+.. _ECMSDocumentversioning:
+
+ECMS Document versioning
+~~~~~~~~~~~~~~~~~~~~~~~~~~                 
+
+ `exo.ecms.documents.version  The drives that   Managed                     
+ ing.drives <#PLFAdminGuide.  are enabled for   Sites,Groups,Personal       
+ Configuration.DocumentVersi  Document          Documents                   
+ oning>`__                    versioning.                                   
+
+ `exo.ecms.documents.version  The max number    0 (no limit)                
+ s.max <#PLFAdminGuide.Confi  of versions that                              
+ guration.DocumentVersioning  a document can                                
+ >`__                         have.                                         
+
+ `exo.ecms.documents.version  The expiration    0 (no limit)                
+ s.expiration <#PLFAdminGuid  time (in days)                                
+ e.Configuration.DocumentVer  of a document                                 
+ sioning>`__                  version.                                      
+
+ **ECMS Document Viewer**    
+
+ `exo.ecms.documents.pdfview  Max file size of  10                          
+ er.max-file-size <#PLFAdmin  documents for                                 
+ Guide.Configuration.Documen  preview, in MB                                
+ tViewer>`__                                                                
+
+ `exo.ecms.documents.pdfview  Max number of     99                          
+ er.max-pages <#PLFAdminGuid  pages of                                      
+ e.Configuration.DocumentVie  documents for                                 
+ wer>`__                      preview                                       
+
+ **Calendar**                
+
+ `exo.calendar.default.event  An integer        2 (equivalent to 1 hour)    
+ .suggest <#PLFAdminGuide.Co  number n, used                                
+ nfiguration.EndDateSuggesti  to                                            
+ on>`__                       auto-calculate                                
+                              and suggest the                               
+                              end time when                                 
+                              users                                         
+                              create/edit an                                
+                              event.                                        
+
+ `exo.calendar.default.task.  An integer        1 (equivalent to 30 mins)   
+ suggest <#PLFAdminGuide.Con  number n, used                                
+ figuration.EndDateSuggestio  to                                            
+ n>`__                        auto-calculate                                
+                              and suggest the                               
+                              end time when                                 
+                              users                                         
+                              create/edit a                                 
+                              task.                                         
+
+ **Site metadata**           
+
+ `exo.intranet.portalConfig.  Don't change      false                       
+ metadata.override <#PLFDevG  this unless you                               
+ uide.Site.CreateNew.Redeplo  customize the                                 
+ ySiteExtension>`__           Intranet site.                                
+
+ `exo.intranet.portalConfig.  Don't change      insert                      
+ metadata.importmode <#PLFDe  this unless you                               
+ vGuide.Site.CreateNew.Redep  customize the                                 
+ loySiteExtension>`__         Intranet site.                                
+
+ `exo.acme.portalConfig.meta  Only affect when  false                       
+ data.override <#eXoAddonsGu  you install the                               
+ ide.ACME.Installation>`__    ACME addon.                                   
+
+ `exo.ide.portalConfig.metad  Only affect when  true                        
+ ata.override <#eXoAddonsGui  you install the                               
+ de.IDE>`__                   IDE addon.                                    
+
+ **Datasource**              
+
+ `exo.jcr.datasource.name <#  JCR datasource    java:/comp/env/exo-jcr      
+ PLFAdminGuide.Database.JNDI  name.                                         
+ >`__                                                                       
+
+ `exo.idm.datasource.name <#  IDM datasource    java:/comp/env/exo-idm      
+ PLFAdminGuide.Database.JNDI  name.                                         
+ >`__                                                                       
+
+ **Clustering**              
+
+ exo.cluster.partition.name   Give a string to  DefaultPartition            
+                              identify your                                 
+                              cluster, to                                   
+                              avoid conflict                                
+                              with other                                    
+                              clusters in the                               
+                              network.                                      
+
+ `exo.jcr.cluster.jgroups.tc  JGroups                                       
+ p\* <#PLFAdminGuide.Cluster  configuration                                 
+ ing.JGroups.JCR.TCP>`__      for JCR using                                 
+                              TCP.                                          
+
+ `exo.jcr.cluster.jgroups.ud  JGroups                                       
+ p.\* <#PLFAdminGuide.Cluste  configuration                                 
+ ring.JGroups.JCR.UDP>`__     for JCR using                                 
+                              UDP.                                          
+
+ `exo.idm.cluster.jgroups.tc  JGroups                                       
+ p\* <#PLFAdminGuide.Cluster  configuration                                 
+ ing.JGroups.IDM.TCP>`__      for IDM using                                 
+                              TCP.                                          
+
+ `exo.idm.cluster.jgroups.ud  JGroups                                       
+ p.\* <#PLFAdminGuide.Cluste  configuration                                 
+ ring.JGroups.IDM.UDP>`__     for IDM using                                 
+                              UDP.                                          
+
+ `exo.jcr.cluster.jgroups.co  Path to your                                  
+ nfig <#PLFAdminGuide.Cluste  customized                                    
+ ring.JGroups_xml>`__         JGroups                                       
+                              configuration                                 
+                              file, applied to                              
+                              JCR.                                          
+
+ `exo.jcr.cluster.jgroups.co  URL to your                                   
+ nfig-url <#PLFAdminGuide.Cl  customized                                    
+ ustering.JGroups_xml>`__     JGroups                                       
+                              configuration                                 
+                              file, applied to                              
+                              JCR.                                          
+
+ `exo.idm.cluster.jgroups.co  Path to your                                  
+ nfig <#PLFAdminGuide.Cluste  customized                                    
+ ring.JGroups_xml>`__         JGroups                                       
+                              configuration                                 
+                              file, applied to                              
+                              IDM.                                          
+
+ **Quartz Scheduler**        
+
+ Main Scheduler Properties   
+
+ `exo.quartz.scheduler.insta  The name of the   ExoScheduler                
+ nceName <#PLFAdminGuide.Con  scheduler                                     
+ figuration.QuartzScheduler>  instance.                                     
+ `__                                                                        
+
+ `exo.quartz.scheduler.insta  The type of the   AUTO                        
+ nceId <#PLFAdminGuide.Confi  scheduler                                     
+ guration.QuartzScheduler>`_  instance.                                     
+ _                                                                          
+
+ ThreadPool configuration    
+ Properties                  
+
+ `exo.quartz.threadPool.clas  Is the name of    org.quartz.simpl.SimpleThre 
+ s <#PLFAdminGuide.Configura  the ThreadPool    adPool                      
+ tion.QuartzScheduler>`__     implementation                                
+                              used.                                         
+
+ `exo.quartz.threadPool.thre  It an integer     5 (which is the value of    
+ adPriority <#PLFAdminGuide.  value between     Thread.NORM\_PRIORITY)      
+ Configuration.QuartzSchedul  Thread.MIN\_PRIO                              
+ er>`__                       RITY                                          
+                              (which is 1) and                              
+                              Thread.MAX\_PRIO                              
+                              RITY                                          
+                              (which is 10).                                
+
+ `exo.quartz.threadPool.thre  It is the number  25                          
+ adCount <#PLFAdminGuide.Con  of threads that                               
+ figuration.QuartzScheduler>  are available                                 
+ `__                          for concurrent                                
+                              execution of                                  
+                              jobs.                                         
+
+ JobStore configuration      
+ Properties                  
+
+ `exo.quartz.jobStore.misfir  The number of     6000                        
+ eThreshold <#PLFAdminGuide.  milliseconds the                              
+ Configuration.QuartzSchedul  scheduler will                                
+ er>`__                       tolerate a                                    
+                              trigger to pass                               
+                              its                                           
+                              next-fire-time                                
+                              by, before being                              
+                              considered                                    
+                              misfired.                                     
+
+ `exo.quartz.jobStore.class   The Scheduler’s   org.quartz.impl.jdbcjobstor 
+ <#PLFAdminGuide.Configurati  JobStore class    e.JobStoreTX                
+ on.QuartzScheduler>`__       name.                                         
+
+ `exo.quartz.jobStore.driver  The Driver        org.quartz.impl.jdbcjobstor 
+ DelegateClass <#PLFAdminGui  delegate which    e.StdJDBCDelegate           
+ de.Configuration.QuartzSche  will understand                               
+ duler>`__                    the database                                  
+                              system dialect.                               
+
+ `exo.quartz.jobStore.usePro  The flag which    false                       
+ perties <#PLFAdminGuide.Con  instructs                                     
+ figuration.QuartzScheduler>  JDBCJobStore                                  
+ `__                          that all values                               
+                              in JobDataMaps                                
+                              will be Strings.                              
+
+ `exo.quartz.jobStore.dataSo  The name of the   quartzDS                    
+ urce <#PLFAdminGuide.Config  DataSources                                   
+ uration.QuartzScheduler>`__  defined in the                                
+                              configuration                                 
+                              properties file                               
+                              for quartz.                                   
+
+ `exo.quartz.jobStore.tableP  The prefix used   QRTZ\_                      
+ refix <#PLFAdminGuide.Confi  for to Quartz’s                               
+ guration.QuartzScheduler>`_  tables in the                                 
+ _                            database.                                     
+
+ `exo.quartz.jobStore.isClus  Set to "true" in  false                       
+ tered <#PLFAdminGuide.Confi  order to turn on                              
+ guration.QuartzScheduler>`_  clustering                                    
+ _                            features.                                     
+
+ `exo.quartz.jobStore.cluste  Set the           20000                       
+ rCheckinInterval <#PLFAdmin  frequency (in                                 
+ Guide.Configuration.QuartzS  milliseconds) at                              
+ cheduler>`__                 which this                                    
+                              instance                                      
+                              "checks-in" with                              
+                              other instances                               
+                              of the cluster.                               
+
+ `exo.quartz.jobStore.maxMis  The maximum       20                          
+ firesToHandleAtATime <#PLFA  number of                                     
+ dminGuide.Configuration.Qua  misfired                                      
+ rtzScheduler>`__             triggers the                                  
+                              jobstore will                                 
+                              handle in a                                   
+                              given pass.                                   
+
+ `exo.quartz.jobStore.dontSe  Setting this      false                       
+ tAutoCommitFalse <#PLFAdmin  parameter to                                  
+ Guide.Configuration.QuartzS  "true" tells                                  
+ cheduler>`__                 Quartz not to                                 
+                              call                                          
+                              setAutoCommit(fa                              
+                              lse)                                          
+                              on connections                                
+                              obtained from                                 
+                              the                                           
+                              DataSource(s).                                
+
+ `exo.quartz.jobStore.acquir  Whether or not    false                       
+ eTriggersWithinLock <#PLFAd  the acquisition                               
+ minGuide.Configuration.Quar  of next triggers                              
+ tzScheduler>`__              to fire should                                
+                              occur within an                               
+                              explicit                                      
+                              database lock.                                
+
+ `exo.quartz.jobStore.lockHa  The class name                                
+ ndler.class <#PLFAdminGuide  to be used to                                 
+ .Configuration.QuartzSchedu  produce an                                    
+ ler>`__                      instance of a                                 
+                              "org.quartz.impl                              
+                              .jdbcjobstore".                               
+
+ `exo.quartz.jobStore.driver  A pipe-delimited                              
+ DelegateInitString <#PLFAdm  list of                                       
+ inGuide.Configuration.Quart  properties (and                               
+ zScheduler>`__               their values)                                 
+                              that can be                                   
+                              passed to the                                 
+                              DriverDelegate                                
+                              during                                        
+                              initialization                                
+                              time.                                         
+
+ `exo.quartz.jobStore.txIsol  A value of        false                       
+ ationLevelSerializable <#PL  "true" tells                                  
+ FAdminGuide.Configuration.Q  Quartz (when                                  
+ uartzScheduler>`__           using JobStoreTX                              
+                              or CMT) to call                               
+                              setTransactionIs                              
+                              olation(Connecti                              
+                              on.TRANSACTION\_                              
+                              SERIALIZABLE)                                 
+                              on JDBC                                       
+                              connections.                                  
+                              This can be                                   
+                              helpful to                                    
+                              prevent lock                                  
+                              timeouts with                                 
+                              some databases                                
+                              under high load,                              
+                              and long-lasting                              
+                              transactions.                                 
+
+ `exo.quartz.jobStore.select  Must be a SQL     SELECT \* FROM {0}LOCKS     
+ WithLockSQL <#PLFAdminGuide  string that       WHERE SCHED\_NAME = {1} AND 
+ .Configuration.QuartzSchedu  selects a row in  LOCK\_NAME = ? FOR UPDATE   
+ ler>`__                      the "LOCKS"                                   
+                              table and places                              
+                              a lock on the                                 
+                              row.                                          
+
+ Datasources configuration   
+
+ `exo.quartz.dataSource.quar  The JNDI URL for  java:/comp/env/exo-jpa\_por 
+ tzDS.jndiURL <#PLFAdminGuid  a DataSource      tal                         
+ e.Configuration.QuartzSched  that is managed                               
+ uler>`__                     by eXo Platform.                              
+
+ **Password Encryption**     
+
+ `exo.plidm.password.class <  The class that    DatabaseReadingSaltEncoder  
+ #PLFAdminGuide.Configuratio  encrypts the                                  
+ n.PasswordEncryption>`__     user password                                 
+                              before it is                                  
+                              stored in the                                 
+                              database.                                     
+
+ `exo.plidm.password.hash <#  The encrypt       SHA-256                     
+ PLFAdminGuide.Configuration  algorithm.                                    
+ .PasswordEncryption>`__                                                    
+
+ **Elasticsearch             
+ Properties**                
+
+ `exo.es.version.minor <#PLF  The expected      5.6                         
+ AdminGuide.Configuration.El  minor                                         
+ asticSearch>`__              Elastisearch                                  
+                              version                                       
+                              compatible with                               
+                              eXo Platform.                                 
+
+ `exo.es.embedded.enabled <#  Allows to run an  true                        
+ PLFAdminGuide.Configuration  Elasticsearch                                 
+ .ElasticSearch.ESClientProp  server embedded                               
+ erties>`__                   in eXo Platform                               
+                              (not recommended                              
+                              for production).                              
+
+ `es.cluster.name <#PLFAdmin  Cluster name      exoplatform-es              
+ Guide.Configuration.Elastic  identifies your                               
+ Search.ESEmbeddedNodeProper  Elasticsearch                                 
+ ties>`__                     cluster for                                   
+                              auto-discovery.                               
+                              If you’re                                     
+                              running multiple                              
+                              clusters on the                               
+                              same network,                                 
+                              make sure you’re                              
+                              using unique                                  
+                              names.                                        
+
+ `es.node.name <#PLFAdminGui  Name of the mode  exoplatform-es-embedded     
+ de.Configuration.ElasticSea  for the embedded                              
+ rch.ESEmbeddedNodePropertie  mode. If not                                  
+ s>`__                        specified, a                                  
+                              name is                                       
+                              generated                                     
+                              dynamically at                                
+                              startup.                                      
+
+ `es.network.host <#PLFAdmin  Sets both         "127.0.0.1"                 
+ Guide.Configuration.Elastic  'bind\_host' and                              
+ Search.ESEmbeddedNodeProper  'publish\_host'                               
+ ties>`__                     params. More                                  
+                              details                                       
+                              `here <https://w                              
+                              ww.elastic.co/gu                              
+                              ide/en/elasticse                              
+                              arch/reference/c                              
+                              urrent/modules-n                              
+                              etwork.html#adva                              
+                              nced-network-set                              
+                              tings>`__                                     
+
+ `es.discovery.zen.ping.unic  In Unicast        ["127.0.0.1"]               
+ ast.hosts <#PLFAdminGuide.C  dicovery mode,                                
+ onfiguration.ElasticSearch.  this parameter                                
+ ESEmbeddedNodeProperties>`_  lets you set a                                
+ _                            list of master                                
+                              nodes in the                                  
+                              cluster to                                    
+                              perform                                       
+                              discovery when                                
+                              new nodes                                     
+                              (master or data)                              
+                              are started.                                  
+
+ `es.http.port <#PLFAdminGui  TCP Port of the   9200                        
+ de.Configuration.ElasticSea  embedded ES                                   
+ rch.ESEmbeddedNodePropertie  node.                                         
+ s>`__                                                                      
+
+ `es.path.data <#PLFAdminGui  Local path to     gatein/data                 
+ de.Configuration.ElasticSea  the directory                                 
+ rch.ESEmbeddedNodePropertie  where to                                      
+ s>`__                        Elasticsearch                                 
+                              will store index                              
+                              data allocated                                
+                              for this node.                                
+
+ **Elasticsearch Client**    
+
+ `exo.es.search.server.url <  URL of the node   "http://127.0.0.1:9200"     
+ #PLFAdminGuide.Configuratio  used for                                      
+ n.ElasticSearch.ESClientPro  searching.                                    
+ perties>`__                  Required and                                  
+                              exo.es.embedded.                              
+                              enabled=false                                 
+
+ `exo.es.search.server.usern  Username used                                 
+ ame <#PLFAdminGuide.Configu  for the BASIC                                 
+ ration.ElasticSearch.ESClie  authentication                                
+ ntProperties>`__             on the                                        
+                              Elasticsearch                                 
+                              node used for                                 
+                              searching.                                    
+
+ `exo.es.search.server.passw  Password used                                 
+ ord <#PLFAdminGuide.Configu  for the BASIC                                 
+ ration.ElasticSearch.ESClie  authentication                                
+ ntProperties>`__             on the                                        
+                              Elasticsearch                                 
+                              node used for                                 
+                              searching.                                    
+
+ `exo.es.index.server.url <#  URL of the node   "http://127.0.0.1:9200"     
+ PLFAdminGuide.Configuration  used for                                      
+ .ElasticSearch.ESClientProp  indexing.                                     
+ erties>`__                                                                 
+
+ `exo.es.index.server.userna  Username used                                 
+ me <#PLFAdminGuide.Configur  for the BASIC                                 
+ ation.ElasticSearch.ESClien  authentication                                
+ tProperties>`__              on the                                        
+                              Elasticsearch                                 
+                              node used for                                 
+                              indexing.                                     
+
+ `exo.es.index.server.passwo  Password used                                 
+ rd <#PLFAdminGuide.Configur  for the BASIC                                 
+ ation.ElasticSearch.ESClien  authentication                                
+ tProperties>`__              on the                                        
+                              Elasticsearch                                 
+                              node used for                                 
+                              indexing.                                     
+
+ **Elasticsearch Indexing    
+ properties**                
+
+ `exo.es.indexing.batch.numb  Maximum number    1000                        
+ er <#PLFAdminGuide.Configur  of documents                                  
+ ation.ElasticSearch.Indexin  that can be sent                              
+ gProperties>`__              to Elasticsearch                              
+                              in one bulk                                   
+                              request.                                      
+
+ `exo.es.indexing.request.si  Maximum size (in  10485760 (= 10Mb)           
+ ze.limit <#PLFAdminGuide.Co  bytes) of an                                  
+ nfiguration.ElasticSearch.I  Elasticsearch                                 
+ ndexingProperties>`__        bulk request.                                 
+
+ `exo.es.reindex.batch.size   Size of the       100                         
+ <#PLFAdminGuide.Configurati  chunks of the                                 
+ on.ElasticSearch.IndexingPr  reindexing                                    
+ operties>`__                 batch.                                        
+
+ `exo.es.indexing.replica.nu  Number of         1                           
+ mber.default <#PLFAdminGuid  replicas of the                               
+ e.Configuration.ElasticSear  index.                                        
+ ch.IndexingProperties>`__                                                  
+
+ `exo.es.indexing.shard.numb  Number of shards  5                           
+ er.default <#PLFAdminGuide.  of the index.                                 
+ Configuration.ElasticSearch                                                
+ .IndexingProperties>`__                                                    
+
+ **Enable/Disable activity   
+ type**                      
+
+ `exo.activity-type.activity  The property      true                        
+ -type-key.enabled <#PLFAdmi  that allows to                                
+ nGuide.Configuration.Activi  enable or                                     
+ tyType>`__                   disable an                                    
+                              activity having                               
+                              the type key                                  
+                              `` activity-type                              
+                              -key ``                                       
+                              from posting in                               
+                              the streams.                                  
+
+ **File storage              
+ configuration**             
+
+ `exo.files.binaries.storage  Allows to define  fs                          
+ .type <#PLFAdminGuide.Confi  the file storage                              
+ guration.fileStorageconfig>  way: File system                              
+ `__                          (type=fs) or                                  
+                              RDBMS                                         
+                              (type=rdbms).                                 
+
+ `exo.commons.FileStorageCle  Enables/disables  true                        
+ anJob.enabled <#PLFAdminGui  the job that                                  
+ de.Configuration.fileStorag  cleans unused                                 
+ econfig>`__                  files.                                        
+
+ `exo.commons.FileStorageCle  The retention     30 days                     
+ anJob.retention-time <#PLFA  time of unused                                
+ dminGuide.Configuration.fil  files                                         
+ eStorageconfig>`__                                                         
+
+ `exo.commons.FileStorageCle  The cron job      0 0 11 ? \* SUN             
+ anJob.expression <#PLFAdmin  expression for                                
+ Guide.Configuration.fileSto  scheduling the                                
+ rageconfig>`__               file cleaner job                              
+
+ `exo.files.storage.dir <#PL  The location      {exo.data.dir}/files        
+ FAdminGuide.Configuration.f  where to store                                
+ ileStorageconfig>`__         binary files in                               
+                              case of file                                  
+                              system storage.                               
+                              In cluster mode,                              
+                              this location                                 
+                              (folder) should                               
+                              be shared.                                    
+
+ **MongoDB configuration**:  
+ Database for eXo Chat: all  
+ the below parameters could  
+ be configured in            
+ `chat.properties            
+ file <#PLFAdminGuide.Config 
+ uration.ChatConfiguration>` 
+ __                          
+
+ `dbServerType <#PLFAdminGui  Allows to define  mongo                       
+ de.Database.ChatDatabase>`_  MongoDB type:                                 
+ _                            either Mongo or                               
+                              embed. Embed                                  
+                              value is used                                 
+                              for unit tests.                               
+
+ `dbServerHost <#PLFAdminGui  The host name or  localhost                   
+ de.Database.ChatDatabase>`_  IP of MongoDB.                                
+ _                                                                          
+
+ `dbServerPort <#PLFAdminGui  The port number   27017                       
+ de.Database.ChatDatabase>`_  to connect to                                 
+ _                            MongoDB host.                                 
+
+ `dbServerHosts <#PLFAdminGu  The MongoDB       localhost:27017             
+ ide.Database.ChatDatabase>`  nodes to connect                              
+ __                           to, as a                                      
+                              comma-separated                               
+                              list of                                       
+                              <host:port>                                   
+                              values.                                       
+
+ `dbName <#PLFAdminGuide.Dat  Name of the       chat                        
+ abase.ChatDatabase>`__       Mongo database                                
+                              name.                                         
+
+ `dbAuthentication <#PLFAdmi  Enables or        false                       
+ nGuide.Database.ChatDatabas  disables                                      
+ e>`__                        authentication                                
+                              to access                                     
+                              MongoDB. When                                 
+                              set to true this                              
+                              means that                                    
+                              authentication                                
+                              is required.                                  
+
+ `dbUser <#PLFAdminGuide.Dat  Provide the       EMPTY                       
+ abase.ChatDatabase>`__       username to                                   
+                              access the                                    
+                              database if                                   
+                              authentication                                
+                              needed.                                       
+
+ `dbPassword <#PLFAdminGuide  Provide the       EMPTY                       
+ .Database.ChatDatabase>`__   password to                                   
+                              access the                                    
+                              database if                                   
+                              authentication                                
+                              needed.                                       
+
+ `chatPassPhrase <#PLFAdminG  The password to   chat                        
+ uide.ChatAdministration.Con  access REST                                   
+ figuration.ChatServer>`__    service on the                                
+                              BRAND\_CHAT                                   
+                              server.                                       
+
+ `chatCronNotifCleanup <#PLF  The frequency of  0 0/60 \* \* \* ?           
+ AdminGuide.ChatAdministrati  cleaning eXo                                  
+ on.Configuration.ChatServer  Chat                                          
+ >`__                         notifications.Th                              
+                              ey                                            
+                              are cleaned up                                
+                              every one hour                                
+                              by default.                                   
+
+ `teamAdminGroup <#PLFAdminG  The eXo group     /platform/administrators    
+ uide.ChatAdministration.Con  who can create                                
+ figuration.ChatServer>`__    teams.                                        
+
+ `chatReadDays <#PLFAdminGui  Number of days    30 (days)                   
+ de.ChatAdministration.Confi  to display the                                
+ guration.ChatServer>`__      corresponding                                 
+                              chat messages.                                
+
+ `chatReadTotalJson <#PLFAdm  The number of     200                         
+ inGuide.ChatAdministration.  messages that                                 
+ Configuration.ChatServer>`_  you can get in                                
+ _                            the Chat room.                                
+
+ `chatIntervalChat <#PLFAdmi  Time interval to  5000                        
+ nGuide.ChatAdministration.C  refresh messages                              
+ onfiguration.ChatClientUpda  in a chat.                                    
+ tes>`__                                                                    
+
+ `chatIntervalSession <#PLFA  Time interval to  60000                       
+ dminGuide.ChatAdministratio  keep a chat                                   
+ n.Configuration.ChatClientU  session alive in                              
+ pdates>`__                   milliseconds.                                 
+
+ `chatIntervalStatus <#PLFAd  Time interval to  60000                       
+ minGuide.ChatAdministration  refresh user                                  
+ .Configuration.ChatClientUp  status in                                     
+ dates>`__                    milliseconds.                                 
+
+ `chatIntervalNotif <#PLFAdm  Time interval to  5000                        
+ inGuide.ChatAdministration.  refresh                                       
+ Configuration.ChatClientUpd  Notifications in                              
+ ates>`__                     the main menu in                              
+                              milliseconds.                                 
+
+ `chatIntervalUsers <#PLFAdm  Time interval to  60000                       
+ inGuide.ChatAdministration.  refresh Users                                 
+ Configuration.ChatClientUpd  list in                                       
+ ates>`__                     milliseconds.                                 
+
+ `chatTokenValidity <#PLFAdm  Time after which  60000                       
+ inGuide.ChatAdministration.  a token will be                               
+ Configuration.ChatClientUpd  invalid. The use                              
+ ates>`__                     will then be                                  
+                              considered                                    
+                              offline.                                      
+
+ `exo.statistics.groovy.temp  Enables/disables  true                        
+ late.enabled <#PLFAdminGuid  Groovy Templates                              
+ e.Configuration.statisticsP  statistics that                               
+ arameter>`__                 is collected                                  
+                              asynchronously.                               
+
+ **CometD configuration**    
+
+ `exo.cometd.oort.url <#PLFA  The CometD Oort   "http://localhost:8080/come 
+ dminGuide.Clustering.Settin  URL used in       td/cometd",                 
+ gUpCluster>`__               clustering mode.  localhost should be         
+                                                replaced by the hostname or 
+                                                the IP of the cluster node. 
+
+ `exo.cometd.oort.configType  The CometD        multicast                   
+  <#PLFAdminGuide.Clustering  configuration                                 
+ .SettingUpCluster>`__        type which could                              
+                              be either                                     
+                              "static" or                                   
+                              "multicast".                                  
+
+ `exo.cometd.oort.cloud <#PL  A                                             
+ FAdminGuide.Clustering.Sett  comma-separated                               
+ ingUpCluster>`__             list of URLs of                               
+                              other Oort                                    
+                              comets to                                     
+                              connect to at                                 
+                              startup.                                      
+
+ **Update of last login      
+ time**                      
+
+ `exo.idm.user.updateLastLog  Enables/disables  true                        
+| inTime <#PLFAdminGuide.Conf  the update of                                 
+ iguration.lastlogintime>`__  last login time                               
+                              each time the                                 
+                              user login.                                   
+
+ **Define spaces             
+ administrators group**      
+
+ `exo.social.spaces.administ  Defines the list                              
+ rators <#PLFAdminGuide.Conf  of spaces                                     
+ iguration.SpacesAdministrat  administrators                                
+ ion>`__                      groups.                                       
+
+ **Assets versions used in   
+ static resources URLs**     
+
+ `exo.assets.version <#PLFAd  Defines the       It is set to PRODUCT binary 
+ minGuide.Configuration.Asse  assets version.   version.                    
+ tsVersionConf>`__                                                          
+
+ **Username case sensitive** 
+
+ `exo.auth.case.insensitive   Defines if        false.                      
+ <#PLFAdminGuide.Configurati  usernames in                                  
+ on.CaseSensitiveUsername>`_  PRODUCT are case                              
+ _                            sensitive or                                  
+                              not.                                          
+
+ **User inactivity delay**   
+
+ `exo.user.status.offline.de  Defines the time  240000                      
+ lay <#PLFAdminGuide.Configu  laps which makes                              
+ ration.UserInactivityDelay>  the user in                                   
+ `__                          offline status.                               
+                              Its value is                                  
+                              expressed in                                  
+                              milliseconds.                                 
+
+ **Notifications channels**  
+
+ `exo.notification.channels   Defines the       WEB\_CHANNEL, MAIL\_CHANNEL 
+ <#PLFAdminGuide.Configurati  activated                                     
+ on.Notification>`__          notification                                  
+                              channels.                                     
+
+ **Wiki application base     
+ URI**                       
+
+ `wiki.permalink.appuri <#PL  Defines the base  wiki                        
+ FAdminGuide.Configuration.W  URI for the wiki                              
+ ikiBaseURI>`__               application                                   
+                              permalinks.                                   
+
+ **Files upload limit**      
+
+ `exo.ecms.connector.drives.  Maximum size (in  200                         
+ uploadLimit <#PLFAdminGuide  MB) allowed of                                
+ .Configuration.FileSizeLimi  an uploaded                                   
+ t>`__                        file.                                         
+
+ `exo.social.activity.upload  Maximum size (in  200                         
+ Limit <#PLFAdminGuide.Confi  MB) allowed of                                
+ guration.FileSizeLimit>`__   an uploaded                                   
+                              image through                                 
+                              the CKEditor.                                 
+
+ `exo.wiki.attachment.upload  Maximum size (in  200                         
+ Limit <#PLFAdminGuide.Confi  MB) allowed of                                
+ guration.FileSizeLimit>`__   an uploaded file                              
+                              in Wiki                                       
+                              application.                                  
+
 
