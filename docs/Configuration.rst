@@ -356,7 +356,28 @@ This page is a reference to configurations exposed via
 .. _PlatformProperties:
 
 Platform
-~~~~~~~~~                
+~~~~~~~~~ 
+
+
++------------------------------+------------------+-----------------------------+
+| Name                         | Description      | Default                     |
++==============================+==================+=============================+
+| :ref:`exo.base.url		   | Generates links. | http://localhost:8080       |
+| <Configuration.ServerBaseURL>|
++------------------------------+------------------+-----------------------------+
+| `exo.accountsetup.skip <#PL  | Skips "account   | false                       |
+| FAdminGuide.Configuration.A  | setup" screen or |                             |
+| ccountSetup>`__              | not?             |                             |
++------------------------------+------------------+-----------------------------+
+| `exo.super.user <#PLFAdminG  | The predefined   | root                        |
+| uide.Configuration.Predefin  | super user's     |                             |
+| edUserGroupMembership>`__    | name.            |                             |
++------------------------------+------------------+-----------------------------+
+| `exo.portal.resetpassword.e  | The expiration   | 24 (hours)                  |
+| xpiretime <#PLFAdminGuide.C  | time of a reset  |                             |
+| onfiguration.ForgotPassword  | password link.   |                             |
+| >`__                         |                  |                             |
++------------------------------+------------------+-----------------------------+               
 
 - :ref:`exo.base.url <Configuration.ServerBaseURL>: Generates links, default to **http://localhost:8080**.       
 - :ref:`exo.accountsetup.skip <Configuration.ccountSetup>: Skips "accounts etup" screen or not, default to **false**.                       
@@ -459,7 +480,8 @@ ECMS
 .. _ECMSWatchDocument:
 
 ECMS Watch Document
-~~~~~~~~~~~~~~~~~~~~     
+~~~~~~~~~~~~~~~~~~~~ 
+    
 - :ref:exo.ecms.watchdocument.sender <Configuration.EmailNotificationOfDocumentChanges>: The "from" field in the notification emails, defalut to **support@exoplatform.com**.
 - :ref:exo.ecms.watchdocument.subject <Configuration.EmailNotificationOfDocumentChanges>: The subject of the notification emails, defalut to **"Your watching document is changed"**.
 - :ref:exo.ecms.watchdocument.mimetype <Configuration.EmailNotificationOfDocumentChanges>: Mimetype of the message body, defalut to **text/html**.
