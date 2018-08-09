@@ -64,59 +64,59 @@ the **Forums** application, see the following table:
 | Features                                    | Description       | Administra | Moderator  | Regular    | Guest      |
 |                                             |                   | tor        |            | user       |            |
 +=============================================+===================+============+============+============+============+
-| `Subscribing to RSS feeds                   | Gets a link to a  |            |            |            |            |
-|  <SubscribingRSSFeeds>                      | forum for easy    |   |OK1|    |  |OK2|     |   |OK3|    |  |OK4|     |
+|  Subscribing to RSS feeds                   | Gets a link to a  |            |            |            |            |
+|  						                      | forum for easy    |   |OK1|    |  |OK2|     |   |OK3|    |  |OK4|     |
 |                 							  | sharing.          |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-|  `Attaching a file <AttachingFiles>         | Uploads an        |            |            |            |            |
+|   Attaching a file 				          | Uploads an        |            |            |            |            |
 |                                             | attachment to a   |            |            |            |            |
 |                                             | topic/post,       |   |OK5|    |  |OK6|     |   |OK7|    |  |OK8|     |
 |                                             | previews and      |            |            |            |            |
 |                                             | downloads it.     |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Bookmarks <Regularusers-Bookmarks>         | Bookmarks a       |            |            |            |            |
+|  Bookmarks    					          | Bookmarks a       |            |            |            |            |
 |                                             | category, forum,  |   |OK9|    |  |OK10|    |   |OK11|   |  |NOK1|    |
 |                                             | topic.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Creating a post <Regularusers-Posts>       | Posts a reply,    |            |            |            |            |
+|  Creating a post  				          | Posts a reply,    |            |            |            |            |
 |  								              | quote, private    |  |OK12 |   |  |OK13|    |   |OK14|   |  |NOK2|    |
 |                                             | post, quick       |            |            |            |            |
 |                                             | reply.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Editing your post <Edit-delete-post>       | Edits a post,     |            |            |            |            |
+|  Editing your post 					      | Edits a post,     |            |            |            |            |
 | 									          | quote and private |  |OK15 |   |  |OK16|    |   |OK17|   |  |NOK3|    |
 | 											  | post.             |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Deleting your post <Edit-delete-post>      | Deletes a post    |            |            |            |            |
+|  Deleting your post 					      | Deletes a post    |            |            |            |            |
 |									          | inside a specific |  |OK18 |   |  |OK19|    |   |OK20|   |  |NOK4|    |
 |  											  | topic.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Creating a topic <Create-topic>            | Starts a new      | |OK21|     |  |OK22|    |   |OK23|   |  |NOK5|    |
+|  Creating a topic 			              | Starts a new      | |OK21|     |  |OK22|    |   |OK23|   |  |NOK5|    |
 |											  | topic.            |            |            |            |            |         
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Editing a topic <Editing-topic>            | Edits a topic in  |  |OK26|    |  |OK25|    |   |OK24|   |  |NOK6|    |
+|  Editing a topic 					          | Edits a topic in  |  |OK26|    |  |OK25|    |   |OK24|   |  |NOK6|    |
 |                                             | a specific forum. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Deleting a topic <Deleting-topic>          | Deletes a topic   |  |OK27|    |  |OK29|    |   |OK28|   |  |NOK7|    |
+|  Deleting a topic 				          | Deletes a topic   |  |OK27|    |  |OK29|    |   |OK28|   |  |NOK7|    |
 | 											  | inside a specific |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Locking/Unlocking a topic 			      | Locks/Unlocks a   |            |            |            |            |
-| <Lock-unlock-topics>       				  | topic inside a    |  |OK30|    |  |OK31|    |   |NOK8|   |  |NOK9|    |
+|  Locking/Unlocking a topic 			      | Locks/Unlocks a   |            |            |            |            |
+| 					         				  | topic inside a    |  |OK30|    |  |OK31|    |   |NOK8|   |  |NOK9|    |
 |           								  | specific forum.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Adding a poll <Create-poll>   		      | Adds a poll to a  |  |OK32|    |  |OK33|    |   |OK34|   |  |NOK10|   |
+|  Adding a poll 				 		      | Adds a poll to a  |  |OK32|    |  |OK33|    |   |OK34|   |  |NOK10|   |
 |  											  | topic.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Rating a topic <Rate-topics>               | Evaluates a topic |  |OK35|    |  |OK36|    |   |OK37|   |  |NOK11|   |
+|  Rating a topic 			                  | Evaluates a topic |  |OK35|    |  |OK36|    |   |OK37|   |  |NOK11|   |
 | 											  | by rating stars.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Adding a tag <Tagging-topic>   		      | Creates a new tag |  |OK38|    |  |OK39|    |   |OK40|   |  |NOK12|   |
+|  Adding a tag 				   		      | Creates a new tag |  |OK38|    |  |OK39|    |   |OK40|   |  |NOK12|   |
 | 								 			  | and tags a topic. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Sending private messages   		    	  | Sends or receives |  |OK41|    |  |OK42|    |   |OK43|   |  |NOK13|   |
-|  <Send-Private-message>                     | private messages. |            |            |            |            |
+|  Sending private messages   		    	  | Sends or receives |  |OK41|    |  |OK42|    |   |OK43|   |  |NOK13|   |
+|  							                  | private messages. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Watching <Watch>                           | Subscribes to a   |            |            |            |            |
+|  Watching 		                          | Subscribes to a   |            |            |            |            |
 | 											  | category, forum,  |            |            |            |            |
 | 											  | topic to receive  |            |            |            |            |
 | 											  | email             |  |OK44|    |  |OK45|    |   |OK46|   |  |NOK14|   |
@@ -124,39 +124,39 @@ the **Forums** application, see the following table:
 |    										  | new posts or      |            |            |            |            |
 |         								      | topics.           |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `User settings <User-settings>              | Changes profile   |            |            |            |            |
+|  User settings 				              | Changes profile   |            |            |            |            |
 | 											  | settings,         |  |OK49|    |  |OK48|    |   |OK47|   |  |NOK15|   |
 |											  | personal forum    |            |            |            |            |
 | 											  | settings.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Sticking/Unsticking a topic                | Sticks/Unsticks a |            |            |            |            |
-|  <Stick-unstick>                            | topic inside a    |  |OK50|    |  |OK51|    |   |OK52|   |  |NOK16|   |
+|  Sticking/Unsticking a topic                | Sticks/Unsticks a |            |            |            |            |
+|  				                              | topic inside a    |  |OK50|    |  |OK51|    |   |OK52|   |  |NOK16|   |
 |                                             | specific forum.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Locking/Unlocking a topic                  | Closes/Opens a    |            |            |            |            |
-|  <Lock-unlock-topics>                       | topic inside a    |  |OK53|    |  |OK54|    |   |NOK18|  |  |NOK17|   |
+|  Locking/Unlocking a topic                  | Closes/Opens a    |            |            |            |            |
+|  					                          | topic inside a    |  |OK53|    |  |OK54|    |   |NOK18|  |  |NOK17|   |
 |                                             | specific forum.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Splitting a topic <Split-topic>            | Divides one topic |            |            |            |            |
+| 	Splitting a topic 			              | Divides one topic |            |            |            |            |
 |                                             | into two separate |  |OK56|    |  |OK55|    |   |NOK19|  |  |NOK20|   |
 | 						                      | topics.           |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Merging topics <Merge-topics>              | Combines two or   |            |            |            |            |
+|  Merging topics 				              | Combines two or   |            |            |            |            |
 |  											  | more topics into  |  |OK57|    |  |OK58|    |   |NOK22|  |  |NOK21|   |
 | 											  | one.              |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Managing a poll <Create-poll> 		      | Creates, edits,   |            |            |            |            |
+| Managing a poll 				 		      | Creates, edits,   |            |            |            |            |
 |  											  | deletes, closes   |  |OK60|    |  |OK59|    |   |NOK23|  |  |NOK24|   |
 |  											  | and reopens a     |            |            |            |            |
 |  											  | poll.             |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Moving a topic <Moving-topic>              | Moves one         |            |            |            |            |
+|  Moving a topic 				              | Moves one         |            |            |            |            |
 |  											  | topic/post from a |            |            |            |            |
 | 											  | forum/topic to    |  |OK61|    |  |OK62|    |   |NOK26|  |  |NOK25|   |
 |  											  | the other         |            |            |            |            |
 |  											  | forum/topic.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Approving a topic <Approve-topic>          | Changes a new     |            |            |            |            |
+|  Approving a topic 				          | Changes a new     |            |            |            |            |
 |											  | topic/post from   |            |            |            |            |
 | 											  | pending status to |            |            |            |            |
 |  											  | normal status so  |  |OK64|    |  |OK63|    |   |NOK27|  |  |NOK28|   |
@@ -164,36 +164,36 @@ the **Forums** application, see the following table:
 |  											  | normal users can  |            |            |            |            |
 | 											  | view.             |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Uncensoring a post <Uncensor-post>         | Allows a topic    |            |            |            |            |
+|  Uncensoring a post 				          | Allows a topic    |            |            |            |            |
 |           								  | which has         |  |OK65|    |  |OK66|    |  |NOK30|   |  |NOK29|   |
 |											  | censored content  |            |            |            |            |
 |  											  | to be displayed.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Showing/Hiding a post			          | Allows a post to  |  |OK68|    |  |OK67|    |   |NOK31|  |  |NOK32|   |
-| <Show-hide-post>							  | be shown/hidden.  |            |            |            |            |
+|  Showing/Hiding a post			          | Allows a post to  |  |OK68|    |  |OK67|    |   |NOK31|  |  |NOK32|   |
+| 											  | be shown/hidden.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Managing pending tasks  			          | Manages all       |            |            |            |            |
-| <Manage-pending-tasks>   					  | topics/posts      |            |            |            |            |
+| Managing pending tasks  			          | Manages all       |            |            |            |            |
+| 						   					  | topics/posts      |            |            |            |            |
 |  											  | waiting for       |  |OK69|    |  |OK70|    |   |NOK33|  |  |NOK34|   |
 |											  | moderation in one |            |            |            |            |
 | 											  | place.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Managing a watch <Edit-subscription>       | Manages the       |            |            |            |            |
+|  Managing a watch 					      | Manages the       |            |            |            |            |
 | 											  | subscription      |            |            |            |            |
 | 											  | (watch), edits    |  |OK72|    |  |OK71|    |   |NOK36|  |  |NOK35|   |
 | 											  | and deletes a     |            |            |            |            |
 | 											  | subscribed email. |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Banning users <Banning-users>              | Bans users from   |            |            |            |            |
+|  Banning users 				              | Bans users from   |            |            |            |            |
 |  											  | accessing         |  |OK73|    |  |NOK37|   |   |NOK38|  |  |NOK39|   |
 | 											  | specific forums   |            |            |            |            |
 | 											  | or categories.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Adding a forum <Adding-forum>              | Adds a new forum  |            |            |            |            |
+|  Adding a forum 				              | Adds a new forum  |            |            |            |            |
 |  											  | to a specific     |  |OK74|    |  |NOK40|   |   |NOK41|  |  |NOK42|   |
 | 											  | category.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Editing a forum <Edit-forum>               | Changes the       |            |            |            |            |
+|  Editing a forum 				              | Changes the       |            |            |            |            |
 |  											  | title,            |            |            |            |            |
 | 											  | description,      |            |            |            |            |
 | 											  | moderator,        |  |OK75|    |  |OK76|    |   |NOK43|  |  |NOK44|   |
@@ -203,84 +203,84 @@ the **Forums** application, see the following table:
 | 										      | set moderators    |            |            |            |            |
 |           								  | for a forum.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Deleting a forum <Delete-forum> 	          | Deletes a forum   |            |            |            |            |
+|  Deleting a forum 			 	          | Deletes a forum   |            |            |            |            |
 |  											  | from a specific   |  |OK77|    |  |NOK45|   |   |NOK46|  |  |NOK47|   |
 | 											  | category.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Locking/Unlocking a forum 			      | Locks a forum so  |            |            |            |            |
-|  <Lock-unlock-forum>    				      | that it can be    |  |OK78|    |  |OK79|    |   |NOK48|  |  |NOK49|   |
+|  Locking/Unlocking a forum 			      | Locks a forum so  |            |            |            |            |
+|  					    				      | that it can be    |  |OK78|    |  |OK79|    |   |NOK48|  |  |NOK49|   |
 | 								              | viewed only.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Closing/Opening a forum  			      | Closes/Opens a    |            |            |            |            |
-|  <Close-open-forum>    				      | forum. The closed |            |            |            |            |
+|  Closing/Opening a forum  			      | Closes/Opens a    |            |            |            |            |
+|  					    				      | forum. The closed |            |            |            |            |
 | 								              | forums are still  |  |OK81|    |  |OK80|    |   |NOK51|  |  |NOK50|   |
 |											  | manageable by     |            |            |            |            |
 | 											  | administrators    |            |            |            |            |
 | 											  | and moderators.   |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Moving a forum <Move-forum>   		      | Moves a forum     |            |            |            |            |
+|  Moving a forum 				   		      | Moves a forum     |            |            |            |            |
 |  											  | from one category |  |OK82|    |  |NOK52|   |   |NOK53|  |  |NOK54|   |
 | 											  | to the other.     |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Exporting a forum <Export-forum>	          | Exports a forum   |            |            |            |            |
+|  Exporting a forum 				          | Exports a forum   |            |            |            |            |
 |  											  | in the format of  |  |OK83|    |  |OK84|    |   |NOK56|  |  |NOK57|   |
 | 											  | a ``.zip`` or     |            |            |            |            |
 | 											  | ``.xml`` file.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Importing a forum <Importing-a-forum>      | Imports a forum   |            |            |            |            |
+|  Importing a forum 					      | Imports a forum   |            |            |            |            |
 | 											  | from a            |            |            |            |            |
 | 											  | ``.zip``/``.xml`` |  |OK85|    |  |NOK58|   |   |NOK59|  |  |NOK60|   |
 | 											  | file into the     |            |            |            |            |
 | 											  | **Forums**        |            |            |            |            |
 | 											  | application.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Adding a category <Add-category>           | Adds a new        |  |OK86|    |  |NOK63|   |   |NOK62|  |  |NOK61|   |
+|  Adding a category 				          | Adds a new        |  |OK86|    |  |NOK63|   |   |NOK62|  |  |NOK61|   |
 | 											  | category.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Editing a category <Edit category>         | Edits a category  |            |            |            |            |
+|  Editing a category 				          | Edits a category  |            |            |            |            |
 |  											  | and changes its   |  |OK87|    |  |NOK64|   |   |NOK65|  |  |NOK66|   |
 | 											  | properties.       |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Exporting a category 				      | Exports           |            |            |            |            |
-| <Export-category>							  | categories in the |            |            |            |            |
+|  Exporting a category 				      | Exports           |            |            |            |            |
+| 											  | categories in the |            |            |            |            |
 | 											  | format of a       |  |OK88|    |  |NOK69|   |   |NOK68|  |  |NOK67|   |
 | 											  | ``.zip`` or       |            |            |            |            |
 | 											  | ``.xml`` file.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Importing a category 				      | Imports a         |            |            |            |            |
-| <Import-category>							  | category from a   |            |            |            |            |
+| 	Importing a category 				      | Imports a         |            |            |            |            |
+| 											  | category from a   |            |            |            |            |
 |											  | ``.zip``/``.xml`` |  |OK89|    |  |NOK70|   |   |NOK71|  |  |NOK72|   |
 | 											  | file into the     |            |            |            |            |
 | 											  | **Forums**        |            |            |            |            |
 | 											  | application.      |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Deleting a category <Delete-category>      | Deletes a         |            |            |            |            |
+|  Deleting a category 					      | Deletes a         |            |            |            |            |
 |  											  | category and all  |  |OK90|    |  |NOK75|   |   |NOK74|  |  |NOK73|   |
 | 											  | forums, topics,   |            |            |            |            |
 | 											  | posts inside it.  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Administrating Sorting 				      | Sorts forums,     |            |            |            |            |
-| <Sort-settings>					          | topics according  |  |OK91|    |  |NOK76|   |   |NOK77|  |  |NOK78|   |
+|  Administrating Sorting 				      | Sorts forums,     |            |            |            |            |
+| 									          | topics according  |  |OK91|    |  |NOK76|   |   |NOK77|  |  |NOK78|   |
 |  											  | to specific       |            |            |            |            |
 | 											  | conditions.       |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Administrating Censor 				      | Defines keywords  |            |            |            |            |
-| <Administrating-Censor>      			      | that will be      |  |OK92|    |  |NOK81|   |   |NOK80|  |  |NOK79|   |
+|  Administrating Censor 				      | Defines keywords  |            |            |            |            |
+| 						      			      | that will be      |  |OK92|    |  |NOK81|   |   |NOK80|  |  |NOK79|   |
 | 											  | censored in a     |            |            |            |            |
 | 											  | forum.            |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Customizing an email notification          | Defines content   |  |OK93|    |  |NOK82|   |   |NOK83|  |  |NOK84|   |
-| <Customize-email-notifs> 				      | of the email      |            |            |            |            |
+|  Customizing an email notification          | Defines content   |  |OK93|    |  |NOK82|   |   |NOK83|  |  |NOK84|   |
+| 										      | of the email      |            |            |            |            |
 | 											  | notifications.    |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Customizing BBCodes  				      | Adds, edits and   |            |            |            |            |
-|  <Customize-BBCodes>						  | deletes the       |            |            |            |            |
+|  Customizing BBCodes  				      | Adds, edits and   |            |            |            |            |
+|  											  | deletes the       |            |            |            |            |
 | 											  | BBCode tags used  |  |OK94|    |  |NOK87|   |   |NOK86|  |  |NOK85|   |
 | 											  | in writing        |            |            |            |            |
 | 											  | posts/topics.     |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Setting up auto-pruning 			          | Sets up           |            |            |            |            |
-| <auto-pruning>							  | auto-pruning to   |            |            |            |            |
+|  Setting up auto-pruning 			          | Sets up           |            |            |            |            |
+| 											  | auto-pruning to   |            |            |            |            |
 |  											  | clean a large     |            |            |            |            |
 | 											  | amount of         |  |OK95|    |  |NOK88|   |   |NOK89|  |  |NOK90|   |
 | 											  | obsolete and      |            |            |            |            |
@@ -288,7 +288,7 @@ the **Forums** application, see the following table:
 | 											  | based on          |            |            |            |            |
 | 											  | criteria.         |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Banning IPs <Banning-IPs>                  | Bans IPs in the   |            |            |            |            |
+|  Banning IPs 				                  | Bans IPs in the   |            |            |            |            |
 | 											  | whole **Forums**  |            |            |            |            |
 | 											  | application (only |            |            |            |            |
 | 											  | administrators)   | |OK96|     |  |OK97|    |   |NOK91|  |  |NOK92|   |
@@ -297,7 +297,7 @@ the **Forums** application, see the following table:
 | 								              | (administrators   |            |            |            |            |
 |           							      | and moderators).  |            |            |            |            |
 +---------------------------------------------+-------------------+------------+------------+------------+------------+
-| `Managing users <Manage-users>              | Manages user's    |            |            |            |            |
+|  Managing users 				              | Manages user's    |            |            |            |            |
 |  											  | profile, promotes |            |            |            |            |
 |											  | users, bans       |  |OK98|    |  |NOK95|   |   |NOK94|  |  |NOK93|   |
 | 											  | users, views a    |            |            |            |            |
