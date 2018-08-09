@@ -887,9 +887,7 @@ To install eXo Chat in standalone mode, follow this procedure:
 
    -  ``chat-sample.properties``
 
-3. Install and configure
-  `MongoDB <https://www.mongodb.com/download-center#atlas>`__ database by
-   following this :ref:`link <Database.ChatDatabase>`.
+3. Install and configure `MongoDB <https://www.mongodb.com/download-center#atlas>`__ database by following this :ref:`link <Database.ChatDatabase>`.
 
 4. Configure chat server on Tomcat by following these steps:
 
@@ -906,7 +904,8 @@ To install eXo Chat in standalone mode, follow this procedure:
                       ....
 
 .. note:: Make sure there is no port conflicts between the eXo Chat server and other systems. If you deploy the eXo Chat server on
-       the same host than eXo Pltaform, then, you should change all the ports as in the example above.
+          the same host than eXo Pltaform, then, you should change all the ports as in the example above.
+          
 
    -  Deploy chat application in Apache tomcat by copying the following
       files:
@@ -1048,7 +1047,7 @@ document.
 In Tomcat bundle and for Linux, they are:
 
 -  ``$PLATFORM_TOMCAT_HOME/bin/setenv.sh`` which is defaulted in the
-   PRODUCT package.
+    eXo Platform package.
 
 -  ``$PLATFORM_TOMCAT_HOME/bin/setenv-customize.sh`` which will be
    created by yourself, as explained later.
@@ -1185,38 +1184,38 @@ section:
 
 **Platform configuration**
 
-+-----------------------------------------+-------------------------------------+
-| Configuration                           | Description                         |
-+=========================================+=====================================+
-| ``EXO_PROFILES="all,myOwnProfile"``     | Tomcat only. The default profile    |
-|                                         | is "all". If you customize this     |
-|                                         | variable, refer to 				    |
-|										  |	:ref`Startup profiles <eXoProfiles> |
-+-----------------------------------------+-------------------------------------+
-| ``EXO_CONF_DIR="/opt/ciagent/.eXo-platf | The default configuration folder    |
-| orm/conf"``                             | is ``./gatein/conf/`` (Tomcat       |
-|                                         | only).                              |
-+-----------------------------------------+-------------------------------------+
-| ``EXO_DATA_DIR="/opt/jenkins/.eXo-platf | The default data directory is       |
-| orm/data"``                             | ``./gatein/data`` (Tomcat only).    |
-+-----------------------------------------+-------------------------------------+
-| ``EXO_DEV=true``                        | Preserved for the development       |
-|                                         | tasks. Do not uncomment this in     |
-|                                         | the production environment.         |
-+-----------------------------------------+-------------------------------------+
-| ``EXO_JCR_SESSION_TRACKING=true``       | If this variable is **true**,       |
-|                                         | the `eXo JCR Session Leak           |
-|                                         | Detector is activated. If           |
-|                                         | you do not uncomment this line,     |
-|                                         | it is set equal to ``EXO_DEV``.     |
-+-----------------------------------------+-------------------------------------+
++--------------------------------------+-------------------------------------+
+| Configuration                        | Description                         |
++=========================================+==================================+
+| ``EXO_PROFILES="all,myOwnProfile"``  | Tomcat only. The default profile    |
+|                                      | is "all". If you customize this     |
+|                                      | variable, refer to 				 |
+|									   | :ref`Startup profiles <eXoProfiles> |
++--------------------------------------+----------------------------------+
+| ``EXO_CONF_DIR="/opt/ciagent/        | The default configuration folder    |
+| .eXo-platform/conf"``                | is ``./gatein/conf/`` (Tomcat       |
+|                                      | only).                              |
++--------------------------------------+-------------------------------------+
+| ``EXO_DATA_DIR="/opt/jenkins/        | The default data directory is       |
+| .eXo-platform/data"``                | ``./gatein/data`` (Tomcat only).    |
++--------------------------------------+-------------------------------------+
+| ``EXO_DEV=true``                     | Preserved for the development       |
+|                                      | tasks. Do not uncomment this in     |
+|                                      | the production environment.         |
++--------------------------------------+-------------------------------------+
+| ``EXO_JCR_SESSION_TRACKING=true``    | If this variable is **true**,       |
+|                                      | the `eXo JCR Session Leak           |
+|                                      | Detector is activated. If           |
+|                                      | you do not uncomment this line,     |
+|                                      | it is set equal to ``EXO_DEV``.     |
++--------------------------------------+-------------------------------------+
 
 **Logs configuration**
 
 Tomcat only. The logs configuration is to control how often, which kind
 of message/event to be written to the log stream (screen or log files),
 and their format. Configuring logs is more than a trivial task, however
-PRODUCT tries to ease it by exposing 3 variables that you can customize:
+eXo Platform tries to ease it by exposing 3 variables that you can customize:
 
 +-----------------------------------------------+-----------------------------+
 | Configuration                                 | Description                 |
@@ -1233,7 +1232,7 @@ PRODUCT tries to ease it by exposing 3 variables that you can customize:
 +-----------------------------------------------+-----------------------------+
 | ``EXO_LOGS_DISPLAY_CONSOLE=true``             | By default, the console log |
 |                                               | is disabled unless you      |
-|                                               | start PRODUCT by the        |
+|                                               | start eXo Platform by the   |
 |                                               | ``start_eXo`` script        |
 |                                               | without the                 |
 |                                               | **--background** option.    |
@@ -1251,7 +1250,8 @@ PRODUCT tries to ease it by exposing 3 variables that you can customize:
 | ``CATALINA_PID="$CATALINA_BASE/temp/catalina. | By uncommenting this line   |
 | pid"``                                        | you are certain that you    |
 |                                               | can always get the process  |
-|                                               | ID of PRODUCT from a file.  |
+|                                               | ID of eXo Platform from a   |
+|                                               | file.                       |
 +-----------------------------------------------+-----------------------------+
 | ``EXO_TOMCAT_UNPACK_WARS=true``               | If this line is             |
 |                                               | uncommented,                |
@@ -1346,7 +1346,7 @@ to the ``CATALINA_OPTS`` variable, for example:
 | ``-Dcrash.ssh.port=54321``                    | deploying                  |
 |                                               | `Crash <http://www.crashub |
 |                                               | .org>`__                   |
-|                                               | into PRODUCT.              |
+|                                               | into eXo Platform.              |
 |                                               |                            |
 |                                               | **Crash** is a useful tool |
 |                                               | which provides a shell to  |
