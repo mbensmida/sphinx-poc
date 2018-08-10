@@ -383,7 +383,49 @@ Platform
 .. _SMTP:
 
 SMTP
-~~~~~                    
+~~~~~     
+
++----------------------------+------------------+-------------------------+
+| Name                       | Description      | Default                 |
++============================+==================+=========================+
+| :ref:`exo.email.smtp.from  | The "From" field | noreply@exoplatform.com |
+| <OutgoingMailService>`     | in outgoing      |                         |
+|       		     | emails.          |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.host  | The external     | localhost               |
+|  <OutgoingMailService>`    | mail server.     |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.port  | The external     | 25                      |
+| <OutgoingMailService>`     | mail server      |                         |
+|                            | port.            |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.start | Enable TLS or    | false                   |
+| tls.enable 		     | not?             |                         |
+| <OutgoingMailService>`     |			|			  |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.auth  | Enable SMTP      | false                   |
+| <OutgoingMailService>`     | authentication   |                         |
+|                            | or not?          |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.usern | Username to get  |                         |
+| ame <OutgoingMailService>` | authenticated    |                         |
+|		             | with the mail    |                         |
+|                            | server.          |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.pass  | Password to get  |                         |
+| word <OutgoingMailService>`| authenticated    |                         |
+| 			     | with the mail    |                         |
+|                            | server.          |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.sock  | Port to connect  |                         |
+| etFactory.port             | to if a socket   |                         |
+| <OutgoingMailService>`     | factory is       |                         |
+|                            | specified.       |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.sock  | A class to       |                         |
+| etFactory.class            | create SMTP      |                         |
+| <OutgoingMailService>`     | sockets.         |                         |
++----------------------------+------------------+-------------------------+  
 
 - :ref:`exo.email.smtp.from <Configuration.OutgoingMailService>: The "From" field in outgoing emails, default to **noreply@exoplatform.com**.                                         
 - :ref:`exo.email.smtp.host <Configuration.OutgoingMailService>: The external mail server, default to **localhost**.                   
