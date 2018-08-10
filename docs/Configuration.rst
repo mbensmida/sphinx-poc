@@ -370,15 +370,10 @@ Platform
 | 		             | super user's     |                         |
 | 			     | name.            |                         |
 +----------------------------+------------------+-------------------------+
-| exo.portal.resetpassword.  | The expiration   | 24 (hours)              |
-| expiretime   		     | time of a reset  |                         |
+| exo.portal.resetpassword.ex| The expiration   | 24 (hours)              |
+| piretime   		     | time of a reset  |                         |
 | 			     | password link.   |                         |
-+----------------------------+------------------+-------------------------+               
-
-- :ref:`exo.base.url <Configuration.ServerBaseURL>: Generates links, default to **http://localhost:8080**.       
-- :ref:`exo.accountsetup.skip <Configuration.ccountSetup>: Skips "accounts etup" screen or not, default to **false**.                       
-- :ref:`exo.super.user <Configuration.PredefinedUserGroupMembership> : The predefined super user's name, default to **root**.                                
-- :ref:exo.portal.resetpassword.expiretime <Configuration.ForgotPassword> : The expiration time of a reset password link, default fo **24 (hours)**                                                                                                            
++----------------------------+------------------+-------------------------+                                         
 
 .. _SMTP:
 
@@ -393,7 +388,7 @@ SMTP
 |       		     | emails.          |                         |
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.host  | The external     | localhost               |
-|  <OutgoingMailService>`    | mail server.     |                         |
+| <OutgoingMailService>`     | mail server.     |                         |
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.port  | The external     | 25                      |
 | <OutgoingMailService>`     | mail server      |                         |
@@ -407,40 +402,74 @@ SMTP
 | <OutgoingMailService>`     | authentication   |                         |
 |                            | or not?          |                         |
 +----------------------------+------------------+-------------------------+
-| :ref:`exo.email.smtp.usern | Username to get  |                         |
-| ame <OutgoingMailService>` | authenticated    |                         |
+| :ref:`exo.email.smtp.userna| Username to get  |                         |
+| me <OutgoingMailService>`  | authenticated    |                         |
 |		             | with the mail    |                         |
 |                            | server.          |                         |
 +----------------------------+------------------+-------------------------+
-| :ref:`exo.email.smtp.pass  | Password to get  |                         |
-| word <OutgoingMailService>`| authenticated    |                         |
+| :ref:`exo.email.smtp.passwo| Password to get  |                         |
+| rd <OutgoingMailService>`  | authenticated    |                         |
 | 			     | with the mail    |                         |
 |                            | server.          |                         |
 +----------------------------+------------------+-------------------------+
-| :ref:`exo.email.smtp.sock  | Port to connect  |                         |
-| etFactory.port             | to if a socket   |                         |
+| :ref:`exo.email.smtp.socket| Port to connect  |                         |
+| Factory.port               | to if a socket   |                         |
 | <OutgoingMailService>`     | factory is       |                         |
 |                            | specified.       |                         |
 +----------------------------+------------------+-------------------------+
-| :ref:`exo.email.smtp.sock  | A class to       |                         |
-| etFactory.class            | create SMTP      |                         |
+| :ref:`exo.email.smtp.socket| A class to       |                         |
+| Factory.class              | create SMTP      |                         |
 | <OutgoingMailService>`     | sockets.         |                         |
-+----------------------------+------------------+-------------------------+  
++----------------------------+------------------+-------------------------+                                 
 
-- :ref:`exo.email.smtp.from <Configuration.OutgoingMailService>: The "From" field in outgoing emails, default to **noreply@exoplatform.com**.                                         
-- :ref:`exo.email.smtp.host <Configuration.OutgoingMailService>: The external mail server, default to **localhost**.                   
-- :ref:`exo.email.smtp.port <Configuration.OutgoingMailService>: The external port, default to **25**.                          
-- :ref: `exo.email.smtp.starttls.enable <Configuration.OutgoingMailService>: Enable TLS or not, default to **false**.                                                                                              
-- :ref: `exo.email.smtp.auth <Configuration.OutgoingMailService>: Enable SMTP authentication or not, default to **false**.                                                                                                                                   
-- :ref: `exo.email.smtp.username <Configuration.OutgoingMailService>: Username to get authenticated with the mail server.                                                                                                                                                                         
-- :ref: `exo.email.smtp.password <Configuration.OutgoingMailService>: Password to get authenticated with the mail server.                                                                                                                                                                                                               
-- :ref: `exo.email.smtp.socketFactory.port <Configuration.OutgoingMailService>: Port to connect to if a socket factory is specified.  
--:ref:exo.email.smtp.socketFactory.class <Configuration.OutgoingMailService>: A class to create SMTP sockets.                                                                                                                                                                                                             
-          
-.. _JODConverter:                                                                                                   
+.. _JODConverter:    
+
++------------------------------+------------------+-------------------------+
+| Name                         | Description      | Default                 |
++==============================+==================+=========================+
+| :ref:`exo.jodconverter.enable| Enable           | true                    |
+| <JODConverterConf>`          | JODConverter or  |                         |
+|                              | not?             |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.jodconverter.port  | List of ports    | 2002                    |
+| numbers <JODConverterConf>`  | used to create   |                         |
+|                              | *soffice*        |                         |
+|                              | processes.       |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.jodconverter.office| The home folder  | Blank (auto-detected)   |
+| home <JODConverterConf>`     | of the Office    |                         |
+| 			       | installation.    |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.jodconverter.taskqu| The maximum      | 30000                   |
+| euetimeout <JODConverterConf>| living time in   |                         |
+| `			       | milliseconds of  |                         |
+|                              | a task in the    |                         |
+|                              | conversation     |                         |
+|                              | queue.           |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.jodconverter.taskex| The maximum time | 120000                  |
+| ecutiontimeout               | in milliseconds  |                         |
+| <JODConverterConf>`          | to process a     |                         |
+|                              | task.            |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.jodconverter.maxtas| The maximum      | 200                     |
+| ksperprocess                 | number of tasks  |                         |
+| <JODConverterConf>`          | to process by an |                         |
+|                              | office server.   |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.jodconverter.retryt| The interval     | 120000                  |
+| imeout <JODConverterConf>`   | time in          |                         |
+|                              | milliseconds to  |                         |
+|                              | try to restart   |                         |
+|                              | an office server |                         |
+|                              | in case it       |                         |
+|                              | unexpectedly     |                         |
+|                              | stops.           |                         |
++------------------------------+------------------+-------------------------+
 
 JODConverter
 ~~~~~~~~~~~~~
+
 - :ref:exo.jodconverter.enable <Configuration.JODConverter>: Enable JODConverter or not, default to **true**.            
 - :ref:exo.jodconverter.portnumbers <Configuration.JODConverter>: List of ports used to create soffice processes, default to **2002**.            
 - :ref:exo.jodconverter.officehome <Configuration.JODConverter>: The home folder of the Office installation, default set to blank (auto-detected).            
