@@ -357,24 +357,22 @@ This page is a reference to configurations exposed via
 
 Platform
 ~~~~~~~~~ 
-
-
 +----------------------------+------------------+-------------------------+
 | Name                       | Description      | Default                 |
 +============================+==================+=========================+
-| exo.base.url    		     | Generates links. | http://localhost:8080   |
+| exo.base.url    	     | Generates links. | http://localhost:8080   |
 +----------------------------+------------------+-------------------------+
-| exo.accountsetup.skip  	 | Skips "account   | false                   |
-| 							 | setup" screen or |                         |
-|            				 | not?             |                         |
+| exo.accountsetup.skip      | Skips "account   | false                   |
+| 			     | setup" screen or |                         |
+|            		     | not?             |                         |
 +----------------------------+------------------+-------------------------+
-| exo.super.user 			 | The predefined   | root                    |
-| 							 | super user's     |                         |
-| 						     | name.            |                         |
+| exo.super.user 	     | The predefined   | root                    |
+| 		             | super user's     |                         |
+| 			     | name.            |                         |
 +----------------------------+------------------+-------------------------+
 | exo.portal.resetpassword.  | The expiration   | 24 (hours)              |
-| expiretime   				 | time of a reset  |                         |
-| 							 | password link.   |                         |
+| expiretime   		     | time of a reset  |                         |
+| 			     | password link.   |                         |
 +----------------------------+------------------+-------------------------+               
 
 - :ref:`exo.base.url <Configuration.ServerBaseURL>: Generates links, default to **http://localhost:8080**.       
