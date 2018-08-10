@@ -359,23 +359,23 @@ Platform
 ~~~~~~~~~ 
 
 
-+------------------------------+------------------+-----------------------------+
-| Name                         | Description      | Default                     |
-+==============================+==================+=============================+
-| exo.base.url    			   | Generates links. | http://localhost:8080       |
-+------------------------------+------------------+-----------------------------+
-| exo.accountsetup.skip  	   | Skips "account   | false                       |
-| 							   | setup" screen or |                             |
-|            				   | not?             |                             |
-+------------------------------+------------------+-----------------------------+
-| exo.super.user 			   | The predefined   | root                        |
-| 							   | super user's     |                             |
-| 							   | name.            |                             |
-+------------------------------+------------------+-----------------------------+
-| exo.portal.resetpassword.e   | The expiration   | 24 (hours)                  |
-| xpiretime   				   | time of a reset  |                             |
-| 							   | password link.   |                             |
-+------------------------------+------------------+-----------------------------+               
++----------------------------+------------------+-------------------------+
+| Name                       | Description      | Default                 |
++============================+==================+=========================+
+| exo.base.url    		     | Generates links. | http://localhost:8080   |
++----------------------------+------------------+-------------------------+
+| exo.accountsetup.skip  	 | Skips "account   | false                   |
+| 							 | setup" screen or |                         |
+|            				 | not?             |                         |
++----------------------------+------------------+-------------------------+
+| exo.super.user 			 | The predefined   | root                    |
+| 							 | super user's     |                         |
+| 						     | name.            |                         |
++----------------------------+------------------+-------------------------+
+| exo.portal.resetpassword.  | The expiration   | 24 (hours)              |
+| expiretime   				 | time of a reset  |                         |
+| 							 | password link.   |                         |
++----------------------------+------------------+-------------------------+               
 
 - :ref:`exo.base.url <Configuration.ServerBaseURL>: Generates links, default to **http://localhost:8080**.       
 - :ref:`exo.accountsetup.skip <Configuration.ccountSetup>: Skips "accounts etup" screen or not, default to **false**.                       
