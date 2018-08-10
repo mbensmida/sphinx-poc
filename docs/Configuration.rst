@@ -362,20 +362,19 @@ Platform
 +------------------------------+------------------+-----------------------------+
 | Name                         | Description      | Default                     |
 +==============================+==================+=============================+
-| 		exo.base.url		   | Generates links. | http://localhost:8080       |
+| exo.base.url    			   | Generates links. | http://localhost:8080       |
 +------------------------------+------------------+-----------------------------+
-| `exo.accountsetup.skip <#PL  | Skips "account   | false                       |
-| FAdminGuide.Configuration.A  | setup" screen or |                             |
-| ccountSetup>`__              | not?             |                             |
+| exo.accountsetup.skip  	   | Skips "account   | false                       |
+| 							   | setup" screen or |                             |
+|            				   | not?             |                             |
 +------------------------------+------------------+-----------------------------+
-| `exo.super.user <#PLFAdminG  | The predefined   | root                        |
-| uide.Configuration.Predefin  | super user's     |                             |
-| edUserGroupMembership>`__    | name.            |                             |
+| exo.super.user 			   | The predefined   | root                        |
+| 							   | super user's     |                             |
+| 							   | name.            |                             |
 +------------------------------+------------------+-----------------------------+
-| `exo.portal.resetpassword.e  | The expiration   | 24 (hours)                  |
-| xpiretime <#PLFAdminGuide.C  | time of a reset  |                             |
-| onfiguration.ForgotPassword  | password link.   |                             |
-| >`__                         |                  |                             |
+| exo.portal.resetpassword.e   | The expiration   | 24 (hours)                  |
+| xpiretime   				   | time of a reset  |                             |
+| 							   | password link.   |                             |
 +------------------------------+------------------+-----------------------------+               
 
 - :ref:`exo.base.url <Configuration.ServerBaseURL>: Generates links, default to **http://localhost:8080**.       
