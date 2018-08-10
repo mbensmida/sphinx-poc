@@ -362,8 +362,7 @@ Platform
 +------------------------------+------------------+-----------------------------+
 | Name                         | Description      | Default                     |
 +==============================+==================+=============================+
-| :ref:`exo.base.url		   | Generates links. | http://localhost:8080       |
-| <Configuration.ServerBaseURL>|
+| 		exo.base.url		   | Generates links. | http://localhost:8080       |
 +------------------------------+------------------+-----------------------------+
 | `exo.accountsetup.skip <#PL  | Skips "account   | false                       |
 | FAdminGuide.Configuration.A  | setup" screen or |                             |
