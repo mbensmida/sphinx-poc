@@ -357,53 +357,75 @@ This page is a reference to configurations exposed via
 
 Platform
 ~~~~~~~~~ 
-
-
 +----------------------------+------------------+-------------------------+
 | Name                       | Description      | Default                 |
 +============================+==================+=========================+
-| exo.base.url    		     | Generates links. | http://localhost:8080   |
+| exo.base.url    	     | Generates links. | http://localhost:8080   |
 +----------------------------+------------------+-------------------------+
-| exo.accountsetup.skip  	 | Skips "account   | false                   |
-| 							 | setup" screen or |                         |
-|            				 | not?             |                         |
+| exo.accountsetup.skip      | Skips "account   | false                   |
+| 			     | setup" screen or |                         |
+|            		     | not?             |                         |
 +----------------------------+------------------+-------------------------+
-| exo.super.user 			 | The predefined   | root                    |
-| 							 | super user's     |                         |
-| 						     | name.            |                         |
+| exo.super.user 	     | The predefined   | root                    |
+| 		             | super user's     |                         |
+| 			     | name.            |                         |
 +----------------------------+------------------+-------------------------+
+<<<<<<< HEAD
 | exo.portal.resetpassword.  | The expiration   | 24 (hours)              |
 | expiretime   				 | time of a reset  |                         |
 | 							 | password link.   |                         |
 +----------------------------+------------------+-------------------------+               
+=======
+| exo.portal.resetpassword.ex| The expiration   | 24 (hours)              |
+| piretime   		     | time of a reset  |                         |
+| 			     | password link.   |                         |
++----------------------------+------------------+-------------------------+                                         
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 
 .. _SMTP:
 
 SMTP
+<<<<<<< HEAD
 ~~~~~    
+=======
+~~~~~     
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 
 +----------------------------+------------------+-------------------------+
 | Name                       | Description      | Default                 |
 +============================+==================+=========================+
 | :ref:`exo.email.smtp.from  | The "From" field | noreply@exoplatform.com |
 | <OutgoingMailService>`     | in outgoing      |                         |
+<<<<<<< HEAD
 |       					 | emails.          |                         |
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.host  | The external     | localhost               |
 |  <OutgoingMailService>`    | mail server.     |                         |
+=======
+|       		     | emails.          |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.host  | The external     | localhost               |
+| <OutgoingMailService>`     | mail server.     |                         |
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.port  | The external     | 25                      |
 | <OutgoingMailService>`     | mail server      |                         |
 |                            | port.            |                         |
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.start | Enable TLS or    | false                   |
+<<<<<<< HEAD
 | tls.enable 				 | not?             |                         |
 | <OutgoingMailService>`     |					|						  |
+=======
+| tls.enable 		     | not?             |                         |
+| <OutgoingMailService>`     |			|			  |
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.auth  | Enable SMTP      | false                   |
 | <OutgoingMailService>`     | authentication   |                         |
 |                            | or not?          |                         |
 +----------------------------+------------------+-------------------------+
+<<<<<<< HEAD
 | :ref:`exo.email.smtp.usern | Username to get  |                         |
 | ame <OutgoingMailService>` | authenticated    |                         |
 |						     | with the mail    |                         |
@@ -435,6 +457,29 @@ SMTP
 -:ref:exo.email.smtp.socketFactory.class <Configuration.OutgoingMailService>: A class to create SMTP sockets.                                                                                                                                                                                                             
           
 .. _JODConverter:                                                                                                   
+=======
+| :ref:`exo.email.smtp.userna| Username to get  |                         |
+| me <OutgoingMailService>`  | authenticated    |                         |
+|		             | with the mail    |                         |
+|                            | server.          |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.passwo| Password to get  |                         |
+| rd <OutgoingMailService>`  | authenticated    |                         |
+| 			     | with the mail    |                         |
+|                            | server.          |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.socket| Port to connect  |                         |
+| Factory.port               | to if a socket   |                         |
+| <OutgoingMailService>`     | factory is       |                         |
+|                            | specified.       |                         |
++----------------------------+------------------+-------------------------+
+| :ref:`exo.email.smtp.socket| A class to       |                         |
+| Factory.class              | create SMTP      |                         |
+| <OutgoingMailService>`     | sockets.         |                         |
++----------------------------+------------------+-------------------------+                                 
+
+.. _JODConverter:    
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 
 JODConverter
 ~~~~~~~~~~~~~
@@ -453,17 +498,29 @@ JODConverter
 +------------------------------+------------------+-------------------------+
 | :ref:`exo.jodconverter.office| The home folder  | Blank (auto-detected)   |
 | home <JODConverterConf>`     | of the Office    |                         |
+<<<<<<< HEAD
 | 						       | installation.    |                         |
 +------------------------------+------------------+-------------------------+
 | :ref:`exo.jodconverter.taskqu| The maximum      | 30000                   |
 | euetimeout <JODConverterConf>| living time in   |                         |
 | `							   | milliseconds of  |                         |
+=======
+| 			       | installation.    |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.jodconverter.taskqu| The maximum      | 30000                   |
+| euetimeout <JODConverterConf>| living time in   |                         |
+| `			       | milliseconds of  |                         |
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 |                              | a task in the    |                         |
 |                              | conversation     |                         |
 |                              | queue.           |                         |
 +------------------------------+------------------+-------------------------+
 | :ref:`exo.jodconverter.taskex| The maximum time | 120000                  |
+<<<<<<< HEAD
 | ecutiontimeout 			   | in milliseconds  |                         |
+=======
+| ecutiontimeout               | in milliseconds  |                         |
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 | <JODConverterConf>`          | to process a     |                         |
 |                              | task.            |                         |
 +------------------------------+------------------+-------------------------+
@@ -480,6 +537,7 @@ JODConverter
 |                              | in case it       |                         |
 |                              | unexpectedly     |                         |
 |                              | stops.           |                         |
+<<<<<<< HEAD
 +------------------------------+------------------+-------------------------+
 
 - :ref:exo.jodconverter.enable <Configuration.JODConverter>: Enable JODConverter or not, default to **true**.            
@@ -489,18 +547,56 @@ JODConverter
 - :ref:exo.jodconverter.taskexecutiontimeout <Configuration.JODConverter>: The maximum time in milliseconds to process a task, default set to **120000**.            
 - :ref:exo.jodconverter.maxtasksperprocess <Configuration.JODConverter>: The maximum number of tasks to process by an office server, default set to **200**.            
 - :ref:exo.jodconverter.retrytimeout <Configuration.JODConverter>: The interval time in milliseconds to try to restart an office server in case it unexpectedly stops., default set to **120000**.            
+=======
++------------------------------+------------------+-------------------------+            
+>>>>>>> d3be2f37207bd30df671e1964ec7ec46f4dc8e11
 
 .. _SearchConnector:
 
 Search connector
 ~~~~~~~~~~~~~~~~~
 
++-----------------------------+------------------+-------------------------+
+| Name                        | Description      | Default                 |
++=============================+==================+=========================+
+| `exo.[searchConnectorName]. | Turn on/off a    | true                    |
+| connector.[informationType] | specific Search  |                         |
+| .enable <#PLFAdminGuide.Con | connector for a  |                         |
+| figuration.SearchConnector> | certain          |                         |
+| `__                         | information      |                         |
+|                             | type.            |                         |
++-----------------------------+------------------+-------------------------+
+
 - :ref:exo.[searchConnectorName].connector.[informationType].enable <Configuration.SearchConnector>: Turn on/off a specific Search connector for a certain information type, default to **true**.        
 
-.. UnifiedSearch:
+.. _UnifiedSearch:
 
 Unified Search
-~~~~~~~~~~~~~~~          
+~~~~~~~~~~~~~~~   
+
++-----------------------------+------------------+-------------------------+
+| Name                        | Description      | Default                 |
++=============================+==================+=========================+
+| `exo.unified-search.engine. | Enable fuzzy     | true                    |
+| fuzzy.enable <#PLFAdminGuid | search or not?   |                         |
+| e.Configuration.UnifiedSear |                  |                         |
+| ch>`__                      |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.unified-search.engine. | A float number   | 0.5                     |
+| fuzzy.similarity <#PLFAdmin | between 0 and 1  |                         |
+| Guide.Configuration.Unified | expressing how   |                         |
+| Search>`__                  | much a returned  |                         |
+|                             | word matches the |                         |
+|                             | keyword. 1 is    |                         |
+|                             | exact search.    |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.unified-search.exclude | List of          | ``.-``                  |
+| d-characters <#PLFAdminGuid | characters that  |                         |
+| e.Configuration.UnifiedSear | will not be      |                         |
+| ch>`__                      | indexed (so      |                         |
+|                             | could not be     |                         |
+|                             | searched).       |                         |
++-----------------------------+------------------+-------------------------+
 
 - :ref:exo.unified-search.engine.fuzzy.enable <Configuration.UnifiedSearch>: Enable fuzzy search or not, default to **true**.
 - :ref:exo.unified-search.engine.fuzzy.similarity <Configuration.UnifiedSearch>: A float number between 0 and 1 expressing how much a returned word matches the keyword. 1 is exact search, default to **0.5**.
@@ -509,21 +605,81 @@ Unified Search
 .. _Notification:
                                 
 Notification
-~~~~~~~~~~~~~            
+~~~~~~~~~~~~~ 
 
-- :ref:`exo.notification.NotificationDailyJob.expression <Configuration.Notification>: Cron expression to schedule daily emails, default to **0 0 23 ? \* \* (11:00pm every day)** .    
-- :ref:`exo.notification.NotificationWeeklyJob.expression <Configuration.Notification>: Cron expression to schedule weekly emails, default to *0 0 11 ? * SUN (11:00am every Sunday)** .    
-- :ref:`exo.notification.service.QueueMessage.period <Configuration.Notification>: The delay time (in seconds) between two batches of sent mails, default to **60** .    
-- :ref:`exo.notification.service.QueueMessage.numberOfMailPerBatch <Configuration.Notification>: The maximum number of emails sent each batch, default to **30** .    
-- :ref:`exo.notification.portalname <Configuration.Notification>: The "from" field in notification emails, default to **eXo** .    
-- :ref:`exo.notification.maxitems <Configuration.Notification>: Maximum number of notifications displayed in the popup list, default to **8** .    
-- :ref:`exo.notification.viewall <Configuration.Notification>: Living days of items displayed in the View All page., default to **30** .    
-- :ref:`exo.notification.WebNotificationCleanJob.expression <Configuration.Notification>: Cron expression to schedule the job that cleans web notification old items., default to **0 0 23 ? * * (11:00pm every day)** .    
++-----------------------------+------------------+-------------------------+
+| Name                        | Description      | Default                 |
++=============================+==================+=========================+
+| `exo.notification.Notificat | Cron expression  | 0 0 23 ? \* \* (11:00pm |
+| ionDailyJob.expression <#PL | to schedule      | every day)              |
+| FAdminGuide.Configuration.N | daily emails.    |                         |
+| otification>`__             |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.notification.Notificat | Cron expression  | 0 0 11 ? \* SUN (11:00am|
+| ionWeeklyJob.expression <#P | to schedule      | every Sunday)           |
+| LFAdminGuide.Configuration. | weekly emails.   |                         |
+| Notification>`__            |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.notification.service.Q | The delay time   | 60                      |
+| ueueMessage.period <#PLFAdm | (in seconds)     |                         |
+| inGuide.Configuration.Notif | between two      |                         |
+| ication>`__                 | batches of sent  |                         |
+|                             | mails.           |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.notification.service.Q | The maximum      | 30                      |
+| ueueMessage.numberOfMailPer | number of emails |                         |
+| Batch <#PLFAdminGuide.Confi | sent each batch. |                         |
+| guration.Notification>`__   |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.notification.portalnam | The "from" field | eXo                     |
+| e <#PLFAdminGuide.Configura | in notification  |                         |
+| tion.Notification>`__       | emails.          |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.notification.maxitems  | Maximum number   | 8                       |
+| <#PLFAdminGuide.Configurati | of notifications |                         |
+| on.Notification>`__         | displayed in the |                         |
+|                             | popup list.      |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.notification.viewall < | Living days of   | 30                      |
+| #PLFAdminGuide.Configuratio | items displayed  |                         |
+| n.Notification>`__          | in the View All  |                         |
+|                             | page.            |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.notification.WebNotifi | Cron expression  | 0 0 23 ? \* \* (11:00pm |
+| cationCleanJob.expression < | to schedule the  | every day)              |
+| #PLFAdminGuide.Configuratio | job that cleans  |                         |
+| n.Notification>`__          | web notification |                         |
+|                             | old items.       |                         |
++-----------------------------+------------------+-------------------------+
+
+- :ref:`exo.notification.NotificationDailyJob.expression <Configuration.Notification>`: Cron expression to schedule daily emails, default to **0 0 23 ? \* \* (11:00pm every day)** .    
+- :ref:`exo.notification.NotificationWeeklyJob.expression <Configuration.Notification>`: Cron expression to schedule weekly emails, default to *0 0 11 ? * SUN (11:00am every Sunday)** .    
+- :ref:`exo.notification.service.QueueMessage.period <Configuration.Notification>`: The delay time (in seconds) between two batches of sent mails, default to **60** .    
+- :ref:`exo.notification.service.QueueMessage.numberOfMailPerBatch <Configuration.Notification>`: The maximum number of emails sent each batch, default to **30** .    
+- :ref:`exo.notification.portalname <Configuration.Notification>`: The "from" field in notification emails, default to **eXo** .    
+- :ref:`exo.notification.maxitems <Configuration.Notification>`: Maximum number of notifications displayed in the popup list, default to **8** .    
+- :ref:`exo.notification.viewall <Configuration.Notification>`: Living days of items displayed in the View All page., default to **30** .    
+- :ref:`exo.notification.WebNotificationCleanJob.expression <Configuration.Notification>`: Cron expression to schedule the job that cleans web notification old items., default to **0 0 23 ? * * (11:00pm every day)** .    
 
 .. _JCR:                                                                                           
 
 JCR
 ~~~~   
+
++-----------------------------+------------------+-------------------------+
+| Name                        | Description      | Default                 |
++=============================+==================+=========================+
+| `exo.jcr.datasource.dialect | In most cases    | auto                    |
+|  <#PLFAdminGuide.Database.C | the dialect is   |                         |
+| onfiguringPLF>`__           | auto-detected.   |                         |
+|                             | Follow the link  |                         |
+|                             | to know          |                         |
+|                             | exceptions.      |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.jcr.storage.enabled <# | Enable file      | true                    |
+| PLFAdminGuide.Configuration | system storage   |                         |
+| .DataDirectory>`__          | for JCR values?  |                         |
++-----------------------------+------------------+-------------------------+
 
 - :ref:exo.jcr.datasource.dialect <Database.ConfiguringPLF>: In most cases the dialect is auto-detected. Follow the link to know exceptions, default to **auto**.                
 - :ref:exo.jcr.storage.enabled <Database.DataDirectory>: Enable file system storage for JCR values?, default to **true**.                
@@ -532,6 +688,38 @@ JCR
 
 WebDav
 ~~~~~~~
++-----------------------------+------------------+-------------------------+
+| Name                        | Description      | Default                 |
++=============================+==================+=========================+
+| `exo.webdav.def-folder-node | Matching node    | nt:folder               |
+| -type <#PLFAdminGuide.Confi | type of folders. |                         |
+| guration.WebDAV>`__         |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.webdav.def-file-node-t | Matching node    | nt:file                 |
+| ype <#PLFAdminGuide.Configu | type of files.   |                         |
+| ration.WebDAV>`__           |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.webdav.def-file-mimety | The mimetype to  | application/octet-stream|
+| pe <#PLFAdminGuide.Configur | exchange file    |                         |
+| ation.WebDAV>`__            | data.            |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.webdav.update-policy < | The policy       | create-version          |
+| #PLFAdminGuide.Configuratio | applied when     |                         |
+| n.WebDAV>`__                | there is an      |                         |
+|                             | update via       |                         |
+|                             | WebDav.          |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.webdav.folder-icon-pat | The display icon | /eXoWCMResources/skin/  |
+| h <#PLFAdminGuide.Configura | of a folder.     | images/file/nt-folder.  |
+| tion.WebDAV>`__             |                  | png                     |
++-----------------------------+------------------+-------------------------+
+| `exo.webdav.cache-control < | The              | text/\*:max-age=3600;   |
+| #PLFAdminGuide.Configuratio | cache-control    | image/\*:max-age=1800;  |
+| n.WebDAV>`__                | header that      | application/\*:max-age= |
+|                             | defines cache    | 1800;\*/\*:no-cache     |
+|                             | and cache live   |                         |
+|                             | time.            |                         |
++-----------------------------+------------------+-------------------------+
 
 - :ref:exo.webdav.def-folder-node-type <Configuration.WebDAV>: Matching node type of folders, default to **nt:folder**.                  
 - :ref:exo.webdav.def-file-node-type <Configuration.WebDAV>: Matching node type of files., default to **nt:file**.                  
@@ -544,6 +732,69 @@ WebDav
 
 ECMS                    
 ~~~~~~
+
++-----------------------------+------------------+-------------------------+
+| Name                        | Description      | Default                 |
++=============================+==================+=========================+
+| `exo.ecms.connector.drives. | Maximum size (in | 200                     |
+| uploadLimit <#PLFAdminGuide | MB) allowed of   |                         |
+| .Configuration.FileSizeLimi | an uploaded      |                         |
+| t>`__                       | file.            |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.portal.uploadhandler.p | Turn on/off      | true                    |
+| ublic-restriction <#PLFAdmi | public access to |                         |
+| nGuide.Configuration.Upload | the upload       |                         |
+| Handler>`__                 | service.         |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.connector.drives. | The maximum      | 3                       |
+| clientLimit <#PLFUserGuide. | number of        |                         |
+| ManagingYourDocuments.Worki | concurrent       |                         |
+| ngWithBasicActions.Uploadin | uploaded files   |                         |
+| gFiles>`__                  | in client side.  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.connector.drives. | The maximum      | 20                      |
+| serverLimit <#PLFUserGuide. | number of        |                         |
+| ManagingYourDocuments.Worki | concurrent       |                         |
+| ngWithBasicActions.Uploadin | uploaded files   |                         |
+| gFiles>`__                  | in server side.  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.search.excluded-m | Content of these | text/css,text/javascript|
+| imetypes <#PLFUserGuide.Man | mimetypes will   | ,application/x-         |
+| agingYourWebsites.Searching | not be searched. | javascript,             |
+| ForContentInASite.Searching |                  | text /ecmascript        |
+| ForContent>`__              |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.search.enableFuzz | Enable fuzzy     | true                    |
+| ySearch <#PLFUserGuide.Mana | search or not?   |                         |
+| gingYourWebsites.SearchingF |                  |                         |
+| orContentInASite.SearchingF |                  |                         |
+| orContent>`__               |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.search.fuzzySearc | A float number   | 0.8                     |
+| hIndex <#PLFUserGuide.Manag | between 0 and 1  |                         |
+| ingYourWebsites.SearchingFo | expressing how   |                         |
+| rContentInASite.SearchingFo | much a returned  |                         |
+| rContent>`__                | word matches the |                         |
+|                             | keyword. 1 is    |                         |
+|                             | exact search.    |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.lock.admin <#PLFU | Users or groups  | \*:/platform/s          |        
+| serGuide.AdministeringeXoPl | who can manage   |  administrator          |
+| atform.ContentAdministratio | locks.           |                         |
+| n.WorkingWithRepository.Loc |                  |                         |
+| ks>`__                      |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.friendly.enabled  | Enable friendly  | true                    |
+| <#PLFRefGuide.Configuration | URL maker or     |                         |
+| s.ExternalComponentPlugins. | not?             |                         |
+| Content.FriendlyPlugin>`__  |                  |                         |
++-----------------------------+------------------+-------------------------+
+| `exo.ecms.friendly.servletN | The friendly     | content                 |
+| ame <#PLFRefGuide.Configura | name used when   |                         |
+| tions.ExternalComponentPlug | making friendly  |                         |
+| ins.Content.FriendlyPlugin> | URLs.            |                         |
+| `__                         |                  |                         |
++-----------------------------+------------------+-------------------------+
 
 - :ref:exo.ecms.connector.drives.uploadLimit <Configuration.FileSizeLimit>: Maximum size (in MB) allowed of an uploaded file, defalut to **200**.
 - :ref:exo.portal.uploadhandler.public-restriction <Configuration.UploadHandler>: Turn on/off public access to the upload service, defalut to **true**.
