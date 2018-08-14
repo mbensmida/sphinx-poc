@@ -52,7 +52,7 @@ Configuration
     -  :ref:`Custom data validators configuration <Configuration.ValidatorsConfiguration>`
        How to configure custom data validators.
 
-    -  :ref:`Outgoing mail service <Configuration.OutgoingMailService>`
+    -  :ref:`Outgoing mail service <OutgoingMailService>`
        The SMTP configurations required for sending emails.
 
     -  :ref:`Changing sender information of email notification <Configuration.ChangingSenderInformationOfEmailNotifications>`
@@ -1634,3 +1634,1276 @@ Notifications channels
 +-----------------------------+------------------+-----------------------------+                                 
 
 
+.. _Configuration.CaseSensitiveUsername:
+
+===================================
+Configure username case sensitive
+===================================
+
+By default, eXo Platform is case insensitive. You can configure it to become
+case sensitive through a parameter in :ref:`exo.properties <Configuration.ConfigurationOverview>`
+file:
+
+-  ``exo.auth.case.insensitive``, default value set to true.
+
+If you set the ``exo.auth.case.insensitive`` to true this means that the
+username "user" is the same as "User" or "uSEr". If it is set to false,
+this means that the user should take care of capital and minimal letters
+when typing the username.
+
+
+.. _Configuration.UserInactivityDelay:
+
+====================================
+User inactivity delay configuration
+====================================
+
+When a user does not make any action on the platform i.e he is inactive
+for a time lapse, he is considered as offline.
+
+The time lapse is configurable in :ref:`exo.properties <Configuration.ConfigurationOverview>`
+file using this parameter ``exo.user.status.offline.delay``.
+
+The parameter is expressed in millisecond and the value default is
+240000 milliseconds.
+
+.. code:: java
+
+     # The delay when we consider a user as offline. Default value is 240000 milliseconds
+    exo.user.status.offline.delay=240000
+    
+.. _Configuration.DataDirectory:
+
+=============================
+Data directory configuration
+============================
+
+JCR data is stored in both SQL databases and File System. JCR Database
+configuration is explained in `Database <#PLFAdminGuide.Database>`__.
+The JCR File System configuration is explained in this section.
+
+Typically, the JCR File System data consists of four folders:
+
+-  JCR indexes.
+
+-  JCR values storage.
+
+   To store JCR value, SQL database is used as primary storage and
+   another directory can be used as a secondary, dedicated storage for
+   BLOB data. It is optional and you can configure to not store BLOB
+   data in File System, by changing the default configuration in the
+   `exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
+   file.
+
+   ::
+
+       exo.jcr.storage.enabled=true
+
+-  JTA (Transaction information).
+
+-  Swap data (temporary memory space).
+
+By default, these four folders are located under a common directory that
+is ``$PLATFORM_TOMCAT_HOME/gatein/data`` (Tomcat),
+``$PLATFORM_JBOSS_HOME/standalone/data/gatein`` (JBoss).
+
+In production, it is recommended to configure it to use a directory
+separated from the package. Especially in cluster mode, it should be a
+network shared folder.
+
+**Configuration in Platform Tomcat**
+
+In Tomcat, the directory is configured by the environment variable
+``EXO_DATA_DIR``. Edit the ``bin/setenv-customize.(sh|bat)`` script:
+
+::
+
+    EXO_DATA_DIR=/mnt/nfs/shared/exo/data
+
+You need to create the script file by copying/renaming the sample
+``bin/setenv-customize.sample.(sh|bat)``. See `Customizing environment
+variables <#PLFAdminGuide.InstallationAndStartup.CustomizingEnvironmentVariables>`__
+for more information.
+
+**Configuration in Platform JBoss**
+
+In JBoss, the directory is configured by the system property
+``exo.data.dir``. Edit ``standalone/configuration/standalone-exo.xml``
+like below:
+
+.. code:: xml
+
+    <system-properties>
+        ...
+        <property name="exo.data.dir" value="/mnt/nfs/shared/exo/data"/>
+        ...
+    </system-properties>
+
+Note that if you are configuring the cluster mode, the configuration
+might be different. The file should be ``standalone-exo-cluster.xml``
+and the property should be ``exo.shared.dir``. See :ref:`Setting up eXo Platform cluster <#PLFAdminGuide.Clustering.SettingUpCluster>`.
+
+.. _Configuration.AssetsVersionConf:    
+
+=============================
+Assets version configuration
+=============================
+
+Between versions, eXo Platform makes various changes on various layers. To
+avoid that browsers use cached assets and display old behavior, a
+parameter ``exo.assets.version`` is added in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+When eXo Platform is updated, his parameter allows to:
+
+-  Enforce browsers to reload javascript and css.
+
+-  Build eXo Platform urls for resources serving.
+
+-  Avoid asking users to clear their browser's cache.
+
+By default, this parameter is set to eXo Platform package version, i.e for
+the version 5.0.x it is set to 5.0.x.
+
+.. code:: java
+
+     # Assets versions used in static resources URLs. Useful to manage caches.
+     exo.assets.version=5.0.x
+
+.. _Configuration.QuartzScheduler:
+
+==============================
+Quartz Scheduler configuration
+==============================
+
+eXo Platform uses `Quartz Scheduler <http://www.quartz-scheduler.org/>`__,
+the Java Framework for scheduling jobs, in a wide range of features.
+When eXo Platform runs in cluster mode, it is important to prevent jobs to
+execute concurrently. Quartz has its own cluster mode, with each
+instance of eXo Platform server as a node of Quartz load balancing and
+failover group.
+
+Since the version 4.4 of eXo Platform, Quatrz is used in persisted mode. So
+it is automatically configured in eXo Platform. As an administrator, you can
+change default Quartz settings in eXo Platform through
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+By default, here are Quartz properties:
+
+::
+
+    #Configure Main Scheduler Properties
+    #exo.quartz.scheduler.instanceName=ExoScheduler
+    #exo.quartz.scheduler.instanceId=AUTO
+
+    #Configure ThreadPool
+    #exo.quartz.threadPool.class=org.quartz.simpl.SimpleThreadPool
+    #exo.quartz.threadPool.threadPriority=5
+    #exo.quartz.threadPool.threadCount=25
+
+    #Configure JobStore
+    #exo.quartz.jobStore.misfireThreshold=6000
+    #exo.quartz.jobStore.class=org.quartz.impl.jdbcjobstore.JobStoreTX
+    #For SQL server set exo.quartz.jobStore.driverDelegateClass=org.quartz.impl.jdbcjobstore.MSSQLDelegate
+    #For postgres set exo.quartz.jobStore.driverDelegateClass=org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+    #exo.quartz.jobStore.driverDelegateClass=org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+    #exo.quartz.jobStore.useProperties=false
+    #exo.quartz.jobStore.dataSource=quartzDS
+    #exo.quartz.jobStore.tablePrefix=QRTZ_
+    #exo.quartz.jobStore.isClustered=false
+    #exo.quartz.jobStore.clusterCheckinInterval=20000
+    #exo.quartz.jobStore.maxMisfiresToHandleAtATime=20
+    #exo.quartz.jobStore.dontSetAutoCommitFalse=false
+    #exo.quartz.jobStore.acquireTriggersWithinLock=false
+    #exo.quartz.jobStore.lockHandler.class=
+    #exo.quartz.jobStore.driverDelegateInitString=
+    #exo.quartz.jobStore.txIsolationLevelSerializable=false
+    #exo.quartz.jobStore.selectWithLockSQL=SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LOCK_NAME = ? FOR UPDATE
+    #exo.quartz.dataSource.quartzDS.jndiURL=java:/comp/env/exo-jpa_portal   
+        
+
+More details about the definition and default values of the above
+properties could be found in the table `Properties
+reference <#PLFAdminGuide.Configuration.Properties_reference>`__. You
+can also refer to `Quartz Configuration
+Reference <http://www.quartz-scheduler.org/documentation/quartz-2.x/configuration/>`__
+documentation for more details about quartz parameters.
+
+.. _Configuration.CustomizeMultiupload:
+
+======================================================
+Configure documents multiupload in the activity stream
+======================================================
+
+Through the :ref:`MultiUpload <MultiUpload>` feature, you are able to 
+upload up to 20 files per activity having each one 200 MB as max size.
+
+You can change the default behavior through
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file by 
+configuring these two parameters:
+
+-  ``exo.social.composer.maxToUpload=20``, default value set to 20.
+
+-  ``exo.social.composer.maxFileSizeInMB=200``, default value set to 200
+   MB.
+
+.. _Configuration.JCRTransactionService:
+
+===================
+Transaction service
+===================
+
+The JCR transaction timeout is 420 seconds by default. If your
+application runs longer transactions, you might need a bigger timeout.
+
+Configure the timeout by adding the ``exo.jcr.transaction.timeout``
+property in :ref:`exo.properties <Configuration.ConfigurationOverview>`
+file.
+
+::
+
+    exo.jcr.transaction.timeout=3600
+
+The value is in seconds.
+
+
+.. _Configuration.ServerBaseURL:
+
+===============
+Server base URL
+===============
+
+The property ``exo.base.url`` is used to generate links in some cases,
+like a topic link in an email notification.
+
+Generally you need to configure it to the base URL that users use to
+access eXo Platform. For example, if you use a reverse proxy, the URL
+should be the proxy's host.
+
+The following is the default configuration. To change it, edit
+:ref:`exo.properties <Configuration.ConfigurationOverview>`
+file.
+
+::
+
+    # The Server Base URL is the URL via which users access eXo platform. All links created (for emails etc) will be prefixed by this URL.
+    # The base URL must be set to the same URL by which browsers will be viewing your eXo platform instance.
+    # Sample: exo.base.url=https://intranet.mycompany.com
+    exo.base.url=http://localhost:8080
+
+.. _Configuration.WikiBaseURI:
+
+=========================
+Wiki application base URI
+=========================
+
+The property ``wiki.permalink.appuri`` allows you to define the base URI
+for the wiki application permalinks.
+
+It is configurable through
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file. 
+Its default value is wiki.
+
+The parameter ``wiki.permalink.appuri`` utility is to well redirect wiki
+pages when moving wiki application to different location than the
+default one.
+
+::
+
+    wiki.permalink.appuri=wiki
+    
+    
+.. _Configuration.AccountSetup:
+
+=============
+Account setup
+=============
+
+At the first startup of eXo Platform, the Account Setup and Greetings!
+screens will appear by default. However, in some scenarios, these
+screens are not necessary, for example:
+
+-  When you have an extension that declares sample users.
+
+-  When you want to connect to an existing user directory.
+
+To skip these screens, simply change the default value from "false" into
+"true" in the :ref:`exo.properties <Configuration.ConfigurationOverview>`
+file.
+
+::
+
+    exo.accountsetup.skip=true
+
+.. _Configuration.ValidatorsConfiguration:
+
+====================================
+Custom data validators configuration
+====================================
+
+Custom data validator, or user-configurable validator is the mechanism
+allowing users to define their own validation rules. For example, the
+username must be lowercase, or shorter than 20 characters. In eXo Platform,
+there are 6 validators that administrators can configure to use and the
+architecture allows developers to add more validators as they wish.
+
+The validators can be configured via properties in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+A configuration is created by adding an entry with the
+``gatein.validators.`` prefix in
+:ref:`exo.properties <Configuration.ConfigurationOverview>`
+file. This prefix is followed by a validator name, a period '.' and a
+validator aspect. Currently, there are the following validators and
+validator aspects:
+
+-  Validators:
+
+   -  **username**: Validates the 'Username' field in the Create or Edit
+      user form.
+
+   -  **groupmembership**: There is a built-in regex that is currently
+      not used to validate any field:
+
+      ::
+
+          GROUP_MEMBERSHIP_VALIDATION_REGEX = "^(\\p{Lower}[\\p{Lower}\\d\\._]+)(\\s*,\\s*(\\p{Lower}[\\p{Lower}\\d\\._]+))*$";
+
+   -  **email**: Validates the Email Address field in the Create or Edit
+      user form.
+
+   -  **displayname**: Validates the Display Name field in the Create or
+      Edit user form.
+
+   -  **jobtitle**: Validates the Job Title field in the User Profile
+      form.
+
+   -  **grouplabel**: Validates the Label field in Add or Edit group
+      form.
+
+   -  **pagename**: Validates the page name field in the **Add new
+      page** form. Its label is Page Name if you create a page from the
+      Page ManagementAdd New Page menu. In the **Page Creation Wizard**,
+      the label is Node Name.
+
+-  Validator aspects:
+
+   -  ``gatein.validators.{validatorName}.length.min``: The minimum
+      length of the validated field.
+
+   -  ``gatein.validators.{validatorName}.length.max``: The maximum
+      length of the validated field.
+
+   -  ``gatein.validators.{validatorName}.regexp``: The regular
+      expression to which the validated field must conform.
+
+   -  ``gatein.validators.{validatorName}.format.message``: The
+      information message that is displayed when the field does not
+      conform to the specified regular expression.
+
+See details about the "*username*\ " validator as below. For
+instructions on how to add a new validator (not in the above list), see
+:ref:`Developing your own validator <#PLFDevGuide.AuthenticationAndIdentity.DevelopingValidators>`.
+
+**Configuration of username validator**
+
+By default, the username will be validated as follows:
+
+-  The length must be between 3 and 30 characters.
+
+-  Only lowercase letters, numbers, underscores (\_) and period (.) can
+   be used.
+
+-  No consecutive underscores (\_) or periods (.) can be used.
+
+-  Must start with a lowercase letter.
+
+-  Must end with a lowercase letter or number.
+
+.. note:: Some components that leverage GateIn depend on usernames being all
+          lowercase. Therefore, you are strongly recommended to use a
+          lowercase username only.
+
+If you want to validate that username format is email-like, you could
+use the following configuration:
+
+::
+
+    # validators
+    gatein.validators.username.regexp=^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$
+    gatein.validators.username.format.message=Username must be a valid email address
+
+When the username field does not conform to this rule, the account is
+not created and there will be a warning message:
+
+::
+
+    The field "User Name" must match the format "Username must be a valid email address".
+
+In case you do not define ``gatein.validators.username.format.message``,
+the value of ``gatein.validators.username.regexp`` will be used in the
+warning message:
+
+::
+
+    The field "User Name" must match the format "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$".
+
+.. _OutgoingMailService:
+
+
+=====================
+Outgoing mail service
+=====================
+
+eXo Platform includes an email sending service that needs to be configured
+before it can function properly. This service, for instance, is used to
+send notifications of connection requests.
+
+The service requires an external SMTP server that allows accounts to
+send email from applications. A suggestion is to use Google SMTP, as
+detailed below.
+
+In configuration, you need to provide your account and password, and
+other information so that eXo Platform can connect to the SMTP server.
+
+The configuration file
+`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
+is as follows:
+
+Here is the default configuration (it will not work of course, you will
+need to edit it):
+
+::
+
+    # Email display in "from" field of emails sent by eXo platform.
+    exo.email.smtp.from=noreply@exoplatform.com
+    # SMTP Server hostname.
+    exo.email.smtp.host=localhost
+    # SMTP Server port.
+    exo.email.smtp.port=25
+    # True to enable the secure (TLS) SMTP. See RFC 3207.
+    exo.email.smtp.starttls.enable=false
+    # True to enable the SMTP authentication.
+    exo.email.smtp.auth=false
+    # Username to send for authentication. Sample: exo.email.smtp.username=account@gmail.com
+    exo.email.smtp.username=
+    # Password to send for authentication.
+    exo.email.smtp.password=
+    # Specify the port to connect to when using the specified socket factory. Sample: exo.email.smtp.socketFactory.port=465
+    exo.email.smtp.socketFactory.port=
+    # This class will be used to create SMTP sockets. Sample: exo.email.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+    exo.email.smtp.socketFactory.class=
+
+Read the inline comments to understand each property. Here are some
+remarks:
+
+-  You need to provide SMTP server host/port, a username/password to be
+   authenticated by that server. Others are optional.
+
+-  Typically, administrators want to mask the *From* field in the system
+   emails with something like *no-reply@exoplatform.com* so that the
+   receivers recognize it is robotic. Many SMTP services allow you to
+   set *From* field in outgoing emails to another email address than the
+   authenticated account. That's why here you see the property
+   ``exo.email.smtp.from``.
+
+   If this parameter is not valid, the value of
+   ``exo.email.smtp.username`` will be used instead.
+
+-  If you want to use SMTP gateway over SSL, configure a certificate
+   truststore containing your SMTP server's public certificate.
+   Depending on the key sizes, you may then also need to install Java
+   Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy
+   Files for your Java Runtime Environment.
+
+**Using Gmail as your SMTP server**
+
+Here is the sample using *smtp.gmail.com* server:
+
+::
+
+    exo.email.smtp.from=noreply@exoplatform.com
+    exo.email.smtp.host=smtp.gmail.com
+    exo.email.smtp.port=465
+    exo.email.smtp.starttls.enable=true
+    exo.email.smtp.auth=true
+    exo.email.smtp.username=exo.test100@gmail.com
+    exo.email.smtp.password=***
+    exo.email.smtp.socketFactory.port=465
+    exo.email.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+
+To make the configuration work, you need to:
+
+-  Register a Google account that is *exo.test100@gmail.com* in the
+   sample.
+
+-  Enable POP and IMAP for that account. This can be done simply in your
+   Gmail settings, see the screenshot below.
+
+   |image0|
+
+`Here <https://support.google.com/mail/answer/78775?hl=en>`__ is a
+checklist provided by Google to help you solve problem if any.
+
+Besides, for securing your account, Google may block access from an app
+and send you an email to review the access. So in case the mail service
+does not work, check your inbox and get the link to allow the app
+access.
+
+.. note:: In case of Gmail, ``exo.email.smtp.from`` must be a real account
+          that you own. It does not need to be a Gmail account, as you can
+          guess by the sample. You will configure your main account (that is
+          ``exo.email.smtp.username``) to add this *from* email as another
+          "send as".
+
+To do so, follow `this guide of
+Google <https://support.google.com/mail/answer/22370?hl=en>`__.
+
+In case the *from* parameter is not valid, it does not fail the email
+sending and the main account will be displayed instead.
+
+.. _Configuration.ChangingSenderInformationOfEmailNotifications:
+
+=================================================
+Changing sender information of email notification
+=================================================
+
+In eXo Platform, email notifications are sent to users when significant
+actions involving them occur (for example, new users, connection
+request, space invitation, and more). These emails help them to track of
+activities taking place in their Social Intranet.
+
+As an administrator, you can configure information (name and email
+address) of the sender, from which all notifications are sent, via two
+ways:
+
+-  In UI, click AdministrationPortalNotifications. Then edit Email
+   Notification Sender section.
+
+-  Via ``exo.properties`` file. See :ref:`Configuration overview <Configuration.ConfigurationOverview>`
+   if you have not created this file yet.
+
+   ::
+
+       exo.notification.portalname=eXo
+       exo.email.smtp.from=noreply@exoplatform.com
+
+   In which:
+
+   -  ``exo.notification.portalname``: Name of the sender. The default
+      value is ``eXo``.
+
+   -  ``exo.email.smtp.from``: Email address of the sender. The default
+      value is ``noreply@exoplatform.com``.
+      
+.. _Configuration.EmailNotificationOfDocumentChanges:
+
+=================================================
+Subscribing to notifications of document changes
+================================================
+
+The function Watch document in Sites Explorer allows users to receive
+notification by email when a document is updated. The email address of
+receivers is the email they declare in their profile. Administrators can
+customize the sender, subject, mimetype and content of the notification.
+
+.. note:: To get the email notification feature work, you first need to
+          configure :ref:`Outgoing mail service <OutgoingMailService>` first.
+
+To customize the email notification, simply add the following properties
+in :ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+.. code:: java
+
+    # Email content for WatchDocumentService
+    exo.ecms.watchdocument.subject=Your watching document is changed
+    exo.ecms.watchdocument.mimetype=text/html
+    exo.ecms.watchdocument.content=Dear $user_name,<br><br>The document $doc_name ($doc_title) has changed.<br><br>Please go to <a href="$doc_url">$doc_title</a> to see this change.<br><br>
+
+In which:
+
++-------------------------------+----------------------+----------------------+
+| Property                      | Default value        | Description          |
++===============================+======================+======================+
+| **exo.ecms.watchdocument.subj | Your watching        | The subject of the   |
+| ect**                         | document is changed  | email notification.  |
++-------------------------------+----------------------+----------------------+
+| **exo.ecms.watchdocument.mime | text/html            | The format of the    |
+| type**                        |                      | email content. There |
+|                               |                      | are two types:       |
+|                               |                      | text/html and        |
+|                               |                      | text/plain.          |
++-------------------------------+----------------------+----------------------+
+| **exo.ecms.watchdocument.cont | Dear                 | The content of the   |
+| ent**                         | $user\_name,<br><br> | email notification.  |
+|                               | The                  |                      |
+|                               | document $doc\_name  |                      |
+|                               | ($doc\_title) has    |                      |
+|                               | changed.<br><br>Plea |                      |
+|                               | se                   |                      |
+|                               | go to <a             |                      |
+|                               | href="$doc\_url">$do |                      |
+|                               | c\_title</a>         |                      |
+|                               | to see this          |                      |
+|                               | change.<br><br>      |                      |
++-------------------------------+----------------------+----------------------+
+
+You can use four parameters below in the
+``exo.ecms.watchdocument.content`` property:
+
+-  **$user\_name**: The full name of the receiver.
+
+-  **$doc\_name**: The name of the document.
+
+-  **$doc\_title**: The title of the document.
+
+-  **$doc\_url**: The link to view the document in Sites Explorer.
+
+.. _Configuration.WebDAV:
+
+=====================
+WebDAV configuration
+=====================
+
+The embedded WebDAV server lets you configure some parameter via :ref:`exo.properties file <Configuration.ConfigurationOverview>`.
+
+.. code:: java
+
+    # JCR Webdav configuration
+    exo.webdav.def-folder-node-type=nt:folder
+	exo.webdav.def-file-node-type=nt:file
+	exo.webdav.def-file-mimetype=application/octet-stream
+	exo.webdav.update-policy=update
+	exo.webdav.folder-icon-path=/eXoWCMResources/skin/images/file/nt-folder.png
+	exo.webdav.cache-control=text/*:max-age=3600;image/*:max-age=1800;application/*:max-age=1800;*/*:no-cache
+
++-------------------------------------+--------------------------------------+
+| ``exo.webdav.def-folder-node-type`` |Default (JCR) node type which is used |
+|									  |for the creation of collections.      |
++-------------------------------------+--------------------------------------+
+| ``exo.webdav.def-file-node-type``   |Default (JCR) node type which is used |
+|									  |for the creation of files. 			 |
++-------------------------------------+--------------------------------------+
+| ``exo.webdav.def-file-mimetype``    |A mime-type is detected by file 		 |
+|									  |extension or HTTP request header. If  |
+|									  |those are not found, this parameter   |
+|									  |is used.								 |
++-------------------------------------+--------------------------------------+
+| ``exo.webdav.update-policy``        | This defines the behavior when a PUT |
+|									  |	command is executed against an       |
+|									  |	existing resource:                   |
+|									  |   - add: It tries to add new resource| 
+|									  |	    with the same name.				 |
+|									  |	  - create-version: It creates a new |
+|									  |		version of the resource.         |
+|									  |	  - Otherwise, the PUT command       |
+|									  |     updates the resource and its last| 
+|									  |     modification date.               |	 
++-------------------------------------+--------------------------------------+
+| ``exo.webdav.folder-icon-path``     |The default path is an icon in        |
+|                                     |eXoWCMResources webapp.               |
++-------------------------------------+--------------------------------------+
+| ``exo.webdav.cache-control``        |This determines the live time of the  |
+|                                     |caches for each type of responses. Use| 
+|                                     |no-cache if you want a type to be not |
+|                                     |cached.                               |
++-------------------------------------+--------------------------------------+
+
+.. _Configuration.OpenInOfficeConfiguration:
+
+============================
+Open in Office configuration
+============================
+
+With the Open in Office feature, you are able to easily edit documents,
+spreadsheets and presentations in the native applications installed on
+your client, without keeping a local copy.
+
+By default, there are 4 labels displayed for corresponding file types as
+below:
+
++------------------------+---------------------------------------------------+
+| Label                  | File types                                        |
++========================+===================================================+
+| Open in Word           | docx, doc, docm, dot, dotm, dotx.                 |
++------------------------+---------------------------------------------------+
+| Open in Excel          | xltx, xltm, xlt, xlsx, xlsm, xlsb, xls, xll,      |
+|                        | xlam, xla.                                        |
++------------------------+---------------------------------------------------+
+| Open in Powerpoint     | pptx, pptm, ppt, ppsx, ppsm, pps, ppam, ppa,      |
+|                        | potx, potm, pot                                   |
++------------------------+---------------------------------------------------+
+| Open on Desktop        | Non-MS Office files, such as Open Document text   |
+|                        | files (odp, ods, odt, and more) or archive files  |
+|                        | (zip, rar, war, and more).                        |
++------------------------+---------------------------------------------------+
+
+As an administrator, you can easily configure the file types associated
+with the application named as in "Open in Word", and set a new label via
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+::
+
+    exo.remote-edit.$CATEGORY=$SET_OF_FILETYPES
+    exo.remove-edit.$CATEGORY.label=$LABEL
+
+-  Replace *$CATEGORY* with any text as you want, but it should
+   represent the application in correspondence to the file types defined
+   in *$SET\_OF\_FILETYPES*.
+
+-  Replace *$LABEL* with the application label that will be displayed in
+   the UI, for example "Word" or "MS Word".
+
+Here are some examples:
+
+-  Changing the default labels from "Open in Word", "Open in Excel", and
+   "Open in Powerpoint" into "Open in MS Word", "Open in MS Excel" and
+   "Open in MS Powerpoint":
+
+   ::
+
+       #MS Word
+       exo.remote-edit.word=docx,doc,docm,dot,dotm,dotx
+       exo.remote-edit.word.label=MS Word
+
+       #MS Excel
+       exo.remote-edit.excel=xltx,xltm,xlt,xlsx,xlsm,xlsb,xls,xll,xlam,xla
+       exo.remote-edit.excel.label=MS Excel
+
+       #MS Powerpoint
+       exo.remote-edit.powerpoint=pptx,pptm,ppt,ppsx,ppsm,pps,ppam,ppa,potx,potm,pot
+       exo.remote-edit.powerpoint.label=MS Powerpoint
+
+   |image1|
+
+-  Adding a new label "Open in LibreOffice" for some Open Document Text
+   file types:
+
+   ::
+
+       exo.remote-edit.libreoffice=odp,ods,odt
+       exo.remote-edit.libreoffice.label=LibreOffice
+
+   |image2|
+
+-  Setting a new label "Open in Writer" for some both Word and Open
+   Document Text file types:
+
+   ::
+
+       exo.remote-edit.writer=docx,doc,odm,odt
+       exo.remote-edit.writer.label=Writer
+
+   |image3|
+   
+.. _JODConverterConf:
+
+===========================
+JODConverter configuration
+===========================
+
+In Sites Explorer or Activity Stream, users can preview documents of
+various types, without downloading it. To support this feature, eXo Platform
+uses the JODConverter service that requires OpenOffice or LibreOffice to
+be installed locally (in the same machine with the eXo Platform server).
+
+**Installing OpenOffice/LibreOffice**
+
+Follow `OpenOffice
+guideline <http://www.openoffice.org/installation/>`__ or `LibreOffice
+guideline <http://www.libreoffice.org/get-help/installation/>`__ to
+install.
+
+Note that those softwares might be installed in some Linux distributions
+by the OS already.
+
+.. note:: JODConverter is already built in eXo Platform, so you do not need to install it.
+
+**Sigar Framework**
+
+In Windows, `Sigar <http://www.hyperic.com/products/sigar>`__ is
+recommended. JODConverter uses Sigar - if available - to manage Office
+processes. Without Sigar, there is possibility that Office processes are
+not stopped successfully when you shut down eXo Platform, and it causes
+problem in your next start.
+
+So `download <http://sourceforge.net/projects/sigar/files/>`__ the
+following files and install them to the lib folder
+(``$PLATFORM_TOMCAT_HOME/lib`` in Tomcat,
+``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear/lib`` in
+JBoss:
+
+-  ``sigar.jar``
+
+-  ``sigar-x86-winnt.dll`` for Windows 32.
+
+-  ``sigar-amd64-winnt.dll`` for Windows 64.
+
+**JODConverter version**
+
+eXo Platform uses `JODConverter
+v3.0 <https://code.google.com/p/jodconverter/wiki/WhatsNewInVersion3>`__
+that enhances processing different file types much.
+
+**Activating and deactivating**
+
+JODConverter is activated by default. You can deactivate it (and
+consequently not use the preview feature) by setting
+``exo.jodconverter.enable=false`` in
+`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
+file.
+
+**Configurations**
+
+.. note:: In most cases, you do not need to configure JODConverter because it
+          can work with default configurations. However, if you are using
+		  OpenOffice 4 (or later), or have installed the Office server
+		  untypically, you will need to specify
+		  **exo.jodconverter.officehome** by yourself. See :ref:`Specifying exo.jodconverter.officehome <JODConverter.Customize_OfficeHome>`.
+
+JODConverter configurations can be edited in the ``exo.properties``
+file. See :ref:`Configuration overview <Configuration.ConfigurationOverview>` if the
+file has not been created yet.
+
+::
+
+    # JOD Converter
+    exo.jodconverter.enable=true
+    exo.jodconverter.portnumbers=2002
+    exo.jodconverter.officehome=
+    exo.jodconverter.taskqueuetimeout=30000
+    exo.jodconverter.taskexecutiontimeout=120000
+    exo.jodconverter.maxtasksperprocess=200
+    exo.jodconverter.retrytimeout=120000
+
++-----------------------------------+-------------+-----------------------------+
+| Key                               | Default     | Description                 |
+|                                   | value       |                             |
++===================================+=============+=============================+
+| ``exo.jodconverter.portnumbers``  | 2002        | List of ports, separated by |
+|                                   |             | commas - those used by each |
+|                                   |             | JODConverter processing     |
+|                                   |             | thread. The number of       |
+|                                   |             | office instances is equal   |
+|                                   |             | to the number of ports.     |
++-----------------------------------+-------------+-----------------------------+
+| ``exo.jodconverter.officehome``   | See         | The absolute path to Office |
+|                                   | `here <#Off | installed folder.           |
+|                                   | iceHome>`__ |                             |
++-----------------------------------+-------------+-----------------------------+
+| ``exo.jodconverter.taskqueuetimeo | 30000       | The maximum living time of  |
+| ut``                              |             | a task in the conversation  |
+|                                   |             | queue. The task will be     |
+|                                   |             | removed from the queue if   |
+|                                   |             | the waiting time is longer  |
+|                                   |             | than **taskQueueTimeout**.  |
++-----------------------------------+-------------+-----------------------------+
+| ``exo.jodconverter.taskexecutiont | 120000      | The maximum time to process |
+| imeout``                          |             | a task. If the processing   |
+|                                   |             | time of a task is longer    |
+|                                   |             | than                        |
+|                                   |             | **taskExecutionTimeout**,   |
+|                                   |             | this task will be aborted   |
+|                                   |             | and the next task is        |
+|                                   |             | processed.                  |
++-----------------------------------+-------------+-----------------------------+
+| ``exo.jodconverter.maxtasksperpro | 200         | The maximum number of tasks |
+| cess``                            |             | are processed.              |
++-----------------------------------+-------------+-----------------------------+
+| ``exo.jodconverter.retrytimeout`` | 120000      | The interval time to        |
+|                                   |             | restart the Office services |
+|                                   |             | after an unexpected crash.  |
++-----------------------------------+-------------+-----------------------------+
+
+.. _JODConverter.Customize_OfficeHome:
+
+**Specifying exo.jodconverter.officehome**
+
+Again, the default configuration should work in many cases. Most likely
+you need to change it for OpenOffice 4.
+
+.. note:: Note that ``EXO_JODCONVERTER_OFFICEHOME`` variable is not used as of
+          4.1.0. The customize script does not overlap JODConverter
+          configuration anymore, so only use ``exo.properties`` for it.
+
+Here are some examples of the property:
+
+-  In Windows:
+   ``exo.jodconverter.officehome=C:\\Program Files (x86)\\OpenOffice 4``
+
+
+.. note:: Remember to use double slash (**\\\\**) for Windows.
+
+-  In OS X:
+   ``exo.jodconverter.officehome=/Applications/OpenOffice.app/Contents``
+   (OpenOffice 4) or
+   ``exo.jodconverter.officehome=/Applications/LibreOffice.app/Contents``
+   (LibreOffice).
+
+-  In Linux: ``exo.jodconverter.officehome=/opt/openoffice4``.
+
+   In Linux, if you do not know the path, you might check the
+   followings:
+
+   -  ``/opt/openoffice.org3``
+
+   -  ``/opt/libreoffice``
+
+   -  ``/usr/lib/openoffice``
+
+   -  ``/usr/lib/libreoffice``
+
+**Services details**
+
+To support as many as possible document types, it is recommended you
+install all available services of Open Office. However, if you do not
+want to do so, refer to the following table to know which packages are
+needed for which services.
+
++-------------+---------------+-----------------------+-----------------------+
+| File        | Service names | Open Office           | Libre Office          |
+| extensions  |               | installation package  | installation package  |
++=============+===============+=======================+=======================+
+| ``doc``     | writer        | openoffice.org-writer | libreoffice-writer    |
+|             |               |                       |                       |
+| ``docx``    |               |                       |                       |
+|             |               |                       |                       |
+| ``odt``     |               |                       |                       |
++-------------+---------------+-----------------------+-----------------------+
+| ``odf``     | math          | openoffice.org-math   | libreoffice-math      |
++-------------+---------------+-----------------------+-----------------------+
+| ``odg``     | draw          | openoffice.org-draw   | libreoffice-draw      |
++-------------+---------------+-----------------------+-----------------------+
+| ``odp``     | impress       | openoffice.org-impres | libreoffice-impress   |
+|             |               | s                     |                       |
+| ``ppt``     |               |                       |                       |
+|             |               |                       |                       |
+| ``pptx``    |               |                       |                       |
++-------------+---------------+-----------------------+-----------------------+
+| ``ods``     | calc          | openoffice.org-calc   | libreoffice-calc      |
+|             |               |                       |                       |
+| ``ots``     |               |                       |                       |
+|             |               |                       |                       |
+| ``xls``     |               |                       |                       |
+|             |               |                       |                       |
+| ``xlsx``    |               |                       |                       |
+|             |               |                       |                       |
+| ``xlt``     |               |                       |                       |
++-------------+---------------+-----------------------+-----------------------+
+
+.. _Configuration.FileSizeLimit:
+
+===============================
+Limiting size of uploaded files
+===============================
+
+**In Documents application**
+
+When you upload a file in Documents or Sites Explorer, its size is
+limited to 200 MB by default.
+
+To change this limit, edit the ``exo.ecms.connector.drives.uploadLimit``
+property in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+For example:
+
+::
+
+    exo.ecms.connector.drives.uploadLimit=300
+
+.. note:: As of 4.1, this configuration also takes effect on files uploaded
+          from Activity Stream (using the Share function).
+
+**In activities posts and comments**
+
+In a message post or a comment, it is possible to attach an image
+through the CKEditor. By default the image size is limited to 200 MB.
+
+You can change this limit by editing the value of the
+``exo.social.activity.uploadLimit`` property in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+For example:
+
+::
+
+    exo.social.activity.uploadLimit=200
+
+**In Wiki application**
+
+Same as for the previous applications, files upload size in Wiki is
+limited, by default to 200 MB which could be redefined through the
+property ``exo.wiki.attachment.uploadLimit`` in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+For example:
+
+::
+
+    exo.wiki.attachment.uploadLimit=200
+
+.. note:: The size is in MB for all the three properties.
+
+.. warning:: If you are using eXo Platform in JBoss application server, note that in
+			 addition to the parameters described above aiming to customize files
+			 size, you should configure the value of the parameter
+			 ``max-post-size`` in ``standalone/configuration/standalone-exo.xml``
+			 which is set by default to 200 MB in eXo Platform package.
+
+			 .. code:: xml
+
+					<http-listener name="default" socket-binding="http" redirect-socket="https" max-post-size="209715200"/>
+
+.. _Configuration.UploadHandler:
+
+============================================
+Limiting public access to the upload service
+============================================
+
+By default, unauthenticated users are not allowed to upload resources to
+the server through the Upload component on UI or by accessing directly
+the "/upload" handler, because this may cause some problems of server
+disk space. However, you can definitely configure the UploadHandler to
+allow this.
+
+To change this restriction, edit the
+``exo.portal.uploadhandler.public-restriction`` property in the
+:ref:`exo.properties <Configuration.ConfigurationOverview>`file as follows:
+
+::
+
+    exo.portal.uploadhandler.public-restriction=false
+
+.. _Configuration.CustomizeSiteData:
+
+=====================
+Customizing site data
+=====================
+
+eXo Platform provides 2 built-in sites: Intranet and ACME. In case you want
+to customize data of these sites, for example, modifying or overwriting
+the existing data, use the externalized parameters in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+**Intranet**
+
+-  ``exo.intranet.portalConfig.metadata.override``: Allow (*true*) or
+   not allow (*false*) overriding the Intranet data. See :ref:`Overriding Portal Data <#sect-Reference_Guide-Data_Import_Strategy-Overriding_Portal_Data>`
+   for more details.
+
+-  ``exo.intranet.portalConfig.metadata.importmode``: Customize data
+   import strategy (*CONSERVE*, *INSERT*, *MERGE*, or *OVERWRITE*). See
+   :ref:`here <#sect-Reference_Guide-Data_Import_Strategy-Import_Strategy>`
+   for more details about these modes.
+
+.. _Configuration.AutocreatingTaxonomyTree:
+
+================================================
+Enabling/Disabling auto-creating a taxonomy tree
+================================================
+
+eXo Platform allows you to enable/disable auto-creating a taxonomy tree
+during a new site creation by adding the
+``ecms.taxonomy.autoCreateWithNewSite`` parameter to
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+.. code:: java
+
+     # Configuration for a taxonomy tree
+     ecms.taxonomy.autoCreateWithNewSite=false
+
+By default, the parameter is set to ``false``, it means the creation of
+a taxonomy tree is disabled when you create a new site.
+
+To enable the function, simply set the parameter to ``true``.
+
+.. _Configuration.ActivityType:
+
+====================================
+Enabling/Disabling any activity type
+====================================
+
+eXo Platform allows you to enable/disable any activity type. Disabling an
+activity type means that this kind of activities will not be posted in
+the streams.
+
+To enable/disable an activity type, you need to add
+``exo.activity-type.activity-type-key.enabled`` parameter to
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+.. code:: java
+
+     # Configuration for activity type enabling/disabling
+     exo.activity-type.activity-type-key=false
+
+By default, the parameter is set to ``true``, it means the activity of
+type `` activity-type-key`` is enabled i.e it posts in the streams.
+
+To disable the activity type, simply set the parameter to ``false``.
+
+.. note:: In the ``exo.activity-type.activity-type-key.enabled``,
+		  activity-type-key could take many values depending on the activity
+		  type:
+
+			-  DEFAULT\_ACTIVITY
+			-  SPACE\_ACTIVITY
+			-  USER\_ACTIVITIES\_FOR\_SPACE
+			-  exosocial\\:relationship
+			-  LINK\_ACTIVITY
+			-  sharecontents\\:spaces
+			-  USER\_PROFILE\_ACTIVITY
+			-  DOC\_ACTIVITY
+			-  files\\:spaces
+			-  sharefiles\\:spaces
+			-  contents\\:spaces
+			-  cs-calendar\\:spaces
+			-  TaskAdded
+			-  ks-forum\\:spaces
+			-  ks-answer\\:spaces
+			-  ks-poll\\:spaces
+			-  ks-wiki\\:spaces
+			-  USER\_ACTIVITIES\_FOR\_RELATIONSHIP
+
+.. _Configuration.SpacesAdministration:
+
+=====================================
+Configure spaces administration group
+=====================================
+
+By default, only the super user is able to manage all the spaces of the
+platform:
+
+-  Create pages on spaces.
+
+-  Add/delete/promote members.
+
+-  Add/modify/delete space data (Wiki pages, forum Posts, activities,
+   tasks...).
+
+With eXo Platform 5.0 it is possible to define a group of users to
+manage spaces. This group of users is able to edit and delete all kind
+of spaces: visible and hidden.
+
+The group of spaces administrators could be defined by adding this
+property to
+`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
+file:
+
+-  ``exo.social.spaces.administrators``
+
+.. note:: -  You should specify the membership type (\*, member, manager...)
+              in the value of the property.
+
+			 -  It is possible to specify a list of groups separated by commas **,**.
+
+In this example, all users of the two groups /platform/administrators
+and /developers are allowed to manage spaces:
+exo.social.spaces.administrators=\*:/platform/administrators,\*:/developers
+
+.. _Configuration.Logs:
+
+=====
+Logs
+=====
+
+The logs of PRODUCT are controlled by the `Java Logging
+API <http://docs.oracle.com/javase/7/docs/technotes/guides/logging/index.html>`__.
+
+By default, the logs are configured to:
+
+-  log errors and warnings on the console.
+
+-  log ``$PLATFORM_TOMCAT_HOME/logs/platform.log`` (Tomcat), or
+   ``$PLATFORM_JBOSS_HOME/standalone/log/server.log`` (JBoss).
+
+The logs are configured via the file:
+
+-  ``$PLATFORM_TOMCAT_HOME/conf/logging.properties`` (Tomcat). Please
+   refer to `Tomcat's Logging
+   Documentation <http://tomcat.apache.org/tomcat-7.0-doc/logging.html>`__
+   for more information on how to adjust this file to your needs.
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/configuration/logging.properties``
+   (JBoss).
+
+.. _Configuration.JCR:
+
+=================
+JCR Configuration
+=================
+
+Because JCR Configuration is a very advanced topic, it is recommended
+you:
+
+-  Learn about `eXo JCR
+   configuration <../../reference/html/JCRReferenceGuide.html>`__.
+
+-  Use default values, change them only if you know what you are doing.
+
+-  Understand how to configure datasource in the
+   :ref:`Database <Database>` chapter.
+
+The configurations introduced here are a subset of JCR configurations.
+There are many JCR configurations which are packed in ``.war`` files, so
+you have to unpack to edit them. To avoid unpacking them, the subset is
+externalized to be configured easily in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+Here is the list of externalized configurations with their short
+descriptions.
+
+-  Repository:
+
+   ::
+
+       exo.jcr.repository.default=repository
+       exo.jcr.workspace.default=collaboration
+       exo.jcr.workspace.system=system
+
+   In which, "repository", "collaboration" and "system" are names of
+   default repository, default workspace and system workspace
+   respectively. Refer to :ref:`Repository
+   Configuration <#JCR.eXoJCRconfiguration.RepositoryConfiguration>`
+   for details.
+
+-  Datasource:
+
+   ::
+
+       exo.jcr.datasource.name=java:/comp/env/exo-jcr          
+       exo.jcr.datasource.dialect=auto
+       exo.jcr.db-structure-type=single
+
+   These configurations are applied to all workspaces. Refer to
+   :ref:`Workspace <#JCR.eXoJCRconfiguration.WorkspaceConfiguration>` for
+   details.
+
+-  Jgroups:
+
+   ::
+
+       exo.jcr.cluster.jgroups.config-url=file:${exo.jcr.cluster.jgroups.config}
+
+   This externalizes the **jgroups-configuration** parameter of all
+   workspace caches, query-handlers and lock-managers. Refer to
+   :ref:`Workspace <#JCR.eXoJCRconfiguration.WorkspaceConfiguration>` for
+   details.
+
+-  Value Storage:
+
+   ::
+
+       exo.jcr.storage.enabled=true
+
+   This externalizes the **enabled** property of file system
+   value-storage (that is configured at workspace level). The **true**
+   value (default) means all binary values are stored in file system.
+   The **false** value means all binary values are stored in the
+   database. Refer to :ref:`Value Storage plugin for data container <#JCR.ConfigurationPersister.ValueStoragePlugin>` 
+   for details.
+
+.. |image0| image:: images/gmail_settings_1.png
+.. |image1| image:: images/openinoffice/openinmsoffice.png
+.. |image2| image:: images/openinoffice/openinlibreoffice.png
+.. |image3| image:: images/openinoffice/openinwriter.png
