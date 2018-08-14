@@ -79,16 +79,16 @@ the **Forums** application, see the following table:
 |                            | topic.            |            |            |            |            |
 +----------------------------+-------------------+------------+------------+------------+------------+
 |  Creating a post           | Posts a reply,    |            |            |            |            |
-|  			     | quote, private    |  |OK12 |   |  |OK13|    |   |OK14|   |  |NOK2|    |
+|  			     | quote, private    |  |OK12|    |  |OK13|    |   |OK14|   |  |NOK2|    |
 |                            | post, quick       |            |            |            |            |
 |                            | reply.            |            |            |            |            |
 +----------------------------+-------------------+------------+------------+------------+------------+
 |  Editing your post 	     | Edits a post,     |            |            |            |            |
-| 			     | quote and private |  |OK15 |   |  |OK16|    |   |OK17|   |  |NOK3|    |
+| 			     | quote and private |  |OK15|    |  |OK16|    |   |OK17|   |  |NOK3|    |
 | 			     | post.             |            |            |            |            |
 +----------------------------+-------------------+------------+------------+------------+------------+
 |  Deleting your post        | Deletes a post    |            |            |            |            |
-|			     | inside a specific |  |OK18 |   |  |OK19|    |   |OK20|   |  |NOK4|    |
+|			     | inside a specific |  |OK18|    |  |OK19|    |   |OK20|   |  |NOK4|    |
 |  			     | topic.            |            |            |            |            |
 +----------------------------+-------------------+------------+------------+------------+------------+
 |  Creating a topic          | Starts a new      | |OK21|     |  |OK22|    |   |OK23|   |  |NOK5|    |
