@@ -364,24 +364,24 @@ This page is a reference to configurations exposed via
 Platform
 ~~~~~~~~~ 
 
-+-------------------------------+------------------+-------------------------+
-| Name                          | Description      | Default                 |
-+===============================+==================+=========================+
-| :ref:`exo.base.url            | Generates links  | http://localhost:8080   |
-| <Configuration.ServerBaseURL>`|                  |                         |
-+-------------------------------+------------------+-------------------------+
-| :ref:`exo.accountsetup.skip   | Skips "account   | false                   |
-| <Configuration.AccountSetup>`	| setup" screen or |                         |
-|            		        | not?             |                         |
-+-------------------------------+------------------+-------------------------+
-| :ref:`exo.super.user <Configur| The predefined   | root		     |
-|ation.PredefinedUserGroupMembe | super user's     |			     |
-|rship>`	                |   name.          |			     |
-+-------------------------------+------------------+-------------------------+               
-| :ref:`exo.portal.resetpassword| The expiration   | 24 (hours)              |
-|.expiretime <Configuration.For | time of a reset  |                         |
-|gotPassword>`                  | password link.   |                         |
-+-------------------------------+------------------+-------------------------+                                         
++--------------------------------+------------------+-------------------------+
+| Name                           | Description      | Default                 |
++================================+==================+=========================+
+| :ref:`exo.base.url             | Generates links  | http://localhost:8080   |
+| <Configuration.ServerBaseURL>` |                  |                         |
++--------------------------------+------------------+-------------------------+
+| :ref:`exo.accountsetup.skip    | Skips "account   | false                   |
+| <Configuration.AccountSetup>`	 | setup" screen or |                         |
+|            		         | not?             |                         |
++--------------------------------+------------------+-------------------------+
+| :ref:`exo.super.user           | The predefined   | root		      |
+|<PredefinedUserGroupMembership>`| super user's     |			      |
+|	                         |   name.          |			      |
++--------------------------------+------------------+-------------------------+               
+| :ref:`exo.portal.resetpassword | The expiration   | 24 (hours)              |
+|.expiretime                     | time of a reset  |                         |
+|<Configuration.ForgotPassword>` | password link.   |                         |
++--------------------------------+------------------+-------------------------+                                         
 
 .. _SMTP:
 
@@ -529,70 +529,69 @@ Unified Search
 Notification
 ~~~~~~~~~~~~~ 
 
-+-----------------------------+------------------+-------------------------+
-| Name                        | Description      | Default                 |
-+=============================+==================+=========================+
-| `exo.notification.Notificat | Cron expression  | 0 0 23 ? \* \* (11:00pm |
-| ionDailyJob.expression <#PL | to schedule      | every day)              |
-| FAdminGuide.Configuration.N | daily emails.    |                         |
-| otification>`__             |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.notification.Notificat | Cron expression  | 0 0 11 ? \* SUN (11:00am|
-| ionWeeklyJob.expression <#P | to schedule      | every Sunday)           |
-| LFAdminGuide.Configuration. | weekly emails.   |                         |
-| Notification>`__            |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.notification.service.Q | The delay time   | 60                      |
-| ueueMessage.period <#PLFAdm | (in seconds)     |                         |
-| inGuide.Configuration.Notif | between two      |                         |
-| ication>`__                 | batches of sent  |                         |
-|                             | mails.           |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.notification.service.Q | The maximum      | 30                      |
-| ueueMessage.numberOfMailPer | number of emails |                         |
-| Batch <#PLFAdminGuide.Confi | sent each batch. |                         |
-| guration.Notification>`__   |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.notification.portalnam | The "from" field | eXo                     |
-| e <#PLFAdminGuide.Configura | in notification  |                         |
-| tion.Notification>`__       | emails.          |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.notification.maxitems  | Maximum number   | 8                       |
-| <#PLFAdminGuide.Configurati | of notifications |                         |
-| on.Notification>`__         | displayed in the |                         |
-|                             | popup list.      |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.notification.viewall < | Living days of   | 30                      |
-| #PLFAdminGuide.Configuratio | items displayed  |                         |
-| n.Notification>`__          | in the View All  |                         |
-|                             | page.            |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.notification.WebNotifi | Cron expression  | 0 0 23 ? \* \* (11:00pm |
-| cationCleanJob.expression < | to schedule the  | every day)              |
-| #PLFAdminGuide.Configuratio | job that cleans  |                         |
-| n.Notification>`__          | web notification |                         |
-|                             | old items.       |                         |
-+-----------------------------+------------------+-------------------------+ 
++------------------------------+------------------+-------------------------+
+| Name                         | Description      | Default                 |
++==============================+==================+=========================+
+| :ref:`exo.notification.      | Cron expression  | 0 0 23 ? \* \* (11:00pm |
+| NotificationDailyJob.        | to schedule      | every day)              |
+| expression                   | daily emails.    |                         |
+| <Configuration.Notification>`|                  |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.notification.Notif | Cron expression  | 0 0 11 ? \* SUN (11:00am|
+| icationWeeklyJob.expression  | to schedule      | every Sunday)           |
+| <Configuration.Notification>`| weekly emails.   |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.notification.servic| The delay time   | 60                      |
+| e.QueueMessage.period        | (in seconds)     |                         |
+| <Configuration.Notification>`| between two      |                         |
+|                              | batches of sent  |                         |
+|                              | mails.           |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.notification.servic| The maximum      | 30                      |
+| e.QueueMessage.numberOfMailPe| number of emails |                         |
+| rBatch                       | sent each batch. |                         |
+| <Configuration.Notification>`|                  |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.notification.portal| The "from" field | eXo                     |
+| name                         | in notification  |                         |
+| <Configuration.Notification>`| emails.          |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.notification.maxite| Maximum number   | 8                       |
+| ms                           | of notifications |                         |
+| <Configuration.Notification>`| displayed in the |                         |
+|                              |  popup list.     |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.notification.viewal| Living days of   | 30                      |
+| l                            | items displayed  |                         |
+| <Configuration.Notification>`| in the View All  |                         |
+|                              | page.            |                         |
++------------------------------+------------------+-------------------------+
+| :ref:`exo.notification.WebNot| Cron expression  | 0 0 23 ? \* \* (11:00pm |
+| ificationCleanJob.expression | to schedule the  | every day)              |
+| <Configuration.Notification>`| job that cleans  |                         |
+| 			       | web notification |                         |
+|                              | old items.       |                         |
++------------------------------+------------------+-------------------------+ 
 
 .. _JCR:                                                                                           
 
 JCR
 ~~~~   
 
-+-----------------------------+------------------+-------------------------+
-| Name                        | Description      | Default                 |
-+=============================+==================+=========================+
-| `exo.jcr.datasource.dialect | In most cases    | auto                    |
-|  <#PLFAdminGuide.Database.C | the dialect is   |                         |
-| onfiguringPLF>`__           | auto-detected.   |                         |
-|                             | Follow the link  |                         |
-|                             | to know          |                         |
-|                             | exceptions.      |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.jcr.storage.enabled <# | Enable file      | true                    |
-| PLFAdminGuide.Configuration | system storage   |                         |
-| .DataDirectory>`__          | for JCR values?  |                         |
-+-----------------------------+------------------+-------------------------+               
++---------------------------------+------------------+-------------------------+
+| Name                            | Description      | Default                 |
++=================================+==================+=========================+
+| :ref:`exo.jcr.datasource.dialect| In most cases    | auto                    |
+|  <Database.ConfiguringPLF>`     | the dialect is   |                         |
+|  				  | auto-detected.   |                         |
+|                                 | Follow the link  |                         |
+|                                 | to know          |                         |
+|                                 | exceptions.      |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.jcr.storage.enabled   | Enable file      | true                    |
+| <Configuration.DataDirectory>`  | system storage   |                         |
+|                                 | for JCR values?  |                         |
++---------------------------------+------------------+-------------------------+               
                                                                 
 .. _Webdav:
 
@@ -601,31 +600,31 @@ WebDav
 +-----------------------------+------------------+-------------------------+
 | Name                        | Description      | Default                 |
 +=============================+==================+=========================+
-| `exo.webdav.def-folder-node | Matching node    | nt:folder               |
-| -type <#PLFAdminGuide.Confi | type of folders. |                         |
-| guration.WebDAV>`__         |                  |                         |
+| :ref:`exo.webdav.def-folder | Matching node    | nt:folder               |
+| -node-type                  | type of folders. |                         |
+| <Configuration.WebDAV>`     |                  |                         |
 +-----------------------------+------------------+-------------------------+
-| `exo.webdav.def-file-node-t | Matching node    | nt:file                 |
-| ype <#PLFAdminGuide.Configu | type of files.   |                         |
-| ration.WebDAV>`__           |                  |                         |
+| :ref:`exo.webdav.def-file-  | Matching node    | nt:file                 |
+| node-type                   | type of files.   |                         |
+| <Configuration.WebDAV>`     |                  |                         |
 +-----------------------------+------------------+-------------------------+
-| `exo.webdav.def-file-mimety | The mimetype to  | application/octet-stream|
-| pe <#PLFAdminGuide.Configur | exchange file    |                         |
-| ation.WebDAV>`__            | data.            |                         |
+| :ref:`exo.webdav.def-file-  | The mimetype to  | application/octet-stream|
+| mimetype                    | exchange file    |                         |
+| <Configuration.WebDAV>`     | data.            |                         |
 +-----------------------------+------------------+-------------------------+
-| `exo.webdav.update-policy < | The policy       | create-version          |
-| #PLFAdminGuide.Configuratio | applied when     |                         |
-| n.WebDAV>`__                | there is an      |                         |
+| :ref:`exo.webdav.update-    | The policy       | create-version          |
+| policy                      | applied when     |                         |
+| <Configuration.WebDAV>`     | there is an      |                         |
 |                             | update via       |                         |
 |                             | WebDav.          |                         |
 +-----------------------------+------------------+-------------------------+
-| `exo.webdav.folder-icon-pat | The display icon | /eXoWCMResources/skin/  |
-| h <#PLFAdminGuide.Configura | of a folder.     | images/file/nt-folder.  |
-| tion.WebDAV>`__             |                  | png                     |
+| :ref:`exo.webdav.folder-icon| The display icon | /eXoWCMResources/skin/  |
+| -path			      | of a folder.     | images/file/nt-folder.  |
+| <Configuration.WebDAV>`     |                  | png                     |
 +-----------------------------+------------------+-------------------------+
-| `exo.webdav.cache-control < | The              | text/\*:max-age=3600;   |
-| #PLFAdminGuide.Configuratio | cache-control    | image/\*:max-age=1800;  |
-| n.WebDAV>`__                | header that      | application/\*:max-age= |
+| :ref:`exo.webdav.cache-     | The              | text/\*:max-age=3600;   |
+| control                     | cache-control    | image/\*:max-age=1800;  |
+| <Configuration.WebDAV>`     | header that      | application/\*:max-age= |
 |                             | defines cache    | 1800;\*/\*:no-cache     |
 |                             | and cache live   |                         |
 |                             | time.            |                         |
@@ -4291,7 +4290,7 @@ In which:
    by default for the duration of tasks.
    
 
-.. _Configuration.PredefinedUserGroupMembership:
+.. _PredefinedUserGroupMembership:
 
 ========================================
 Predefined users, groups and memberships
