@@ -5248,8 +5248,7 @@ Chat Server
 |                    |                    |    the chat is in a standalone mode. |
 |                    |                    |                                      |
 |                    |                    | -  The parameter is set to false if  |
-|                    |                    |    the the chat is in embedded mode. |
-|                    |                    |                                      |                                                                             
+|                    |                    |    the the chat is in embedded mode. |                              
 +--------------------+--------------------+--------------------------------------+
 | ``chatPassPhrase`` | *chat*             | The password to access REST service  |
 |                    |                    | on the BRAND\_CHAT server.           |
