@@ -364,23 +364,24 @@ This page is a reference to configurations exposed via
 Platform
 ~~~~~~~~~ 
 
-+----------------------------+------------------+-------------------------+
-| Name                       | Description      | Default                 |
-+============================+==================+=========================+
-| exo.base.url    	     | Generates links. | http://localhost:8080   |
-+----------------------------+------------------+-------------------------+
-| exo.accountsetup.skip      | Skips "account   | false                   |
-| 			     | setup" screen or |                         |
-|            		     | not?             |                         |
-+----------------------------+------------------+-------------------------+
-| exo.super.user 	     | The predefined   | root                    |
-| 		             | super user's     |                         |
-| 			     | name.            |                         |
-+----------------------------+------------------+-------------------------+               
-| exo.portal.resetpassword.ex| The expiration   | 24 (hours)              |
-| piretime   		     | time of a reset  |                         |
-| 			     | password link.   |                         |
-+----------------------------+------------------+-------------------------+                                         
++-------------------------------+------------------+-------------------------+
+| Name                          | Description      | Default                 |
++===============================+==================+=========================+
+| :ref:`exo.base.url            | Generates links  | http://localhost:8080   |
+| <Configuration.ServerBaseURL>`|                  |                         |
++-------------------------------+------------------+-------------------------+
+| :ref:`exo.accountsetup.skip   | Skips "account   | false                   |
+| <Configuration.AccountSetup>`	| setup" screen or |                         |
+|            		        | not?             |                         |
++-------------------------------+------------------+-------------------------+
+| :ref:`exo.super.user <Configur| The predefined   | root		     |
+|ation.PredefinedUserGroupMembe | super user's     |			     |
+|rship>`	                |   name.          |			     |
++-------------------------------+------------------+-------------------------+               
+| :ref:`exo.portal.resetpassword| The expiration   | 24 (hours)              |
+|.expiretime <Configuration.For | time of a reset  |                         |
+|gotPassword>`                  | password link.   |                         |
++-------------------------------+------------------+-------------------------+                                         
 
 .. _SMTP:
 
@@ -395,7 +396,7 @@ SMTP
 |       		     | emails.          |                         |
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.host  | The external     | localhost               |
-|  <OutgoingMailService>`    | mail server.     |                         |
+| <OutgoingMailService>`     | mail server.     |                         |
 |       		     | emails.          |                         |
 +----------------------------+------------------+-------------------------+
 | :ref:`exo.email.smtp.port  | The external     | 25                      |
@@ -500,29 +501,28 @@ Search connector
 Unified Search
 ~~~~~~~~~~~~~~~   
 
-+-----------------------------+------------------+-------------------------+
-| Name                        | Description      | Default                 |
-+=============================+==================+=========================+
-| `exo.unified-search.engine. | Enable fuzzy     | true                    |
-| fuzzy.enable <#PLFAdminGuid | search or not?   |                         |
-| e.Configuration.UnifiedSear |                  |                         |
-| ch>`__                      |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.unified-search.engine. | A float number   | 0.5                     |
-| fuzzy.similarity <#PLFAdmin | between 0 and 1  |                         |
-| Guide.Configuration.Unified | expressing how   |                         |
-| Search>`__                  | much a returned  |                         |
-|                             | word matches the |                         |
-|                             | keyword. 1 is    |                         |
-|                             | exact search.    |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.unified-search.exclude | List of          | ``.-``                  |
-| d-characters <#PLFAdminGuid | characters that  |                         |
-| e.Configuration.UnifiedSear | will not be      |                         |
-| ch>`__                      | indexed (so      |                         |
-|                             | could not be     |                         |
-|                             | searched).       |                         |
-+-----------------------------+------------------+-------------------------+
++--------------------------------+------------------+-------------------------+
+| Name                           | Description      | Default                 |
++================================+==================+=========================+
+| :ref:`exo.unified-search.      | Enable fuzzy     | true                    |
+| engine.fuzzy.enable            | search or not?   |                         |
+| <Configuration.UnifiedSearch>` |                  |                         |
++--------------------------------+------------------+-------------------------+
+| :ref:`exo.unified-search.engine| A float number   | 0.5                     |
+| .fuzzy.similarity              | between 0 and 1  |                         |
+| <Configuration.UnifiedSearch>` | expressing how   |                         |
+|                                | much a returned  |                         |
+|                                | word matches the |                         |
+|                                | keyword. 1 is    |                         |
+|                                | exact search.    |                         |
++--------------------------------+------------------+-------------------------+
+| :ref:`exo.unified-search.exclud| List of          | ``.-``                  |
+| ed-characters			 | characters that  |                         |
+| <Configuration.UnifiedSearch>` | will not be      |                         |
+|                                | indexed (so      |                         |
+|                                | could not be     |                         |
+|                                | searched).       |                         |
++--------------------------------+------------------+-------------------------+
 
 .. _Notification:
                                 
