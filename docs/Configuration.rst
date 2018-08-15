@@ -106,7 +106,10 @@ Configuration
     -  :ref:`Cache configuration <Configuration.CacheConfiguration>`
        Overall introduction to the Cache configuration of eXo Platform,
        including: **Portal**, **Social**, and **ECMS**.
-
+       
+    -  :ref:`End-date suggestion <Configuration.EndDateSuggestion>`
+       End-date suggestion feature in Calendar: how to configure. 
+        
     -  :ref:`Predefined users, groups and memberships <Configuration.PredefinedUserGroupMembership>`
        The configurations for users, groups and memberships
        initialization.
@@ -156,6 +159,9 @@ Configuration
     -  :ref:`Task Management <Configuration.TaskManagement>`
        Configuration related to the project workflow in the Task
        Management application.
+       
+    -  :ref:`File storage configuration <Configuration.FileStorage>`
+       Configuration related to File Storage system in eXo Platform.
 
     -  :ref:`Chat Configuration <Configuration.ChatConfiguration>`
        Configuration needed for eXo Chat.
@@ -1549,23 +1555,23 @@ Update of last login time
 
 .. _UsernameCaseSensitive:
 
- Username case sensitive
- ~~~~~~~~~~~~~~~~~~~~~~~~~
+Username case sensitive
+~~~~~~~~~~~~~~~~~~~~~~~~~
  
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+ 
 | `exo.auth.case.insensitive  | Defines if       | false.                      |
 | <#PLFAdminGuide.Configurati | usernames in     |                             |
-| on.CaseSensitiveUsername>`_ | PRODUCT are case |                             |
-| _                           | sensitive or     |                             |
+| on.CaseSensitiveUsername>`_ | eXo Platform are |                             |
+| _                           | case sensitive or|                             |
 |                             | not.             |                             |
 +-----------------------------+------------------+-----------------------------+
 
 .. _UserInactivityDelay:                                        
 
- User inactivity delay
- ~~~~~~~~~~~~~~~~~~~~~~
+User inactivity delay
+~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
@@ -2050,7 +2056,6 @@ warning message:
 
 .. _OutgoingMailService:
 
-
 =====================
 Outgoing mail service
 =====================
@@ -2194,13 +2199,13 @@ ways:
       value is ``eXo``.
 
    -  ``exo.email.smtp.from``: Email address of the sender. The default
-      value is ``noreply@exoplatform.com``.
+      value is *noreply@exoplatform.com*.
       
 .. _Configuration.EmailNotificationOfDocumentChanges:
 
 =================================================
 Subscribing to notifications of document changes
-================================================
+=================================================
 
 The function Watch document in Sites Explorer allows users to receive
 notification by email when a document is updated. The email address of
@@ -2807,7 +2812,7 @@ exo.social.spaces.administrators=\*:/platform/administrators,\*:/developers
 Logs
 =====
 
-The logs of PRODUCT are controlled by the `Java Logging
+The logs of eXo Platform are controlled by the `Java Logging
 API <http://docs.oracle.com/javase/7/docs/technotes/guides/logging/index.html>`__.
 
 By default, the logs are configured to:
@@ -2902,8 +2907,2429 @@ descriptions.
    The **false** value means all binary values are stored in the
    database. Refer to :ref:`Value Storage plugin for data container <#JCR.ConfigurationPersister.ValueStoragePlugin>` 
    for details.
+   
+.. _Configuration.CacheConfiguration:
+
+=====================
+Cache configuration
+=====================
+
+To retrieve and display content faster, eXo Platform uses some cache
+services. See `Basic concepts <#Kernel.Cache.Basic_concepts>`__ for
+explanation of properties used for eXo Platform caches.
+
+.. note:: More details about the eXo Platform caches can be found in:
+
+		-  :ref:`eXo Cache <#Kernel.Cache>` in Foundation Reference Guide.
+
+		-  :ref:`Cache Levels <MonitoringGadget.CacheLevels>` in User Guide.
+
+		-  :ref:`Cache management view <#PLFAdminGuide.Management.ManagementViews.CacheManagementView>`.
+
+.. _PortalCaches:
+
+Portal caches
+~~~~~~~~~~~~~~~
+
+eXo Platform provides a list of Portal caches, including:
+
+-  :ref:`MOPCache <Portal.MOPCache>`
+
+-  :ref:`NavigationCache <Portal.NavigationCache>`
+
+-  :ref:`DescriptionCache <Portal.DescriptionCache>`
+
+-  :ref:`PageCache <Portal.PageCache>`
+
+-  :ref:`TemplateCache <Portal.TemplateCache>`
+
+-  :ref:`ResourceBundleCache <Portal.ResourceBundleCache>`
+
+These Portal caches can be overridden in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+::
+
+    # Portal Cache Configuration - MOP session Manager
+    #  - Standalone (live time in seconds)
+    exo.cache.portal.mop.maxsize=5000
+    exo.cache.portal.mop.livetime=600
+    #  - Cluster (expiration in milliseconds)
+    exo.cache.portal.mop.maxnodes=5000
+    exo.cache.portal.mop.expiration=600000
+
+    # Portal Cache Configuration - Navigation Service
+    #  - Standalone (live time in seconds)
+    exo.cache.portal.navigation.maxsize=5000
+    exo.cache.portal.navigation.livetime=600
+    #  - Cluster (expiration in milliseconds)
+    exo.cache.portal.navigation.maxnodes=5000
+    exo.cache.portal.navigation.expiration=600000
+
+    # Portal Cache Configuration - Description Service
+    #  - Standalone (live time in seconds)
+    exo.cache.portal.description.maxsize=5000
+    exo.cache.portal.description.livetime=600
+    #  - Cluster (expiration in milliseconds)
+    exo.cache.portal.description.maxnodes=5000
+    exo.cache.portal.description.expiration=600000
+
+    # Portal Cache Configuration - Page Service
+    #  - Standalone (live time in seconds)
+    exo.cache.portal.page.maxsize=5000
+    exo.cache.portal.page.livetime=600
+    #  - Cluster (expiration in milliseconds)
+    exo.cache.portal.page.maxnodes=5000
+    exo.cache.portal.page.expiration=600000
+
+    # Portal Cache Configuration - Template Service
+    #  - Standalone (live time in seconds)
+    exo.cache.portal.TemplateService.capacity=3000
+    exo.cache.portal.TemplateService.liveTime=3600
+
+    # Portal Cache Configuration - ResourceBundleData
+    #  - Standalone (live time in seconds)
+    exo.cache.portal.ResourceBundleData.capacity=3000
+    exo.cache.portal.ResourceBundleData.liveTime=-1
+
+The specific configuration of Portal caches can be found in the files:
+
+**i.** For **MOPSessionManager**, **NavigationService**,
+**DescriptionService**, **PageService**:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/portal.war!/WEB-INF/conf/portal/portal-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/exo.portal.web.portal.war!/WEB-INF/conf/portal/portal-configuration.xml``
+   (JBoss).
+
+**ii.** For **TemplateService** and **ResourceBundle**:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/platform-extension.war!/WEB-INF/conf/platform/cache-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/platform-extension-webapp.war!/WEB-INF/conf/platform/cache-configuration.xml``
+   (JBoss).
+
+.. _Portal.MOPCache:
+
+MOPCache
+----------
+
+The **MOPCache** caches all model objects of the portal (MOP), such as
+sites, pages and preferences. When the cached MOP objects are called,
+they will be directly retrieved from cache rather than the database.
+
+-  The cached MOP object is invalidated when it is modified or removed.
+
+-  The **MOPCache** size equals to the number of MOP objects in cache.
+
+-  The maximum heap size cannot be calculated exactly because the
+   **MOPCache** caches many types of MOP objects that are different in
+   size.
+
+.. _Portal.NavigationCache:
+
+NavigationCache
+----------------
+
+The **NavigationCache** caches data of navigation. When the cached
+navigation is accessed, it will be retrieved from cache rather than the
+database.
+
+-  The cached navigation is invalidated when it is modified or
+   destroyed.
+
+-  The **NavigationCache** size equals to the number of navigations in
+   cache.
+
+-  The size of each cached navigation is dependent on length of its
+   string field. The navigation size is often less than 250 bytes, so
+   the maximum heap size equals to the cache size multiplied by 250
+   bytes.
+   
+.. _Portal.DescriptionCache:   
+
+DescriptionCache
+-----------------
+
+The **DescriptionCache** caches a pair of name-description. Accordingly,
+the cached pair of name-description will be taken directly from cache
+rather than the database.
+
+-  The cached pair of name-description is invalidated when the data of
+   this name-description pair is modified or destroyed.
+
+-  The **DescriptionCache** size equals to the number of
+   name-description pairs in cache.
+
+-  The maximum heap size is dependent on length of name and description
+   of each pair stored in cache. The size of a name-description pair is
+   often less than 200 bytes, so the maximum heap size equals to the
+   cache size multiplied by 200 bytes.
+
+.. _Portal.PageCache:
+
+PageCache
+----------
+
+The **PageCache** caches data of a page when one user visits it for the
+first time. When the cached page is visited, it will be loaded from
+cache rather than the database.
+
+-  The cached page is invalidated when the page is destroyed. When the
+   page is modified, its new data will be updated into cache.
+
+-  The **PageCache** size equals to the number of pages in cache.
+
+-  The maximum heap size is dependent on some dynamic attributes of a
+   page, for example, site name that contains the page, length of
+   access/edit permission, display name of page.
+
+.. _Portal.TemplateCache:
+
+TemplateCache
+--------------
+
+The **TemplateCache** caches all Groovy templates of the portal by its
+template path and ResourceResolver. When the cached template is called,
+it will be loaded from cache rather than the database or the file
+system.
+
+-  The cached Groovy template is invalidated when it is removed or
+   modified.
+
+-  The **TemplateCache** size equals to the number of Groovy templates
+   in cache.
+
+-  The maximum heap size is dependent on length of Groovy template. The
+   size of a Groovy template is often less than 100KB, so the maximum
+   heap size equals to the cache size multiplied by 100KB.
+
+.. _Portal.ResourceBundleCache:
+
+ResourceBundleCache
+---------------------
+
+The **ResourceBundleCache** caches all resource bundles by name and
+locale. When the cached resource bundle is called, it will be directly
+loaded from cache rather than the database or the file system.
+
+-  The cached resource bundle is invalidated when it is removed or
+   modified.
+
+-  The **ResourceBundleCache** size equals to the number of resource
+   bundles in cache.
+
+-  The maximum heap size is dependent on the size of resource bundle.
+   The size of a resource bundle is often less than 100KB, so the
+   maximum heap size equals to the cache size multiplied by 100KB.
+
+.. _CommonsCaches:
+
+Commons caches
+~~~~~~~~~~~~~~~~
+
+Currently, eXo Platform provides 1 Common cache named **SettingCache** that
+is used for all modules in eXo Platform.
+
+This cache is handled by **SettingService** that can be overridden in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+.. code:: xml
+
+    #== COMMONS Caches Configuration == #
+
+    # Commons Cache Configuration - Settings Service
+    #  - Standalone (live time in seconds)
+    exo.cache.commons.SettingService.Capacity=2000
+    exo.cache.commons.SettingService.TimeToLive=60000
+    #  - Cluster (expiration in milliseconds)
+    exo.cache.commons.SettingService.MaxNodes=2000
+    exo.cache.commons.SettingService.ExpirationTimeout=6000000
+
+The specific configuration of **SettingCache** can be found in the file:
+
+-  ``$PLATFORM_TOMCAT_HOME/lib/commons-component-common-X.Y.Z.jar!/conf/portal/configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/lib/commons-component-common.jar!/conf/portal/configuration.xml``
+   (JBoss).
+   
+.. _SettingCache:   
+
+SettingCache
+--------------
+
+The **SettingCache** caches the setting value for all contexts and all
+scopes. When any users ask for the cached setting value, it will be
+retrieved from cache rather than the database.
+
+-  The **SettingCache** is never invalidated.
+
+-  The **SettingCache** size equals to the number of setting values in
+   cache.
+
+-  Each entry of cache is a pair and key is a composite key(Context
+   context, Scope scope, String key). The value is String, Double, Long
+   or Boolean. In reality, the size of these values should be less than
+   100 bytes, so the maximum heap size equals to the cache size
+   multiplied by 400 bytes.
+
+.. _ECMSCaches:
+
+ECMS caches
+~~~~~~~~~~~~
+
+eXo Platform provides a list of ECMS caches, including:
+
+-  :ref:`Drive Cache <ECMS.WCMDriveCache>`
+
+-  :ref:`Script Cache <ECMS.ScriptCache>`
+
+-  :ref:`Fragment Cache <ECMS.FragmentCache>`
+
+-  :ref:`Template Cache <ECMS.TemplateCache>`
+
+-  :ref:`Initial Web Content Cache <ECMS.InitialWebContentCache>`
+
+-  :ref:`PDF Viewer Cache <ECMS.PDFCache>`
+
+-  :ref:`SEO Cache <ECMS.SeoCache>`
+
+Here are the configurations in :ref:`exo.properties <Configuration.ConfigurationOverview>`
+file:
+
+.. code:: xml
+
+    # == ECMS Caches Configuration == #
+
+    # ECMS Cache Configuration - Query Service
+    #  - Standalone (live time in seconds)
+    #  - Cluster (expiration in milliseconds)
+    #exo.cache.ecms.queryservice.maxnodes=5000
+    #exo.cache.ecms.queryservice.expirationtimeout=600000
+
+    # ECMS Cache Configuration - Drive Service
+    #  - Standalone (live time in seconds)
+    #exo.cache.ecms.managedrive.capacity=5000
+    #exo.cache.ecms.managedrive.timetolive=600
+    #  - Cluster (expiration in milliseconds)
+    #exo.cache.ecms.managedrive.maxnodes=5000
+    #exo.cache.ecms.managedrive.expirationtimeout=600000
+
+    # ECMS Cache Configuration - Script Service
+    #  - Standalone (live time in seconds)
+    #exo.cache.ecms.scriptservice.capacity=300
+    #exo.cache.ecms.scriptservice.timetolive=86400
+
+    # ECMS Cache Configuration - Templates Service
+    #  - Standalone (time to live in seconds)
+    #exo.cache.ecms.templateservice.capacity=3000
+    #exo.cache.ecms.templateservice.timetolive=86400
+    #  - Cluster (expiration in milliseconds)
+    #exo.cache.ecms.templateservice.maxnodes=300
+    #exo.cache.ecms.templateservice.expirationtimeout=86400000
+
+    # ECMS Cache Configuration - Initial Webcontent
+    #  - Standalone (time to live in seconds)
+    #exo.cache.ecms.webcontent.initialwebcontentplugin.capacity=300
+    #exo.cache.ecms.webcontent.initialwebcontentplugin.timetolive=86400
+    #  - Cluster (expiration in milliseconds)
+    #exo.cache.ecms.webcontent.initialwebcontentplugin.maxnodes=300
+    #exo.cache.ecms.webcontent.initialwebcontentplugin.expirationtimeout=86400000
+
+    # ECMS Cache Configuration - Fragment Cache Service (Markup Cache)
+    #  - Standalone (time to live in seconds)
+    #exo.cache.ecms.fragmentcacheservice.capacity=10000
+    #exo.cache.ecms.fragmentcacheservice.timetolive=30
+    #  - Cluster (expiration in milliseconds)
+    #exo.cache.ecms.fragmentcacheservice.maxnodes=10000
+    #exo.cache.ecms.fragmentcacheservice.expirationtimeout=30000
+    #
+    # ECMS Cache Configuration - PDF Viewer Service
+    #  - Standalone (time to live in seconds)
+    #exo.cache.ecms.pdfviewer.capacity=1000
+    #exo.cache.ecms.pdfviewer.timetolive=3600
+    #  - Cluster (expiration in milliseconds)
+    #exo.cache.ecms.pdfviewer.maxnodes=1000
+    #exo.cache.ecms.pdfviewer.expirationtimeout=3600000
+
+    # ECMS Cache Configuration - SEO Cache
+    #  - Standalone (time to live in seconds)
+    #exo.cache.ecms.seoservice.capacity=1000
+    #exo.cache.ecms.seoservice.timetolive=3600
+    #  - Cluster (expirationtimeout in milliseconds)
+    # exo.cache.ecms.seoservice.maxnodes=1000
+    # exo.cache.ecms.seoservice.expirationtimeout=3600000
+
+    # ECMS Cache Configuration - Javascript Cache
+    #  - Standalone (time to live in seconds)
+    #exo.cache.ecms.javascript.maxSize=1000
+    #exo.cache.ecms.javascript.liveTime=3600
+
+.. note: The properties are different between Cluster mode and Standalone
+		 (single server) mode. Please read the inline comments when you
+		 configure them.
+
+These properties are exposed via ``exo.properties`` for administrators.
+The full configuration can be found in XML configuration files. For SEO
+Cache, the file is:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/ecm-wcm-extension.war!/WEB-INF/conf/wcm-extension/wcm/seo-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/ecms-packaging-wcm-webapp.war!/WEB-INF/conf/wcm-extension/wcm/seo-configuration.xml`` (JBoss).
+
+For the other caches, the file is:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/ecm-wcm-core.war!/WEB-INF/conf/wcm-core/core-services-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/ecms-core-webapp.war!/WEB-INF/conf/wcm-core/core-services-configuration.xml`` (JBoss).
+
+.. _ECMS.WCMDriveCache
+
+Drive Cache
+------------
+
+The **managedrive** caches visited drives of Sites Explorer by their
+names. When any users visit the cached drives, these drives will be
+directly retrieved from cache rather than the database.
+
+-  The cache is invalidated when the drive is removed or added.
+
+-  The cache size equals to the number of drives in cache.
+
+-  The maximum heap size consumed by the cache are calculated as below:
+
+   -  Each item of drive cache contains: name, workspace, homePath,
+      permission, view, icon, allowcreatefolders, viewReferences,
+      viewNondocument, viewSidebar, showHiddenNode.
+
+   -  The first 7 elements are String and their length often should not
+      be greater than 1000 bytes.
+
+   -  The last 4 elements are Boolean and the size of each element is 1
+      byte.
+
+   -  Thus, the maximum heap size equals to the cache size multiplied by
+      7004 bytes.
+
+.. _ECMS.ScriptCache:
+
+Script Cache
+--------------
+
+The **scriptservice** caches the ECMS Script objects. When there are any
+requests for cached scripts, these scripts are retrieved from cache
+rather than the database.
+
+-  The **scriptservice** cache is never invalidated.
+
+-  The cache size equals to the number of scripts in cache.
+
+-  The maximum heap size equals to the cache size multiplied by size of
+   the script object.
+
+.. _ECMS.TemplateCache:
+
+Template Cache
+---------------
+
+The **templateservice** caches the list of document nodetypes. When any
+users call for the cached document nodetypes, data will be retrieved
+from cache rather than the database.
+
+-  The **templateservice** cache is invalidated when the document
+   template is updated.
+
+-  The cache size is 1.
+
+-  The heap size consumed by the cache is unlimited. However the cache
+   contains node names only, so it consumes less than 10KB.
+
+.. _ECMS.InitialWebContentCache:
+
+Initial Web Content Cache
+---------------------------
+
+The **webcontent.initialwebcontentplugin** caches the artifacts (nodes)
+that are used to initialize a new portal. When a cached artifact is
+called, it will be read and returned from cache rather than the
+database.
+
+-  The cache is never invalidated because the initial artifact is never
+   changed.
+
+-  The cache size equals to the number of the cached artifacts.
+
+-  The maximum heap size equals to the total size of all artifacts.
+
+.. _ECMS.FragmentCache:
+
+Fragment Cache
+----------------
+
+The **fragmentcacheservice** caches content of SCVs and CLVs. When any
+users call for these cached portlets, these portlets will be retrieved
+from cache rather than the database.
+
+-  The **fragmentcacheservice** is invalidated when SCVs and CLVs are
+   switched from the edit to the live mode.
+
+-  The cache size equals to the number of SCVs/CLVs in cache.
+
+-  The maximum heap size consumed by the cache: total size of cached
+   SCVs/CLVs (the SCVs/CLVs size is unlimited).
+
+.. _ECMS.PDFCache:
+
+PDF Viewer Cache
+------------------
+
+The **pdfviewer** caches the path to a specific page of a specific PDF
+file. In eXo Platform, when a user views an Office document or PDF file, the
+viewed page is extracted into a PDF file, and REST is used to return
+that file content to client browser.
+
+-  The **pdfviewer** cache is never invalidated.
+
+-  The cache size equals to the number of pages viewed by users.
+
+-  The maximum heap size equals to the cache size multiplied by 200
+   bytes (supposing that the longest file path is 200 characters).
+
+.. _ECMS.SeoCache:
+
+SEO Cache
+-----------
+
+The **seoservice** caches the SEO metadata of all pages in all sites.
+When the SEO metadata of these cached pages are called, the created
+pages will be got based on the page path from cache rather than the
+database.
+
+-  The **seoservice** cache is never invalidated.
+
+-  The cache size equals to the number of pages to which the SEO
+   metadata is added.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Each Metadata object contains 8 String objects: uri, rbcontent,
+      keywords, description, title, frequency, fullStatus,
+      pageReference. Each object is usually less than 100 characters.
+
+   -  5 bytes (a float and a boolean) for priority and sitemap.
+
+   -  Thus, the total heap size equals to the cache size multiplied by
+      805 bytes.
+
+.. _SocialCaches:
+
+Social caches
+~~~~~~~~~~~~~~
+
+eXo Platform provides 4 Social caches, including:
+
+-  :ref:`IdentityCache <Social.identityCache>`
+
+-  :ref:`RelationshipCache <Social.relationshipCache>`
+
+-  :ref:`SpaceCache <Social.spaceCache>`
+
+-  :ref:`ActivityCache <Social.activityCache>`
+
+You can change values of these Social caches in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+In particular:
+
+-  **IdentityCache** that is handled by CachedIdentityStorage.
+
+   .. code:: xml
+
+       # Social Cache Configuration - Identity
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.IdentityCache.Capacity=500
+       exo.cache.social.IdentityCache.TimeToLive=-1
+
+       # Social Cache Configuration - Identity Index
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.IdentityIndexCache.Capacity=500
+       exo.cache.social.IdentityIndexCache.TimeToLive=-1
+
+       # Social Cache Configuration - Profile
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.ProfileCache.Capacity=500
+       exo.cache.social.ProfileCache.TimeToLive=-1
+
+       # Social Cache Configuration - Identities
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.IdentitiesCache.Capacity=2000
+       exo.cache.social.IdentitiesCache.TimeToLive=86400
+
+       # Social Cache Configuration - Identities Count
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.IdentitiesCountCache.Capacity=2000
+       exo.cache.social.IdentitiesCountCache.TimeToLive=86400
+
+-  **RelationshipCache** that is handled by CachedRelationshipStorage.
+
+   .. code:: xml
+
+       # Social Cache Configuration - Relationship
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.RelationshipCache.Capacity=20000
+       exo.cache.social.RelationshipCache.TimeToLive=-1
+
+       # Social Cache Configuration - Relationship From Identity
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.RelationshipFromIdentityCache.Capacity=20000
+       exo.cache.social.RelationshipFromIdentityCache.TimeToLive=-1
+
+       # Social Cache Configuration - Relationships Count
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.RelationshipsCountCache.Capacity=800
+       exo.cache.social.RelationshipsCountCache.TimeToLive=-1
+
+       # Social Cache Configuration - Relationships
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.RelationshipsCache.Capacity=800
+       exo.cache.social.RelationshipsCache.TimeToLive=-1
+
+-  **SpaceCache** that is handled by CachedSpaceStorage.
+
+   .. code:: xml
+
+       # Social Cache Configuration - Space
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.SpaceCache.Capacity=1000
+       exo.cache.social.SpaceCache.TimeToLive=-1
+
+       # Social Cache Configuration - Space Ref
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.SpaceRefCache.Capacity=10000
+       exo.cache.social.SpaceRefCache.TimeToLive=-1
+
+       # Social Cache Configuration - Spaces Count
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.SpacesCountCache.Capacity=4000
+       exo.cache.social.SpacesCountCache.TimeToLive=86400
+
+       # Social Cache Configuration - Spaces
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.SpacesCache.Capacity=1000
+       exo.cache.social.SpacesCache.TimeToLive=86400
+
+-  **ActivityCache** that is handled by CachedActivityStorage.
+
+   .. code:: xml
+
+       # Social Cache Configuration - Activity
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.ActivityCache.Capacity=10000
+       exo.cache.social.ActivityCache.TimeToLive=-1
+
+       # Social Cache Configuration - Activities Count
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.ActivitiesCountCache.Capacity=4000
+       exo.cache.social.ActivitiesCountCache.TimeToLive=-1
+
+       # Social Cache Configuration - Activities
+       #  - Standalone (time to live in seconds)
+       exo.cache.social.ActivitiesCache.Capacity=4000
+       exo.cache.social.ActivitiesCache.TimeToLive=-1
+
+The specific configuration of each Social cache can be found in:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/social-extension.war!/WEB-INF/conf/social-extension/social/cache-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear/social-extension-war.war!/WEB-INF/conf/social-extension/social/cache-configuration.xml``
+   (JBoss).
+
+.. _Social.identityCache:
+
+IdentityCache
+---------------
+
+The **IdentityCache** caches information related to identities, such as
+index, count or profile. When any users view or take actions on
+users/spaces or activity page that contains the cached identity
+information, information will be directly retrieved from cache rather
+than the database.
+
+-  The **IdentityCache** is invalidated when the user/space is deleted
+   or updated.
+
+-  The **IdentityCache** size equals to the number of identities in
+   cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Identity Data: 33Kb (Max size: 500)
+
+   -  Identity Index: 24Kb (Max size: 500)
+
+   -  Identities List: 3747Kb (Max size: 2000)
+
+   -  Identities Count: 739Kb (Max size: 2000)
+
+   -  Profile Data: 170Kb (Max size: 500)
+
+.. _Social.relationshipCache:
+
+RelationshipCache
+------------------
+
+The **RelationshipCache** caches relationship information of users in
+the social networking. Any connection status (connection, pending,
+invitation, suggestion and count of relationships) is cached. When any
+users ask for these cached relationships, their information will be
+retrieved from cache rather than the database.
+
+-  The **RelationshipCache** is invalidated when the connection is
+   changed/removed or when a new connection is added.
+
+-  The **RelationshipCache** size equals to the number of relationships
+   in cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Relationship Data: 14610Kb (Max size: 20000)
+
+   -  Relationships Count: 16Kb (Max size: 800)
+
+   -  Relationships: 171Kb (Max size: 800)
+
+   -  Suggestion: 400Kb (Max size: 500)
+
+.. _Social.spaceCache:
+
+SpaceCache
+------------
+
+The **SpaceCache** caches all information of spaces, including the count
+and space references. When any users visit the cached spaces, their
+information will be retrieved from cache rather than the database.
+
+-  The **SpaceCache** is invalidated when the space is deleted or
+   updated.
+
+-  The **SpaceCache** size equals to the number of spaces in cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Space Data: 1177Kb (Max size: 1000)
+
+   -  Spaces List: 1126Kb (Max size: 1000)
+
+   -  Spaces Count: 203Kb (Max size: 4000)
+
+   -  Space Ref: (38Kb) (Max size: 10000)
+
+.. _Social.activityCache:
+
+ActivityCache
+---------------
+
+The **ActivityCache** caches information related to activities, such as
+the count of activities. When any users visit the cached activities,
+information of these activities will be retrieved from cache rather than
+the database.
+
+-  The **ActivityCache** is invalidated when the activity is deleted or
+   updated (a new comment is added to the activity).
+
+-  The **ActivityCache** size equals to the number of activities in
+   cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Activities Data: 3697Kb (Max size: 10000)
+
+   -  Activities List: 2555Kb (Max size: 4000)
+
+   -  Activities Count: 98Kb (Max size: 4000)
+
+.. _ForumCaches:
+
+Forum caches
+~~~~~~~~~~~~~~
+
+eXo Platform provides 9 Forum caches, including:
+
+-  :ref:`UserProfilesCache <Forum.userProfileCache>`
+
+-  :ref:`CategoriesCache <Forum.categoriesCache>`
+
+-  :ref:`ForumsCache <Forum.forumsCache>`
+
+-  :ref:`TopicsCache <Forum.topicsCache>`
+
+-  :ref:`PostsCache <Forum.postsCache>`
+
+-  :ref:`WatchesCache <Forum.watchesCache>`
+
+-  :ref:`ObjectNameDataCache <Forum.objectNameDataCache>`
+
+-  :ref:`MiscDataCache <Forum.miscDataCache>`
+
+-  :ref:`BBCodeCache <Forum.BBCodeCache>`
+
+You can override these Forum caches in :ref:`exo.properties <ConfigurationOverview>`
+file.
+
+In particular:
+
+-  **UserProfilesCache** that is handled by CacheUserProfile.
+
+   .. code:: xml
+
+       # Forum Cache Configuration - User Profiles
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.UserProfiles.Capacity=500
+       exo.cache.forum.UserProfiles.TimeToLive=-1
+
+-  **CategoriesCache**, **ForumsCache**, **TopicsCache**,
+   **PostsCache**, **WatchesCache**, **ObjectNameDataCache**,
+   **MiscDataCache** that are handled by CachedDataStorage.
+
+   .. code:: xml
+
+       # Forum Cache Configuration - Category List
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.CategoryList.Capacity=50
+       exo.cache.forum.CategoryList.TimeToLive=-1
+
+       # Forum Cache Configuration - Category Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.CategoryData.Capacity=150
+       exo.cache.forum.CategoryData.TimeToLive=-1
+
+       # Forum Cache Configuration - Forum List
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.ForumList.Capacity=500
+       exo.cache.forum.ForumList.TimeToLive=-1
+
+       # Forum Cache Configuration - Forum Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.ForumData.Capacity=2500
+       exo.cache.forum.ForumData.TimeToLive=-1
+
+       # Forum Cache Configuration - Topic Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.TopicData.Capacity=500
+       exo.cache.forum.TopicData.TimeToLive=-1
+
+       # Forum Cache Configuration - Watch List Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.WatchListData.Capacity=500
+       exo.cache.forum.WatchListData.TimeToLive=-1
+
+       # Forum Cache Configuration - Link List Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.LinkListData.Capacity=250
+       exo.cache.forum.LinkListData.TimeToLive=-1
+
+       # Forum Cache Configuration - Object Name Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.ObjectNameData.Capacity=500
+       exo.cache.forum.ObjectNameData.TimeToLive=-1
+
+       # Forum Cache Configuration - Misc Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.MiscData.Capacity=600
+       exo.cache.forum.MiscData.TimeToLive=-1
+
+-  **BBCodeCache** that is handled by CachedBBCodeService.
+
+   .. code:: xml
+
+       # BBCode Cache Configuration - BBCode List
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.BBCodeListData.Capacity=10
+       exo.cache.forum.BBCodeListData.TimeToLive=-1
+
+       # BBCode Cache Configuration - BBCode Data
+       #  - Standalone (time to live in seconds)
+       exo.cache.forum.BBCodeData.Capacity=50
+       exo.cache.forum.BBCodeData.TimeToLive=-1
+
+The specific configuration of each Forum cache can be found in:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/forum-extension.war!/WEB-INF/ks-extension/ks/forum/cache-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear/forum-extension-webapp.war!/WEB-INF/ks-extension/ks/forum/cache-configuration.xml``
+   (JBoss).
+
+.. _Forum.userProfileCache:
+
+UserProfilesCache
+-------------------
+
+The **UserProfilesCache** caches information of users, for example,
+name, number of topics, number of posts, user settings information in
+the forum system. These cached information will be used when the users
+log in the forum for next times.
+
+-  The **UserProfilesCache** is invalidated when the user is deleted or
+   updated, or when the user creates a new topic/post or changes his/her
+   user settings, logs in/out of the system.
+
+-  The **UserProfilesCache** size equals to the number of user profiles
+   in forum.
+
+-  The maximum heap size of **UserProfilesCache** is 213Kb (Max size:
+   500).
+   
+.. _Forum.categoriesCache:   
+
+CategoriesCache
+-----------------
+
+The **CategoriesCache** caches information of categories, such as name,
+order, description, permissions. Information of these cached categories
+are used when the Forums application is opened not for the first time.
+
+-  The **CategoriesCache** is invalidated when the category is modified
+   (for example, when the user updates his/her profile, or watches a
+   category, or adds/deletes a space).
+
+-  The **CategoriesCache** size equals to the number of categories in
+   cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Categories List: 207Kb (Max size: 50)
+
+   -  Categories Data: 54Kb (Max size: 150)
+
+.. _Forum.forumsCache:
+
+ForumsCache
+-------------
+
+The **ForumsCache** caches information related to forums, such as name,
+order, description, permission. Information of these cached forums is
+used when any users open the Forums application not for the first time.
+
+-  The **ForumsCache** is invalidated when the forum is modified
+   (updating user profile, users watch on Forum, spaces updated).
+
+-  The **ForumsCache** size equals to the number of forums in cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Forum List: 66Kb (Max size: 500)
+
+   -  Forum Data: 982Kb (Max size: 2500)
+
+.. _Forum.topicsCache:
+
+TopicsCache
+------------
+
+The **TopicsCache** caches information related to topics, such as name,
+description, owner, last updated time and permission. When any users go
+to the cached topics, their information will be retrieved from cache
+rather than the database.
+
+-  The **TopicsCache** is invalidated when the topic is modified (for
+   example, when the user watches a topic, or adds/deletes a post, or
+   deletes a space).
+
+-  The **TopicsCache** size equals to the number of topics in cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Topic List: 194Kb (Max size: 150)
+
+   -  Topic Data: 581Kb (Max size: 500)
+
+.. _Forum.postsCache:
+
+PostsCache
+------------
+
+The **PostsCache** caches information of posts, such as title, message,
+owner. When any users do anything related to the cached posts,
+information will be retrieved from cache rather than the database.
+
+-  The **PostsCache** is invalidated when the post is modified (or
+   updated).
+
+-  The **PostsCache** size equals to the number of topics in cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  Post List: 228Kb (Max size: 150)
+
+   -  Post Data: 720Kb (Max size: 500)
+   
+.. _Forum.watchesCache:   
+
+WatchesCache
+--------------
+
+The **WatchesCache** caches information related to watches, such as
+users and emails. These cached information will be used when the
+forum/category/topic is loaded not for the first time.
+
+-  The **WatchesCache** is invalidated when a post is modified
+   (unwatched/watched).
+
+-  The **WatchesCache** size equals to the number of watches in cache.
+
+-  The maximum heap size of watched data is 257Kb (Max size: 500)
+
+.. _Forum.objectNameDataCache:
+
+ObjectNameDataCache
+---------------------
+
+The **ObjectNameDataCache** caches simple information of
+categories/forums/topics, such as name and jcr-path. When any users ask
+for these cached forums/categories/topics, the information will be
+retrieved from cache rather than the database.
+
+-  The **ObjectNameDataCache** is invalidated when a
+   category/forum/topic is updated.
+
+-  The **ObjectNameDataCache** size equals to the number of
+   ObjectNameData in cache.
+
+-  The maximum heap size of **ObjectNameDataCache** is 239Kb (Max size:
+   500).
+
+.. _Forum.miscDataCache:
+
+MiscDataCache
+---------------
+
+The **MiscDataCache** caches simple information related to categories
+list size, forums list size, topic list size, screen name of users.
+These cached information is used when the Forums application is opened
+not for the first time.
+
+-  The **MiscDataCache** is invalidated when a
+   category/forum/topic/post/user profile is modified.
+
+-  The **MiscDataCache** size equals to the number of MiscData in cache.
+
+-  The maximum heap size equals to 45Kb (Max size: 600).
+
+.. _Forum.BBCodeCache:
+
+BBCodeCache
+--------------
+
+The **BBCodeCache** caches information related to BBCodes, such as tag
+name, replacement, description, isOption. When any users open the topic
+containing the cached BBCodeCache or add/edit the BBCode, information
+will be retrieved from cache rather than the database.
+
+-  The **BBCodeCache** is invalidated when the BBCode is modified.
+
+-  The **BBCodeCache** size equals to the number of BBCodes in cache.
+
+-  The maximum heap size is calculated as follows:
+
+   -  BBCode List: 9Kb (Size: 10).
+
+   -  BBCode Data: 11,25Kb (Size: 50).
+   
+.. _WikiCaches:
+
+Wiki caches
+~~~~~~~~~~~~~
+
+eXo Platform provides 3 Wiki caches, including:
+
+-  :ref:`RenderingCache <Wiki.RenderingCache>`
+
+-  :ref:`UuidCache <Wiki.UUIDCache>`
+
+-  :ref:`AttachmentCountCache <Wiki.AttachmentCountCache>`
+
+You can change these Social caches that are handled by
+**PageRenderingCacheService** in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+In particular:
+
+.. code:: xml
+
+    # == WIKI Caches Configuration == #
+
+    # Wiki Cache Configuration - Spaces
+    #  - Standalone (time to live in seconds)
+    exo.cache.wiki.PageRenderingCache.Capacity=1000
+    exo.cache.wiki.PageRenderingCache.TimeToLive=-1
+
+The specific configuration of each Wiki cache can be found in:
+
+-  ``$PLATFORM_TOMCAT_HOME/lib/wiki-service-xxx.jar!/conf/portal/cache-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear/lib/wiki-service.jar!/conf/portal/cache-configuration.xml``
+   (JBoss).
+   
+.. _Wiki.RenderingCache:   
+
+RenderingCache
+----------------
+
+The **RenderingCache** caches content of visited wiki pages. When any
+users visit the cached wiki pages, their content will be retrieved from
+cache rather than the database.
+
+-  The **RenderingCache** is updated when a wiki page is removed or
+   modified.
+
+-  The **RenderingCache** size equals to the number of wiki pages in
+   cache.
+
+-  The size of a wiki page is unlimited, so the maximum heap size
+   consumed by the cache is unlimited too. However, most of wiki pages
+   are often less than 100KB. Therefore, the maximum heap size equals to
+   the cache size multiplied by 100KB.
+
+.. _Wiki.UUIDCache:
+
+UuidCache
+-----------
+
+The **UuidCache** caches Uuid of nodes that stores the visited wiki
+pages. When any users visit these wiki pages, Wiki gets the nodes by
+**UUID** in cache that is much faster than query in the database.
+
+-  The **UuidCache** is updated when the wiki page is removed.
+
+-  The **UuidCache** size equals to the number of wiki pages in cache.
+
+-  Every **Uuid** has the length of 32 bytes, so the maximum heap size
+   equals to the cache size multiplied by 32 bytes.
+   
+.. _Wiki.AttachmentCountCache:   
+
+AttachmentCountCache
+----------------------
+
+The **AttachmentCountCache** caches the number of attachments of the
+visited wiki pages. When the visited wiki pages are called, the number
+of page attachments will be retrieved from cache rather than the
+database.
+
+-  The **AttachmentCountCache** is updated when the wiki page is
+   removed/modified or when its attachment is added/removed.
+
+-  The **AttachmentCountCache** size equals to the number of wiki pages
+   in cache.
+
+-  The maximum heap size equals to the cache size multiplied by 4 bytes
+   ("4" - size of Integer).
+   
+.. _CalendarCaches:
+
+Calendar caches
+~~~~~~~~~~~~~~~~~
+
+eXo Platform provides 6 Calendar caches, including:
+
+-  :ref:`GroupCalendarCache <Calendar.groupCalendarCache>`
+
+-  :ref:`UserCalendarCache <Calendar.userCalendarCache>`
+
+-  :ref:`GroupCalendarEventCache <Calendar.groupCalendarEventCache>`
+
+-  :ref:`GroupCalendarRecurrentEventCache <Calendar.groupCalendarRecurrentEventCache>`
+
+-  :ref:`UserCalendarSettingCache <Calendar.userCalendarSettingsCache>`
+
+-  :ref:`Calendar Cache by ID <Calendar.calendarCacheID>`
+
+-  :ref:`Calendar originating datasource by calendarId <Calendar.calendarOriginatingDatasourceID>`
+
+-  :ref:`EventCategoriesCache <Calendar.eventCategoriesCache>`
+
+You can change values of these Calendar caches in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+::
+
+    # == CALENDAR Caches Configuration == #
+
+    # Calendar Cache Configuration - Group Calendar
+    #  - Standalone (time to live in seconds)
+    exo.cache.calendar.GroupCalendarCache.Capacity=1000
+    exo.cache.calendar.GroupCalendarCache.TimeToLive=3600
+
+    # Calendar Cache Configuration - Group Calendar Event
+    exo.cache.calendar.GroupCalendarEventCache.Capacity=1000
+    exo.cache.calendar.GroupCalendarEventCache.TimeToLive=3600
+
+    # Calendar Cache Configuration - Group Calendar Recurrent Event
+    exo.cache.calendar.GroupCalendarRecurrentEventCache.Capacity=1000
+    exo.cache.calendar.GroupCalendarRecurrentEventCache.TimeToLive=3600
+
+    # Calendar Cache Configuration - User Calendar
+    exo.cache.calendar.UserCalendarCache.Capacity=1000
+    exo.cache.calendar.UserCalendarCache.TimeToLive=3600
+
+    # Calendar Cache Configuration - User Calendar Setting
+    exo.cache.calendar.UserCalendarSettingCache.Capacity=1000
+    exo.cache.calendar.UserCalendarSettingCache.TimeToLive=3600
+
+    # Calendar Cache Configuration - Calendar Cache By Id
+    exo.cache.calendar.Calendar.Capacity=1000
+    exo.cache.calendar.Calendar.TimeToLive=3600
+
+    # Calendar Cache Configuration - Calendar originating datasource by calendarId
+    exo.cache.calendar.dsNameById.Capacity=1000
+    exo.cache.calendar.dsNameById.TimeToLive=-1
+
+
+    # Calendar Cache Configuration -Event Categories
+    exo.cache.calendar.EventCategoriesCache.Capacity=1000
+    exo.cache.calendar.EventCategoriesCache.TimeToLive=3600
+
+The specific configuration of each Calendar cache can be found in:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/calendar-extension.war!/WEB-INF/cs-extension/cs/cs-configuration.xml``
+   (Tomcat).
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/calendar-extension-webapp.war!/WEB-INF/cs-extension/cs/cs-configuration.xml``
+   (JBoss).
+   
+.. _Calendar.groupCalendarCache:   
+
+GroupCalendarCache
+--------------------
+
+The **GroupCalendarCache** caches the Calendar objects. This object
+contains metadata information of a calendar, such as calendar name, time
+zone, permissions. When any users access the cached group calendar, the
+metadata of this group calendar will be retrieved from cache rather than
+the database.
+
+-  The cached **GroupCalendarCache** is invalidated when the user
+   updates calendar metadata, such as creating, deleting, updating
+   calendars (changing time zone).
+
+-  The **GroupCalendarCache** size equals to the number of Calendar
+   objects in cache.
+
+-  Each Calendar object is approximately 75 bytes, so the maximum heap
+   size equals to the cache size multiplied by 75 bytes.
+
+.. _Calendar.userCalendarCache:
+
+UserCalendarCache
+-------------------
+
+The **UserCalendarCache** caches the Calendar object. When any users
+access the cached user calendar, the metadata of this user calendar will
+be retrieved from cache rather than the database.
+
+-  The **UserCalendarCache** is invalidated when the user updates
+   calendar metadata, such as creating, deleting, updating calendar
+   (changing time zone).
+
+-  The **UserCalendarCache** size equals to the number of Calendar
+   objects in cache.
+
+-  Each Calendar object is approximately 75 bytes, so the maximum heap
+   size equals to the cache size multiplied by 75 bytes.
+
+.. _Calendar.groupCalendarEventCache:
+
+GroupCalendarEventCache
+-------------------------
+
+The **GroupCalendarEventCache** caches information about events, for
+example, summary, datetime, invitations, attachments. When any users
+show content of a group calendar (for example, its events, tasks) for
+the first time, a query will be made, then put the result to the cache.
+When another users access the cached content, its data will be retrieved
+from cache rather than the database.
+
+-  The **GroupCalendarEventCache** is invalidated when the users make
+   changes on content of the group calendar, for example, creating,
+   deleting tasks, updating summary of events.
+
+-  The **GroupCalendarEventCache** size equals to the number of events
+   in cache.
+
+-  If the event does not contain the attachment file, each event object
+   is approximately 200 bytes. Therefore, the maximum heap size equals
+   to the cache size multiplied by 200 bytes.
+   
+.. _Calendar.groupCalendarRecurrentEventCache:   
+
+GroupCalendarRecurrentEventCache
+---------------------------------
+
+The **GroupCalendarRecurrentEventCache** caches information about
+recurring events, for example, summary, datetime, invitations, and
+attachment. When any users show content of a group calendar that
+contains the recurring event (for example, its events, tasks) for the
+first time, a query will be made, then put the result to the cache. When
+another users access the cached content, the data query will be
+retrieved from cache rather than the database.
+
+-  The **GroupCalendarRecurrentEventCache** is invalidated when the user
+   makes changes on recurring events, for example, deleting, updating
+   summary of recurring events.
+
+-  The **GroupCalendarRecurrentEventCache** size equals to the number of
+   recurring events in cache.
+
+-  If the recurring event does not contain the attachment file, each
+   object is approximately 200 bytes. Therefore, the maximum heap size
+   equals to the cache size multiplied by 200 bytes.
+
+.. _Calendar.userCalendarSettingsCache:
+
+UserCalendarSettingsCache
+---------------------------
+
+The **UserCalendarSettingsCache** caches information about calendar
+settings, such as datetime format, calendar filter, view types. When the
+user needs calendar settings, such as access to calendar page and need
+to render current view (month view, week view), a query is made and put
+the setting information to the cache. If another users access the cached
+calendar settings, the data will be directly retrieved from cache rather
+than the database.
+
+-  The **UserCalendarSettingsCache** is invalidated when the user
+   changes his settings or the user is deleted.
+
+-  The **UserCalendarSettingsCache** size equals to the number of
+   calendar settings in cache.
+
+-  Each Calendar setting object is approximately 80 bytes, so the
+   maximum heap size equals to the cache size multiplied by 80 bytes.
+   
+.. _Calendar.calendarCacheID:   
+
+Calendar Cache by ID
+----------------------
+
+This cache will manage:
+
+-  User private calendars by id and username.
+
+-  User shared calendar by id and username.
+
+-  Group calendar by id.
+
+.. _Calendar.calendarOriginatingDatasourceID:
+
+Calendar originating datasource by calendarId
+-----------------------------------------------
+
+This cache will manage originating datasource name ("jcr" or "task") to
+be able to search for the calendar information from the dedicated store.
+
+.. _Calendar.eventCategoriesCache:
+
+EventCategoriesCache
+---------------------
+
+The **EventCategoriesCache** caches event category names and Ids. When
+an event category is called for the first time, a query is made and data
+is put into the cache. For next time, when another users call the cached
+event category, its data will be retrieved from cache rather than the
+database.
+
+-  The **EventCategoriesCache** is invalidated when the user creates,
+   updates or deletes the event category.
+
+-  The **EventCategoriesCache** size equals to the number of event
+   categories in cache.
+
+-  The **EventCategoriesCache** size is approximately 24 bytes, so the
+   maximum heap size equals to the cache size multiplied by 24 bytes.
+   
+   
+.. _Configuration.EndDateSuggestion:
+
+===================
+End-date suggestion
+===================
+
+eXo Platform offers the end-date suggestion feature in Calendar that you can
+change in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+.. code:: xml
+
+    # auto suggest the end of event time to 1 hour (2 x 30 min)
+    exo.calendar.default.event.suggest=2
+    # auto suggest the end of task time to 30 minutes (1 x 30 min)
+    exo.calendar.default.task.suggest=1
+
+In which:
+
+-  The numeric value of duration suggestion is complied with the
+   following rules: **1** = 30 minutes, **2** = 1 hour, **3** = 1 hour
+   30 minutes, **4** = 2 hours. This means **1** block equals to 30
+   minutes.
+
+-  ``exo.calendar.default.event.suggest``: Defines the duration of an
+   event. That is, if the start-time is 7:00AM in the From field, the
+   end-time will be auto-increased to 8:00AM in the To field. "2" is set
+   by default for the duration of events.
+
+-  ``exo.calendar.default.task.suggest``: Defines the duration of a
+   task. That is, if the start-time is 7:00AM in the From field, the
+   end-time will be auto-increased to 7:30AM in the To field. "1" is set
+   by default for the duration of tasks.
+   
+
+.. _Configuration.PredefinedUserGroupMembership:
+
+========================================
+Predefined users, groups and memberships
+========================================
+
+When eXo Platform starts for the first time, it initializes some users,
+groups and memberships, such as user *root* and group */platform*. Some
+user attributes are set also, including password, firstname, lastname
+and email.
+
+First you should get familiar with the expression of *group* and
+*membership*. If a user has the *member:/platform/users* membership, it
+means the user is a *member* of the */platform/users* group. The groups
+are organized like a tree, in which */platform/users* is a sub-group of
+*/platform* group.
+
+A membership is formed by a *membership type* and a group. *Member,
+editor and manager* are some of predefined membership types. So strictly
+speaking, "membership type" and "membership" are different concepts.
+However, the word "membership" is sometimes used with the meaning of
+"membership type".
+
+Next you will learn the configurations of predefined users, groups and
+memberships which are written in:
+
+-  ``$PLATFORM_TOMCAT_HOME/webapps/platform-extension.war!/WEB-INF/conf/organization/organization-configuration.xml``
+   (Tomcat)
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/platform-extension-webapp.war!/WEB-INF/conf/organization/organization-configuration.xml``
+   (JBoss)
+
+This section does not directly aim at changing those predefined
+organizational data, but if it is the further step you want to go, you
+can easily perform via the :ref:`extension mechanism <#PLFDevGuide.eXoAdd-ons.PortalExtension>` 
+provided by eXo Platform.
+
+**Organizational data initializer**
+
+At top of the configuration file, you see the initializer declaration
+that is supposed to create all the predefined data discussed here:
+
+.. code:: xml
+
+    <component-plugin>
+        <name>init.service.listener</name>
+        <set-method>addListenerPlugin</set-method>
+        <type>org.exoplatform.services.organization.OrganizationDatabaseInitializer</type>
+        <description>this listener populate organization data for the first launch</description>
+        <init-params>
+            <value-param>
+                <name>checkDatabaseAlgorithm</name>
+                <description>check database</description>
+                <value>entry</value>
+            </value-param>
+            ...
+        </init-params>
+    </component-plugin>
+
+Notice the value of *checkDatabaseAlgorithm*. If it is set to *entry*,
+each user, group and membership listed in the configuration is checked
+each time eXo Platform is started. If an entry does not exist in the database
+yet, it will be created. If the value is set to *empty*, the data will
+be updated to the database only if the database is empty.
+
+**Predefined membership types**
+
+All predefined membership types can be found under the *membershipType*
+field. Here is an extract:
+
+.. code:: xml
+
+    <field name="membershipType">
+        <collection type="java.util.ArrayList">
+            <value>
+                <object type="org.exoplatform.services.organization.OrganizationConfig$MembershipType">
+                    <field name="type"><string>*</string></field>
+                    <field name="description"><string>Any membership type</string>  </field>
+                </object>
+            </value>
+            <value>
+                <object type="org.exoplatform.services.organization.OrganizationConfig$MembershipType">
+                    <field name="type"><string>manager</string></field>
+                    <field name="description"><string>manager membership type</string></field>
+                </object>
+            </value>
+            ...
+        </collection>
+    </field>
+
+**Predefined groups**
+
+All predefined groups can be found under the *group* field. Here is an
+extract:
+
+.. code:: xml
+
+    <field name="group">
+        <collection type="java.util.ArrayList">
+            <value>
+                <object type="org.exoplatform.services.organization.OrganizationConfig$Group">
+                    <field name="name"><string>developers</string></field>
+                    <field name="parentId"><string /></field>
+                    <field name="description"><string>the /developers group</string></field>
+                    <field name="label"><string>Development</string></field>
+                </object>
+            </value>
+            ...
+        </collection>
+    </field>
+
+**Predefined users**
+
+All predefined users can be found under the *user* field. The
+configurations are username, firstname, lastname, email, password and
+the list of memberships granted to the user. Here is an extract:
+
+.. code:: xml
+
+    <field name="user">
+        <collection type="java.util.ArrayList">
+            <value>
+                <object type="org.exoplatform.services.organization.OrganizationConfig$User">
+                    <field name="userName"><string>${exo.super.user}</string></field>
+                    <field name="password"><string>gtn</string></field>
+                    <field name="firstName"><string>Root</string></field>
+                    <field name="lastName"><string>Root</string></field>
+                    <field name="email"><string>root@localhost</string></field>
+                    <field name="groups">
+                        <string>*:/platform/administrators,*:/platform/users,*:/platform/web-contributors,*:/organization/employees,member:/organization/management/executive-board</string>
+                    </field>
+                </object>
+            </value>
+            ...
+        </collection>
+    </field>
+
+Note that the code above uses the *exo.super.user* property which is set
+to *root* in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file:
+
+
+.. _Configuration.GadgetConfiguration:
+
+====================
+Gadget configuration
+====================
+
+Gadget configuration consists of OAuth key, Shindig properties, and
+security token key. By default those configuration files are located at:
+
+-  ``gatein/conf/gadgets`` for Tomcat.
+
+-  ``standalone/configuration/gatein/gadgets`` for JBoss.
+
+To use your customized configuration files, it is recommended that you
+replace default files in that location with yours.
+
+It is possible to change the location by pointing ``exo.conf.dir`` to
+another folder. However, ``exo.conf.dir`` holds many configuration files
+besides gadgets, so take care that you have those files in the new
+folder. Also note that the folder of gadgets files will be
+``${exo.conf.dir}/gadgets``.
+
+To change ``exo.conf.dir``:
+
+-  In Tomcat: customize the variable
+   ``EXO_CONF_DIR=/path/to/your/folder`` (see `Customizing
+   variables <#PLFAdminGuide.InstallationAndStartup.CustomizingEnvironmentVariables>`__
+   for how-to).
+
+-  In JBoss: edit the property ``exo.conf.dir`` in
+   ``standalone/configuration/standalone-exo.xml``
+   (``standalone-exo-cluster.xml`` in cluster mode).
+
+   .. code:: xml
+
+       <sytem-properties>
+           <property name="exo.conf.dir" value="/path/to/your/folder"/>
+       </system-properties>
+
+The security token key (``key.txt``) is automatically generated by the
+server so you just need to acknowledge its location. Next is more
+information about OAuth key and Shindig properties.
+
+**OAuth key configuration**
+
+In eXo Platform, the OAuth gadgets use an OAuth key to authorize with
+external service providers. There is always a default key defined in the
+``oauthkey.pem`` file. This key will be used in case the OAuth gadgets
+do not indicate a key. It is strongly recommended that you create your
+own ``oauthkey.pem`` file by using the **openssl** tool and some
+commands as follows:
+
+::
+
+    openssl req -newkey rsa:1024 -days 365 -nodes -x509 -keyout testkey.pem -out testkey.pem -subj '/CN=mytestkey'
+    openssl pkcs8 -in testkey.pem -out oauthkey.pem -topk8 -nocrypt -outform PEM
+
+Then, replace the default **oauthkey.pem** with yours.
+
+**Disabling Shindig online features**
+
+Some Shindig features require online access which may lead to
+significant delay time at startup time. Administrators can disable those
+features in the ``shindig.properties`` file. Once the online features,
+for example analytics, are disabled, they will not be available in
+gadgets.
+
+Default (enabled):
+
+::
+
+    shindig.features.default=res://features/default-features.txt,res://features/online-features.txt
+
+To disable:
+
+::
+
+    shindig.features.default=res://features/default-features.txt
+
+.. _Configuration.statisticsParameter:
+
+==============================================
+Enabling/Disabling groovy templates statistics
+==============================================
+
+:ref:`Management and Monitoring Gadgets <ManagingApplications.ManagementMonitoringGadgets>`
+is a set of administrative gadgets that provide a global vision for the
+system and they can provide performance statistics useful for
+administrators.
+
+With eXo Platform 4.4, a new parameter configurable through
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file, was introduced:
+
+::
+
+                exo.statistics.groovy.template.enabled=true
+            
+
+This parameter allows to enable/disable groovy templates statistics that
+is collected asynchronously. Enabling it (i.e setting it to "True")
+activates the statistics collection to be made in memory without logs.
+
+.. note:: This parameter is not necessary for production environements. It
+          could be activated for testing purposes.
+
+.. _SearchConnector:
+
+==============================
+Search connector configuration
+==============================
+
+There are a number of built-in Search connectors which are activated by
+default in eXo Platform. You can easily turn any of them off by setting its
+corresponding property to *false* in the
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file, as 
+referring the following table:
+
++----------------------------------+-----------------------------------------+
+| Property                         | Description                             |
++==================================+=========================================+
+| ``exo.unified-search.connector.f | Turn on/off Unified Search connector    |
+| ile.enable``                     | for all files. The default is *true*,   |
+|                                  | that is, all files are included in the  |
+|                                  | search scope.                           |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.w | Turn on/off Unified Search connector    |
+| iki.enable``                     | for all Wiki pages. The default is      |
+|                                  | *true*, that is, all Wiki pages are     |
+|                                  | included in the search scope.           |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.p | Turn on/off Unified Search connector    |
+| age.enable``                     | for all portal pages. The default is    |
+|                                  | *true*, that is, all portal pages are   |
+|                                  | included in the search scope.           |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.p | Turn on/off Unified Search connector    |
+| ost.enable``                     | for all Forum posts. The default is     |
+|                                  | *true*, that is, all Forum posts are    |
+|                                  | included in the search scope.           |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.t | Turn on/off Unified Search connector    |
+| ask.enable``                     | for all Calendar tasks. The default is  |
+|                                  | *true*, that is, all Calendar tasks are |
+|                                  | included in the search scope.           |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.s | Turn on/off Unified Search connector    |
+| pace.enable``                    | for all spaces. The default is *true*,  |
+|                                  | that is, all spaces are included in the |
+|                                  | search scope.                           |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.e | Turn on/off Unified Search connector    |
+| vent.enable``                    | for all Calendar events. The default is |
+|                                  | *true*, that is, all Calendar events    |
+|                                  | are included in the search scope.       |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.p | Turn on/off Unified Search connector    |
+| eople.enable``                   | for all users. The default is *true*,   |
+|                                  | that is, all users are included in the  |
+|                                  | search scope.                           |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.connector.d | Turn on/off Unified Search connector    |
+| ocument.enable``                 | for all documents. The default is       |
+|                                  | *true*, that is, all documents are      |
+|                                  | included in the search scope.           |
++----------------------------------+-----------------------------------------+
+
+
+.. _Configuration.UnifiedSearch:
+
+============================
+Unified Search configuration
+============================
+
+eXo Platform exposes several parameters for effective use of Unified Search
+Engine. You can change these parameters in
+:ref:`exo.properties <Configuration.ConfigurationOverview>`file.
+
+::
+
+    # Enables Fuzzy search engine
+    # Values: true/false
+    exo.unified-search.engine.fuzzy.enable=true
+
+    # Sets the required similarity between the query term and the matching terms
+    # Values : Between 0 and 1
+    exo.unified-search.engine.fuzzy.similarity=0.5
+
+    # List characters will be ignored by indexer
+    exo.unified-search.excluded-characters=.-
+
+.. _FuzzyParameters:
+
+Fuzzy parameters
+~~~~~~~~~~~~~~~~~~
+
+Since 4.0.4, there are two properties that allow you to enable/disable
+Fuzzy search and adjust its effectiveness. You can read about Fuzzy
+search
+`here <http://lucene.apache.org/core/3_5_0/queryparsersyntax.html#Fuzzy%20Searches>`__.
+Basically, the engine searches for not only exact keyword but also
+similar words. It is likely a feature expected by end-users, but it is
+also a deal with search speed. That is why you should have ability to
+adjust degree of similarity and enable/disable Fuzzy search.
+
+By default, Fuzzy search is enabled. Fuzzy search will be performed when
+the user adds a tilde (~) after a **single** keyword. So the "Home~"
+keyword triggers a Fuzzy search of which the result may include "Rome".
+Also, the user can append a *similarity* to narrow or extend the search
+result, for example "Home~0.8".
+
++----------------------------------+-----------------------------------------+
+| Property                         | Description                             |
++==================================+=========================================+
+| ``exo.unified-search.engine.fuzz | The value can be *true* or *false* that |
+| y.enable``                       | means Fuzzy search is enabled or        |
+|                                  | disabled respectively. The default is   |
+|                                  | *true*.                                 |
++----------------------------------+-----------------------------------------+
+| ``exo.unified-search.engine.fuzz | The default similarity that varies      |
+| y.similarity``                   | between 0 and 1. The closer to 1 this   |
+|                                  | value is set, the more found words are  |
+|                                  | similar to the keyword. The value of    |
+|                                  | this property is effective when the     |
+|                                  | user does not add a similarity.         |
+|                                  |                                         |
+|                                  | Use the period (.) for floating point,  |
+|                                  | for example "0.1", "0.2". The default   |
+|                                  | is 0.5.                                 |
++----------------------------------+-----------------------------------------+
+
+.. _ExcludedCharacters:
+
+Excluded characters
+~~~~~~~~~~~~~~~~~~~~~
+
+By default only the whitespace is recognized as the word separator -
+means if the data is "Lorem Ipsum", there are two indexes will be
+created for "Lorem" and "Ipsum".
+
+The built-in indexing service of eXo Platform allows more word
+separators, like dot (.) or hyphen (-). To define those, edit the
+property ``exo.unified-search.excluded-characters``.
+
+When a user types a phrase to search, the word separator is used also.
+For example if hyphen is configured, and the user types "Lorem-Ipsum",
+then the query is sent as if it is two words.
+
+
+.. _Configuration.ElasticSearch:
+  
+=========================================
+Elasticsearch Embedded mode Configuration
+=========================================
+
+When deployed as embedded, the `Elasticsearch configuration
+files <https://www.elastic.co/guide/en/elasticsearch/reference/2.3/setup-configuration.html>`__
+(elasticsearch.yml and logging.yml) are embedded in the add-on. All the
+properties can be set directly in
+`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
+and will override the default properties defined in elasticsearch.yml
+and logging.yml.
+
+.. _ESEmbeddedMode:
+
+Properties of the Elasticsearch embedded node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All the properties below are standard properties of Elasticsearch. When
+a property ``es.xxx`` is defined in
+:ref:`exo.properties <Configuration.ConfigurationOverview>`,
+it is automatically picked by the embedded Elasticsearch node (without
+the "es." prefix).
+
+::
+
+    ################################ Elasticsearch Embedded node ################################
+
+    es.cluster.name=exoplatform-es
+    es.node.name=exoplatform-es-embedded
+    es.network.host=127.0.0.1
+    es.discovery.zen.ping.unicast.hosts=["127.0.0.1"]
+    es.http.port=9200
+    es.path.data=gatein/data
+
+More details about these properties can be found in the :ref:`Properties reference chapter <Configuration.Properties_reference>`.
+
+.. _ESClient:
+
+Properties of the Elasticsearch client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+eXo Platform communicates with the Elasticsearch server via multiple
+components through so-called client code. The client code differentiates
+calls done to the server for indexing and for searching. It allows to
+have different a deployment topology where different Elasticsearch
+server have different roles. The following client paramters are
+configurable in :ref:`exo.properties <Configuration.ConfigurationOverview>`
+
+::
+
+    ################################ Elasticsearch ################################
+    exo.es.embedded.enabled=true
+    exo.es.index.server.url=http://127.0.0.1:9200
+    exo.es.index.server.username=root
+    exo.es.index.server.password=xxxxx
+    exo.es.indexing.batch.number=1000
+    exo.es.indexing.replica.number.default=1
+    exo.es.indexing.shard.number.default=5
+    exo.es.indexing.request.size.limit=10485760
+    exo.es.reindex.batch.size=100
+    exo.es.search.server.url=http://127.0.0.1:9200
+    exo.es.search.server.username=root
+    exo.es.search.server.password=xxxxx
+
+The parameter
+
+::
+
+    exo.es.embedded.enabled=true
+
+allows to enable/disable Elasticsearch Embedded node startup. It is set
+to True by default. More details about the parameters in :ref:`Properties reference <Configuration.Properties_reference>`.
+
+.. _ESIndexing:
+
+Properties of the indexing processor and connectors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The properties below allow to configure indexing parameters such as the
+number of shards, replicas, batch size...
+
+For more details about indexing with Elasticseach, you can take a look
+in this :ref:`documentation <#PLFAdminGuide.Elasticsearch.ES_IndexArchitecture>`.
+
+::
+
+    ################################ Properties of the indexing processor ################################
+    exo.es.indexing.batch.number=1000
+    exo.es.indexing.request.size.limit=10485760
+    exo.es.reindex.batch.size=100
+    ################################ Properties of the indexing connectors ################################
+    exo.es.indexing.replica.number.default=1
+    exo.es.indexing.shard.number.default=5
+
+More details about the parameters in :ref:`Properties reference chapter <Configuration.Properties_reference>`.
+
+.. _Configuration.CometDConfig:
+
+======
+CometD
+======
+
+.. _WhatIs:
+
+What is CometD?
+~~~~~~~~~~~~~~~
+
+`CometD <https://docs.cometd.org/current/reference/>`__ is a set of
+libraries that facilitates the writing of web applications that perform
+messaging over the web such as web chat applications.
+
+The role of CometD is to deliver messages over the wire using the best
+available transport: Websocket or HTTP, independently of the APIs used
+in the application. It also provides transparent fallback in case
+WebSocket does not work.
+
+.. _CometDClustering:
+
+CometD clustering
+~~~~~~~~~~~~~~~~~~
+
+`CometD <https://docs.cometd.org/current/reference/>`__ provides a
+clustering solution called Oort that allows you to scale horizontally
+your web applications. With a CometD based system in cluster mode,
+clients connect to multiple nodes instead of a single node.
+
+`Oort <https://docs.cometd.org/current/reference/#_java_oort>`__
+clustering is not a high-availability solution. In fact, when a node is
+down, all the clients are disconnected and then connected to another
+node by a new handshake. When this happens then if the application did
+not implement a method to retrieve information, the data build on the
+client side is lost.
+
+.. _CometDConfiguration:
+
+CometD configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+To configure CometD in either cluster or standalone mode, some
+parameters are needed. A list of parameters is provided in `CometD's Official documentation <https://docs.cometd.org/>`__.
+
+.. note:: All `CometD <https://docs.cometd.org/current/reference/>`__
+		  parameters are configurable in eXo Platform in the
+		  :ref:`exo.properties <Configuration.ConfigurationOverview>`
+		  file by prefixing them with **exo.cometd.**. For example, to
+		  override the maximum size of Websocket messages, a value must be set
+		  for the parameter ``ws.maxMessageSize``. Thus, in eXo Platform this value
+		  must be set in :ref:`exo.properties <Configuration.ConfigurationOverview>`
+		  through the ``exo.cometd.ws.maxMessageSize``.
+		  
+		  
+.. _Configuration.YoutubeIntegration:		  
+		  
+===================
+Youtube integration
+===================
+
+eXo Platform uses YouTube Data API v3 that provides access to YouTube data,
+such as videos, playlists, and channels. To enable this, you should
+configure a Youtube V3 API Key property via
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+For instance:
+
+::
+
+    youtube.v3.api.key=AIzaSyDToZc6oTOpe7kZIJeSUMvxfyoS6hhKJuI
+
+In which:
+
+-  ``youtube.v3.api.key``: an API key which is generated by a specific
+   google account. Refer to https://console.developers.google.com to
+   create such a key.
+
+.. _Configuration.Notification:
+
+============
+Notification
+============
+
+The feature related to configuration in this section is the
+Email/On-site notification. Here are some aspects of the feature:
+
+-  Users can receive daily/weekly emails that sum up the activities they
+   are interested in. This is performed in the background by jobs called
+   ``NotificationDailyJob`` and ``NotificationWeeklyJob``.
+
+-  In the Web UI, the notifications pop up immediately when an activity
+   happens. And there is a page called "View All" where users can see
+   all the recent notifications.
+
+   In the background, a job called ``WebNotificationJob`` takes care to
+   remove notifications that are older than a configurable live time.
+
+Here under is the list of related properties that you can configure via
+:ref:`exo.properties <Configuration.ConfigurationOverview>`
+file.
+
+-  ``exo.notification.NotificationDailyJob.expression``
+
+   This is the Cron expression to schedule the daily emails. By default
+   it is *0 0 23 ? \* \** (11:00pm every day).
+
+   Learn to write Cron expression string
+   :ref:`here <#PLFAdminGuide.LDAP.Synchronization.ScheduledJob>`.
+
+-  ``exo.notification.NotificationWeeklyJob.expression``
+
+   This is the Cron expression to schedule the weekly emails. By default
+   it is *0 0 11 ? \* SUN* (11:00am every Sunday).
+
+-  ``exo.notification.service.QueueMessage.period``
+
+   When they run, the jobs divide emails into batches and send them
+   sequentially for preventing overloads. This configuration is the
+   delay time (**in seconds**) between two batches.
+
+   The default is 60 (one minute).
+
+-  ``exo.notification.service.QueueMessage.numberOfMailPerBatch``
+
+   This is the (maximum) number of emails of each batch. The default is
+   30.
+
+-  ``exo.notification.portalname``
+
+   This is the "from" field in the emails. The default is *eXo*.
+
+-  ``exo.notification.maxitems``
+
+   The maximum number of notifications displayed in the popover list.
+   The default is *8*.
+
+-  ``exo.notification.viewall``
+
+   The number of days a notification takes place in the "View All" page.
+   When it reaches its live time, it will be removed by the
+   WebNotificationJob. The default is *30 (days)*.
+
+-  ``exo.notification.WebNotificationCleanJob.expression``
+
+   The Cron expression to schedule the WebNotificationJob. By default it
+   runs at 11:00pm every day (*0 0 23 ? \* \**).
+
+.. _NotificationChannels:
+
+Notification channels configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In eXo Platform, two notification channels are available by default:
+
+-  Web channel: notifications are sent on the web browser.
+
+-  Email channel: notifications are sent via the email.
+
+It is possible to define which channels to activate through the
+parameter ``exo.notification.channels`` in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+It is a comma separated property which could take these values:
+
+-  MAIL\_CHANNEL
+
+-  WEB\_CHANNEL
+
+By default (when the property is not customized or empty), all the
+available channels are activated. When a notification channel is added
+through an extension, it is automatically activated.
+
+.. _Configuration.DocumentVersioning:
+
+===================
+Document versioning
+===================
+
+By default, versioning is enabled for documents contained in the
+**Managed Sites**, **Groups** and **Personal Documents** drives. To
+change this configuration, edit the
+``exo.ecms.documents.versioning.drives`` property in the
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+For example:
+
+::
+
+    exo.ecms.documents.versioning.drives=Managed Sites,Personal Documents
+
+in which the drives are separated by commas.
+
+Besides, to control the data arisen from this feature, eXo Platform provides
+you with the two properties:
+
+-  ``exo.ecms.documents.versions.max``: defines the maximum number of
+   versions that a document can have. When the maximum number of
+   versions is reached, only the X last versions are kept while the
+   other ones are permanently deleted. A non-positive value means no
+   limit - by default this property is set to 0 (no limit).
+
+-  ``exo.ecms.documents.versions.expiration``: defines the expiration
+   time (in days) of a document version. When the expiration time is
+   reached, the version is permanently deleted. The last version of a
+   document is never deleted. A non-positive value means no limit - by
+   default this property is set to 0 (no limit).
+
+.. note:: If the value of the property
+		  ``exo.ecms.documents.versioning.drives`` is updated to add or remove
+		  drives, the documents already existing in the old and new drives are
+		  not impacted. Only the new documents are impacted by the updates.
+		  All the previous rules apply, depending on whether the document is
+		  versioned or not.
+		  
+.. _Configuration.DocumentViewer:
+
+===============
+Document Viewer
+===============
+
+The :ref:`Document Viewer <DocumentViewer>` relies on :ref:`document conversion on serverside <JODConverterConf>`
+which can take significant resources on large files. In order to avoid 
+excessive resource consumption, this component limits the size of files 
+it can display. Limits are set both in file weight and in number of 
+pages in the document:
+
+-  ``exo.ecms.documents.pdfviewer.max-file-size``: defines the maximum
+   size in Megabytes that a file can weight to be displayed in the
+   document viewer. Beyond that size, the document viewer displays a
+   warning message instead of the document content :
+
+   |image4|
+
+   Default limit is 10MB. Any non-positive or invalid value will
+   fallback to default.
+
+-  ``exo.ecms.documents.pdfviewer.max-pages``: defines the maximum
+   number of pages that a document can contain to be displayed in the
+   document viewer. Beyond that number of pages, the document viewer
+   displays a warning message instead of the document content.
+
+   |image5|
+
+   Default limit is 99 pages. Any non-positive value or invalid value
+   will fallback to default.
+
+.. _Configuration.ForgotPassword:
+
+===============
+Forgot Password
+===============
+
+If you forget your password, you can request the system to send you a
+link to reset it. The link will be sent to your email and will expire as
+soon as you successfully reset the password or after an expiration time.
+
+The expiration time is 24 hours by default. To change it, edit the
+following in
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+::
+
+    exo.portal.resetpassword.expiretime=24
+
+The time unit is hour.
+
+.. _Configuration.PasswordEncryption:
+
+===================
+Password Encryption
+===================
+
+For security, the user passwords are encrypted before being stored into
+the database. When a user logs in, he provides a password in clear text.
+This given password is then encrypted **by the same algorithm and the
+same encoder class** before being compared with the stored password. If
+they match, the user gets authenticated.
+
+As of eXo Platform 4.3, the encoder and the algorithm can be configured via
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+.. note:: It is not likely administrators will want to change the default
+		  encoder and algorithm. However for users who upgrade from a previous
+		  version older than 4.3, it is important to know that **the default
+		  encoder and the default algorithm have changed**, so you will need
+		  to re-configure it back to the old one which has been used,
+		  otherwise old users will not be able to log in.
+
+Before 4.3, the defaults are:
+
+-  Encoder class: ``org.picketlink.idm.impl.credential.HashingEncoder``
+
+-  Algorithm: ``MD5``
+
+As of 4.3, the defaults are:
+
+-  Encoder class:
+   ``org.picketlink.idm.impl.credential.DatabaseReadingSaltEncoder``
+
+-  Algorithm: ``SHA-256``
+
+To change the defaults in 4.3 back to the old ones, edit
+``exo.properties`` to have:
+
+::
+
+    exo.plidm.password.class=org.picketlink.idm.impl.credential.HashingEncoder
+    exo.plidm.password.hash=MD5
+
+.. _Configuration.TaskManagement:
+
+===============
+Task Management
+===============
+
+.. note:: The Task Management application is packaged as an add-on, so you
+		  need to install it first. Refer to :ref:`this guide <ManageTasks>` for more details.
+
+To define a default workflow for new projects in the Task Management
+application, you can configure a property named
+``exo.tasks.default.status`` via
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
+For instance:
+
+::
+
+    exo.tasks.default.status=To Do, In Progress, Wait, Validate, Done
+
+in which, each status in the workflow is separated by a comma.
+
+.. _Configuration.FileStorage:
+
+==========================
+File storage configuration
+==========================
+
+With eXo Platform 4.4 version, a new file storage subsystem has been
+introduced besides JCR. It's currently used for wiki attachments and
+user and space profile pictures. Read more in :ref:`File Storage <#PLFAdminGuide.Database.FileStorage>`. A property allows to
+indicate which file storage method should be used:
+
+::
+
+    exo.files.binaries.storage.type=fs
+
+Setting ``exo.files.binaries.storage.type`` to **rdbms** means that
+files will be stored as BLOBs in the database.
+
+Setting ``exo.files.binaries.storage.type`` to **fs** means that files
+will be stored on the server file system.
+
+Other properties related to file storage can be configured in
+:ref:`exo.properties <.Configuration.ConfigurationOverview>` file:
+
+-  ``exo.commons.FileStorageCleanJob.expression=0 0 11 ? * SUN``:
+   defines the scheduling (a cron expression) of the job responsible to
+   clean unused files.
+
+-  ``exo.commons.FileStorageCleanJob.retention-time=30``: defines how
+   long unused files should be retained before deletion. It is set to 30
+   days by default.
+
+-  ``exo.commons.FileStorageCleanJob.enabled=true``: enables/disables
+   the cron job. By default, the job is enabled i.e set to true.
+
+-  In case you set ``exo.files.binaries.storage.type`` to **fs**, you
+   can parameter the files storage location with this parameter:
+   ``exo.files.storage.dir``. Its default value is set to
+   **${exo.data.dir}/files**
+
+   The directory ``exo.files.storage.dir`` **should be shared in cluster
+   mode**.
+
+.. _Configuration.ChatConfiguration:
+
+==================
+Chat Configuration
+==================
+
+Configuring the eXo Chat add-on can be done by creating a
+``chat.properties`` file or using the ``exo.properties`` file (if you
+have not created this file, see :ref:`Configuration Overview <Configuration.ConfigurationOverview>`).
+
+These configuration files are located in:
+
+-  ``$PLATFORM_TOMCAT_HOME/gatein/conf/`` for Tomcat.
+
+-  ``$PLATFORM_JBOSS_HOME/standalone/configuration/gatein/`` for JBoss.
+
+.. note:: You were asked to create the files for security during the setup. If
+			you include any parameter below into the ``exo.properties``, you
+			should add the prefix ``chat.`` to its name, such as
+			``chat.dbServerHost``. Besides, in case both of these files are
+			used, parameters in the ``exo.properties`` file will have higher
+			priority than those in the ``chat.properties`` file.
+			
+.. _ChatDatabaseConf:			
+
+Database
+~~~~~~~~~~
+
++--------------------+--------------------+--------------------------------------+
+| Parameter          | Default            | Description                          |
++====================+====================+======================================+
+| ``dbServerType``   | *mongo*            | You should always use the default    |
+|                    |                    | value. The other value, *embed*, is  |
+|                    |                    | used for unit testing.               |
++--------------------+--------------------+--------------------------------------+
+| ``dbServerHost``   | *localhost*        | The host name or IP of MongoDB.      |
++--------------------+--------------------+--------------------------------------+
+| ``dbServerPort``   | *27017*            | The port number to connect to        |
+|                    |                    | MongoDB host.                        |
++--------------------+--------------------+--------------------------------------+
+| ``dbServerHosts``  |                    | The MongoDB nodes to connect to, as  |
+|                    |                    | a comma-separated list of            |
+|                    |                    | <host:port> values. For example      |
+|                    |                    | "host1:27017,host2:27017,host3:27017 |
+|                    |                    | ".                                   |
++--------------------+--------------------+--------------------------------------+
+| ``dbName``         | *chat*             | Name of the Mongo database name.     |
++--------------------+--------------------+--------------------------------------+
+| ``dbAuthentication | *false*            | Set it *true* if authentication is   |
+| ``                 |                    | required to access MongoDB.          |
++--------------------+--------------------+--------------------------------------+
+| ``dbUser``         | *EMPTY*            | Provide the username to access the   |
+|                    |                    | database if authentication needed.   |
++--------------------+--------------------+--------------------------------------+
+| ``dbPassword``     | *EMPTY*            | Provide the password to access the   |
+|                    |                    | database if authentication needed.   |
++--------------------+--------------------+--------------------------------------+
+
+.. warning:: It is highly recommended to define the parameter ``dbServerHosts``
+			 instead of defining the two parameters ``dbServerHost`` and
+			 ``dbServerPort`` as they are depracated starting from eXo Platform 5.0
+			 version.
+
+Generally, you do not need to configure those unless you have secured
+your MongoDB. See details about connecting to secured MongoDB in
+:ref:`Secured MongoDB <#PLFAdminGuide.Security.MongoDBSecure>`.
+
+.. _ChatMailServerConf:
+
+Mail Server
+~~~~~~~~~~~~
+
+This server is used for *Sending meeting notes* (see `Recording a
+discussion <#PLFUserGuide.Chat.Recording>`__). The parameters of mail
+configuration for the BRAND\_CHAT server are the same as those of
+:ref:`Outgoing Mail Service <OutgoingMailService>`, but
+without the prefix ``exo.``. Notice that if you include these parameters
+into the ``exo.properties`` file, you should add the prefix ``chat.`` to
+their name.
+
+.. _ChatServerConf:
+
+Chat Server
+~~~~~~~~~~~~
+
++--------------------+--------------------+--------------------------------------+
+| Parameter          | Default            | Description                          |
++====================+====================+======================================+
+| ````               | *false*            | The mode of the chat server:         |
+|                    |                    |                                      |
+|                    |                    | -  The parameter is set to true if   |
+|                    |                    |    the chat is in a standalone mode. |
+|                    |                    |                                      |
+|                    |                    | -  The parameter is set to false if  |
+|                    |                    |    the the chat is in embedded mode. |
+|                    |                    |                                      |                                                                             
++--------------------+--------------------+--------------------------------------+
+| ``chatPassPhrase`` | *chat*             | The password to access REST service  |
+|                    |                    | on the BRAND\_CHAT server.           |
++--------------------+--------------------+--------------------------------------+
+| ``chatCronNotifCle | *0 0/60 \* \* \*   | The notifications are cleaned up     |
+| anup``             | ?*                 | every one hour by default. To learn  |
+|                    |                    | the syntax of Cron expression, see   |
+|                    |                    | `Scheduled synchronization,          |
+|                    |                    | Administrator                        |
+|                    |                    | guide <#PLFAdminGuide.LDAP.Synchroni |
+|                    |                    | zation.ScheduledJob>`__.             |
++--------------------+--------------------+--------------------------------------+
+| ``teamAdminGroup`` | */platform/adminis | The eXo group who can create teams.  |
+|                    | trators*           |                                      |
++--------------------+--------------------+--------------------------------------+
+| ``chatReadDays``   | *30* (days)        | When a user reads a chat, the        |
+|                    |                    | application displays messages of     |
+|                    |                    | some days in the past.               |
++--------------------+--------------------+--------------------------------------+
+| ``chatReadTotalJso | *200*              | The number of messages that you can  |
+| n``                |                    | get in the Chat room.                |
++--------------------+--------------------+--------------------------------------+
+
+.. _ChatClientUpdates:
+
+Chat Client updates
+~~~~~~~~~~~~~~~~~~~~
+
++--------------------+--------------------+--------------------------------------+
+| Parameter          | Default            | Description                          |
++====================+====================+======================================+
+| ``chatIntervalChat | *5000*             | Time interval to refresh messages in |
+| ``                 | (milliseconds)     | a chat.                              |
++--------------------+--------------------+--------------------------------------+
+| ``chatIntervalSess | *60000*            | Time interval to keep a chat session |
+| ion``              | (milliseconds)     | alive in milliseconds.               |
++--------------------+--------------------+--------------------------------------+
+| ``chatIntervalStat | *60000*            | Time interval to refresh user status |
+| us``               | (milliseconds)     | in milliseconds.                     |
++--------------------+--------------------+--------------------------------------+
+| ``chatIntervalNoti | *5000*             | Time interval to refresh             |
+| f``                | (milliseconds)     | Notifications in the main menu in    |
+|                    |                    | milliseconds.                        |
++--------------------+--------------------+--------------------------------------+
+| ``chatIntervalUser | *60000*            | Time interval to refresh Users list  |
+| s``                | (milliseconds)     | in milliseconds.                     |
++--------------------+--------------------+--------------------------------------+
+| ``chatTokenValidit | *60000*            | Time after which a token will be     |
+| y``                | (milliseconds)     | invalid. The use will then be        |
+|                    |                    | considered *offline*.                |
++--------------------+--------------------+--------------------------------------+
+
+.. _Configuration.lastlogintime:
+
+=========================
+Update of last login time
+=========================
+
+By default, eXo Platform persists the last login time information for each
+user in an internal database. You may need to disable this parameter to
+optimize login time especially when your system is highly solicited by a
+lot of concurrent users. You can disable this feature by configuring the
+parameter ``exo.idm.user.updateLastLoginTime`` in
+:ref:`exo.properties <Configuration.ConfigurationOverview>`file.
+The default value is set to true.
+
+Setting ``exo.idm.user.updateLastLoginTime`` to true enables the update,
+**in the IDM database**, of the last login time each time the user login
+to eXo Platform.
+
+Setting ``exo.idm.user.updateLastLoginTime`` to false disables the
+update of the user's last login time and if the platform is connected to
+an external system for users storage (such as LDAP or AD), the last
+login time will be updated in this external system.
+
+
 
 .. |image0| image:: images/gmail_settings_1.png
 .. |image1| image:: images/openinoffice/openinmsoffice.png
 .. |image2| image:: images/openinoffice/openinlibreoffice.png
 .. |image3| image:: images/openinoffice/openinwriter.png
+.. |image4| image:: images/docviewer/docviewer_maxsize.png
+.. |image5| image:: images/docviewer/docviewer_maxpages.png

@@ -4279,6 +4279,8 @@ In the table next to the chart, you can see:
 
 -  Total: The total memory.
 
+.. _MonitoringGadget.CacheLevels:
+
 Caches level
 `````````````
 
