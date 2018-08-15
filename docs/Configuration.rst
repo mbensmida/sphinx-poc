@@ -364,24 +364,24 @@ This page is a reference to configurations exposed via
 Platform
 ~~~~~~~~~ 
 
-+--------------------------------+------------------+-------------------------+
-| Name                           | Description      | Default                 |
-+================================+==================+=========================+
-| :ref:`exo.base.url             | Generates links  | http://localhost:8080   |
-| <Configuration.ServerBaseURL>` |                  |                         |
-+--------------------------------+------------------+-------------------------+
-| :ref:`exo.accountsetup.skip    | Skips "account   | false                   |
-| <Configuration.AccountSetup>`	 | setup" screen or |                         |
-|            		         | not?             |                         |
-+--------------------------------+------------------+-------------------------+
-| :ref:`exo.super.user           | The predefined   | root		      |
-|<PredefinedUserGroupMembership>`| super user's     |			      |
-|	                         |   name.          |			      |
-+--------------------------------+------------------+-------------------------+               
-| :ref:`exo.portal.resetpassword | The expiration   | 24 (hours)              |
-|.expiretime                     | time of a reset  |                         |
-|<Configuration.ForgotPassword>` | password link.   |                         |
-+--------------------------------+------------------+-------------------------+                                         
++---------------------------------+------------------+-------------------------+
+| Name                            | Description      | Default                 |
++=================================+==================+=========================+
+| :ref:`exo.base.url              | Generates links  | http://localhost:8080   |
+| <Configuration.ServerBaseURL>`  |                  |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.accountsetup.skip     | Skips "account   | false                   |
+| <Configuration.AccountSetup>`   | setup" screen or |                         |
+|            		          | not?             |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.super.user            | The predefined   | root		      |
+| <PredefinedUserGroupMembership>`| super user's     |			      |
+|	                          |   name.          |			      |
++---------------------------------+------------------+-------------------------+               
+| :ref:`exo.portal.resetpassword  | The expiration   | 24 (hours)              |
+|.expiretime                      | time of a reset  |                         |
+| <Configuration.ForgotPassword>` | password link.   |                         |
++---------------------------------+------------------+-------------------------+                                         
 
 .. _SMTP:
 
@@ -482,8 +482,8 @@ JODConverter
 
 .. _SearchConnector:
 
-Search connector
-~~~~~~~~~~~~~~~~~
+:ref:`Search connector <SearchConnector>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------+------------------+-------------------------+
 | Name                             | Description      | Default                 |
@@ -559,7 +559,7 @@ Notification
 | :ref:`exo.notification.maxite| Maximum number   | 8                       |
 | ms                           | of notifications |                         |
 | <Configuration.Notification>`| displayed in the |                         |
-|                              |  popup list.     |                         |
+|                              | popup list.      |                         |
 +------------------------------+------------------+-------------------------+
 | :ref:`exo.notification.viewal| Living days of   | 30                      |
 | l                            | items displayed  |                         |
@@ -582,7 +582,7 @@ JCR
 | Name                            | Description      | Default                 |
 +=================================+==================+=========================+
 | :ref:`exo.jcr.datasource.dialect| In most cases    | auto                    |
-|  <Database.ConfiguringPLF>`     | the dialect is   |                         |
+| <Database.ConfiguringPLF>`      | the dialect is   |                         |
 |  				  | auto-detected.   |                         |
 |                                 | Follow the link  |                         |
 |                                 | to know          |                         |
@@ -635,139 +635,126 @@ WebDav
 ECMS                    
 ~~~~~~
 
-+-----------------------------+------------------+-------------------------+
-| Name                        | Description      | Default                 |
-+=============================+==================+=========================+
-| `exo.ecms.connector.drives. | Maximum size (in | 200                     |
-| uploadLimit <#PLFAdminGuide | MB) allowed of   |                         |
-| .Configuration.FileSizeLimi | an uploaded      |                         |
-| t>`__                       | file.            |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.portal.uploadhandler.p | Turn on/off      | true                    |
-| ublic-restriction <#PLFAdmi | public access to |                         |
-| nGuide.Configuration.Upload | the upload       |                         |
-| Handler>`__                 | service.         |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.connector.drives. | The maximum      | 3                       |
-| clientLimit <#PLFUserGuide. | number of        |                         |
-| ManagingYourDocuments.Worki | concurrent       |                         |
-| ngWithBasicActions.Uploadin | uploaded files   |                         |
-| gFiles>`__                  | in client side.  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.connector.drives. | The maximum      | 20                      |
-| serverLimit <#PLFUserGuide. | number of        |                         |
-| ManagingYourDocuments.Worki | concurrent       |                         |
-| ngWithBasicActions.Uploadin | uploaded files   |                         |
-| gFiles>`__                  | in server side.  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.search.excluded-m | Content of these | text/css,text/javascript|
-| imetypes <#PLFUserGuide.Man | mimetypes will   | ,application/x-         |
-| agingYourWebsites.Searching | not be searched. | javascript,             |
-| ForContentInASite.Searching |                  | text /ecmascript        |
-| ForContent>`__              |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.search.enableFuzz | Enable fuzzy     | true                    |
-| ySearch <#PLFUserGuide.Mana | search or not?   |                         |
-| gingYourWebsites.SearchingF |                  |                         |
-| orContentInASite.SearchingF |                  |                         |
-| orContent>`__               |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.search.fuzzySearc | A float number   | 0.8                     |
-| hIndex <#PLFUserGuide.Manag | between 0 and 1  |                         |
-| ingYourWebsites.SearchingFo | expressing how   |                         |
-| rContentInASite.SearchingFo | much a returned  |                         |
-| rContent>`__                | word matches the |                         |
-|                             | keyword. 1 is    |                         |
-|                             | exact search.    |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.lock.admin <#PLFU | Users or groups  | \*:/platform/s          |        
-| serGuide.AdministeringeXoPl | who can manage   |  administrator          |
-| atform.ContentAdministratio | locks.           |                         |
-| n.WorkingWithRepository.Loc |                  |                         |
-| ks>`__                      |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.friendly.enabled  | Enable friendly  | true                    |
-| <#PLFRefGuide.Configuration | URL maker or     |                         |
-| s.ExternalComponentPlugins. | not?             |                         |
-| Content.FriendlyPlugin>`__  |                  |                         |
-+-----------------------------+------------------+-------------------------+
-| `exo.ecms.friendly.servletN | The friendly     | content                 |
-| ame <#PLFRefGuide.Configura | name used when   |                         |
-| tions.ExternalComponentPlug | making friendly  |                         |
-| ins.Content.FriendlyPlugin> | URLs.            |                         |
-| `__                         |                  |                         |
-+-----------------------------+------------------+-------------------------+                                         
++---------------------------------+------------------+-------------------------+
+| Name                            | Description      | Default                 |
++=================================+==================+=========================+
+| :ref:`exo.ecms.connector.drives.| Maximum size (in | 200                     |
+| uploadLimit                     | MB) allowed of   |                         |
+| <Configuration.FileSizeLimit>`  | an uploaded      |                         |
+|                                 | file.            |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.portal.uploadhandler.p| Turn on/off      | true                    |
+| ublic-restriction               | public access to |                         |
+| <Configuration.UploadHandler>`  | the upload       |                         |
+|                                 | service.         |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.connector.drives.| The maximum      | 3                       |
+| clientLimit                     | number of        |                         |
+| <Uploading-files>`              | concurrent       |                         |
+|                                 | uploaded files   |                         |
+|                                 | in client side.  |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.connector.drives.| The maximum      | 20                      |
+| serverLimit                     | number of        |                         |
+| <Uploading-files>`              | concurrent       |                         |
+|                                 | uploaded files   |                         |
+|                                 | in server side.  |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.search.excluded-m| Content of these | text/css,text/javascript|
+| imetypes                        | mimetypes will   | ,application/x-         |
+| <SearchingForContent>`          | not be searched. | javascript,             |
+| 				  |                  | text /ecmascript        |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.search.enableFuzz| Enable fuzzy     | true                    |
+| ySearch                         | search or not?   |                         |
+| <SearchingForContent>`          |                  |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.search.fuzzySearc| A float number   | 0.8                     |
+| hIndex                          | between 0 and 1  |                         |
+| <SearchingForContent>`          | expressing how   |                         |
+|                                 | much a returned  |                         |
+|                                 | word matches the |                         |
+|                                 | keyword. 1 is    |                         |
+|                                 | exact search.    |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.lock.admin       | Users or groups  | \*:/platform/s          |        
+| <WorkingWithRepository.Locks>`  | who can manage   |  administrator          |
+|                                 | locks.           |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.friendly.enabled | Enable friendly  | true                    |
+| <#PLFRefGuide.Configuration     | URL maker or     |                         |
+| s.ExternalComponentPlugins.     | not?             |                         |
+| Content.FriendlyPlugin>`        |                  |                         |
++---------------------------------+------------------+-------------------------+
+| :ref:`exo.ecms.friendly.servletN| The friendly     | content                 |
+| ame <#PLFRefGuide.Configura     | name used when   |                         |
+| tions.ExternalComponentPlug     | making friendly  |                         |
+| ins.Content.FriendlyPlugin>`    | URLs.            |                         |
++---------------------------------+------------------+-------------------------+                                         
 
 .. _ECMSWatchDocument:
 
 ECMS Watch Document
 ~~~~~~~~~~~~~~~~~~~~ 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.ecms.watchdocument.sen | The "from" field | support@exoplatform.com     |
-| der <#PLFAdminGuide.Configu | in the           |                             |
-| ration.EmailNotificationOfD | notification     |                             |
-| ocumentChanges>`__          | emails.          |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.watchdocument.sub | The subject of   | "Your watching document is  |
-| ject <#PLFAdminGuide.Config | the notification | changed"                    |
-| uration.EmailNotificationOf | emails.          |                             |
-| DocumentChanges>`__         |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.watchdocument.mim | Mimetype of the  | text/html                   |
-| etype <#PLFAdminGuide.Confi | message body.    |                             |
-| guration.EmailNotificationO |                  |                             |
-| fDocumentChanges>`__        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.watchdocument.con | The message      | Check it yourself in        |
-| tent <#PLFAdminGuide.Config | body.            | ``exo-sample.properties``   |
-| uration.EmailNotificationOf |                  |                             |
-| DocumentChanges>`__         |                  |                             |
-+-----------------------------+------------------+-----------------------------+                                                      
++---------------------------------------+------------------+-----------------------------+
+| Name                                  | Description      | Default                     |
++=======================================+==================+=============================+
+| :ref:`exo.ecms.watchdocument.sender   | The "from" field | support@exoplatform.com     |
+| <EmailNotificationOfDocumentChanges>` | notification     |                             | 		                     |   				     | in the emails.   |                             |
++---------------------------------------+------------------+-----------------------------+
+| :ref:`exo.ecms.watchdocument.subject  | The subject of   | "Your watching document is  |
+| <EmailNotificationOfDocumentChanges>` | the notification | changed"                    |
+| 					| emails.          |                             |
++---------------------------------------+------------------+-----------------------------+
+| :ref:`exo.ecms.watchdocument.mimetype | Mimetype of the  | text/html                   |
+| <EmailNotificationOfDocumentChanges>` | message body.    |                             |
++---------------------------------------+------------------+-----------------------------+
+| :ref:`exo.ecms.watchdocument.content  | The message      | Check it yourself in        |
+| <EmailNotificationOfDocumentChanges>` | body.            | ``exo-sample.properties``   |
++---------------------------------------+------------------+-----------------------------+                                                      
 
 .. _ECMSDocumentversioning:
 
 ECMS Document versioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~                 
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.ecms.documents.version | The drives that  | Managed                     |
-| ing.drives <#PLFAdminGuide. | are enabled for  | Sites,Groups,Personal       |
-| Configuration.DocumentVersi | Document         | Documents                   |
-| oning>`__                   | versioning.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.version | The max number   | 0 (no limit)                |
-| s.max <#PLFAdminGuide.Confi | of versions that |                             |
-| guration.DocumentVersioning | a document can   |                             |
-| >`__                        | have.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.version | The expiration   | 0 (no limit)                |
-| s.expiration <#PLFAdminGuid | time (in days)   |                             |
-| e.Configuration.DocumentVer | of a document    |                             |
-| sioning>`__                 | version.         |                             |
-+-----------------------------+------------------+-----------------------------+    
++--------------------------------------+------------------+-----------------------------+
+| Name                                 | Description      | Default                     |
++======================================+==================+=============================+
+| :ref:`exo.ecms.documents.versioning  | The drives that  | Managed                     |
+| .drives			       | are enabled for  | Sites,Groups,Personal       |
+| <Configuration.DocumentVersioning>`  | Document         | Documents                   |
+|                                      | versioning.      |                             |
++--------------------------------------+------------------+-----------------------------+
+| :ref:`exo.ecms.documents.versions.max| The max number   | 0 (no limit)                |
+| <Configuration.DocumentVersioning>`  | of versions that |                             |
+| 				       | a document can   |                             |
+|                                      | have.            |                             |
++--------------------------------------+------------------+-----------------------------+
+| :ref:`exo.ecms.documents.versions.exp| The expiration   | 0 (no limit)                |
+| iration                              | time (in days)   |                             |
+| <Configuration.DocumentVersioning>`  | of a document    |                             |
+|                                      | version.         |                             |
++--------------------------------------+------------------+-----------------------------+    
 
 .. _ECMSDocumentviewer:
 
 ECMS Document viewer
 ~~~~~~~~~~~~~~~~~~~~~ 
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.ecms.documents.pdfview | Max file size of | 10                          |
-| er.max-file-size <#PLFAdmin | documents for    |                             |
-| Guide.Configuration.Documen | preview, in MB   |                             |
-| tViewer>`__                 |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.ecms.documents.pdfview | Max number of    | 99                          |
-| er.max-pages <#PLFAdminGuid | pages of         |                             |
-| e.Configuration.DocumentVie | documents for    |                             |
-| wer>`__                     | preview          |                             |
-+-----------------------------+------------------+-----------------------------+       
++---------------------------------+------------------+-----------------------------+
+| Name                            | Description      | Default                     |
++=================================+==================+=============================+
+| :ref:`exo.ecms.documents.pdfview| Max file size of | 10                          |
+| er.max-file-size                | documents for    |                             |
+| <Configuration.DocumentViewer>` | preview, in MB   |                             |
+|                                 |                  |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.ecms.documents.pdfview| Max number of    | 99                          |
+| er.max-pages                    | pages of         |                             |
+| <Configuration.DocumentViewer>` | documents for    |                             |
+|                                 | preview          |                             |
++---------------------------------+------------------+-----------------------------+       
 
 .. _CalendarProperties:
 
