@@ -376,10 +376,10 @@ Platform
 +---------------------------------+------------------+-------------------------+
 | :ref:`exo.super.user            | The predefined   | root		       |
 | <PredefinedUserGroupMembership>`| super user's     |			       |
-|	                          |   name.          |			       |
+|	                          |  name.           |			       |
 +---------------------------------+------------------+-------------------------+               
 | :ref:`exo.portal.resetpassword  | The expiration   | 24 (hours)              |
-|.expiretime                      | time of a reset  |                         |
+| .expiretime                      | time of a reset  |                         |
 | <Configuration.ForgotPassword>` | password link.   |                         |
 +---------------------------------+------------------+-------------------------+                                         
 
@@ -691,6 +691,7 @@ ECMS
 | tions.ExternalComponentPlug     | making friendly  |                         |
 | ins.Content.FriendlyPlugin>`    | URLs.            |                         |
 +---------------------------------+------------------+-------------------------+                                         
+
 
 .. _ECMSWatchDocument:
 
@@ -1271,8 +1272,8 @@ Elasticsearch Properties
 +------------------------------+------------------+-----------------------------+
 | Name                         | Description      | Default                     |
 +==============================+==================+=============================+
-| `exo.activity-type.activity  | The property     | true                        |
-| -type-key.enabled            | that allows to   |                             |
+| :ref`exo.activity-type.acti  | The property     | true                        |
+| vity-type-key.enabled        | that allows to   |                             |
 | <Configuration.ActivityType>`| enable or        |                             |
 |                              | disable an       |                             |
 |                              | activity having  |                             |
@@ -1477,7 +1478,7 @@ CometD configuration
 |                             |                  | the IP of the cluster node. |
 +-----------------------------+------------------+-----------------------------+
 | `exo.cometd.oort.configType | The CometD       | multicast                   |
-|  <#PLFAdminGuide.Clustering | configuration    |                             |
+| <#PLFAdminGuide.Clustering  | configuration    |                             |
 | .SettingUpCluster>`__       | type which could |                             |
 |                             | be either        |                             |
 |                             | "static" or      |                             |
@@ -1574,7 +1575,7 @@ Notifications channels
 | Name                           | Description      | Default                     |
 +================================+==================+=============================+
 | :ref:`exo.notification.channels| Defines the      | WEB\_CHANNEL, MAIL\_CHANNEL |
-| <Configuration.Notification>`  | activated        |                             |
+| <NotificationChannels>`        | activated        |                             |
 |                                | notification     |                             |
 |                                | channels.        |                             |
 +--------------------------------+------------------+-----------------------------+                                  
@@ -1620,7 +1621,7 @@ Notifications channels
 +-------------------------------+------------------+-----------------------------+                                 
 
 
-.. _Configuration.CaseSensitiveUsername:
+.. _CaseSensitiveUsername:
 
 ===================================
 Configure username case sensitive
@@ -1638,7 +1639,7 @@ this means that the user should take care of capital and minimal letters
 when typing the username.
 
 
-.. _Configuration.UserInactivityDelay:
+.. _UserInactivityDelay:
 
 ====================================
 User inactivity delay configuration
@@ -1729,7 +1730,7 @@ Note that if you are configuring the cluster mode, the configuration
 might be different. The file should be ``standalone-exo-cluster.xml``
 and the property should be ``exo.shared.dir``. See :ref:`Setting up eXo Platform cluster <#PLFAdminGuide.Clustering.SettingUpCluster>`.
 
-.. _Configuration.AssetsVersionConf:    
+.. _AssetsVersionConf:    
 
 =============================
 Assets version configuration
@@ -2750,7 +2751,7 @@ To disable the activity type, simply set the parameter to ``false``.
 			-  ks-wiki\\:spaces
 			-  USER\_ACTIVITIES\_FOR\_RELATIONSHIP
 
-.. _Configuration.SpacesAdministration:
+.. _SpacesAdministration:
 
 =====================================
 Configure spaces administration group
@@ -4492,7 +4493,7 @@ To disable:
 
     shindig.features.default=res://features/default-features.txt
 
-.. _Configuration.statisticsParameter:
+.. _statisticsParameter:
 
 ==============================================
 Enabling/Disabling groovy templates statistics
