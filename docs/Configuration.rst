@@ -1626,7 +1626,7 @@ Notifications channels
 +-----------------------------+------------------+-----------------------------+                                 
 
 
-.. _Configuration.CaseSensitiveUsername:
+.. _CaseSensitiveUsername:
 
 ===================================
 Configure username case sensitive
@@ -1644,7 +1644,7 @@ this means that the user should take care of capital and minimal letters
 when typing the username.
 
 
-.. _Configuration.UserInactivityDelay:
+.. _UserInactivityDelay:
 
 ====================================
 User inactivity delay configuration
@@ -1668,7 +1668,7 @@ The parameter is expressed in millisecond and the value default is
 
 =============================
 Data directory configuration
-============================
+=============================
 
 JCR data is stored in both SQL databases and File System. JCR Database
 configuration is explained in `Database <#PLFAdminGuide.Database>`__.
@@ -1735,7 +1735,7 @@ Note that if you are configuring the cluster mode, the configuration
 might be different. The file should be ``standalone-exo-cluster.xml``
 and the property should be ``exo.shared.dir``. See :ref:`Setting up eXo Platform cluster <#PLFAdminGuide.Clustering.SettingUpCluster>`.
 
-.. _Configuration.AssetsVersionConf:    
+.. _AssetsVersionConf:    
 
 =============================
 Assets version configuration
@@ -2261,12 +2261,12 @@ The embedded WebDAV server lets you configure some parameter via :ref:`exo.prope
 .. code:: java
 
     # JCR Webdav configuration
-    exo.webdav.def-folder-node-type=nt:folder
-	exo.webdav.def-file-node-type=nt:file
-	exo.webdav.def-file-mimetype=application/octet-stream
-	exo.webdav.update-policy=update
-	exo.webdav.folder-icon-path=/eXoWCMResources/skin/images/file/nt-folder.png
-	exo.webdav.cache-control=text/*:max-age=3600;image/*:max-age=1800;application/*:max-age=1800;*/*:no-cache
+		exo.webdav.def-folder-node-type=nt:folder
+		exo.webdav.def-file-node-type=nt:file
+		exo.webdav.def-file-mimetype=application/octet-stream
+		exo.webdav.update-policy=update
+		exo.webdav.folder-icon-path=/eXoWCMResources/skin/images/file/nt-folder.png
+		exo.webdav.cache-control=text/*:max-age=3600;image/*:max-age=1800;application/*:max-age=1800;*/*:no-cache
 
 +-------------------------------------+--------------------------------------+
 | ``exo.webdav.def-folder-node-type`` |Default (JCR) node type which is used |
@@ -2756,7 +2756,7 @@ To disable the activity type, simply set the parameter to ``false``.
 			-  ks-wiki\\:spaces
 			-  USER\_ACTIVITIES\_FOR\_RELATIONSHIP
 
-.. _Configuration.SpacesAdministration:
+.. _SpacesAdministration:
 
 =====================================
 Configure spaces administration group
@@ -4498,7 +4498,7 @@ To disable:
 
     shindig.features.default=res://features/default-features.txt
 
-.. _Configuration.statisticsParameter:
+.. _statisticsParameter:
 
 ==============================================
 Enabling/Disabling groovy templates statistics
@@ -5032,7 +5032,7 @@ following in
 
 The time unit is hour.
 
-.. _Configuration.PasswordEncryption:
+.. _PasswordEncryption:
 
 ===================
 Password Encryption
