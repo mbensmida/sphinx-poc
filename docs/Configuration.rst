@@ -16,16 +16,16 @@ Configuration
     -  :ref:`Properties reference <Configuration.PropertiesReference>`
        A reference to eXo configuration properties.
 
-    -  :ref:`Configure username case sensitive <Configuration.CaseSensitiveUsername>`
+    -  :ref:`Configure username case sensitive <CaseSensitiveUsername>`
        How to make eXo Platform usernames case sensitive/insensitive.
        
-    -  :ref:`User inactivity delay configuration <Configuration.UserInactivityDelay>`
+    -  :ref:`User inactivity delay configuration <UserInactivityDelay>`
        How to define the user inactivity delay.
 
     -  :ref:`Data directory configuration <Configuration.DataDirectory>`
        Explanations of several paths in the local file system.
 
-    -  :ref:`Assets version parameter <Configuration.AssetsVersionConf>`
+    -  :ref:`Assets version parameter <AssetsVersionConf>`
        eXo Platform assets version parameter.
 
     -  :ref:`Quartz Scheduler configuration <Configuration.QuartzScheduler>`
@@ -59,7 +59,7 @@ Configuration
        Configuration about sender from which all email notifications are
        sent.
 
-    -  :ref:`Subscribing to notifications of document changes <Configuration.EmailNotificationOfDocumentChanges>`
+    -  :ref:`Subscribing to notifications of document changes <EmailNotificationOfDocumentChanges>`
        The email configuration for watching a document.
 
     -  :ref:`WebDAV configuration <Configuration.WebDAV>`
@@ -69,7 +69,7 @@ Configuration
        How to configure the file types associated with the application
        and to set a new label.
 
-    -  :ref:`JODConverter configuration <Configuration.JODConverter>`
+    -  :ref:`JODConverter configuration <JODConverterConf>`
        How to enable and configure document preview feature that allows
        users to read online many document types like MS Word.
 
@@ -93,7 +93,7 @@ Configuration
        Instructions on how to enable/disable an activity type from
        posting on streams.
 
-    -  :ref:`Configure spaces administration group <Configuration.SpacesAdministration>`
+    -  :ref:`Configure spaces administration group <SpacesAdministration>`
        How to define spaces administrators groups.
 
     -  :ref:`Logs <Configuration.Logs>`
@@ -110,7 +110,7 @@ Configuration
     -  :ref:`End-date suggestion <Configuration.EndDateSuggestion>`
        End-date suggestion feature in Calendar: how to configure. 
         
-    -  :ref:`Predefined users, groups and memberships <Configuration.PredefinedUserGroupMembership>`
+    -  :ref:`Predefined users, groups and memberships <PredefinedUserGroupMembership>`
        The configurations for users, groups and memberships
        initialization.
 
@@ -119,10 +119,10 @@ Configuration
        OAuth gadgets do not indicate a key, and how to disable the
        Shindig default online features.
 
-    -  :ref:`Groovy templates statistics <Configuration.statisticsParameter>`
+    -  :ref:`Groovy templates statistics <statisticsParameter>`
        Parameter for enabling/disabling Groovy Templates statistics.
 
-    -  :ref:`Search connector configuration <Configuration.SearchConnector>`
+    -  :ref:`Search connector configuration <SearchConnector>`
        Configuration for activating/de-activating a Search connector.
 
     -  :ref:`Unified Search configuration <Configuration.UnifiedSearch>`
@@ -152,7 +152,7 @@ Configuration
     -  :ref:`Forgot Password <Configuration.ForgotPassword>`
        Configuration related to the Forgot Password feature.
 
-    -  :ref:`Password Encryption <Configuration.PasswordEncryption>`
+    -  :ref:`Password Encryption <PasswordEncryption>`
        Users who upgrade from a previous version older than 4.3 will
        need to beware of the new default encryption algorithm.
 
@@ -1552,7 +1552,7 @@ Username case sensitive
 |                                | not.             |                             |
 +--------------------------------+------------------+-----------------------------+
 
-.. _UserInactivityDelay:                                        
+.. _UserInactivityDelayProperty:                                        
 
 User inactivity delay
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2185,7 +2185,7 @@ ways:
    -  ``exo.email.smtp.from``: Email address of the sender. The default
       value is *noreply@exoplatform.com*.
       
-.. _Configuration.EmailNotificationOfDocumentChanges:
+.. _EmailNotificationOfDocumentChanges:
 
 =================================================
 Subscribing to notifications of document changes
