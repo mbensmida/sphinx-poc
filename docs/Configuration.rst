@@ -374,9 +374,9 @@ Platform
 | <Configuration.AccountSetup>`   | setup" screen or |                         |
 |            		          | not?             |                         |
 +---------------------------------+------------------+-------------------------+
-| :ref:`exo.super.user            | The predefined   | root		      |
-| <PredefinedUserGroupMembership>`| super user's     |			      |
-|	                          |   name.          |			      |
+| :ref:`exo.super.user            | The predefined   | root		       |
+| <PredefinedUserGroupMembership>`| super user's     |			       |
+|	                          |   name.          |			       |
 +---------------------------------+------------------+-------------------------+               
 | :ref:`exo.portal.resetpassword  | The expiration   | 24 (hours)              |
 |.expiretime                      | time of a reset  |                         |
@@ -695,7 +695,8 @@ ECMS
 .. _ECMSWatchDocument:
 
 ECMS Watch Document
-~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~
+
 +---------------------------------------+------------------+-----------------------------+
 | Name                                  | Description      | Default                     |
 +=======================================+==================+=============================+
@@ -761,29 +762,29 @@ ECMS Document viewer
 Calendar
 ~~~~~~~~~ 
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+ 
-| `exo.calendar.default.event | An integer       | 2 (equivalent to 1 hour)    |
-| .suggest <#PLFAdminGuide.Co | number n, used   |                             |
-| nfiguration.EndDateSuggesti | to               |                             |
-| on>`__                      | auto-calculate   |                             |
-|                             | and suggest the  |                             |
-|                             | end time when    |                             |
-|                             | users            |                             |
-|                             | create/edit an   |                             |
-|                             | event.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.calendar.default.task. | An integer       | 1 (equivalent to 30 mins)   |
-| suggest <#PLFAdminGuide.Con | number n, used   |                             |
-| figuration.EndDateSuggestio | to               |                             |
-| n>`__                       | auto-calculate   |                             |
-|                             | and suggest the  |                             |
-|                             | end time when    |                             |
-|                             | users            |                             |
-|                             | create/edit a    |                             |
-|                             | task.            |                             |
-+-----------------------------+------------------+-----------------------------+
++-----------------------------------+------------------+-----------------------------+
+| Name                              | Description      | Default                     |
++===================================+==================+=============================+ 
+| :ref:`exo.calendar.default.event  | An integer       | 2 (equivalent to 1 hour)    |
+| .suggest 			    | number n, used   |                             |
+| <Configuration.EndDateSuggestion>`| to               |                             |
+|                     		    | auto-calculate   |                             |
+|                             	    | and suggest the  |                             |
+|                                   | end time when    |                             |
+|                                   | users            |                             |
+|                                   | create/edit an   |                             |
+|                                   | event.           |                             |
++-----------------------------------+------------------+-----------------------------+
+| :ref:`exo.calendar.default.task.  | An integer       | 1 (equivalent to 30 mins)   |
+| suggest  			    | number n, used   |                             |
+| <Configuration.EndDateSuggestion>`| to               |                             |
+|                                   | auto-calculate   |                             |
+|                                   | and suggest the  |                             |
+|                                   | end time when    |                             |
+|                                   | users            |                             |
+|                                   | create/edit a    |                             |
+|                                   | task.            |                             |
++-----------------------------------+------------------+-----------------------------+
 
 .. _SiteMetadataProperties:
 
@@ -893,191 +894,191 @@ Quartz Scheduler
 
  **Main Scheduler Properties**   
  
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+ 
-| `exo.quartz.scheduler.insta | The name of the  | ExoScheduler                |
-| nceName <#PLFAdminGuide.Con | scheduler        |                             |
-| figuration.QuartzScheduler> | instance.        |                             |
-| `__                         |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.scheduler.insta | The type of the  | AUTO                        |
-| nceId <#PLFAdminGuide.Confi | scheduler        |                             |
-| guration.QuartzScheduler>`_ | instance.        |                             |
-| _                           |                  |                             |
-+-----------------------------+------------------+-----------------------------+                                                                        
++---------------------------------+------------------+-----------------------------+
+| Name                            | Description      | Default                     |
++=================================+==================+=============================+ 
+| :ref:`exo.quartz.scheduler.insta| The name of the  | ExoScheduler                |
+| nceName                         | scheduler        |                             |
+| <Configuration.QuartzScheduler>`| instance.        |                             |
+|                                 |                  |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.scheduler.insta| The type of the  | AUTO                        |
+| nceId                           | scheduler        |                             |
+| <Configuration.QuartzScheduler>`| instance.        |                             |
+|                                 |                  |                             |
++---------------------------------+------------------+-----------------------------+                                                                        
 
  **ThreadPool configuration Properties**                  
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.quartz.threadPool.clas | Is the name of   | org.quartz.simpl.SimpleThre |
-| s <#PLFAdminGuide.Configura | the ThreadPool   | adPool                      |
-| tion.QuartzScheduler>`__    | implementation   |                             |
-|                             | used.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.threadPool.thre | It an integer    | 5 (which is the value of    |
-| adPriority <#PLFAdminGuide. | value between    | Thread.NORM\_PRIORITY)      |
-| Configuration.QuartzSchedul | Thread.MIN\_PRIO |                             |
-| er>`__                      | RITY             |                             |
-|                             | (which is 1) and |                             |
-|                             | Thread.MAX\_PRIO |                             |
-|                             | RITY             |                             |
-|                             | (which is 10).   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.threadPool.thre | It is the number | 25                          |
-| adCount <#PLFAdminGuide.Con | of threads that  |                             |
-| figuration.QuartzScheduler> | are available    |                             |
-| `__                         | for concurrent   |                             |
-|                             | execution of     |                             |
-|                             | jobs.            |                             |
-+-----------------------------+------------------+-----------------------------+                                         
++---------------------------------+------------------+-----------------------------+
+| Name                            | Description      | Default                     |
++=================================+==================+=============================+
+| :ref:`exo.quartz.threadPool.clas| Is the name of   | org.quartz.simpl.SimpleThre |
+| s                               | the ThreadPool   | adPool                      |
+| <Configuration.QuartzScheduler>`| implementation   |                             |
+|                                 | used.            |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.threadPool.thre| It an integer    | 5 (which is the value of    |
+| adPriority                      | value between    | Thread.NORM\_PRIORITY)      |
+| <Configuration.QuartzScheduler>`| Thread.MIN\_PRIO |                             |
+|                                 | RITY             |                             |
+|                                 | (which is 1) and |                             |
+|                                 | Thread.MAX\_PRIO |                             |
+|                                 | RITY             |                             |
+|                                 | (which is 10).   |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.threadPool.thre| It is the number | 25                          |
+| adCount                         | of threads that  |                             |
+| <Configuration.QuartzScheduler>`| are available    |                             |
+|                                 | for concurrent   |                             |
+|                                 | execution of     |                             |
+|                                 | jobs.            |                             |
++---------------------------------+------------------+-----------------------------+                                         
 
  **JobStore configuration Properties**                  
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.quartz.jobStore.misfir | The number of    | 6000                        |
-| eThreshold <#PLFAdminGuide. | milliseconds the |                             |
-| Configuration.QuartzSchedul | scheduler will   |                             |
-| er>`__                      | tolerate a       |                             |
-|                             | trigger to pass  |                             |
-|                             | its              |                             |
-|                             | next-fire-time   |                             |
-|                             | by, before being |                             |
-|                             | considered       |                             |
-|                             | misfired.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.class  | The Scheduler’s  | org.quartz.impl.jdbcjobstor |
-| <#PLFAdminGuide.Configurati | JobStore class   | e.JobStoreTX                |
-| on.QuartzScheduler>`__      | name.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.driver | The Driver       | org.quartz.impl.jdbcjobstor |
-| DelegateClass <#PLFAdminGui | delegate which   | e.StdJDBCDelegate           |
-| de.Configuration.QuartzSche | will understand  |                             |
-| duler>`__                   | the database     |                             |
-|                             | system dialect.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.usePro | The flag which   | false                       |
-| perties <#PLFAdminGuide.Con | instructs        |                             |
-| figuration.QuartzScheduler> | JDBCJobStore     |                             |
-| `__                         | that all values  |                             |
-|                             | in JobDataMaps   |                             |
-|                             | will be Strings. |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.dataSo | The name of the  | quartzDS                    |
-| urce <#PLFAdminGuide.Config | DataSources      |                             |
-| uration.QuartzScheduler>`__ | defined in the   |                             |
-|                             | configuration    |                             |
-|                             | properties file  |                             |
-|                             | for quartz.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.tableP | The prefix used  | QRTZ\_                      |
-| refix <#PLFAdminGuide.Confi | for to Quartz’s  |                             |
-| guration.QuartzScheduler>`_ | tables in the    |                             |
-| _                           | database.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.isClus | Set to "true" in | false                       |
-| tered <#PLFAdminGuide.Confi | order to turn on |                             |
-| guration.QuartzScheduler>`_ | clustering       |                             |
-| _                           | features.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.cluste | Set the          | 20000                       |
-| rCheckinInterval <#PLFAdmin | frequency (in    |                             |
-| Guide.Configuration.QuartzS | milliseconds) at |                             |
-| cheduler>`__                | which this       |                             |
-|                             | instance         |                             |
-|                             | "checks-in" with |                             |
-|                             | other instances  |                             |
-|                             | of the cluster.  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.maxMis | The maximum      | 20                          |
-| firesToHandleAtATime <#PLFA | number of        |                             |
-| dminGuide.Configuration.Qua | misfired         |                             |
-| rtzScheduler>`__            | triggers the     |                             |
-|                             | jobstore will    |                             |
-|                             | handle in a      |                             |
-|                             | given pass.      |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.dontSe | Setting this     | false                       |
-| tAutoCommitFalse <#PLFAdmin | parameter to     |                             |
-| Guide.Configuration.QuartzS | "true" tells     |                             |
-| cheduler>`__                | Quartz not to    |                             |
-|                             | call             |                             |
-|                             | setAutoCommit(fa |                             |
-|                             | lse)             |                             |
-|                             | on connections   |                             |
-|                             | obtained from    |                             |
-|                             | the              |                             |
-|                             | DataSource(s).   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.acquir | Whether or not   | false                       |
-| eTriggersWithinLock <#PLFAd | the acquisition  |                             |
-| minGuide.Configuration.Quar | of next triggers |                             |
-| tzScheduler>`__             | to fire should   |                             |
-|                             | occur within an  |                             |
-|                             | explicit         |                             |
-|                             | database lock.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.lockHa | The class name   |                             |
-| ndler.class <#PLFAdminGuide | to be used to    |                             |
-| .Configuration.QuartzSchedu | produce an       |                             |
-| ler>`__                     | instance of a    |                             |
-|                             | "org.quartz.impl |                             |
-|                             | .jdbcjobstore".  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.driver | A pipe-delimited |                             |
-| DelegateInitString <#PLFAdm | list of          |                             |
-| inGuide.Configuration.Quart | properties (and  |                             |
-| zScheduler>`__              | their values)    |                             |
-|                             | that can be      |                             |
-|                             | passed to the    |                             |
-|                             | DriverDelegate   |                             |
-|                             | during           |                             |
-|                             | initialization   |                             |
-|                             | time.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.txIsol | A value of       | false                       |
-| ationLevelSerializable <#PL | "true" tells     |                             |
-| FAdminGuide.Configuration.Q | Quartz (when     |                             |
-| uartzScheduler>`__          | using JobStoreTX |                             |
-|                             | or CMT) to call  |                             |
-|                             | setTransactionIs |                             |
-|                             | olation(Connecti |                             |
-|                             | on.TRANSACTION\_ |                             |
-|                             | SERIALIZABLE)    |                             |
-|                             | on JDBC          |                             |
-|                             | connections.     |                             |
-|                             | This can be      |                             |
-|                             | helpful to       |                             |
-|                             | prevent lock     |                             |
-|                             | timeouts with    |                             |
-|                             | some databases   |                             |
-|                             | under high load, |                             |
-|                             | and long-lasting |                             |
-|                             | transactions.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.quartz.jobStore.select | Must be a SQL    | SELECT \* FROM {0}LOCKS     |
-| WithLockSQL <#PLFAdminGuide | string that      | WHERE SCHED\_NAME = {1} AND |
-| .Configuration.QuartzSchedu | selects a row in | LOCK\_NAME = ? FOR UPDATE   |
-| ler>`__                     | the "LOCKS"      |                             |
-|                             | table and places |                             |
-|                             | a lock on the    |                             |
-|                             | row.             |                             |
-+-----------------------------+------------------+-----------------------------+
++---------------------------------+------------------+-----------------------------+
+| Name                            | Description      | Default                     |
++=================================+==================+=============================+
+| :ref:`exo.quartz.jobStore.misfir| The number of    | 6000                        |
+| eThreshold                      | milliseconds the |                             |
+| <Configuration.QuartzScheduler>`| scheduler will   |                             |
+|                                 | tolerate a       |                             |
+|                                 | trigger to pass  |                             |
+|                                 | its              |                             |
+|                                 | next-fire-time   |                             |
+|                                 | by, before being |                             |
+|                                 | considered       |                             |
+|                                 | misfired.        |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.class | The Scheduler’s  | org.quartz.impl.jdbcjobstor |
+| <Configuration.QuartzScheduler>`| JobStore class   | e.JobStoreTX                |
+|                                 | name.            |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.driver| The Driver       | org.quartz.impl.jdbcjobstor |
+| DelegateClass                   | delegate which   | e.StdJDBCDelegate           |
+| <Configuration.QuartzScheduler>`| will understand  |                             |
+|                                 | the database     |                             |
+|                                 | system dialect.  |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.usePro| The flag which   | false                       |
+| perties                         | instructs        |                             |
+| <Configuration.QuartzScheduler>`| JDBCJobStore     |                             |
+|                                 | that all values  |                             |
+|                                 | in JobDataMaps   |                             |
+|                                 | will be Strings. |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.dataSo| The name of the  | quartzDS                    |
+| urce                            | DataSources      |                             |
+| <Configuration.QuartzScheduler>`| defined in the   |                             |
+|                                 | configuration    |                             |
+|                                 | properties file  |                             |
+|                                 | for quartz.      |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.tableP| The prefix used  | QRTZ\_                      |
+| refix                           | for to Quartz’s  |                             |
+| <Configuration.QuartzScheduler>`| tables in the    |                             |
+|                                 | database.        |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.isClus| Set to "true" in | false                       |
+| tered                           | order to turn on |                             |
+| <Configuration.QuartzScheduler>`| clustering       |                             |
+|                                 | features.        |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.cluste| Set the          | 20000                       |
+| rCheckinInterval                | frequency (in    |                             |
+| <Configuration.QuartzScheduler>`| milliseconds) at |                             |
+|                                 | which this       |                             |
+|                                 | instance         |                             |
+|                                 | "checks-in" with |                             |
+|                                 | other instances  |                             |
+|                                 | of the cluster.  |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.maxMis| The maximum      | 20                          |
+| firesToHandleAtATime            | number of        |                             |
+| <Configuration.QuartzScheduler>`| misfired         |                             |
+|                                 | triggers the     |                             |
+|                                 | jobstore will    |                             |
+|                                 | handle in a      |                             |
+|                                 | given pass.      |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.dontSe| Setting this     | false                       |
+| tAutoCommitFalse                | parameter to     |                             |
+| <Configuration.QuartzScheduler>`| "true" tells     |                             |
+|                                 | Quartz not to    |                             |
+|                                 | call             |                             |
+|                                 | setAutoCommit(fa |                             |
+|                                 | lse)             |                             |
+|                                 | on connections   |                             |
+|                                 | obtained from    |                             |
+|                                 | the              |                             |
+|                                 | DataSource(s).   |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.acquir| Whether or not   | false                       |
+| eTriggersWithinLock             | the acquisition  |                             |
+| <Configuration.QuartzScheduler>`| of next triggers |                             |
+|                                 | to fire should   |                             |
+|                                 | occur within an  |                             |
+|                                 | explicit         |                             |
+|                                 | database lock.   |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.lockHa| The class name   |                             |
+| ndler.class                     | to be used to    |                             |
+| <Configuration.QuartzScheduler>`| produce an       |                             |
+|                                 | instance of a    |                             |
+|                                 | "org.quartz.impl |                             |
+|                                 | .jdbcjobstore".  |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.driver| A pipe-delimited |                             |
+| DelegateInitString              | list of          |                             |
+| <Configuration.QuartzScheduler>`| properties (and  |                             |
+|                                 | their values)    |                             |
+|                                 | that can be      |                             |
+|                                 | passed to the    |                             |
+|                                 | DriverDelegate   |                             |
+|                                 | during           |                             |
+|                                 | initialization   |                             |
+|                                 | time.            |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.txIsol| A value of       | false                       |
+| ationLevelSerializable          | "true" tells     |                             |
+| <Configuration.QuartzScheduler>`| Quartz (when     |                             |
+|                                 | using JobStoreTX |                             |
+|                                 | or CMT) to call  |                             |
+|                                 | setTransactionIs |                             |
+|                            	  | olation(Connecti |                             |
+|                             	  | on.TRANSACTION\_ |                             |
+|                             	  | SERIALIZABLE)    |                             |
+|                                 | on JDBC          |                             |
+|                                 | connections.     |                             |
+|                                 | This can be      |                             |
+|                                 | helpful to       |                             |
+|                                 | prevent lock     |                             |
+|                                 | timeouts with    |                             |
+|                                 | some databases   |                             |
+|                                 | under high load, |                             |
+|                                 | and long-lasting |                             |
+|                                 | transactions.    |                             |
++---------------------------------+------------------+-----------------------------+
+| :ref:`exo.quartz.jobStore.select| Must be a SQL    | SELECT \* FROM {0}LOCKS     |
+| WithLockSQL                     | string that      | WHERE SCHED\_NAME = {1} AND |
+| <Configuration.QuartzScheduler>`| selects a row in | LOCK\_NAME = ? FOR UPDATE   |
+|                                 | the "LOCKS"      |                             |
+|                                 | table and places |                             |
+|                                 | a lock on the    |                             |
+|                                 | row.             |                             |
++---------------------------------+------------------+-----------------------------+
 
  **Datasources configuration**  
  
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.quartz.dataSource.quar | The JNDI URL for | java:/comp/env/exo-jpa\_por |
-| tzDS.jndiURL <#PLFAdminGuid | a DataSource     | tal                         |
-| e.Configuration.QuartzSched | that is managed  |                             |
-| uler>`__                    | by eXo Platform. |                             |
-+-----------------------------+------------------+-----------------------------+                             
++---------------------------------+------------------+-----------------------------+
+| Name                            | Description      | Default                     |
++=================================+==================+=============================+
+| :ref:`exo.quartz.dataSource.quar| The JNDI URL for | java:/comp/env/exo-jpa\_por |
+| tzDS.jndiURL                    | a DataSource     | tal                         |
+| <Configuration.QuartzScheduler>`| that is managed  |                             |
+|                                 | by eXo Platform. |                             |
++---------------------------------+------------------+-----------------------------+                             
 
 
 .. _PasswordEncryptionProperties:
@@ -1085,151 +1086,148 @@ Quartz Scheduler
 Password Encryption
 ~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.plidm.password.class < | The class that   | DatabaseReadingSaltEncoder  |
-| #PLFAdminGuide.Configuratio | encrypts the     |                             |
-| n.PasswordEncryption>`__    | user password    |                             |
-|                             | before it is     |                             |
-|                             | stored in the    |                             |
-|                             | database.        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.plidm.password.hash <# | The encrypt      | SHA-256                     |
-| PLFAdminGuide.Configuration | algorithm.       |                             |
-| .PasswordEncryption>`__     |                  |                             |
-+-----------------------------+------------------+-----------------------------+                                             
++-------------------------------+------------------+-----------------------------+
+| Name                          | Description      | Default                     |
++===============================+==================+=============================+
+| :ref:`exo.plidm.password.class| The class that   | DatabaseReadingSaltEncoder  |
+| <PasswordEncryption>`         | encrypts the     |                             |
+|                               | user password    |                             |
+|                               | before it is     |                             |
+|                               | stored in the    |                             |
+|                               | database.        |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`exo.plidm.password.hash | The encrypt      | SHA-256                     |
+| <PasswordEncryption>`         | algorithm.       |                             |
++-------------------------------+------------------+-----------------------------+                                             
 
 .. _ElasticsearchProperties:
 
 Elasticsearch Properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.es.version.minor <#PLF | The expected     | 5.6                         |
-| AdminGuide.Configuration.El | minor            |                             |
-| asticSearch>`__             | Elastisearch     |                             |
-|                             | version          |                             |
-|                             | compatible with  |                             |
-|                             | eXo Platform.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.es.embedded.enabled <# | Allows to run an | true                        |
-| PLFAdminGuide.Configuration | Elasticsearch    |                             |
-| .ElasticSearch.ESClientProp | server embedded  |                             |
-| erties>`__                  | in eXo Platform  |                             |
-|                             | (not recommended |                             |
-|                             | for production). |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.cluster.name <#PLFAdmin | Cluster name     | exoplatform-es              |
-| Guide.Configuration.Elastic | identifies your  |                             |
-| Search.ESEmbeddedNodeProper | Elasticsearch    |                             |
-| ties>`__                    | cluster for      |                             |
-|                             | auto-discovery.  |                             |
-|                             | If you’re        |                             |
-|                             | running multiple |                             |
-|                             | clusters on the  |                             |
-|                             | same network,    |                             |
-|                             | make sure you’re |                             |
-|                             | using unique     |                             |
-|                             | names.           |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.node.name <#PLFAdminGui | Name of the mode | exoplatform-es-embedded     |
-| de.Configuration.ElasticSea | for the embedded |                             |
-| rch.ESEmbeddedNodePropertie | mode. If not     |                             |
-| s>`__                       | specified, a     |                             |
-|                             | name is          |                             |
-|                             | generated        |                             |
-|                             | dynamically at   |                             |
-|                             | startup.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.network.host <#PLFAdmin | Sets both        | "127.0.0.1"                 |
-| Guide.Configuration.Elastic | 'bind\_host' and |                             |
-| Search.ESEmbeddedNodeProper | 'publish\_host'  |                             |
-| ties>`__                    | params. More     |                             |
-|                             | details          |                             |
-|                             | `here <https://w |                             |
-|                             | ww.elastic.co/gu |                             |
-|                             | ide/en/elasticse |                             |
-|                             | arch/reference/c |                             |
-|                             | urrent/modules-n |                             |
-|                             | etwork.html#adva |                             |
-|                             | nced-network-set |                             |
-|                             | tings>`__        |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.discovery.zen.ping.unic | In Unicast       | ["127.0.0.1"]               |
-| ast.hosts <#PLFAdminGuide.C | dicovery mode,   |                             |
-| onfiguration.ElasticSearch. | this parameter   |                             |
-| ESEmbeddedNodeProperties>`_ | lets you set a   |                             |
-| _                           | list of master   |                             |
-|                             | nodes in the     |                             |
-|                             | cluster to       |                             |
-|                             | perform          |                             |
-|                             | discovery when   |                             |
-|                             | new nodes        |                             |
-|                             | (master or data) |                             |
-|                             | are started.     |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.http.port <#PLFAdminGui | TCP Port of the  | 9200                        |
-| de.Configuration.ElasticSea | embedded ES      |                             |
-| rch.ESEmbeddedNodePropertie | node.            |                             |
-| s>`__                       |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `es.path.data <#PLFAdminGui | Local path to    | gatein/data                 |
-| de.Configuration.ElasticSea | the directory    |                             |
-| rch.ESEmbeddedNodePropertie | where to         |                             |
-| s>`__                       | Elasticsearch    |                             |
-|                             | will store index |                             |
-|                             | data allocated   |                             |
-|                             | for this node.   |                             |
-+-----------------------------+------------------+-----------------------------+
++-------------------------------+------------------+-----------------------------+
+| Name                          | Description      | Default                     |
++===============================+==================+=============================+
+| :ref:`exo.es.version.minor    | The expected     | 5.6                         |
+| <Configuration.ElasticSearch>`| minor            |                             |
+|                               | Elastisearch     |                             |
+|                               | version          |                             |
+|                               | compatible with  |                             |
+|                               | eXo Platform.    |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`exo.es.embedded.enabled | Allows to run an | true                        |
+| <Configuration.ElasticSearch>`| Elasticsearch    |                             |
+|                               | server embedded  |                             |
+|                               | in eXo Platform  |                             |
+|                               | (not recommended |                             |
+|                               | for production). |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`es.cluster.name         | Cluster name     | exoplatform-es              |
+| <ESEmbeddedMode>`             | identifies your  |                             |
+|                               | Elasticsearch    |                             |
+|                               | cluster for      |                             |
+|                               | auto-discovery.  |                             |
+|                               | If you’re        |                             |
+|                               | running multiple |                             |
+|                               | clusters on the  |                             |
+|                               | same network,    |                             |
+|                               | make sure you’re |                             |
+|                               | using unique     |                             |
+|                               | names.           |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`es.node.name            | Name of the mode | exoplatform-es-embedded     |
+| <ESEmbeddedMode>`             | for the embedded |                             |
+|                               | mode. If not     |                             |
+|                               | specified, a     |                             |
+|                               | name is          |                             |
+|                               | generated        |                             |
+|                               | dynamically at   |                             |
+|                               | startup.         |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`es.network.host         | Sets both        | "127.0.0.1"                 |
+| <ESEmbeddedMode>`             | 'bind\_host' and |                             |
+|                               | 'publish\_host'  |                             |
+|                               | params. More     |                             |
+|                               | details          |                             |
+|                               | `here <https://w |                             |
+|                               | ww.elastic.co/gu |                             |
+|                               | ide/en/elasticse |                             |
+|                               | arch/reference/c |                             |
+|                               | urrent/modules-n |                             |
+|                               | etwork.html#adva |                             |
+|                               | nced-network-set |                             |
+|                               | tings>`__        |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`es.discovery.zen.ping.  | In Unicast       | ["127.0.0.1"]               |
+| unicast.hosts                 | dicovery mode,   |                             |
+| <ESEmbeddedMode>`             | this parameter   |                             |
+|                               | lets you set a   |                             |
+|                               | list of master   |                             |
+|                               | nodes in the     |                             |
+|                               | cluster to       |                             |
+|                               | perform          |                             |
+|                               | discovery when   |                             |
+|                               | new nodes        |                             |
+|                               | (master or data) |                             |
+|                               | are started.     |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`es.http.port            | TCP Port of the  | 9200                        |
+| <ESEmbeddedMode>`             | embedded ES      |                             |
+|                               | node.            |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`es.path.data            | Local path to    | gatein/data                 |
+| <ESEmbeddedMode>`             | the directory    |                             |
+|                               | where to         |                             |
+|                               | Elasticsearch    |                             |
+|                               | will store index |                             |
+|                               | data allocated   |                             |
+|                               | for this node.   |                             |
++-------------------------------+------------------+-----------------------------+
 
  **Elasticsearch Client**    
 
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `exo.es.search.server.url < | URL of the node  | "http://127.0.0.1:9200"     |
-| #PLFAdminGuide.Configuratio | used for         |                             |
-| n.ElasticSearch.ESClientPro | searching.       |                             |
-| perties>`__                 | Required and     |                             |
+| :ref:`exo.es.search.server  | URL of the node  | "http://127.0.0.1:9200"     |
+| .url <ESClient>`            | used for         |                             |
+|                             | searching.       |                             |
+|                             | Required and     |                             |
 |                             | exo.es.embedded. |                             |
 |                             | enabled=false    |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.search.server.usern | Username used    |                             |
-| ame <#PLFAdminGuide.Configu | for the BASIC    |                             |
-| ration.ElasticSearch.ESClie | authentication   |                             |
-| ntProperties>`__            | on the           |                             |
+| :ref:`exo.es.search.server  | Username used    |                             |
+| .username <ESClient>`       | for the BASIC    |                             |
+|                             | authentication   |                             |
+|                             | on the           |                             |
 |                             | Elasticsearch    |                             |
 |                             | node used for    |                             |
 |                             | searching.       |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.search.server.passw | Password used    |                             |
-| ord <#PLFAdminGuide.Configu | for the BASIC    |                             |
-| ration.ElasticSearch.ESClie | authentication   |                             |
-| ntProperties>`__            | on the           |                             |
+| :ref:`exo.es.search.server  | Password used    |                             |
+| .password <ESClient>`       | for the BASIC    |                             |
+|                             | authentication   |                             |
+|                             | on the           |                             |
 |                             | Elasticsearch    |                             |
 |                             | node used for    |                             |
 |                             | searching.       |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.index.server.url <# | URL of the node  | "http://127.0.0.1:9200"     |
-| PLFAdminGuide.Configuration | used for         |                             |
-| .ElasticSearch.ESClientProp | indexing.        |                             |
-| erties>`__                  |                  |                             |
+| :ref:`exo.es.index.server   | URL of the node  | "http://127.0.0.1:9200"     |
+| .url <ESClient>`            | used for         |                             |
+|                             | indexing.        |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.index.server.userna | Username used    |                             |
-| me <#PLFAdminGuide.Configur | for the BASIC    |                             |
-| ation.ElasticSearch.ESClien | authentication   |                             |
-| tProperties>`__             | on the           |                             |
+| :ref:`exo.es.index.server   | Username used    |                             |
+| .username <ESClient>`       | for the BASIC    |                             |
+|                             | authentication   |                             |
+|                             | on the           |                             |
 |                             | Elasticsearch    |                             |
 |                             | node used for    |                             |
 |                             | indexing.        |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.index.server.passwo | Password used    |                             |
-| rd <#PLFAdminGuide.Configur | for the BASIC    |                             |
-| ation.ElasticSearch.ESClien | authentication   |                             |
-| tProperties>`__             | on the           |                             |
+| :ref:`exo.es.index.server   | Password used    |                             |
+| .password <ESClient>`       | for the BASIC    |                             |
+|                             | authentication   |                             |
+|                             | on the           |                             |
 |                             | Elasticsearch    |                             |
 |                             | node used for    |                             |
 |                             | indexing.        |                             |
@@ -1240,52 +1238,50 @@ Elasticsearch Properties
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `exo.es.indexing.batch.numb | Maximum number   | 1000                        |
-| er <#PLFAdminGuide.Configur | of documents     |                             |
-| ation.ElasticSearch.Indexin | that can be sent |                             |
-| gProperties>`__             | to Elasticsearch |                             |
+| :ref:`exo.es.indexing.batch | Maximum number   | 1000                        |
+| .number <ESIndexing>`       | of documents     |                             |
+|                             | that can be sent |                             |
+|                             | to Elasticsearch |                             |
 |                             | in one bulk      |                             |
 |                             | request.         |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.indexing.request.si | Maximum size (in | 10485760 (= 10Mb)           |
-| ze.limit <#PLFAdminGuide.Co | bytes) of an     |                             |
-| nfiguration.ElasticSearch.I | Elasticsearch    |                             |
-| ndexingProperties>`__       | bulk request.    |                             |
+| :ref:`exo.es.indexing.requ  | Maximum size (in | 10485760 (= 10Mb)           |
+| est.size.limit <ESIndexing>`| bytes) of an     |                             |
+|                             | Elasticsearch    |                             |
+|                             | bulk request.    |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.reindex.batch.size  | Size of the      | 100                         |
-| <#PLFAdminGuide.Configurati | chunks of the    |                             |
-| on.ElasticSearch.IndexingPr | reindexing       |                             |
-| operties>`__                | batch.           |                             |
+| :ref:`exo.es.reindex.batch. | Size of the      | 100                         |
+| size <ESIndexing>`          | chunks of the    |                             |
+|                             | reindexing       |                             |
+|                             | batch.           |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.indexing.replica.nu | Number of        | 1                           |
-| mber.default <#PLFAdminGuid | replicas of the  |                             |
-| e.Configuration.ElasticSear | index.           |                             |
-| ch.IndexingProperties>`__   |                  |                             |
+| :ref:`exo.es.indexing.repli | Number of        | 1                           |
+| ca.number.default           | replicas of the  |                             |
+| <ESIndexing>`               | index.           |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.es.indexing.shard.numb | Number of shards | 5                           |
-| er.default <#PLFAdminGuide. | of the index.    |                             |
-| Configuration.ElasticSearch |                  |                             |
-| .IndexingProperties>`__     |                  |                             |
+| :ref:`exo.es.indexing.shard | Number of shards | 5                           |
+| .number.default             | of the index.    |                             |
+| <ESIndexing>`               |                  |                             |
 +-----------------------------+------------------+-----------------------------+                                              
 .. _EnableDisaleActType:
 
  Enable/Disable activity type
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.activity-type.activity | The property     | true                        |
-| -type-key.enabled <#PLFAdmi | that allows to   |                             |
-| nGuide.Configuration.Activi | enable or        |                             |
-| tyType>`__                  | disable an       |                             |
-|                             | activity having  |                             |
-|                             | the type key     |                             |
-|                             | `` activity-type |                             |
-|                             | -key ``          |                             |
-|                             | from posting in  |                             |
-|                             | the streams.     |                             |
-+-----------------------------+------------------+-----------------------------+                              
++------------------------------+------------------+-----------------------------+
+| Name                         | Description      | Default                     |
++==============================+==================+=============================+
+| `exo.activity-type.activity  | The property     | true                        |
+| -type-key.enabled            | that allows to   |                             |
+| <Configuration.ActivityType>`| enable or        |                             |
+|                              | disable an       |                             |
+|                              | activity having  |                             |
+|                              | the type key     |                             |
+|                              | `` activity-type |                             |
+|                              | -key ``          |                             |
+|                              | from posting in  |                             |
+|                              | the streams.     |                             |
++------------------------------+------------------+-----------------------------+                              
 
 .. _FSProperties:
 
@@ -1295,31 +1291,30 @@ Elasticsearch Properties
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `exo.files.binaries.storage | Allows to define | fs                          |
-| .type <#PLFAdminGuide.Confi | the file storage |                             |
-| guration.fileStorageconfig> | way: File system |                             |
-| `__                         | (type=fs) or     |                             |
+| :ref:`exo.files.binaries.   | Allows to define | fs                          |
+| storage.type                | the file storage |                             |
+| <Configuration.FileStorage>`| way: File system |                             |
+|                             | (type=fs) or     |                             |
 |                             | RDBMS            |                             |
 |                             | (type=rdbms).    |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.commons.FileStorageCle | Enables/disables | true                        |
-| anJob.enabled <#PLFAdminGui | the job that     |                             |
-| de.Configuration.fileStorag | cleans unused    |                             |
-| econfig>`__                 | files.           |                             |
+| :ref:`exo.commons.FileStorag| Enables/disables | true                        |
+| eCleanJob.enabled           | the job that     |                             |
+| <Configuration.FileStorage>`| cleans unused    |                             |
+|                             | files.           |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.commons.FileStorageCle | The retention    | 30 days                     |
-| anJob.retention-time <#PLFA | time of unused   |                             |
-| dminGuide.Configuration.fil | files            |                             |
-| eStorageconfig>`__          |                  |                             |
+| :ref:`exo.commons.FileStorag| The retention    | 30 days                     |
+| eCleanJob.retention-time    | time of unused   |                             |
+| <Configuration.FileStorage>`| files            |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.commons.FileStorageCle | The cron job     | 0 0 11 ? \* SUN             |
-| anJob.expression <#PLFAdmin | expression for   |                             |
-| Guide.Configuration.fileSto | scheduling the   |                             |
-| rageconfig>`__              | file cleaner job |                             |
+| :ref:`exo.commons.FileStorag| The cron job     | 0 0 11 ? \* SUN             |
+| eCleanJob.expression        | expression for   |                             |
+| <Configuration.FileStorage>`| scheduling the   |                             |
+|                             | file cleaner job |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.files.storage.dir <#PL | The location     | {exo.data.dir}/files        |
-| FAdminGuide.Configuration.f | where to store   |                             |
-| ileStorageconfig>`__        | binary files in  |                             |
+| :ref:`exo.files.storage.dir | The location     | {exo.data.dir}/files        |
+| <Configuration.FileStorage>`| where to store   |                             |
+|                             | binary files in  |                             |
 |                             | case of file     |                             |
 |                             | system storage.  |                             |
 |                             | In cluster mode, |                             |
@@ -1460,10 +1455,10 @@ Groovy templates statistics
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `exo.statistics.groovy.temp | Enables/disables | true                        |
-| late.enabled <#PLFAdminGuid | Groovy Templates |                             |
-| e.Configuration.statisticsP | statistics that  |                             |
-| arameter>`__                | is collected     |                             |
+| :ref:`exo.statistics.groovy | Enables/disables | true                        |
+| .template.enabled           | Groovy Templates |                             |
+| <statisticsParameter>`      | statistics that  |                             |
+|                             | is collected     |                             |
 |                             | asynchronously.  |                             |
 +-----------------------------+------------------+-----------------------------+                              
 
@@ -1502,15 +1497,15 @@ CometD configuration
 Update of last login time                      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.idm.user.updateLastLog | Enables/disables | true                        |
-| inTime <#PLFAdminGuide.Conf | the update of    |                             |
-| iguration.lastlogintime>`__ | last login time  |                             |
-|                             | each time the    |                             |
-|                             | user login.      |                             |
-+-----------------------------+------------------+-----------------------------+                                 
++--------------------------------+------------------+-----------------------------+
+| Name                           | Description      | Default                     |
++================================+==================+=============================+
+| :ref:`exo.idm.user.updateLast  | Enables/disables | true                        |
+| LoginTime                      | the update of    |                             |
+| <Configuration.lastlogintime>` | last login time  |                             |
+|                                | each time the    |                             |
+|                                | user login.      |                             |
++--------------------------------+------------------+-----------------------------+                                 
 
 .. _SpaceAdministratorsGroup:
  
@@ -1520,10 +1515,10 @@ Update of last login time
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `exo.social.spaces.administ | Defines the list |                             |
-| rators <#PLFAdminGuide.Conf | of spaces        |                             |
-| iguration.SpacesAdministrat | administrators   |                             |
-| ion>`__                     | groups.          |                             |
+| :ref:`exo.social.spaces.    | Defines the list |                             |
+| administrators              | of spaces        |                             |
+| <SpacesAdministration>`     | administrators   |                             |
+|                             | groups.          |                             |
 +-----------------------------+------------------+-----------------------------+                                    
 
 .. _AssetsVersion:
@@ -1531,59 +1526,58 @@ Update of last login time
  Assets versions used in static resources URLs
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.assets.version <#PLFAd | Defines the      | It is set to eXo Platform   |
-| minGuide.Configuration.Asse | assets version.  | binary version.             |
-| tsVersionConf>`__           |                  |                             |
-+-----------------------------+------------------+-----------------------------+                                             
++--------------------------+------------------+-----------------------------+
+| Name                     | Description      | Default                     |
++==========================+==================+=============================+
+| :ref:`exo.assets.version | Defines the      | It is set to eXo Platform   |
+| <AssetsVersionConf>`     | assets version.  | binary version.             |
++--------------------------+------------------+-----------------------------+                                             
 
 .. _UsernameCaseSensitive:
 
 Username case sensitive
 ~~~~~~~~~~~~~~~~~~~~~~~~~
  
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+ 
-| `exo.auth.case.insensitive  | Defines if       | false.                      |
-| <#PLFAdminGuide.Configurati | usernames in     |                             |
-| on.CaseSensitiveUsername>`_ | eXo Platform are |                             |
-| _                           | case sensitive or|                             |
-|                             | not.             |                             |
-+-----------------------------+------------------+-----------------------------+
++--------------------------------+------------------+-----------------------------+
+| Name                           | Description      | Default                     |
++================================+==================+=============================+ 
+| :ref:`exo.auth.case.insensitive| Defines if       | false.                      |
+| <CaseSensitiveUsername>`       | usernames in     |                             |
+|                                | eXo Platform are |                             |
+|                                | case sensitive or|                             |
+|                                | not.             |                             |
++--------------------------------+------------------+-----------------------------+
 
 .. _UserInactivityDelay:                                        
 
 User inactivity delay
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+ 
-| `exo.user.status.offline.de | Defines the time | 240000                      |
-| lay <#PLFAdminGuide.Configu | laps which makes |                             |
-| ration.UserInactivityDelay> | the user in      |                             |
-| `__                         | offline status.  |                             |
-|                             | Its value is     |                             |
-|                             | expressed in     |                             |
-|                             | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+                              
++------------------------+------------------+-----------------------------+
+| Name                   | Description      | Default                     |
++========================+==================+=============================+ 
+| :ref:`exo.user.status. | Defines the time | 240000                      |
+| offline.delay          | laps which makes |                             |
+| <UserInactivityDelay>` | the user in      |                             |
+|                        | offline status.  |                             |
+|                        | Its value is     |                             |
+|                        | expressed in     |                             |
+|                        | milliseconds.    |                             |
++------------------------+------------------+-----------------------------+                              
 
 .. _NotificationsChannels:
 
 Notifications channels  
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.notification.channels  | Defines the      | WEB\_CHANNEL, MAIL\_CHANNEL |
-| <#PLFAdminGuide.Configurati | activated        |                             |
-| on.Notification>`__         | notification     |                             |
-|                             | channels.        |                             |
-+-----------------------------+------------------+-----------------------------+                                  
++--------------------------------+------------------+-----------------------------+
+| Name                           | Description      | Default                     |
++================================+==================+=============================+
+| :ref:`exo.notification.channels| Defines the      | WEB\_CHANNEL, MAIL\_CHANNEL |
+| <Configuration.Notification>`  | activated        |                             |
+|                                | notification     |                             |
+|                                | channels.        |                             |
++--------------------------------+------------------+-----------------------------+                                  
 
 .. _WikiBaseURI:
 
@@ -1593,9 +1587,9 @@ Notifications channels
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `wiki.permalink.appuri <#PL | Defines the base | wiki                        |
-| FAdminGuide.Configuration.W | URI for the wiki |                             |
-| ikiBaseURI>`__              | application      |                             |
+| :ref:`wiki.permalink.appuri | Defines the base | wiki                        |
+| <Configuration.WikiBaseURI>`| URI for the wiki |                             |
+|                             | application      |                             |
 |                             | permalinks.      |                             |
 +-----------------------------+------------------+-----------------------------+                                
 
@@ -1604,29 +1598,29 @@ Notifications channels
  Files upload limit
  ~~~~~~~~~~~~~~~~~~~
  
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.ecms.connector.drives. | Maximum size (in | 200                         |
-| uploadLimit <#PLFAdminGuide | MB) allowed of   |                             |
-| .Configuration.FileSizeLimi | an uploaded      |                             |
-| t>`__                       | file.            |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.social.activity.upload | Maximum size (in | 200                         |
-| Limit <#PLFAdminGuide.Confi | MB) allowed of   |                             |
-| guration.FileSizeLimit>`__  | an uploaded      |                             |
-|                             | image through    |                             |
-|                             | the CKEditor.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.wiki.attachment.upload | Maximum size (in | 200                         |
-| Limit <#PLFAdminGuide.Confi | MB) allowed of   |                             |
-| guration.FileSizeLimit>`__  | an uploaded file |                             |
-|                             | in Wiki          |                             |
-|                             | application.     |                             |
-+-----------------------------+------------------+-----------------------------+                                 
++-------------------------------+------------------+-----------------------------+
+| Name                          | Description      | Default                     |
++===============================+==================+=============================+
+| :ref:`exo.ecms.connector.dr   | Maximum size (in | 200                         |
+| ives.uploadLimit              | MB) allowed of   |                             |
+| <Configuration.FileSizeLimit>`| an uploaded      |                             |
+|                               | file.            |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`exo.social.activity.upl | Maximum size (in | 200                         |
+| oadLimit                      | MB) allowed of   |                             |
+| <Configuration.FileSizeLimit>`| an uploaded      |                             |
+|                               | image through    |                             |
+|                               | the CKEditor.    |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`exo.wiki.attachment.    | Maximum size (in | 200                         |
+| uploadLimit                   | MB) allowed of   |                             |
+| <Configuration.FileSizeLimit>`| an uploaded file |                             |
+|                               | in Wiki          |                             |
+|                               | application.     |                             |
++-------------------------------+------------------+-----------------------------+                                 
 
 
-.. _CaseSensitiveUsername:
+.. _Configuration.CaseSensitiveUsername:
 
 ===================================
 Configure username case sensitive
@@ -1644,7 +1638,7 @@ this means that the user should take care of capital and minimal letters
 when typing the username.
 
 
-.. _UserInactivityDelay:
+.. _Configuration.UserInactivityDelay:
 
 ====================================
 User inactivity delay configuration
@@ -1735,7 +1729,7 @@ Note that if you are configuring the cluster mode, the configuration
 might be different. The file should be ``standalone-exo-cluster.xml``
 and the property should be ``exo.shared.dir``. See :ref:`Setting up eXo Platform cluster <#PLFAdminGuide.Clustering.SettingUpCluster>`.
 
-.. _AssetsVersionConf:    
+.. _Configuration.AssetsVersionConf:    
 
 =============================
 Assets version configuration
@@ -2187,7 +2181,7 @@ ways:
    -  ``exo.email.smtp.from``: Email address of the sender. The default
       value is *noreply@exoplatform.com*.
       
-.. _EmailNotificationOfDocumentChanges:
+.. _Configuration.EmailNotificationOfDocumentChanges:
 
 =================================================
 Subscribing to notifications of document changes
@@ -2261,12 +2255,12 @@ The embedded WebDAV server lets you configure some parameter via :ref:`exo.prope
 .. code:: java
 
     # JCR Webdav configuration
-		exo.webdav.def-folder-node-type=nt:folder
-		exo.webdav.def-file-node-type=nt:file
-		exo.webdav.def-file-mimetype=application/octet-stream
-		exo.webdav.update-policy=update
-		exo.webdav.folder-icon-path=/eXoWCMResources/skin/images/file/nt-folder.png
-		exo.webdav.cache-control=text/*:max-age=3600;image/*:max-age=1800;application/*:max-age=1800;*/*:no-cache
+    exo.webdav.def-folder-node-type=nt:folder
+	exo.webdav.def-file-node-type=nt:file
+	exo.webdav.def-file-mimetype=application/octet-stream
+	exo.webdav.update-policy=update
+	exo.webdav.folder-icon-path=/eXoWCMResources/skin/images/file/nt-folder.png
+	exo.webdav.cache-control=text/*:max-age=3600;image/*:max-age=1800;application/*:max-age=1800;*/*:no-cache
 
 +-------------------------------------+--------------------------------------+
 | ``exo.webdav.def-folder-node-type`` |Default (JCR) node type which is used |
@@ -2756,7 +2750,7 @@ To disable the activity type, simply set the parameter to ``false``.
 			-  ks-wiki\\:spaces
 			-  USER\_ACTIVITIES\_FOR\_RELATIONSHIP
 
-.. _SpacesAdministration:
+.. _Configuration.SpacesAdministration:
 
 =====================================
 Configure spaces administration group
@@ -4498,7 +4492,7 @@ To disable:
 
     shindig.features.default=res://features/default-features.txt
 
-.. _statisticsParameter:
+.. _Configuration.statisticsParameter:
 
 ==============================================
 Enabling/Disabling groovy templates statistics
