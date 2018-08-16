@@ -379,7 +379,7 @@ Platform
 |	                          |  name.           |			       |
 +---------------------------------+------------------+-------------------------+               
 | :ref:`exo.portal.resetpassword  | The expiration   | 24 (hours)              |
-| .expiretime                      | time of a reset  |                         |
+| .expiretime                     | time of a reset  |                         |
 | <Configuration.ForgotPassword>` | password link.   |                         |
 +---------------------------------+------------------+-------------------------+                                         
 
@@ -702,7 +702,8 @@ ECMS Watch Document
 | Name                                  | Description      | Default                     |
 +=======================================+==================+=============================+
 | :ref:`exo.ecms.watchdocument.sender   | The "from" field | support@exoplatform.com     |
-| <EmailNotificationOfDocumentChanges>` | notification     |                             | 		                     |   				     | in the emails.   |                             |
+| <EmailNotificationOfDocumentChanges>` | notification     |                             |
+|   				        | in the emails.   |                             |
 +---------------------------------------+------------------+-----------------------------+
 | :ref:`exo.ecms.watchdocument.subject  | The subject of   | "Your watching document is  |
 | <EmailNotificationOfDocumentChanges>` | the notification | changed"                    |
@@ -713,7 +714,8 @@ ECMS Watch Document
 +---------------------------------------+------------------+-----------------------------+
 | :ref:`exo.ecms.watchdocument.content  | The message      | Check it yourself in        |
 | <EmailNotificationOfDocumentChanges>` | body.            | ``exo-sample.properties``   |
-+---------------------------------------+------------------+-----------------------------+                                                      
++---------------------------------------+------------------+-----------------------------+ 
+
 
 .. _ECMSDocumentversioning:
 
@@ -816,7 +818,7 @@ Site metadata
 
 .. _DatasourceProperties:
 
- Datasource              
+Datasource              
 ~~~~~~~~~~~~
 
 +-----------------------------+------------------+-----------------------------+
@@ -1263,16 +1265,17 @@ Elasticsearch Properties
 | :ref:`exo.es.indexing.shard | Number of shards | 5                           |
 | .number.default             | of the index.    |                             |
 | <ESIndexing>`               |                  |                             |
-+-----------------------------+------------------+-----------------------------+                                              
++-----------------------------+------------------+-----------------------------+
+
 .. _EnableDisaleActType:
 
- Enable/Disable activity type
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable/Disable activity type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 +------------------------------+------------------+-----------------------------+
 | Name                         | Description      | Default                     |
 +==============================+==================+=============================+
-| :ref`exo.activity-type.acti  | The property     | true                        |
+| :ref:`exo.activity-type.acti | The property     | true                        |
 | vity-type-key.enabled        | that allows to   |                             |
 | <Configuration.ActivityType>`| enable or        |                             |
 |                              | disable an       |                             |
@@ -1286,8 +1289,8 @@ Elasticsearch Properties
 
 .. _FSProperties:
 
- File storage configuration
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+File storage configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
@@ -1326,8 +1329,8 @@ Elasticsearch Properties
 
 .. _MongoDBConfiguration:
 
- MongoDB configuration
- ~~~~~~~~~~~~~~~~~~~~~~~
+MongoDB configuration
+~~~~~~~~~~~~~~~~~~~~~~~
  
  MongoDB is the database for eXo Chat: all the below parameters could be configured in :ref:`chat.properties file <Configuration.ChatConfiguration>`       
 
@@ -1509,9 +1512,9 @@ Update of last login time
 +--------------------------------+------------------+-----------------------------+                                 
 
 .. _SpaceAdministratorsGroup:
- 
- Define spaces administrators group
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Define spaces administrators group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
@@ -1524,8 +1527,8 @@ Update of last login time
 
 .. _AssetsVersion:
 
- Assets versions used in static resources URLs
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assets versions used in static resources URLs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------+------------------+-----------------------------+
 | Name                     | Description      | Default                     |
@@ -1582,8 +1585,8 @@ Notifications channels
 
 .. _WikiBaseURI:
 
- Wiki application base URI 
- ~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wiki application base URI 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
@@ -1596,8 +1599,8 @@ Notifications channels
 
 .. _FilesUploadLimit:
 
- Files upload limit
- ~~~~~~~~~~~~~~~~~~~
+Files upload limit
+~~~~~~~~~~~~~~~~~~~
  
 +-------------------------------+------------------+-----------------------------+
 | Name                          | Description      | Default                     |
