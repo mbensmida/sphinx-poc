@@ -2200,7 +2200,7 @@ ways:
    -  ``exo.email.smtp.from``: Email address of the sender. The default
       value is *noreply@exoplatform.com*.
       
-.. _Configuration.EmailNotificationOfDocumentChanges:
+.. _EmailNotificationOfDocumentChanges:
 
 =================================================
 Subscribing to notifications of document changes
