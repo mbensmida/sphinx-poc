@@ -1391,7 +1391,7 @@ MongoDB configuration
 | `chatPassPhrase <#PLFAdminG | The password to  | chat                        |
 | uide.ChatAdministration.Con | access REST      |                             |
 | figuration.ChatServer>`__   | service on the   |                             |
-|                             | BRAND\_CHAT      |                             |
+|                             | eXo Chat         |                             |
 |                             | server.          |                             |
 +-----------------------------+------------------+-----------------------------+
 | `chatCronNotifCleanup <#PLF | The frequency of | 0 0/60 \* \* \* ?           |
@@ -5210,10 +5210,9 @@ your MongoDB. See details about connecting to secured MongoDB in
 Mail Server
 ~~~~~~~~~~~~
 
-This server is used for *Sending meeting notes* (see `Recording a
-discussion <#PLFUserGuide.Chat.Recording>`__). The parameters of mail
-configuration for the BRAND\_CHAT server are the same as those of
-:ref:`Outgoing Mail Service <OutgoingMailService>`, but
+This server is used for *Sending meeting notes* (see :ref:`Recording a discussion <Recording>`). 
+The parameters of mail configuration for the eXo Chat server are the 
+same as those of :ref:`Outgoing Mail Service <OutgoingMailService>`, but
 without the prefix ``exo.``. Notice that if you include these parameters
 into the ``exo.properties`` file, you should add the prefix ``chat.`` to
 their name.
@@ -5235,7 +5234,7 @@ Chat Server
 |                    |                    |    the the chat is in embedded mode. |                              
 +--------------------+--------------------+--------------------------------------+
 | ``chatPassPhrase`` | *chat*             | The password to access REST service  |
-|                    |                    | on the BRAND\_CHAT server.           |
+|                    |                    | on the eXo Chat server.              |
 +--------------------+--------------------+--------------------------------------+
 | ``chatCronNotifCle | *0 0/60 \* \* \*   | The notifications are cleaned up     |
 | anup``             | ?*                 | every one hour by default. To learn  |
