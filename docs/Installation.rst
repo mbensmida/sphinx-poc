@@ -1131,7 +1131,7 @@ In next sections, you will walk through:
 
 -  :ref:`Advanced Customization <AdvancedCustomization>`
 
-.. _BasicCustomization
+.. _BasicCustomization:
 
 Basic Customization
 ~~~~~~~~~~~~~~~~~~~~
@@ -1281,7 +1281,7 @@ eXo Platform tries to ease it by exposing 3 variables that you can customize:
 | cs=true"``                                    | JBoss Modules metrics.      |
 +-----------------------------------------------+-----------------------------+
 
-.. _AdvancedCustomization
+.. _AdvancedCustomization:
 
 Advanced Customization
 ~~~~~~~~~~~~~~~~~~~~~~~
