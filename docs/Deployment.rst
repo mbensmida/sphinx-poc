@@ -158,46 +158,44 @@ Next, declare a new virtual host to access you eXo Platform instance :
 .. note:: You can find more information on how to configure apache vhosts on
 		  `here <http://httpd.apache.org/docs/2.4/vhosts/>`__.
 		  
-.. code:: xml		  
+:: 		  
 
-<VirtualHost *:80>
+	<VirtualHost *:80>
 
-    ServerName my.server.name # <--- change here
+		ServerName my.server.name # <--- change here
 
-    ServerAdmin my@server.name # <--- change here
+		ServerAdmin my@server.name # <--- change here
 
-    # don't loose time with IP address lookups
-    HostnameLookups Off
-    # needed for named virtual hosts
-    UseCanonicalName Off
-    # configures the footer on server-generated documents
-    ServerSignature Off
+		# don't loose time with IP address lookups
+		HostnameLookups Off
+		# needed for named virtual hosts
+		UseCanonicalName Off
+		# configures the footer on server-generated documents
+		ServerSignature Off
 
-    ProxyRequests           Off
-    ProxyPreserveHost       On
-    ProxyVia                On
+		ProxyRequests           Off
+		ProxyPreserveHost       On
+		ProxyVia                On
 
-    # Notifications via web socket, must be declared before the general ProxyPass definition
-    <IfModule proxy_wstunnel_module>
-        ProxyPass           /cometd    ws://127.0.0.1:8080/cometd max=100 acquire=5000 retry=5 disablereuse=on flushpackets=on # <--- change here and adapt the options to your load
-    </IfModule>
+		# Notifications via web socket, must be declared before the general ProxyPass definition
+		<IfModule proxy_wstunnel_module>
+			ProxyPass           /cometd    ws://127.0.0.1:8080/cometd max=100 acquire=5000 retry=5 disablereuse=on flushpackets=on # <--- change here and adapt the options to your load
+		</IfModule>
 
-    ProxyPass               /          http://127.0.0.1:8080/ acquire=1000 retry=30 max=100 # <--- change here and adapt the options to your load
-    ProxyPassReverse        /          http://127.0.0.1:8080/  # <--- change here
+		ProxyPass               /          http://127.0.0.1:8080/ acquire=1000 retry=30 max=100 # <--- change here and adapt the options to your load
+		ProxyPassReverse        /          http://127.0.0.1:8080/  # <--- change here
 
-    #####################
-    # Log configuration
-    #####################
-    ErrorLog        ${APACHE_LOG_DIR}/my.server.name-error.log # <--- change here
-    CustomLog       ${APACHE_LOG_DIR}/my.server.name-access.log log_with_durations # <--- change here
+		#####################
+		# Log configuration
+		#####################
+		ErrorLog        ${APACHE_LOG_DIR}/my.server.name-error.log # <--- change here
+		CustomLog       ${APACHE_LOG_DIR}/my.server.name-access.log log_with_durations # <--- change here
 
-</VirtualHost>
+	</VirtualHost>
 
 
 
-.. note:: We are assuming the eXo Platform server is reachable at the ip 127.0.0.1
-		  on port 8080. You have to adapt the configuration according to your
-          installation.
+.. note:: We are assuming the eXo Platform server is reachable at the ip 127.0.0.1 on port 8080. You have to adapt the configuration according to your installation.
 
 .. warning:: Due to a bug in Apache Server prior version 2.4.13, an incorrect
 			 websocket configuration can impact the standard HTTP navigation. If
@@ -240,35 +238,35 @@ proxy of a eXo Platform back-end :
 
 ::
 
-server {
-  listen 80 default_server;
-  server_name my.server.name;
+	server {
+	  listen 80 default_server;
+	  server_name my.server.name;
 
-  # TODO Adapt this value to your needs
-  client_max_body_size 250m;  
+	  # TODO Adapt this value to your needs
+	  client_max_body_size 250m;  
 
-  location / {
-    proxy_pass http://127.0.0.1:8080;
-    # Pass the client informations the the backend
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header Host $host;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-  }
-  # Websocket for notifications
-  location /cometd/cometd {
-    proxy_pass http://127.0.0.1:8080;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "upgrade";
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header Host $host;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-  }
+	  location / {
+		proxy_pass http://127.0.0.1:8080;
+		# Pass the client informations the the backend
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	  }
+	  # Websocket for notifications
+	  location /cometd/cometd {
+		proxy_pass http://127.0.0.1:8080;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	  }
 
-  access_log   /my/path/my.server.name-access.log log_with_durations;
-  error_log    /my/path/my.server.name-error.log;
+	  access_log   /my/path/my.server.name-access.log log_with_durations;
+	  error_log    /my/path/my.server.name-error.log;
 
-}
+	}
 
 .. note:: We are assuming the eXo Platform server is reachable at the ip 127.0.0.1
           on port 8080. You have to adapt the configuration according to your
@@ -327,8 +325,9 @@ frontend.
 
 .. note:: The complete documentation of the Tomcat connector can be found `here <https://tomcat.apache.org/tomcat-7.0-doc/config/http.html>`__
 
-   This is a standard connector configuration with the important
-   paramters for a reverse proxy context :
+
+This is a standard connector configuration with the important paramters 
+for a reverse proxy context :
 
    ``scheme``
        If your reverse proxy acts as a ssl termination, specify *https*,
