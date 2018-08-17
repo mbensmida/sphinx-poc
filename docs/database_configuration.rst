@@ -14,7 +14,7 @@ Database
 
     In this chapter:
 
-    -  :ref:`Creatingdatabases <Database.Creating_databases>`
+    -  :ref:`Creating databases <Database.Creating_databases>`
        You need to create databases. The tables are created
        automatically in Platform first startup.
 
@@ -141,26 +141,26 @@ For Tomcat
 
       .. code:: xml
 
-          <!-- eXo IDM Datasource for portal -->
-          <Resource name="exo-idm_portal" auth="Container" type="javax.sql.DataSource"
-          ...
-          username="plf" password="plf" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/plf?autoReconnect=true" />
-          <!-- eXo JCR Datasource for portal -->
-          <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
-          ...
-          username="plf" password="plf" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/plf?autoReconnect=true" />
-          <!-- eXo JPA Datasource for portal -->
-          <Resource name="exo-jpa_portal" auth="Container" type="javax.sql.DataSource"
-          ...
-          username="plf" password="plf" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/plf?autoReconnect=true&amp;characterEncoding=utf8" />
+			  <!-- eXo IDM Datasource for portal -->
+				<Resource name="exo-idm_portal" auth="Container" type="javax.sql.DataSource"
+				...
+				username="plf" password="plf" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/plf?autoReconnect=true" />
+			  <!-- eXo JCR Datasource for portal -->
+				<Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
+				...
+				username="plf" password="plf" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/plf?autoReconnect=true" />
+			  <!-- eXo JPA Datasource for portal -->
+				<Resource name="exo-jpa_portal" auth="Container" type="javax.sql.DataSource"
+				...
+				username="plf" password="plf" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/plf?autoReconnect=true&amp;characterEncoding=utf8" />
 
    -  iii. Edit username, password, url (host, port and database name).
       Besides MySQL, if you are using Enterprise Edition, you will find the
       samples for other RDBMSs in ``conf/server-*.xml``.
 
-   -  iv. Append this character encoding to the url in case your database
-     character set is ``utf8``. For example, in MySQL (this is different
-      between RDBMSs):
+   -  iv. Append this character encoding to the url in case your 
+      database character set is ``utf8``. For example, in MySQL (this 
+      is different between RDBMSs):
 
       .. code:: xml
 
@@ -217,27 +217,27 @@ For JBoss
 
       .. code:: xml
 
-			  <!-- eXo IDM Datasource for PLF -->
-			  <datasource enabled="true" jndi-name="java:/comp/env/exo-idm_portal" jta="false" pool-name="exo-idm_portal" spy="false" use-ccm="true" use-java-context="true">
-			  <!-- HSQLDB -->
-			   <driver>hsqldb-driver.jar</driver>
-			   <driver-class>org.hsqldb.jdbcDriver</driver-class>
-			   <connection-url>jdbc:hsqldb:file:${exo.data.dir}/hsql/exo-plf;shutdown=true;hsqldb.write_delay=false;hsqldb.tx=mvcc;</connection-url>
-		      ...
-		      <!-- eXo JCR Datasource for PLF -->
-		      <datasource enabled="true" jndi-name="java:/comp/env/exo-jcr_portal" jta="false" pool-name="exo-jcr_portal" spy="false" use-ccm="true" use-java-context="true">
-		      <!-- HSQLDB -->
-			      <driver>hsqldb-driver.jar</driver>
-			      <driver-class>org.hsqldb.jdbcDriver</driver-class>
-			      <connection-url>jdbc:hsqldb:file:${exo.data.dir}/hsql/exo-plf;shutdown=true;hsqldb.write_delay=false;hsqldb.tx=mvcc;</connection-url>
-			      ...
-		      <!-- eXo JPA Datasource for PLF -->
-		      <datasource enabled="true" jndi-name="java:/comp/env/exo-jpa_portal" jta="false" pool-name="exo-jpa_portal" spy="false" use-ccm="true" use-java-context="true">
-		      <!-- HSQLDB -->
-			   <driver>hsqldb-driver.jar</driver>
-			   <driver-class>org.hsqldb.jdbcDriver</driver-class>
-			   <connection-url>jdbc:hsqldb:file:${exo.data.dir}/hsql/exo-plf;shutdown=true;hsqldb.write_delay=false;hsqldb.tx=mvcc;</connection-url>
-			   ...
+				  <!-- eXo IDM Datasource for PLF -->
+				   <datasource enabled="true" jndi-name="java:/comp/env/exo-idm_portal" jta="false" pool-name="exo-idm_portal" spy="false" use-ccm="true" use-java-context="true">
+				   <!-- HSQLDB -->
+				     <driver>hsqldb-driver.jar</driver>
+				     <driver-class>org.hsqldb.jdbcDriver</driver-class>
+				     <connection-url>jdbc:hsqldb:file:${exo.data.dir}/hsql/exo-plf;shutdown=true;hsqldb.write_delay=false;hsqldb.tx=mvcc;</connection-url>
+				     ...
+				  <!-- eXo JCR Datasource for PLF -->
+				   <datasource enabled="true" jndi-name="java:/comp/env/exo-jcr_portal" jta="false" pool-name="exo-jcr_portal" spy="false" use-ccm="true" use-java-context="true">
+				   <!-- HSQLDB -->
+					   <driver>hsqldb-driver.jar</driver>
+					   <driver-class>org.hsqldb.jdbcDriver</driver-class>
+					   <connection-url>jdbc:hsqldb:file:${exo.data.dir}/hsql/exo-plf;shutdown=true;hsqldb.write_delay=false;hsqldb.tx=mvcc;</connection-url>
+					    ...
+				  <!-- eXo JPA Datasource for PLF -->
+				   <datasource enabled="true" jndi-name="java:/comp/env/exo-jpa_portal" jta="false" pool-name="exo-jpa_portal" spy="false" use-ccm="true" use-java-context="true">
+				   <!-- HSQLDB -->
+				    <driver>hsqldb-driver.jar</driver>
+				    <driver-class>org.hsqldb.jdbcDriver</driver-class>
+				    <connection-url>jdbc:hsqldb:file:${exo.data.dir}/hsql/exo-plf;shutdown=true;hsqldb.write_delay=false;hsqldb.tx=mvcc;</connection-url>
+				     ...
 
    -  ii. For MySQL as an example, need to uncomment some lines in the
       file, edit driver, username, password, url:
@@ -259,8 +259,8 @@ For JBoss
 			   <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter" />
 			   <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker" />
 
-.. note:: The recommended version of MySQL JDBC driver for eXo Platfom 5.0
-		  is **5.1.44**. This driver version has two JDBC driver
+.. note:: The recommended version of MySQL JDBC driver for eXo Platfom 
+          5.0 is **5.1.44**. This driver version has two JDBC driver
           implementations **com.mysql.jdbc.Driver** and
           **com.mysql.fabric.jdbc.FabricMySQLDriver**, so Jboss deploys
           them as ``mysql-connector-java-5.1.44.jar_com.mysql.jdbc.Driver_5_1`` 
@@ -268,10 +268,12 @@ For JBoss
           Therefore the ``driver`` parameter must be set to
           **mysql-connector-java-5.1.44.jar\_com.mysql.jdbc.Driver\_5\_1**,
           as in the above example.
+          
+          
 
-   -  iii. Append this character encoding to the url in case your database
-      character set is ``utf8``. For example, in MySQL (this is different
-      between RDBMSs):
+  -  iii. Append this character encoding to the url in case your database
+     character set is ``utf8``. For example, in MySQL (this is different
+     between RDBMSs):
 
       .. code:: xml
 
@@ -513,7 +515,7 @@ There are two supported methods to perform file storage:
 
 .. note:: You should choose either to store binary data in the database or
 		  through file system by setting the suitable value to the variable
-		  `exo.files.binaries.storage.type <#PLFAdminGuide.Configuration.fileStorageconfig>`__.
+		  :ref:`exo.files.binaries.storage.type <Configuration.FileStorage>`.
 		  Choosing one file storage than the other depends on your data type
 		  and size.
 
@@ -639,8 +641,6 @@ Configuration
 Some parameters are configurable in :ref:`exo.properties <Configuration.ConfigurationOverview>`.
 More details could be found :ref:`File Storage Configuration <Configuration.FileStorage>`.
 
-
-.. _Database.ChatDatabase:
 
 .. _Database.ChatDatabase:
 
