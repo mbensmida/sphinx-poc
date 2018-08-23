@@ -71,8 +71,7 @@ Setting up eXo Platform cluster
    :ref:`documentation <Database.ConfiguringPLF>`) to use one of the 
    supported database systems: Postgres, MySQL, MSSQL, Oracle, MariaDB.
 
-.. note:: -  It is not possible to use the default configured hsql embedded
-             database as noted in :ref:`Configuring eXo Platform with database <Database.ConfiguringPLF>`.
+.. note:: -  It is not possible to use the default configured hsql embedded database as noted in :ref:`Configuring eXo Platform with database <Database.ConfiguringPLF>`.
 
 		  -  The different cluster nodes **must use the same RDBMS datasources**.
 
@@ -117,8 +116,7 @@ Setting up eXo Platform cluster
          It is possible to modify it through
          :ref:`exo.properties <Configuration.ConfigurationOverview>` file.
 
-.. tip:: Choosing file system or RDBMS storage depens on your needs and
-         your system environment.(See more details in :ref:`Comparing file system and RDBMS storage <Database.FileStorage>`.
+	.. tip:: Choosing file system or RDBMS storage depens on your needs and your system environment.(See more details in :ref:`Comparing file system and RDBMS storage <Database.FileStorage>`.
 
       -  **JCR indexes**: Stored under *a local file system folder in each
          cluster node*. More details :ref:`here <Clustering.JCRIndexing>`.
@@ -338,8 +336,7 @@ Enable the profile *cluster-index-shared*.
        <property name="exo.profiles" value="all,cluster,cluster-index-shared"/>
 
 -  In Tomcat, edit ``setenv-customize.sh`` (.bat for Windows, see
-   `Customizing environment
-   variables <#PLFAdminGuide.InstallationAndStartup.CustomizingEnvironmentVariables>`__):
+   :ref:`Customizing environment variables <CustomizingEnvironmentVariables>`):
 
    ::
 
