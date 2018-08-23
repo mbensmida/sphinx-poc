@@ -1720,6 +1720,269 @@ mandatory attribute):
 
 .. _LDAP.Directoryserverintegration:
 
+==================================================
+eXo Platform configuration with a directory server
+==================================================
+
+In this guide, you will learn how to configure eXo Platform with a
+directory server. It provides a step by step tutorial to help you
+succeed the integration.
+
+.. _SuppportedDS:
+
+Supported directory servers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+eXo Platform can be integrated with a variety of directory servers. 
+For the 5.1 version, this is the list of the supported ones:
+
+-  OpenLDAP.
+
+-  Active directory: eXo Platform intregration with an Active directory 
+   is only supported in **readOnly**.
+
+-  OpenDJ.
+
+Please refer to
+`supported-environments <https://www.exoplatform.com/terms-conditions/supported-environments.pdf>`__
+file for more details.
+
+.. _StepByStepConfigureDS:
+
+Step by step tutorial to configure eXo Platform with a directory server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To configure eXo Platform with LDAP, you need to follow these steps:
+
+1. In your custom extension, create this path if it does not exist
+   ``$PLF\_HOME/webapps/custom-extension/WEB-INF/conf/organization`` (for
+   Tomcat) and
+   ``$PLF\_HOME/standalone/deployments/platform.ear/custom-extension/WEB-INF/conf/organization``
+   (for Jboss).
+
+2. Under this path, put the file `idm-configuration.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/idm-configuration.xml>`__
+
+3. Uncomment the appropriate instruction from this
+   `section <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/idm-configuration.xml#L82-L100>`__
+   defining the path of the picketlink configuration file corresponding 
+   to the used LDAP and the desired mode (read/write or readOnly):
+
+   -  If you want to configure with LDAP (OpenDJ) in readOnly mode, you
+      should uncomment this section:
+
+      .. code:: xml
+
+          <!--Sample LDAP config-->
+              <value>war:/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml</value>
+
+      and set the variable
+
+      .. code:: xml
+
+          <isReadOnly>false</isReadOnly>
+
+      to true in
+      `picketlink-idm-ldap-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml#L193-L209>`__
+      for each attribute.
+
+   -  If you want to configure with LDAP (OpenDJ) in read/Write mode, 
+      you should uncomment this section:
+
+      .. code:: xml
+
+          <!--Sample LDAP config-->
+              <value>war:/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml</value>
+
+      and set the variable
+
+      .. code:: xml
+
+          <isReadOnly>false</isReadOnly>
+
+      to false in
+      `picketlink-idm-ldap-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml#L193-L209>`__
+      for each attribute.
+
+   -  If you want to configure with Active Directory in readOnly mode, 
+      you should uncomment this section:
+
+      .. code:: xml
+
+          <!--MSAD Read Only "ACME" LDAP Example-->
+              <value>war:/conf/organization/picketlink-idm/picketlink-idm-msad-readonly-config.xml</value>
+
+      and set the variable
+
+      .. code:: xml
+
+          <isReadOnly>false</isReadOnly>
+
+      to true in
+      `picketlink-idm-msad-readonly-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-readonly-config.xml#L192-L208>`__
+      for each attribute.
+
+      -  If you want to configure with Active Directory in read/write mode,
+         you should uncomment this section:
+ 
+      .. code:: xml
+
+          <!--MSAD Read Only "ACME" LDAP Example-->
+              <value>war:/conf/organization/picketlink-idm/picketlink-idm-msad-config.xml</value>s
+
+      and set the variable
+
+      .. code:: xml
+
+          <isReadOnly>false</isReadOnly>
+
+      to false in
+      `picketlink-idm-msad-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-config.xml#L192>`__
+      for each attribute.
+
+4. Configure the needed settings: access URL to the directory server, 
+   login and password.
+
+   -  For LDAP (OpenDJ, Open LDAP): Configure this section in
+      `picketlink-idm-ldap-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml>`__
+      file.
+
+      .. code:: xml
+
+			   <option>
+				   <name>providerURL</name>
+				   <value>ldap://localhost:1389</value>
+			   </option>
+			   <option>
+				   <name>adminDN</name>
+				   <value>cn=Directory Manager</value>
+				</option>
+				<option>
+				   <name>adminPassword</name>
+				   <value>password</value>
+			   </option>
+
+   -  For Active directory, configure this section in either
+      `picketlink-idm-msad-config.xml <https://github.com/exo-samples/docs-samples/tree/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-config.xml>`__
+      or
+      `picketlink-idm-msad-readonly-config.xml <https://github.com/exo-samples/docs-samples/tree/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-readonly-config.xml>`__.
+
+      .. code:: xml
+
+                 
+			   <option>
+				   <name>providerURL</name>
+				   <value>[ldap|ldaps]://[msad-host]:[port]</value>
+			   </option>
+			   <option>
+				   <name>adminDN</name>
+				   <value>TEST\Administrator</value>
+			   </option>
+			   <option>
+				   <name>adminPassword</name>
+				   <value>[adminPasswordValue]</value>
+			   </option>
+
+5. If you want to import users from **multiple trees in the same 
+   LDAP/AD**, you should set multiple values for the ``ctxDNs`` as below:
+
+   .. code:: xml
+
+              
+			<option>
+				<name>ctxDNs</name>
+				<value>ou=Organization,o=gatein,dc=test,dc=domain</value>
+				<value>ou=Organization2,o=gatein2,dc=test2,dc=domain2</value>
+				....
+				<value>ou=Organizationx,o=gateinx,dc=testx,dc=domainx</value>
+			</option>
+
+The users of the different trees will be mapped in the platform.
+
+.. _UsersGroupsSynchronization:
+
+Users and groups synchronization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In case you connected eXo Platform to an already populated LDAP/AD, the users
+are added to the platfrom but are inactive. Logging in with an inactive
+user avtivates him. This solution is not efficient in case of a big
+number of users
+
+To activate a big number of users, you should follow the below
+procedure.
+
+1. In your custom extension, create this path if it does not exist
+   ``$PLF\_HOME/webapps/custom-extension/WEB-INF/conf/platform`` 
+   (for Tomcat) and ``$PLF\_HOME/standalone/deployments/platform.ear/custom-extension/WEB-INF/conf/platform``
+   (for Jboss).
+
+2. Add under that path the file
+   `organization-integration-configuration.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/platform/organization-integration-configuration.xml>`__.
+
+3. In the file
+   `configuration.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/META-INF/exo-conf/configuration.xml>`__,
+   add the import instruction:
+
+   .. code:: xml
+
+           <import>war:/conf/platform/organization-integration-configuration.xml</import>
+
+4. After starting the server, use the following REST services url to 
+   make the synchronisation of:
+
+   -  A single user:
+
+      ::
+
+              /portal/rest/management/orgsync/syncUser?username=USERNAME&eventType=EVENT
+
+   -  All users:
+
+      ::
+
+              /portal/rest/management/orgsync/syncAllUser?eventType=EVENT
+
+   -  A single group:
+
+      ::
+
+              /portal/rest/management/orgsync/syncGroup?groupId=GROUP_ID&eventType=EVENT
+
+   -  All groups:
+
+      ::
+
+              /portal/rest/management/orgsync/syncAllGroups?eventType=EVENT
+
+   -  All users and groups:
+
+      ::
+
+              /portal/rest/management/orgsync/syncAll
+
+   Where:
+
+   -  ``USERNAME``\ should be replaced by the username of the user to be
+      activated.
+
+   -  ``GROUP_ID``\ should be replaced by the name of the group to be
+      activated.
+
+   -  ``EVENT``\ should be replaced by one of this three events:
+
+      -  ADDED: When the user or the group to be activated is newly added.
+
+      -  UPDATED: When the user or the group to be synchronized is
+         modified.
+
+      -  DELETED: When the user or the group is deleted from the
+         organization.
+
+5. You can use JMX instead of REST services URLs by invoking the
+   appropriate operation and setting the corresponding event (ADDED,
+   UPDATED or DELETED).
+
+|image1|
 
 
 .. _LDAP.Synchronization:
@@ -2464,275 +2727,6 @@ For more information, refer to `this
 discussion <https://community.exoplatform.com/portal/intranet/forum/topic/topicaf29ef7ca772acc44f16ba9a66b047bf>`__
 or `this
 link <http://www.openldap.org/lists/openldap-software/200505/msg00286.html>`__.
-
-
-==================================================
-eXo Platform configuration with a directory server
-==================================================
-
-In this guide, you will learn how to configure eXo Platform with a
-directory server. It provides a step by step tutorial to help you
-succeed the integration.
-
-.. _SuppportedDS:
-
-Supported directory servers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-eXo Platform can be integrated with a variety of directory servers. 
-For the 5.1 version, this is the list of the supported ones:
-
--  OpenLDAP.
-
--  Active directory: eXo Platform intregration with an Active directory 
-   is only supported in **readOnly**.
-
--  OpenDJ.
-
-Please refer to
-`supported-environments <https://www.exoplatform.com/terms-conditions/supported-environments.pdf>`__
-file for more details.
-
-.. _StepByStepConfigureDS:
-
-Step by step tutorial to configure eXo Platform with a directory server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To configure eXo Platform with LDAP, you need to follow these steps:
-
-1. In your custom extension, create this path if it does not exist
-   ``$PLF\_HOME/webapps/custom-extension/WEB-INF/conf/organization`` (for
-   Tomcat) and
-   ``$PLF\_HOME/standalone/deployments/platform.ear/custom-extension/WEB-INF/conf/organization``
-   (for Jboss).
-
-2. Under this path, put the file `idm-configuration.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/idm-configuration.xml>`__
-
-3. Uncomment the appropriate instruction from this
-   `section <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/idm-configuration.xml#L82-L100>`__
-   defining the path of the picketlink configuration file corresponding 
-   to the used LDAP and the desired mode (read/write or readOnly):
-
-   -  If you want to configure with LDAP (OpenDJ) in readOnly mode, you
-      should uncomment this section:
-
-      .. code:: xml
-
-          <!--Sample LDAP config-->
-              <value>war:/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml</value>
-
-      and set the variable
-
-      .. code:: xml
-
-          <isReadOnly>false</isReadOnly>
-
-      to true in
-      `picketlink-idm-ldap-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml#L193-L209>`__
-      for each attribute.
-
-   -  If you want to configure with LDAP (OpenDJ) in read/Write mode, 
-      you should uncomment this section:
-
-      .. code:: xml
-
-          <!--Sample LDAP config-->
-              <value>war:/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml</value>
-
-      and set the variable
-
-      .. code:: xml
-
-          <isReadOnly>false</isReadOnly>
-
-      to false in
-      `picketlink-idm-ldap-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml#L193-L209>`__
-      for each attribute.
-
-   -  If you want to configure with Active Directory in readOnly mode, 
-      you should uncomment this section:
-
-      .. code:: xml
-
-          <!--MSAD Read Only "ACME" LDAP Example-->
-              <value>war:/conf/organization/picketlink-idm/picketlink-idm-msad-readonly-config.xml</value>
-
-      and set the variable
-
-      .. code:: xml
-
-          <isReadOnly>false</isReadOnly>
-
-      to true in
-      `picketlink-idm-msad-readonly-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-readonly-config.xml#L192-L208>`__
-      for each attribute.
-
-      -  If you want to configure with Active Directory in read/write mode,
-         you should uncomment this section:
- 
-      .. code:: xml
-
-          <!--MSAD Read Only "ACME" LDAP Example-->
-              <value>war:/conf/organization/picketlink-idm/picketlink-idm-msad-config.xml</value>s
-
-      and set the variable
-
-      .. code:: xml
-
-          <isReadOnly>false</isReadOnly>
-
-      to false in
-      `picketlink-idm-msad-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-config.xml#L192>`__
-      for each attribute.
-
-4. Configure the needed settings: access URL to the directory server, 
-   login and password.
-
-   -  For LDAP (OpenDJ, Open LDAP): Configure this section in
-      `picketlink-idm-ldap-config.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-ldap-config.xml>`__
-      file.
-
-      .. code:: xml
-
-			   <option>
-				   <name>providerURL</name>
-				   <value>ldap://localhost:1389</value>
-			   </option>
-			   <option>
-				   <name>adminDN</name>
-				   <value>cn=Directory Manager</value>
-				</option>
-				<option>
-				   <name>adminPassword</name>
-				   <value>password</value>
-			   </option>
-
-   -  For Active directory, configure this section in either
-      `picketlink-idm-msad-config.xml <https://github.com/exo-samples/docs-samples/tree/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-config.xml>`__
-      or
-      `picketlink-idm-msad-readonly-config.xml <https://github.com/exo-samples/docs-samples/tree/master/ldap-extension/src/main/webapp/WEB-INF/conf/organization/picketlink-idm/picketlink-idm-msad-readonly-config.xml>`__.
-
-      .. code:: xml
-
-                 
-			   <option>
-				   <name>providerURL</name>
-				   <value>[ldap|ldaps]://[msad-host]:[port]</value>
-			   </option>
-			   <option>
-				   <name>adminDN</name>
-				   <value>TEST\Administrator</value>
-			   </option>
-			   <option>
-				   <name>adminPassword</name>
-				   <value>[adminPasswordValue]</value>
-			   </option>
-
-5. If you want to import users from **multiple trees in the same 
-   LDAP/AD**, you should set multiple values for the ``ctxDNs`` as below:
-
-   .. code:: xml
-
-              
-			<option>
-				<name>ctxDNs</name>
-				<value>ou=Organization,o=gatein,dc=test,dc=domain</value>
-				<value>ou=Organization2,o=gatein2,dc=test2,dc=domain2</value>
-				....
-				<value>ou=Organizationx,o=gateinx,dc=testx,dc=domainx</value>
-			</option>
-
-The users of the different trees will be mapped in the platform.
-
-.. _UsersGroupsSynchronization:
-
-Users and groups synchronization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In case you connected eXo Platform to an already populated LDAP/AD, the users
-are added to the platfrom but are inactive. Logging in with an inactive
-user avtivates him. This solution is not efficient in case of a big
-number of users
-
-To activate a big number of users, you should follow the below
-procedure.
-
-1. In your custom extension, create this path if it does not exist
-   ``$PLF\_HOME/webapps/custom-extension/WEB-INF/conf/platform`` 
-   (for Tomcat) and ``$PLF\_HOME/standalone/deployments/platform.ear/custom-extension/WEB-INF/conf/platform``
-   (for Jboss).
-
-2. Add under that path the file
-   `organization-integration-configuration.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/WEB-INF/conf/platform/organization-integration-configuration.xml>`__.
-
-3. In the file
-   `configuration.xml <https://github.com/exo-samples/docs-samples/blob/master/ldap-extension/src/main/webapp/META-INF/exo-conf/configuration.xml>`__,
-   add the import instruction:
-
-   .. code:: xml
-
-           <import>war:/conf/platform/organization-integration-configuration.xml</import>
-
-4. After starting the server, use the following REST services url to 
-   make the synchronisation of:
-
-   -  A single user:
-
-      ::
-
-              /portal/rest/management/orgsync/syncUser?username=USERNAME&eventType=EVENT
-
-   -  All users:
-
-      ::
-
-              /portal/rest/management/orgsync/syncAllUser?eventType=EVENT
-
-   -  A single group:
-
-      ::
-
-              /portal/rest/management/orgsync/syncGroup?groupId=GROUP_ID&eventType=EVENT
-
-   -  All groups:
-
-      ::
-
-              /portal/rest/management/orgsync/syncAllGroups?eventType=EVENT
-
-   -  All users and groups:
-
-      ::
-
-              /portal/rest/management/orgsync/syncAll
-
-   Where:
-
-   -  ``USERNAME``\ should be replaced by the username of the user to be
-      activated.
-
-   -  ``GROUP_ID``\ should be replaced by the name of the group to be
-      activated.
-
-   -  ``EVENT``\ should be replaced by one of this three events:
-
-      -  ADDED: When the user or the group to be activated is newly added.
-
-      -  UPDATED: When the user or the group to be synchronized is
-         modified.
-
-      -  DELETED: When the user or the group is deleted from the
-         organization.
-
-5. You can use JMX instead of REST services URLs by invoking the
-   appropriate operation and setting the corresponding event (ADDED,
-   UPDATED or DELETED).
-
-|image1|
-
-
-
-
 
 .. |image0| image:: images/ldap_user.png
 .. |image1| image:: images/JMX.png       
