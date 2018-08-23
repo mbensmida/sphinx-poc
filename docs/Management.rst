@@ -1046,7 +1046,7 @@ follow these steps:
 3. Go to MBeans tab.
 
 4. Navigate in the tree to **exo** --> **portal** --> **notification** 
-   --> statistic to get statistics about eXo Platform notifications.
+   --> **statistic** to get statistics about eXo Platform notifications.
 
 |image1|
 
