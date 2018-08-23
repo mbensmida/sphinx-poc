@@ -97,7 +97,6 @@ easy for readers, this tutorial is divided into four generic cases:
           represents users who are created via eXo Platform UI. The 
           understanding is similar to "*LDAP groups*\ " and "*Platform 
           groups*\ ".
-
 		  The PicketLink IDM framework does not distinguish between
 		  LDAP-to-Platform and Platform-to-LDAP mapping, so the 
 		  configuration is basically the same, but the effect of some 
@@ -650,7 +649,7 @@ provided in the *PortalLDAPStore*:
 **Read-only mode**
 
 The Read-only mode is Repository configuration. It is an option of the
-repository that prevents PRODUCT from writing to the LDAP directory. In
+repository that prevents eXo Platform from writing to the LDAP directory. In
 the Quick start, this option is omitted so the mode is read-write. To
 enable the read-only mode, set the option to **true**:
 
@@ -1495,7 +1494,7 @@ implementations, for example, one is MSAD and the other is OpenLDAP.
 .. note:: It is quite simple if all the LDAP stores are Read-only. But, in Read-Write mode it is important to be aware that all users and groups will be saved to only one store, and it should be the first store.
 
 In other words, it is no use to set the second repository to the
-Read-Write mode. When a user is created in PRODUCT, the identity object
+Read-Write mode. When a user is created in eXo Platform, the identity object
 will be saved in the first LDAP store if it is a Read-Write one. And if
 not, it will be saved in IDM (SQL) database, not in second LDAP store at
 all.
@@ -1572,7 +1571,7 @@ LDAP, here is the suggested configuration:
 -  If in LDAP directories there are two users with the same username,
    for example: ``uid=john,ou=Employees,dc=example,dc=com`` and
    ``uid=john,ou=People,dc=example,dc=net``, only one of them will be
-   mapped into PRODUCT.
+   mapped into eXo Platform.
 
 -  You should keep the groups and memberships separated between the two
    directories. For example:
