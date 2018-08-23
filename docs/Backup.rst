@@ -176,12 +176,11 @@ SQL Databases
 ~~~~~~~~~~~~~~
 
 Check your database configurations to see which databases are being
-used. The database configurations are described in `Configuring
-eXo Platform <Database.ConfiguringPLF>` of the Database configuration 
-section.
+used. The database configurations are described in :ref:`Configuring eXo Platform <Database.ConfiguringPLF>` 
+of the Database configuration section.
 
-There should be three `datasources <Database.ConfiguringPLF>`: JCR, IDM 
-and JPA.
+There should be three :ref:`datasources <Database.ConfiguringPLF>`: JCR, 
+IDM  and JPA.
 
 You should backup and restore the whole database. If you want to backup
 and restore tables separately, make sure your backup parts are
@@ -198,8 +197,12 @@ name is *exochat*:
 
 -  Against a non-authentication MongoDB server:
 
+::
+
    mongodump --db exochat --out /path/to/store/the/backup
+   
 -  Against a secured MongoDB server:
 
-   mongodump --host {host} --port {port} --username {username}
-   --password {password} --db {dbName} --out "{backup\_folder}"
+::
+
+   mongodump --host {host} --port {port} --username {username} --password {password} --db {dbName} --out "{backup\_folder}"
