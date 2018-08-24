@@ -474,6 +474,7 @@ Before the upgrade, you need to:
    and estimate the upgrade time.
 
 .. note:: The dry-run upgrade allows you to:
+
 			-  Detect and handle issues to make sure they will not happen during the real upgrade.
 			-  Estimate how long the upgrade will take in your production environment.
 			-  Find out if you need to adjust anything to make your upgrade faster and more efficient.
