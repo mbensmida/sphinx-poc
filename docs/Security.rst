@@ -58,7 +58,7 @@ This section explains:
 What is JAAS Realm?
 ~~~~~~~~~~~~~~~~~~~~
 
-The JAAS configuration requires a `login.config file <https://docs.oracle.com/javase/1.5.0/docs/guide/security/jaas/tutorials/LoginConfigFile.html>__. 
+The JAAS configuration requires a `login.config file <https://docs.oracle.com/javase/1.5.0/docs/guide/security/jaas/tutorials/LoginConfigFile.html>`__. 
 This file contains one (or more) entry which is called a "Realm". Each 
 entry declares a Realm name and at least one login module. Each login 
 module consists of a Java class and some parameters which are specified 
@@ -633,7 +633,7 @@ default one.
 
    ::
 		keytool -genseckey -alias "customAlias" -keypass "customKeyPass" -keyalg "customAlgo" -keystore "customStore" -storepass "customStorePass" -storetype "customStoreType"
-    ``
+
 
 The file name will be the parameter *keystore* ("customStore" in the
 example). The valid value of algorithms and other parameters can be
