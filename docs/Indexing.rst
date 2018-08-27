@@ -146,8 +146,10 @@ Hot asynchronous workspace re-indexing via JMX
 		  start-up re-indexing using the ``getHotReindexingState``
 		  command in the JMX interface. However there are some common 
 		  JMX operations:
-		  -  getIOMode: return the current index IO mode (READ\_ONLY / READ\_WRITE), belongs to clustered configuration states.
-		  -  getState: return the current state (ONLINE / OFFLINE).
+		  
+			-  getIOMode: return the current index IO mode (READ\_ONLY / READ\_WRITE), belongs to clustered configuration states.
+		  
+			-  getState: return the current state (ONLINE / OFFLINE).
 
 Some hard system faults, errors during upgrades, migration issues and
 some other factors may corrupt the index. End customers would most
