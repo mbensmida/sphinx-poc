@@ -21,7 +21,8 @@ Elasticsearch
 
 .. note:: With eXo Platform 4.4, the embedded mode is bundled by default with the platform as an add-on.
 
-    This chapter covers the following topics:
+
+This chapter covers the following topics:
 
     -  :ref:`Elasticsearch configuration for embedded mode <Elasticsearch.ES_Embedded>`
        Configuration for Elasticsearch embedded mode.
