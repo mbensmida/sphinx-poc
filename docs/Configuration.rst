@@ -828,7 +828,7 @@ Datasource
 | name <Database.JNDI>`       | name.            |                             |
 +-----------------------------+------------------+-----------------------------+
 | :ref:`exo.idm.datasource.   | IDM datasource   | java:/comp/env/exo-idm      |
-|name <Database.JNDI>`        | name.            |                             |
+| name <Database.JNDI>`       | name.            |                             |
 +-----------------------------+------------------+-----------------------------+                                                                      
 .. _ClusteringProperties:
 
@@ -5210,10 +5210,9 @@ Chat Server
 | ``chatCronNotifCle | *0 0/60 \* \* \*   | The notifications are cleaned up     |
 | anup``             | ?*                 | every one hour by default. To learn  |
 |                    |                    | the syntax of Cron expression, see   |
-|                    |                    | `Scheduled synchronization,          |
+|                    |                    | :ref:`Scheduled synchronization,     |
 |                    |                    | Administrator                        |
-|                    |                    | guide <#PLFAdminGuide.LDAP.Synchroni |
-|                    |                    | zation.ScheduledJob>`__.             |
+|                    |                    | guide <ScheduledSynchronization>`    |
 +--------------------+--------------------+--------------------------------------+
 | ``teamAdminGroup`` | */platform/adminis | The eXo group who can create teams.  |
 |                    | trators*           |                                      |
