@@ -824,71 +824,69 @@ Datasource
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `exo.jcr.datasource.name <# | JCR datasource   | java:/comp/env/exo-jcr      |
-| PLFAdminGuide.Database.JNDI | name.            |                             |
-| >`__                        |                  |                             |
+| :ref:`exo.jcr.datasource.   | JCR datasource   | java:/comp/env/exo-jcr      |
+| name <Database.JNDI>`       | name.            |                             |
 +-----------------------------+------------------+-----------------------------+
-| `exo.idm.datasource.name <# | IDM datasource   | java:/comp/env/exo-idm      |
-| PLFAdminGuide.Database.JNDI | name.            |                             |
-| >`__                        |                  |                             |
+| :ref:`exo.idm.datasource.   | IDM datasource   | java:/comp/env/exo-idm      |
+|name <Database.JNDI>`        | name.            |                             |
 +-----------------------------+------------------+-----------------------------+                                                                      
 .. _ClusteringProperties:
 
 Clustering
 ~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| exo.cluster.partition.name  | Give a string to | DefaultPartition            |
-|                             | identify your    |                             |
-|                             | cluster, to      |                             |
-|                             | avoid conflict   |                             |
-|                             | with other       |                             |
-|                             | clusters in the  |                             |
-|                             | network.         |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.tc | JGroups          |                             |
-| p\* <#PLFAdminGuide.Cluster | configuration    |                             |
-| ing.JGroups.JCR.TCP>`__     | for JCR using    |                             |
-|                             | TCP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.ud | JGroups          |                             |
-| p.\* <#PLFAdminGuide.Cluste | configuration    |                             |
-| ring.JGroups.JCR.UDP>`__    | for JCR using    |                             |
-|                             | UDP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.cluster.jgroups.tc | JGroups          |                             |
-| p\* <#PLFAdminGuide.Cluster | configuration    |                             |
-| ing.JGroups.IDM.TCP>`__     | for IDM using    |                             |
-|                             | TCP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.cluster.jgroups.ud | JGroups          |                             |
-| p.\* <#PLFAdminGuide.Cluste | configuration    |                             |
-| ring.JGroups.IDM.UDP>`__    | for IDM using    |                             |
-|                             | UDP.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.co | Path to your     |                             |
-| nfig <#PLFAdminGuide.Cluste | customized       |                             |
-| ring.JGroups_xml>`__        | JGroups          |                             |
-|                             | configuration    |                             |
-|                             | file, applied to |                             |
-|                             | JCR.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.jcr.cluster.jgroups.co | URL to your      |                             |
-| nfig-url <#PLFAdminGuide.Cl | customized       |                             |
-| ustering.JGroups_xml>`__    | JGroups          |                             |
-|                             | configuration    |                             |
-|                             | file, applied to |                             |
-|                             | JCR.             |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.idm.cluster.jgroups.co | Path to your     |                             |
-| nfig <#PLFAdminGuide.Cluste | customized       |                             |
-| ring.JGroups_xml>`__        | JGroups          |                             |
-|                             | configuration    |                             |
-|                             | file, applied to |                             |
-|                             | IDM.             |                             |
-+-----------------------------+------------------+-----------------------------+                           
++------------------------------+------------------+-----------------------------+
+| Name                         | Description      | Default                     |
++==============================+==================+=============================+
+| exo.cluster.partition.name   | Give a string to | DefaultPartition            |
+|                              | identify your    |                             |
+|                              | cluster, to      |                             |
+|                              | avoid conflict   |                             |
+|                              | with other       |                             |
+|                              | clusters in the  |                             |
+|                              | network.         |                             |
++------------------------------+------------------+-----------------------------+
+| :ref:`exo.jcr.cluster.jgroups| JGroups          |                             |
+| .tcp.\*                      | configuration    |                             |
+| <Clustering.JGroups.JCR.TCP>`| for JCR using    |                             |
+|                              | TCP.             |                             |
++------------------------------+------------------+-----------------------------+
+| :ref:`exo.jcr.cluster.jgroups| JGroups          |                             |
+| .udp.\*                      | configuration    |                             |
+| <Clustering.JGroups.JCR.UDP>`| for JCR using    |                             |
+|                              | UDP.             |                             |
++------------------------------+------------------+-----------------------------+
+| :ref:`exo.idm.cluster.jgroups| JGroups          |                             |
+| .tcp\*                       | configuration    |                             |
+| <Clustering.JGroups.IDM.TCP>`| for IDM using    |                             |
+|                              | TCP.             |                             |
++------------------------------+------------------+-----------------------------+
+| :ref:`exo.idm.cluster.jgroups| JGroups          |                             |
+| .udp.\*                      | configuration    |                             |
+| <Clustering.JGroups.IDM.TCP>`| for IDM using    |                             |
+|                              | UDP.             |                             |
++------------------------------+------------------+-----------------------------+
+| :ref:`exo.jcr.cluster.jgroups| Path to your     |                             |
+| .config                      | customized       |                             |
+| <Clustering.JGroupsXml>`     | JGroups          |                             |
+|                              | configuration    |                             |
+|                              | file, applied to |                             |
+|                              | JCR.             |                             |
++------------------------------+------------------+-----------------------------+
+| :ref:`exo.jcr.cluster.jgroups| URL to your      |                             |
+| .config-url                  | customized       |                             |
+| <Clustering.JGroupsXml>`     | JGroups          |                             |
+|                              | configuration    |                             |
+|                              | file, applied to |                             |
+|                              | JCR.             |                             |
++------------------------------+------------------+-----------------------------+
+| :ref:`exo.idm.cluster.jgroups| Path to your     |                             |
+| .config                      | customized       |                             |
+| <Clustering.JGroupsXml>`     | JGroups          |                             |
+|                              | configuration    |                             |
+|                              | file, applied to |                             |
+|                              | IDM.             |                             |
++------------------------------+------------------+-----------------------------+                           
 
 .. _QuartzSchedulerProperties:
 
@@ -1337,36 +1335,37 @@ MongoDB configuration
 +-----------------------------+------------------+-----------------------------+
 | Name                        | Description      | Default                     |
 +=============================+==================+=============================+
-| `dbServerType <#PLFAdminGui | Allows to define | mongo                       |
-| de.Database.ChatDatabase>`_ | MongoDB type:    |                             |
-| _                           | either Mongo or  |                             |
+| :ref:`dbServerType          | Allows to define | mongo                       |
+| <Database.ChatDatabase>`    | MongoDB type:    |                             |
+|                             | either Mongo or  |                             |
 |                             | embed. Embed     |                             |
 |                             | value is used    |                             |
 |                             | for unit tests.  |                             |
 +-----------------------------+------------------+-----------------------------+
-| `dbServerHost <#PLFAdminGui | The host name or | localhost                   |
-| de.Database.ChatDatabase>`_ | IP of MongoDB.   |                             |
-| _                           |                  |                             |
+| :ref:`dbServerHost          | The host name or | localhost                   |
+| <Database.ChatDatabase>`    | IP of MongoDB.   |                             |
+|                             | (deprecated)     |                             |
 +-----------------------------+------------------+-----------------------------+
-| `dbServerPort <#PLFAdminGui | The port number  | 27017                       |
-| de.Database.ChatDatabase>`_ | to connect to    |                             |
-| _                           | MongoDB host.    |                             |
+| :ref:`dbServerPort          | The port number  | 27017                       |
+| <Database.ChatDatabase>`    | to connect to    |                             |
+|                             | MongoDB host.    |                             |
+|                             |(deprecated)      |                             |
 +-----------------------------+------------------+-----------------------------+
-| `dbServerHosts <#PLFAdminGu | The MongoDB      | localhost:27017             |
-| ide.Database.ChatDatabase>` | nodes to connect |                             |
-| __                          | to, as a         |                             |
+| :ref:`dbServerHosts         | The MongoDB      | localhost:27017             |
+| <Database.ChatDatabase>`    | nodes to connect |                             |
+|                             | to, as a         |                             |
 |                             | comma-separated  |                             |
 |                             | list of          |                             |
 |                             | <host:port>      |                             |
 |                             | values.          |                             |
 +-----------------------------+------------------+-----------------------------+
-| `dbName <#PLFAdminGuide.Dat | Name of the      | chat                        |
-| abase.ChatDatabase>`__      | Mongo database   |                             |
+| :ref:`dbName                | Name of the      | chat                        |
+| <Database.ChatDatabase>`    | Mongo database   |                             |
 |                             | name.            |                             |
 +-----------------------------+------------------+-----------------------------+
-| `dbAuthentication <#PLFAdmi | Enables or       | false                       |
-| nGuide.Database.ChatDatabas | disables         |                             |
-| e>`__                       | authentication   |                             |
+| :ref:`dbAuthentication      | Enables or       | false                       |
+| <Database.ChatDatabase>`    | disables         |                             |
+|                             | authentication   |                             |
 |                             | to access        |                             |
 |                             | MongoDB. When    |                             |
 |                             | set to true this |                             |
@@ -1374,79 +1373,59 @@ MongoDB configuration
 |                             | authentication   |                             |
 |                             | is required.     |                             |
 +-----------------------------+------------------+-----------------------------+
-| `dbUser <#PLFAdminGuide.Dat | Provide the      | EMPTY                       |
-| abase.ChatDatabase>`__      | username to      |                             |
+| :ref:`dbUser                | Provide the      | EMPTY                       |
+| <Database.ChatDatabase>`    | username to      |                             |
 |                             | access the       |                             |
 |                             | database if      |                             |
 |                             | authentication   |                             |
 |                             | needed.          |                             |
 +-----------------------------+------------------+-----------------------------+
-| `dbPassword <#PLFAdminGuide | Provide the      | EMPTY                       |
-| .Database.ChatDatabase>`__  | password to      |                             |
+| :ref:`dbPassword            | Provide the      | EMPTY                       |
+| <Database.ChatDatabase>`    | password to      |                             |
 |                             | access the       |                             |
 |                             | database if      |                             |
 |                             | authentication   |                             |
 |                             | needed.          |                             |
 +-----------------------------+------------------+-----------------------------+
-| `chatPassPhrase <#PLFAdminG | The password to  | chat                        |
-| uide.ChatAdministration.Con | access REST      |                             |
-| figuration.ChatServer>`__   | service on the   |                             |
+| :ref:`chatPassPhrase        | The password to  | chat                        |
+| <ChatServerConf>`           | access REST      |                             |
+|                             | service on the   |                             |
 |                             | eXo Chat         |                             |
 |                             | server.          |                             |
 +-----------------------------+------------------+-----------------------------+
-| `chatCronNotifCleanup <#PLF | The frequency of | 0 0/60 \* \* \* ?           |
-| AdminGuide.ChatAdministrati | cleaning eXo     |                             |
-| on.Configuration.ChatServer | Chat             |                             |
-| >`__                        | notifications.Th |                             |
+| :ref:`chatCronNotifCleanup  | The frequency of | 0 0/60 \* \* \* ?           |
+| <ChatServerConf>`           | cleaning eXo     |                             |
+|                             | Chat             |                             |
+|                             | notifications.Th |                             |
 |                             | ey               |                             |
 |                             | are cleaned up   |                             |
 |                             | every one hour   |                             |
 |                             | by default.      |                             |
 +-----------------------------+------------------+-----------------------------+
-| `teamAdminGroup <#PLFAdminG | The eXo group    | /platform/administrators    |
-| uide.ChatAdministration.Con | who can create   |                             |
-| figuration.ChatServer>`__   | teams.           |                             |
+| :ref:`chatReadTotalJson     | The number of    | 200                         |
+| <ChatServerConf>`           | messages that    |                             |
+|                             | you can get in   |                             |
+|                             | the Chat room.   |                             |
 +-----------------------------+------------------+-----------------------------+
-| `chatReadDays <#PLFAdminGui | Number of days   | 30 (days)                   |
-| de.ChatAdministration.Confi | to display the   |                             |
-| guration.ChatServer>`__     | corresponding    |                             |
-|                             | chat messages.   |                             |
+| :ref:`chatIntervalChat      | Time interval to | 5000                        |
+| <ChatClientUpdates>`        | refresh messages |                             |
+|                             | in a chat.       |                             |
 +-----------------------------+------------------+-----------------------------+
-| `chatReadTotalJson <#PLFAdm | The number of    | 200                         |
-| inGuide.ChatAdministration. | messages that    |                             |
-| Configuration.ChatServer>`_ | you can get in   |                             |
-| _                           | the Chat room.   |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalChat <#PLFAdmi | Time interval to | 5000                        |
-| nGuide.ChatAdministration.C | refresh messages |                             |
-| onfiguration.ChatClientUpda | in a chat.       |                             |
-| tes>`__                     |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalSession <#PLFA | Time interval to | 60000                       |
-| dminGuide.ChatAdministratio | keep a chat      |                             |
-| n.Configuration.ChatClientU | session alive in |                             |
-| pdates>`__                  | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalStatus <#PLFAd | Time interval to | 60000                       |
-| minGuide.ChatAdministration | refresh user     |                             |
-| .Configuration.ChatClientUp | status in        |                             |
-| dates>`__                   | milliseconds.    |                             |
-+-----------------------------+------------------+-----------------------------+
-| `chatIntervalNotif <#PLFAdm | Time interval to | 5000                        |
-| inGuide.ChatAdministration. | refresh          |                             |
-| Configuration.ChatClientUpd | Notifications in |                             |
-| ates>`__                    | the main menu in |                             |
+| :ref:`chatIntervalSession   | Time interval to | 60000                       |
+| <ChatClientUpdates>`        | keep a chat      |                             |
+|                             | session alive in |                             |
 |                             | milliseconds.    |                             |
 +-----------------------------+------------------+-----------------------------+
-| `chatIntervalUsers <#PLFAdm | Time interval to | 60000                       |
-| inGuide.ChatAdministration. | refresh Users    |                             |
-| Configuration.ChatClientUpd | list in          |                             |
-| ates>`__                    | milliseconds.    |                             |
+| :ref:`chatIntervalNotif     | Time interval to | 5000                        |
+| <ChatClientUpdates>`        | refresh          |                             |
+|                             | Notifications in |                             |
+|                             | the main menu in |                             |
+|                             | milliseconds.    |                             |
 +-----------------------------+------------------+-----------------------------+
-| `chatTokenValidity <#PLFAdm | Time after which | 60000                       |
-| inGuide.ChatAdministration. | a token will be  |                             |
-| Configuration.ChatClientUpd | invalid. The use |                             |
-| ates>`__                    | will then be     |                             |
+| :ref:`chatTokenValidity     | Time after which | 60000                       |
+| <ChatClientUpdates>`        | a token will be  |                             |
+|                             | invalid. The use |                             |
+|                             | will then be     |                             |
 |                             | considered       |                             |
 |                             | offline.         |                             |
 +-----------------------------+------------------+-----------------------------+
@@ -1471,30 +1450,30 @@ Groovy templates statistics
 CometD configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------+------------------+-----------------------------+
-| Name                        | Description      | Default                     |
-+=============================+==================+=============================+
-| `exo.cometd.oort.url <#PLFA | The CometD Oort  | "http://localhost:8080/come |
-| dminGuide.Clustering.Settin | URL used in      | td/cometd",                 |
-| gUpCluster>`__              | clustering mode. | localhost should be         |
-|                             |                  | replaced by the hostname or |
-|                             |                  | the IP of the cluster node. |
-+-----------------------------+------------------+-----------------------------+
-| `exo.cometd.oort.configType | The CometD       | multicast                   |
-| <#PLFAdminGuide.Clustering  | configuration    |                             |
-| .SettingUpCluster>`__       | type which could |                             |
-|                             | be either        |                             |
-|                             | "static" or      |                             |
-|                             | "multicast".     |                             |
-+-----------------------------+------------------+-----------------------------+
-| `exo.cometd.oort.cloud <#PL | A                |                             |
-| FAdminGuide.Clustering.Sett | comma-separated  |                             |
-| ingUpCluster>`__            | list of URLs of  |                             |
-|                             | other Oort       |                             |
-|                             | comets to        |                             |
-|                             | connect to at    |                             |
-|                             | startup.         |                             |
-+-----------------------------+------------------+-----------------------------+                                      
++-------------------------------+------------------+-----------------------------+
+| Name                          | Description      | Default                     |
++===============================+==================+=============================+
+| :ref:`exo.cometd.oort.url     | The CometD Oort  | "http://localhost:8080/come |
+| <Clustering.SettingUpCluster>`| URL used in      | td/cometd",                 |
+|                               | clustering mode. | localhost should be         |
+|                               |                  | replaced by the hostname or |
+|                               |                  | the IP of the cluster node. |
++-------------------------------+------------------+-----------------------------+
+| :ref:`exo.cometd.oort.        | The CometD       | multicast                   |
+| configType                    | configuration    |                             |
+| <Clustering.SettingUpCluster>`| type which could |                             |
+|                               | be either        |                             |
+|                               | "static" or      |                             |
+|                               | "multicast".     |                             |
++-------------------------------+------------------+-----------------------------+
+| :ref:`exo.cometd.oort.cloud   | A                |                             |
+| <Clustering.SettingUpCluster>`| comma-separated  |                             |
+|                               | list of URLs of  |                             |
+|                               | other Oort       |                             |
+|                               | comets to        |                             |
+|                               | connect to at    |                             |
+|                               | startup.         |                             |
++-------------------------------+------------------+-----------------------------+                                      
 
 .. _LastLoginTimeProperty:
  
