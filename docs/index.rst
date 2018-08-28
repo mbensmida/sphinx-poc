@@ -8,6 +8,7 @@ Welcome to eXo Platform documentation!
 
 The main guides in eXo Platform documentation:
 
+* :ref:`whatsnew`
 * :ref:`user-docs`
 * :ref:`admin-docs`
 * :ref:`dev-docs`
@@ -16,6 +17,14 @@ The main guides in eXo Platform documentation:
 * :ref:`reference-JCR-docs`
 * :ref:`reference-eXo-foundations-docs`
 * :ref:`reference-platform-docs`
+
+.._whatsnew:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: What's new in eXo Platform 5.1?
+   
+   whatsnew
 
 .. _user-docs:
 
