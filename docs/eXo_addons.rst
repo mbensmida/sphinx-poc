@@ -159,8 +159,7 @@ Or:
 By using the ``addon install addonId`` command only, the most recent
 stable version of the add-on will be installed. Before choosing a
 specific version for installation you should check all related
-information of this add-on by using `Describing
-command <#PLFAdminGuide.AddonsManagement.Describing>`__.
+information of this add-on by using :ref:`Describing command <AddonsManagement.Describing>`.
 
 Also, add the following options:
 

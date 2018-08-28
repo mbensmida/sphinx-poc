@@ -1648,7 +1648,7 @@ Data directory configuration
 =============================
 
 JCR data is stored in both SQL databases and File System. JCR Database
-configuration is explained in `Database <#PLFAdminGuide.Database>`__.
+configuration is explained in :ref:`Database <Database>`.
 The JCR File System configuration is explained in this section.
 
 Typically, the JCR File System data consists of four folders:
@@ -1661,8 +1661,7 @@ Typically, the JCR File System data consists of four folders:
    another directory can be used as a secondary, dedicated storage for
    BLOB data. It is optional and you can configure to not store BLOB
    data in File System, by changing the default configuration in the
-   `exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
-   file.
+   :ref:`exo.properties <Configuration.ConfigurationOverview>` file.
 
    ::
 
@@ -1690,8 +1689,7 @@ In Tomcat, the directory is configured by the environment variable
     EXO_DATA_DIR=/mnt/nfs/shared/exo/data
 
 You need to create the script file by copying/renaming the sample
-``bin/setenv-customize.sample.(sh|bat)``. See `Customizing environment
-variables <#PLFAdminGuide.InstallationAndStartup.CustomizingEnvironmentVariables>`__
+``bin/setenv-customize.sample.(sh|bat)``. See :ref:`Customizing environment variables <CustomizingEnvironmentVariables>`
 for more information.
 
 **Configuration in Platform JBoss**
@@ -1710,7 +1708,7 @@ like below:
 
 Note that if you are configuring the cluster mode, the configuration
 might be different. The file should be ``standalone-exo-cluster.xml``
-and the property should be ``exo.shared.dir``. See :ref:`Setting up eXo Platform cluster <#PLFAdminGuide.Clustering.SettingUpCluster>`.
+and the property should be ``exo.shared.dir``. See :ref:`Setting up eXo Platform cluster <Clustering.SettingUpCluster>`.
 
 .. _AssetsVersionConf:    
 
@@ -1792,10 +1790,8 @@ By default, here are Quartz properties:
         
 
 More details about the definition and default values of the above
-properties could be found in the table `Properties
-reference <#PLFAdminGuide.Configuration.Properties_reference>`__. You
-can also refer to `Quartz Configuration
-Reference <http://www.quartz-scheduler.org/documentation/quartz-2.x/configuration/>`__
+properties could be found in the table :ref:`Properties reference <Configuration.PropertiesReference>`. 
+You can also refer to `Quartz Configuration Reference <http://www.quartz-scheduler.org/documentation/quartz-2.x/configuration/>`__
 documentation for more details about quartz parameters.
 
 .. _Configuration.CustomizeMultiupload:
@@ -2035,8 +2031,8 @@ In configuration, you need to provide your account and password, and
 other information so that eXo Platform can connect to the SMTP server.
 
 The configuration file
-`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
-is as follows:
+:ref:`exo.properties <Configuration.ConfigurationOverview>` is as 
+follows:
 
 Here is the default configuration (it will not work of course, you will
 need to edit it):
@@ -2418,8 +2414,7 @@ that enhances processing different file types much.
 JODConverter is activated by default. You can deactivate it (and
 consequently not use the preview feature) by setting
 ``exo.jodconverter.enable=false`` in
-`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
-file.
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
 
 **Configurations**
 
@@ -2755,8 +2750,7 @@ of spaces: visible and hidden.
 
 The group of spaces administrators could be defined by adding this
 property to
-`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
-file:
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file:
 
 -  ``exo.social.spaces.administrators``
 
@@ -2887,7 +2881,7 @@ explanation of properties used for eXo Platform caches.
 
 		-  :ref:`Cache Levels <MonitoringGadget.CacheLevels>` in User Guide.
 
-		-  :ref:`Cache management view <#PLFAdminGuide.Management.ManagementViews.CacheManagementView>`.
+		-  :ref:`Cache management view <Management.ManagementViews.CacheManagementView>`.
 
 .. _PortalCaches:
 
@@ -4421,8 +4415,7 @@ folder. Also note that the folder of gadgets files will be
 To change ``exo.conf.dir``:
 
 -  In Tomcat: customize the variable
-   ``EXO_CONF_DIR=/path/to/your/folder`` (see `Customizing
-   variables <#PLFAdminGuide.InstallationAndStartup.CustomizingEnvironmentVariables>`__
+   ``EXO_CONF_DIR=/path/to/your/folder`` (see :ref:`Customizing variables <CustomizingEnvironmentVariables>`
    for how-to).
 
 -  In JBoss: edit the property ``exo.conf.dir`` in
@@ -4654,9 +4647,9 @@ When deployed as embedded, the `Elasticsearch configuration
 files <https://www.elastic.co/guide/en/elasticsearch/reference/2.3/setup-configuration.html>`__
 (elasticsearch.yml and logging.yml) are embedded in the add-on. All the
 properties can be set directly in
-`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`__
-and will override the default properties defined in elasticsearch.yml
-and logging.yml.
+:ref:`exo.properties <Configuration.ConfigurationOverview>` and will 
+override the default properties defined in ``elasticsearch.yml`` and 
+``logging.yml``.
 
 .. _ESEmbeddedMode:
 
@@ -4728,7 +4721,7 @@ The properties below allow to configure indexing parameters such as the
 number of shards, replicas, batch size...
 
 For more details about indexing with Elasticseach, you can take a look
-in this :ref:`documentation <#PLFAdminGuide.Elasticsearch.ES_IndexArchitecture>`.
+in this :ref:`documentation <Elasticsearch.ESIndexArchitecture>`.
 
 ::
 
@@ -4849,8 +4842,7 @@ file.
    This is the Cron expression to schedule the daily emails. By default
    it is *0 0 23 ? \* \** (11:00pm every day).
 
-   Learn to write Cron expression string
-   :ref:`here <#PLFAdminGuide.LDAP.Synchronization.ScheduledJob>`.
+   Learn to write Cron expression string :ref:`here <ScheduledSynchronization>`.
 
 -  ``exo.notification.NotificationWeeklyJob.expression``
 
@@ -5082,8 +5074,8 @@ File storage configuration
 
 With eXo Platform 4.4 version, a new file storage subsystem has been
 introduced besides JCR. It's currently used for wiki attachments and
-user and space profile pictures. Read more in :ref:`File Storage <#PLFAdminGuide.Database.FileStorage>`. A property allows to
-indicate which file storage method should be used:
+user and space profile pictures. Read more in :ref:`File Storage <Database.FileStorage>`. 
+A property allows to indicate which file storage method should be used:
 
 ::
 
@@ -5182,7 +5174,7 @@ Database
 
 Generally, you do not need to configure those unless you have secured
 your MongoDB. See details about connecting to secured MongoDB in
-:ref:`Secured MongoDB <#PLFAdminGuide.Security.MongoDBSecure>`.
+:ref:`Secured MongoDB <Security.MongoDBSecure>`.
 
 .. _ChatMailServerConf:
 
