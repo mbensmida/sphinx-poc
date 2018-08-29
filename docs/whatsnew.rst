@@ -185,7 +185,7 @@ Many other improvements and refinements were also done in :
 .. |image3| image:: images/multi_upload.png
 .. |image4| image:: images/like_comments.png
 .. |image5| image:: images/reply_comment.png
-.. |image6| image:: images/resize_image.pn
+.. |image6| image:: images/resize_image.png
 .. |image7| image:: images/web_conf1.png
 .. |image8| image:: images/web_conf2.png
 .. |image9| image:: images/Lecko_analytics.png
