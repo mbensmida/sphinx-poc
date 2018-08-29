@@ -27,10 +27,6 @@ The main guides in eXo Platform documentation:
    whatsnew
    
 .. _user-docs:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: User Guide
    
 This user guide covers all the basic and advanced features/functions 
 that are available in eXo Platform. Throughout a series of in-depth 
@@ -40,7 +36,11 @@ implementing eXo Platform.
 This guide assumes that you are using the defaults (for example, user 
 interface and functions) provided in eXo Platform. To make easy for 
 readers when approaching eXo Platform, this guide is organized into the 
-following chapters:   
+following chapters: 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: User Guide  
    
    introduction
    GettingStarted
@@ -58,10 +58,6 @@ following chapters:
    Administration
    
 .. _admin-docs: 
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Administrator Guide
    
 This guide is designed for:
 
@@ -75,6 +71,9 @@ Throughout the guide, you can do many administrative tasks when
 implementing eXo Platform. The administration of eXo Platform is 
 categorized into the followings:   
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Administrator Guide
    
    Installation
    eXo_addons
@@ -92,10 +91,6 @@ categorized into the followings:
    Indexing
 
 .. _dev-docs:  
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Developer Guide 
    
 **What you will learn**
 
@@ -129,7 +124,11 @@ following this guide.
 **What this guide covers**
 
 This guide consists of the following chapters: 
-   
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Developer Guide 
+      
    GetStarted
    Dev_eXo_Addons
    Customizing_site
