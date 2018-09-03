@@ -687,8 +687,8 @@ For usage example, after installing GIT and Maven, you can build eXo Platform
 in some steps:
 
 1. Check out the project:
-
    ::
+   
 		git clone git@github.com:exoplatform/platform-public-distributions
 
 2. Go to the *platform-public-distributions* directory and build the
