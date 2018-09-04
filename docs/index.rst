@@ -11,7 +11,7 @@ The main guides in eXo Platform documentation:
 * :ref:`whatsnew`
 * :ref:`user-docs`
 * :ref:`admin-docs`
-* :ref:`dev-docs`
+* :ref:`developer-docs`
 * :ref:`addons-docs`
 * :ref:`mobile-docs`
 * :ref:`reference-JCR-docs`
@@ -68,7 +68,7 @@ The main guides in eXo Platform documentation:
    Elasticsearch
    Indexing
 
-.. _dev-docs:  
+.. _developer-docs:  
 
 .. toctree::
    :maxdepth: 2
