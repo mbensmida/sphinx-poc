@@ -24,8 +24,9 @@ This chapter covers:
    Setting.
 
 .. note:: **Assumed Knowledge**
+
           eXo Platform is fully configurable for internationalization; however, users should have a general knowledge of Internationalization in Java products before attempting these configurations.
-		  Oracle Java hosts a comprehensive guide to internationalize Java products at `<http://docs.oracle.com/javase/tutorial/i18n/TOC.html>http://docs.oracle.com/javase/tutorial/i18n/TOC.html `__.
+		  Oracle Java hosts a comprehensive guide to internationalize Java products `here <http://docs.oracle.com/javase/tutorial/i18n/TOC.html>http://docs.oracle.com/javase/tutorial/i18n/TOC.html>`__.
 
 All eXo Platform applications contain property files for various 
 languages.
@@ -65,6 +66,7 @@ From a portlet, you can then access translations from the portlet itself
 or shared at the portal level, both are aggregated when you need them.
 
 .. note:: **Translation in XML format**
+
 		  It is also possible to use a proprietary XML format to define
 		  translations. This is a more convenient way for some languages, such
 		  as Japanese, Arabic or Russian. Property files have to be ISO 8859-1
@@ -132,7 +134,7 @@ the following code:
     </locales-config>
 
 -  *locale*: This has to be defined, such as
-   ` <http://ftp.ics.uci.edu-pub-ietf-http-related-iso639.txt>`__. In
+   ` http://ftp.ics.uci.edu-pub-ietf-http-related-iso639.txt <http://ftp.ics.uci.edu-pub-ietf-http-related-iso639.txt>`__. In
    this example, "*ar*\ " is Arabic.
 
 -  *output-encoding*: This deals with the character encoding. It is
