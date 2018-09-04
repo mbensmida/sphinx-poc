@@ -255,9 +255,10 @@ permissions, move applications and containers (optional). Also, the
         </container>
     </page>
 
+
 .. _PLFDevGuide.Site.CreateNew:
 
-====================
+===================
 Creating a new site
 ===================
 
