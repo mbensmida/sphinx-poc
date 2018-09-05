@@ -400,8 +400,7 @@ section for details. Also, you can see the full configuration of the
 		</configuration>
 
 .. note:: To further understand the template plugin, you can refer to the
-          `Template <../../../reference/html/PLFRefGuide.Configurations.ExternalComponentPlugins.Content.TemplatePlugin.html>`__
-           section.
+          `Template <../../../reference/html/PLFRefGuide.Configurations.ExternalComponentPlugins.Content.TemplatePlugin.html>`__ section.
 
 4. Import ``nodetype-templates-configuration.xml`` inside
    ``custom-extension.war!/WEB-INF/conf/configuration.xml``. This file 
@@ -1660,7 +1659,7 @@ plugin. Each lifecycle is related to a **Publication** plugin.
 .. note:: The value of the ``publicationPlugin`` field must be the name of the
 		  publication plugin, for example, ``Authoring publication``. Refer to the 
 		  :ref:`States Lifecycle <#reference/html/PLFRefGuide.Configurations.ExternalComponentPlugins.Content.StatesLifecyclePlugin.html>`
-		  and `Context plugin <#reference/html/PLFRefGuide.Configurations.ExternalComponentPlugins.Content.ContextPlugin.html>`
+		  and :ref:`Context plugin <#reference/html/PLFRefGuide.Configurations.ExternalComponentPlugins.Content.ContextPlugin.html>`
 		  sections for more details about the parameters of the configuration above.
 
 3. Register ``publication-configuration.xml`` into
@@ -2295,8 +2294,7 @@ This configuration shows you how to add the **Defense** category and its
 **Vision** sub-category to the **power** category tree and how to set
 the permission for these categories.
 
-6. Register ``categories-configuration.xml`` into
-   ``custom-extension.war!/WEB-INF/conf/configuration.xml``.
+6. Register ``categories-configuration.xml`` into ``custom-extension.war!/WEB-INF/conf/configuration.xml``.
 
    .. code:: xml
 
