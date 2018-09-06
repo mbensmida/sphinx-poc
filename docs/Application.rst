@@ -4880,6 +4880,1175 @@ Click the icon (with the "Check-in" tooltip) to bring up the location
 input. Type something, click Check-in, then click Share. An activity
 will display like you see at the beginning of this page.
 
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension:
+
+Adding your own Content UI Extensions
+--------------------------------------
+
+There are many UI Components in Content Explorer and Administration that
+allows plugins:
+
+-  **Action bar**
+
+	|image66|
+
+-  **File viewer**
+
+	|image67|
+
+-  **Sidebar**
+
+	|image68|
+
+-  **Admin control panel**
+
+	|image69|
+
+-  **Context menu in the main working area**
+
+	|image70|
+
+
+Creating an action extension
+`````````````````````````````
+
+This section shows you how to write an action in PRODUCT. Specifically,
+a "ShowNodePath" button will be displayed in Sites Explorer. When
+clicking on it, the node path of the current node will be shown. You can
+download the source code used in this section
+`here <https://github.com/exo-samples/docs-samples/tree/4.3.x/create-action-extension>`__.
+
+1. Create a Maven project which has the following directory structure:
+
+	-  ``pom.xml``: The project's POM file.
+
+	-  ``ShowNodePathActionComponent.java``: The simple action to view the
+	   node path.
+
+	-  ``configuration.xml``: The configuration file to register your action
+	   with the *org.exoplatform.webui.ext.UIExtensionManager* service.
+
+Here is content of the ``pom.xml`` file:
+
+.. code:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.acme</groupId>
+        <artifactId>action-example</artifactId>
+        <version>1.0</version>
+        <packaging>jar</packaging>
+        
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        </properties>
+        
+        <dependencies>
+            <dependency>
+                <groupId>org.gatein.portal</groupId>
+                <artifactId>exo.portal.webui.core</artifactId>
+                <version>3.5.2.Final</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.exoplatform.commons</groupId>
+                <artifactId>commons-webui-ext</artifactId>
+                <version>4.0.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.exoplatform.ecms</groupId>
+                <artifactId>ecms-core-webui-explorer</artifactId>
+                <version>4.0.0</version>
+            </dependency>
+        </dependencies>
+    </project>
+
+2. Create a new action and its corresponding listener by editing the
+   ``ShowNodePathActionComponent`` class as below:
+
+	.. code:: java
+
+		package com.acme;
+
+		import javax.jcr.Node;
+
+		import org.exoplatform.ecm.webui.component.explorer.UIJCRExplorer;
+		import org.exoplatform.ecm.webui.component.explorer.control.listener.UIActionBarActionListener;
+		import org.exoplatform.web.application.ApplicationMessage;
+		import org.exoplatform.webui.config.annotation.ComponentConfig;
+		import org.exoplatform.webui.config.annotation.EventConfig;
+		import org.exoplatform.webui.core.UIComponent;
+		import org.exoplatform.webui.event.Event;
+
+		@ComponentConfig(
+			events = { @EventConfig(listeners = ShowNodePathActionComponent.ShowNodePathActionListener.class) })
+
+		public class ShowNodePathActionComponent extends UIComponent {
+
+			public static class ShowNodePathActionListener extends UIActionBarActionListener<ShowNodePathActionComponent> {
+				@Override
+				protected void processEvent(Event<ShowNodePathActionComponent> event) throws Exception {
+					UIJCRExplorer uiJCRExplorer = event.getSource().getAncestorOfType(UIJCRExplorer.class);
+					Node node = uiJCRExplorer.getCurrentNode();
+					event.getRequestContext()
+					.getUIApplication()
+					.addMessage(new ApplicationMessage("Node path:" + node.getPath(), null, ApplicationMessage.INFO));
+				}
+			}
+		}
+
+3. Register the new action with UIExtensionManager in the
+   ``configuration.xml`` file as below:
+
+	.. code:: xml
+
+		<configuration xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+			<external-component-plugins>
+				<target-component>org.exoplatform.webui.ext.UIExtensionManager</target-component>
+				<component-plugin>
+					<name>add.action</name>
+					<set-method>registerUIExtensionPlugin</set-method>
+					<type>org.exoplatform.webui.ext.UIExtensionPlugin</type>
+					<init-params>
+						<object-param>
+							<name>ShowNodePath</name>
+							<object type="org.exoplatform.webui.ext.UIExtension">
+								<field name="type">
+									<string>org.exoplatform.ecm.dms.UIActionBar</string>
+								</field>
+								<field name="name">
+									<string>ShowNodePath</string>
+								</field>
+								<field name="component">
+									<string>com.acme.ShowNodePathActionComponent</string>
+								</field>
+							</object>
+						</object-param>
+					</init-params>
+				</component-plugin>
+			</external-component-plugins>
+		</configuration>
+
+Some remarks about the Java code and the configuration:
+
+-  ``ShowNodePath`` will be used to label the action, until you
+   configure the label in resource bundle that will be explained later.
+
+-  ``ShowNodePathActionComponent`` is the class name of your action.
+
+-  There is a matching rule between the action name (``ShowNodePath``)
+   and the listener class name (``ShowNodePathActionListener``): *the
+   listener class name = the action name + ActionListener*.
+
+4. Build your project: ``mvn clean install``
+
+5. Copy the ``.jar`` file (``target/action-example-1.0.jar``) to the
+   ``lib`` folder of PRODUCT.
+
+6. Restart the server.
+
+**Testing**
+
+1. Log in as an administrator and go to Content Administration.
+
+2. Edit a view to add the action to one of tabs of the view. At this 
+   step, you will see the ShowNodePath action as below:
+   
+   |image71|
+
+	Make sure there is a drive that applies the view. For example, you 
+	can choose the *Admin* view and the *Collaboration* drive.
+
+3. Go to Sites Explorer and select the drive, then switch to the edited
+   view.
+
+4. Select any node. The "ShowNodePath" button now displays in Action bar 
+   as below:
+   
+   |image72|
+
+Next, you can perform the followings for your action extension:
+
+-  :ref:`Customizing label and icon <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension.ActionBar.Resources>`
+
+-  :ref:`Filtering your action <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension.ActionBar.Filter>`
+
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension.ActionBar.Resources:
+
+Customizing label and icon
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Customizing labels**
+
+As you can see in the screenshots in previous section, your action
+displays in UI as "showNodePath" or "ShowNodePath". You can change this
+label to something in more friendly way, like "Show Node Path", by
+adding and registering your resource bundle to ResourceBundle service:
+
+1. Add the ``src/main/resources/locale/com/acme`` folder to your project.
+
+2. Add the ``ShowNodePath_en.xml`` file to this folder, with the 
+   following content:
+
+	.. code:: xml
+
+		<bundle>
+			<UITabForm>
+				<label>
+					<showNodePath>Show Node Path</showNodePath>
+				</label>
+			</UITabForm>
+			<UIActionBar>
+				<tooltip>
+					<ShowNodePath>Show Node Path</ShowNodePath>
+				</tooltip>
+			</UIActionBar>
+		</bundle>
+
+.. note:: Notice the "showNodePath" tag (lowercase for first letter) in
+          UITabForm. What you configure in UITabForm element will be displayed
+          in Content Administration portlet. The other, UIActionBar, is for
+		  Sites Explorer portlet.
+
+3. Add the following configuration to ``src/main/resources/conf/portal/configuration.xml``:
+
+	.. code:: xml
+
+		<external-component-plugins>
+			<target-component>org.exoplatform.services.resources.ResourceBundleService</target-component>
+			<component-plugin>
+				<name>UI Extension</name>
+				<set-method>addResourceBundle</set-method>
+				<type>org.exoplatform.services.resources.impl.BaseResourceBundlePlugin</type>
+				<init-params>
+					<values-param>
+						<name>init.resources</name>
+						<value>locale.com.acme.ShowNodePath</value>
+					</values-param>
+					<values-param>
+						<name>portal.resource.names</name>
+						<value>locale.com.acme.ShowNodePath</value>
+					</values-param>
+				</init-params>
+			</component-plugin>
+		</external-component-plugins>
+
+The ``locale.com.acme.ShowNodePath`` value expresses that your resource
+files should be located in the ``locale/com/acme/`` folder and have the
+"ShowNodePath" prefix in name. ``ShowNodePath_en.xml`` is resource for
+English of which "*en*\ " is the locale code. You can add other
+resources for many languagues.
+
+Now re-build your project and deploy. Restart server and test, you will
+see the labels change into "Show Node Path".
+
+See more details about `ResourceBundle
+service <#sect-Reference_Guide-Internationalization_Configuration-ResourceBundleService>`__
+and `locale
+codes <#sect-Reference_Guide-Internationalization_Configuration-Locales_configuration>`__.
+
+If you want more samples of such configuration, see:
+
+-  ``webapps/ecmexplorer.war!/WEB-INF/classes/locale/portlet/explorer/JCRExplorerPortlet_en.xml``
+
+-  ``webapps/ecmadmin.war!/WEB-INF/classes/locale/portlet/administration/ECMAdminPortlet_en.xml``
+
+**Customizing icons**
+
+Edit the
+``webapps/ecmexplorer.war!/skin/icons/24x24/DefaultStylesheet.css`` file
+(for the default Skin) and add the icon definition as below (in this
+case, the "ManageUnLock" icon is re-used but you could add your own
+picture into the
+``webapps/ecmexplorer.war!/skin/icons/24x24/DefaultSkin`` directory):
+
+::
+
+    .ShowNodePathIcon{
+    width: 24px; height: 24px;
+    background: url('DefaultSkin/ManageUnLock.gif') no-repeat left center; /* orientation=lt */
+    background: url('DefaultSkin/ManageUnLock.gif') no-repeat right center; /* orientation=rt */
+    }
+
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension.ActionBar.Filter:
+
+Filtering your action
+^^^^^^^^^^^^^^^^^^^^^^
+
+¹. Write your filter class (``com/acme/MyUIFilter.java``):
+
+	.. code:: java
+
+		package com.acme;
+
+		import java.util.Map;
+		import javax.jcr.Node;
+		import org.exoplatform.webui.ext.filter.UIExtensionFilter;
+		import org.exoplatform.webui.ext.filter.UIExtensionFilterType;
+
+		public class MyUIFilter implements UIExtensionFilter {
+			/*
+			* This method checks if the current node is a file.
+			*/
+			public boolean accept(Map<String, Object> context) throws Exception {
+				//Retrieve the current node from the context
+				Node currentNode = (Node) context.get(Node.class.getName());
+				return currentNode.isNodeType("nt:file");
+			}
+			
+			/*
+			* This is the type of the filter.
+			*/
+			public UIExtensionFilterType getType() {
+				return UIExtensionFilterType.MANDATORY;
+			}
+			
+			/*
+			* This is called when the filter has failed.
+			*/
+			public void onDeny(Map<String, Object> context) throws Exception {
+				System.out.println("This node is not a file!");
+			}
+		}
+
+This filter checks if the current node is a file. Because the filter
+type is MANDATORY, the action will hide if the current node is a folder.
+(Thus, with MANDATORY you cannot test onDeny method. Change the type
+into OPTIONAL if you want to test the method.)
+
+2. Apply the filter in your action class (``com/acme/ShowNodePathActionComponent.java``):
+
+	.. code:: java
+
+		...
+		import java.util.List;
+		import java.util.Arrays;
+		import org.exoplatform.webui.ext.filter.UIExtensionFilter;
+		import org.exoplatform.webui.ext.filter.UIExtensionFilters;
+
+		import com.acme.MyUIFilter;
+		...
+		public class ShowNodePathActionComponent extends UIComponent {
+		...
+			/*
+			* Add filters (MyUIFilter in this example)
+			*/
+			private static final List<UIExtensionFilter> FILTERS = Arrays.asList(new UIExtensionFilter[] {new MyUIFilter()});
+			
+			@UIExtensionFilters
+			public List<UIExtensionFilter> getFilters() {
+				return FILTERS;
+			}
+		}
+
+Now build, deploy and test that your action displays only for nodes of
+type "nt:file".
+
+You have added a filter by Java code. Another way is by configuration,
+that is extremely good when the filter itself allows flexible
+configuration. For example, you continue to add UserACLFilter (built-in)
+that allows you to configure who can use the action:
+
+Add the following configuration to ``conf/portal/configuration.xml``:
+
+.. code:: xml
+
+    <external-component-plugins>
+        <target-component>org.exoplatform.webui.ext.UIExtensionManager</target-component>
+        ...
+            <field name="extendedFilters">
+                <collection type="java.util.ArrayList">
+                    <value>
+                        <object type="org.exoplatform.webui.ext.filter.impl.UserACLFilter">
+                            <field name="permissions">
+                                <collection type="java.util.ArrayList">
+                                    <value>
+                                        <string>manager:/platform/administrators</string>
+                                    </value>
+                                </collection>
+                            </field>
+                        </object>
+                    </value>
+                </collection>
+            </field>
+            ...
+    </external-component-plugins>
+
+Then test that the action displays only for the users who have
+*manager:/platform/administrators* membership.
+
+There are many useful built-in filters in Content. In your real project,
+you should see if some of them meet your business logic before writing a
+new one:
+
+-  ``org.exoplatform.webui.ext.filter.impl.UserACLFilter``: Filters all
+   nodes that do not have any permission on the current context.
+
+-  ``org.exoplatform.webui.ext.filter.impl.FileFilter``: Filters all
+   nodes that do not exist in the given MIME type list.
+
+-  ``org.exoplatform.ecm.webui.component.explorer.control.filter``: This
+   package includes many filters, see in the table.
+
++-------------------------------+--------------------------------------------+
+| Filters                       | Description                                |
++===============================+============================================+
+| ``CanAddCategoryFilter``      | Filters nodes to which it is impossible to |
+|                               | add categories.                            |
++-------------------------------+--------------------------------------------+
+| ``CanCutNodeFilter``          | Filters nodes which cannot be cut.         |
++-------------------------------+--------------------------------------------+
+| ``CanAddNodeFilter``          | Filters nodes to which it is impossible to |
+|                               | add nodes.                                 |
++-------------------------------+--------------------------------------------+
+| ``CanDeleteNodeFilter``       | Filters nodes that cannot be deleted.      |
++-------------------------------+--------------------------------------------+
+| ``CanRemoveNodeFilter``       | Filters nodes that cannot be removed.      |
++-------------------------------+--------------------------------------------+
+| ``CanEnableVersionFilter``    | Filters nodes which do not allow           |
+|                               | versioning.                                |
++-------------------------------+--------------------------------------------+
+| ``CanSetPropertyFilter``      | Filters nodes that cannot be modified.     |
++-------------------------------+--------------------------------------------+
+| ``HasMetadataTemplatesFilter` | Filters nodes that do not have metadata    |
+| `                             | templates.                                 |
++-------------------------------+--------------------------------------------+
+| ``HasPublicationLifecycleFilt | Filters all nodes that do not have the     |
+| er``                          | publication plugins.                       |
++-------------------------------+--------------------------------------------+
+| ``HasRemovePermissionFilter`` | Filters nodes that do not have the         |
+|                               | **Remove**\ permission.                    |
++-------------------------------+--------------------------------------------+
+| ``IsFavouriteFilter``         | Filters nodes that are not favorite.       |
++-------------------------------+--------------------------------------------+
+| ``IsNotFavouriteFilter``      | Filters nodes that are favorite.           |
++-------------------------------+--------------------------------------------+
+| ``IsNotNtFileFilter``         | Filters nodes that are of **nt:file**.     |
++-------------------------------+--------------------------------------------+
+| ``IsHoldsLockFilter``         | Filters nodes which do not hold lock.      |
++-------------------------------+--------------------------------------------+
+| ``IsNotHoldsLockFilter``      | Filters nodes which are holding lock.      |
++-------------------------------+--------------------------------------------+
+| ``IsNotRootNodeFilter``       | Filters the root node.                     |
++-------------------------------+--------------------------------------------+
+| ``IsInTrashFilter``           | Filters nodes that are not in the trash    |
+|                               | node.                                      |
++-------------------------------+--------------------------------------------+
+| ``IsNotInTrashFilter``        | Filters nodes that are in the trash node.  |
++-------------------------------+--------------------------------------------+
+| ``IsNotSameNameSiblingFilter` | Filters nodes that allow the same name     |
+| `                             | siblings.                                  |
++-------------------------------+--------------------------------------------+
+| ``IsMixCommentable``          | Filters nodes that do not allow            |
+|                               | commenting.                                |
++-------------------------------+--------------------------------------------+
+| ``IsMixVotable``              | Filters nodes that do not allow voting.    |
++-------------------------------+--------------------------------------------+
+| ``IsNotSimpleLockedFilter``   | Filters nodes that are locked.             |
++-------------------------------+--------------------------------------------+
+| ``IsNotSymlinkFilter``        | Filters nodes that are symlinks.           |
++-------------------------------+--------------------------------------------+
+| ``IsNotCategoryFilter``       | Filters nodes that are of the category     |
+|                               | type.                                      |
++-------------------------------+--------------------------------------------+
+| ``IsNotSystemWorkspaceFilter` | Filters actions of the system-typed        |
+| `                             | workspace.                                 |
++-------------------------------+--------------------------------------------+
+| ``IsNotCheckedOutFilter``     | Filters nodes that are checked out.        |
++-------------------------------+--------------------------------------------+
+| ``IsTrashHomeNodeFilter``     | Filters nodes that are not trash ones.     |
++-------------------------------+--------------------------------------------+
+| ``IsNotTrashHomeNodeFilter``  | Filters a node that is the trash one.      |
++-------------------------------+--------------------------------------------+
+| ``IsNotEditingDocumentFilter` | Filters nodes that are being edited.       |
+| `                             |                                            |
++-------------------------------+--------------------------------------------+
+| ``IsPasteableFilter``         | Filters nodes where the **paste** action   |
+|                               | is not allowed.                            |
++-------------------------------+--------------------------------------------+
+| ``IsReferenceableNodeFilter`` | Filters nodes that do not allow adding     |
+|                               | references.                                |
++-------------------------------+--------------------------------------------+
+| ``IsNotFolderFilter``         | Filters nodes that are folders.            |
++-------------------------------+--------------------------------------------+
+| ``IsCheckedOutFilter``        | Filters nodes that are not checked out.    |
++-------------------------------+--------------------------------------------+
+| ``IsVersionableFilter``       | Filters nodes which do not allow           |
+|                               | versioning.                                |
++-------------------------------+--------------------------------------------+
+| ``IsVersionableOrAncestorFilt | Filters nodes and ancestor nodes which do  |
+| er``                          | not allow versioning.                      |
++-------------------------------+--------------------------------------------+
+| ``IsDocumentFilter``          | Filters nodes that are not documents.      |
++-------------------------------+--------------------------------------------+
+| ``IsEditableFilter``          | Filters nodes that are not editable.       |
++-------------------------------+--------------------------------------------+
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension.FileViewer:
+
+Creating a file viewer
+````````````````````````
+
+eXo Platform supports the inline visualization for many file formats. 
+For example, let's see the display of PDF file:
+
+|image73|
+
+For those not yet available, one message will be displayed that requires
+you to download it. Here is the view of a ZIP file:
+
+|image74|
+
+However, eXo Platform allows you to create a new file viewer to read one file
+format, for example, ZIP files. Assuming that you want to display the
+list of files contained in the ZIP file, follow the steps below. The
+source code of this project is available
+`here <https://github.com/exo-samples/docs-samples/tree/4.3.x/create-file-viewer>`__
+for downloading.
+
+1. Create a Maven project, for example, named **zip-viewer**, with the
+   below structure:
+
+	|image75|
+
+2. Create the view template by editing the
+   ``resources/templates/ZipViewer.gtmpl``. Here, you only need to 
+   iterate all the ZIP files to display their names:
+
+	.. code:: java
+
+		<style> 
+		ul.zip-file-list {
+			padding: 0 20px;
+		}
+		ul.zip-file-list li {
+			list-style-position: inside;
+			list-style-type: circle;
+		}
+		</style>
+		<%
+		import java.util.zip.ZipEntry
+		import java.util.zip.ZipInputStream
+		import org.exoplatform.webui.core.UIComponent
+		 
+		def uiParent = uicomponent.getParent()
+		def originalNode = uiParent.getOriginalNode()
+		def contentNode = originalNode.getNode("jcr:content")
+		def zis;
+		 
+		try {
+			zis = new ZipInputStream(contentNode.getProperty("jcr:data").getStream())
+		 
+			ZipEntry ze
+		 
+			out.println("<ul class=\"zip-file-list\">")
+			while ((ze = zis.getNextEntry()) != null) {
+			  out.println("<li>" + ze.getName() + "</li>")
+			}
+			out.println("</ul>")
+		} finally {
+			zis?.close()
+		}
+		%>
+
+3. Open the ``java/org/exoplatform/ecm/dms/ZipViewer.java`` file. Once 
+   the view template is ready, it has to be registered and linked to the 
+   ZIP file type. The first step for registering the template is to 
+   create a simple class which extends ``UIComponent`` and to define the 
+   view template's path. Note that this class defines the template's 
+   path, that is, ``templates/ZipViewer.gtmpl`` in this case.
+
+	.. code:: java
+
+		package org.exoplatform.ecm.dms;
+		 
+		import org.exoplatform.webui.config.annotation.ComponentConfig;
+		import org.exoplatform.webui.core.UIComponent;
+		 
+		@ComponentConfig(
+		template = "classpath:templates/ZipViewer.gtmpl"
+		)
+		public class ZipViewer extends UIComponent {
+		}
+
+4. Edit the ``resources/conf/portal/configuration.xml`` file where the
+   class is declared by the
+   ``org.exoplatform.webui.ext.UIExtensionManager`` component.
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="ISO-8859-1"?>
+		<configuration
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+			xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+		  <external-component-plugins>
+			<target-component>org.exoplatform.webui.ext.UIExtensionManager</target-component>
+			<component-plugin>
+			  <name>Zip File dynamic viewer</name>
+			  <set-method>registerUIExtensionPlugin</set-method>
+			  <type>org.exoplatform.webui.ext.UIExtensionPlugin</type>
+			  <init-params>
+				<object-param>
+				  <name>Zip</name>
+				  <object type="org.exoplatform.webui.ext.UIExtension">
+					<field name="type">
+					  <string>org.exoplatform.ecm.dms.FileViewer</string>
+					</field>
+					<field name="rank">
+					  <int>110</int>
+					</field>
+					<field name="name">
+					  <string>Zip</string>
+					</field>
+					<field name="category">
+					  <string>FileViewer</string>
+					</field>
+					<field name="component">
+					  <string>org.exoplatform.ecm.dms.ZipViewer</string>
+					</field>
+					<field name="extendedFilters">
+					  <collection type="java.util.ArrayList">
+						<value>
+						  <object type="org.exoplatform.webui.ext.filter.impl.FileFilter">
+							<field name="mimeTypes">
+							  <collection type="java.util.ArrayList">
+								<value>
+								  <string>application/zip</string>
+								</value>
+							  </collection>
+							</field>
+						  </object>
+						</value>
+					  </collection>
+					</field>
+				  </object>
+				</object-param>
+			  </init-params>
+			</component-plugin>
+		  </external-component-plugins>
+		</configuration>
+
+This configuration links the ``org.exoplatform.ecm.dms.ZipViewer``
+component to the ``application/zip`` mimetype.
+
+5. Update the ``pom.xml`` file that declares dependencies of the classes
+   imported in the ``ZipViewer.java`` file.
+
+	.. code:: xml
+
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		  <modelVersion>4.0.0</modelVersion>
+		  <groupId>exo.file.viewer</groupId>
+		  <artifactId>zip-viewer</artifactId>
+		  <packaging>jar</packaging>
+		  <version>1.0-SNAPSHOT</version>
+		  <name>zip-viewer</name>
+		  <url>http://maven.apache.org</url>
+		  <dependencies>
+			<dependency>
+			  <groupId>org.gatein.portal</groupId>
+			  <artifactId>exo.portal.webui.framework</artifactId>
+			  <version>3.5.9-PLF</version>
+			  <scope>provided</scope>
+			</dependency>
+		  </dependencies>
+		</project>
+
+6. Build the **zip-viewer** project using the command:
+   
+   ::
+   
+		``mvn clean install``.
+
+	Your JAR (``zip-viewer/target/zip-viewer-1.0-SNAPSHOT.jar``) should now
+	contain 3 files:
+
+	-  ``templates/ZipViewer.gtmpl``
+
+	-  ``org/exoplatform/ecm/dms/ZipViewer.class``
+
+	-  ``conf/portal/configuration.xml``
+
+7. Put this ``.jar`` file into the eXo Platform package.
+
+	-  ``$PLATFORM_TOMCAT_HOME/lib`` (in Tomcat).
+
+	-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/lib`` (in
+	   JBoss).
+
+8. Restart the server. The content of a ZIP file is now displayed as 
+   below:
+
+|image76|
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension.Others:
+
+Other components
+`````````````````
+
+Working with other toolbars is quite similar to **UIActionbar**, except
+configurations and resources.
+
+**Sidebar**
+
+-  **Sample configuration**
+
+.. code:: xml
+
+    <object-param>
+        <name>Example</name>
+        <object type="org.exoplatform.webui.ext.UIExtension">
+            <field name="type"><string>org.exoplatform.ecm.dms.UISideBar</string></field>
+            <field name="name"><string>Example</string></field>
+            <field name="rank"><int>110</int></field>
+            <field name="component"><string>com.acme.ExampleActionComponent</string></field>
+        </object>
+    </object-param>
+
+Resources are located at
+``$PLATFORM_TOMCAT-HOME/webapps/ecmexplorer/WEB-INF/classes/locale/portlet/explorer/JCRExplorerPortlet_en.xml``
+(for English which is also the default language):
+
+.. code:: xml
+
+    ...
+       <UISideBar>
+      ...
+     <label>
+       <example>Example action</example>
+      ...
+     </label>
+      ...
+       </UISideBar>
+      ...
+
+**Admin control panel**
+
+-  **Sample configuration**
+
+.. code:: xml
+
+    <object-param>
+      <name>Example</name>
+      <object type="org.exoplatform.webui.ext.UIExtension">
+        <field name="type">
+          <string>org.exoplatform.ecm.dms.UIECMAdminControlPanel</string>
+        </field>
+        <field name="rank">
+          <int>110</int>
+        </field>
+        <field name="name">
+          <string>Example</string>
+        </field>
+        <field name="category">
+          <string>Templates</string>
+        </field>
+        <field name="component">
+          <string>org.exoplatform.ecm.webui.component.admin.manager.UITemplatesManagerComponent</string>
+        </field>
+      </object>
+    </object-param>
+
+The "category" field specifies the category where your extension action
+is performed. There are 4 options:
+
+-  Templates
+
+-  Explorer
+
+-  Repository
+
+-  Advanced
+
+Resources are located at
+``$PLATFORM_TOMCAT-HOME/webapps/ecmadmin/WEB-INF/classes/locale/portlet/administration/ECMAdminPortlet_en.xml``
+(for English which is also the default language):
+
+.. code:: xml
+
+    ...
+    <UIECMAdminControlPanel>
+        ...
+    <label>
+        <example>Example panel</example>
+        ...
+    </label>
+        ...
+    </UIECMAdminControlPanel>
+        ...
+
+**Context menu**
+
+-  **Sample configuration**
+
+.. code:: xml
+
+    <object-param>
+       <name>Example</name>
+       <object type="org.exoplatform.webui.ext.UIExtension">
+         <field name="type"><string>org.exoplatform.ecm.dms.UIWorkingArea</string></field>
+         <field name="rank"><int>105</int></field>
+         <field name="name"><string>Example</string></field>
+         <field name="category"><string>ItemContextMenu_SingleSelection</string></field>
+         <field name="component"><string>com.acme.ExampleActionComponent</string></field>
+       </object>
+    </object-param>
+
+The "category" field specifies the category where your extension action
+is performed. There are many options:
+
+-  ``ItemContextMenu_SingleSelection``: This menu has only one item when
+   Trash Folder is right-clicked.
+
+-  ``ItemContextMenu``: The menu appears when the user selects one or
+   many items.
+
+-  ``GroundContextMenu`` & ``ItemGroundContextMenu``: The menu appears
+   when the user right-clicks the ground of node.
+
+Resources are located at ``
+      $TOMCAT-HOME/webapps/ecmexplorer/WEB-INF/classes/locale/portlet/explorer/JCRExplorerPortlet_en.xml
+    `` (for English which is also the default language):
+
+.. code:: xml
+
+    <UIWorkingArea>
+      ...
+        <label>
+            <example>Example action</example>
+      ...
+        </label>
+      ...
+    </UIWorkingArea>
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction:
+
+Writing an action extension in Wiki
+------------------------------------
+
+This tutorial instructs you to plug an action to the Wiki page via the
+following main steps:
+
+-  :ref:`Creating your new project <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Project>`
+
+-  :ref:`Creating new action and the corresponding listener <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Action_and_Listener>`
+
+-  :ref:`Registering new action <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Config_UIExtensionManager>`
+
+-  :ref:`Registering localized resources <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Config_ResourceBundle>`
+
+-  :ref:`Deploying and testing new action extension <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Deploy>`
+
+Note that all source code used in this section is provided
+`here <https://github.com/exo-samples/docs-samples/tree/4.3.x/write-action-extension>`
+for downloading.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Project:
+
+Creating your new project
+```````````````````````````
+
+Create a Maven project which has the following directory structure:
+
+::
+
+    example
+    |__ pom.xml
+    |__ src
+        |__ main
+            |__ java
+            |   |__ com
+            |       |__ acme
+            |           |__ ViewSourceActionComponent.java
+            |__ resources
+                |__ conf
+                |   |__ portal
+                |     |__ configuration.xml
+                |__ locale
+                    |__ com
+                        |__ acme
+                            |__ ViewSource_en.properties
+
+Here is content of the ``pom.xml`` file:
+
+.. code:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.acme</groupId>
+        <artifactId>example</artifactId>
+        <version>1.0</version>
+        <name>eXo Wiki action - Example</name>
+        <description>eXo Wiki action - Example</description>
+        <dependencies>
+            <dependency>
+                <groupId>org.gatein.portal</groupId>
+                <artifactId>exo.portal.webui.framework</artifactId>
+                <version>3.5.5.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.exoplatform.commons</groupId>
+                <artifactId>commons-webui-ext</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.exoplatform.wiki</groupId>
+                <artifactId>wiki-service</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.exoplatform.wiki</groupId>
+                <artifactId>wiki-webui</artifactId>
+                <version>4.1.0</version>
+            </dependency>
+        </dependencies>
+    </project>
+
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Action_and_Listener:
+
+Creating new action and the corresponding listener
+``````````````````````````````````````````````````
+
+Edit the **ViewSourceActionComponent** class as below:
+
+.. code:: java
+
+    package com.acme;
+
+    import java.util.Arrays;
+    import java.util.List;
+
+    import org.exoplatform.webui.config.annotation.ComponentConfig;
+    import org.exoplatform.webui.config.annotation.EventConfig;
+    import org.exoplatform.webui.event.Event;
+    import org.exoplatform.webui.ext.filter.UIExtensionFilter;
+    import org.exoplatform.webui.ext.filter.UIExtensionFilters;
+    import org.exoplatform.wiki.commons.Utils;
+    import org.exoplatform.wiki.mow.core.api.wiki.PageImpl;
+    import org.exoplatform.wiki.webui.UIWikiContentDisplay;
+    import org.exoplatform.wiki.webui.UIWikiPageContentArea;
+    import org.exoplatform.wiki.webui.UIWikiPortlet;
+    import org.exoplatform.wiki.webui.control.action.core.AbstractEventActionComponent;
+    import org.exoplatform.wiki.webui.control.filter.IsViewModeFilter;
+    import org.exoplatform.wiki.webui.control.listener.MoreContainerActionListener;
+
+    @ComponentConfig (
+      template = "app:/templates/wiki/webui/control/action/AbstractActionComponent.gtmpl",
+      events = {
+            @EventConfig(listeners = ViewSourceActionComponent.ViewSourceActionListener.class)
+        }
+    )
+
+    public class ViewSourceActionComponent extends AbstractEventActionComponent {
+
+      public static final String                   ACTION  = "ViewSource";
+
+      private static final List<UIExtensionFilter> FILTERS = Arrays.asList(new UIExtensionFilter[] { new IsViewModeFilter() });
+
+      @UIExtensionFilters
+
+      public List<UIExtensionFilter> getFilters() {
+        return FILTERS;
+      }
+
+      @Override
+      public String getActionName() {
+        return ACTION;
+      }
+
+      @Override
+      public boolean isAnchor() {
+        return false;
+      }
+
+      public static class ViewSourceActionListener extends MoreContainerActionListener<ViewSourceActionComponent> {
+        @Override
+        protected void processEvent(Event<ViewSourceActionComponent> event) throws Exception {
+          UIWikiPortlet wikiPortlet = event.getSource().getAncestorOfType(UIWikiPortlet.class);
+          UIWikiContentDisplay contentDisplay = wikiPortlet.findFirstComponentOfType(UIWikiPageContentArea.class)
+                                                           .getChildById(UIWikiPageContentArea.VIEW_DISPLAY);
+          PageImpl wikipage = (PageImpl) Utils.getCurrentWikiPage();
+          contentDisplay.setHtmlOutput(wikipage.getContent().getText());
+          event.getRequestContext().addUIComponentToUpdateByAjax(contentDisplay);
+        }
+      }
+    }
+
+Some remarks:
+
+-  The action name is *ViewSource*.
+
+-  The listener class name = the action name + "ActionListener" (so it
+   is *ViewSourceActionListener*).
+
+-  In this example, the listener extends the
+   ``MoreContainerActionListener`` class. As a result, the action will
+   be added to the More menu in the Wiki portlet. There are some choices
+   that will be introduced later.
+
+-  At the *ComponentConfig* annotation, you see a *gtmpl* file is given.
+   Here you re-use the
+   ``templates/wiki/webui/control/action/AbstractActionComponent.gtmpl``
+   file that is already packaged in ``wiki.war``.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Config_UIExtensionManager:
+
+Registering new action with UIExtensionManager service
+```````````````````````````````````````````````````````
+
+Edit the ``configuration.xml`` file as below:
+
+.. code:: xml
+
+    <configuration xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+        <external-component-plugins>
+        <target-component>org.exoplatform.webui.ext.UIExtensionManager</target-component>
+        <component-plugin>
+            <name>add.action</name>
+            <set-method>registerUIExtensionPlugin</set-method>
+            <type>org.exoplatform.webui.ext.UIExtensionPlugin</type>
+            <init-params>
+                <object-param>
+                    <name>ViewSource</name>
+                    <object type="org.exoplatform.webui.ext.UIExtension">
+                        <field name="type"><string>org.exoplatform.wiki.webui.control.MoreExtensionContainer</string></field>
+                        <field name="rank"><int>1000</int></field>
+                        <field name="name"><string>ViewSource</string></field>
+                        <field name="component"><string>com.acme.ViewSourceActionComponent</string></field>
+                    </object>
+                </object-param>
+            </init-params>
+        </component-plugin>
+        </external-component-plugins>
+    </configuration>
+
+Pay attention to the action name (**ViewSource**) and the component name
+(**com.acme.ViewSourceActionComponent**).
+
+The configuration for UIExtension is explained
+:ref:`here <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.UIExtensionComponents>`.
+
+As noticed before, your action listener extends the
+``MoreExtensionContainer`` class. Here you see it is passed to the
+**type** field. You can decide which menu your action is plugged in, by
+choosing one of types below:
+
++--------------------------------------------------+-------------------------+
+| Type                                             | Description             |
++==================================================+=========================+
+| ``org.exoplatform.wiki.webui.control.UIPageToolB | Actions will be placed  |
+| ar``                                             | in Toolbar in the View  |
+|                                                  | mode.                   |
++--------------------------------------------------+-------------------------+
+| ``org.exoplatform.wiki.webui.control.AddExtensio | Actions will be plugged |
+| nContainer``                                     | in the Add Page menu in |
+|                                                  | the View mode.          |
++--------------------------------------------------+-------------------------+
+| ``org.exoplatform.wiki.webui.control.MoreExtensi | Actions will be plugged |
+| onContainer``                                    | in the More menu in the |
+|                                                  | View mode.              |
++--------------------------------------------------+-------------------------+
+| ``org.exoplatform.wiki.webui.control.UISubmitToo | Actions will be placed  |
+| lBar``                                           | in Toolbar in the Edit  |
+|                                                  | mode.                   |
++--------------------------------------------------+-------------------------+
+| ``org.exoplatform.wiki.webui.control.UIEditorTab | Actions will be placed  |
+| s``                                              | in the Editor tabs.     |
++--------------------------------------------------+-------------------------+
+| ``org.exoplatform.wiki.webui.control.BrowseExten | Actions will be plugged |
+| sionContainer``                                  | in the Browse menu in   |
+|                                                  | the View mode.          |
++--------------------------------------------------+-------------------------+
+| ``org.exoplatform.wiki.webui.popup.UIWikiSetting | Actions will be placed  |
+| Container``                                      | in the Setting tabs.    |
++--------------------------------------------------+-------------------------+
+
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Config_ResourceBundle:
+
+Registering localized resources with ResourceBundle service
+````````````````````````````````````````````````````````````
+
+In this example, you have a resource file, that is
+``ViewSource_en.properties``. The *\_en* suffix means English. You can
+write many resources for other languages.
+
+1. Edit the ``ViewSource_en.properties`` file as below:
+
+   ::
+
+       MoreExtensionContainer.action.ViewSource=View Source
+
+This indicates that the label of your action will be View Source.
+
+Name of the ``MoreExtensionContainer.action.ViewSource`` property must
+be changed if you use another *type*. It is dependent on the *gtmpl*
+file you use in your Java class. See this code in
+``wiki.war!/templates/wiki/webui/control/action/AbstractActionComponent.gtmpl``:
+
+.. code:: java
+
+    String labelName = _ctx.appRes(uicomponent.getParent().getName() + ".action." + actionName);
+
+2. Configure the **ResourceBundle** service in the ``configuration.xml``
+   file as below:
+
+	.. code:: xml
+
+		<external-component-plugins>
+			<target-component>org.exoplatform.services.resources.ResourceBundleService</target-component>
+			<component-plugin>
+				<name>UI Extension</name>
+				<set-method>addResourceBundle</set-method>
+				<type>org.exoplatform.services.resources.impl.BaseResourceBundlePlugin</type>
+				<init-params>
+					<values-param>
+						<name>init.resources</name>
+						<value>locale.com.acme.ViewSource</value>
+					</values-param>
+					<values-param>
+						<name>portal.resource.names</name>
+						<value>locale.com.acme.ViewSource</value>
+					</values-param>
+				</init-params>
+			</component-plugin>
+		</external-component-plugins>
+
+Pay attention to the resource name: ``locale.com.acme.ViewSource``. It
+is a translation of the ``locale/com/acme/ViewSource_en.properties``
+file path (relative to the Jar archive), with the *\_en* suffix and the
+*.properties* extension is eliminated.
+
+See
+`here <#sect-Reference_Guide-Internationalization_Configuration-ResourceBundleService>`__
+for the **ResourceBundle** configuration.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction.Deploy:
+
+Deploying new action extension
+```````````````````````````````
+
+Follow these steps to deploy and test your new action extension:
+
+1. Build the project by the command: ``mvn clean install``
+
+2. Copy the ``target/example-1.0.jar`` file into the
+   ``$PLATFORM_TOMCAT_HOME/lib`` directory.
+
+3. Start eXo Platform and go to the Wiki portlet. You will see your 
+   action in the More menu as below:
+
+|image77|
+
 .. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.Notification:
 
 Notification
@@ -7110,3 +8279,15 @@ from the cloned source code.
 .. |image63| image:: images/extensible_filter/services_project.png
 .. |image64| image:: images/extensible_filter/war_structure.png
 .. |image65| image:: images/extensible_filter/change_password_interface.png
+.. |image66| image:: images/application_plugins/content/Actionbar.png
+.. |image67| image:: images/application_plugins/content/file_viewer.png
+.. |image68| image:: images/application_plugins/content/sidebar.png
+.. |image69| image:: images/application_plugins/content/admin_control_panel.png
+.. |image70| image:: images/application_plugins/content/context_menu.png
+.. |image71| image:: images/application_plugins/content/action_example.png
+.. |image72| image:: images/application_plugins/content/action_example_in_explorer.png
+.. |image73| image:: images/application_plugins/content/pdf-viewer.png
+.. |image74| image:: images/application_plugins/content/zip-preview-original.png
+.. |image75| image:: images/application_plugins/content/zip-viewer-project.png
+.. |image76| image:: images/application_plugins/content/zip-preview-final.png
+.. |image77| image:: images/application_plugins/wiki/New_action.png
