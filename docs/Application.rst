@@ -67,7 +67,7 @@ In this part, you learn some portlet development techniques, including:
 -  :ref:`Juzu portlet <PLFDevGuide.DevelopingApplications.DevelopingPortlet.Juzu.HelloJuzu>`
    Introduction to Juzu framework that makes portlet development much easier.
 
--  `Spring MVC portlet <PLFDevGuide.DevelopingApplications.DevelopingPortlet.Spring.Intro>`
+-  :ref:`Spring MVC portlet <PLFDevGuide.DevelopingApplications.DevelopingPortlet.Spring.Intro>`
    it is officially supported as of Platform 4.2.
 
 You should also read:
@@ -84,7 +84,7 @@ HelloWorld portlet
 
 In this part, you will create a very basic portlet which contains a
 simple JSP page. The source code is available
-`here <https://github.com/exo-samples/docs-samples/tree/4.3.x/portlet/hello-portlet>`__.
+`here <https://github.com/exo-samples/docs-samples/tree/master/portlet/hello-portlet>`__.
 
 1. Create a new Maven project as follows:
 
@@ -3841,6 +3841,2053 @@ changing gadget preferences.
 |image34|
 
 
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications:
+
+==========================
+Extending eXo applications
+==========================
+
+-  :ref:`Overriding application templates <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.OverridingApplicationTemplates>`
+   Steps to override the default template of a portlet in eXo Platform.
+
+-  :ref:`Applications Plugins <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins>`
+   Tutorials to add plugin to eXo applications, such as Activity
+   composer or action in Wiki using UI Extension framework.
+
+-  :ref:`Notification <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.Notification>`
+   Tutorials to extend or customize the notification system in eXo Platform.
+
+-  :ref:`Overriding user profile design <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.OverridingUserProfileDesign>`
+   Steps to override your profile page in eXo Platform.
+
+-  :ref:`Wiki macro <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.XWIKI_Macro>`
+   A tutorial to write new macros in eXo Wiki.
+
+-  :ref:`ExtensibleFilter mechanism <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ExtensibleFilter>`
+   A tutorial to create and insert your own filter into eXo Platform.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.OverridingApplicationTemplates:
+
+Overriding application templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Groovy templates can be overriden thanks to extension mechanism. Here
+are steps to override a template of **Organization** portlet. The source
+code used in this section is provided
+`here <https://github.com/exo-samples/docs-samples/tree/master/overriding-application-template>`__
+for downloading.
+
+1. Take a look at
+   ``$PLATFORM_TOMCAT_HOME/webapps/eXoResources/groovy/organization/webui/component/UIOrganizationPortlet.gtmpl``.
+   This file contains the template definitions of the Organization 
+   portlet.
+
+|image35|
+
+2. Create a ``UIOrganizationPortlet.gtmpl`` file and put it in
+   ``custom-extension.war!/groovy/organization/webui/component``.
+
+3. Copy the existing content from ``UIOrganizationPortlet.gtmpl`` of 
+   Step 1 into your ``custom-extension.war!/groovy/organization/webui/component/UIOrganizationPortlet.gtmpl``,
+   then modify your file, for example change the color of text and
+   background on the toolbar.
+
+4. Refresh the browser if you are running eXo Platform at the developer 
+   mode. You will see your modification take effect on the 
+   **Organization** portlet.
+
+|image36|
+
+.. note:: If you are not running eXo Platform in the developer mode, you will have to restart the server.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins:
+
+Applications Plugins
+~~~~~~~~~~~~~~~~~~~~~
+
+Hereafter are some tutorials to write eXo add-ons using the UI Extension
+framework:
+
+-  :ref:`Creating a new activity type <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ActivityType>`
+
+-  :ref:`Creating an activity composer <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ActivityComposer>`
+
+-  :ref:`Adding your own Content UI Extensions <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ContentUIExtension>`
+
+-  :ref:`Writing an action extension in Wiki <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.WikiAction>`
+
+An explanation of the base framework can be found at `Platform Reference
+Guide - UI
+Extensions <#PLFRefGuide.PLFDevelopment.Extensions.UIExtensions>`__.
+
+In general, writing a complete UI Extension involves filter (business
+logic or access permission), localization and CSS customization. You
+might read more about the subjects:
+
+-  :ref:`Internal filter <#PLFRefGuide.PLFDevelopment.Extensions.UIExtensions.InternalFilter>`
+
+-  :ref:`External filter <#PLFRefGuide.PLFDevelopment.Extensions.UIExtensions.ExternalFilter>`
+
+-  :ref:`Resource Bundle service <#sect-Reference_Guide-Internationalization_Configuration-ResourceBundleService>`__
+
+-  :ref:`Skin service <#sect-Reference_Guide-Skinning_Portal-Skin_Service>`__
+
+-  :ref:`JavaScript development <#sect-Reference_Guide-Javascript_Development>`__
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ActivityType:
+
+Creating a new activity type
+-----------------------------
+
+The creation of an activity type involves a UI Component which is
+required for the activity display. In this tutorial, you define an
+activity type and your own UI Component to display it. You can download
+all source code of this tutorial
+`here <https://github.com/exo-samples/docs-samples/tree/4.3.x/create-new-activity-type>`__.
+
+1. Create a Maven project as follows:
+
+|image37|
+
+2. Edit the ``pom.xml`` file:
+
+   .. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+			<modelVersion>4.0.0</modelVersion>
+			<parent>
+				<artifactId>integ-wiki</artifactId>
+				<groupId>org.exoplatform.integration</groupId>
+				<version>4.0.4</version>
+			</parent>
+			<artifactId>wiki-activity-type</artifactId>
+			<packaging>jar</packaging>
+			<version>1.0</version>
+			<name>Activity type</name>
+			<description>UI Extension - Activity type</description>
+			<dependencies>
+				<dependency>
+					<groupId>org.exoplatform.platform-ui</groupId>
+					<artifactId>platform-ui-webui-core</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.gatein.portal</groupId>
+					<artifactId>exo.portal.webui.framework</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.social</groupId>
+					<artifactId>social-component-webui</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.kernel</groupId>
+					<artifactId>exo.kernel.container</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.core</groupId>
+					<artifactId>exo.core.component.security.core</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.social</groupId>
+					<artifactId>social-component-core</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.wiki</groupId>
+					<artifactId>wiki-service</artifactId>
+				</dependency>
+			</dependencies>
+		</project>
+
+3. Edit the ``SampleUIActivity.java`` file:
+
+   .. code:: java
+
+		package com.acme.samples.activitytype;
+
+		import org.exoplatform.webui.core.lifecycle.UIFormLifecycle;
+		import org.exoplatform.webui.config.annotation.ComponentConfig;
+		import org.exoplatform.social.webui.activity.BaseUIActivity;
+
+		@ComponentConfig(
+		  lifecycle = UIFormLifecycle.class,
+		  template = "classpath:groovy/com/acme/samples/SampleUIActivity.gtmpl"
+		)
+
+		public class SampleUIActivity extends BaseUIActivity {
+
+		}
+
+4. Edit the ``SampleUIActivity.gtmpl`` file. You can copy the code of
+   ``social-extension.war!/groovy/social/webui/activity/UIDefaultActivity.gtmpl``.
+
+	Some samples that you can refer:
+
+	-  ``integ-wiki-social-4.x.x.jar!/groovy/wiki/social-integration/plugin/space/WikiUIActivity.gtmpl``
+
+	-  ``integ-calendar-social-4.x.x.jar!/groovy/cs/social-integration/plugin/space/CalendarUIActivity.gtmpl``
+
+	-  ``integ-ecms-social-4.x.x.jar!/groovy/ecm/social-integration/plugin/space/ContentUIActivity.gtmpl``
+
+5. Edit the ``SampleUIActivityBuilder.java`` file:
+
+   .. code:: java
+
+		package com.acme.samples.activitytype;
+
+		import org.exoplatform.social.core.activity.model.ExoSocialActivity;
+		import org.exoplatform.social.webui.activity.BaseUIActivity;
+		import org.exoplatform.social.webui.activity.BaseUIActivityBuilder;
+
+		public class SampleUIActivityBuilder extends BaseUIActivityBuilder {
+
+		  @Override
+		  protected void extendUIActivity(BaseUIActivity uiActivity, ExoSocialActivity activity) {
+			//
+		  }
+		}
+
+6. Edit the ``configuration.xml`` file:
+
+   .. code:: xml
+
+		<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+		  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+			<external-component-plugins>
+				<target-component>org.exoplatform.webui.ext.UIExtensionManager</target-component>
+				<component-plugin>
+					<name>add.action</name>
+					<set-method>registerUIExtensionPlugin</set-method>
+					<type>org.exoplatform.webui.ext.UIExtensionPlugin</type>
+					<init-params>
+						<object-param>
+							<name>Space Activity</name>
+							<object type="org.exoplatform.social.webui.activity.UIActivityExtension">
+								<field name="type"><string>org.exoplatform.social.webui.activity.BaseUIActivity</string></field>
+								<field name="name"><string>test-activity-type</string></field>
+								<field name="component">
+									<string>com.acme.samples.activitytype.SampleUIActivity</string>
+								</field>
+								<field name="activityBuiderClass">
+									<string>com.acme.samples.activitytype.SampleUIActivityBuilder</string>
+								</field>
+							</object>
+						</object-param>
+					</init-params>
+				</component-plugin>
+			</external-component-plugins>
+
+			<external-component-plugins>
+				<target-component>org.exoplatform.wiki.service.WikiService</target-component>
+				<component-plugin>
+					<name>Wiki listener</name>
+					<set-method>addComponentPlugin</set-method>
+					<type>com.acme.samples.activitytype.GenerateActivity4Testing</type>
+					<init-params>
+						<value-param>
+							<name>wikiPortletName</name>
+							<value>wiki</value>
+						</value-param>
+					</init-params>
+				</component-plugin>
+			</external-component-plugins>
+			
+		</configuration>
+
+	The configuration fulfils two tasks:
+
+	-  Register the plugin for UIActivityExtension, using the UI Extension
+	   mechanism. Pay attention that the activity type is registered as
+	   ``test-activity-type``.
+
+	-  Register your GenerateActivity4Testing as a wiki listener.
+
+7. Edit the ``GenerateActivity4Testing.java`` file:
+
+   .. code:: java
+
+		package com.acme.samples.activitytype;
+
+		import org.exoplatform.container.PortalContainer;
+		import org.exoplatform.services.security.ConversationState;
+		import org.exoplatform.social.core.identity.model.Identity;
+		import org.exoplatform.social.core.identity.provider.OrganizationIdentityProvider;
+
+		import org.exoplatform.social.core.activity.model.ExoSocialActivity;
+		import org.exoplatform.social.core.activity.model.ExoSocialActivityImpl;
+		import org.exoplatform.social.core.manager.ActivityManager;
+		import org.exoplatform.social.core.manager.IdentityManager;
+
+		import org.exoplatform.wiki.service.listener.PageWikiListener;
+		import org.exoplatform.wiki.mow.api.Page;
+
+		public class GenerateActivity4Testing extends PageWikiListener {
+			
+			public static final String ACTIVITY_TYPE = "test-activity-type";
+			
+			private void generateActivity() throws Exception {
+				// Get current user and assign to ownerStream
+				String username = ConversationState.getCurrent().getIdentity().getUserId();
+				IdentityManager identityM = 
+					(IdentityManager) PortalContainer.getInstance().getComponentInstanceOfType(IdentityManager.class);
+				Identity userIdentity = identityM.getOrCreateIdentity(OrganizationIdentityProvider.NAME, username, false);
+				Identity ownerStream = userIdentity;
+				
+				// New activity
+				ExoSocialActivityImpl activity = new ExoSocialActivityImpl();
+				activity.setUserId(userIdentity.getId());
+				activity.setTitle("This is an activity of type <b>" + ACTIVITY_TYPE + "</b>.");
+				activity.setBody("This is for testing");
+				activity.setType(ACTIVITY_TYPE);
+				
+				// Save activity
+				ActivityManager activityM = 
+					(ActivityManager) PortalContainer.getInstance().getComponentInstanceOfType(ActivityManager.class);
+				activityM.saveActivityNoReturn(ownerStream, activity);
+				
+			}
+			
+			@Override
+			public void postAddPage(String wikiType, String wikiOwner, String pageId, Page page) throws Exception {
+				
+				generateActivity();
+				
+			}
+			
+			@Override
+			public void postDeletePage(String wikiType, String wikiOwner, String pageId, Page page) throws Exception {
+				//
+			}
+			
+			@Override
+			public void postUpdatePage(String wikiType, String wikiOwner, String pageId, Page page, String wikiUpdateType) throws Exception {
+				//
+			}
+		}
+
+	This is supposed to create an activity of ``test-activity-type`` 
+	when a wiki page is added.
+
+8. Build and deploy the ``.jar`` file
+   (``target/wiki-activity-type-1.0.jar``) into eXo Platform package.
+
+	-  ``$PLATFORM_TOMCAT_HOME/lib`` (in Tomcat)
+
+	-  ``$PLATFORM_JBOSS_HOME/standalone/deployments/platform.ear!/lib`` (in
+	   JBoss)
+
+**Testing**
+
+Start the server, log in and go to Wiki. Here, create a new wiki page,
+then test the activity in the Intranet homepage:
+
+|image38|
+
+You have re-used the UIDefaultActivity template. To imagine out what can
+be done with your own template, let's see the wiki activity that uses
+WikiUIActivity.gtmpl. Pay attention to the book icon on the leftmost,
+the link to the relevant wiki page, and the excerpt of its content:
+
+|image39|
+
+**What is ActivityBuilder?**
+
+In the above example, you extend BaseUIActivityBuilder and do not write
+any extra code. To understand what you can do with your ActivityBuilder,
+let's see the following code of UILinkActivityBuilder:
+
+.. code:: java
+
+    public class UILinkActivityBuilder extends BaseUIActivityBuilder {
+      private static final Log LOG = ExoLogger.getLogger(UILinkActivityBuilder.class);
+      @Override
+      protected void extendUIActivity(BaseUIActivity uiActivity, ExoSocialActivity activity) {
+        UILinkActivity uiLinkActivity = (UILinkActivity) uiActivity;
+        Map<String, String> templateParams = activity.getTemplateParams();
+        uiLinkActivity.setLinkSource(templateParams.get(UILinkActivityComposer.LINK_PARAM));
+        uiLinkActivity.setLinkTitle(templateParams.get(UILinkActivityComposer.TITLE_PARAM));
+        uiLinkActivity.setLinkImage(templateParams.get(UILinkActivityComposer.IMAGE_PARAM));
+        uiLinkActivity.setLinkDescription(templateParams.get(UILinkActivityComposer.DESCRIPTION_PARAM));
+        uiLinkActivity.setLinkComment(templateParams.get(UILinkActivityComposer.COMMENT_PARAM));
+      }
+    }
+
+You can see more complex codes at `the eXo Integration project <https://github.com/exoplatform/integration/tree/develop>`__
+where many activity types are created. The example of this tutorial is
+very similar to (and simpler than) the `ks-wiki:spaces <https://github.com/exoplatform/integration/tree/develop/integ-wiki>`__
+type.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ApplicationPlugins.ActivityComposer:
+
+Creating an activity composer
+-------------------------------
+
+The Activity Stream portlet features a Composer container that contains
+some built-in composers, like the *File* composer to share a document,
+or the *Link* composer to share any external media resource. In general,
+a composer is a UI form/dialog that binds to a Java class to compose and
+save an activity.
+
+The container is extensible, so you can add your own composer. In this
+tutorial, it is assumed that you will add a *LocationComposer* that
+functions as below:
+
+-  In the container, a Check-in icon is added (see the screenshot). A
+   click on it will expand an input field and a Check-in button.
+
+-  The user inputs his location and clicks the button. The input is
+   validated (for simplification, the sample code just checks that it is
+   empty or not), then the Share button is enabled. By clicking Share,
+   the user posts to the activity stream a message saying he "checked in
+   at" the location.
+
+|image40|
+
+Your project involves a Java class, a Groovy template, JavaScript and
+some other resources. All source code of this project is provided
+`here <https://github.com/exo-samples/docs-samples/tree/master/create-activity-composer>`__
+for downloading.
+
+1. Create a Maven project with 2 modules:
+
+|image41|
+
+2. Edit the ``pom.xml`` file:
+
+	.. code:: xml
+
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		  <modelVersion>4.0.0</modelVersion>
+		  <parent>
+			<artifactId>social</artifactId>
+			<groupId>org.exoplatform.social</groupId>
+			<version>4.0.4</version>
+		  </parent>
+		  <artifactId>social-location-composer</artifactId>
+		  <version>4.0.x</version>
+		  <packaging>pom</packaging>
+		  <name>eXo Social - Location Composer</name>
+		  <description>eXo Social - Location Composer</description>
+		  <modules>
+			<module>resources</module>
+			<module>composer-plugin</module>
+		  </modules>
+		</project>
+
+3. Create folders and files for the **composer-plugin** folder, as follows:
+
+|image42|
+
+4. Edit the ``composer-plugin/pom.xml`` file:
+
+	.. code:: xml
+
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		  <modelVersion>4.0.0</modelVersion>
+		  <parent>
+			<artifactId>social-location-composer</artifactId>
+			<groupId>org.exoplatform.social</groupId>
+			<version>4.0.x</version>
+		  </parent>
+		  <groupId>com.acme.samples</groupId>
+		  <artifactId>acme-location-composer-plugin</artifactId>
+		  <packaging>jar</packaging>
+		  <name>Sample activity composer plugin</name>
+		  <description>Sample activity composer plugin</description>
+		  <dependencies>
+			<dependency>
+			  <groupId>org.exoplatform.social</groupId>
+			  <artifactId>social-component-common</artifactId>
+			  <version>4.0.4</version>
+			  <scope>provided</scope>
+			</dependency>
+			<dependency>
+			  <groupId>org.exoplatform.social</groupId>
+			  <artifactId>social-component-core</artifactId>
+			  <version>4.0.4</version>
+			  <scope>provided</scope>
+			</dependency>
+			 <dependency>
+			  <groupId>org.exoplatform.kernel</groupId>
+			  <artifactId>exo.kernel.commons</artifactId>
+			  <version>2.4.7-GA</version>
+			  <scope>provided</scope>
+			</dependency>
+			<dependency>
+			  <groupId>org.exoplatform.social</groupId>
+			  <artifactId>social-component-webui</artifactId>
+			  <version>4.0.4</version>
+			  <scope>provided</scope>
+			</dependency>
+			<dependency>
+			  <groupId>org.exoplatform.platform-ui</groupId>
+			  <artifactId>platform-ui-webui-core</artifactId>
+			  <version>4.0.4</version>
+			  <scope>provided</scope>
+			</dependency>
+			<dependency>
+			  <groupId>org.gatein.portal</groupId>
+			  <artifactId>exo.portal.component.web.controller</artifactId>
+			  <version>3.5.8-PLF</version>
+			  <scope>provided</scope>
+			</dependency>
+			<dependency>
+			  <groupId>org.gatein.portal</groupId>
+			  <artifactId>exo.portal.webui.framework</artifactId>
+			  <version>3.5.8-PLF</version>
+			  <scope>provided</scope>
+			</dependency>
+		  </dependencies>
+		</project>
+
+5. Edit the ``SampleActivityComposer.java`` file:
+
+	.. code:: java
+
+		package com.acme.samples;
+
+		import java.util.LinkedHashMap;
+		import java.util.Map;
+		import java.util.ResourceBundle;
+
+		import org.exoplatform.social.core.activity.model.ExoSocialActivity;
+		import org.exoplatform.social.core.activity.model.ExoSocialActivityImpl;
+		import org.exoplatform.social.core.application.PeopleService;
+		import org.exoplatform.social.core.identity.model.Identity;
+		import org.exoplatform.social.core.identity.provider.OrganizationIdentityProvider;
+		import org.exoplatform.social.core.identity.provider.SpaceIdentityProvider;
+		import org.exoplatform.social.core.space.model.Space;
+		import org.exoplatform.social.core.space.spi.SpaceService;
+		import org.exoplatform.social.webui.Utils;
+		import org.exoplatform.social.webui.activity.UIDefaultActivity;
+		import org.exoplatform.social.webui.composer.UIActivityComposer;
+		import org.exoplatform.social.webui.composer.UIComposer;
+		import org.exoplatform.social.webui.composer.UIComposer.PostContext;
+		import org.exoplatform.social.webui.profile.UIUserActivitiesDisplay;
+		import org.exoplatform.social.webui.profile.UIUserActivitiesDisplay.DisplayMode;
+		import org.exoplatform.social.webui.space.UISpaceActivitiesDisplay;
+		import org.exoplatform.web.application.ApplicationMessage;
+		import org.exoplatform.webui.application.WebuiRequestContext;
+		import org.exoplatform.webui.config.annotation.ComponentConfig;
+		import org.exoplatform.webui.config.annotation.EventConfig;
+		import org.exoplatform.webui.core.UIApplication;
+		import org.exoplatform.webui.core.UIComponent;
+		import org.exoplatform.webui.event.Event;
+		import org.exoplatform.webui.event.EventListener;
+		import org.exoplatform.webui.form.UIFormStringInput;
+		import org.exoplatform.webui.form.UIFormTextAreaInput;
+
+		@ComponentConfig(template = "war:/groovy/com/acme/samples/SampleActivityComposer.gtmpl", events = {
+			@EventConfig(listeners = SampleActivityComposer.CheckinActionListener.class),
+			@EventConfig(listeners = UIActivityComposer.CloseActionListener.class),
+			@EventConfig(listeners = UIActivityComposer.SubmitContentActionListener.class),
+			@EventConfig(listeners = UIActivityComposer.ActivateActionListener.class) })
+		public class SampleActivityComposer extends UIActivityComposer {
+
+		  public static final String LOCATION = "location";
+		  
+		  private String location_ = "";
+
+		  private boolean isLocationValid_ = false;
+
+		  private Map<String, String> templateParams;
+
+		  public SampleActivityComposer() {
+			setReadyForPostingActivity(false);
+			UIFormStringInput inputLocation = new UIFormStringInput("InputLocation", "InputLocation", null);
+			addChild(inputLocation);
+		  }
+
+		  public void setLocationValid(boolean isValid) {
+			isLocationValid_ = isValid;
+		  }
+
+		  public boolean isLocationValid() {
+			return isLocationValid_;
+		  }
+
+		  public void setTemplateParams(Map<String, String> tempParams) {
+			templateParams = tempParams;
+		  }
+
+		  public Map<String, String> getTemplateParams() {
+			return templateParams;
+		  }
+
+		  public void clearLocation() {
+			location_ = "";
+		  }
+
+		  public String getLocation() {
+			return location_;
+		  }
+
+		  private void setLocation(String city, WebuiRequestContext requestContext) {
+			location_ = city;
+			if (location_ == null || location_ == "") {
+			  UIApplication uiApp = requestContext.getUIApplication();
+			  uiApp.addMessage(new ApplicationMessage("Invalid location!", null, ApplicationMessage.ERROR));
+			  return;
+			}
+
+			templateParams = new LinkedHashMap<String, String>();
+			templateParams.put(LOCATION, location_);
+
+			setLocationValid(true);
+		  }
+
+		  @Override
+		  public void onActivate(Event<UIActivityComposer> uiActivityComposer) {
+		  }
+
+		  @Override
+		  public void onSubmit(Event<UIActivityComposer> uiActivityComposer) {
+		  }
+
+		  @Override
+		  public void onClose(Event<UIActivityComposer> uiActivityComposer) {
+		  }
+
+		  /* called when user clicks "Share" button.
+		   * create and save activity.
+		   */
+		  @Override
+		  public void onPostActivity(PostContext postContext,
+									 UIComponent uiComponent,
+									 WebuiRequestContext requestContext,
+									 String postedMessage) throws Exception {
+			if (postContext == UIComposer.PostContext.SPACE){
+			  UISpaceActivitiesDisplay uiDisplaySpaceActivities = (UISpaceActivitiesDisplay) getActivityDisplay();
+			  Space space = uiDisplaySpaceActivities.getSpace();
+
+			  Identity spaceIdentity = Utils.getIdentityManager().getOrCreateIdentity(SpaceIdentityProvider.NAME,
+																	   space.getPrettyName(),
+																	   false);
+			  ExoSocialActivity activity = new ExoSocialActivityImpl(Utils.getViewerIdentity().getId(),
+										   SpaceService.SPACES_APP_ID,
+										   postedMessage,
+										   null);
+			  activity.setType(UIDefaultActivity.ACTIVITY_TYPE);
+			  Utils.getActivityManager().saveActivityNoReturn(spaceIdentity, activity);
+			  uiDisplaySpaceActivities.init();
+			} else if (postContext == PostContext.USER) {
+			  UIUserActivitiesDisplay uiUserActivitiesDisplay = (UIUserActivitiesDisplay) getActivityDisplay();
+			  Identity ownerIdentity = Utils.getIdentityManager().getOrCreateIdentity(OrganizationIdentityProvider.NAME,
+																		   uiUserActivitiesDisplay.getOwnerName(), false);
+			  if (postedMessage.length() > 0) {
+				postedMessage += "<br>";
+			  }
+			  
+			  if (this.getLocation() != null && this.getLocation().length() > 0) {
+				postedMessage += String.format("%s checked in at %s.", ownerIdentity.getProfile().getFullName(), this.getLocation());
+			  } else {
+				postedMessage += String.format("%s checked in at Nowhere.", ownerIdentity.getProfile().getFullName());
+			  }
+			  ExoSocialActivity activity = new ExoSocialActivityImpl(Utils.getViewerIdentity().getId(),
+											   PeopleService.PEOPLE_APP_ID,
+											   postedMessage,
+											   null);
+			  activity.setType(UIDefaultActivity.ACTIVITY_TYPE);
+			  activity.setTemplateParams(templateParams);
+			  this.clearLocation();
+			  Utils.getActivityManager().saveActivityNoReturn(ownerIdentity, activity);
+
+			  this.setLocationValid(false);
+			  if (uiUserActivitiesDisplay.getSelectedDisplayMode() == DisplayMode.MY_SPACE) {
+				uiUserActivitiesDisplay.setSelectedDisplayMode(DisplayMode.ALL_ACTIVITIES);
+			  }
+			}
+		  }
+
+		  public static class CheckinActionListener extends EventListener<SampleActivityComposer> {
+			
+			// this is called on event "Checkin" (when users clicks Check-in button).
+			@Override
+			public void execute(Event<SampleActivityComposer> event) throws Exception {
+			  WebuiRequestContext requestContext = event.getRequestContext();
+			  SampleActivityComposer sampleActivityComposer = event.getSource();
+
+			  String city;
+			  try {
+				city = requestContext.getRequestParameter(OBJECTID).trim();
+			  } catch (Exception e) {
+				System.out.println("Exception when getting OBJECTID!");
+				return;
+			  }
+
+			  if (city != null && city.length() > 0) {
+				sampleActivityComposer.setLocationValid(true);
+			  } else {
+				sampleActivityComposer.setLocationValid(false);
+			  }
+			  
+			  sampleActivityComposer.setLocation(city, requestContext);
+			  if (sampleActivityComposer.location_ != null && sampleActivityComposer.location_.length() > 0) {
+				requestContext.addUIComponentToUpdateByAjax(sampleActivityComposer);
+				event.getSource().setReadyForPostingActivity(true);
+			  }
+			}
+		  }
+
+		}
+
+	Some remarks:
+
+	-  The groovy template
+	   (``groovy/com/acme/SampleActivityComposer.gtmpl``) is configured in
+	   this class to be rendered when the composer is activated.
+
+	-  The inner class (``CheckinActionListener``) listens to the "Checkin"
+	   events (when the user clicks the Check-in button). The class name is
+	   bound to the event name.
+
+6. Edit the ``composer-plugin/src/main/resources/conf/configuration.xml``
+   file to register the extension:
+
+	.. code:: xml
+
+		<configuration
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+			xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+		  <external-component-plugins>
+			<target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+			<component-plugin>
+			  <name>Add PortalContainer Definitions</name>
+			  <set-method>registerChangePlugin</set-method>
+			  <type>org.exoplatform.container.definition.PortalContainerDefinitionChangePlugin</type>
+			  <priority>101</priority>
+			  <init-params>
+				<values-param>
+				  <name>apply.specific</name>
+				  <value>portal</value>
+				</values-param>
+				<object-param>
+				  <name>addDependencies</name>
+				  <object type="org.exoplatform.container.definition.PortalContainerDefinitionChange$AddDependencies">
+					<field name="dependencies">
+					  <collection type="java.util.ArrayList">
+						<value>
+						  <string>acme-extension</string>
+						</value>
+					  </collection>
+					</field>
+				  </object>
+				</object-param>
+			  </init-params>
+			</component-plugin>
+		  </external-component-plugins>
+		</configuration>
+
+7. Edit the ``composer-plugin/src/main/resources/conf/portal/configuration.xml``
+   file to configure ``UIExtensionManager`` and ``ResourceBundleService``:
+
+	.. code:: xml
+
+		<configuration
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_1.xsd http://www.exoplatform.org/xml/ns/kernel_1_1.xsd"
+		   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_1.xsd">
+		  <external-component-plugins>
+			<target-component>org.exoplatform.webui.ext.UIExtensionManager</target-component>
+			<component-plugin>
+			  <name>add.action</name>
+			  <set-method>registerUIExtensionPlugin</set-method>
+			  <type>org.exoplatform.webui.ext.UIExtensionPlugin</type>
+			  <init-params>
+				<object-param>
+				  <name>Sample Activity Composer</name>
+				  <object type="org.exoplatform.webui.ext.UIExtension">
+					<field name="type"><string>org.exoplatform.social.webui.composer.UIActivityComposer</string></field>
+					<field name="name"><string>SampleActivityComposer</string></field>
+					<field name="component"><string>com.acme.samples.SampleActivityComposer</string></field>
+					<field name="rank"><int>1</int></field>
+				  </object>
+				</object-param>
+			  </init-params>
+			</component-plugin>
+		  </external-component-plugins>
+
+		  <external-component-plugins>
+			<target-component>org.exoplatform.services.resources.ResourceBundleService</target-component>
+			<component-plugin>
+			  <name>Location Activity Composer Plugin</name>
+			  <set-method>addResourceBundle</set-method>
+			  <type>org.exoplatform.services.resources.impl.BaseResourceBundlePlugin</type>
+			  <init-params>
+				<values-param>
+				  <name>classpath.resources</name>
+				  <description></description>
+				  <value>locale.com.acme.LocationComposer</value>
+				</values-param>
+				<values-param>
+				  <name>portal.resource.names</name>
+				  <description></description>
+				  <value>locale.com.acme.LocationComposer</value>
+				</values-param>
+			  </init-params>
+			</component-plugin>
+		  </external-component-plugins>
+		</configuration>
+
+8. Edit the resources in the ``locale/com/acme/LocationComposer_en.properties`` 
+   file (that is configured as ``locale.com.acme.LocationComposer`` in 
+   the previous step):
+
+	::
+
+		UIActivityComposer.label.SampleActivityComposer=Check-in
+		com.acme.LocationComposer.CheckinBtn=Check-in
+
+	The first line is for the tooltip of the composer icon, it is looked 
+	up by the composer container so you must use the property name as it 
+	is. The second property is for the label of the button, it is 
+	handled by yourself in the ``SampleActivityComposer.gtmpl`` so name 
+	it as you want.
+
+9. Create folders and files of the ``resources`` module. It will be 
+   built into ``acme-extension.war`` that you have registered in the
+   ``conf/configuration.xml`` file.
+
+|image43|
+
+10. Edit the ``resources/pom.xml`` file:
+
+	.. code:: xml
+
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		  <modelVersion>4.0.0</modelVersion>
+		  <parent>
+			<artifactId>social-location-composer</artifactId>
+			<groupId>org.exoplatform.social</groupId>
+			<version>4.0.x</version>
+		  </parent>
+		  <groupId>com.acme.samples</groupId>
+		  <artifactId>acme-extension</artifactId>
+		  <packaging>war</packaging>
+		  <name>eXo Social Location Composer Resources</name>
+		  <description>eXo Social Location Composer Resources</description>
+		  <build>
+			<finalName>acme-extension</finalName>
+		  </build>
+		</project>
+
+11. Edit the ``web.xml`` file:
+
+	.. code:: xml
+
+		<web-app>
+		  <display-name>acme-extension</display-name>
+		  <listener>
+			<listener-class>org.exoplatform.container.web.PortalContainerConfigOwner</listener-class>
+		  </listener>
+		  <filter>
+			<filter-name>ResourceRequestFilter</filter-name>
+			<filter-class>org.exoplatform.portal.application.ResourceRequestFilter</filter-class>
+		  </filter>
+
+		  <filter-mapping>
+			<filter-name>ResourceRequestFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		  </filter-mapping>
+
+		  <servlet>
+			<servlet-name>GateInServlet</servlet-name>
+			<servlet-class>org.gatein.wci.api.GateInServlet</servlet-class>
+			<load-on-startup>0</load-on-startup>
+		  </servlet>
+		  <servlet-mapping>
+			<servlet-name>GateInServlet</servlet-name>
+			<url-pattern>/gateinservlet</url-pattern>
+		  </servlet-mapping>
+
+		</web-app>
+
+12. Edit the ``gatein-resources.xml`` file to register JavaScript and 
+    CSS resources:
+
+	.. code:: xml
+
+		<gatein-resources
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_resources_1_3 http://www.gatein.org/xml/ns/gatein_resources_1_3"
+		  xmlns="http://www.gatein.org/xml/ns/gatein_resources_1_3">
+		  
+		  <portal-skin>
+			<skin-name>Default</skin-name>
+			<skin-module>acme.samples</skin-module>
+			<css-path>/skin/DefaultSkin/Stylesheet.css</css-path>
+		  </portal-skin>
+		  <module>
+			<name>location-activity-composer</name>
+			<script>
+			  <path>/javascript/acme/samples/LocationComposer.js</path>
+			</script>
+			<depends>
+			  <module>socialUtil</module>
+			</depends>
+			<depends>
+			  <module>jquery</module>
+			  <as>jq</as>
+			</depends>
+			<depends>
+			   <module>mentionsPlugin</module>
+			</depends>
+			<depends>
+			  <module>mentionsLib</module>
+			  <as>mentions</as>
+			</depends>
+			<depends>
+			  <module>webui</module>
+			</depends>
+		  </module>
+		</gatein-resources>
+
+13. Edit the ``javascript/acme/samples/LocationComposer.js`` file:
+
+	.. code:: javascript
+
+		(function($) {
+		  var LocationComposer = {
+			ENTER_KEY_CODE: 13,
+			
+			onLoad: function(params) {
+			  LocationComposer.configure(params);
+			  LocationComposer.init();
+			},
+			
+			configure: function(params) {
+			  this.locationValid = params.locationValid || false;
+			  this.inputLocationId = params.inputLocationId || 'InputLocation';
+			  this.checkinButtonId = params.checkinButtonId || 'CheckinButton';
+			  this.checkinUrl = decodeURI(params.checkinUrl || "");
+			  this.location = params.location || '';
+			},
+			
+			init: function() {
+			  LocationComposer = this;
+			  
+			  if (this.locationValid === "false") {
+				this.inputLocation = $('#' + this.inputLocationId);
+				this.checkinButton = $('#' + this.checkinButtonId);
+				
+				var LocationComposer = this;
+				var inputLocation = this.inputLocation;
+				var checkinBtn = this.checkinButton;
+				inputLocation.on('focus', function(evt) {
+				  if (inputLocation.val() === '') {
+					inputLocation.val('');
+				  }
+				});
+				this.inputLocation.on('keypress', function(evt) {
+				  if (LocationComposer.ENTER_KEY_CODE == (evt.which ? evt.which : evt.keyCode)) {
+					$(checkinBtn).click();
+				  } 
+				});
+				this.checkinButton.removeAttr('disabled');
+				this.checkinButton.on('click', function(evt) {
+				  if (inputLocation.val() === '') {
+					return;
+				  }
+				  var url = LocationComposer.checkinUrl.replace(/&amp;/g, "&") + '&objectId=' + encodeURI(inputLocation.val()) + '&ajaxRequest=true';
+				  ajaxGet(url, function() {
+					try {
+					  $('textarea#composerInput').exoMentions('showButton', function() {});
+					} catch (e) {
+					  console.log(e);
+					}
+				  });
+				});
+			  }
+			  
+			  var closeButton = $('#UIActivityComposerContainer').find('a.uiIconClose:first');
+			  if (closeButton.length > 0) {
+				closeButton.on('click', function() {
+				  $('textarea#composerInput').exoMentions('clearLink', function() { });
+				});
+			  }
+			}
+		  };
+		  return LocationComposer;
+		})(jq);
+
+14. Edit the ``SampleActivityComposer.gtmpl`` file:
+
+	.. code:: groovy
+
+		<%
+		  import org.exoplatform.webui.form.UIFormStringInput;
+		  
+		  def uicomponentId = uicomponent.id;
+		  def labelCheckin = _ctx.appRes("com.acme.LocationComposer.CheckinBtn");
+		  
+		  def locationValid = uicomponent.isLocationValid();
+		  uicomponent.setLocationValid(false);
+		  def location = uicomponent.getLocation();
+		  
+		  def params = "{" +
+						  "locationValid: '" + locationValid + "'," +
+						  "inputLocationId: 'InputLocation'," +
+						  "checkinButtonId: 'CheckinButton'," +
+						  "checkinUrl: encodeURI('" + uicomponent.url("Checkin") + "')," +
+						  "location: '" + location + "'" +
+						  "}";
+		   
+		  def requestContext = _ctx.getRequestContext();
+		  def jsManager = requestContext.getJavascriptManager();
+		  jsManager.require("SHARED/jquery", "jq").require("SHARED/location-activity-composer", "locComposer").addScripts("locComposer.onLoad($params);");
+		  
+		%>
+		<div id="$uicomponentId">
+		  <div id="LocationComposerContainer" class="uiComposerLink clearfix">
+			<button id="CheckinButton" class="btn pull-right">$labelCheckin</button>
+			<div class="Title Editable">
+			  <%if (locationValid) {%>
+				<span class="tabName">Location: $location</span>
+			  <%} else {
+				uicomponent.renderChild(UIFormStringInput.class);
+			  }%>
+			</div>
+		  </div>
+		</div>
+
+	This code calls the ``location-activity-composer`` JavaScript module
+	that you registered in the ``gatein-resources.xml`` file.
+
+15. Edit the CSS resources in the ``skin/Default/Stylesheet.css`` file:
+
+	.. code:: css
+
+		.sampleactivitycomposer .uiIconSocSampleActivityComposer {
+		  background: url('/eXoSkin/skin/images/themes/default/social/skin/UIManageSpaces/Member.png') no-repeat left 3px 3px;
+		}
+		a.sampleactivitycomposer:hover .uiIconSocSampleActivityComposer  {
+		  background: url('/eXoSkin/skin/images/themes/default/social/skin/UIManageSpaces/Member.png') no-repeat left 3px 3px;
+		}
+
+	Here you re-use the background image that is packaged in
+	``eXoSkin.war``. You can create your own icon.
+
+16. Build the project, then deploy
+``composer-plugin/target/acme-location-composer-plugin-4.0.x.jar`` into
+``$PLATFORM_TOMCAT_HOME/lib``, and
+``resources/target/acme-extension.war`` into
+``$PLATFORM_TOMCAT_HOME/webapps``.
+
+**Testing**
+
+Click the icon (with the "Check-in" tooltip) to bring up the location
+input. Type something, click Check-in, then click Share. An activity
+will display like you see at the beginning of this page.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.Notification:
+
+Notification
+~~~~~~~~~~~~~
+
+-  :ref:`Extending notification system <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.Notification.ExtendingNotificationSystem>`
+   Steps to create an extension which plugs a new notification type and
+   channel into current notification system in eXo Platform.
+
+-  :ref:`Overriding email notification <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.Notification.OverridingEmailNotification>`
+   Steps to create an extension which overrides the email notification
+   templates following your own style.
+
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.Notification.ExtendingNotificationSystem:
+
+Extending notification system
+------------------------------
+
+eXo Platform provides you with a notification system that allows you to
+extend in 2 mechanisms:
+
+-  The extensibility of notification channels, such as by email,
+   directly on-site or through pushing.
+
+-  The extensibility of notification types, such as connection
+   invitation, space activities.
+
+This section will walk you through a `complete sample extension <https://github.com/exo-samples/docs-samples/tree/master/console-notification>`__
+that instructs you how to:
+
+-  create a new notification channel that pushes notification
+   information to the console panel.
+
+-  create a new notification type that informs when one user in your
+   network changes her/his profile.
+
+First you need to create a new Maven project with the overall structure:
+
+|image44|
+
+And now, continue with the detailed steps:
+
+**Under pom.xml**
+
+Add the following dependencies to the ``pom.xml`` file:
+
+.. code:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+        <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+            <modelVersion>4.0.0</modelVersion>
+            <groupId>com.acme.samples</groupId>
+            <artifactId>console-notification</artifactId>
+            <version>1.0.0</version>
+            <packaging>pom</packaging>
+            <modules>
+                <module>lib</module>
+                <module>config</module>
+                <module>webapp</module>
+            </modules>
+            <properties>
+                <org.exoplatform.depmgt.version>10-SNAPSHOT</org.exoplatform.depmgt.version>
+                <org.exoplatform.kernel.version>2.4.9-GA</org.exoplatform.kernel.version>
+                <org.exoplatform.core.version>2.5.9-GA</org.exoplatform.core.version>
+                <!--GateIn project's dependencies-->
+                <org.gatein.portal.version>3.5.10.Final</org.gatein.portal.version>
+                <!--Platform project's dependencies-->
+                <org.exoplatform.social.version>4.2.x-SNAPSHOT</org.exoplatform.social.version>
+            </properties>
+            <dependencyManagement>
+                <dependencies>
+                    <!-- Import versions from platform project -->
+                    <dependency>
+                        <groupId>org.exoplatform</groupId>
+                        <artifactId>maven-depmgt-pom</artifactId>
+                        <version>${org.exoplatform.depmgt.version}</version>
+                        <type>pom</type>
+                        <scope>import</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.exoplatform.social</groupId>
+                        <artifactId>social</artifactId>
+                        <version>${org.exoplatform.social.version}</version>
+                        <type>pom</type>
+                        <scope>import</scope>
+                    </dependency>
+                    <!-- To be replaced by an import of GateIn Portal parent POM -->
+                    <dependency>
+                        <groupId>org.gatein.portal</groupId>
+                        <artifactId>exo.portal.component.portal</artifactId>
+                        <version>${org.gatein.portal.version}</version>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+        </project>
+
+**Under config folder**
+
+1. Create a ``pom.xml`` file and two ``configuration.xml`` files under
+   ``config`` folder as below:
+
+   |image45|
+
+2. Add the following information to ``config/pom.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+			<modelVersion>4.0.0</modelVersion>
+			<parent>
+				<groupId>com.acme.samples</groupId>
+				<artifactId>console-notification</artifactId>
+				<version>1.0.0</version>
+			</parent>
+			<artifactId>console-notification-config</artifactId>
+			<packaging>jar</packaging>
+			<build>
+				<finalName>console-notification-config</finalName>
+			</build>
+		</project>
+
+3. Add the below configuration to ``conf/configuration.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<configuration
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+		xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+			<external-component-plugins>
+				<!-- The full qualified name of the PortalContainerConfig -->
+				<target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+				<component-plugin>
+					<!-- The name of the plugin -->
+					<name>Add PortalContainer Definitions</name>
+					<!-- The name of the method to call on the PortalContainerConfig in order to register the PortalContainerDefinitions -->
+					<set-method>registerChangePlugin</set-method>
+					<!-- The full qualified name of the PortalContainerDefinitionPlugin -->
+					<type>org.exoplatform.container.definition.PortalContainerDefinitionChangePlugin</type>
+						<priority>102</priority>
+						<init-params>
+							<values-param>
+								<name>apply.specific</name>
+								<value>portal</value>
+							</values-param>
+							<object-param>
+								<name>addDependencies</name>
+								<object type="org.exoplatform.container.definition.PortalContainerDefinitionChange$AddDependencies">
+									<!-- The name of the portal container -->
+									<field name="dependencies">
+										<collection type="java.util.ArrayList">
+											<value>
+												<!--The context name of the portal extension-->
+												<string>console-notification-webapp</string>
+											</value>
+										</collection>
+									</field>
+								</object>
+							</object-param>
+						</init-params>
+					</component-plugin>
+			</external-component-plugins>
+		</configuration>
+
+4. Add the following configuration to ``portal/configuration.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+			<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+			xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+				
+				<external-component-plugins>
+					<target-component>org.exoplatform.social.core.manager.IdentityManager</target-component>
+					<component-plugin>
+						<name>SocialProfileListener</name>
+							<set-method>registerProfileListener</set-method>
+							<type>com.acme.samples.notification.SocialProfileListener</type>
+					</component-plugin>
+				</external-component-plugins>
+				
+				<external-component-plugins>
+					<target-component>org.exoplatform.commons.api.notification.channel.ChannelManager</target-component>
+					<component-plugin profiles="all">
+						<name>console.channel</name>
+							<set-method>register</set-method>
+							<type>com.acme.samples.notification.ConsoleChannel</type>
+							<description>Register the console channel to manager.</description>
+					</component-plugin>
+				</external-component-plugins>
+				
+				<external-component-plugins>
+					<target-component>org.exoplatform.commons.api.notification.service.setting.PluginContainer</target-component>
+					<component-plugin>
+							<name>notification.plugins</name>
+							<set-method>addPlugin</set-method>
+						<type>com.acme.samples.notification.plugin.UpdateProfilePlugin</type>
+							<description>Initial information for plugin.</description>
+							<init-params>
+								<object-param>
+									<name>template.UpdateProfilePlugin</name>
+									<description>The template of UpdateProfilePlugin</description>
+									<object
+									type="org.exoplatform.commons.api.notification.plugin.config.PluginConfig">
+										<field name="pluginId">
+											<string>UpdateProfilePlugin</string>
+										</field>
+										<field name="resourceBundleKey">
+											<string>UINotification.label.UpdateProfilePlugin</string>
+										</field>
+										<field name="order">
+											<string>11</string>
+										</field>
+										<field name="defaultConfig">
+											<collection type="java.util.ArrayList">
+												<value>
+													<string>Instantly</string>
+												</value>
+											</collection>
+										</field>
+										<field name="groupId">
+											<string>general</string>
+										</field>
+										<field name="bundlePath">
+											<string>locale.notification.template.Notification</string>
+										</field>
+									</object>
+								</object-param>
+							</init-params>
+					</component-plugin>
+				</external-component-plugins>
+			</configuration>
+
+4. Register ``SocialProfileListener`` as a profile listener plugin to 
+   the ``IdentityManager`` component. This plugin listens to user 
+   profile updating events.
+
+5. Register new plugin ``console.channel`` to the ``ChannelManager``
+   component. This plugin pushes notifications to console panel.
+
+6. Register new plugin ``UpdateProfilePlugin`` to the ``PluginContainer``
+   component. This plugin declares and initializes parameters for the 
+   new notification type. The initial parameters include:
+
+-  ``template.UpdateProfilePlugin`` - the template of
+   ``UpdateProfilePlugin``.
+
+-  ``pluginId`` - the Id of plugin which was defined in the class
+   ``UpdateProfilePlugin``.
+
+-  ``resourceBundleKey`` - the key which will be provided in resource
+   bundle files of each locale.
+
+-  ``order`` - the order to display the new type in notification group.
+
+-  ``groupId`` - the Id of group that this notification type belongs to.
+
+-  ``bundlePath`` - the path to the locale resource.
+
+-  ``defaultConfig`` - the default settings for this notification type
+   at first startup.
+
+**Under lib folder**
+
+1. Create another project under ``lib`` folder with the ``pom.xml`` file 
+   as below:
+
+|image46|
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+			<modelVersion>4.0.0</modelVersion>
+			<parent>
+				<groupId>com.acme.samples</groupId>
+				<artifactId>console-notification</artifactId>
+				<version>1.0.0</version>
+			</parent>
+			<artifactId>console-notification-lib</artifactId>
+			<packaging>jar</packaging>
+			<dependencies>
+				<dependency>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.social</groupId>
+					<artifactId>social-component-core</artifactId>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.core</groupId>
+					<artifactId>exo.core.component.organization.api</artifactId>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.exoplatform.social</groupId>
+					<artifactId>social-component-common</artifactId>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<finalName>console-notification-lib</finalName>
+			</build>
+		</project>
+
+2. Implement the class ``UpdateProfilePlugin.java`` as follows:
+
+	   .. code:: java
+
+		package com.acme.samples.notification.plugin;
+
+			import java.util.ArrayList;
+			import java.util.HashSet;
+			import java.util.Set;
+
+			import org.exoplatform.commons.api.notification.NotificationContext;
+			import org.exoplatform.commons.api.notification.model.ArgumentLiteral;
+			import org.exoplatform.commons.api.notification.model.NotificationInfo;
+			import org.exoplatform.commons.api.notification.plugin.BaseNotificationPlugin;
+			import org.exoplatform.commons.utils.CommonsUtils;
+			import org.exoplatform.commons.utils.ListAccess;
+			import org.exoplatform.container.xml.InitParams;
+			import org.exoplatform.services.log.ExoLogger;
+			import org.exoplatform.services.log.Log;
+			import org.exoplatform.social.core.identity.model.Identity;
+			import org.exoplatform.social.core.identity.model.Profile;
+			import org.exoplatform.social.core.manager.RelationshipManager;
+
+			public class UpdateProfilePlugin extends BaseNotificationPlugin {
+				public final static ArgumentLiteral<Profile> PROFILE = new ArgumentLiteral<Profile>(Profile.class, "profile");
+				private static final Log LOG = ExoLogger.getLogger(UpdateProfilePlugin.class);
+				public final static String ID = "UpdateProfilePlugin";
+				
+				public UpdateProfilePlugin(InitParams initParams) {
+					super(initParams);
+				}
+				
+				@Override
+				public String getId() {
+					return ID;
+				}
+				
+				@Override
+				public boolean isValid(NotificationContext ctx) {
+					return true;
+				}
+				
+				@Override
+				protected NotificationInfo makeNotification(NotificationContext ctx) {
+					Profile profile = ctx.value(PROFILE);
+					Set<String> receivers = new HashSet<String>();
+					
+					RelationshipManager relationshipManager = CommonsUtils.getService(RelationshipManager.class);
+					Identity updatedIdentity = profile.getIdentity();
+					ListAccess<Identity> listAccess = relationshipManager.getConnections(updatedIdentity);
+					try {
+						Identity[] relationships =  relationshipManager.getConnections(updatedIdentity).load(0, listAccess.getSize());
+						for(Identity i : relationships) {
+							receivers.add(i.getRemoteId());
+						}
+						} catch (Exception ex) {
+						LOG.error(ex.getMessage(), ex);
+					}
+					
+					return NotificationInfo.instance()
+					.setFrom(updatedIdentity.getRemoteId())
+					.to(new ArrayList<String>(receivers))
+					.setTitle(updatedIdentity.getProfile().getFullName() + " updated his/her profile.<br/>")
+					.key(getId());
+				}
+				
+			}
+
+This class extends ``BaseNotificationPlugin`` that retrieves information
+for new notification type of user profile updating event.
+
+The ``makeNotification()`` method was overriden to generate essential
+information for a notification.
+
+3. Implement the class ``SocialProfileListener.java`` as below:
+
+	.. code:: java
+
+		package com.acme.samples.notification;
+
+			import org.exoplatform.commons.api.notification.NotificationContext;
+			import org.exoplatform.commons.api.notification.model.PluginKey;
+			import org.exoplatform.commons.notification.impl.NotificationContextImpl;
+			import org.exoplatform.social.core.identity.model.Profile;
+			import org.exoplatform.social.core.profile.ProfileLifeCycleEvent;
+			import org.exoplatform.social.core.profile.ProfileListenerPlugin;
+			import com.acme.samples.notification.plugin.UpdateProfilePlugin;
+
+			public class SocialProfileListener extends ProfileListenerPlugin {
+				
+				@Override
+				public void avatarUpdated(ProfileLifeCycleEvent event) {
+					Profile profile = event.getProfile();
+					NotificationContext ctx = NotificationContextImpl.cloneInstance().append(UpdateProfilePlugin.PROFILE, profile);
+					ctx.getNotificationExecutor().with(ctx.makeCommand(PluginKey.key(UpdateProfilePlugin.ID))).execute(ctx);
+				}
+				
+				@Override
+				public void experienceSectionUpdated(ProfileLifeCycleEvent event) {
+					Profile profile = event.getProfile();
+					NotificationContext ctx = NotificationContextImpl.cloneInstance().append(UpdateProfilePlugin.PROFILE, profile);
+					ctx.getNotificationExecutor().with(ctx.makeCommand(PluginKey.key(UpdateProfilePlugin.ID))).execute(ctx);
+				}
+				
+				@Override
+				public void contactSectionUpdated(ProfileLifeCycleEvent event) {
+					Profile profile = event.getProfile();
+					NotificationContext ctx = NotificationContextImpl.cloneInstance().append(UpdateProfilePlugin.PROFILE, profile);
+					ctx.getNotificationExecutor().with(ctx.makeCommand(PluginKey.key(UpdateProfilePlugin.ID))).execute(ctx);
+				}
+				
+				@Override
+				public void createProfile(ProfileLifeCycleEvent event) {
+					Profile profile = event.getProfile();
+					NotificationContext ctx = NotificationContextImpl.cloneInstance().append(UpdateProfilePlugin.PROFILE, profile);
+					ctx.getNotificationExecutor().with(ctx.makeCommand(PluginKey.key(UpdateProfilePlugin.ID))).execute(ctx);
+				}
+				
+			}
+
+This class extends ``ProfileListenerPlugin`` to trigger user profile
+updating events and plug them into ``UpdateProfilePlugin`` as
+notifications. The instance of ``UpdateProfilePlugin`` will be used to
+generate and send messages to all notification channels.
+
+-  ``avatarUpdated()`` - trigger avatar updating event.
+
+-  ``experienceSectionUpdated()`` - trigger user experience updating
+   event.
+
+-  ``contactSectionUpdated()`` - trigger user contact updating event.
+
+-  ``createProfile()`` - trigger user profile creating event.
+
+4. Implement the class ``ConsoleChannel.java`` to have the following code:
+
+	.. code:: java
+
+		package com.acme.samples.notification;
+
+			import java.io.Writer;
+			import org.exoplatform.commons.api.notification.NotificationContext;
+			import org.exoplatform.commons.api.notification.channel.AbstractChannel;
+			import org.exoplatform.commons.api.notification.channel.template.AbstractTemplateBuilder;
+			import org.exoplatform.commons.api.notification.channel.template.TemplateProvider;
+			import org.exoplatform.commons.api.notification.model.ChannelKey;
+			import org.exoplatform.commons.api.notification.model.MessageInfo;
+			import org.exoplatform.commons.api.notification.model.NotificationInfo;
+			import org.exoplatform.commons.api.notification.model.PluginKey;
+			import org.exoplatform.commons.notification.lifecycle.SimpleLifecycle;
+			import org.exoplatform.services.log.ExoLogger;
+			import org.exoplatform.services.log.Log;
+
+			public class ConsoleChannel extends AbstractChannel {
+				
+				private static final Log LOG = ExoLogger.getLogger(ConsoleChannel.class);
+				private final static String ID = "CONSOLE_CHANNEL";
+				private final ChannelKey key = ChannelKey.key(ID);
+				
+				public ConsoleChannel() {
+					super(new SimpleLifecycle());
+				}
+				
+				@Override
+				public String getId() {
+					return ID;
+				}
+				
+				@Override
+				public ChannelKey getKey() {
+					return key;
+				}
+				
+				@Override
+				public void dispatch(NotificationContext ctx, String userId) {
+					LOG.info(String.format("CONSOLE:: %s will receive the message from pluginId: %s",
+					userId,
+					ctx.getNotificationInfo().getKey().getId()));
+				}
+				
+				@Override
+				public void registerTemplateProvider(TemplateProvider provider) {}
+				
+				@Override
+				protected AbstractTemplateBuilder getTemplateBuilderInChannel(PluginKey key) {
+					return new AbstractTemplateBuilder() {
+						@Override
+						protected MessageInfo makeMessage(NotificationContext ctx) {
+							return null;
+						}
+						@Override
+						protected boolean makeDigest(NotificationContext ctx, Writer writer) {
+							return false;
+						}
+					};
+				}
+			}
+
+This concrete class extends ``AbstractChannel`` to define a new
+notification channel which sends messages to console panel. Any new
+channel must implement this interface and use an
+external-component-plugin configuration to be registered in the
+``ChannelManager``.
+
+The ``dispatch()`` method was overriden to write notification contents
+to console panel.
+
+**Under webapp folder**
+
+1. Create a new Maven project inside ``webapp`` folder with the 
+   following ``pom.xml`` file:
+
+|image47|
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+			<modelVersion>4.0.0</modelVersion>
+			<parent>
+				<groupId>com.acme.samples</groupId>
+				<artifactId>console-notification</artifactId>
+				<version>1.0.0</version>
+			</parent>
+			<artifactId>console-notification-webapp</artifactId>
+			<packaging>war</packaging>
+			<build>
+				<finalName>console-notification-webapp</finalName>
+			</build>
+		</project>
+
+2. Add the following configurations to ``WEB-INF/web.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<web-app version="3.0"
+		metadata-complete="true"
+		xmlns="http://java.sun.com/xml/ns/javaee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+			<display-name>console-notification-webapp</display-name>
+			<filter>
+				<filter-name>ResourceRequestFilter</filter-name>
+				<filter-class>org.exoplatform.portal.application.ResourceRequestFilter</filter-class>
+			</filter>
+			<filter-mapping>
+				<filter-name>ResourceRequestFilter</filter-name>
+				<url-pattern>/*</url-pattern>
+			</filter-mapping>
+		</web-app>
+
+-  ``display-name`` - should be the same as the context name of the
+   portal extension.
+
+3. Open ``Notification_en.properties`` file to add this text:
+
+.. code:: java
+
+    #######################################################################
+    #                         UpdateProfilePlugin                         #
+    #######################################################################
+    # For UI
+    UINotification.title.UpdateProfilePlugin= Someone updates profile
+    UINotification.label.UpdateProfilePlugin= Someone updates profile
+
+This is a resource bundle for English language. The value of
+``UINotification.title.UpdateProfilePlugin`` and
+``UINotification.label.UpdateProfilePlugin`` will be used to display as
+English name of the new notification type through user interface.
+
+**Testing**
+
+1. Go up to the parent project's folder and build it with the command:
+   **mvn clean install**.
+
+2. Copy the generated jar and war files into the corresponding 
+   deployment folders where you unpacked the eXo Platform installation.
+
+3. Start eXo Platform and you will see your new functions appear in 
+   Notification Settings:
+
+|image48|
+
+4. Log in as a user and update avatar or experience (remember to enable
+   notification plugins first by an administrator).
+
+Now, a message informing about this activity will be pushed to all
+notification channels, for instance:
+
+-  directly on-site:
+
+   |image49|
+
+-  or on the console, there will be a message for each user who is
+   connecting with the above user, such as:
+
+   ::
+
+       James will receive the message from pluginId: UpdateProfilePlugin
+       
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.Notification.OverridingEmailNotification:
+
+Overriding email notification
+------------------------------
+
+In eXo Platform, all email notification templates are defined in the
+``social-notification-extension.war`` package under
+``WEB-INF/notification/templates/``. Each of these templates corresponds
+to a specific notification type. It is obvious that you can change all
+of them as your desire.
+
+To do this, there are 2 ways as follows:
+
+-  Modifying the template layout, such as header, body or footer.
+
+-  Adding or removing notification properties.
+
+This tutorial selects to customize the ``ActivityMentionPlugin.gtmpl``
+file, which is the template for :ref:`Mention Notification <Mention>`
+by email. Note that you can download all the source code used in this
+section
+`here <https://github.com/exo-samples/docs-samples/tree/master/overriding-email-notification>`__.
+
+First you need to create a new Maven project with the overall structure:
+
+|image50|
+
+And now, continue with the detailed steps:
+
+**Under pom.xml**
+
+Add the following dependencies to the ``pom.xml`` file:
+
+.. code:: xml
+
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>org.exoplatform</groupId>
+        <version>1.0.0</version>
+        <artifactId>email-notification-extension</artifactId>
+        <name>Email Notification Extension</name>
+        <packaging>pom</packaging>
+        <description>Email Notification Extension</description>
+        <dependencyManagement>
+            <dependencies>
+                <!-- Import versions from platform project -->
+                <dependency>
+                    <groupId>org.exoplatform.platform</groupId>
+                    <artifactId>platform</artifactId>
+                    <version>4.2.x-SNAPSHOT</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+            </dependencies>
+        </dependencyManagement>
+        <modules>
+            <module>config</module>
+            <module>webapp</module>
+        </modules>
+    </project>
+
+**Under config folder**
+
+1. Create a ``pom.xml`` and a ``configuration.xml`` file as below:
+
+|image51|
+
+2. Add the following information to ``config/pom.xml``:
+
+	.. code:: xml
+
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		  <parent>
+			<groupId>org.exoplatform</groupId>
+			<artifactId>email-notification-extension</artifactId>
+			<version>1.0.0</version>
+		  </parent> 
+		  <modelVersion>4.0.0</modelVersion>
+		  <artifactId>email-notification-extension-config</artifactId>
+		  <name>Email Notification Extension Configuration</name>
+		  <packaging>jar</packaging>
+		  <description>Email Notification Extension Configuration</description>
+		</project>
+
+3. Add the below configuration to ``conf/configuration.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+		xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+			<external-component-plugins>
+				<!-- The full qualified name of the PortalContainerConfig -->
+				<target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+				<component-plugin>
+					<!-- The name of the plugin -->
+					<name>Change PortalContainer Definitions</name>
+					<!-- The name of the method to call on the PortalContainerConfig in order to register the changes on the PortalContainerDefinitions -->
+					<set-method>registerChangePlugin</set-method>
+					<!-- The full qualified name of the PortalContainerDefinitionChangePlugin -->
+					<type>org.exoplatform.container.definition.PortalContainerDefinitionChangePlugin</type>
+					<priority>102</priority>
+					<init-params>
+						<value-param>
+							<name>apply.default</name>
+							<value>true</value>
+						</value-param>
+						<object-param>
+							<name>change</name>
+							<object type="org.exoplatform.container.definition.PortalContainerDefinitionChange$AddDependenciesAfter">
+								<!-- The list of name of the dependencies to add -->
+								<field name="dependencies">
+									<collection type="java.util.ArrayList">
+										<value>
+											<string>email-notification-webapp</string>
+										</value>
+									</collection>
+								</field>
+							</object>
+						</object-param>     
+					</init-params>
+				</component-plugin>
+			</external-component-plugins>   
+		</configuration>
+
+**Under webapp folder**
+
+In the below steps, you will modify layout, add and remove several
+properties of this ``ActivityMentionPlugin`` template. Note that when
+you add a new property to a notification template, it is required that
+you declare it in all ``Notification_xx.properties`` files (xx is the
+language code, *fr* for French, for instance). In this tutorial, assume
+that there are only 2 languages available which are English (*en*) and
+French (*fr*).
+
+1. Create a new Maven project inside ``webapp`` folder as follows:
+
+|image52|
+
+	In which, the ``Notification_en.properties``,
+	``Notification_fr.properties`` and ``ActivityMentionPlugin.gtmpl`` 
+	files are copied from ``$PLATFORM_HOME/webapps/social-notification-extension.war!/WEB-INF/classes/locale/notification/template``
+	and ``$PLATFORM_HOME/webapps/social-notification-extension.war!/WEB-INF/notification/templates``
+	respectively.
+
+2. Configure the ``pom.xml`` file as follows:
+
+	.. code:: xml
+
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+			<parent>
+				<groupId>org.exoplatform</groupId>
+				<artifactId>email-notification-extension</artifactId>
+				<version>1.0.0</version>
+			</parent> 
+			<modelVersion>4.0.0</modelVersion>
+			<artifactId>email-notification-webapp</artifactId>
+			<packaging>war</packaging>
+			<name>Email Notification Extension Webapp</name>
+			<description>Email Notification Extension Webapp</description>
+			<build>  
+				<finalName>email-notification-webapp</finalName>
+			</build>
+		</project>
+
+3. Add the following configurations to ``WEB-INF/web.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="ISO-8859-1" ?>
+		<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+		"http://java.sun.com/dtd/web-app_2_3.dtd">
+		<web-app>
+			<display-name>email-notification-webapp</display-name>
+			<!-- Resource filter to cache merged javascript and css -->
+			<filter>
+				<filter-name>ResourceRequestFilter</filter-name>
+				<filter-class>org.exoplatform.portal.application.ResourceRequestFilter</filter-class>
+			</filter>
+			<filter-mapping>
+				<filter-name>ResourceRequestFilter</filter-name>
+				<url-pattern>/*</url-pattern>
+			</filter-mapping>
+			<!-- Listener -->
+			<listener>
+				<listener-class>org.exoplatform.container.web.PortalContainerConfigOwner</listener-class>
+			</listener>
+		</web-app>
+
+	-  ``display-name`` - should be the same as the context name of the
+	   portal extension.
+
+4. Modify the ``ActivityMentionPlugin.gtmpl`` file as below:
+
+	.. code:: xml
+
+		<table border="0" cellpadding="0" cellspacing="0" width="500" bgcolor="#ffffff" align="center" style="background-color: #ffffff; font-size: 13px;color:#333333;line-height: 18px;font-family: HelveticaNeue, Helvetica, Arial, sans-serif;">
+			<tr><!--start header area-->
+				<td align="center"  valign="middle" bgcolor="#ffffff" style="background-color: #ffffff;">
+					<table  cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" align="center" style="border:1px solid #d8d8d8;">
+						<tr>
+							<!-- insert company logo and link-->
+							<td style="width: 20%;margin:0;height:45px;vertical-align:middle;background-color:#efefef;text-align:center">
+								<a href="www.exoplatform.com" target="_blank">
+									<img src="https://www.rosehosting.com/blog/wp-content/uploads/2014/03/exo-platform-vps.png" style="width: 50%">
+								</a>
+							</td>
+							<!--pass a link through a property-->
+							<td style="margin:0;height:45px;vertical-align:middle;background-color:#efefef;font-family:'HelveticaNeue Bold',Helvetica,Arial,sans-serif;color:grey;font-size:14px;text-align:left" height="45" valign="middle">
+								<%=_ctx.appRes("Notification.label.header", FOOTER_LINK)%>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr><!--end header area-->
+			<tr><!--start content area-->
+				<td bgcolor="#ffffff" style="background-color: #ffffff;">
+					<table cellpadding="0" cellspacing="0" width="100%"  bgcolor="#ffffff" style="background-color: #ffffff; border-left:1px solid #d8d8d8;border-right:1px solid #d8d8d8;">
+						<tr>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0" width="92%" bgcolor="#ffffff" align="center" style="background-color: #ffffff; color:#333333;line-height:20px;">
+									<tr>
+										<td align="left" bgcolor="#ffffff" style="background-color: #ffffff; padding: 10px 0;">
+											<p style="margin:20, 20;font-weight:bold;vertical-align:middle; font-family: 'HelveticaNeue Bold', Helvetica, Arial, sans-serif;color:#2f5e92;font-size:18px;">
+												<!--new property-->
+												<%=_ctx.appRes("Notification.label.Type")%> <%=_ctx.appRes("Notification.title.ActivityMentionPlugin")%>
+											</p>
+											<table border="0" cellpadding="0" cellspacing="0" >
+												<tr>
+													<td  valign="top" style="margin-top: 0px;">
+														<p style="margin: 0 0 10px 0; line-height: 22px; color: #333333; font-size:13px; font-family:'HelveticaNeue bold',verdana,arial,tahoma">
+														  <%
+															String profileUrl = "<strong><a target=\"_blank\" style=\"color: #2f5e92; font-size: 13px; text-decoration: none; font-family: 'HelveticaNeue Bold', Helvetica, Arial, sans-serif\" href=\""+ PROFILE_URL + "\">" + USER + "</a></strong>";
+														  %>
+														  <%=_ctx.appRes("Notification.message.ActivityMentionPlugin", profileUrl)%>:
+														</p>
+														<!--main content of the mentioned activity-->
+														<table border="0" cellpadding="0" cellspacing="0" width="460" bgcolor="#ffffff" align="center" style="background-color: #ffffff; font-size: 12px;color:#333333;line-height: 18px; margin-bottom: 15px;">
+															<tbody>
+																<tr>
+																	<td align="left" bgcolor="#ffffff" style="background-color: #f9f9f9; padding: 5px 0;">
+																		$ACTIVITY
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</table>
+											<!--insert Reply button-->
+											<p style="margin: 0 0 20px;text-align:center">
+												<a target="_blank" style="
+													display: inline-block;
+													text-decoration: none;
+													font-size: 11px;
+													font-family: 'HelveticaNeue Bold', Helvetica, Arial, sans-serif;
+													color: #ffffff;
+													text-shadow: 0 -1px 0 rgba(23, 33, 37, .25);
+													background-color: #567ab6;
+													background-image: -moz-linear-gradient(top, #638acd, #426393);
+													background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#638acd), to(#426393));
+													background-image: -webkit-linear-gradient(top, #638acd, #426393);
+													background-image: -o-linear-gradient(top, #638acd, #426393);
+													background-image: linear-gradient(to bottom, #638acd, #426393);
+													background-repeat: repeat-x;
+													border-radius: 4px;
+													-moz-border-radius: 4px;
+													padding: 4px 8px;
+													height: 11px;
+													line-height: 11px;
+													max-height: 11px;
+													text-align: center;
+													border: 1px solid #224886;
+													font-weight: bold;
+													-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+													-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+													box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+													vertical-align: middle;
+												" href="$REPLY_ACTION_URL"><%=_ctx.appRes("Notification.label.Reply")%></a>
+												<!--insert View full discussion button-->
+												<a target="_blank" style="
+													display: inline-block;
+													text-decoration: none;
+													font-size: 11px;
+													font-family: HelveticaNeue, Helvetica, Arial, sans-serif,serif;
+													color: #333333;
+													background-color: #f1f1f1;
+													background-image: -moz-linear-gradient(top, #ffffff, #f1f1f1);
+													background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f1f1f1));
+													background-image: -webkit-linear-gradient(top, #ffffff, #f1f1f1);
+													background-image: -o-linear-gradient(top, #ffffff, #f1f1f1);
+													background-image: linear-gradient(to bottom, #ffffff, #f1f1f1);
+													background-repeat: repeat-x;
+													border-radius: 4px;
+													-moz-border-radius: 4px;
+													padding: 4px 8px;
+													height: 11px;
+													line-height: 12px;
+													max-height: 11px;
+													text-align: center;
+													border: 1px solid #c7c7c7;
+													-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+													-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+													box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+													vertical-align: middle;
+													margin-left: 3px;
+												" href="$VIEW_FULL_DISCUSSION_ACTION_URL" target="_blank"><%=_ctx.appRes("Notification.label.ViewFullDiscussion")%></a>
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>            
+				</td>
+			</tr><!--end content area-->    
+		</table>
+
+	You can replace with your company logo and link here.
+
+	A message at header. This property will be declared in the
+	``Notification_xx.properties`` files later.
+
+	A new label before the title of the mentioned activity, which will be
+	declared in the ``Notification_xx.properties`` files later.
+
+	A message corresponding to the mentioned activity.
+
+	The detailed content of the mentioned activity.
+
+	A Reply button, helping user to quickly make answer on the mentioned
+	activity stream.
+
+	A View full discussion button, helping user to jump directly to the
+	mentioned activity stream.
+
+	In this script, we have added 2 new properties
+	(``Notification.label.header`` and ``Notification.label.Type``) and
+	remove several ones (for example, ``Notification.label.footer``) in
+	comparison with the old script in the
+	``social-notification-extension.war`` package. The next steps will
+	declare the new ones in two property files.
+
+5. Declare ``Notification.label.header`` and ``Notification.label.Type`` 
+   as 2 new properties as follows:
+
+	-  In ``Notification_en.properties``:
+
+	   ::
+
+		   Notification.label.Type=Notification type:
+		   Notification.label.header=You has been successfully subscribed to our newsletter. <br/>To unsubscribe, <a target="_blank" style="margin:30px 0 10px 0; color: #2f5e92;text-decoration: none;font-size:13px;font-family:HelveticaNeue,arial,tahoma,serif" href="{0}">click here</a>.
+
+	-  In ``Notification_fr.properties``:
+
+	   ::
+
+		   Notification.label.Type=Type de notification:
+		   Notification.label.header=Vous avez \u00E9t\u00E9 abonn\u00E9 \u00E0 notre bulletin avec succès.<br/> Pour d\u00E9sinscription <a target="_blank" style="margin:30px 0 10px 0; color: #2f5e92;text-decoration: none;font-size:13px;font-family:HelveticaNeue,arial,tahoma,serif" href="{0}">cliquez ici</a>.
+
+**Testing**
+
+1. Go up to the parent project's folder and build it with the command:
+   **mvn clean install**.
+
+2. Copy the generated jar and war files into the corresponding deployment
+   folders where you unpacked the eXo Platform installation.
+
+3. Follow :ref:`this guide <OutgoingMailService>` to configure email 
+   service for eXo Platform.
+
+4. Start eXo Platform and create 2 new users: *john* and *marry*, with 
+   real emails. Notice that you need to turn on the email notification, 
+   not only on *john* and *marry* sides but also on the administrator 
+   side as stated :ref:`here <NotificationAdministration>`.
+
+5. Log in as *marry* user and post an activity that mentions *john*, for
+   example.
+
+	Now, log in *john*'s email account, you will see a new notification
+	email with layout as follows:
+
+	-  if *john* user is in English language:
+
+	   |image53|
+
+	-  if *john* user is in French language:
+
+	   |image54|
+
+	By comparing with the below old template, you will see changes between
+	them:
+
+	|image55|
+
 
 .. |image0| image:: images/portlet_dev/prj_structure.png
 .. |image1| image:: images/portlet_dev/app_register_1.png
@@ -3877,3 +5924,36 @@ changing gadget preferences.
 .. |image32| image:: images/gadget/add_gadget_category.png
 .. |image33| image:: images/gadget/gadget_thumbnail.png
 .. |image34| image:: images/gadget/hello_gadget_preferences.png
+.. |image44| image:: images/notification/notif_whole_structure.png
+.. |image45| image:: images/notification/notif_config_structure.png
+.. |image46| image:: images/notification/notif_lib_structure.png
+.. |image47| image:: images/notification/notif_webapp_structure.png
+.. |image48| image:: images/notification/notification_setting.png
+.. |image49| image:: images/notification/intranet_notification.png
+.. |image50| image:: images/notification/overriding_email_overall_project.png
+.. |image51| image:: images/notification/overriding_email_config_structure.png
+.. |image52| image:: images/notification/overriding_email_webapp_structure.png
+.. |image53| image:: images/notification/mention_notification_new_en.png
+.. |image54| image:: images/notification/mention_notification_new_fr.png
+.. |image55| image:: images/notification/mention_notification_old.png
+.. |image35| image:: images/default_organization_portlet.png
+.. |image36| image:: images/customized_organization_portlet.png
+.. |image37| image:: images/application_plugins/activity_type/project.png
+.. |image38| image:: images/application_plugins/activity_type/UIDefaultActivity.png
+.. |image39| image:: images/application_plugins/activity_type/WikiUIActivity.png
+.. |image40| image:: images/application_plugins/activity_composer/ui_intro.png
+.. |image41| image:: images/application_plugins/activity_composer/project_1.png
+.. |image42| image:: images/application_plugins/activity_composer/project_2.png
+.. |image43| image:: images/application_plugins/activity_composer/project_3.png
+.. |image44| image:: images/notification/notif_whole_structure.png
+.. |image45| image:: images/notification/notif_config_structure.png
+.. |image46| image:: images/notification/notif_lib_structure.png
+.. |image47| image:: images/notification/notif_webapp_structure.png
+.. |image48| image:: images/notification/notification_setting.png
+.. |image49| image:: images/notification/intranet_notification.png
+.. |image50| image:: images/notification/overriding_email_overall_project.png
+.. |image51| image:: images/notification/overriding_email_config_structure.png
+.. |image52| image:: images/notification/overriding_email_webapp_structure.png
+.. |image53| image:: images/notification/mention_notification_new_en.png
+.. |image54| image:: images/notification/mention_notification_new_fr.png
+.. |image55| image:: images/notification/mention_notification_old.png
