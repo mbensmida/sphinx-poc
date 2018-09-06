@@ -11,89 +11,81 @@ What's new in eXo Platform 5.1?
 New features in eXo Platform 5.1?
 ==================================
 
-Many great enhancements come up in eXo Platform 5.0. Thanks to eXo teams 
+Many great enhancements come up in eXo Platform 5.1. Thanks to eXo teams 
 and Community members who participated by contributing ideas, discussing 
 and voting for the new features.
 
-**Enterprise skin**
+**Chat UX and UI Improvement**
 
-A new skin is introduced in the 5.0 version, the ``Enterprise skin``.
-The new skin is a full redesign more modern, enhances usability, reduces 
-eye fatigue and highlights user content for a more engaging user 
-experience.
+eXo Chat application was redesigned in order to:
+
+- Make it easier to use 
+
+- Facilitate the way to sort and filter discussions
+
+A new Ux was also introduced for mobile users.
 
 |image0|
 
-**Revamped navigation experience**
+**Leave Chat Room**
 
-*Left navigation menu*
 
-The left navigation was revamped into a collapsible panel to make the 
-best use of any screen size.
+In addition to improving the Chat UI and UX, a new feature is added to
+the 5.1 version: The possibility to the user to leave a chat room by 
+himself.
 
 |image1|
 
-*Space navigation*
-
-The space navigation has been improved by adding a customizable banner 
-to easily recognize in which space you are.
-Space avatar, call and chat buttons were moved into the navigation bar.
-Space navigation now floats on top and shrinks down to facilitate 
-navigating between apps and to preserve screen space and switch easily
-between apps.
-The banner is also available for users profiles.
-
 |image2|
 
-**Share multiple documents in activity stream**
+**Mobile push notifications**
 
-You can now attach multiple documents to a post in the activity stream. 
-You can drag and drop them or select them from your computer or even 
-from your eXo drives.
-An elegant mosaic of preview thumbnails is displayed in the activity 
-stream and the full page viewer now lets you navigate between the 
-attached documents.
+With the 5.1 version, you are instantly notified about news in your 
+community through the mobile push notifications for Android and iOS 
+mobile devives.
 
 |image3|
 
-**Likes on comments**
-
-In addition to activities, it is now possible to like an individual 
-comment.
-
 |image4|
 
-**Replying to comments**
+**Move "Connect" button to the profile banner**
 
-In addition to liking the comments, you can also reply to them.
+The connect button has been moved in the profile banner same as for the 
+Chat and Call buttons.
+This move aims to facilitate user's connections from their profiles and 
+also to facilitate the accept or deny request.
 
 |image5|
 
-**Inserting image in posts and comments**
-
-You can now enhance your posts with images coming from your computer or 
-your eXo drives and have more control on their size and alignment.
-
 |image6|
 
-**Web conferencing**
+**Tasks permission**
 
-You can now make video calls directly from the user interface via Call 
-buttons. 
-No browser plugin is required thanks to WebRTC. 
-Call buttons can be extended by external third party services connectors 
-(e.g Skype, etc.) if needed.
+Managing tasks permission is, henceforth, assigned to some roles such as:
+The tasks project manager, the task's creator and the task's reporter.
+
+**Share file improvement suggestion**
+
+The "Add user" button is removed to make easier the file sharing. You 
+just need to select users, the right to attribute and then share the 
+file.
 
 |image7|
 
+**Welcome to my Wiki**
+
+In the wiki application, no more generic message, you will have a 
+welcome page having the location specification. For example, if you are 
+in a personal wiki application, you will got this messge "Welcome to 
+user's name wiki".
+
 |image8|
-
-**eXo Engagement analytics by Lecko**
-
-Measure user engagement and communities' collaboration maturity thanks 
-to this integration with Lecko Analytics.
+ 
+If you are in a space's wiki, you will see the message "Welcome to 
+space's name wiki".
 
 |image9|
+
 
 .. _TechnicalNovelties:
 
@@ -179,13 +171,13 @@ Many other improvements and refinements were also done in :
     
 
 
-.. |image0| image:: images/enterprise_skin.png
-.. |image1| image:: images/hamburger_menu.gif
-.. |image2| image:: images/space_banner.png
-.. |image3| image:: images/multi_upload.png
-.. |image4| image:: images/like_comments.png
-.. |image5| image:: images/reply_comment.png
-.. |image6| image:: images/resize_image.png
-.. |image7| image:: images/web_conf1.png
-.. |image8| image:: images/web_conf2.png
-.. |image9| image:: images/Lecko_analytics.png
+.. |image0| image:: images/Chat-UI-UX.png
+.. |image1| image:: images/Leave-room.png
+.. |image2| image:: images/Leave-room-2.png
+.. |image3| image:: images/mobile-push1.png
+.. |image4| image:: images/mobile-push2.png
+.. |image5| image:: images/Connect-button1.png
+.. |image6| image:: images/Connect-button2.png
+.. |image7| image:: images/Share-file.png
+.. |image8| image:: images/usersWiki.png
+.. |image9| image:: images/spaceWiki
