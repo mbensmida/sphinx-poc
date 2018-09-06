@@ -5888,6 +5888,1149 @@ French (*fr*).
 
 	|image55|
 
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.OverridingUserProfileDesign:
+
+Overriding user profile design
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+eXo Platform provides you with an extensible user profile design. With this
+extensibility, you can override portlets on the user profile page with
+your own templates.
+
+To do this, there are 2 ways as follows:
+
+-  Overriding existing html content by changing or adding more html
+   elements, such as ``div`` tags.
+
+-  Overriding existing groovy script by changing or adding more
+   operations, such as ``for`` loops or ``if`` conditions.
+
+This guide will walk you through both by overriding Profile Portlet,
+Experience Profile Portlet, Connections User Portlet and Recent
+Activities Portlet on the user profile page. You can download the source
+code used in this guide
+`here <https://github.com/exo-samples/docs-samples/tree/4.3.x/user-profile-design>`__.
+
+**Overriding user profile**
+
+1. Create a webapp ``user-profile-extension.war`` as follows:
+
+|image56|
+
+	-  The ``user`` folder contains your new profile portlet templates.
+
+2. Add these configurations to ``web.xml``:
+
+   .. code:: xml
+
+		<?xml version="1.0" encoding="ISO-8859-1" ?>
+		<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+		"http://java.sun.com/dtd/web-app_2_3.dtd">
+		<web-app>
+			<display-name>user-profile-extension</display-name>
+			<!-- Resource filter to cache merged javascript and css -->
+			<filter>
+				<filter-name>ResourceRequestFilter</filter-name>
+				<filter-class>org.exoplatform.portal.application.ResourceRequestFilter</filter-class>
+			</filter>
+			<filter-mapping>
+				<filter-name>ResourceRequestFilter</filter-name>
+				<url-pattern>/*</url-pattern>
+			</filter-mapping>
+			<!-- Listener -->
+			<listener>
+				<listener-class>org.exoplatform.container.web.PortalContainerConfigOwner</listener-class>
+			</listener>
+		</web-app>
+
+3. Override ``UIBasicProfilePortlet.gtmpl`` with the following code:
+
+   ::
+
+		<%
+		import org.exoplatform.social.user.portlet.UserProfileHelper;
+		import org.exoplatform.social.webui.Utils;
+
+		//Retrieve the basic information of the user
+		def profile = uicomponent.getProfileInfo();
+		def keys = profile.keySet();
+		%>
+
+		<!-- showing and hiding control buttons -->
+		<button onclick="showFullContact()" id="btn_show_contact">Show full contact information</button>
+		<button onclick="hideFullContact()" id="btn_hide_contact" style="display: none">Hide full contact information</button>
+
+		<!-- javascript to show and hide full contact information -->
+		<script type="text/javascript">
+		function showFullContact(){
+			document.getElementById("$uicomponent.id").style.display = "block";
+			document.getElementById("btn_show_contact").style.display = "none";
+			document.getElementById("btn_hide_contact").style.display = "block";
+		}
+		function hideFullContact(){
+			document.getElementById("$uicomponent.id").style.display = "none";
+			document.getElementById("btn_show_contact").style.display = "block";
+			document.getElementById("btn_hide_contact").style.display = "none";
+		}
+		</script>
+
+		<div class="uiSocApplication uiBasicProfilePortlet" id="$uicomponent.id" style="display: none">
+		  <h4 class="head-container"><%=_ctx.appRes("UIBasicProfile.label.ContactInformation")%></h4>
+		  <div class="uiBasicInfoSection">
+		  
+			<%
+			//Loop through to print out all information
+			  for(key in keys) {
+				def values = profile.get(key);
+				String clzz = key.substring(0, 1).toUpperCase() + key.substring(1);
+				System.out.println(key);
+				
+				//If the user is not the owner, do not print out email
+				if (!Utils.isOwner() && key.toString().equals("email")) continue;
+			%>
+			<div class="group-user-info">
+			  <div class="label-user-info"><strong><%=_ctx.appRes("UIBasicProfile.label." + key)%>:</strong></div>
+			  <div class="value-user-info">
+			  <%
+				if(UserProfileHelper.isString(values)) {
+			  %>
+				<div class="ui<%=clzz%> ellipsis" rel="tooltip" data-placement="top" title="" data-original-title="<%=values%>"><%=values%></div>
+			  <%} else  {
+				  for(subKey in values.keySet()) {
+					def isIms = UserProfileHelper.isIMs(key);
+					def typeIconClzz = "";
+					if (isIms) {
+					  typeIconClzz = UserProfileHelper.getIconCss(subKey); 
+					}
+					
+					def listVal = values.get(subKey); 
+					int valueNum = 0;
+					if (UserProfileHelper.isURL(key)) {
+					  for (url in listVal) { %>
+					  <div class="ui<%=clzz%> ellipsis"><a href="<%=UserProfileHelper.toAbsoluteURL(url)%>" target="_blank"
+						   rel="tooltip" data-placement="top" title="" data-original-title="<%=url%>"><%=url%></a></div>
+					<%}
+					} else {
+					  if (typeIconClzz.length() > 0) {
+						typeIconClzz = typeIconClzz + " uiIconSocLightGray";
+					  }
+					  for (val in listVal) { 
+					  %>
+					  <div class="listContent">
+					  <%
+						if (valueNum == 0) {
+					  %>
+						 <%if(isIms) {%>
+						<div><i class="<%=typeIconClzz%>"></i>&nbsp;&nbsp;<%=_ctx.appRes("UIBasicProfile.label." + subKey)%>:&nbsp;</div>
+						 <%} else { %>
+						<div><%=_ctx.appRes("UIBasicProfile.label." + subKey)%>:&nbsp;</div>  
+						 <%}%>
+					  <%} else { %>
+						<div></div>
+					  <%}
+						valueNum++;
+					  %>
+						<div class="ellipsis" rel="tooltip" data-placement="top" title="" data-original-title="<%=val%>"><%=val%></div>
+					  </div>
+					  <% 
+					  }
+					}
+				  }
+				}
+			  %>
+			  </div>
+			</div>
+			<%}%>
+			<div class="line-bottom"><span></span></div>
+		  </div>
+		</div>
+
+	This template overrides the Profile Portlet by adding:
+
+	-  ``btn_show_contact``: a button to show the portlet's content.
+
+	-  ``btn_hide_contact``: a button to hide the portlet's content.
+
+	-  ``showFullContact()``: a Javascript function to handle when user
+	   clicks on the ``btn_show_contact`` button.
+
+	-  ``hideFullContact()``: a Javascript function to handle when user
+	   clicks on the ``btn_hide_contact`` button.
+
+	-  the code:
+
+	   ::
+
+		   if (!Utils.isOwner() && key.toString().equals("email")) continue;
+
+   to check if the viewer is not the profile page owner, then the email
+   information will not be displayed.
+
+4. Override ``UIMiniConnectionsPortlet.gtmpl`` as follows:
+
+   ::
+
+		<%
+		  import org.exoplatform.social.core.service.LinkProvider;
+		  import org.exoplatform.portal.webui.util.Util;
+		  import org.exoplatform.social.webui.Utils;
+		  import org.exoplatform.social.user.portlet.UserProfileHelper;
+		  
+		  //Load current connections of the user
+		  List profiles = uicomponent.loadPeoples();
+		  int size = uicomponent.getAllSize();
+		  uicomponent.initProfilePopup();
+		%>
+
+		<!-- showing and hiding control buttons -->
+		<button onclick="showConnection()" id="btn_show_connection">Show connections</button>
+		<button onclick="hideConnection()" id="btn_hide_connection" style="display: none">Hide connections</button>
+
+		<!-- javascript to show and hide user's connections -->
+		<script type="text/javascript">
+		function showConnection(){
+			document.getElementById("$uicomponent.id").style.display = "block";
+			document.getElementById("btn_show_connection").style.display = "none";
+			document.getElementById("btn_hide_connection").style.display = "block";
+		}
+		function hideConnection(){
+			document.getElementById("$uicomponent.id").style.display = "none";
+			document.getElementById("btn_show_connection").style.display = "block";
+			document.getElementById("btn_hide_connection").style.display = "none";
+		}
+		</script>
+
+		<div class="uiSocApplication uiMiniConnectionsPortlet" id="$uicomponent.id" style="display: none">
+		  <h4 class="head-container"><%=_ctx.appRes("UIBasicProfile.label.Connections")%></h4>
+		  <% if(size > 0) { %>
+		  
+			<!-- if having connections, loop through to print out -->
+			<div class="borderContainer" id="borderMiniConnectionsPortlet">
+			<% for(profile in profiles) { %>
+				 <a href="<%=profile.getProfileURL()%>" class="avatarXSmall">
+				   <img alt="<%=profile.getDisplayName()%>" src="<%=profile.getAvatarURL()%>">         
+				 </a>
+			<% } %>
+			
+				<!-- Provide View all connections feature -->
+			   <div class="viewAllConnection"><a href="<%=LinkProvider.getBaseUri(null, null)%>/connections/network/<%=uicomponent.getCurrentRemoteId()%>"><%=_ctx.appRes("UIBasicProfile.label.ViewAll")%>&nbsp;(<%=size%>)</a></div>
+			 </div>
+		  <% } else {
+		  
+			  //if no connection and the user is the owner, provide Find new connection feature
+			  //if the user is not the owner, just print out the message
+			  String keyNoConnection = Utils.isOwner() ? "YouHaveNotConnections" : "UserHaveNotConnections";
+			  String noConnectionCSS = Utils.isOwner() ? "noConnection" : "";
+		  %>
+			  <div class="borderContainer $noConnectionCSS center">
+				<%=_ctx.appRes("UIBasicProfile.info." + keyNoConnection)%>
+				<%if (Utils.isOwner()) { %>
+				<div class="findConnection"><a href="<%=LinkProvider.getBaseUri(null, null)%>/connections/all-people/"><%=_ctx.appRes("UIBasicProfile.label.FindConnections")%></a></div>
+				<%} %>
+			  </div>
+		  <% } %>
+		</div>
+
+	This template overrides the Connections User Portlet by adding:
+
+	-  ``btn_show_connection``: a button to show the portlet's content.
+
+	-  ``btn_hide_connection``: a button to hide the portlet's content.
+
+	-  ``showConnection()``: a Javascript function to handle when user
+	   clicks on the ``btn_show_connection`` button.
+
+	-  ``hideConnection()``: a Javascript function to handle when user
+	   clicks on the ``btn_hide_connection`` button.
+
+5. Override ``UIExperienceProfilePortlet.gtmpl`` with:
+
+   ::
+
+		<%
+		  import org.exoplatform.social.core.service.LinkProvider;
+		  
+		  //Retrieve the user's information and check whether the user is the owner or not
+		  String aboutMe = uicomponent.getAboutMe();
+		  boolean isOwner = uicomponent.isOwner();
+		  List experienceData = uicomponent.getExperience();
+		  def uiSocApplicationClzz = !isOwner && (experienceData.size() == 0) ? "" : "uiSocApplication";
+		%>
+		<div class="<%=uiSocApplicationClzz%> uiExperienceProfilePortlet" id="$uicomponent.id">
+		<%
+			//if the About me information of the user is not empty, print out
+			if(aboutMe.length() > 0) { %>
+			  <h4 class="head-container"><%=_ctx.appRes("UIBasicProfile.label.AboutMe")%></h4>
+			  
+			  <!-- Add more description here -->
+			  <p>Quick description of the user</p>
+			  <div class="simpleBox aboutMe"><%=aboutMe%></div>
+			
+			<!-- if empty and the user is the owner, print out a message and provide Edit profile feature -->
+			<% } else if(isOwner) { %>
+			  <div class="no-content center">
+				<div><%=_ctx.appRes("UIBasicProfile.info.HaveNotAbout")%></div>
+				<button class="btn btn-primary" onclick="window.location.href=window.location.origin + '<%=LinkProvider.getBaseUri(null, null)%>/edit-profile/'">
+				  <i class="uiIconEdit uiIconLightGray"></i> <%=_ctx.appRes("UIBasicProfile.action.EditProfile")%></button>
+			  </div>
+			<% } 
+			
+			//if having experience information, loop through to print out
+			if(experienceData.size() > 0) {
+			  print("<h4 class=\"head-container\">" + _ctx.appRes("UIBasicProfile.label.Experience") + "</h4>");
+			  print("<div class=\"simpleBox\"> ");
+			  for(experience in experienceData) {
+				print("<div class=\"experience-container\"> ");
+				String utilNow = experience.get(uicomponent.EXPERIENCES_IS_CURRENT);
+				for(key in experience.keySet()) {
+				  if(uicomponent.EXPERIENCES_IS_CURRENT.equals(key)) {
+					continue;
+				  }
+				  String label = _ctx.appRes("UIBasicProfile.label." + key);
+		%>
+				<div class="<%=key%> clearfix"><div class="labelName pull-left"><%=label%>:</div>
+				  <div rel="tooltip" data-placement="top" title="" data-original-title="<%=experience.get(key)%>"
+					class="pull-left ellipsis"><%=experience.get(key)%>
+					<%=(utilNow != null && "startDate".equals(key)) ? (" "+_ctx.appRes("UIBasicProfile.label.untilNow")) : "" %></div>
+				 </div> 
+		<%
+				}
+				print("</div>");
+			  }
+			  print("</div>");
+			}
+		%>
+		</div>
+
+	-  This template overrides the Experience Profile Portlet with more
+	   description in the code:
+
+	   ::
+
+		   <p>Quick description of the user</p>
+
+6. Override ``UIRecentActivitiesPortlet.gtmpl`` as follows:
+
+   ::
+
+		<%
+		import org.exoplatform.social.webui.Utils;
+		import org.exoplatform.portal.webui.util.Util;
+		import org.exoplatform.social.core.service.LinkProvider;
+		import org.exoplatform.social.user.portlet.UserProfileHelper;
+		import org.exoplatform.social.user.portlet.RecentActivitiesHelper;
+
+		//Retrieve the most recent activities of the user
+		List activities = uicomponent.getRecentActivities();
+		%>
+		<div class="uiSocApplication uiRecentActivitiesPortlet" id="$uicomponent.id">
+		  <h4 class="head-container"><%=_ctx.appRes("UIBasicProfile.label.RecentActivities")%></h4>
+		  
+		  <!-- Additional description -->
+		  <p>The most recent activities of the user</p>
+		  
+		  <!-- Main content of the recent activities -->
+		  <div class="activityCont">
+		  <%
+		  
+			//no activity
+			if(activities.size() == 0) {
+			 String keyNoActivities = Utils.isOwner() ? "YouHaveNotActivities" : "UserHaveNotActivities";
+		  %>
+			  <div class="simpleBox noActivity center"><%=_ctx.appRes("UIBasicProfile.info." + keyNoActivities)%></div>
+		  <%
+		  
+			//if having activities, loop through to print out
+			} else {
+			  String activityURL = LinkProvider.getBaseUri(null, null) + "/activity?id=";
+			  for (activity in activities) {
+				def profile = RecentActivitiesHelper.getOwnerActivityProfile(activity);
+				String avatarURL = profile.getAvatarUrl();
+				String profileURL = profile.getUrl();
+				String displayName = profile.getFullName();
+				String activityTypeIcon =  RecentActivitiesHelper.getActivityTypeIcon(activity);
+				String link = RecentActivitiesHelper.getLink(activity);
+				String linkTitle = RecentActivitiesHelper.getLinkTitle(activity);
+		  %>
+		  
+			  <!-- Build an activity stream for each activity-->
+			  <div class="activityStream uiDefaultActivity clearfix" id="Activity<%=activity.id%>">
+				<div class="activityTimeLine pull-left">
+				  <div class="activityAvatar avatarCircle">
+					<a href="<%=profileURL%>">
+					  <img alt="<%=displayName%>" src="
+					  <%=((avatarURL == null || avatarURL.length() == 0) ? LinkProvider.PROFILE_DEFAULT_AVATAR_URL : avatarURL)%>">
+					</a>
+				  </div>
+				  <% if (activityTypeIcon != null && activityTypeIcon.length() > 0) { %>
+				  <div class="activityType"><span><i class="<%=activityTypeIcon%> uiIconSocWhite"></i></span></div>
+				  <% } %>
+				</div>
+				<!--end activityTimeLine-->
+				
+				<div class="boxContainer" id="boxContainer" onclick="window.open('<%=(activityURL + activity.id)%>', '_self')">
+				  <div id="Content<%=activity.id%>" class="content">
+				  <%if (link != null) { 
+					  if (linkTitle != null) {
+				  %> 
+						<div class="status"><%=linkTitle%></div>
+						<div class="link"><a href="javascript:void(0);" onclick="(function(evt){ evt.stopPropagation(); window.open('<%=link%>', '_blank');})(event)"><%=activity.getTitle()%></a></div>
+				  <%
+					  } else {
+				  %>
+						<div><a href="javascript:void(0);" onclick="(function(evt){ evt.stopPropagation(); window.open('<%=link%>', '_self');})(event)">
+						<%=activity.getTitle()%></a></div>
+				  <%  }
+					} else {%>
+						<div class="status"><%=activity.getTitle()%></div>
+				  <%} %>
+				  </div>
+				</div>
+				<!-- end boxContainer-->
+			  </div>
+			  <!-- end activityStream -->
+		  <%
+			  }
+			  
+			  //Provide view all activities feature
+			  String activityStreamURL = LinkProvider.getUserActivityUri(Utils.getOwnerIdentity(false).getRemoteId());
+			  print("<div style=\"display: block;\" class=\"boxLoadMore\">"+
+			  "<button class=\"btn\" style=\"width:100%;\" onclick=\"window.location.href='" + activityStreamURL + "'\">" +
+			  _ctx.appRes("UIBasicProfile.action.ViewAll") +
+			  "</button></div>");
+			  uicomponent.initProfilePopup();
+			}
+		  %>
+			</div>    
+			  <%
+			  if (uicomponent.hasActivityBottomIcon && activities.size() != 0) {
+		  %>
+			  <div class="activityBottom" style="display: block;"><span></span></div>
+		  <%      
+			  }
+			  %>
+		</div>
+
+	-  This template overrides the Recent Activities Portlet with more
+	   description in the code:
+
+	   ::
+
+		   <p>The most recent activities of the user</p>
+
+7. Create a jar file to register this ``user-profile-extension.war`` to
+   portal container as in :ref:`Portal extension <PLFDevGuide.eXoAdd-ons.PortalExtension>`. 
+   Then, edit the ``configuration.xml`` file as follows:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+		xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+			
+			<external-component-plugins>
+				<!-- The full qualified name of the PortalContainerConfig -->
+				<target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+				<component-plugin>
+					<!-- The name of the plugin -->
+					<name>Change PortalContainer Definitions</name>
+					<!-- The name of the method to call on the PortalContainerConfig in order to register the changes on the PortalContainerDefinitions -->
+					<set-method>registerChangePlugin</set-method>
+					<!-- The full qualified name of the PortalContainerDefinitionChangePlugin -->
+					<type>org.exoplatform.container.definition.PortalContainerDefinitionChangePlugin</type>
+					<priority>102</priority>
+					<init-params>
+						<value-param>
+							<name>apply.default</name>
+							<value>true</value>
+						</value-param>
+						<object-param>
+							<name>change</name>
+							<object type="org.exoplatform.container.definition.PortalContainerDefinitionChange$AddDependenciesAfter">
+								<!-- The list of name of the dependencies to add -->
+								<field name="dependencies">
+									<collection type="java.util.ArrayList">
+										<value>
+											<!--The context name of the portal extension-->
+											<string>user-profile-extension</string>
+										</value>
+									</collection>
+								</field>
+							</object>
+						</object-param>     
+					</init-params>
+				</component-plugin>
+			</external-component-plugins>   
+		</configuration>
+
+8. Copy these jar and war files into the corresponding deployment 
+   folders where you unpacked the eXo Platform installation.
+
+**Testing what you have customized**
+
+Start eXo Platform and you will see your new profile appear as follows:
+
+|image57|
+
+Clicking on Show full contact information or Show connections button
+will expand the corresponding information panel. Note that if you are
+not this user, the email will not be displayed:
+
+|image58|
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.XWIKI_Macro:
+
+Wiki macro
+~~~~~~~~~~~
+
+eXo Platform uses XWiki as a Wiki engine, so you can develop and use macros
+in eXo Wiki completely following the XWiki approach.
+
+If you have never tried using a macro before, you can quickly try `eXo
+video-wiki-macro <https://github.com/exo-addons/video-wiki-macro>`__.
+Follow the project's README and it will help you build, deploy and use
+the macro.
+
+As said, the macro completely follows XWiki approach, so you can refer
+to `their
+documentation <http://rendering.xwiki.org/xwiki/bin/view/Main/ExtendingMacro>`__
+for a start. In this tutorial, you write a new macro called "mailto".
+When a user inserts the macro, he inputs a username from that your macro
+that retrieves an email contact and adds it inline. The source code can
+be found
+`here <https://github.com/exo-samples/docs-samples/tree/4.3.x/exo-xwiki-macro-samples>`__.
+
+-  **The project structure**
+
+Create a Maven project with the structure like this:
+
+|image59|
+
+Alternatively, you can generate a project and modify it using `the
+XWiki's macro-archetype
+5.4.2 <http://mvnrepository.com/artifact/org.xwiki.rendering/xwiki-rendering-archetype-macro/5.4.2>`__.
+
+-  **The dependencies**
+
+In ``pom.xml``, you need dependencies of XWiki (version 5.4.2 for strong
+compatibility) and eXo Social:
+
+.. code:: xml
+
+    <dependency>
+        <groupId>org.xwiki.rendering</groupId>
+        <artifactId>xwiki-rendering-syntax-xwiki21</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.xwiki.rendering</groupId>
+        <artifactId>xwiki-rendering-syntax-xhtml</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.xwiki.rendering</groupId>
+        <artifactId>xwiki-rendering-transformation-macro</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>social-component-core</artifactId>
+    </dependency>
+
+-  **The MailtoMacro class**
+
+The macro class should extend
+``org.xwiki.rendering.macro.AbstractMacro`` and implement the
+``execute`` method. It must declare a parameter type so that XWiki takes
+care the interface with users to get a username and passes it to your
+method.
+
+.. code:: java
+
+    @Component("mailto")
+    public class MailtoMacro extends AbstractMacro<MailtoMacroParams> {
+
+      public MailtoMacro() {
+        super("mailto", "Add an email contact inline.", MailtoMacroParams.class);
+      }
+
+      public boolean supportsInlineMode() {
+        return true;
+      }
+
+      public List<Block> execute(MailtoMacroParams parameters,
+                                 String content,
+                                 MacroTransformationContext context) throws MacroExecutionException {
+        IdentityManager identityManager = (IdentityManager) PortalContainer.getInstance().getComponentInstanceOfType(IdentityManager.class);
+        try {
+          // Get user info.
+          Identity identity = identityManager.getOrCreateIdentity(OrganizationIdentityProvider.NAME, parameters.getUsername(), false);
+          Profile profile = identity.getProfile();
+          String displayName = profile.getFullName(); //to be displayed.
+          String email = profile.getEmail(); //to be linked.
+          
+          // Build the blocks.
+          RawBlock rawblock = new RawBlock(displayName, Syntax.XHTML_1_0);
+          LinkBlock linkblock = new LinkBlock(Arrays.<Block>asList(rawblock), new ResourceReference(email, ResourceType.MAILTO), true);
+          return Arrays.<Block>asList(linkblock);
+        } catch (Exception e) {
+          
+          // In case the parameter is not a valid user id.
+          RawBlock rawblock = new RawBlock(parameters.getUsername()+"(?)", Syntax.XHTML_1_0);
+          return Arrays.<Block>asList(rawblock);
+        }
+      }
+    }
+
+You provide the macro name, a description (users will see it) by the
+annotation and the constructor. You can also categorize your macro, see
+a code sample in the video-macro's source code.
+
+-  **The MailtoMacroParams class**
+
+You need only one parameter - **username** that is mandatory. In the
+execute method, you use it to get a user profile (if it is invalid, the
+macro simply shows its raw value with a question (?) sign).
+
+Pay attention to the annotations:
+
+.. code:: java
+
+    public class MailtoMacroParams {
+      
+      /**
+       * The MailtoMacro expects a user name. If the user name is not valid, it appends a question sign to the user name.
+       */
+      
+      private String username;
+
+      public String getUsername() {
+        return username;
+      }
+
+      @PropertyDescription("Somebody's ID. His email will be added inline.")
+      @PropertyMandatory
+      public void setUsername(String username) {
+        this.username = username;
+      }
+    }
+
+-  **The components file**
+
+Finally, you declare the macro's class name in
+``src/main/resources/META-INF/components.txt``, just with one line:
+
+::
+
+    org.exoplatform.samples.xwiki.macro.MailtoMacro
+
+Here is the picture of a Wiki page that uses the macros:
+
+|image60|
+
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ExtensibleFilter:
+
+ExtensibleFilter mechanism
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+eXo Platform provides you with the ExtensibleFilter mechanism that allows you
+to insert more filters from your own extension without touching the
+``web.xml`` file.
+
+In this section, you will be introduced how to create a filter that
+requires users to change password at the first login and when it is
+expired. The source code used in this tutorial is available
+`here <https://github.com/exo-addons/change-password>`__ so that you can
+clone.
+
+Our general project will be structured as below:
+
+|image61|
+
+In which, the sub-projects include:
+
+-  **config**: creates a jar file that declares the extension (war) as a
+   portal dependency.
+
+-  **services**: creates services that check if this is the first login
+   of the current user or their current password has expired, and update
+   their new password.
+
+-  **war**: creates a war file that provides filter configuration files,
+   locale resources as well as a form for changing password.
+
+Now, follow the detailed steps:
+
+**Under pom.xml**
+
+Add the following dependencies to the ``pom.xml`` file:
+
+.. code:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+      <modelVersion>4.0.0</modelVersion>
+      <artifactId>change-password-extension</artifactId>
+      <groupId>org.exoplatform.addons.change-password</groupId>
+      <version>1.1.x-SNAPSHOT</version>
+      <packaging>pom</packaging>
+      <name>Change Password Extension</name>
+      <description>Change Password Extension</description>
+      <modules>
+        <module>config</module>
+        <module>war</module>
+        <module>services</module>
+      </modules>
+      <dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>org.exoplatform.platform</groupId>
+            <artifactId>platform</artifactId>
+            <version>4.2.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+          </dependency>
+        </dependencies>
+      </dependencyManagement>
+    </project>
+
+**Under config folder**
+
+1. Create a ``pom.xml`` and a ``configuration.xml`` file as below:
+
+	|image62|
+
+2. Add the following information to ``config/pom.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		  <modelVersion>4.0.0</modelVersion>
+		  <parent>
+			<artifactId>change-password-extension</artifactId>
+			<groupId>org.exoplatform.addons.change-password</groupId>
+			<version>1.1.x-SNAPSHOT</version>
+		  </parent>
+		  <artifactId>change-password-extension-config</artifactId>
+		  <packaging>jar</packaging>
+		  <name>Change Password Extension Configuration</name>
+		  <description>Change Password Extension Configuration</description>
+		</project>
+
+3. Add the below configuration to ``conf/configuration.xml``:
+
+	.. code:: xml
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+			xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+			<external-component-plugins>
+			  <!-- The full qualified name of the PortalContainerConfig -->
+			  <target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+			  <component-plugin>
+				<!-- The name of the plugin -->
+				<name>Change PortalContainer Definitions</name>
+				<!-- The name of the method to call on the PortalContainerConfig in order to register the changes on the PortalContainerDefinitions -->
+				<set-method>registerChangePlugin</set-method>
+				<!-- The full qualified name of the PortalContainerDefinitionChangePlugin -->
+				<type>org.exoplatform.container.definition.PortalContainerDefinitionChangePlugin</type>
+				<priority>102</priority>
+				<init-params>
+				  <value-param>
+					<name>apply.default</name>
+					<value>true</value>
+				  </value-param>
+				  <object-param>
+					<name>change</name>
+					<object type="org.exoplatform.container.definition.PortalContainerDefinitionChange$AddDependenciesAfter">
+					  <!-- The list of name of the dependencies to add -->
+					  <field name="dependencies">
+						<collection type="java.util.ArrayList">
+						  <value>
+							<string>change-password-extension</string>
+						  </value>
+						</collection>
+					  </field>
+					  <!-- The name of the target dependency -->
+					  <field name="target">
+						<string>welcome-screens</string>
+					  </field>
+					</object>
+				  </object-param>     
+				</init-params>
+			  </component-plugin>
+			</external-component-plugins>   
+		</configuration>
+
+**Under services folder**
+
+This project structure is as follows:
+
+|image63|
+
+1. Implement the class ``ChangePasswordFilter.java`` as follows:
+
+	.. code:: java
+
+		package org.exoplatform.changePassword;
+
+		import java.io.IOException;
+		import java.text.SimpleDateFormat;
+		import java.util.Date;
+
+		import javax.servlet.FilterChain;
+		import javax.servlet.ServletContext;
+		import javax.servlet.ServletException;
+		import javax.servlet.ServletRequest;
+		import javax.servlet.ServletResponse;
+		import javax.servlet.http.HttpServletRequest;
+		import javax.servlet.http.HttpServletResponse;
+
+		import org.exoplatform.container.ExoContainerContext;
+		import org.exoplatform.container.PortalContainer;
+		import org.exoplatform.services.log.ExoLogger;
+		import org.exoplatform.services.log.Log;
+		import org.exoplatform.services.organization.OrganizationService;
+		import org.exoplatform.services.organization.UserProfile;
+		import org.exoplatform.services.organization.UserProfileHandler;
+		import org.exoplatform.services.security.ConversationState;
+		import org.exoplatform.services.security.Identity;
+		import org.exoplatform.web.filter.Filter;
+
+		public class ChangePasswordFilter implements Filter {
+			private static Log logger = ExoLogger.getLogger(ChangePasswordFilter.class);
+			private static final String CHANGE_PASSWORD_SERVLET_CTX = "/change-password-extension";
+			private static final String CHANGE_PASSWORD_SERVLET_URL = "/changePasswordView";
+			private static final String INITIAL_URI_PARAM_NAME = "initialURI";
+			private static final String REST_URI = ExoContainerContext.getCurrentContainer().getContext().getRestContextName();
+
+			public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+				HttpServletRequest httpServletRequest = (HttpServletRequest)servletRequest;
+				HttpServletResponse httpServletResponse = (HttpServletResponse)servletResponse;
+				OrganizationService organizationService = (OrganizationService)PortalContainer.getInstance().getComponentInstanceOfType(OrganizationService.class);
+				//get current user
+				Identity identity = ConversationState.getCurrent().getIdentity();
+				String userId = identity.getUserId();
+				boolean logged = false;
+				boolean passwordChanged = false;
+				boolean passwordExpired = false;
+				if (!userId.equals("__anonim")) {
+					logged = true;
+					UserProfileHandler userProfileHandler = organizationService.getUserProfileHandler();
+					try {
+						//get current user profile
+						UserProfile userProfile = userProfileHandler.findUserProfileByName(userId);
+						//get password changing status
+						String changePassword = userProfile.getAttribute("changePassword");
+						//get expire password date
+						String expirePasswordDate = userProfile.getAttribute("expirePasswordDate");
+						SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MMM/yyyy");
+						Date today = new Date();
+						//check if the password has been changed
+						if (changePassword != null && changePassword.equals("true")) {
+							passwordChanged = true;
+						}
+						//check if the password has expired
+						passwordExpired = today.after(simpleDateFormat.parse(expirePasswordDate));
+					} catch (Exception exception) {
+						logger.error("User profile not found");
+					}
+				}    
+				String requestUri = httpServletRequest.getRequestURI();
+				boolean isRestUri = requestUri.contains(REST_URI);
+				if (!isRestUri && logged && (!passwordChanged || passwordExpired)) {
+					String requestURI = httpServletRequest.getRequestURI();
+					String queryString = httpServletRequest.getQueryString();
+					if (queryString != null) {
+						requestURI += "?" + queryString;
+					}
+					//get context for changing password and forward to password changing view servlet
+					ServletContext servletContext = httpServletRequest.getSession().getServletContext().getContext(CHANGE_PASSWORD_SERVLET_CTX);
+					String targetURI = (new StringBuilder()).append(CHANGE_PASSWORD_SERVLET_URL + "?" + INITIAL_URI_PARAM_NAME + "=").append(requestURI).toString();
+					servletContext.getRequestDispatcher(targetURI).forward(httpServletRequest, httpServletResponse);
+					return;
+				}
+				filterChain.doFilter(servletRequest, servletResponse);
+			}
+		}
+
+This filter checks the ``changePassword`` attribute from the current
+user profile as well as the date when his password will expire. If one
+of these conditions is met, this user will be forwarded to the password
+changing view servlet in the next step.
+
+2. Implement the class ``ChangePasswordViewServlet.java`` as below:
+
+	.. code:: java
+
+		package org.exoplatform.changePassword;
+
+		import java.io.IOException;
+
+		import javax.servlet.ServletException;
+		import javax.servlet.http.HttpServlet;
+		import javax.servlet.http.HttpServletRequest;
+		import javax.servlet.http.HttpServletResponse;
+
+		public class ChangePasswordViewServlet extends HttpServlet {
+			private static final String CHANGE_PASSWORD_JSP_RESOURCE = "/WEB-INF/jsp/changePassword.jsp";
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+				doPost(httpServletRequest, httpServletResponse);
+			}
+			
+			@Override
+			protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+				getServletContext().getRequestDispatcher(CHANGE_PASSWORD_JSP_RESOURCE).include(httpServletRequest, httpServletResponse);
+			}
+		}
+
+This servlet simply calls the interface for changing password which is
+created in :ref:`this step <PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ExtensibleFilter.JSPInterface>`.
+After that, when user sends a post request from that interface, the
+``ChangePasswordActionServlet`` servlet will be initialized. Go to next
+step to implement this servlet.
+
+3. Implement the class ``ChangePasswordActionServlet.java`` as below:
+
+	.. code:: java
+
+		package org.exoplatform.changePassword;
+
+		import java.io.IOException;
+		import java.text.SimpleDateFormat;
+		import java.util.Calendar;
+
+		import javax.servlet.ServletException;
+		import javax.servlet.http.HttpServlet;
+		import javax.servlet.http.HttpServletRequest;
+		import javax.servlet.http.HttpServletResponse;
+
+		import org.exoplatform.container.PortalContainer;
+		import org.exoplatform.container.component.RequestLifeCycle;
+		import org.exoplatform.services.log.ExoLogger;
+		import org.exoplatform.services.log.Log;
+		import org.exoplatform.services.organization.OrganizationService;
+		import org.exoplatform.services.organization.User;
+		import org.exoplatform.services.organization.UserProfile;
+		import org.exoplatform.services.organization.UserProfileHandler;
+
+		public class ChangePasswordActionServlet extends HttpServlet {
+			private static Log logger = ExoLogger.getLogger(ChangePasswordActionServlet.class);
+			private static final long serialVersionUID = 1L;
+			private static final String CHANGE_PASSWORD_JSP_RESOURCE = "/WEB-INF/jsp/changePassword.jsp";
+			//define the duration (in month) when user password will expire
+			private static final int PASSWORD_EXPIRATION_MONTHS_NUMBER = 6;
+			
+			@Override
+			protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+				//get the new password entered
+				String newPassword = httpServletRequest.getParameter("newPassword");
+				//get the confirmation password
+				String reNewPassword = httpServletRequest.getParameter("reNewPassword");
+				OrganizationService organizationService = (OrganizationService)PortalContainer.getInstance().getComponentInstanceOfType(OrganizationService.class);
+				String userId = httpServletRequest.getRemoteUser();
+				try {
+					RequestLifeCycle.begin(PortalContainer.getInstance());
+					User user = organizationService.getUserHandler().findUserByName(userId);
+					//check if the two passwords entered are the same, if not redirect the current user to the password changing view
+					if (!newPassword.equals(reNewPassword)) {
+						httpServletRequest.setAttribute("notValidNewPassword", "true");
+						getServletContext().getRequestDispatcher(CHANGE_PASSWORD_JSP_RESOURCE).include(httpServletRequest, httpServletResponse);
+					}
+					else if (newPassword.length() < 6 || newPassword.length() > 30) {
+						//check if the new password does not meet the requirement
+						httpServletRequest.setAttribute("notCorrectNewPassword", "true");
+						getServletContext().getRequestDispatcher(CHANGE_PASSWORD_JSP_RESOURCE).include(httpServletRequest, httpServletResponse);
+					}
+					else {
+						//do changing the current password into the new one and reset the related attributes
+						UserProfileHandler userProfileHandler = organizationService.getUserProfileHandler();
+						UserProfile userProfile = userProfileHandler.findUserProfileByName(userId);
+						userProfile.setAttribute("changePassword", "true");
+						Calendar calendar = Calendar.getInstance();
+						String passwordExpirationMonthsNumber = System.getProperty("password.expiration.months.number");
+						calendar.add(Calendar.MONTH, passwordExpirationMonthsNumber != null ? Integer.parseInt(passwordExpirationMonthsNumber) : PASSWORD_EXPIRATION_MONTHS_NUMBER);
+						SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MMM/yyyy");
+						userProfile.setAttribute("expirePasswordDate", simpleDateFormat.format(calendar.getTime()));
+						userProfileHandler.saveUserProfile(userProfile, true);
+						user.setPassword(newPassword);
+						organizationService.getUserHandler().saveUser(user, true);
+						//Redirect to the home page
+						String redirectURI = "/portal/";
+						httpServletResponse.sendRedirect(redirectURI);
+					}
+				} 
+				catch (Exception exception) {
+					logger.error("Password not changed");
+				} finally {
+					RequestLifeCycle.end();
+				}
+			}
+		   
+			@Override
+			protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+				doGet(httpServletRequest, httpServletResponse);
+			}
+		}
+
+This servlet verifies the new password whether it meets the minimum and
+maximum length or not. If yes, the current password will be updated and
+the related attributes including ``changePassword`` and
+``expirePasswordDate`` will also be reset. Note that the
+``expirePasswordDate`` attribute will be calculated based on the
+``PASSWORD_EXPIRATION_MONTHS_NUMBER`` constant.
+
+**Under war folder**
+
+This war folder will have the following structure:
+
+|image64|
+
+In which, you will have locale resources in the
+``resources/locale/portal`` folder, css rules for password changing view
+in the ``css/changePassword.css`` file and other configuration files. In
+this section, you are going to look at the ``filter-configuration.xml``
+and ``changePassword.jsp`` files. For the other files, you can check
+from the cloned source code.
+
+1. Add the below configuration to the ``filter-configuration.xml`` file:
+
+	.. code:: xml
+
+		<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+					   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+			<external-component-plugins>
+				<target-component>org.exoplatform.web.filter.ExtensibleFilter</target-component>
+				<component-plugin profiles="all">
+					<name>ChangePassword Filter</name>
+					<set-method>addFilterDefinitions</set-method>
+					<type>org.exoplatform.web.filter.FilterDefinitionPlugin</type>
+					<init-params>
+						<object-param>
+							<name>Change Password Filter</name>
+							<object type="org.exoplatform.web.filter.FilterDefinition">
+								<field name="filter">
+									<object type="org.exoplatform.changePassword.ChangePasswordFilter"/>
+								</field>
+								<field name="patterns">
+									<collection type="java.util.ArrayList" item-type="java.lang.String">
+										<value>
+											<string>/*</string>
+										</value>
+									</collection>
+								</field>
+							</object>
+						</object-param>
+					</init-params>
+				</component-plugin>
+			</external-component-plugins>
+		</configuration>
+
+	In which, the ``patterns`` field defines which URLs will be passed
+	through this filter, in this case ``/*`` means that all URLs are
+	counted.
+
+.. _PLFDevGuide.DevelopingApplications.ExtendingeXoApplications.ExtensibleFilter.JSPInterface:
+
+2. Add the following code to the ``changePassword.jsp`` file:
+
+	.. code:: java
+
+		<%@ page import="org.exoplatform.container.PortalContainer"%>
+		<%@ page import="org.exoplatform.services.resources.ResourceBundleService"%>
+		<%@ page import="java.util.ResourceBundle"%>
+		<%@ page language="java" %>
+		<%
+		  String contextPath = request.getContextPath() ;
+		  //get locale properties from the locale resource
+		  ResourceBundleService service = (ResourceBundleService) PortalContainer.getCurrentInstance(session.getServletContext())
+																.getComponentInstanceOfType(ResourceBundleService.class);
+		  ResourceBundle resourceBundle = service.getResourceBundle(service.getSharedResourceBundleNames(), request.getLocale()) ;
+		  String changePassword = resourceBundle.getString("changePassword.title");
+		  String newPassword = resourceBundle.getString("changePassword.newPassword");
+		  String reNewPassword = resourceBundle.getString("changePassword.reNewPassword");
+		  String send = resourceBundle.getString("changePassword.send");
+		  String notValidNewPasswordError  = resourceBundle.getString("changePassword.notValidNewPasswordError");
+		  String notCorrectNewPasswordError  = resourceBundle.getString("changePassword.notCorrectNewPasswordError");
+		  //get the password validation status
+		  String notValidNewPassword = (String) request.getAttribute("notValidNewPassword");
+		  String notCorrectNewPassword = (String) request.getAttribute("notCorrectNewPassword");
+		  response.setCharacterEncoding("UTF-8"); 
+		  response.setContentType("text/html; charset=UTF-8");
+		%>
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+				<title>Change password</title>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+				<link href="<%=contextPath%>/css/changePassword.css" rel="stylesheet" type="text/css"/>
+			</head>
+			<body class="change-password">
+				<div class="bg-light"><span></span></div>
+				<div class="ui-change-password">
+					<div class="change-password-container">
+						<div class="change-password-header intro-box">
+							<div class="change-password-icon"><%=changePassword%></div>
+						</div>
+						<div class="change-password-content">
+							<div class="change-password-title">
+								<%
+										//check if the new password is not valid
+										if(notValidNewPassword == "true") {
+								%>
+											<div class="new-password-error"><i class="change-password-icon-error"></i><%=notValidNewPasswordError%></div>
+								<%
+										}
+										//check if the password confirmation is not successful
+										else if(notCorrectNewPassword == "true") {
+								%>
+										<div class="new-password-error"><i class="change-password-icon-error"></i><%=notCorrectNewPasswordError%></div>
+								<%
+										}
+								%> 
+							</div>
+							<div class="center-change-password-content">
+								<form id="changePasswordForm" name="changePasswordForm" action="<%=contextPath%>/changePassword" method="post">
+									<input  id="newPassword" name="newPassword" type="password" placeholder="<%=newPassword%>" onblur="this.placeholder = <%=newPassword%>" onfocus="this.placeholder = ''"/>
+									<input  id="reNewPassword" name="reNewPassword" type="password" placeholder="<%=reNewPassword%>" onblur="this.placeholder = <%=reNewPassword%>" onfocus="this.placeholder = ''"/>
+									<div id="changePasswordFormAction" class="change-password-button" onclick="submit();">
+										<button class="button" href="#"><%=send%></button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</body>
+		</html>
+
+**Testing**
+
+1. Build your project with the ``mvn clean install`` command.
+
+2. Copy the generated jar and war files into the corresponding 
+   deployment folders and start eXo Platform.
+
+3. Sign in with the *root* account and create a new user such as *john*.
+
+4. Sign in with the *john* account, you will be required to change 
+   password at the first login.
+
+|image65|
+
+5. Enter a new password and validate it, then click Send. If your new
+   password is valid, you will be automatically redirected to the 
+   homepage, otherwise a message that says "*The new password is not 
+   valid*\ " will appear.
+
+
+
+
+
 
 .. |image0| image:: images/portlet_dev/prj_structure.png
 .. |image1| image:: images/portlet_dev/app_register_1.png
@@ -5957,3 +7100,13 @@ French (*fr*).
 .. |image53| image:: images/notification/mention_notification_new_en.png
 .. |image54| image:: images/notification/mention_notification_new_fr.png
 .. |image55| image:: images/notification/mention_notification_old.png
+.. |image56| image:: images/overriding_user_profile_design/user_profile_extension.png
+.. |image57| image:: images/overriding_user_profile_design/new_user_profile.png
+.. |image58| image:: images/overriding_user_profile_design/expand_user_profile.png
+.. |image59| image:: images/wiki_macro/xwiki_macro_prj.png
+.. |image60| image:: images/wiki_macro/xwiki_macro_test.png
+.. |image61| image:: images/extensible_filter/general_project.png
+.. |image62| image:: images/extensible_filter/config_structure.png
+.. |image63| image:: images/extensible_filter/services_project.png
+.. |image64| image:: images/extensible_filter/war_structure.png
+.. |image65| image:: images/extensible_filter/change_password_interface.png
