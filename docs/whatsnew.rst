@@ -180,4 +180,4 @@ Many other improvements and refinements were also done in :
 .. |image6| image:: images/Connect-button2.png
 .. |image7| image:: images/Share-file.png
 .. |image8| image:: images/usersWiki.png
-.. |image9| image:: images/spaceWiki
+.. |image9| image:: images/spaceWiki.png
