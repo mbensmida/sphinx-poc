@@ -495,10 +495,10 @@ It is assumed that you want to auto-assign 2 memberships:
 registered user, do as follows:
 
 1 Create a file named ``organization-configuration.xml`` under
-   ``custom-extension.war!/WEB-INF/conf/organization``. See the sample
-   content of complete configuration in the
-   ``platform-extension.war!/WEB-INF/conf/organization/organization-configuration.xml``
-   file.
+  ``custom-extension.war!/WEB-INF/conf/organization``. See the sample
+  content of complete configuration in the
+  ``platform-extension.war!/WEB-INF/conf/organization/organization-configuration.xml``
+  file.
 
 2. Add the following plugin for the new user event listener in
    ``custom-extension.war!/WEB-INF/conf/organization/organization-configuration.xml``:
@@ -558,7 +558,7 @@ registered user, do as follows:
 	   type.
 
 6. Check the membership for the newly created user by selecting |image2|
-   --> Users --> Community User Management. Next, click |image3| 
+   --> Users --> Community --> User Management. Next, click |image3| 
    corresponding to your newly created user (for example, "katie"), then 
    select User Membership. You will see that 2 memberships are 
    auto-assigned to "katie".
@@ -699,7 +699,7 @@ and how to configure a listener in general.
 			   }
 
 	   See sample
-	   `here <https://github.com/exoplatform/ecms/tree/4.3.x/core/services/src/main/java/org/exoplatform/services/cms/drives/impl/NewUserListener.java>`__.
+	   `here <https://github.com/exoplatform/ecms/blob/develop/core/services/src/main/java/org/exoplatform/services/cms/drives/impl/NewUserListener.java>`__.
 
 	-  **GroupEventListener**:
 
@@ -735,7 +735,7 @@ and how to configure a listener in general.
 			   }
 
 	   See sample
-	   `here <https://github.com/exoplatform/ecms/blob/master/core/services/src/main/java/org/exoplatform/services/cms/drives/impl/NewGroupEventListener.java>`__.
+	   `here <https://github.com/exoplatform/ecms/blob/develop/core/services/src/main/java/org/exoplatform/services/cms/drives/impl/NewGroupEventListener.java>`__.
 
 	-  **MembershipEventListener**:
 
@@ -774,7 +774,7 @@ and how to configure a listener in general.
 			   }
 
 	   See sample
-	   `here <https://github.com/exoplatform/ecms/blob/master/core/services/src/main/java/org/exoplatform/services/cms/drives/impl/WCMMembershipUpdateListener.java>`__.
+	   `here <https://github.com/exoplatform/ecms/blob/develop/core/services/src/main/java/org/exoplatform/services/cms/drives/impl/WCMMembershipUpdateListener.java>`__.
 
 4. Register your own listeners in ``configuration.xml``. Registering the
    listeners is then achieved by using the ExoContainer plugin mechanism.
@@ -815,7 +815,7 @@ and how to configure a listener in general.
 		</configuration>
 
 	See sample
-	`here <https://github.com/exoplatform/ecms/blob/master/packaging/wcm/webapp/src/main/webapp/WEB-INF/conf/dms-extension/dms/organization-component-plugins-configuration.xml#L113>`__.
+	`here <https://github.com/exoplatform/ecms/blob/develop/packaging/wcm/webapp/src/main/webapp/WEB-INF/conf/dms-extension/dms/organization-component-plugins-configuration.xml>`__.
 
 5. Build your JAR project, then deploy the ``.jar`` file (in ``target/``)
    under eXo Platform.
@@ -1345,9 +1345,8 @@ chapter.
 
 Looking at your XML configuration in service module, the processor
 initialization requires the clientId and clientSecret. To test your
-addon, configure the file ``exo.properties`` (see `Configuration
-overview <#PLFAdminGuide.Configuration.ConfigurationOverview>`__ for
-this file) like this:
+addon, configure the file ``exo.properties`` (see :ref:`Configuration overview <PLFAdminGuide.Configuration.ConfigurationOverview>`
+for this file) like this:
 
 ::
 

@@ -262,14 +262,13 @@ Using Groovy REST service
 
 Besides using Jax-RS, you can also develop a REST service as a Groovy
 script in your own
-`extension <#PLFDevGuide.eXoAdd-ons.PortalExtension>`__ that will be
+:ref:`extension <PLFDevGuide.eXoAdd-ons.PortalExtension>` that will be
 loaded at startup by the REST engine.
 
 To do this, you first need to have your own extension project as
-described in `Creating your extension
-project <#PLFDevGuide.eXoAdd-ons.PortalExtension.Howto>`__. The below
-process will instruct how to write a simple Groovy REST script in your
-own extension and make it work in eXo Platform.
+described in :ref:`Creating your extension project <PLFDevGuide.eXoAdd-ons.PortalExtension.Howto>`. 
+The below process will instruct how to write a simple Groovy REST script 
+in your own extension and make it work in eXo Platform.
 
 1. Create a Groovy script named
    ``custom-extension.war!/WEB-INF/groovy/demo/GroovyRest.groovy`` with 
