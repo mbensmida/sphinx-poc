@@ -93,55 +93,48 @@ space's name wiki".
 Technical novelties in eXo Platform 5.1
 ========================================
 
-**New features**
-
-In the version 5.1, we integrated a new feature which is the push notifications on mible.
-This new feature is supported by eXo mobile applications. It relies on Firebase Cloud Messaging 
-and a new addon packaged by default in the Enterprise Edition (exo-push-notifications).
-
-**Upgardes**
+**Upgrades**
 
 In 5.1 version, eXo Platform upgraded to Jboss EAP 7.1 in order to:
 
-- Benefit from its lastest improvements such as:
+-  Benefit from its lastest improvements. Learn more about them from this 
+   `link <https://www.redhat.com/en/blog/red-hat-releases-jboss-eap-71>`__.
 
-  - Use the new security framework WildFly Elytron
+-  Fix some issues occuring with the previous version:
 
-  - Support for HTTP/2
-
-- Fix some issues occuring with the previous version:
-
-  - "Remember me" token not recognized in Jboss EAP 7.0
+  -  "Remember me" token not recognized in Jboss EAP 7.0
   
-  - Instance id of a cluster node is not added on the JSESSIONID cookie
+  -  Instance id of a cluster node is not added on the JSESSIONID cookie
 
 **Performances and scalability**
 
-In eXo Platform 5.1, we insised on improving the performance and the 
-scalability by changing some strategies, configurations and data 
-storage.  
-- Users/Groups/Roles import in database: a new job is implmentd to import IDM data 
-  in IDM database asynchronously and periodically.
+In eXo Platform 5.1 we continue our effort on improving the performance and the scalability
+by changing some strategies, configurations and data storage:
+
+-  Users/Groups/Roles import in database: a new job is implmentd to import IDM data 
+   in IDM database asynchronously and periodically.
   
-- Smarter data user synchronization: only mandatory data is synchronized, other data 
-is created when the user authenticates to the platform.
+-  Smarter data user synchronization: only mandatory data are imported in database during synchronization, 
+   other user's data are imported on login or when it is required (lazy import).
   
 **Migrations**
 
-As cited in the previous section, eXo Chat has a new design. 
-This new design is powered by the frontend framework Vue.js.
-Following this framework change, Chat favorites data has also been changed. An upgrade plugin runs 
-on eXo Platform 5.1 startup to migrate existing data to the new format.
+-  As cited in the previous section, eXo Chat has a new design. 
+   This new design is powered by the frontend framework Vue.js instead of WebUI, JQuery and Juzu 
+   which are now considered as obselete and not enough productive.
 
-**Some other Improvements**
+-  Chat favorites data has also been changed. An upgrade plugin runs on eXo Platform 5.1 startup 
+   to migrate existing data to the new format.
 
-- Harmonize cache configuration in cluster and local modes.
+**Some others Improvements**
 
-- Improve Mbean cache naming: All caches are now named with the following pattern: ``<project>.<cacheName>``
+-  Harmonize cache configuration in cluster and local modes.
 
-- ``cluster.node.name`` parameter automatically generated when not set.
+-  Improve Mbean cache naming: All caches are now named with the following pattern: ``<project>.<cacheName>``
 
-- upgrade.properties files is not needed anymore, upgrade plugins are automatically triggered.
+-  ``cluster.node.name`` parameter automatically generated when not set.
+
+-  ``upgrade.properties file`` is not needed anymore, upgrade plugins are automatically triggered.
 
 
 
