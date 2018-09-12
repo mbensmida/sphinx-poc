@@ -93,82 +93,56 @@ space's name wiki".
 Technical novelties in eXo Platform 5.1
 ========================================
 
-**Upgrades**
+**New features**
 
-In the version 5.0, many tools/applications used by eXo Platform were 
-upgraded to newer  versions in order to benefit from their latest 
-updates and improvements: 
+In the version 5.1, we integrated a new feature which is the push notifications on mible.
+This new feature is supported by eXo mobile applications. It relies on Firebase Cloud Messaging 
+and a new addon packaged by default in the Enterprise Edition (exo-push-notifications).
 
-- Tomcat 8.5
+**Upgardes**
 
-- JBoss EAP 7.0
+In 5.1 version, eXo Platform upgraded to Jboss EAP 7.1 in order to:
 
-- Elasticseach 5.6 
+- Benefit from its lastest improvements such as:
 
-- Infinispan 8
+  - Use the new security framework WildFly Elytron
 
-- Groovy 2.4
+  - Support for HTTP/2
 
-- JQuery 3.2 
+- Fix some issues occuring with the previous version:
 
-- Shindig 2.5
+  - "Remember me" token not recognized in Jboss EAP 7.0
+  
+  - Instance id of a cluster node is not added on the JSESSIONID cookie
 
 **Performances and scalability**
 
-In eXo Platform 5.0, we insisted on improving the performance and the 
+In eXo Platform 5.1, we insised on improving the performance and the 
 scalability by changing some strategies, configurations and data 
 storage.  
-
-- Cache strategy and configuration
-
-- New cache on organization service
-
-- Files indexing in Elasticsearch
-
-- Storage of all spaces members in Social database tables
-
+- Users/Groups/Roles import in database: a new job is implmentd to import IDM data 
+  in IDM database asynchronously and periodically.
+  
+- Smarter data user synchronization: only mandatory data is synchronized, other data 
+is created when the user authenticates to the platform.
+  
 **Migrations**
 
-With eXo Platform 5.0, some data were migrated from JCR to database to 
-improve performance and scalability:
+As cited in the previous section, eXo Chat has a new design. 
+This new design is powered by the frontend framework Vue.js.
+Following this framework change, Chat favorites data has also been changed. An upgrade plugin runs 
+on eXo Platform 5.1 startup to migrate existing data to the new format.
 
-- Notifications and settings in JPA dataset
+**Some other Improvements**
 
-- ECMS files are indexed in Elasticsearch
+- Harmonize cache configuration in cluster and local modes.
 
-- Space members stored in Social database tables 
+- Improve Mbean cache naming: All caches are now named with the following pattern: ``<project>.<cacheName>``
 
-Many other improvements and refinements were also done in :
+- ``cluster.node.name`` parameter automatically generated when not set.
 
-- Customizing skin: No more need to duplicate the whole project 
-  platform-ui.
+- upgrade.properties files is not needed anymore, upgrade plugins are automatically triggered.
 
-- Extending the IM list of user profile is now doable through UI.
-
-- When indexing JCR workspace, old indexes are always existing until the 
-  end of indexation.
-
-- An Mbean is added to reload Javascript.
-
-- A new minify attribute allowing to enable/disable the minification.
-
-- Compilation of Javascript scripts by Google Closure Compiler to ES5.
-
-- Improve the Upgrade plugin framework: Add configuration to define the 
-  target version.
-
-- Add the possibility to define a group of users able to manage all 
-  spaces.
-
-- eXo Platform 5.0 could be ran with Java9.
-
-- Improvements on Elasticsearch mappings.
-
-- Copying URL feature does not use Flash anymore but it relies on 
-  Javascript clipboard feature.
-
-- Javascript errors are no more logged into WebUI popups but in console.
-    
 
 
 .. |image0| image:: images/Chat-UI-UX.png
