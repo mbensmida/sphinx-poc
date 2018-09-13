@@ -109,7 +109,7 @@ In eXo Platform 5.1 we continued our effort on improving the performance
 and the scalability by changing some strategies, configurations and data 
 storage:
 
--  Users/Groups/Roles import in database: a new job is implmentd to 
+-  Users/Groups/Roles import in database: a new job is implemented to 
    import IDM data  in IDM database asynchronously and periodically.
   
 -  Smarter data user synchronization: only mandatory data are imported 
