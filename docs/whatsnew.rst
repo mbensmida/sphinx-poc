@@ -95,12 +95,9 @@ Technical novelties in eXo Platform 5.1
 
 **Upgrades**
 
-In 5.1 version, eXo Platform upgraded to Jboss EAP 7.1 in order to:
-
--  Benefit from its lastest improvements. Learn more about them from this 
-   `link <https://www.redhat.com/en/blog/red-hat-releases-jboss-eap-71>`__.
-
--  Fix some issues occuring with the previous version:
+eXo Platform 5.1 now supports JBoss EAP 7.1. This new version comes with 
+some `improvements <https://www.redhat.com/en/blog/red-hat-releases-jboss-eap-71>`__ 
+and fixes some issues which impacted eXo Platform:
 
   -  "Remember me" token not recognized in Jboss EAP 7.0
   
@@ -108,33 +105,37 @@ In 5.1 version, eXo Platform upgraded to Jboss EAP 7.1 in order to:
 
 **Performances and scalability**
 
-In eXo Platform 5.1 we continue our effort on improving the performance and the scalability
-by changing some strategies, configurations and data storage:
+In eXo Platform 5.1 we continued our effort on improving the performance 
+and the scalability by changing some strategies, configurations and data 
+storage:
 
--  Users/Groups/Roles import in database: a new job is implmentd to import IDM data 
-   in IDM database asynchronously and periodically.
+-  Users/Groups/Roles import in database: a new job is implmentd to 
+   import IDM data  in IDM database asynchronously and periodically.
   
--  Smarter data user synchronization: only mandatory data are imported in database during synchronization, 
-   other user's data are imported on login or when it is required (lazy import).
+-  Smarter data user synchronization: only mandatory data are imported 
+   in database during synchronization, other user's data are imported on 
+   login or when it is required (lazy import).
   
 **Migrations**
 
 -  As cited in the previous section, eXo Chat has a new design. 
-   This new design is powered by the frontend framework Vue.js instead of WebUI, JQuery and Juzu 
-   which are now considered as obselete and not enough productive.
+   Moreover, from a technical point of view, it has been implemented 
+   using a new frontend framework (Vue.js).
 
--  Chat favorites data has also been changed. An upgrade plugin runs on eXo Platform 5.1 startup 
-   to migrate existing data to the new format.
+-  Chat favorites data has also been changed. An upgrade plugin runs on 
+   eXo Platform 5.1 startup to migrate existing data to the new format.
 
 **Some others Improvements**
 
 -  Harmonize cache configuration in cluster and local modes.
 
--  Improve Mbean cache naming: All caches are now named with the following pattern: ``<project>.<cacheName>``
+-  Improve Mbean cache naming: All caches are now named with the 
+   following pattern: ``<project>.<cacheName>``
 
 -  ``cluster.node.name`` parameter automatically generated when not set.
 
--  ``upgrade.properties file`` is not needed anymore, upgrade plugins are automatically triggered.
+-  ``upgrade.properties file`` is not needed anymore, upgrade plugins 
+   are automatically triggered.
 
 
 
