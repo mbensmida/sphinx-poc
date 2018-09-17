@@ -27,10 +27,6 @@ LDAP Integration
        A step by step tutorial for eXo Platform configuration with a
        directory server: LDAP/AD.
 
-    -  :ref:`Synchronization <LDAP.Synchronization>`
-       If you have integrated eXo Platform with a populated LDAP directory,
-       or when you manage users and groups via LDAP utilities, a service
-       to synchronize between them is necessary.
 
     -  :ref:`LDAP integration using legacy organization
        services <LDAP.LegacyOrganizationService>`
@@ -97,13 +93,6 @@ easy for readers, this tutorial is divided into four generic cases:
           represents users who are created via eXo Platform UI. The 
           understanding is similar to "*LDAP groups*\ " and "*Platform 
           groups*\ ".
-		  The PicketLink IDM framework does not distinguish between
-		  LDAP-to-Platform and Platform-to-LDAP mapping, so the 
-		  configuration is basically the same, but the effect of some 
-		  parameters can be different. For example, the 
-		  ``createEntryAttributeValues`` parameter has no effect on the 
-		  LDAP-to-Platform mapping, thus is explained only in the 
-		  Platform-to-LDAP mapping.
 
 It should be easy to integrate eXo Platform with an LDAP directory if the
 directory is well-organized and traditional. For complicated cases, you
@@ -780,8 +769,6 @@ mapped to their Platform profile, while ``o=emca`` do not, the case
 seems not to be supported. If it becomes a reality to you, the best way
 is to raise your question in `eXo Community Forum <http://community.exoplatform.com/portal/intranet/forum>`__.
 
-.. note:: When LDAP users and groups are mapped into eXo Platform, their data (for example, user profile, personal document, calendar) need to be created as if they were eXo Platform users and groups. See how to do that in :ref:`Synchronization <LDAP.Synchronization>`.
-
 
 .. _LDAP.PicketLink.MappingPlatformUser:
 
@@ -878,25 +865,6 @@ value** is used in the Platform-to-LDAP mapping:
 
 -  If ``ou=PlatformUsers`` does not exist in the tree, it will be
    created automatically.
-
-**createEntryAttributeValues**
-
-Required by LDAP, a user entry should have fixed objectClasses and
-attributes that could not be mapped from Platform user attributes. You
-can provide such objectClasses/attributes in
-**createEntryAttributeValues** like below:
-
-.. code:: xml
-
-    <options>
-        <option>
-            <name>createEntryAttributeValues</name>
-            <value>objectClass=top</value>
-            <value>objectClass=inetOrgPerson</value>
-            <value>sn= </value>
-            <value>cn= </value>
-        </option>
-    </options>
 
 .. note:: The samples of this option are different between OpenLDAP/MSAD and others, so you need to review it in the sample configuration file you are using.
 
@@ -1145,8 +1113,6 @@ As explained above, the parent group ("*/acme/roles*\ " in this example)
 needs to be created manually. You can create it after deploying your
 custom extension and start the server.
 
-.. note:: When the LDAP users and groups are mapped into eXo Platform, their data (for example, user profile, personal document, calendar) need to be created as if they were Platform users and groups. 
-          See :ref:`Synchronization <LDAP.Synchronization>` for how-to.
 
 .. _LDAP.PicketLink.MappingPlatformGroup:
 
@@ -1440,147 +1406,6 @@ Add options.
            ...
            <value>member=ou=placeholder,o=platform,o=acme,dc=my-domain,dc=com</value>
        </option>
-
-.. _LDAP.PicketLink.MultipleDirectories:
-
-Multiple directories
-~~~~~~~~~~~~~~~~~~~~~
-
-Follow this guide in case you want to connect to more than one LDAP
-directories, for example, you have two OpenLDAP databases with suffixes
-``dc=example,dc=com`` and ``dc=example,dc=net``.
-
-Basically you will configure two identity stores and map them in the
-``PortalRepository`` repository.
-
-In this way, you can create different connections using different
-hosts/ports, credentials, protocols (ldap/ldaps) and even different LDAP
-implementations, for example, one is MSAD and the other is OpenLDAP.
-
-.. code:: xml
-
-    <repositories>
-        <repository>
-            <id>PortalRepository</id>
-            <identity-store-mappings>
-                <identity-store-mapping>
-                    <identity-store-id>PortalLDAPStore</identity-store-id>
-                    ...
-                </identity-store-mapping>
-                <identity-store-mapping>
-                    <identity-store-id>PortalLDAPStore2</identity-store-id> <!-- the second store -->
-                    ...
-                </identity-store-mapping>
-            </identity-store-mappings>
-        </repository>
-    </repositories>
-    <stores>
-        <identity-stores>
-            <identity-store>
-                <id>HibernateStore</id>
-                ...
-            </identity-store>
-            <identity-store>
-                <id>PortalLDAPStore</id>
-                ...
-            </identity-store>
-            <identity-store>
-                <id>PortalLDAPStore2</id> <!-- the second store -->
-                ...
-            </identity-store>
-        </identity-stores>
-    </stores>
-
-.. note:: It is quite simple if all the LDAP stores are Read-only. But, in Read-Write mode it is important to be aware that all users and groups will be saved to only one store, and it should be the first store.
-
-In other words, it is no use to set the second repository to the
-Read-Write mode. When a user is created in eXo Platform, the identity object
-will be saved in the first LDAP store if it is a Read-Write one. And if
-not, it will be saved in IDM (SQL) database, not in second LDAP store at
-all.
-
-So for Read-Write mode, and assume you want to store platform groups in
-LDAP, here is the suggested configuration:
-
--  In ``idm-configuration.xml``:
-
-   .. code:: xml
-
-       <field name="groupTypeMappings">
-           <map type="java.util.HashMap">
-               <entry>
-                   <key><string>/</string></key>
-                   <value><string>root_type</string></value>
-               </entry>
-               <entry>
-                   <key><string>/platform/*</string></key>
-                   <value><string>platform_type</string></value>
-               </entry>
-               <entry>
-                   <key><string>/com/example/*</string></key>
-                   <value><string>example_com_group_type</string></value>
-               </entry>
-               <entry>
-                   <key><string>/net/example/*</string></key>
-                   <value><string>example_net_group_type</string></value>
-               </entry>
-           </map>
-       </field>
-       <field name="ignoreMappedMembershipTypeGroupList">
-           <collection type="java.util.ArrayList" item-type="java.lang.String">
-               <value><string>/platform/*</string></value>
-               <value><string>/com/example/*</string></value>
-               <value><string>/net/example/*</string></value>
-           </collection>
-       </field>
-
--  In ``picketlink-idm-*.xml``:
-
-   .. code:: xml
-
-       <identity-store-mapping>
-           <identity-store-id>PortalLDAPStore</identity-store-id>
-           <identity-object-types>
-               <identity-object-type>USER</identity-object-type>
-               <identity-object-type>platform_type</identity-object-type>
-               <identity-object-type>example_com_group_type</identity-object-type>
-           </identity-object-types>
-           <options>
-               <option>
-                   <name>readOnly</name>
-                   <value>false</value>
-               </option>
-           </options>
-       </identity-store-mapping>
-       <identity-store-mapping>
-           <identity-store-id>PortalLDAPStore2</identity-store-id>
-           <identity-object-types>
-               <identity-object-type>USER</identity-object-type>
-               <identity-object-type>example_net_group_type</identity-object-type>
-           </identity-object-types>
-           <options>
-               <option>
-                   <name>readOnly</name>
-                   <value>true</value>
-               </option>
-           </options>
-       </identity-store-mapping>
-
-**Some other considerations**:
-
--  If in LDAP directories there are two users with the same username,
-   for example: ``uid=john,ou=Employees,dc=example,dc=com`` and
-   ``uid=john,ou=People,dc=example,dc=net``, only one of them will be
-   mapped into eXo Platform.
-
--  You should keep the groups and memberships separated between the two
-   directories. For example:
-
-   -  DO create ``/com/example`` to map with
-      *example\_com\_group\_type*, and ``/net/example`` to map with
-      *example\_net\_group\_type*.
-
-   -  DON'T assign a user of a store to a group of the other store.
 
 .. _LDAP.PicketLink.IDMConfiguration:
 
@@ -1983,306 +1808,6 @@ procedure.
 
 |image1|
 
-
-.. _LDAP.Synchronization:
-
-===============
-Synchronization
-===============
-
-When you have integrated eXo Platform with a populated directory, or you
-manage users and groups via LDAP utilities, use
-``OrganizationIntegrationService`` that takes care the LDAP users and
-groups as if they were original Platform users and groups.
-
-To be clear, when a user is registered via Platform UI, a *user creation
-event* is known and handled by the *user listener*. This listener makes
-sure that the necessary data, like a folder for personal documents, will
-be created. In case an LDAP user is mapped into Platform, the event is
-not known by the listener so the folder will be missing until you run
-the ``OrganizationIntegrationService`` that invokes the user listener to
-check and create necessary data.
-
-.. note:: During the synchronization, LDAP users are granted the *member:/platform/users* membership so that they can access the Intranet page.
-
-The FQN of the service is
-org.exoplatform.platform.organization.integration.OrganizationIntegrationService.
-
-Generally, once you configure it, the service runs automatically. It
-runs when the server starts and when a user/group/membership is created
-or deleted.
-
-The service is also exposed via REST and JMX, so you can call its
-operations, like ``syncUser`` or ``syncGroup``, anytime you want.
-
-To be more flexible, eXo Platform provides the two other services:
-
--  org.exoplatform.platform.organization.integration.FirstLoginListener
-
-   This service can be configured to run at the first login of a user.
-   It always calls the ``syncUser`` method of the
-   OrganizationIntegrationService.
-
--  org.exoplatform.platform.organization.integration.OrganizationIntegrationJob
-
-   This service can be configured to run as a scheduled job. It always
-   calls the ``syncAll`` method of the OrganizationIntegrationService.
-
-.. _ActivateOrganizationIntegrationService:
-
-Activating the OrganizationIntegrationService
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To activate the service, add new configuration in your
-:ref:`ldap-extension <LDAP.PicketLink.QuickStart>`.
-
-1. Create the ``WEB-INF/conf/organization/sync.xml`` file in your custom
-   extension project, with the following content:
-
-   .. code:: xml
-
-		<configuration>
-			<component>
-				<type>org.exoplatform.platform.organization.integration.OrganizationIntegrationService</type>
-				<init-params>
-					<value-param>
-						<name>workspace</name>
-						<value>collaboration</value>
-					</value-param>
-					<value-param>
-						<name>homePath</name>
-						<value>/</value>
-					</value-param>
-					<value-param>
-						<name>synchronizeGroups</name>
-						<value>true</value>
-					</value-param>
-				</init-params>
-			</component>
-			
-			<external-component-plugins>
-				<target-component>org.exoplatform.services.organization.OrganizationService</target-component>
-				<component-plugin>
-					<name>organization.initializer.group.event.listener</name>
-					<set-method>addListenerPlugin</set-method>
-					<type>org.exoplatform.platform.organization.integration.NewGroupListener</type>
-					<description>description</description>
-				</component-plugin>
-				<component-plugin>
-					<name>organization.initializer.user.event.listener</name>
-					<set-method>addListenerPlugin</set-method>
-					<type>org.exoplatform.platform.organization.integration.NewUserListener</type>
-					<description>description</description>
-				</component-plugin>
-				<component-plugin>
-					<name>organization.initializer.membership.event.listener</name>
-					<set-method>addListenerPlugin</set-method>
-					<type>org.exoplatform.platform.organization.integration.NewMembershipListener</type>
-					<description>description</description>
-				</component-plugin>
-				<component-plugin>
-					<name>organization.initializer.profile.event.listener</name>
-					<set-method>addListenerPlugin</set-method>
-					<type>org.exoplatform.platform.organization.integration.NewProfileListener</type>
-					<description>description</description>
-				</component-plugin>
-			</external-component-plugins>
-
-			<external-component-plugins>
-				<target-component>org.exoplatform.services.listener.ListenerService</target-component>
-				<component-plugin>
-					<name>exo.core.security.ConversationRegistry.register</name>
-					<set-method>addListener</set-method>
-					<type>org.exoplatform.platform.organization.integration.FirstLoginListener</type>
-				</component-plugin>
-			</external-component-plugins>
-		</configuration>
-
-2. Edit ``WEB-INF/conf/configuration.xml`` to import the ``sync.xml`` file:
-
-   .. code:: xml
-
-       <import>war:/conf/organization/sync.xml</import>
-
-Some remarks:
-
--  The ``synchronizeGroups`` parameter is set to **true**. This enables
-   group synchronization at the server startup.
-
--  The FirstLoginListener is configured. This makes sure that an LDAP
-   user is enabled to access the Intranet page automatically when he
-   logs in eXo Platform for the first time.
-
--  The Job Scheduler is not configured yet. You will configure it later.
-
-**Testing**
-
-After deploying your ldap-extension in eXo Platform, start the server. Next,
-log in as *root* and browse the URL:
-http://mycompany.com:8080/rest/management/orgsync (change the host and
-port if needed). You should receive the list of methods of the
-OrganizationIntegrationService.
-
-If you enter the URL:
-http://mycompany.com:8080/rest/management/orgsync/syncAll, the
-synchronization will run for all users and groups.
-
-.. note:: In the case of :ref:`LDAP groups mapped intoPlatform <LDAP.PicketLink.MappingLDAPGroup>`, 
-          you noticed that parent groups, such as **/acme/roles** need 
-          to be created manually. If the OrganizationIntegration service 
-          is activated while the parent groups are not created yet, it 
-          may throw some exceptions at the startup, but it is not a 
-          problem.
-
-
-.. _RESTandJMX:
-
-Using REST and JMX
-~~~~~~~~~~~~~~~~~~~
-
-Using REST or JMX, you can call methods of
-OrganizationIntegrationService anytime you want.
-
-.. _REST:
-
-Using REST
------------
-
-You just need to log in as an admin (for example, **root**), and open
-URL in your browser:
-*http://mycompany.com:8080/rest/management/orgsync/syncUser?username=user100&eventType=ADDED*.
-In which:
-
--  ``username`` is a method (also called operation).
-
--  ``username`` and ``eventType`` are parameters. ``eventType`` accepts
-   three values: ADDED, UPDATED and DELETED.
-
-Here is the full list of operations and their examples (common for REST
-and JMX, although the examples are REST URLs):
-
-+----------------+-----------------------------------------------------------+
-| Operation      | Examples                                                  |
-+================+===========================================================+
-| syncAll        | /rest/management/orgsync/syncAll                          |
-+----------------+-----------------------------------------------------------+
-| syncAllUsers   | /rest/management/orgsync/syncAllUsers?eventType=DELETED   |
-+----------------+-----------------------------------------------------------+
-| syncMembership | /rest/management/orgsync/syncMembership?username=root&gro |
-|                | upId=/platform/users&eventType=ADDED                      |
-+----------------+-----------------------------------------------------------+
-| syncAllGroups  | /rest/management/orgsync/syncAllGroups?eventType=UPDATED  |
-+----------------+-----------------------------------------------------------+
-| syncUser       | /rest/management/orgsync/syncUser?username=user100&eventT |
-|                | ype=DELETED                                               |
-+----------------+-----------------------------------------------------------+
-| syncGroup      | /rest/management/orgsync/syncGroup?groupId=/acme/roles/fo |
-|                | o&eventType=DELETED                                       |
-+----------------+-----------------------------------------------------------+
-
-.. _JMX:
-
-Using JMX
-----------
-
-You need a JMX browser like
-`JConsole <http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html>`__.
-JConsole is JDK built-in and if you connect with the eXo Platform server
-locally, you do not need any installation or configuration.
-
-.. note:: In case you want to connect to eXo Platform remotely or to secure your JMX connection, you should read the :ref:`JMX guideline <Management.Introduction>`.
-
-The MBean name of the OrganizationIntegrationService is
-*exo:portal=portal,service=extensions,name=OrganizationIntegrationService,type=platform*,
-like in the screenshot below:
-
-.. _ScheduledSynchronization:
-
-Scheduled synchronization
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-eXo Platform provides a class that can be configured as a scheduled job. When
-it runs, it calls the ``syncAll`` method of the
-OrganizationIntegrationService.
-
-To configure the job, add the following configuration to your
-``sync.xml``:
-
-.. code:: xml
-
-    <external-component-plugins>
-        <target-component>org.exoplatform.services.scheduler.JobSchedulerService</target-component>
-        <component-plugin>
-            <name>OrgInitializerCronJob</name>
-            <set-method>addCronJob</set-method>
-            <type>org.exoplatform.services.scheduler.CronJob</type>
-            <description>Schedule the organization integration operation</description>
-            <init-params>
-                <properties-param>
-                    <name>cronjob.info</name>
-                    <description>Invoke initializer periodically</description>
-                    <property name="jobName" value="OrgInitializerCronJob"/>
-                    <property name="groupName" value="group"/>
-                    <property name="job" value="org.exoplatform.platform.organization.integration.OrganizationIntegrationJob"/>
-                    <property name="expression" value="0 45 23 * * ? *"/>
-                </properties-param>
-            </init-params>
-        </component-plugin>
-    </external-component-plugins>
-
-The only parameter you need to re-configure is the *expression* that
-schedules when the job is fired.
-
-.. note:: Here provided just a short explanation and some examples of the *expression* so that you can pick up one quickly. 
-          To learn its syntax, read `CRON Expression documentation <http://www.quartz-scheduler.org/docs/tutorial/TutorialLesson06.html>`__.
-
-**Cron expression examples**
-
-An expression consists of seven sub-expressions separated by a white
-space. For being easily recognized, in the following tables, each
-sub-expression is written in a column (the seventh sub is optional):
-
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| Second | Minute | Hours  | Day-of | Month  | Day-of | Year   | Description                |
-| s      | s      |        | -Month |        | -Week  |        |                            |
-+========+========+========+========+========+========+========+============================+
-| 0      | 45     | 23     | ?      | \*     | \*     | \*     | 23:45 every day            |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| 0      | 45     | 23     | ?      | \*     | SUN    |        | 23:45 every Sunday         |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| 0      | 45     | 23     | ?      | \*     | 2-7    |        | 23:45 every days of the    |
-|        |        |        |        |        |        |        | week except Sunday         |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| 0      | 45     | 23     | ?      | \*     | TUE,TH |        | 23:45 every Tuesday and    |
-|        |        |        |        |        | U      |        | Thursday                   |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| 0      | 45     | 23     | ?      | \*     | SUNL   |        | 23:45 the last Sunday of   |
-|        |        |        |        |        |        |        | every months               |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| 0      | 45     | 23     | 1      | \*     | ?      |        | 23:45, the 1st day of      |
-|        |        |        |        |        |        |        | every months               |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| 0      | 45     | 23     | L      | \*     | ?      |        | 23:45, the last day of     |
-|        |        |        |        |        |        |        | every months               |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-| 0      | 0/15   | \*     | ?      | \*     | \*     | \*     | once per 15 minutes,       |
-|        |        |        |        |        |        |        | starting from the minute 0 |
-+--------+--------+--------+--------+--------+--------+--------+----------------------------+
-
-**Testing**
-
-The job calls the ``SyncAll`` method. When it runs, you will see the
-following logs:
-
-::
-
-    Start all Organizational model synchronization. [o.e.p.o.i.OrganizationIntegrationJob<DefaultQuartzScheduler_Worker-4>]
-    Organizational model synchronization finished successfully. [o.e.p.o.i.OrganizationIntegrationJob<DefaultQuartzScheduler_Worker-4>]
-
-For testing, you can configure it to run every 1 minute by using the
-expression: ``0 0/1 * * * ? *``.
-
-
 .. _LDAP.LegacyOrganizationService:
 
 ===================================================
@@ -2661,14 +2186,7 @@ either of two approaches:
    Just go to this page and add users to appropriate groups. The
    */platform/users* group is required to access the *intranet* page.
 
--  **Using the Organization Integration service**
 
-   This approach is recommended because the service is a good solution
-   for synchronization between LDAP and eXo Platform. The synchronization is
-   automatic, scheduled, and can be operated by the JMX or REST service.
-
-   Follow :ref:`Synchronization <LDAP.Synchronization>` to
-   activate the service and synchronize eXo Platform with your directory.
 
 **Q:** **How to configure PicketLink to look up users in an entire
 tree?**
