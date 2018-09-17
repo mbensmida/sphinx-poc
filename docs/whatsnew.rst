@@ -99,9 +99,9 @@ eXo Platform 5.1 now supports JBoss EAP 7.1. This new version comes with
 some `improvements <https://www.redhat.com/en/blog/red-hat-releases-jboss-eap-71>`__ 
 and fixes some issues which impacted eXo Platform:
 
-  -  "Remember me" token not recognized in Jboss EAP 7.0
+  -  "Remember me" token not recognized in Jboss EAP 7.0 (`PLF-7787 <https://jira.exoplatform.org/browse/PLF-7787>`__)
   
-  -  Instance id of a cluster node is not added on the JSESSIONID cookie
+  -  Instance id of a cluster node is not added on the JSESSIONID cookie (`PLF-7854 <https://jira.exoplatform.org/browse/PLF-7854>`__)
 
 **Performances and scalability**
 
