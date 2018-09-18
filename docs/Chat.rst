@@ -775,7 +775,7 @@ appears, select the desired status and the it is updated.
 
 |image112|
 
-
+test
 
 .. |image0| image:: images/chat/chat_icon.png
 .. |image1| image:: images/chat/chat_menu.png
